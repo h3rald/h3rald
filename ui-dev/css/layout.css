@@ -198,3 +198,44 @@ body
 	font-size: 95%;
 	color: #CACACA;
 }
+
+/* slider */
+
+#slider {
+  width: 620px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.scroll {
+  height: 250px;
+  overflow: auto;
+  position: relative; /* fix for IE to respect overflow */
+  clear: left;
+  background: #FFFFFF url(images/content_pane-gradient.gif) repeat-x scroll left bottom;
+}
+
+.scrollContainer div.panel {
+  padding: 20px;
+  height: 210px;
+  width: 580px; /* change to 560px if not using JS to remove rh.scroll */
+}
+.scrollButtons {
+  position: absolute;
+  top: 150px;
+  cursor: pointer;
+}
+
+.scrollButtons.left {
+  left: -20px;
+}
+
+.scrollButtons.right {
+  right: -20px;
+}
+
+/* Juitter */
+
+.juitterAvatar, .JRM {
+}
+

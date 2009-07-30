@@ -23,43 +23,30 @@
 
 		<link href="css/coda-slider.css" media="all" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
-<script src="js/cufon-yui.js" type="text/javascript"></script>
-<script src="js/Cardo_400.font.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/Cardo_400.font.js" type="text/javascript"></script>
 
 		<!-- JQuery Plugins -->
-<script src="js/jquery-easing.1.2.pack.js" type="text/javascript"></script>
-<script src="js/jquery-easing-compatibility.1.2.pack.js" type="text/javascript"></script>
-<script src="js/coda-slider.1.1.1.js" type="text/javascript"></script>
-<script language="javascript" src="js/jquery.juitter.js" type="text/javascript"></script>
+		<script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
+		<script src="js/jquery.localscroll-min.js" type="text/javascript"></script>
+		<script src="js/jquery.serialScroll-min.js" type="text/javascript"></script>
+		<script src="js/slider.js" type="text/javascript"></script>
+		<script src="js/jquery.timeago.js" type="text/javascript"></script>
+		<script src="js/jquery.juitter.js" type="text/javascript"></script>
+		<script src="js/jquery.juitter.system.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$.Juitter.start({
-			searchType:"fromUser", // needed, you can use "searchWord", "fromUser", "toUser"
-			searchObject:"h3rald", // needed, you can insert a username here or a word to be searched for, if you wish multiple search, separate the words by comma.
-
-			live:"live-15", // the number after "live-" indicates the time in seconds to wait before request the Twitter API for updates.
-			placeHolder:"twitter", // Set a place holder DIV which will receive the list of tweets example <div id="juitterContainer"></div>
-			loadMSG: "Loading messages...", // Loading message, if you want to show an image, fill it with "image/gif" and go to the next variable to set which image you want to use on 
-			total: 10, // number of tweets to be show - max 100
-			nameUser:"image", // insert "image" to show avatar of "text" to show the name of the user that sent the tweet 
-			openExternalLinks:"newWindow" // here you can choose how to open link to external websites, "newWindow" or "sameWindow"	
-		})
-	});
-</script>
-<!-- Initialize each slider on the page. Each slider must have a unique id -->
-<script type="text/javascript">
-	jQuery(window).bind("load", function() {
-			jQuery("div#slider").codaSlider()
-		});
-</script>
-<script type="text/javascript">
-	Cufon.replace('#navigation');
-	Cufon.replace('h3')('h2')('h4')('h5');
-</script>
-</head>
-<body>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.slider();
+			});
+		</script>
+		<script type="text/javascript">
+			Cufon.replace('#navigation');
+			Cufon.replace('h3')('h2')('h4')('h5');
+		</script>
+	</head>
+	<body>
 	<div id="wrapper">
 		<a name="top"></a>
 		<div id="header">
@@ -75,11 +62,11 @@
 				</div>
 				<div id="header-right">
 					<ul id="navigation">
-						<li>/ <a href="#1" class="cross-link">latest</a></li>
-						<li>/ <a href="#2" class="cross-link">popular</a></li>
-						<li>/ <a href="#3" class="cross-link">tags</a></li>
-						<li>/ <a href="#4" class="cross-link">projects</a></li>
-						<li>/ <a href="#5" class="cross-link">about</a></li>
+						<li>/ <a href="#latest" class="cross-link">latest</a></li>
+						<li>/ <a href="#popular" class="cross-link">popular</a></li>
+						<li>/ <a href="#tags" class="cross-link">tags</a></li>
+						<li>/ <a href="#projects" class="cross-link">projects</a></li>
+						<li>/ <a href="#about" class="cross-link">about</a></li>
 					</ul>
 
 				</div>
@@ -110,240 +97,54 @@
 				</div>
 
 
-				<div class="slider-wrap">
-					<div id="slider" class="csw">
-						<div class="panelContainer">
+				<div id="slider">
+					<div class="scroll">
+						<div class="scrollContainer">
 
-							<div class="panel" title="Latest">
-								<div class="wrapper">
-
-									<h3>Latest Articles</h3>
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/11-07-2009">11th of July 2009</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/wedding/" class="tag">wedding</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">2</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/log-jun-2009">Personal Log - June 2009</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/personal_log/" class="tag">personal_log</a> | <a href="http://www.h3rald.com/tags/vim/" class="tag">vim</a> | <a href="http://www.h3rald.com/tags/ruby/" class="tag">ruby</a> | <a href="http://www.h3rald.com/tags/wedding/" class="tag">wedding</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">0</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/herald-vim-color-scheme">Herald (Vim Color Scheme)</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/programming/" class="tag">programming</a> | <a href="http://www.h3rald.com/tags/vim/" class="tag">vim</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">9</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/log-may-2009">Personal Log - May 2009</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/personal_log/" class="tag">personal_log</a> | <a href="http://www.h3rald.com/tags/programming/" class="tag">programming</a> | <a href="http://www.h3rald.com/tags/wedding/" class="tag">wedding</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">0</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/log-apr-2009">Personal Log - April 2009</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/personal_log/" class="tag">personal_log</a> | <a href="http://www.h3rald.com/tags/ruby/" class="tag">ruby</a> | <a href="http://www.h3rald.com/tags/books/" class="tag">books</a> | <a href="http://www.h3rald.com/tags/wedding/" class="tag">wedding</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">1</span>
-
-										</div>
-
-									</div>
-
-
-								</div>
-
+							<div class="panel" id="latest">
+								<h3>Latest Articles</h3>
+								TODO
 							</div>
-							<div class="panel" title="Popular Articles">
-								<div class="wrapper">
-									<h3>Popular Articles</h3>
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/10-programming-languages">10 programming languages worth checking out</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/programming/" class="tag">programming</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">43</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/10-reasons-to-learn-ruby">10 Reasons to Learn Ruby</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/ruby/" class="tag">ruby</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">31</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/firefox-lovers-guide-to-opera">A Firefox Lover's Guide to Opera</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/browsers/" class="tag">browsers</a> | <a href="http://www.h3rald.com/tags/review/" class="tag">review</a> | <a href="http://www.h3rald.com/tags/opera/" class="tag">Opera</a> | <a href="http://www.h3rald.com/tags/firefox/" class="tag">Firefox</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">25</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/komodo-edit-review">A closer look at Komodo Edit</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/review/" class="tag">review</a> | <a href="http://www.h3rald.com/tags/programming/" class="tag">programming</a> | <a href="http://www.h3rald.com/tags/software/" class="tag">software</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">13</span>
-
-										</div>
-
-									</div>
-
-
-
-									<div class="article">
-										<span class="article-title">
-											<a href="http://www.h3rald.com/articles/rails-inspired-php-frameworks">Rails-inspired PHP frameworks</a>
-										</span>
-
-										<div class="info">
-
-											<img alt="Tags: " src="images/tag.gif">
-											<a href="http://www.h3rald.com/tags/frameworks/" class="tag">Frameworks</a> | <a href="http://www.h3rald.com/tags/review/" class="tag">review</a> | <a href="http://www.h3rald.com/tags/cakephp/" class="tag">CakePHP</a> | <a href="http://www.h3rald.com/tags/rails/" class="tag">Rails</a>
-											<img alt=" Comments: " src="images/comment.gif"><span style="color: rgb(49, 54, 52);">6</span>
-
-										</div>
-
-									</div>
-
-
-								</div>
+							<div class="panel" id="popular">
+								<h3>Popular Articles</h3>
+								TODO
 
 							</div>		
-							<div class="panel" title="Tags">
-								<div class="wrapper">
-									<h3>Tags</h3>
-									<div id="tags">
-										<ul>
-											<li><a href="#">Ruby</a></li>
-											<li><a href="#">Programming</a></li>
-											<li><a href="#">RedBook</a></li>	   
-											<li><a href="#">Productivity</a></li>	   
-											<li><a href="#">Test #1</a></li>	   
-											<li><a href="#">Test #2</a></li>	   
-											<li><a href="#">Test #3</a></li>	   
-											<li><a href="#">Test #4</a></li>	   
-										</ul>
-
-									</div>
+							<div class="panel" id="tags">
+								<h3>Tags</h3>
+								<ul>
+									<li><a href="#">Ruby</a></li>
+									<li><a href="#">Programming</a></li>
+									<li><a href="#">RedBook</a></li>	   
+									<li><a href="#">Productivity</a></li>	   
+									<li><a href="#">Test #1</a></li>	   
+									<li><a href="#">Test #2</a></li>	   
+									<li><a href="#">Test #3</a></li>	   
+									<li><a href="#">Test #4</a></li>	   
+								</ul>
 
 
-								</div>
+
 							</div>
-							<div class="panel" title="Projects">
-								<div class="wrapper">
-									<h3>Projects</h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus porta tortor sed metus. Nam pretium. Sed tempor. Integer ullamcorper, odio quis porttitor sagittis, nisl erat tincidunt massa, eu eleifend eros nibh sollicitudin est. Nulla dignissim. Mauris sollicitudin, arcu id sagittis placerat, tellus mauris egestas felis, eget interdum mi nibh vel lorem. Aliquam egestas hendrerit massa. Suspendisse sed nunc et lacus feugiat hendrerit. Nam cursus euismod augue. Aenean vehicula nisl eu quam luctus adipiscing. Nunc consequat justo pretium orci. Mauris hendrerit fermentum massa. Aenean consectetuer est ut arcu. Aliquam nisl massa, blandit at, accumsan sed, porta vel, metus. Duis fringilla quam ut eros.</p>
-									<p>Sed eu ligula eget eros vulputate tincidunt. Etiam sapien urna, auctor a, viverra sit amet, convallis a, enim. Nullam ut nulla. Nam laoreet massa aliquet tortor. Mauris in quam ut dui bibendum malesuada. Nulla vel erat. Pellentesque metus risus, aliquet eget, eleifend in, ultrices vitae, nisi. Vivamus non nulla. Praesent ac lacus. Donec augue turpis, convallis sed, lacinia et, vestibulum nec, lacus. Suspendisse feugiat semper nunc. Donec nisl elit, varius sed, sodales volutpat, commodo in, elit. Proin ornare hendrerit lectus. Sed non dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis suscipit. Mauris egestas tincidunt lectus. Phasellus sed quam et velit laoreet pretium. Nunc metus.</p>
-								</div>
+							<div class="panel" id="projects">
+								<h3>Projects</h3>
 							</div>
-							<div class="panel" title="About">
-								<div class="wrapper">
-									<h3>About</h3>
-									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus porta tortor sed metus. Nam pretium. Sed tempor. Integer ullamcorper, odio quis porttitor sagittis, nisl erat tincidunt massa, eu eleifend eros nibh sollicitudin est. Nulla dignissim. Mauris sollicitudin, arcu id sagittis placerat, tellus mauris egestas felis, eget interdum mi nibh vel lorem. Aliquam egestas hendrerit massa. Suspendisse sed nunc et lacus feugiat hendrerit. Nam cursus euismod augue. Aenean vehicula nisl eu quam luctus adipiscing. Nunc consequat justo pretium orci. Mauris hendrerit fermentum massa. Aenean consectetuer est ut arcu. Aliquam nisl massa, blandit at, accumsan sed, porta vel, metus. Duis fringilla quam ut eros.</p>
-									<p>Sed eu ligula eget eros vulputate tincidunt. Etiam sapien urna, auctor a, viverra sit amet, convallis a, enim. Nullam ut nulla. Nam laoreet massa aliquet tortor. Mauris in quam ut dui bibendum malesuada. Nulla vel erat. Pellentesque metus risus, aliquet eget, eleifend in, ultrices vitae, nisi. Vivamus non nulla. Praesent ac lacus. Donec augue turpis, convallis sed, lacinia et, vestibulum nec, lacus. Suspendisse feugiat semper nunc. Donec nisl elit, varius sed, sodales volutpat, commodo in, elit. Proin ornare hendrerit lectus. Sed non dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis suscipit. Mauris egestas tincidunt lectus. Phasellus sed quam et velit laoreet pretium. Nunc metus.</p>
-								</div>
+							<div class="panel" id="about">
+								<h3>About</h3>
 							</div>
 
-						</div><!-- .panelContainer -->
-					</div><!-- #slider1 -->
-				</div><!-- .slider-wrap -->
+						</div><!-- .scrollContainer -->
+					</div><!-- .scroll -->
+				</div><!-- #slider -->
 
 
 				<h3>Bookmarks</h3>
 				<div id="delicious">
-						
+
 				</div>
 
 
-					<h3>Thoughts</h3>
+				<h3>Thoughts</h3>
 				<div id="twitter">
 				</div>
 
@@ -376,6 +177,6 @@
 	</div>
 	<script type="text/javascript">
 		Cufon.now();
-	</script>
-</body>
-					</html>
+		</script>
+	</body>
+</html>
