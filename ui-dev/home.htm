@@ -35,148 +35,151 @@
 		<script src="js/jquery.timeago.js" type="text/javascript"></script>
 		<script src="js/jquery.juitter.js" type="text/javascript"></script>
 		<script src="js/jquery.juitter.system.js" type="text/javascript"></script>
+		<script src="js/jquery.jgfeed-min.js" type="text/javascript"></script>
 
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$.slider();
-			});
-		</script>
-		<script type="text/javascript">
-			Cufon.replace('#navigation');
-			Cufon.replace('h3')('h2')('h4')('h5');
-		</script>
+
+$(document).ready(function() {
+		$.slider();
+		});
+Cufon.replace('#navigation');
+Cufon.replace('h3')('h2')('h4')('h5');
+</script>
 	</head>
 	<body>
-	<div id="wrapper">
-		<a name="top"></a>
-		<div id="header">
-			<!--[if lte IE 6]>
-			<div id="ie-warning">
-				This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
-			</div>
-			<![endif]-->
-			<!-- HEADER START -->
-			<div id="header-container">
-				<div id="header-left">
-					<h1><img alt="H3RALD" src="images/logo.png"></h1>
+		<div id="wrapper">
+			<a name="top"></a>
+			<div id="header">
+				<!--[if lte IE 6]>
+				<div id="ie-warning">
+					This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
 				</div>
-				<div id="header-right">
-					<ul id="navigation">
-						<li>/ <a href="#latest" class="cross-link">latest</a></li>
-						<li>/ <a href="#popular" class="cross-link">popular</a></li>
-						<li>/ <a href="#tags" class="cross-link">tags</a></li>
-						<li>/ <a href="#projects" class="cross-link">projects</a></li>
-						<li>/ <a href="#about" class="cross-link">about</a></li>
-					</ul>
+				<![endif]-->
+				<!-- HEADER START -->
+				<div id="header-container">
+					<div id="header-left">
+						<h1><img alt="H3RALD" src="images/logo.png"></h1>
+					</div>
+					<div id="header-right">
+						<ul id="navigation">
+							<li>/ <a href="#latest" class="cross-link">latest</a></li>
+							<li>/ <a href="#popular" class="cross-link">popular</a></li>
+							<li>/ <a href="#tags" class="cross-link">tags</a></li>
+							<li>/ <a href="#projects" class="cross-link">projects</a></li>
+							<li>/ <a href="#about" class="cross-link">about</a></li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- HEADER END -->
+
+			<!-- CONTAINER START -->
+			<div id="container">
+				<ul id="palette">
+					<li><a href="#top"><img alt="^" src="images/arrow_up.gif" title="scroll up"></a></li>
+
+					<li><a href="http://www.h3rald.com/rss"><img alt="#" src="images/feed.png" title="subscribe"></a></li>
+
+					<li><a target="_blank" href="http://www.addthis.com/bookmark.php" onclick="addthis_url = location.href; addthis_title = document.title; return addthis_click(this);" rel="external">
+						<img alt="*" src="images/bookmark.gif" title="bookmark"></a></li>
+					<li><a href="#" onclick="location.href='mailto:?SUBJECT='+document.title+'&amp;BODY='+escape(document.title)+'\n['+escape(location.href)+']'"><img alt="@" src="images/mail_back.gif" title="mail"></a></li>
+
+					<li><a href="#" onclick="window.print()"><img alt="P" src="images/printer.gif" title="print"></a></li>
+					<li><a href="#footer"><img alt="v" src="images/arrow_down.gif" title="scroll down"></a></li>
+				</ul>
+				<!-- CONTENT START -->
+				<div id="content">
+					<h2>Home</h2>
+					<div id="intro">
+						<p>Welcome to <span class="caps">H3RALD</span>.com, Fabio Cevasco’s personal web site.</p>
+					</div>
+
+
+					<div id="slider">
+						<div class="scroll">
+							<div class="scrollContainer">
+
+								<div class="panel" id="latest">
+									<h3>Latest Articles</h3>
+									TODO
+								</div>
+								<div class="panel" id="popular">
+									<h3>Popular Articles</h3>
+									TODO
+
+								</div>		
+								<div class="panel" id="tags">
+									<h3>Tags</h3>
+									<ul>
+										<li><a href="#">Ruby</a></li>
+										<li><a href="#">Programming</a></li>
+										<li><a href="#">RedBook</a></li>	   
+										<li><a href="#">Productivity</a></li>	   
+										<li><a href="#">Test #1</a></li>	   
+										<li><a href="#">Test #2</a></li>	   
+										<li><a href="#">Test #3</a></li>	   
+										<li><a href="#">Test #4</a></li>	   
+									</ul>
+
+
+
+								</div>
+								<div class="panel" id="projects">
+									<h3>Projects</h3>
+								</div>
+								<div class="panel" id="about">
+									<h3>About</h3>
+								</div>
+
+							</div><!-- .scrollContainer -->
+						</div><!-- .scroll -->
+					</div><!-- #slider -->
+
+
+					<h3>Bookmarks</h3>
+					<div id="delicious">
+					</div>
+					<h3>Comments</h3>
+					<div id="backtype">
+					</div>
+
+
+					<h3>Thoughts</h3>
+					<div id="twitter">
+					</div>
+
 
 				</div>
+				<!-- CONTENT END -->
+
+				<div id="push"></div>
+			</div>
+			<!-- CONTAINER END -->
+		</div> <!-- WRAPPER END -->
+		<div id="footer">
+			<div id="footer-container">
+
+				<div class="footer-div">Interesting Places: 
+					<a href="http://www.cyberarmy.net/" class="link">CyberArmy</a> |
+					<a href="http://andreagandino.com/" class="link">Andrea Gandino</a> | 
+					<a href="http://www.webmasterwords.com/" class="link">Webmaster Words</a> | 
+				</div>
+				<div class="footer-div">Sponsored Links: 	
+
+
+					<a href="http://www.hardstand.com.br/" class="link">Codigo de barras</a>  |  <a href="http://www.seelikepat.com/" class="link">Crystalens | St. Louis Surgery</a>  |  <a href="http://www.rapidsupplies.com/" class="link">Discount Computer Accessories</a> 
+
+
+
+				</div>
+				<div class="footer-div">H3RALD Web Site v7.1.2 <em>"PlainText"</em> – © 2004-2009 <strong>Fabio Cevasco</strong> – <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Some rights reserved</a> | <img alt="Valid" src="images/tick.gif"> <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.0 Strict</a> <img alt="Valid" src="images/tick.gif"> <a href="http://jigsaw.w3.org/css-validator/" class="link">CSS 2.1</a></div>
 			</div>
 		</div>
-
-		<!-- HEADER END -->
-
-		<!-- CONTAINER START -->
-		<div id="container">
-			<ul id="palette">
-				<li><a href="#top"><img alt="^" src="images/arrow_up.gif" title="scroll up"></a></li>
-
-				<li><a href="http://www.h3rald.com/rss"><img alt="#" src="images/feed.png" title="subscribe"></a></li>
-
-				<li><a target="_blank" href="http://www.addthis.com/bookmark.php" onclick="addthis_url = location.href; addthis_title = document.title; return addthis_click(this);" rel="external">
-					<img alt="*" src="images/bookmark.gif" title="bookmark"></a></li>
-				<li><a href="#" onclick="location.href='mailto:?SUBJECT='+document.title+'&amp;BODY='+escape(document.title)+'\n['+escape(location.href)+']'"><img alt="@" src="images/mail_back.gif" title="mail"></a></li>
-
-				<li><a href="#" onclick="window.print()"><img alt="P" src="images/printer.gif" title="print"></a></li>
-				<li><a href="#footer"><img alt="v" src="images/arrow_down.gif" title="scroll down"></a></li>
-			</ul>
-			<!-- CONTENT START -->
-			<div id="content">
-				<h2>Home</h2>
-				<div id="intro">
-					<p>Welcome to <span class="caps">H3RALD</span>.com, Fabio Cevasco’s personal web site.</p>
-				</div>
-
-
-				<div id="slider">
-					<div class="scroll">
-						<div class="scrollContainer">
-
-							<div class="panel" id="latest">
-								<h3>Latest Articles</h3>
-								TODO
-							</div>
-							<div class="panel" id="popular">
-								<h3>Popular Articles</h3>
-								TODO
-
-							</div>		
-							<div class="panel" id="tags">
-								<h3>Tags</h3>
-								<ul>
-									<li><a href="#">Ruby</a></li>
-									<li><a href="#">Programming</a></li>
-									<li><a href="#">RedBook</a></li>	   
-									<li><a href="#">Productivity</a></li>	   
-									<li><a href="#">Test #1</a></li>	   
-									<li><a href="#">Test #2</a></li>	   
-									<li><a href="#">Test #3</a></li>	   
-									<li><a href="#">Test #4</a></li>	   
-								</ul>
-
-
-
-							</div>
-							<div class="panel" id="projects">
-								<h3>Projects</h3>
-							</div>
-							<div class="panel" id="about">
-								<h3>About</h3>
-							</div>
-
-						</div><!-- .scrollContainer -->
-					</div><!-- .scroll -->
-				</div><!-- #slider -->
-
-
-				<h3>Bookmarks</h3>
-				<div id="delicious">
-
-				</div>
-
-
-				<h3>Thoughts</h3>
-				<div id="twitter">
-				</div>
-
-
-			</div>
-			<!-- CONTENT END -->
-
-			<div id="push"></div>
-		</div>
-		<!-- CONTAINER END -->
-	</div> <!-- WRAPPER END -->
-	<div id="footer">
-		<div id="footer-container">
-
-			<div class="footer-div">Interesting Places: 
-				<a href="http://www.cyberarmy.net/" class="link">CyberArmy</a> |
-				<a href="http://andreagandino.com/" class="link">Andrea Gandino</a> | 
-				<a href="http://www.webmasterwords.com/" class="link">Webmaster Words</a> | 
-			</div>
-			<div class="footer-div">Sponsored Links: 	
-
-
-				<a href="http://www.hardstand.com.br/" class="link">Codigo de barras</a>  |  <a href="http://www.seelikepat.com/" class="link">Crystalens | St. Louis Surgery</a>  |  <a href="http://www.rapidsupplies.com/" class="link">Discount Computer Accessories</a> 
-
-
-
-			</div>
-			<div class="footer-div">H3RALD Web Site v7.1.2 <em>"PlainText"</em> – © 2004-2009 <strong>Fabio Cevasco</strong> – <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Some rights reserved</a> | <img alt="Valid" src="images/tick.gif"> <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.0 Strict</a> <img alt="Valid" src="images/tick.gif"> <a href="http://jigsaw.w3.org/css-validator/" class="link">CSS 2.1</a></div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		Cufon.now();
-		</script>
-	</body>
-</html>
+		<script src="js/feeds.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			Cufon.now();
+			</script>
+		</body>
+	</html>
