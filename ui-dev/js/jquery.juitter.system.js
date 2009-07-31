@@ -7,7 +7,7 @@ $(document).ready(function() {
 		// They are optional here.
 		// I'm changing here as a example only
 		lang:"", // restricts the search by the given language
-		live:"live-120", // the number after "live-" indicates the time in seconds to wait before request the Twitter API for updates.
+		live:"live-300", // the number after "live-" indicates the time in seconds to wait before request the Twitter API for updates.
 		placeHolder:"twitter", // Set a place holder DIV which will receive the list of tweets example <div id="juitterContainer"></div>
 		loadMSG: "Loading messages...", // Loading message, if you want to show an image, fill it with "image/gif" and go to the next variable to set which image you want to use on 
 		imgName: "loader.gif", // Loading image, to enable it, go to the loadMSG var above and change it to "image/gif"

@@ -28,6 +28,13 @@ h3
 	border-bottom: 1px solid #C0C0C0;
 }
 
+#services h3
+{
+	font-size: 120%;
+	border: none;
+	cursor: pointer;
+}
+
 h4
 {
 	font-size: 120%;

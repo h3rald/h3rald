@@ -37,10 +37,20 @@
 		<script src="js/jquery.juitter.js" type="text/javascript"></script>
 		<script src="js/jquery.juitter.system.js" type="text/javascript"></script>
 		<script src="js/jquery.jgfeed-min.js" type="text/javascript"></script>
+		<script src="js/jquery.chili-1.7.pack.js" type="text/javascript"></script>
+		<script src="js/jquery.easing.js" type="text/javascript"></script>
+		<script src="js/jquery.dimensions.js" type="text/javascript"></script>
+		<script src="js/jquery.accordion.js" type="text/javascript"></script>
 
 		<script type="text/javascript">
 $(document).ready(function() {
 		$.slider();
+		$('#services').accordion({
+			header: '.accordion-h',
+			event: 'mouseover',
+			autoheight: true,
+			animated: "bounceslide"
+		}); 
 		});
 Cufon.replace('#navigation');
 Cufon.replace('h3')('h2')('h4')('h5');
@@ -137,17 +147,16 @@ Cufon.replace('h3')('h2')('h4')('h5');
 						</div><!-- .scroll -->
 					</div><!-- #slider -->
 
-
-					<h3>Bookmarks</h3>
+					<div id="services">
+					<h3 class="accordion-h">Thoughts</h3>
+					<div id="twitter">
+					</div>
+					<h3 class="accordion-h">Bookmarks</h3>
 					<div id="delicious">
 					</div>
-					<h3>Comments</h3>
+					<h3 class="accordion-h">Comments</h3>
 					<div id="backtype">
 					</div>
-
-
-					<h3>Thoughts</h3>
-					<div id="twitter">
 					</div>
 
 
