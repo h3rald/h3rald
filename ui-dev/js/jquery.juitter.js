@@ -149,8 +149,7 @@ The Juitter developer shall have no responsability for data loss or damage of an
 						}
 					});	
 					ultID=tultID;
-					// qtip tooltip
-					$('.twitter-item[title]').qtip(dark_tooltip);
+					tweets_received();
 				}
 			});
 		},	

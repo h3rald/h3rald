@@ -7,7 +7,6 @@ h2, h3, h4, h5
 	color: #B80000;
 	padding-bottom:0.05em;
 	margin-bottom: 0.5em;
-	width: 785px;
 }
 
 h1
@@ -19,26 +18,23 @@ h1
 h2
 {
 	font-size: 180%;
-	border-bottom: 1px solid #C0C0C0;
 }
 
 h3
 {
 	font-size: 140%;
-	border-bottom: 1px solid #C0C0C0;
 }
 
 #services h3
 {
 	font-size: 120%;
-	border: none;
+	border: 1px solid #000;
 	cursor: pointer;
 }
 
 h4
 {
 	font-size: 120%;
-	border-bottom: 1px solid #C0C0C0;
 }
 
 em {
@@ -51,6 +47,7 @@ em {
 a
 {
 	text-decoration:none;
+	outline:none;
 }
 
 a
@@ -61,11 +58,6 @@ a
 a:hover
 {
 	color: #CF282D;
-}
-
-#palette a
-{
-	border: none;
 }
 
 #content h2 a, #content h3 a

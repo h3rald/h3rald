@@ -127,12 +127,17 @@ blockquote, .note
 
 /*** HOME Page ***/
 
+#services li
+{
+	margin-left: 0;
+}
+
 .feed-item, .twitter-item
 {
 	list-style-type: none;
-	padding: 0.5em;
+	padding: 0.2em;
 	border: 1px solid #000;
-	margin: 3px 5px;
+	margin: 3px 0;
 	background: #171617;
 	color: #BDB7BA;
 }

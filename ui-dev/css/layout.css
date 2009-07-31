@@ -18,7 +18,7 @@ html, body
 
 h1, h2, h3, h4, h5, h6
 {  
-	margin: 2em 0;  
+	margin: 1em 0;  
 }
 
 p, ol, ul
@@ -110,7 +110,6 @@ body
 	margin-bottom: 5px;
 	font-weight: bold;
 	font-family: Georgia, Serif;
-
 }
 
 /******** CONTENT *******/
@@ -203,9 +202,10 @@ body
 /* slider */
 
 #slider {
-  width: 620px;
+  width: 800px;
   margin: 0 auto;
   position: relative;
+	border: 1px solid #000;
 }
 
 .scroll {
@@ -213,17 +213,18 @@ body
   overflow: auto;
   position: relative; /* fix for IE to respect overflow */
   clear: left;
-  background: #FFFFFF url(images/content_pane-gradient.gif) repeat-x scroll left bottom;
+  background: #FFFFFF; 
 }
 
 .scrollContainer div.panel {
-  padding: 20px;
+  padding: 10px;
   height: 210px;
-  width: 580px; /* change to 560px if not using JS to remove rh.scroll */
+  width: 800px; 
 }
 .scrollButtons {
   position: absolute;
-  top: 150px;
+  top: 110px;
+	z-index: 3000;
   cursor: pointer;
 }
 
@@ -234,9 +235,3 @@ body
 .scrollButtons.right {
   right: -20px;
 }
-
-/* Juitter */
-
-.juitterAvatar, .JRM {
-}
-
