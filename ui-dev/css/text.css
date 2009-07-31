@@ -48,14 +48,12 @@ a
 
 a
 {
-	color: #313634;
-	border-bottom: 1px dotted #313634;
+	color: #A4282D;
 }
 
 a:hover
 {
-	color: #313634;
-	border-bottom: 1px solid #313634;
+	color: #CF282D;
 }
 
 #palette a

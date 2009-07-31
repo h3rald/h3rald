@@ -129,13 +129,14 @@ The Juitter developer shall have no responsability for data loss or damage of an
 									mHTML="<a href='http://www.twitter.com/"+item.from_user+"'>@"+item.from_user+":</a> "+$.Juitter.textFormat(tweet)+" -| <span class='time'>"+item.created_at+"</span> |-  <a href='" + link + "' "+openLink+">"+readMore+"</a>";	
 									break;
 									case "h3rald":
-									mHTML=$.Juitter.textFormat(tweet)+"<br/><span class='time'>["+$.timeago(item.created_at)+"]</span> ";	
+									mHTML=$.Juitter.textFormat(tweet);	
 									break;
 								}
 								$("<li></li>") 
 									.html(mHTML)  
 									.attr('id', 'twittLI'+msgNb)
-									.attr('class', 'twittLI')
+									.attr('class', 'twitter-item')
+									.attr('title',$.timeago(item.created_at))
 									.appendTo("#twittList"+ultID);
 
 								$('#twittLI'+msgNb).hide();
@@ -148,6 +149,8 @@ The Juitter developer shall have no responsability for data loss or damage of an
 						}
 					});	
 					ultID=tultID;
+					// qtip tooltip
+					$('.twitter-item[title]').qtip(dark_tooltip);
 				}
 			});
 		},	

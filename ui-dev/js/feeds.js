@@ -1,7 +1,7 @@
 function feed_entry(entry){
-	var published_at = $("<span>["+$.timeago(entry.publishedDate)+"] </span>").addClass('published_at'); 
+	var published_at = $.timeago(entry.publishedDate)
 	var link = $("<a>"+entry.title+"</a>").attr('href', entry.link);
-	return $("<li></li>").html(published_at.append(link));
+	return $("<li class='feed-item'></li>").attr("title", published_at).html(link);
 };
 function display_feed(feed, element){
 	if(!feed){
