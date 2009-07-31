@@ -45,10 +45,12 @@
 		<script type="text/javascript">
 $(document).ready(function() {
 		$.slider();
+		$('#up-arrow').click(function(){ $.scrollTo('#header', 1000)});
+		$('#down-arrow').click(function(){ $.scrollTo('#footer', 1000)});
 		$('#services').accordion({
 			header: '.accordion-h',
 			event: 'mouseover',
-			autoheight: true,
+			autoHeight: true,
 			animated: "bounceslide"
 		}); 
 		});
@@ -58,7 +60,6 @@ Cufon.replace('h3')('h2')('h4')('h5');
 	</head>
 	<body>
 		<div id="wrapper">
-			<a name="top"></a>
 			<div id="header">
 				<!--[if lte IE 6]>
 				<div id="ie-warning">
@@ -88,16 +89,8 @@ Cufon.replace('h3')('h2')('h4')('h5');
 			<!-- CONTAINER START -->
 			<div id="container">
 				<ul id="palette">
-					<li><a href="#top"><img alt="^" src="images/arrow_up.gif" title="scroll up"></a></li>
-
-					<li><a href="http://www.h3rald.com/rss"><img alt="#" src="images/feed.png" title="subscribe"></a></li>
-
-					<li><a target="_blank" href="http://www.addthis.com/bookmark.php" onclick="addthis_url = location.href; addthis_title = document.title; return addthis_click(this);" rel="external">
-						<img alt="*" src="images/bookmark.gif" title="bookmark"></a></li>
-					<li><a href="#" onclick="location.href='mailto:?SUBJECT='+document.title+'&amp;BODY='+escape(document.title)+'\n['+escape(location.href)+']'"><img alt="@" src="images/mail_back.gif" title="mail"></a></li>
-
-					<li><a href="#" onclick="window.print()"><img alt="P" src="images/printer.gif" title="print"></a></li>
-					<li><a href="#footer"><img alt="v" src="images/arrow_down.gif" title="scroll down"></a></li>
+					<li><a href="#" id="up-arrow"><img alt="^" src="images/arrow_up.gif"></a></li>
+					<li><a href="#" id="down-arrow"><img alt="v" src="images/arrow_down.gif"></a></li>
 				</ul>
 				<!-- CONTENT START -->
 				<div id="content">
@@ -105,7 +98,6 @@ Cufon.replace('h3')('h2')('h4')('h5');
 					<div id="intro">
 						<p>Welcome to <span class="caps">H3RALD</span>.com, Fabio Cevasco’s personal web site.</p>
 					</div>
-
 
 					<div id="slider">
 						<div class="scroll">
@@ -148,11 +140,11 @@ Cufon.replace('h3')('h2')('h4')('h5');
 					</div><!-- #slider -->
 
 					<div id="services">
-					<h3 class="accordion-h">Thoughts</h3>
-					<div id="twitter">
-					</div>
 					<h3 class="accordion-h">Bookmarks</h3>
 					<div id="delicious">
+					</div>
+					<h3 class="accordion-h">Thoughts</h3>
+					<div id="twitter">
 					</div>
 					<h3 class="accordion-h">Comments</h3>
 					<div id="backtype">

@@ -54,7 +54,6 @@ body
 	background-color: #000;
 	padding: 5px 0;
 	height: 55px;
-	border-bottom: 1px solid #C0C0C0;
 	border-top: 0 solid #313634;
 }
 
@@ -119,11 +118,12 @@ body
 #container
 {
 	clear: both;
+	padding: 15px;
 	padding-top:60px;
 	background-color: #fff;
-	border-left: 1px solid #C0C0C0;
+	border-left: 16px solid #000;
 	margin: auto;
-	width: 820px;
+	width: 900px;
 	height: 100%;
 }
 
@@ -131,7 +131,7 @@ body
 {
 	position: fixed;
 	margin-top: 20px;	
-	margin-left: -9px;
+	margin-left: -31px;
 	width: 14px;
 	background-color: #E2E9EB;
 	border: 1px solid #C0C0C0;
@@ -157,6 +157,8 @@ body
 	width: 800px;
 	text-align: justify;
 }
+
+
 
 
 /* FOOTER */
@@ -190,7 +192,6 @@ body
 	font-size: 95%;
 	text-align: center;
 	background-color: #000;
-	border-top: 1px solid #C0C0C0;
 }
 
 .footer-div

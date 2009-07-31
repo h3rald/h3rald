@@ -11,7 +11,7 @@ $(document).ready(function() {
 		placeHolder:"twitter", // Set a place holder DIV which will receive the list of tweets example <div id="juitterContainer"></div>
 		loadMSG: "Loading messages...", // Loading message, if you want to show an image, fill it with "image/gif" and go to the next variable to set which image you want to use on 
 		imgName: "loader.gif", // Loading image, to enable it, go to the loadMSG var above and change it to "image/gif"
-		total: 10, // number of tweets to be show - max 100
+		total: 7, // number of tweets to be show - max 100
 		readMore: "Read it on Twitter", // read more message to be show after the tweet content
 		nameUser:"h3rald", // insert "image" to show avatar of "text" to show the name of the user that sent the tweet 
 		openExternalLinks:"newWindow", // here you can choose how to open link to external websites, "newWindow" or "sameWindow"

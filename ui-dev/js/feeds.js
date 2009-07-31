@@ -21,4 +21,4 @@ var backtype_feed = function(feed){
 	display_feed(feed, "#backtype")
 };
 $.jGFeed('http://feeds.delicious.com/v2/rss/h3rald', delicious_feed, 10)
-$.jGFeed('http://feeds.backtype.com/home/21105', backtype_feed, 10)
+$.jGFeed('http://feeds.backtype.com/home/21105', backtype_feed, 7)
