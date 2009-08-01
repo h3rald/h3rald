@@ -132,19 +132,31 @@ blockquote, .note
 	margin-left: 0;
 }
 
+#services h3
+{
+	padding-top: 4px;
+	font-size: 170%;
+	font-variant: italic;
+}
+
+#services img
+{
+	float: left;
+}
+
+
+
 .feed-item
 {
 	list-style-type: none;
 	padding: 0.2em;
 	border: 1px solid #000;
 	margin: 3px 2px;
-	background: #111;
 	color: #BDB7BA;
 }
 
 .feed-item:hover
 {
-	background: #171617;
 }
 
 /**** TABLES ****/

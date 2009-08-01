@@ -160,13 +160,13 @@ body
 
 #wrapper {
 	min-height: 100%;
-	margin-bottom: -450px;
+	margin-bottom: -500px;
 	position: relative;
 }  
 
 #footer {
 	position: relative;
-	height: 450px;
+	height: 500px;
 	font-family: Georgia, Serif;
 	width: 100%;
 	font-size: 95%;
@@ -176,7 +176,7 @@ body
 
 .clearfooter
 {
-	height: 450px;
+	height: 500px;
 	clear: both;
 }
 .footer-left, .footer-right, .footer-center

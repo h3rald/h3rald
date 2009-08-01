@@ -1,10 +1,10 @@
 var dark_tooltip = { 
-		style: { background:'#000000',
+		style: { background:'#222222',
 						 color: '#cccccc',
 						 border: {
 						 	width: 1,
 							radius: 6,
-							color: '#000000'
+							color: '#222222'
 						 },
 						 tip: true },
 		position: {
