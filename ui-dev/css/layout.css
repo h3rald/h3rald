@@ -66,7 +66,7 @@ body
 #header-container, #footer-container
 {
 	margin: auto;
-	width: 850px;
+	width: 900px;
 }
 
 #header-left
@@ -116,7 +116,6 @@ body
 
 #container
 {
-	clear: both;
 	padding: 15px;
 	padding-top:60px;
 	background-color: #fff;
@@ -153,39 +152,21 @@ body
 
 #content
 {
-	width: 800px;
 	text-align: justify;
 }
 
-
-
-
 /* FOOTER */
-/* Special Thanks to Ryan Fait (http://ryanfait.com/sticky-footer) */
 
-
-#footer, #push
-{
-	height: 55px;
-}
-
-#push
-{
-	clear: both;
-}
 
 #wrapper {
 	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -55px; /* the bottom margin is the negative value of the footer's height */
-}
+	margin-bottom: -450px;
+	position: relative;
+}  
 
-
-#footer
-{
-	position: absolute;
-	padding-top: 5px;
+#footer {
+	position: relative;
+	height: 450px;
 	font-family: Georgia, Serif;
 	width: 100%;
 	font-size: 95%;
@@ -193,8 +174,36 @@ body
 	background-color: #000;
 }
 
+.clearfooter
+{
+	height: 450px;
+	clear: both;
+}
+.footer-left, .footer-right, .footer-center
+{
+	float:left;
+	text-align: left;
+	font-size: 90%;
+}
+
+.footer-left
+{
+	width: 40%;
+}
+
+.footer-right
+{
+	width: 30%;
+}
+
+.footer-center
+{
+	width: 30%;
+}
+
 .footer-div
 {
+	clear: both;
 	font-size: 95%;
 	color: #CACACA;
 }
@@ -202,7 +211,7 @@ body
 /* slider */
 
 #slider {
-  width: 800px;
+  width: 850px;
   margin: 0 auto;
   position: relative;
 	border: 1px solid #000;
@@ -219,7 +228,7 @@ body
 .scrollContainer div.panel {
   padding: 10px;
   height: 210px;
-  width: 800px; 
+  width: 850px;
 }
 .scrollButtons {
   position: absolute;

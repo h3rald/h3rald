@@ -132,19 +132,19 @@ blockquote, .note
 	margin-left: 0;
 }
 
-.feed-item, .twitter-item
+.feed-item
 {
 	list-style-type: none;
 	padding: 0.2em;
 	border: 1px solid #000;
-	margin: 3px 0;
-	background: #171617;
+	margin: 3px 2px;
+	background: #111;
 	color: #BDB7BA;
 }
 
-.feed-item:hover, .twitter-item:hover
+.feed-item:hover
 {
-	background: #545153;
+	background: #171617;
 }
 
 /**** TABLES ****/

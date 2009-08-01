@@ -20,5 +20,9 @@ var delicious_feed = function(feed){
 var backtype_feed = function(feed){
 	display_feed(feed, "#backtype")
 };
+var twitter_feed = function(feed){
+	display_feed(feed, "#twitter")
+};
 $.jGFeed('http://feeds.delicious.com/v2/rss/h3rald', delicious_feed, 10)
 $.jGFeed('http://feeds.backtype.com/home/21105', backtype_feed, 10)
+$.jGFeed('http://twitter.com/statuses/user_timeline/h3rald.rss', twitter_feed, 7)
