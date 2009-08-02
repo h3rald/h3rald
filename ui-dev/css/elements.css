@@ -145,8 +145,6 @@ blockquote, .note
 	float: left;
 }
 
-
-
 .feed-item, .feed-item-ext
 {
 	list-style-type: none;
@@ -156,8 +154,10 @@ blockquote, .note
 	color: #BDB7BA;
 }
 
-.feed-item:hover
+.half-hidden
 {
+	opacity: 0.3;
+	filter:alpha(opacity=0.3);
 }
 
 /**** TABLES ****/

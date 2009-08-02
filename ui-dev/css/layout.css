@@ -117,9 +117,9 @@ body
 #container
 {
 	padding: 15px;
-	padding-top:60px;
+	padding-top: 60px;
 	background-color: #fff;
-	border-left: 16px solid #000;
+	border-left: 32px solid #000;
 	margin: auto;
 	width: 900px;
 	height: 100%;
@@ -129,25 +129,23 @@ body
 {
 	position: fixed;
 	margin-top: 20px;	
-	margin-left: -31px;
-	width: 14px;
-	background-color: #E2E9EB;
-	border: 1px solid #C0C0C0;
+	margin-left: -46px;
+	width: 32px;
+	z-index: 3000;
 }
 
 #palette li
 {
 	list-style-image: none;
 	list-style-type: none;
-	height: 14px;
-	width: 14px;
+	height: 32px;
+	width: 32px;
 	vertical-align: middle;
 	text-align: center;
 }
 
 #palette li:hover
 {
-	background-color: #fff;
 }
 
 #content

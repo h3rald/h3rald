@@ -25,8 +25,8 @@
 
  // apply our left + right buttons
  $scroll
-	 .before('<img class="scrollButtons left" src="images/icons/left.png" />')
-	 .after('<img class="scrollButtons right" src="images/icons/right.png" />');
+	 .before('<img class="scrollButtons left half-hidden" src="images/icons/left.png" />')
+	 .after('<img class="scrollButtons right half-hidden" src="images/icons/right.png" />');
 
  // handle nav selection
  function selectNav() {
