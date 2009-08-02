@@ -1,40 +1,39 @@
 function feed_entry(entry, element){
 	var published_at = $.timeago(entry.publishedDate);
-	
+
 	switch(element)
 	{
 		case "#twitter":
 			var content = entry.title
-				.replace(/^h3rald:/, '')
-				.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/, '<a href="$1">#$1</a>')
-				.replace(/@([a-zA-Z1-9_]*)/, '<a href="http://www.twitter.com/$1">@$1</a>')
-				.replace(/#([a-zA-Z1-9_]*)/, '<a href="http://www.twitter.com/search?q=%23$1">#@$1</a>')
-			break;
+			.replace(/^h3rald:/, '')
+			.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/, '<a href="$1">$1</a>')
+			.replace(/@([a-zA-Z1-9_]*)/, '<a href="http://www.twitter.com/$1">@$1</a>')
+			.replace(/ #([a-zA-Z1-9_]*)/, '<a href="http://www.twitter.com/search?q=%23$1">#@$1</a>')
+			return $("<li class='feed-item'></li>").attr("title", published_at).html(content);
 		case "#delicious":
-			var content = "<a href='"+entry.link+"'>"+entry.title+"</a>";
-			content += " (";
-			var categories = Array();
-			for (i=0; i<entry.categories.length; i++)
-			{
-				categories[i] = "<a href='http://delicious.com/popular/"+entry.categories[i]+"'>@"+entry.categories[i]+"</a> ";
-			}
-			content += categories.join(', ').replace(/ $/, '');
-			content += ")"
-			break;
+			var content = "&#0187; <a href='"+entry.link+"'>"+entry.title+"</a>";
+		content += "<br />tags: ";
+		var categories = Array();
+		for (i=0; i<entry.categories.length; i++)
+		{
+			categories[i] = "<a href='http://delicious.com/h3rald/"+entry.categories[i]+"'>"+entry.categories[i]+"</a> ";
+		}
+		content += categories.join(', ').replace(/ $/, '');
+		return $("<li class='feed-item'></li>").attr("title", published_at).html(content);
 		case "#backtype":
-			var content = "<a href='"+entry.link+"'>"+entry.title+"</a>";
-			break;
-			
+			var content = "On: <a href='"+entry.link+"'>"+entry.title+"</a>";
+		return $("<li class='feed-item-ext'></li>").attr("title", entry.content).html(content);
 	}
-	return $("<li class='feed-item'></li>").attr("title", published_at).html(content);
 };
 function display_feed(feed, element){
+
 	if(!feed){
 		return false;
 	}
-	var feed_list = $("<ul></ul>")
-	for(var i=0; i<feed.entries.length; i++){
-		var entry = feed.entries[i];
+	var feed_list = $("<ul></ul>");
+	var entries = feed.entries;
+	for(var i=0; i<entries.length; i++){
+		var entry = entries[i];
 		feed_entry(entry, element).appendTo(feed_list).fadeIn(1000);
 	}
 	feed_list.appendTo(element)

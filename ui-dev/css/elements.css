@@ -134,9 +134,10 @@ blockquote, .note
 
 #services h3
 {
-	padding-top: 4px;
+	padding-top: 20px;
 	font-size: 170%;
-	font-variant: italic;
+	font-style: italic;
+	height: 30px;
 }
 
 #services img
@@ -146,7 +147,7 @@ blockquote, .note
 
 
 
-.feed-item
+.feed-item, .feed-item-ext
 {
 	list-style-type: none;
 	padding: 0.2em;
