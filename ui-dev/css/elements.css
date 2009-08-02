@@ -226,4 +226,29 @@ input[type="text"], textarea
 	background-color: #E2E9EB;
 }
 
+/* Google Search */
+
+.gsc-branding, .gsc-resultsHeader, .gs-visibleUrl
+{
+	display:none;
+}
+
+table.gsc-search-box
+{
+	height: 25px;
+}
+
+.gsc-control, .gsc-resultsRoot
+{
+	width: 850px;
+}
+.gsc-results
+{
+}
+
+.gsc-search-box td
+{
+	border: none;
+}
+
 

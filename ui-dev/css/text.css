@@ -44,18 +44,18 @@ em {
 
 /******* LINKS *******/
 
-a
+a, a.gs-title
 {
 	text-decoration:none;
 	outline:none;
 }
 
-a
+a, a.gs-title
 {
 	color: #A4282D;
 }
 
-a:hover
+a:hover, a.gs-title
 {
 	color: #CF282D;
 }
