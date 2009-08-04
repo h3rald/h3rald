@@ -1,0 +1,3 @@
+output_dir:  "output"
+data_source: "filesystem_combined"
+router:      "default"
