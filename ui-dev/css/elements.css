@@ -134,10 +134,16 @@ blockquote, .note
 
 #services h3
 {
-	padding-top: 20px;
 	font-size: 170%;
 	font-style: italic;
-	height: 30px;
+	height: 50px;
+	display: block;
+}
+
+#services h3 a
+{
+	padding-top: 35px;
+	vertical-align: middle;
 }
 
 #services img
@@ -228,7 +234,7 @@ input[type="text"], textarea
 
 /* Google Search */
 
-.gsc-branding, .gsc-resultsHeader, .gs-visibleUrl
+.gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark
 {
 	display:none;
 }
@@ -242,13 +248,50 @@ table.gsc-search-box
 {
 	width: 850px;
 }
-.gsc-results
+.gsc-result
 {
+	padding: 6px 0;
 }
 
-.gsc-search-box td
+.gsc-search-box td, .gsc-search-box
 {
 	border: none;
+}
+
+.gsc-input
+{
+	width: 200px;
+}
+
+.gsc-branding
+{
+	height: 20px;
+	font-size: 80%;
+	font-style: italic;
+	font-family: Georgia, Serif;
+	border: none;
+	text-align: right;
+}
+
+.gsc-clear-button
+{
+	background: url('../images/icons/close.png')
+}
+
+.gsc-cursor-page
+{
+	display: inline;
+	padding-right: 7px;
+}
+
+.gsc-cursor-page:hover
+{
+	cursor: pointer;
+}
+
+.gsc-cursor-current-page
+{
+	font-weight: bold;
 }
 
 

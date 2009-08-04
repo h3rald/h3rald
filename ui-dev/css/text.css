@@ -50,12 +50,12 @@ a, a.gs-title
 	outline:none;
 }
 
-a, a.gs-title
+a, a.gs-title, .gsc-cursor-page
 {
 	color: #A4282D;
 }
 
-a:hover, a.gs-title
+a:hover, a.gs-title:hover, .gsc-cursor-page:hover
 {
 	color: #CF282D;
 }
