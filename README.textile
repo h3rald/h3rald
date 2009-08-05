@@ -1,0 +1,5 @@
+h2. Dependencies
+
+The following ruby gems are required to compile the site:
+* nanoc
+* extlib

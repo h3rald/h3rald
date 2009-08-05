@@ -1,5 +1,4 @@
-Dir['tasks/**/*.rake'].sort.each { |rakefile| load rakefile }
+Dir['tasks/**/*.rake'].sort.each { |rakefile| load rakefile; puts rakefile }
 
-task :default do
-  puts 'This is an example rake task.'
+task :default => [:copy_files] do
 end
