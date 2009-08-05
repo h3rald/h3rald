@@ -48,7 +48,7 @@ var twitter_feed = function(feed){
 
 function backtype_comments()
 {
-	$.getJSON("js/comments.json",
+	$.getJSON("/js/comments.json",
 			function(data){
 			var comment_list = $("<ul></ul>");
 			$.each(data.comments, function(i, comment){

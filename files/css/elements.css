@@ -273,9 +273,16 @@ table.gsc-search-box
 	text-align: right;
 }
 
-.gsc-clear-button
+div.gsc-clear-button
 {
-	background: url('../images/icons/close.png')
+	background: transparent url('../images/icons/close.png') no-repeat center 50%;
+	width: 16px;
+	height: 16px;
+}
+
+div.gsc-clear-button:hover
+{
+	cursor: pointer;
 }
 
 .gsc-cursor-page

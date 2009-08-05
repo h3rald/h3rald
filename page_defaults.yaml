@@ -1,7 +1,7 @@
 # Built-in 
 layout: default
 extension: html
-filters_pre: []
+filters_pre: ['redcloth']
 skip_output: false
 filters_post: []
 custom_path: 

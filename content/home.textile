@@ -1,0 +1,35 @@
+-----
+layout: home
+title: Home
+
+-----
+<div class="panel" id="latest">
+
+h3. Latest Articles
+
+</div>
+
+<div class="panel" id="popular">
+
+h3. Popular Articles
+
+</div>		
+								
+<div class="panel" id="tags">
+
+h3. Tags
+
+</div>
+									
+<div class="panel" id="projects">
+
+h3. Projects
+					
+</div>
+									
+<div class="panel" id="about">
+
+h3. About
+									
+</div>
+
