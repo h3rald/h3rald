@@ -160,12 +160,6 @@ blockquote, .note
 	color: #BDB7BA;
 }
 
-.half-hidden
-{
-	opacity: 0.3;
-	filter:alpha(opacity=0.3);
-}
-
 /**** TABLES ****/
 
 table
