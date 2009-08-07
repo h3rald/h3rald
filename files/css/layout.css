@@ -171,8 +171,8 @@ body
 
 .inner-border 
 {
-	background: transparent url('../images/redcloth.png') top repeat-x;
-	height: 32px;
+	background: #000 url('../images/redcloth.png') top repeat-x;
+	height: 30px;
 }
 
 

@@ -261,6 +261,8 @@ table.gsc-search-box
 {
 	height: 20px;
 	font-size: 80%;
+	color: #ccc;
+	margin-top: -8px;
 	font-style: italic;
 	font-family: Georgia, Serif;
 	border: none;
