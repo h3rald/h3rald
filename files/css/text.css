@@ -5,28 +5,44 @@ h2, h3, h4, h5
 	font-family: Georgia, Serif;
 	font-weight: normal;
 	color: #B80000;
+	text-align: center; 
 }
 
 h1
 {
 	margin: 0;
-	font-size: 200%;
+	font-size: 50px;
 }
 
 h2
 {
-	font-size: 2em;
+	margin: 0;
+	font-size: 45px;
 }
 
 h3
 {
-	font-size: 1.8em;
+	margin: 0;
+	font-size: 35px;
+}
+
+.dropcap {
+	font-size:50px;
+	display:block;
+	float:left;
+	padding: 5px;
+	color: #B80000;
+}
+
+h2 + p:first-line {
+	font-variant:small-caps;
 }
 
 #services h3
 {
-	font-size: 3em;
+	font-size: 35px;
 	border: 1px solid #000;
+	text-align: left;
 	cursor: pointer;
 	font-style: italic;
 	height: 50px;
@@ -35,7 +51,8 @@ h3
 
 h4
 {
-	font-size: 2em;
+	margin: 0;
+	font-size: 30px;
 }
 
 em {

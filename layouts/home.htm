@@ -33,10 +33,11 @@ filter: erb
 		<script src="/js/Chopin_400.font.js" type="text/javascript"></script>
 		<script src="/js/Cardo_400.font.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			Cufon.replace('h2', {fontFamily: 'Cardo'});
-			Cufon.replace('h3', {fontFamily: 'Cardo'});
+			Cufon.replace('h2', {fontFamily: 'Chopin'});
+			Cufon.replace('h3', {fontFamily: 'Chopin'});
 			Cufon.replace('#services h3', {fontFamily: 'Chopin'});
 			Cufon.replace('#navigation a', {fontFamily: 'Chopin'});
+
 		</script>
 
 
@@ -73,8 +74,7 @@ filter: erb
 					</div>
 					<div id="header-right">
 						<ul id="navigation">
-							<li><a href="#latest" class="cross-link">Latest</a></li>
-							<li><a href="#popular" class="cross-link">Popular</a></li>
+							<li><a href="#home" class="cross-link">Home</a></li>
 							<li><a href="#tags" class="cross-link">Tags</a></li>
 							<li><a href="#projects" class="cross-link">Projects</a></li>
 							<li><a href="#about" class="cross-link">About</a></li>
@@ -96,8 +96,6 @@ filter: erb
 				</ul>
 				<!-- CONTENT START -->
 				<div id="content" class="clearfix">
-					<h2><%= @page.title %></h2>
-
 					<div id="search_results"></div>
 					<div id="slider">
 						<div class="scroll">

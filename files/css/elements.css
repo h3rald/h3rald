@@ -222,6 +222,7 @@ input[type="text"], textarea
 table.gsc-search-box
 {
 	height: 25px;
+	margin-top: -13px;
 }
 
 .gsc-control, .gsc-resultsRoot
@@ -248,7 +249,7 @@ table.gsc-search-box
 	height: 20px;
 	font-size: 80%;
 	color: #ccc;
-	margin-top: -8px;
+	margin-top: -5px;
 	font-style: italic;
 	font-family: Georgia, Serif;
 	border: none;

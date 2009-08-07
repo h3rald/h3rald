@@ -149,7 +149,7 @@ body
 
 #wrapper {
 	min-height: 100%;
-	margin-bottom: -500px;
+	margin-bottom: -450px;
 	position: relative;
 	background: #fff url('../images/bkg.png') top repeat;
 }  
@@ -179,7 +179,7 @@ body
 
 #footer {
 	position: relative;
-	height: 500px;
+	height: 450px;
 	font-family: Georgia, Serif;
 	width: 100%;
 	font-size: 95%;
@@ -189,7 +189,7 @@ body
 
 .clearfooter
 {
-	height: 500px;
+	height: 450px;
 	clear: both;
 }
 .footer-left, .footer-right, .footer-center
@@ -234,11 +234,9 @@ body
   overflow: auto;
   position: relative; /* fix for IE to respect overflow */
   clear: left;
-  /* background: #FFFFFF; */
 }
 
 .scrollContainer div.panel {
-  padding: 10px;
   height: auto;
   width: 850px;
 }

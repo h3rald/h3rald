@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'extlib'
 require 'pathname'
 require 'fileutils'
