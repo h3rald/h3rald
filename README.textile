@@ -3,7 +3,3 @@ h2. Dependencies
 The following ruby gems are required to compile the site:
 * nanoc
 * extlib
-
-h2. Credits
-
-* "Old Paper Stock Textures":http://ayelie-stock.deviantart.com/art/Old-Paper-pack-67117235

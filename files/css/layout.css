@@ -41,7 +41,6 @@ body
 	font: 0.8em Verdana, sans-serif;
 	margin: 0;
 	padding: 0;
-	background: #fff url('../images/paper.jpg') repeat;
 }
 
 
@@ -52,13 +51,13 @@ body
 	width: 100%;
 	background-color: #000;
 	padding: 5px 0;
-	height: 55px;
+	height: 60px;
 }
 
 #logo
 {
 	height: 72px;
-	z-index: 1;
+	z-index: 0;
 }
 
 #header-container, #footer-container
@@ -155,7 +154,31 @@ body
 	min-height: 100%;
 	margin-bottom: -500px;
 	position: relative;
+	background: #fff url('../images/bkg.png') top repeat;
 }  
+
+#border-top
+{
+	background: #000 url('../images/border-top.png') top repeat-x;
+	height: 35px;
+}
+
+#border-bottom
+{
+	background: #000 url('../images/border-bottom.png') bottom repeat-x;
+	height: 35px;
+}
+
+.inner-border 
+{
+	background: transparent url('../images/redcloth.png') top repeat-x;
+	height: 32px;
+}
+
+
+#logo
+{
+}
 
 #footer {
 	position: relative;
