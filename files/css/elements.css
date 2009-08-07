@@ -132,20 +132,6 @@ blockquote, .note
 	margin-left: 0;
 }
 
-#services h3
-{
-	font-size: 170%;
-	font-style: italic;
-	height: 50px;
-	display: block;
-}
-
-#services h3 a
-{
-	padding-top: 35px;
-	vertical-align: middle;
-}
-
 #services img
 {
 	float: left;
