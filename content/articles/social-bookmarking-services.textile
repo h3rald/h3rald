@@ -1,0 +1,275 @@
+----- 
+permalink: social-bookmarking-services
+title: Review of ten popular social bookmarking services
+tags: 
+- web20
+- review
+- internet
+type: article
+filter_pre: textile
+-----
+Social bookmarking[1] is perhaps one of the pillars of Web 2.0, allowing people to save, tag and share their Internet bookmarks online anytime, anywhere. Since _del.icio.us_[2] came out, the Web is not the same anymore: no more IE favourites or Firefox bookmarks, no more "Save page as..." etc., people nowadays want to do _everything_ online without being bond to a single computer, and also make everything they do or read public - apparently. This is one of the key concepts of Web 2.0[3]: sharing information in a quick and easy way, without any restrictions.Del.icio.us was the first, but of course not the only one social bookmarking system which became popular in a few months: many other followed its example, many companies developed their own alternative to del.icio.us, adding and removing features, changing bits etc. etc. Result: someone said that _"[...] There is almost 1 new social bookmark/digg like service appears one daily basis [...]"_[4].
+
+Nice, and there are also many reviews of each one as well[5]! Here's another one...
+
+<blockquote>
+*Preliminary Notes*: This round-up does _not_ include _all_ social bookmarking sites and yes, there are a lot missing. I decided to pick 10 services out of the dozens available for one simple reason: make this article more readable. I'm really sorry if your favourite social bookmarking site is not listed: if you feel creative you can add your (short!) review as a comment to this article.
+Although I recently wrote a very positive review of Ma.gnolia[6] and I know its lead developer, I do _not_ consider myself partial towards Ma.gnolia, you'll notice when I review it.
+</blockquote>
+
+
+h3. Common features and concepts
+
+The social bookmarking sites reviewed in this article are: del.icio.us[2], Ma.gnolia[7], Furl[8], Spurl[9], Yahoo MyWeb 2.0[10] Blinklist[11], Smarking[12], Shadows[13], Simpy[14] and Blogmarks[15].
+
+All these social bookmarking sites have some features in common which can be used to define _social bookmarking_ itself:
+
+* They allow users to save URLs online, adding some notes to it, and share them with others
+* Each url can be _tagged_ with custom tags user can create and manage
+* RSS is widely supported, so you can included your "recent bookmarks" in your blog, for example
+* They allow users to import/export bookmarks in various formats
+* They support the creation and management of user profiles
+* Bookmarklet, buttons or other cute little things are provided to make your life easier and bookmark faster
+
+ Such features will not be mentioned over and over in each review, of course.
+
+h3. Review parameters
+
+Besides an overview for each service and some notes regarding their intended _audience_, some other parameters will be considered and rated from 0 to 10 (the higher, the better):
+
+_Speed_
+I'm currently on dialup, and so I'll be able to effectively test the speed and rendering time of each site. The higher the mark, the faster the site is.
+
+_Features_
+Notes concerning added/missing features, and overall features rating.
+
+_Simplicity_
+Do you need to be a certified geek(TM) in order to use the service or even your dog can learn how to use it, if he tries hard? 
+
+_Interface/Design_
+This parameter concerns the visual appearance of a website. Note: it can be particularly subjective, I'll try my best to be objective.
+
+_Userbase_
+Basically the amount of people which use a determined service.
+
+Ready to go...
+
+h3. "del.icio.us":http://del.icio.us/
+!>/img/pictures/socbook/delicious.gif!
+
+* *Speed:* 10 - This is by far the fastest site to load, perhaps because it doesn't have any fancy eye-candy at all
+* *Features:* 6 - del.icio.us offers only the most essential features, nothing too fancy, but nothing too bad either
+* *Simplicity:* 6 - You need some time to get used to it, but it's not confusing like some others. Hardly any documentation or tutorial provided, but hey, this is the geek's choice after all
+* *Interface/Design:* 6 - Personally I like it, but I know I have no taste for design and interfaces. An average user would say that it's too plain and no, nothing fancy at all
+* *Userbase:* 10 - Judging by the amount of people coming to my site after one of my article made it to digg, compared to other social bookmarking services, this is BY FAR the most used one. Everyone has a del.icio.us account, then, maybe, something else
+* _*Overall Rating: 7.6*_
+
+*Overview*
+This is THE social bookmarking service, it is the first, the most supported (every other service allows importing from del.icio.us), and the most used, with several thousands of registered users. Obviously, this made it the main term of comparison for other bookmarking services, which claim to be _better_ because they are successful exactly where del.icio.us is lacking, e.g.:
+
+* Eye candy
+* they offer better user interaction (comments, messages)
+* Ratings are supported
+* More AJAX and effects
+* Other sites cache bookmarks internally or may offer thumbnails
+
+Nevertheless, del.icio.us still remains the geek's choice, the numbers speak by themselves. It is also my choice at the moment, because of its simplicity (in the sense of "no useless things are included") and speed.
+
+*Suitable for:* IT professionals, computer enthusiasts, tech-savvy people in general. Your old auntie probably won't like it, but at least she'll keep away from it and leave you in peace.
+
+h3. "Ma.gnolia":http://ma.gnolia.com/
+!>/img/pictures/socbook/magnolia.gif!
+
+* *Speed:* 5 - It's a bit slow if compared to competitors. Maybe it's just me, maybe it's the server, maybe it's Ruby on Rails.
+* *Features:* 7 - Saved copies, AJAX 5-star ratings, AJAX private/public lock, groups & messages
+* *Simplicity:* 8 - Fairly simple to learn and use, excellent documentation online
+* *Interface/Design:* 10 - I really like Ma.gnolia's website design over all the others: clean, simple and professional with AJAX features in the right place.
+* *Userbase:* 6 - It's fairly new so not many people are using it. It's being pushed by Zeldman & ALA's crew though
+* _*Overall Rating: 7.2*_
+
+*Overview*
+This _was_ my first choice and the first social bookmarking site I reviewed[6] and tried properly. It is developed in Ruby on Rails and it excels in simplicity and visual appearance, but it has some rather annoying CONs. First of all it's a bit slow for my liking, especially now that I'm on dialup. Second, the search is currently limited to tags only: it's obviously a temporary thing and it will be back soon though, but I gave it a 7 instead of a 8 for features for this reason.
+Ads are visible on the top of every page - subscribe (soon) to remove them... oh well.
+
+*Suitable for:* Anyone, although it seems to be the choice of _web designers_ and people involved in website development.
+
+h3. "Furl":http://www.furl.net/
+!>/img/pictures/socbook/furl.gif! 
+
+* *Speed:* 7 - Fast enough, no complains and no unnecessary objects or images either.
+* *Features:* 6 - saved copies, plenty of tools including their own toolbar, multiple categories but no tagclouds and not as customizeable as the others
+* *Simplicity:* 7 - Simple, organized, essential. Documentation available.
+* *Interface/Design:* 5 - This is nothing fancy at all compared to the others, a fairly _traditional_ web interface. _Web 2.0?_ ...Pardon?
+* *Userbase:* 8 - This is one of the oldest social bookmarking services and it's easier than del.icio.us, that's why the fairly large userbase.
+* _*Overall Rating: 6.6*_ 
+
+
+*Overview*
+When I tried this service after trying the others I wasn't impressed at all. The interface is fairly standard, all done in a traditional way, no AJAX at all: if you absolutely hate Web 2.0 hype, even when it's actually useful, go for this. To rate a bookmark I must click on edit and select the rating from a select menu: our children wouldn't believe it.
+The good thing about Furl, and what made it popular, presumably, is its simplicity over other similar services like del.icio.us, that's the most logical reason I could find to explain its popularity. 
+
+*Suitable for:* Anyone, users against or not yet accustomed to Web 2.0 interactivity
+
+
+h3. "Spurl":http://www.spurl.net/
+!>/img/pictures/socbook/spurl.jpg! 
+
+* *Speed:* 8 - Fast and pleasant to look at, no complaints
+* *Features:* 7 - Saved copies, del.icio.us sync, useful stats, no ratings, multilingual, some quirks (see below)
+* *Simplicity:* 8 - Yes, this is really simple and straightforward to use. Extensive documentation available.
+* *Interface/Design:* 8 - A really clean, simple, but yet nice looking and organized interface. 
+* *Userbase:* 6 - Fairly popular, not as popular as del.icio.us but on the right track
+* _*Overall Rating: 7.4*_ 
+
+*Overview*
+Now this is is an interesting service. The first thing that I really liked about it is the good del.icio.us integration: not excellent because it seems to take quite a bit to import my del.icio.us bookmarks, but everything you bookmark with Spurl can be send to del.icio.us at the same time and vice versa! They also offer interesting stats regarding your bookmarks, report broken links, cache webpages, etc. 
+Some annoying things must be noted though (hence the 7 in features): the bookmarklet will popup a window - not great; it doesn't support ratings and the tag management could be improved: del.icio.us and ma.gnolia can _suggest_ tags when saving a bookmarks, while Spurl unfortunately doesn't. It also seems to be less tag-centric than the others (except for Furl of course). It is multi-language and offers a 18+ filter - but if you forget to mark a bookmark as "explicit" it won't work, and as result you can get porn links on the homepage...
+
+*Suitable for:* Anyone, del.icio.us users who would like to try something new without losing sync with their favourite service.
+
+
+h3. "Yahoo MyWeb 2.0":http://myweb2.search.yahoo.com/
+!>/img/pictures/socbook/myweb2.0.jpg! 
+
+* *Speed:* 6 - Not too fast, like other sites in the Yahoo network.
+* *Features:* 5 - "Web 2.0"? Well, yes, it has tag clouds and allows bookmark sharing, but that's about it.
+* *Simplicity:* 7 - Integrated with Yahoo services (and toolbar), fairly easy to use, if you don't know something the FAQs are handy.
+* *Interface/Design:* 6 - Clean, simple and a bit boring - perhaps I'm just to used to the rest of the sites in the Yahoo network
+* *Userbase:* 8 - Grab some random users and a big chunk of Yahoo enthusiasts: not bad!
+* _*Overall Rating: 6.4*_
+
+*Overview*
+When I first read about it, I though: _look, Yahoo is ready to embrace the Web 2.0 philosophy_, then I tried it and changed my mind: it has tags, tag clouds, it allows sharing but nothing more than that. The interface is still Web 1.0, and AJAX methodologies are not used at all. 
+Basically this service grasps the basic concepts from del.icio.us & C., simplifies them and re-presents them in a form which can be easily understood by the majority of Internet users of the planet (and primarly Yahoo users) and _yet_ look innovative. Excellent marketing work, perhaps, but nothing too new or particularly useful there.
+
+*Suitable for*: Anyone, in particular Yahoo users for the excellent integration with the rest of Yahoo services.
+
+h3. "Blinklist":http://www.blinklist.com/
+!>/img/pictures/socbook/blinklist.gif! 
+
+* *Speed:* 7 - Fast, especially considering the type of interface
+* *Features:* 10 - The service which offers more features than anyone else, simply that. Ratings, quit bookmarks, video tutorials, AJAX where needed, tabs, starred links, message board etc. etc. 
+* *Simplicity:* 7 - Considering the amount of features it offers, it's simple enough to use. Impressive Help section.
+* *Interface/Design:* 9 - I really like its interface, the scary amount of AJAX code it uses et al. Not a 10 because the five icons at the top (Gnome-like?) don't go well with the rest of the design, only that. 
+* *Userbase:* 7 - Not too popular, and new to the scene
+* _*Overall Rating: 8*_
+
+*Overview*
+This should technically be the winner. These guys truly did their best trying to build perhaps the most "Web 2.0 compliant" social bookmarking service ever. The downside of it is just the huge amount of AJAX involved in all this, but if you're fine with that, Blinklist is truly amazing. It uses a digg-like approach to _blink_ the urls which appear on the site instantly: an AJAX div fades in allowing you to fill in the bookmark's details and then it fades away incrementing the _blink_ count and adding it to your collection. The private area has a quadri-tabbed sidebar with: 1) real-time chat, 2) popular tags view, 3) recent tags used, 4) cloud view. It supports site thumbnails but not saved copies unfortunately, advanced profiles, avatars, ratings... 
+Advanced, "cool" and (perhaps too much) on the edge. In Italian we have a word for things like this, but I won't mention it here. Just think about _Fast and Furious_, the feeling when browsing this site can be similar to driving an heavily modded car: if you like the way it works, it's the best thing ever - if not, well, del.icio.us does the job alright. 
+
+*Suitable for*: Web 2.0 lovers, geeks, anyone brave enough to try it without getting too shocked
+
+h3. "Smarking":http://smarking.com/
+!>/img/pictures/socbook/smarking.jpg! 
+
+* *Speed:* 7 - Nothing superfluous in the interface, but it could be faster
+* *Features:* 8 - Proper messaging, advanced profiles, STATS!
+* *Simplicity:* 7 - Easy to learn and use, has a FAQ and a wiki
+* *Interface/Design:* 7 - Very traditional but functional interface. Not too fancy or advanced, but does the job
+* *Userbase:* 4 - About 300 users
+* _*Overall Rating: 6.8*_
+
+*Overview*
+Don't expect anything too fancy from Smarking, but a few features caught my attention. For one, it supports a proper messaging system: other services allow you to send notes and a link to other users, while this one has a proper, built-in private messaging system... OK, not a big thing but nice to have. The design is not too great: it does the job but there's hardly any image, nevermind AJAX effects or similar.
+What really impressed me (hence the 8 in features), are the detailed stats that this service makes available publicly: detailed domain stats, tag stats, user stats and more while others simply don't bother.
+It was developed using Python and PostgreSQL by an Italian student of Computer Science - apparently there's someone who is able to program properly in my country as well. Good job: nothing too exceptional as social bookmarking service, but an exemplary work.
+
+*Suitable for*: Italians in particular and everybody else as well.
+
+h3. "Shadows":http://www.shadows.com/
+!>/img/pictures/socbook/shadows.gif! 
+
+* *Speed:* 5 - I don't know if it's because of Rails or the interface, but this site doesn's seem to perform as well as the others
+* *Features:* 7 - enhanced commenting, saved copies, thumbnails, groups
+* *Simplicity:* 6 - The usual FAQs are there, but other than that there's no particular effort to make newbie's life easier
+* *Interface/Design:* 5 - Simple but not quite pretty interface, no graphic effor whatsoever, AJAX for adding and editing comments
+* *Userbase:* 6 - Not a tiny userbase but not huge either
+* _*Overall Rating: 6*_
+
+*Overview*
+Maybe it's just me, but I wasn't too impressed by Shadows: it doesn't offer any particular innovative feature other than enhanced commenting. You can start real discussions about your bookmarks and interact with other users fairly well, but the question is: do you really want to? Perhaps an interesting way to build communities, but other than that nothing special. 
+The interface is not too pretty, unlike Ma.gnolia it looks like they didn't make a terrible effort trying to design something pleasant to look at and the final result is quite boring. They seem to support thumbnails, but clearly they use a third party service like Alexa because there's hardly any thumbnail displayed, generally: wrong choice - see Blogmarks below for a better thumbnail support.
+And yes, the default green smily default avatar is terribly cheesy and truly annoying (not that the others are any better...).
+
+*Suitable for*: Anybody? Nobody? Maybe people who like a more community-like approach
+
+
+h3. "Simpy":http://www.simpy.com/
+!>/img/pictures/socbook/simpy.png! 
+
+* *Speed:* 7 - It's fast, but again, its interface is not anything fancy
+* *Features:* 7 - Detects broken links and redirections, notes, groups
+* *Simplicity:* 6 - It has FAQs but it could look confusing for inexperienced users
+* *Interface/Design:* 6 - Nothing special, no eye candy, no AJAX even where it would be appreciated
+* *Userbase:* 7 - Medium-sized userbase
+* _*Overall Rating: 6.6*_
+
+*Overview*
+The best feature offered by Simpy is the link detection service, able to detect broken links, duplicates and redirections. Everything else looks pretty normal and nothing special: it offers tag management, groups, notes, the usual tools. Copies of your bookmarks are NOT cached, and clicking on the _cached_ link will take you to web.archive.org, hoping that it cached the page you're looking for (hell even I could do that!).
+No AJAX, nothing too pretty. Boring? Well, no, let's call it functional and essential.
+
+*Suitable for*: Anybody, moderate experience required
+
+
+h3. "Blogmarks":http://blogmarks.net
+!>/img/pictures/socbook/blogmarks.jpg! 
+
+* *Speed:* 5 - It's slow. One of the main reasons ought to be the thumbnails: every bookmark has an associated image!
+* *Features:* 7 - Excellent thumbnail support, Private tags, usual things
+* *Simplicity:* 6 - It's pretty straightforward, but there's only one page to help new users
+* *Interface/Design:* 7 - Simple and essential, no AJAX, not too fancy
+* *Userbase:* 7 - One year old, medium userbase
+* _*Overall Rating: 6.4*_
+
+*Overview*
+Again, nothing too special - except, of course, that _all_ bookmarks have a thumbnail: a good thing which made me feel popular for about 0.7 seconds when I noticed a little picture showing my own site when someone bookmarked it, but on the other hand quite annoying and pointless for dialup users.
+No Web 2.0 interface, just plain old stuff which does the job but is not particularly pleasant or innovative. Private tags? A good thing maybe, and probably the only real innovation compared to other similar services.
+
+*Suitable for*: Anybody, moderate experience required
+
+
+h3. Conclusions
+
+Although del.icio.us is still the leading service for social bookmarking, its competitors are obviously getting better. Among the ones I reviewed today, at least some of them look promising: Blinklist is definitely the most advanced in terms of features offered and technology used, and I think I'll try it out a bit more and see if it can be better than del.icio.us in the long run. Spurls is also tempting especially because it offers various interesting features without _forcing_ you to abandon your del.icio.us account - and that was an excellent (and wise) feature Spurl developers chose to implement, without any doubt. Regarding my old favourite, Ma.gnolia, it still deserves a mention, mainly for being a succesful blend of latest technology and class design, without being too extreme. 
+
+So... what's _your_ favorite then? 
+
+
+h3. Notes and Resources
+
+fn1. Social Bookmarking, "Wikipedia Page":http://en.wikipedia.org/wiki/Social_bookmarking
+
+fn2. "del.icio.us":http://del.icio.us/, the first social bookmarking service
+
+fn3. "What is Web 2.0?":http://www.oreillynet.com/pub/a/oreilly/tim/news/2005/09/30/what-is-web-20.html - O'Reilly article
+
+fn4. "Mother of all social bookmarking services icons":http://shakk.wordpress.com/2006/04/20/mother-of-all-social-bookmarking-services-icons/ - A cool mosaic of all the social bookmarking sites' icons.
+
+fn5. Other reviews and comparisons of social bookmarking services:
+
+* Social bookmarking "resources":http://h2obeta.law.harvard.edu/64211
+* "Comparison charts":http://www.irox.de/roxomatic/616/social-bookmarks-review of the most popular social bookmarking systems [PDF]
+* PCmag "round-up":http://www.pcmag.com/article2/0,1895,1875208,00.asp of various social bookmarking sites
+* "Social Bookmarking Tools (I) - A general review":http://www.dlib.org/dlib/april05/hammond/04hammond.html
+* "ALL Social that CAN bookmark":http://3spots.blogspot.com/2006/01/all-social-that-can-bookmark.html - The most comprehensive review of social bookmarking sites.
+
+fn6. "Ma.gnolia - Social bookmarking made (extremely) easy":http://www.h3rald.com/articles/view/ma.gnolia/  
+
+fn7. "Ma.gnolia":http://ma.gnolia.com/ - Social bookmarking service
+
+fn8. "Furl":http://www.furl.net/ - Social bookmarking service
+
+fn9. "Spurl":http://www.spurl.net/ - Social bookmarking service
+
+fn10. "Yahoo MyWeb 2.0":http://myweb2.search.yahoo.com/ - Social bookmarking service
+
+fn11. "Blinklist":http://www.blinklist.com/ - Social bookmarking service
+
+fn12. "Smarking":http://smarking.com/ - Social bookmarking service
+
+fn13. "Shadows":http://www.shadows.com/ - Social bookmarking service
+
+fn14. "Simpy":http://www.simpy.com/ - Social bookmarking service
+
+fn15. "Blogmarks":http://blogmarks.net/ - Social bookmarking service

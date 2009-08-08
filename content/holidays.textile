@@ -1,0 +1,112 @@
+----- 
+permalink: holidays
+title: Holidays
+tags: []
+
+type: page
+filter_pre: textile
+-----
+h2. Holiday House in Sessarego (GE), Italy
+
+<img src="/images/sessarego/outside.jpg" style="float:left; border: 1px solid #B80000; margin-left: -85px; margin-right: 10px;" />
+
+Looking for a peaceful and relaxing holiday in the Italian Riviera? I'm renting part of my family country home in the center of the old village of "Sessarego":http://italia.indettaglio.it/eng/liguria/genova_bogliasco_sessarego.html, on a peaceful hill a few minutes away from Bogliasco, a small coastal town on the _Golfo Paradiso_. The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away.
+
+The house was build in the XVIII century, and it has been renovated in 1929 and more recently in 2006, and it now features brand new wooden windows, doors and internal stairway as well as all the most common household appliances and services.
+
+<div style="padding: 20px;"></div>
+
+h3. Photos
+
+	<div id="gallery">
+		<ul>
+			<li>
+			<a href="/images/sessarego/outside1.jpg" title="View from the outside">
+				<img src="/images/sessarego/thumb_outside1.jpg" />
+			</a>
+			</li>
+			<li>
+			<a href="/images/sessarego/inside.jpg" title="Main living area">
+				<img src="/images/sessarego/thumb_inside.jpg" />
+			</a>
+			</li>
+			<li>
+			<a href="/images/sessarego/master-bedroom.jpg" title="Master bedroom">
+				<img src="/images/sessarego/thumb_master-bedroom.jpg" />
+			</a>
+			</li>
+			<li>
+			<a href="/images/sessarego/bedroom.jpg" title="Spare bedroom">
+				<img src="/images/sessarego/thumb_bedroom.jpg" />
+			</a>
+			</li>
+			<li>
+			<a href="/images/sessarego/view1.jpg" title="View from the linving room">
+				<img src="/images/sessarego/thumb_view1.jpg" />
+			</a>
+			</li>
+			<li>
+			<a href="/images/sessarego/view2.jpg" title="View from the bedroom">
+				<img src="/images/sessarego/thumb_view2.jpg" />
+			</a>
+			</li>
+                       <li>
+			<a href="/images/sessarego/sessarego.jpg" title="A view of Sessarego">
+				<img src="/images/sessarego/thumb_sessarego.jpg" />
+			</a>
+			</li>
+                        <li>
+			<a href="/images/sessarego/floor1.gif" title="First floor (map)">
+				<img src="/images/sessarego/thumb_floor1.gif" />
+			</a>
+			</li>
+                        <li>
+			<a href="/images/sessarego/floor2.gif" title="Second floor (map)">
+				<img src="/images/sessarego/thumb_floor2.gif" />
+			</a>
+			</li>
+		</ul>
+	</div>
+
+h3. Location Map
+
+<iframe width="700" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?hl=en&amp;ie=UTF8&amp;msa=0&amp;msid=104787268344257956584.000467fb86ef925497225&amp;ll=44.383563,9.072475&amp;spn=0.044104,0.087547&amp;t=h&amp;output=embed"></iframe><br /><small>View <a href="http://maps.google.com/maps/ms?hl=en&amp;ie=UTF8&amp;msa=0&amp;msid=104787268344257956584.000467fb86ef925497225&amp;ll=44.383563,9.072475&amp;spn=0.044104,0.087547&amp;t=h&amp;source=embed" style="color:#b80000;text-align:left">Sessarego</a> in a larger map</small>
+
+
+h3. Distances by Car
+
+<div style="padding: 10px;"></div>
+
+|_. Location |_. Km |_. Time |
+| Bogliasco | 3.3 | 7 mins |
+| Genoa (center) | 17.4 | 28 mins |
+| Genoa (airport) | 28.5 | 34 mins |
+| Camogli | 12.3 | 20 mins |
+| St. Margherita Ligure | 20.5 | 33 mins |
+| Portofino | 27.7 | 39 mins |
+
+h3. Details & Price
+
+<div style="padding: 10px;"></div>
+
+|_\2. Details |
+| *Bedrooms* | 2  (1 double, 1 single) |
+| *Kitchen* | Yes |
+| *Bathroom* | Yes (with shower) |
+| *Telephone* | Yes |
+| *Internet* | Yes (broadband) |
+| *TV* | Yes (with DVD player) |
+| *Appliances* | Gas cooker, electrical oven, fridge, freezer, dish washer |
+|_\2. Price |
+| *October &ndash; May* | *June &ndash; September* |
+| 500â‚¬/week | 700â‚¬/week | 
+
+<div style="padding: 10px;"></div>
+
+h3. Contact
+
+If you are interested in booking your stay or if you have any question, email  me at "&#104;3&#114;&#97;&#108;&#100;&#64;&#104;3&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;":mailto://&#104;3&#114;&#97;&#108;&#100;&#64;&#104;3&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;.
+
+
+
+

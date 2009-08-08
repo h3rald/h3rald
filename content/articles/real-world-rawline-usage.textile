@@ -1,0 +1,100 @@
+----- 
+permalink: real-world-rawline-usage
+title: Real-world Rawline usage
+tags: 
+- ruby rawline
+type: article
+filter_pre: textile
+-----
+So I finally decided to update "RawLine":/rawline last week, and I added a more Readline-like API. When I first started the project, I was determined _not_ to do that, because the current Readline wrapper shipped with Ruby is not very Ruby-ish: it's a wrapper, after all!
+
+The good thing of having a new API compatible with Readline is that now people can use RawLine in their Readline-powered scripts, with very minor modifications.
+
+Let's have a look at some examples (they are also shipped with "Rawline v0.3.1":http://rubyforge.org/projects/rawline):
+h3. Rush
+
+"Rush":http://rush.heroku.com is an excellent gem which provides a cross-platform shell environment, entirely written in Ruby.
+Being a shell, it obviously uses Readline for tab completion, and that does the job on Linux. On Windows though, things aren't that easy: 
+
+* text gets garbled if you write long lines
+* you can't type certain characters if they use some key modifiers like <RIGHT-ALT>, etc.
+
+RawLine doesn't have these problems (that's the very reason why I created it), so here's a simple script which launches a Rawline-enabled Rush shell:
+
+<typo:code lang="ruby">
+require 'rubygems'
+require 'rush'
+require 'rawline'
+
+class RawlineRush < Rush::Shell
+
+	def initialize
+		Rawline.basic_word_break_characters = "" 
+		Rawline.completion_proc = completion_proc
+		super
+	end
+
+	def run
+		loop do
+			cmd = Rawline.readline('rawline_rush> ')
+			finish if cmd.nil? or cmd == 'exit'
+			next if cmd == ""
+			Rawline::HISTORY.push(cmd)
+			execute(cmd)
+		end
+	end
+end
+
+shell = RawlineRush.new.run
+</typo:code>
+
+What happens here? Nothing much really, all I had to do was:
+
+# Derive a new class from Rush::Shell
+# Set <code>Rawline.basic_word_break_characters</code> to the same value used in the original Rush code
+# Set <code>Rawline.completion_proc</code> to _the same_ completion Proc used in the original Rush code
+# Rewrite the original <code>run</code> replacing <code>Readline</code> with <code>Rawline</code>
+
+And it works as it was intended to, i.e. typing <code>root['b<TAB></code> will expand to <code>root['bin/</code>, etc.
+Note that I didn't write the completion Proc from scratch: it was already there.
+
+h3. IRB
+
+After trying out Rush, the next logical step was trying IRB itself: I could never use it properly on Windows, and that was really frustrating.
+After a few minutes trying to figure out how to start IRB programmatically, I quickly came up with a similar example:
+
+<typo:code lang="ruby">
+require 'irb'
+require 'irb/completion'
+require 'rubygems'
+require 'rawline'
+
+Rawline.basic_word_break_characters= " \t\n\"\\'`><;|&{(" 
+Rawline.completion_append_character = nil
+Rawline.completion_proc = IRB::InputCompletor::CompletionProc
+
+class RawlineInputMethod < IRB::ReadlineInputMethod
+	include Rawline
+	def gets
+		if l = readline(@prompt, false)
+			HISTORY.push(l) if !l.empty?
+			@line[@line_no += 1] = l + "\n"
+		else
+			@eof = true
+			l
+		end
+	end
+end
+
+module IRB
+	@CONF[:SCRIPT] = RawlineInputMethod.new
+end
+IRB.start
+</typo:code>
+
+In this case, Rawline is included in the <code>RawlineInputMethod</code> class, derived from the original <code>ReadlineInputMethod</code> class, i.e. the class IRB uses to define (guess...) how to input characters.
+Again, all I had to do was set a few Rawline variables to match the ones used in Readline, and then redefine the function used to get characters. All done. 
+
+It works as expected (only with inline completion, of course): typing <code>"test".ma<TAB></code> will give you <code>"test".map</code>, <code>"test".match</code>, etc.
+
+You also get all Rawline key mappings for free (CTRL-K to clear the line, CTRL-U and CTRL-R to undo and redo, etc.), and you can define your own.

@@ -1,0 +1,39 @@
+----- 
+permalink: concatenative-020
+title: Concatenative 0.2.0 released
+tags: 
+- ruby concatenative
+type: article
+filter_pre: textile
+-----
+Version 0.2.0. of the "Concatenative":/concatenative DSL has been "released":http://rubyforge.org/frs/?group_id=8068&release_id=33575. 
+
+Here are some highlights from the changelog:
+
+* Implemented new combinators:
+** binrec
+** split
+** twodip
+** threedip
+* Performance improvements:
+** Stack is never copied.
+** No symbol/string conversion when processing words.
+* Pseudo-namespace support (e.g. :kernel/:while and :math/:factorial)
+* ~ and <= operators to unquote and define words, respectively.
+* No more uppercase words!
+
+Oddly enough, I realized that it is possible to defined methods named after reserved words like "while" or "if", so now all the concatenative words (combinators) in @kernel.rb@ are now defined _without_ a leading undersore. Similarly, there's no real need to use UPPERCASE symbols, so as a result, method lookup is significantly faster and will use less resources.
+
+Here's how the lookup works. Say you have the following program: 
+
+<typo:code lang="ruby">
+[[1,2,3], [4.5.6], :concat]
+</typo:code>
+
+If @:concat@ has been defined by the user (@:concat <= [...]@), that definition will be used, otherwise the @Concatenative::Kernel@ combinator @concat@ will be called. If you want to use the corresponding Ruby method, all you have to do is specifying the arity explicitly using the @|@ operator.
+
+To remove any ambiguity, it is now possible to specify the _namespace_ of a word explicitly, e.g. :kernel/:concat or :ruby/concat. The @/@ operator simply concatenates the two symbols together (@:"kernel/concat"@) and sets the namespace (@:kernel@) and name (@:concat@) of the new symbol. @:kernel@ and @:ruby@ are not meant to be used when defining new words, but you can use anything else you like, for example :math/:factorial or :local/:a, etc.
+
+As I pointed out in the "first article":/articles/concatenative-programming-in-ruby about concatenative, even with the new performance improvement a concatenative program still runs slower than a standard Ruby program, but at least now you won't run out of stack space (the _Ruby_ stack, in this case) too soon.
+
+If you have any issues to report, feature requests, etc., feel free to use "GitHub":http://github.com/h3rald/concatenative/issues to do so.

@@ -1,0 +1,30 @@
+-----
+title: herald.vim
+tags: []
+filters_pre: [textile]
+-----
+h2. herald.vim
+
+*herald* is a dark color scheme for "Vim":http://www.vim.org which aims to be easy to read, eye-appealing, portable on multiple terminals, and suitable for source code highlighting in multiple languages.
+
+You can get the latest version *"HERE":/files/herald.vim* (direct link).
+
+h3. Changelog
+
+* *v0.2.0*
+** Support for 8 and 16 color modes
+** Fixed completion menu colors
+** Improved readability for Visual mode
+** Specified highlighting for all the most common Vim syntax groups
+* *v0.1.0*
+** Initial Release
+
+h3. Screenshot
+
+!/images/herald.vim/herald_vim.png!
+
+h3. Resources
+
+* "Original Announcement":http://www.h3rald.com/articles/herald-vim-color-scheme 
+* "Script Page":http://www.vim.org/scripts/script.php?script_id=2684 [on Vim.org]
+* "File History":http://github.com/h3rald/stash/commits/master/.vim/colors/herald.vim [on GitHub]

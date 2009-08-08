@@ -1,0 +1,101 @@
+----- 
+permalink: log-feb-2009
+title: Personal Log - February 2009
+tags: 
+- "personal_log ruby "
+type: article
+filter_pre: textile
+-----
+This has been a rather busy month, hence the lack of general Internet activity. I really wanted to post some more articles to my site, but for one reason or another I had to procrastinate more and more, and here we are at the end of the month again.
+
+h3. Recession time!
+
+I've always considered the current economic downturn as something happening _somewhere else_: USA, England, Ireland... but not in Italy, really: our country never boomed, we don't go mental with loans and mortgages (or at least we didn't use to), so there's no real reason for a full-on recession period.
+
+It turns out I was wrong. Other than the fact that our industries are more or less non-existant or already in debt, I didn't consider that:
+
+* Italians tend to panic a lot.
+* We have an awful lot of foreign business going on, a lot of multi-national companies opened up through the years lured by cheap workers and acceptable craftmanship.
+* Our government already -wastes- invests a lot of money regularly, every year, to fuel a colossal, "nepotistic":http://dictionary.reference.com/browse/nepotistic, pointless bureaucratic machine they insist on calling "State".
+
+Result: the recession is starting to hit properly over here too. People are saving money, they don't go out buying pointless crap, they are scared to ask for a raise at work... the usual. I work for a foreign company which has been, as were most, forced to save some money to compensate some not-so-good First Quarter's revenues. This means less unnecessary expenses, less training, less travelling and less outsourcing, which didn't help improving the daily work experiece. Personally, I'm not that affected by all this, nevertheless it made me bless the day my fiancÃ©e persuaded me to stop uni after my Bachelor's Degree to get a very rewarding, not-so-stressful job.
+
+h3. No 'Net @ Home
+
+The most annoying thing of the month was (and still is) the lack of Internet access at our house. Let's do a quick recap:
+
+# After spending one year with Telecom Italia, Roxanne and I decided to change provider to save a bit of money and get more speed.
+# On _December 24th_ we requested a contract with "Wind":http://www.wind.it, after they assured that we'd have the Internet back on in _just a few days, tops_.
+# On _January 5th_ Telecom disconnected us.
+# On _January 12th_ Wind sent me a mail telling me that there was going to be a _15-day delay_ in the activation &mdash; well, at least they told us so! We waited.
+# On _February 2nd_ I call Wind Customer Care hassling them to get a move on &mdash; just some minor delays, _it will only take a few days, tops_. We waited.
+
+Our new Internet line has been _in the process of being activated_ ever since January 5th. Why? Because being a customer sucks, in Italy, and you can't do much about it.
+Let me quote one of the 13 phone calls I made:
+
+* ... 5 minutes on hold, stupid music in the background ...
+* [Operator]: Good Evening Sir, I'm <random name>, how can I help you?
+* [Me]: Hello, I'm enquiring about the status of my Internet connection: I've been disconnected since the 5th of January...
+* [Operator]: Phone Number please?
+* [Me]: <notextile>*** ******</notextile>
+* ... 2 minutes on old ...
+* [Operator]: Name plase?
+* [Me]: Fabio Cevasco
+* [Operator]: Let me check...
+* ... 6 minutes on hold, stupid music in the background ...
+* [Me]: Any luck?
+* [Operator]: One moment please...
+* ... 2 minutes on hold, stupid music in the background ...
+* [Operator]: Sir, it says here that you are _in the process of being activated_
+* [Me]: (you stupid idiot, I can check that on the Net in less than a minute) Yes, I know what, but why, exactly? It has been over a month...
+* [Operator]: Let me check...
+* ... 3 minutes on hold, stupid music in the background ...
+* [Operator]: There are some technical difficulties.
+* [Me]: What kind of technical difficulties?
+* [Operator]: I... I don't think you can understand Sir, it's technical...
+* [Me]: (!!!) I have a degree in IT Engineering, so yes, I think I can understand enough.
+* [Operator]: ...well, there's nothing I can do... it says we're in the process of connecting you, it should be just...
+* [Me]: ...a matter of a couple of days, yes, I know: it has been over a month though!
+* [Operator]: Sir, really, I can't really do much about it, you'll just have to wait
+* [Me]: Can you let me speak with the Technical Department?
+* [Operator]: No, sir, I can't: you see, your ADSL line is not yet activated, they can't do anything about it. 
+* [Me]: Excuse me, but I'd like to know what the problem is, and how long it will take to activate the line.
+* [Operator]: Sorry sir, we don't have this information, and we can't commit to a specific date.
+* [Me]: (!!!) May I speak to someone who knows this? May I speak to your superior?
+* [Operator] No, you can't speak to my superior. You'll just have to wait, I'm sorry.
+* [Me]: Well, it has been over a month, and I don't know if you realize that you were supposed to connect me in just a few days and...
+* [Operator]: Thank you for calling sir, have a good day.
+
+That barely conveys the frustration I felt and I'm still feeling now. I can't even sue them: I could get 100 Euro at most after spending at least a couple of thousands in lawyer. So much for the land of sunshine huh?
+
+h3. Programming in Ruby, again
+
+Some of you may be pleased to know I'm back coding in Ruby after slacking for months. It's just the time of the year, I guess. 
+I'm also evangelizing the language quite a bit at work: after I wrote a few scripts on demand, I slowly lured one of my colleagues to Vim, the Texile markup and then finally the Ruby language. He's going through the "Humble Little Ruby Book":http://www.h3rald.com/articles/hlrb-review and he's loving it, so far. He'll hopefully be fully assimilated in a few weeks at most, and after that there will be no going back!
+
+This inspired me to start a full rewrite of "RedBook":http://www.h3rald.com/tags/redbook/, my little Ruby daily logger. It will feature a SQLite backend and Merb's Datamapper to take care of the dirty work.
+Unfortunately, even if the new sources are already available on "GitHub":http://github.com/h3rald/redbook/tree/master, it will take me approximately a few more weeks to complete all the plugins and more to finish the RDoc documentation and &mdash; hopefully &mdash; a fully-fledged user manual. It's *the* pet project, after all...
+
+On the other hand, it will take me considerably less time (a few days?) to release the next version of my "RawLine":http://www.h3rald.com/tags/rawline library, featuring:
+
+* Ruby 1.9 support
+* A handy little function for filename completion
+* Readline emulation, i.e. just @include Rawline@ and use it as if it was GNU Readline
+
+Of course this doesn't mean RawLine is a complete, 100% Ruby port of the GNU Readline library, but it is definitely more Ruby-ish, more cross platform (try using Readline with Ruby on Windows...), and usable enough for most of the normal things, like:
+
+* tab completion
+* line editing (but no vi or emacs mode yet, sorry)
+* history
+* quick and easy key bindings
+
+Once this comes out, I'll be implementing features on-demand, as GNU Readline is huge and offers way too many things anyone would ever need. Patches and contributions are of course more than welcome, though.
+
+For all my open source Ruby projects, after "pondering the alternatives":http://www.h3rald.com/articles/where-does-your-ruby-code-live, I decided to go with the following setup:
+
+* My own site for the home pages of the projects
+* RubyForge for gem support and for RDoc documentation
+* GitHub as source code repository
+* LightHouse for issue tracking
+
+I hope it works out...

@@ -1,0 +1,20 @@
+----- 
+permalink: "9"
+title: Riddle me this... and you'll get the job!
+tags: []
+
+type: article
+filter_pre: textile
+-----
+Today I had my _n^th^_  job interview. Yes, I'm getting used to them by now, and it's becoming quite entertaining: if they _paid_ me for just take interviews I'd do that for all my life quite happily! 
+But since that's not going to happen I'd better get a move on and find a so called _real job_. Actually this time it wasn't the usual complete waste of time and this company _nearly_ made me a proper offer: they're gonna see me again next week, so let's hope for the best. 
+
+The interview was one of the best ever, no doubts. They were friendly enough, they seemed to like me enough and they were even entertaining enough... one thing which actually _never_ happened to me before: they asked me to solve a sort of pseudo-IQ-test(an annoying semi-pointless riddle, in other words), and here's a rough translation from Italian, the comments within square brackets are mine:
+
+bq. _You're alone in a pitch black room [...nice intro, eh?] and the only thing you have are two fuses of different length and a lighter [thank God for that, now it's all much better]. You know that both the fuses can burn in exactly one hour each, although there's no proportional law which bonds the lenght of the fuses to the time necessary to burn them; how can you measure 45 minutes, exactly?_
+
+I solved that, eventually, and I got the job! Weheee! 
+
+No, more or less, but not quite... I'm gonna see them again, and evaluate their offer along with the other(s).
+
+The solution of the riddle? NO CHANCE! Go and figure it out, it's not hard.

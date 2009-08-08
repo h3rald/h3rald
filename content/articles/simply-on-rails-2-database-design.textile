@@ -1,0 +1,25 @@
+----- 
+permalink: simply-on-rails-2-database-design
+title: "Simply on Rails - Part 2: Database Design"
+tags: 
+- rails databases
+type: article
+filter_pre: textile
+-----
+This week I attended a course for work on how to _Implement Databases with Microsoft SQL Server 2005_. An interesting course indeed, which made me realize how feature-rich Bill's product is, compared to the Open Source alternatives like MySQL. It also made me realize how nice it is to implement database-related logic (read: Models) using a _proper_ programming language rather than using triggers, stored procedures, functions and other goodies offered by Transact-SQL.
+
+It's all a matter of taste and of necessities: using MS SQL Server for one of my website is simply not going to happen anytime soon, and I'm more than happy to have a database which can be used _just_ as a database and a programming language (Ruby, in this case) which can do wonders, rather than a procedural-only surrogate.
+
+Anyhow, back to our weekly series. After creating a "concept map":/blog/simply-on-rails-1-concepts-map, it's time of _get real_ and try to figure out a database architecture. The tool of choice this week is obviously the widely popular "DbDesigner 4":http://fabforce.net/dbdesigner4/. It's free, it's easy to use, and the results are pretty enough. There:
+
+!/files/italysimply_database-architecture_thumb.png!:/files/italysimply_database-architecture.png
+
+It's amazing how a relatively simple concept map can lead to such a complex database architecture, isn't it?
+Well, it's normal. One of the reasons of this is that I totally forgot about geographical information about the houses which will be featured on the site, or better, I thought about it as a _strings_ typed in by the administrators, whereas it would be much better having dropdown boxes.
+
+Countries, regions, privinces, areas and cities will be added to the database only once, rather than having to type them in every time a house is added. Obvious, but this lead to five tables more and nine (!) relationships more.
+
+The other reason of why the number of tables is higher than the number of entities in the domain model is that I decided _not_ to use the ENUM type. Firstly because "it's not handled very well by Rails":http://wiki.rubyonrails.org/rails/pages/HowtoUseSetAndEnumColumns
+ and also because there's "a number of reasons":http://blog.arabx.com.au/?p=87 why ENUMs should not be used.
+
+The only problem now is that whenever I load a house, I'll have to get data from a lot of tables at once (and this means a lot of joins underneath the model layer) or - worse - a lot of queries in case I decide to load related data "on the fly". It looks like I'll have to do a bit of "piggy-backing":http://railsexpress.de/blog/articles/2005/11/06/the-case-for-piggy-backed-attributes here and there. "Someone":http://railsexpress.de/blog/articles/2006/05/29/simpler-piggy-backing already thought about a way of doing this in a more "Model-friendly" way. Perhaps I'll give it a shot.

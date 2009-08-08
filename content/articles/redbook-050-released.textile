@@ -1,0 +1,76 @@
+----- 
+permalink: redbook-050-released
+title: "Announcement: RedBook v0.5.0 released"
+tags: 
+- opensource productivity redbook ruby
+type: article
+filter_pre: textile
+-----
+This new beta release of RedBook introduces quite a few changes when it comes to configuration and setup. Here's some highlights...h3. Regexp changes
+
+It is now necessary to enter "proper" regular expressions for @:select@. Proper means between slashes, like the following:
+
+* /Work Day/
+* /mail/i
+
+I changed this in order to support case-insensitive searches using the @i@ switch. This makes queries much more powerful.
+
+h3. Variables
+
+A new, interesting feature I decided to introduce in this release is _variables_. For now you define them inside your rbconfig.yml file, like this:
+
+<typo:code>
+:var_monday_morning: "monday at 8 am"
+
+:var_friday_evening: "friday at 8 pm"
+
+:var_week_report: ":select :duration :from :%monday_morning :to :%friday_evening" 
+</typo:code>
+
+In this way, every time you type in :%week_report in RedBook, it will expand to: @:select :duration :from monday at 8 am :to friday at 8 pm@. By the way, completion is supported, so you'll only have to type in something like @:%we@ and hit <tab>.
+
+It is possible to define variables as @:var_<something>@ in the rbconfig.yml file and then used them inside RedBook as @:%<something>@.
+
+h3. New Operations
+
+Five new operations have been added:
+
+h4. :blank
+
+This will blank your current log after asking you if you really want to do so.
+
+h4. :restore
+
+This operation will overwrite your current log with the last saved backup. Like with the @:blank@ operation, you're asked if you really want to proceed or not.
+
+h4. :archive
+
+By typing @:archive@, the current log file will be archived to your @:archives_folder:@ directory specified in the rbconfig.yml file (similarly, it is now possible to specify a :backups_folder: for your logs' backup files).
+
+h4. :dataset
+
+A simple operation to display the messages inthe current dataset. 
+
+h4. :dump
+
+This operation will dump the output of the last @:select@ operation to a text file. Useful for saving the average, total time and duration of a set of activities.
+
+h3. Portable edition
+
+Some Windows users will definitely love this. I finally found an easy way to run RedBook confined within the current directory, by using a simple @start.bat@ batch file to set the %INPUTRC% and %HOME% variables temporarily to the path to the .inputrc file and the directory of RedBook executable. This makes RedBook 100% portable and suitable to be used on USB sticks &similar.
+
+p=. *"Get RedBook Portable":http://redbook.googlecode.com/files/RedBook-0.5_Win32-portable.zip*
+
+h3. New Development Page
+
+I decided to move the primary RedBook repository from "Assembla":http://www.assembla.org to Google Code. Why? Well, nothing wrong with Assembla per se, I still think it's an excellent free service to host your public _and private_ projects, but Google Code is faster and offers only the features I need:
+
+* Public SVN repository access
+* Simple-to-use issue tracker
+* Very nicely developed downloads section, with download counts, and "normal" filenames.
+
+So here's the new RedBook Development Home:
+
+p=. *"http://code.google.com/p/redbook/":http://code.google.com/p/redbook/*
+
+Additionally I also setup a "RedBook Support Google Group":http://groups.google.com/group/redbook-support/, so if you have any question concerning the program, you know where to go!

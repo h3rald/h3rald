@@ -1,0 +1,23 @@
+----- 
+permalink: "28"
+title: (Ready to start) working at Siemens
+tags: []
+
+type: article
+filter_pre: textile
+-----
+I signed it yesterday, around 3PM. I gave "them":http://base--/bookmarks/view/siemens/ all the necessary documents and they presented me their contract to sign, I'll have to hand it in on Tuesday at 9AM, my first day at work.
+
+My new job! For the first time in my life (I'm still "young":http://base--/about/ , c'mon...) I'll start working 40 hours a week, all year, with paid holidays and meals and all the other stuff I was raving about in my last job-related "blog entry":http://base--/blog/view/19/ turns out to be true then: I'm in, I'll be working at "Siemens A&D":http://base--/bookmarks/view/siemens-automation-and-drives!
+
+!<http://base--/img/pictures/siemens/simatic-tech.jpg! They already set up a nice schedule for me and on Tuesday I'll start my two weeks preliminary training, then another week of training in the Documentation Dept. (where I'll be working) and then I'll start the real tough stuff. 
+The training period on the "corporate framework":http://base--/bookmarks/view/simatic will obviously be in English (thanks God for that, I wouldn't bare learning that stuff in Italian first), and then I'll start writing documentation on some new project in English as well: it looks like I'm gonna forget Italian totally :)
+Nah, I'll still use my mother tongue on the phone to my parents or when I'll be visiting them. 
+
+Scared? A bit. I'll still be writing stuff, nothing new there, but I believe that working for a big company may be a bit different than writing about what I want, whenever I want, wherever I want with my laptop... Nevertheless, it will be fun: it sounds like a dream job for me and I couldn't ask for more. Some may fear to lose their individuality, but I don't: I'm not that bothered honestly, and I still have this very individual website, at any rate!
+Oh, by the way: by contract I cannot reveal any technical details of all the wonders and miracles I'll see in there, so don't even ask. So *everything on this site tagged with the "Siemens tag":http://base--/tags/show/siemens/ will never contain any corporate information or stuff which is not already available on the Internet publicly*. I wrote this in bold so that if any collegue/boss comes across this page doesn't start panicking about that :)
+
+!>http://base--/img/pictures/siemens/siemens.gif! Then what... well, it seems they're using Microsoft technologies there, so I'll probably have to as well. Not that bothered, but I hope Firefox will be allowed: it's more secure, it offers more features and it has tabs. Hell I can't imagine browsing the Net without tabs! At worst I'll install a beta of IE7.
+I'll also use email a lot and this translated into MS terms means that I'll have to use Outlook... that kinda freaks me out because I never used it. You can laugh as much as you like but I never used outlook or outlook express properly: if I _had to_ use an email client I always used Netscape or Thunderbird. Oh well, not a big deal actually.
+
+What will happen to this site, and all the CakePHP-related stuff? Nothing much: I'll have probably less time but I'll still be writing about Cake. Maybe I won't code a lot tough: it seems clear at this point of my life that I'll be a writer rather than a developer.

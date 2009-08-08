@@ -1,0 +1,28 @@
+----- 
+permalink: textlinkads_sidebar_v01
+title: Text Link Ads sidebar for Typo
+tags: 
+- rails opensource
+type: article
+filter_pre: textile
+-----
+I thought it would be nice to share the code of the sidebar I created to display "Text Link Ads":http://www.text-links-ads.com sponsor links on my Typo powered blog.
+
+There's actually another "plugin":http://blog.nanorails.com/articles/2006/10/01/a-new-rails-plugin-for-textlinkads-including-support-for-feedvertising which was made for Typo 2.6, but unfortunately it doesn't work with Typo 4.1.1.
+
+h3. Installation
+
+Just unzip it inside your vendor/plugins directory. The new sidebar should appear in the list of your available sidebars in the Typo's administration area.
+
+h3. Configuration
+
+In Typo's administration area, configure the following settings for this sidebar:
+
+* *Title*: The title of the sidebar
+* *KEY*: Your TLA's XML key
+* *Affiliate ID*: Your TLA's affiliate ID
+* *Advertise Here*: A message shown when no links are displayed.
+
+
+*"Download Text Links Ads Sidebar v0.2":/files/textlinkads_sidebar_v0.2.zip*
+

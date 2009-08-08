@@ -1,0 +1,11 @@
+----- 
+permalink: "41"
+title: Comments temporarily disabled
+tags: 
+- website
+type: article
+filter_pre: textile
+-----
+As a few of you might have noticed, I decided to disable comments on all the sections of this site, as a temporary measure against spam.
+
+Hopefully I'll try implementing something more effective and less drastic soon, but meanwhile this seems the quickest way to get rid of approx 600-800 spam comments per week.

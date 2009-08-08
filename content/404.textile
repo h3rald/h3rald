@@ -1,0 +1,11 @@
+----- 
+permalink: "404"
+title: Page Not Found
+tags: []
+
+type: page
+filter_pre: textile
+-----
+h2. Page Not Found
+
+The page you're looking for cannot be found. Try searching the "archives":/archives/.

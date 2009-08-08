@@ -1,0 +1,10 @@
+----- 
+permalink: contact
+title: Contact
+tags: []
+
+type: page
+filter_pre: textile
+-----
+If you need to contact me, feel free to write an email to *h3rald [at] h3rald.com*.
+

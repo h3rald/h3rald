@@ -1,0 +1,41 @@
+----- 
+permalink: introducing-redbook
+title: Introducing RedBook (and the new Code section)
+tags: 
+- ruby productivity software tools redbook
+type: article
+filter_pre: textile
+-----
+I'm somehow pleased to announce the opening of a new section on this site. Nothing too big actually, it's just a "page":/code/ with a few (one for now) brief descriptions of open source programs and scripts I made and I'd like to share with my readers.
+
+Don't expect fancy stuff: (luckily) I don't code for a living, I code for pleasure and I code small things. Lately I've been trying to write a small Ruby program able to log my daily activities and also display them in a pleasant enough way, so I started using my lunch breaks at work more constructively and I came up with "RedBook":/code/ an interactive command-line program written in Ruby.
+
+Main features:
+
+* Log timestamped and _tagged_ messages to a single YAML file
+* Load and display messages containing a certain string, or certain tags or within a time frame.
+* Calculate the time elapsed between two or more tasks.
+* Export loaded messages to YAML, TXT or CSV format.
+
+All done via command line via simple commands:
+
+*&#58;log* This is a test message *&#58;tags* test
+
+*&#58;load* *&#58;last* 30 *&#58;from* last week
+
+*&#58;timecalc* 2 5
+
+*&#58;save* test.txt
+
+Thanks to the wonderful "Chronic":http://chronic.rubyforge.org/ library, you can specify your time frames using natural language expressions like "8 in the morning", "this tuesday", "last month" and so on...
+
+Here's a screenshot showing RedBook in action:
+
+!/files/redbook.png!
+
+RedBook is of course free, open source software licensed under the terms of the BSD license. It can be installed on any machine able to run Ruby and there's also an EXE version for the lazy windows folks who don't want to install Ruby, packed with "RubyScript2Exe":http://www.erikveenstra.nl/rubyscript2exe/index.html. A more in-depth article explaining how RedBook works -will hopefully be completed soon- is available ":here":http://www.h3rald.com/articles/redbook
+
+
+
+
+

@@ -1,0 +1,97 @@
+----- 
+permalink: google-apps-for-your-domain
+title: "Google Apps for your domain: a shared hosting killer service?"
+tags: 
+- google
+- internet
+- ajax
+- web20
+- review
+type: article
+filter_pre: textile
+-----
+A while ago Google started offering services like "Google Mail":http://mail.google.com/mail/ (Gmail) and "Google Calendar":http://www.google.com/calendar/ to domain owners. Sure everyone likes Gmail, but one of the few bad things about it is that it never feels "unique": your email address is always gonna be <something>@gmail.com or <something>@googlemail.com. Not a big deal? Well, sure, not really, but it really depends on the people using the service and how fussy they are:
+
+* small/medium business wouldn't like this: @gmail.com gives farless credibility than @domain.com
+* When using Gmail with the Send As feature, messages will be sent "on behalf of", and this can potentially mess things up as some spam filters don't like it.
+
+Now it seems to be "official":http://seattlepi.nwsource.com/business/1700AP_Google_Business_Applications.html: Google is starting to offer customizable services to anyone who wish to sign up for it, not only as a restricted beta service.
+What does this mean? Well, it can be the (free and easy) definitive web solution for small business, kids, grandmas and everyone who wants to establish a presence on the web by paying only the annual domain renewal fees...
+
+h3. Included applications
+
+Note the title: "Google Apps":https://www.google.com/a/ for your domain, not only Gmail. Here's what you get:
+
+* "Gmail":http://mail.google.com/ - You know what it offers: a state-of-the art AJAX interface, speed, reliability, very effective spam filter, loads of space, tagging (labels) stars and all the rest.
+* "Google Calendar":http://www.google.com/calendar/ - One of the best online calendar available. Features and AJAX interface, full integration with Gmail, ability to create private and public calendars, reminders, 
+* _Google Chat_ - Google's instant messenger, available through "Google Talk":http://www.google.com/talk/ desktop application or online, seamlessly integrated in your Gmail interface. 
+* "Google Web Pages":http://pages.google.com/ - aka Google's page creator, easily create webpages using Google's WYSIWYG online editor.
+
+Now, try imagining these four services combined and (almost) fully customizable... Still no idea? Well, keep reading for a list of all the included features.
+
+h3. Included Features
+
+In order to use Google Apps for your domain, you must of course own a domain. The next step involves changing your domain's MX entry to "ASPMX.L.GOOGLE.COM", and follow the instructions to create an administration account for your Google applications, and after a while every email sent to your domain's accounts will be routed to your new Google-powered inbox. Similarly, in order to use Google Page Creator on your domain, you're required to change the CNAME record of your DNS to "ghs.google.com".
+
+<blockquote>
+Note: in order to avoid inconveniences especially if a lot of users use your domain's email, it is recommended that you pay attention on Google's instructions on how to set the whole thing up. For further information refer to the official "FAQ":https://www.google.com/a/FAQ. In order to be able to use Google Page Creator on your domain, you must setup an URL to publish your webpages: of course do NOT set this to "www.yourdomain.com" or any subdomain currently in use or your visitors will access the pages you created with Google Page Creator.
+</blockquote>
+
+Here's what you get:
+!/img/pictures/gmail-hosted/gmail.png! 
+For a bigger image click "here":/img/pictures/gmail-hosted/gmail_full.png. Let's now have a look at what are the main differences from the standard Gmail.
+
+<u>_*Include your own logo*_</u>
+!</img/pictures/gmail-hosted/logo.png!
+
+Your own logo will be displayed on the upper left corner of every page. And this is truly sweet. All you have to do to change it is uploading a 143x59 PNG or GIF image from your domain management panel (see below).
+
+<u>_*Use your company name instead of Google's*_</u>
+!>/img/pictures/gmail-hosted/links.png!
+
+Besides a custom logo, it is possible to set a company name to be used instead of "Google" or "Gmail" in page titles and links. I chose "H3RALD.com Mail" and that's displayed everywhere, including on the sign-in page.
+
+<u>_*Control Panel*_</u>
+All the custom settings can easily be managed through an easy-to use control panel:
+
+!/img/pictures/gmail-hosted/options_panel.png!
+
+It's really easy to use and has wizards to setup all the included services and options like setting up user accounts, settings etc.
+
+!/img/pictures/gmail-hosted/domain.png!
+
+<u>_*User Accounts*_</u>
+Through the control panel you can add new users and modifying existing user accounts to access your services. You can create administrators who are able to access administrative domain-wide settings, and standard users. Every user gets 2048MB of space for their emails, and that's pretty generous considering that it seems that you're able to create around 25 user accounts.
+
+Already have a list of users you're like to import? Just save them in CSV format and upload them.
+
+Would you like to be able to contact all your users at once, e.g. via a newsletter? Google thought about this as well, and you can create your own personal newsletters which can be sent out automatically to your @yourdomain.com email accounts.
+
+<u>_*Internal Messaging System*_</u>
+But there's more. We all know Google Talk: yes it's nice, but probably MSN has more features, smileys and all the rest but it still remains a perfectly usable instant manager, which also allows file transfer. Your users can use Google Talk to communicate with each other _or_ simply chat through their webmail interface, More features? Well, for example "you can setup Google Talk to work on federated networks":https://www.google.com/support/hosted/bin/answer.py?answer=34143.
+
+<u>_*Appointments/Projects management*_</u>
+Google Calendar is an excellent online calendar, and now you can use it within your own domain as well. This means, for example, that it can be used to set your company's appointments, reminder, project deadlines by creating an unlimited number of custom calendars to share with your collaborators.
+
+<u>_*Design your own site*_</u>
+I know a lot of restaurants, shops and people who would like to have a small site for their business or activity, but they can't develop web application themselves. So the most obvious solution is to hire some professional web developer to rip them off... erhm, to create a website for them. Now it is not necessary: by setting the correct DNS parameters, you can allow users to create their own webpages using a foolproof and advanced web editor powered by Google: "Google Page Creator":http://pages.google.com/. 
+I didn't set it up on my own domain, but a preview of what you can do with Google Page Creator is available "here":http://h3rald.googlepages.com/home.
+
+h3. Scenario
+
+After considering all this, I came to the conclusion that what Google did can help a lot of people and at the same time prevent some evil webmaster to charge them hundreds of Euro (they really get away with it!) for basic "websites" with "three or more static pages".
+All you have to do is buy your own domain, and that can be as cheap as 8$ per year, the rest comes for free, from Google:
+
+* The best webmail interface you can possibly imagine
+* Nearly unlimited space for everything
+* A truly effective spam filter
+* About 25 fully-featured user account, possibly more if you ask nicely
+* Your own "corporate instant messenger"
+* Your own calendar to manage appointments, meetings etc.
+* An intuitive and advanced web page creator - not like Geocities
+
+All this for free. Yes, with ads (I'm not here to discuss "privacy concerns":http://www.gmail-is-too-creepy.com/), but after all they're not displayed on your main site.
+
+_What about Server Side technologies for my sites?_
+
+OK kid, now that would be a little bit too much, even if I can foresee some possible "Google Web Widgets" at some point. "Create your _interactive and dinamic_ website within minutes, no programming knowledge required"... that would be great (for Google) and bad (for freelance web developers). One thing at a time, after all G(od|oogle) has the whole eternity to fulfill his Goals.

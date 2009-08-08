@@ -1,0 +1,104 @@
+----- 
+permalink: "38"
+title: Akelos is real, after all...
+tags: 
+- frameworks
+- php
+- web-development
+- review
+type: article
+filter_pre: textile
+-----
+Bermi Ferrer kept his promise, and even if a few were skeptic on the "pre-announced":http://base--/blog/view/34/ features of his upcoming Akelos framework, last week he sent me a "development preview" and a few days ago he opened the development SVN repository to the public:
+
+<a href="svn://akelos.org/trunk" target="_blank">svn://akelos.org/trunk</a>
+
+Go, get it: it's worthwhile (see below).
+
+"[...] The Akelos Framework is an open-source port of Ruby on Rails to the PHP programming language.
+The main goal of the Akelos Framework is to help programmers to build multilingual database-backed web applications according to the Model-View-Control pattern. It lets you write less code by favoring conventions over configuration."
+
+At the Akelos Framework Features page you can find detailed information about what has been already implemented into the framework. 
+</blockquote>
+
+I think it says it all, well almost. Some people will undoubtedly be disgusted by yet-another-hopeless-Rails-clone: _not again!_ I hear them crying...
+
+Well, yeah, I think this - to be honest - should be the last attempt someone makes to port Rails to PHP or at least port _some features and the overall philosophy_, like "CakePHP":http://base--/bookmarks/view/cakephp did: there are honestly too many for one single language. Look at Python, "Django":http://www.djangoproject.com/ seems to be the only "Rails-inspired" framework available and everyone is happy with it, while as a general rule PHP folks are never happy with what they already got.
+
+Bermi is undoubtedly one of them, and that's the reason he decided to code his very own Rails-inspired framework for PHP, which is, to date, the most remarkable of the ones I left out (it wasn't available at the time) in my "article":http://base--/articles/rails-inspired-php-frameworks/.
+
+h3. Confirmed Features & Contents
+
+So well, although I didn't really have a proper chance to play with Akelos I can certainly herald some of its - verified, this time - features.
+
+For one, it's huge. Take Cake, add _every excellent, useful third party library or class you can possibly thing of_ and you'll get Akelos. No kidding. The unzipped source of the whole framework is a massive 16MB, 8.5 of which constitute the @vendors@ folder. What's in it? Well, all this:
+
+* ADOdb
+* Domit
+* FPDF
+* Excel (reader library)
+* Hyper Estraier full-text search system
+* Inutio XML-RPC Library
+* _Many_ PEAR packages
+* PHPCodeAnalyzer
+* PHPmailer
+* SimpleTest
+* A Simple PHP YAML Class
+* Textile
+
+Then, similarly, all the state-of-the-art Javascript/AJAX hyper-hyped libraries are included:
+
+* AFLAX
+* Behaviour
+* Builder
+* various Scriptaculous packages
+* Prototype
+* FileUploader (by the author, using prototype)
+* Window
+* EventSelectors 
+
+!<http://base--/img/pictures/frameworks/akelos_framework_logo.gif! 
+
+Good, well, kind of: that's just what _others_ did, but it's worth noting that it's all there and - apparently - integrated with the framework, hopefully not too tightly. But people are fussy, and do not get excited easily anymore, long gone are the early days of Rails, when the whole Internet shake at hearing about _code generators_... Aye, there are in Akelos as well, of course!
+
+Coming to the more juicy stuff, _lo' and behold, ye contents of /lib folder (with comments):_
+
+* AkActionController (controller)
+* AkActionView (view)
+* AkActionWebservice (Web services)
+* AkActiveRecord (model)
+* AkAdodbCache (content caching)
+* AkCharset (utf8 support, includes _all_ mappings)
+* AkConfig (load config settings)
+* AkConverters (conversions!)
+** DBDesigner > AkelosDatabaseDesign
+** Excel > Array (bi-dimensional)
+** Excel > CSV
+** HTML > RTF
+** HTML > Text
+** Word > Unicode
+** PDF > Text
+** Xdoc > Text
+* AkHeaders (HTTP headers, redirections)
+* AkImages (Image operations, resizing)
+* AkLocalize (Localization, countries and timezones)
+* AkInflector
+* AkLogger
+* AkFtp
+* AkInstaller
+* AkRouter
+* AkZip
+* ...
+
+Well, it's all there, at any rate. The best way to know if it all works, and _how_ it works, is simply to try it out: "www.akelos.org":http://www.akelos.org/.
+
+h3. Remarks
+
+As I said earlier, Akelos looks like _CakePHP on steroids_: agreed, the Cake philosophy of "no we-may-use-it code in the trunk" has been _completely_ (and intentionally) ignored, but this is our chance to peek at what CakePHP could have become if such philosophy didn't become a lifestyle for the Cake Dev Team. 
+Akelos code is Rails-inspired, so yes, it's _very_ similar to Cake, although with some rough edges and some re-used parts, but it's the work of ONE person with no community support (yet), don't forget. Remarkable. 
+
+And he needs co-developers, by the looks of it, so there you are then: there's _your_ chance!
+
+My personal opinion about it? Well, I think Akelos can learn from CakePHP and vice-versa: a merge? Well, at least it would reduce the number of Rails-inspired framework for PHP and _possibly_ meet the needs of more people: those who want just the essentials, as a framework, and those who like to be _virtually almighty_ and be able to do anything, _if they wanted to_.
+
+Two flavours of the same framework? _CakePHP_ and _cAkePHP_ (note the case)? Bah, let's stop raving now, shall we?

@@ -1,0 +1,14 @@
+----- 
+permalink: "8"
+title: New site operative
+tags: 
+- website
+- web-development
+- cakephp
+type: article
+filter_pre: textile
+-----
+Yes, it works. Perhaps it's a tiny bit slower than expected but the new h3raLd.com seems to work.
+I'll probably find some new exciting bugs to fix in the next few hours, as usual - that will be annoying but perfectly normal.
+
+-The good thing is that the new template seems to load faster, mostly due to the fact that I hardly used images- <- [not true, te new site appears to be slower, maybe not due to the images], at any rate, let's see how it goes. I can imagine I'll have to implement some sort of caching system for the tagging system in particular, but fortunately "CakePHP":http://www.cakephp.org/ apparently comes with a built-in caching mechanism for views, models etc. etc. although the documentation available seems to be "scarce":http://groups.google.com/group/cake-php/browse_thread/thread/f0f96751bb61bc7b/bcb43c97e91923c7?q=caching&rnum=1#bcb43c97e91923c7 at the moment, and I've been to lazy to investigate any further.

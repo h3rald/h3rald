@@ -1,0 +1,151 @@
+----- 
+permalink: rails-doc-first-look
+title: Rails-Doc.org - A First Look
+tags: 
+- rails ruby writing review
+type: article
+filter_pre: textile
+-----
+When you decided to learn Ruby on Rails (if you did, that is), chances are that you bought a book. I did, too, actually: there are a lot of very interesting and fairly comprehensive books out there after all.
+
+I actually never bought a book to learn PHP, in the past though. Why's that? Well, for two simple reasons:
+
+* The "PHP manual":http://www.php.net/manual/en/ can easily be searched and provides enough documentation, in most cases.
+* When the documentation is not enough, there's always plenty of comments by experienced developers to save your day.
+
+That being said, PHP is still an awfully disorganized language, but believe it or not, coming from PHP I didn't find "Rails documentation":http://api.rubyonrails.org/ useful enough simply because it didn't have these two simple but very powerful features.
+
+Sure, there's the "Rails Documentation Project":http://www.railsdocumentation.org/ which provides more organized docs, and "Noobkit":http://www.noobkit.com/ does a nice job with its search-as-you-type feature... but still is not quite enough: you'd expect something much better than that for something like Rails!h3. Introducing Rails-Doc.org
+
+!>/files/railsdoc_logo_sm.png!
+
+"Rails-Doc.org":http://www.rails-doc.org focuses on providing a better interface to Rails documentation by offering two key features:
+
+* A powerful, fast and useful document search
+* The possibility to add notes to Rails documentation
+
+When the app went live, I immediately registered (it's free of course) and started playing with it...
+
+h4. Search as you type...
+
+The first thing I did was trying the search features, of course. I started typing "rout" for Routing, and I was immediately shown a list of matches:
+
+!=/files/rails-doc_search.gif!
+
+It took a small fraction of a second to load the matches, which makes me think that definitely they have all the names indexed somewhere. Nevertheless, it was a pleasant surprise: normally, these search-as-you-type utilities are not that refined!
+
+All you need to do is start typing at least three letters, and you get results, if any. 
+if you press ENTER, you get automatically redirected to the first result. This can be good, but maybe it would have been nicer to load a "traditional" list of results, but it depends on your taste, really.
+
+
+h4. ...or browse through the namespaces
+
+Alternatively, it is possible to browse the docs in the more traditional way, i.e. according to their class or module: the *Browse* page does just that: it lists _all_ Rails classes and modules, regardless of the nesting. But there's more: a little roundy icon precedes each class name, to indicate whether the documentation is present, and to what degree:
+
+!=/files/rails-doc_icons.gif!
+
+This is an interesting concept: in this way, in theory, people should contribute to the documentation where it's more needed. 
+
+Each reference page is very neatly re-formatted: you can hardly imagine it's actually the same content included in Rails' RDoc pages! 
+
+!=/files/rails-doc_document.gif!
+
+
+Finally, another nice addition is the *Related* column, which lists links to other items which are related to the current topic:
+
+!=/files/rails-doc-related.gif!
+
+
+h3. Contribute, contribute, contribute!
+
+You have to register for something, don't you? Yes. If you register, you can post notes to any document. Simple enough, all you have to do is to click the *Add Note* button and a form will slide down for you to fill in:
+
+!=/files/rails-doc_note1.gif!
+
+As you start typing, you'll notice that a preview of the note is displayed instantly: as you can use SimpleMarkup to write notes, exactly like in RDoc, this feature can be very handy:
+
+!=/files/rails-doc_note2.gif!
+
+What if there's no documentation for a particular class or method? You'll get a warning like this one:
+
+!=/files/rails-doc_nodoc.gif!
+
+The idea behind this is that, if you provide some useful insights, they'll eventually end up in Rails core documentation.
+
+h3. An Short Interview with Mikael Roos, from Nodeta
+
+Before the application went live, I was lucky enough to get Mikael Roos to answer to some of my questions. Here's the full interview...
+
+h4. What are you actually trying to do on Rails-Doc.org?
+
+The initial goal of the project is to provide the existing documentation in a more accessible way, most importantly to provide a lightning fast search feature that gives weighted results based on the
+quality and amount of documentation. This we have already accomplished, and all remaining issues are related to browser compatibility. Another initial goal is to present a smooth interface for creating inline notes to
+the documentation so that Rails developers can post notes about certain methods etc. for themselves and others to draw knowledge from.
+
+Our longer-term goal (N.B. we are an agile project, so long-term means, say, three months) is to provide a way for the active members of the Rails community to improve the existing documentation based on the posted notes
+to create an extended documentation that could optimally even be made in to a patch and would find its way back into the actual Rails source.
+
+Another clear and obvious goal is to keep improving the service steadily as we progress toward the goals that I mentioned above.
+
+
+h4. Could you spend a few words on the "development process" followed by your company to develop this app? Did I read the word "Scrum" somewhere? Am I correct?
+
+
+
+
+Yes, our development process of choice is Scrum. The core team is only three members, one backend developer, one backed/frontend develope and one frontend developer/UI specialist. I feel the team is optimal in many ways.
+The team also has a few more experienced developers who are primarily active in other projects to ask questions from, one of whom is also the acting product owner on the Rails-doc project (that's me!).
+
+h4. Did you develop it in three months, or...?
+
+The first release was developed in three SPRINTS, not months - so what I'm saying is the first release was developed in five weeks (first sprint was mostly introductory and lasted a week, the next two sprints, first
+development and then stabilization, were two weeks each). However, it is a FIRST RELEASE, which means the app is by all means not complete, but since we make software in a very agile way, it'a all about "Ship, ship, ship!".
+
+h4. What is "Nodeta":http://www.nodeta.fi, exactly? My Finnish is a bit rusty nowadays...
+
+Nodeta is a software development company that focuses on web software. We employ a highly agile and effective process. We have worked both on light independent projects and in the environment of large global enterprises.
+There are currently 10 Nodetans.
+
+Rails-Doc.org is a pilot project for your new shiny app, ApiDock. Is it an open source app?
+
+Unfortunately, I cannot go into details about APIdoc yet. What I can tell is that it is developed with Rails and that it won't be open source, but rather it would optimally be offered as a service, which after all is what
+the word "app" on the web means these days. Open source projects could however use it for free, sort of in the spirit of GitHub.
+
+It will also most likely be separately targeted to larger companies.
+
+h4. Can you give me more technical details about the way keyword search is performed? Are you indexing/tagging documentation beforehand?
+
+There will probably be a blog post on the "Nodeta blog":http://blog.nodeta.fi about the search and how it works after the first release comes out.
+
+
+h4. What about the social side of it: you're hoping people will contribute with notes, which will then be collected and integrated in the documentation correct? Do you have any moderation or anti-spam precaution?
+
+The quality of notes is judged in a social way. Notes can be thanked by other users and notes that get many thanks are showed in a more prominent way. Registration will be required in order to post notes and the registration will feature a captcha.
+
+
+h4. Will contributors be credited somehow? Who can contribute and at what level?
+
+Anybody can post notes and good notes get thanks and thus so do their posters. Users that get lots of thanks will be later asked to become core users that can alter the extended documentation (not in the first
+release.)
+
+
+h4. You want to blow out competition and that you don't want to fail: sounds a good plan! How is Rails-Docs different from other similar apps?
+
+We think that our app is the first that is serious about making things happen. We think about users first and above all at this stage our search feature is frankly unparallelled.
+
+h4. Do you have DHH's seal of approval? Will you? Is there any copyright issue with your domain name?
+
+Time will tell what DHH thinks. We did contact him just a few days ago to ask what his thoughts about all this are and are waiting for his comments. I doubt there is any wrinkles with copyright as Rails-doc itself is a completely non-profit project.
+
+
+h4. What about doing something similar for the whole Ruby language? Ruby docs may also be easier, in a way...
+
+It is possible that we might do just that but right now it's all about Rails.
+
+h3. The Bottom Line
+
+Rails-Doc.org is definitely an interesting project, which has all the potential to become a powerful, Rails-powered service. Sure, it's not open source and this can be a bit of a letdown for some: but after all people flocked to GitHub when it opened, didn't they?
+
+The search capabilities of Rails-Doc.org are definitely a very important step forward in making Rails documentation more accessible and easier to use, but the killer feature is definitely the possibility to add notes, if used wisely. 
+
+I'll be watching this project closely and I'll pay particular attention on what happens to the community's contributions: will it really be useful? Will it really help creating documentation patches to Rails core? Only time will tell, of course.

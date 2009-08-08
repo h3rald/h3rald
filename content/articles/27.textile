@@ -1,0 +1,62 @@
+----- 
+permalink: "27"
+title: "rdBaker: Bake your CakePHP application online"
+tags: 
+- cakephp
+type: article
+filter_pre: textile
+-----
+Right after my "last blog post":http://base--/blog/view/26 I decided to log on #cakephp on irc.freenode.org as usual, and gwoo pops in and says "h3raLd, you didn't review rdBaker yet!"
+That's right, I didn't yet, so I may as well do it today.
+
+I remember hearing about rdBaker months ago, waaay before CakePHP 1.0, way before the RCs, I remember someone mentioning it on CakePHP user group in right after the bake.php script was created. _"How about having an online baking utility?"_ - and that's precisely what rdBaker is, a more PHP-ish version of bake.php, which runs like any other PHP scripts: in your browser.
+
+This cute little thing is obviously available for free on "CakeForge":http://cakeforge.org/frs/?group_id=13&release_id=74 and is part of "gwoo":http://www.rd11.com 's "rdOpenSource":http://cakeforge.org/projects/rdos/ project which includes various other Cake-powered applications.
+I personally recommend new (and old) bakers to download them and play with them, try to understand how they were coded, because they can really teach you _a lot_ on how to code a CakePHP application or website properly.
+
+So anyway, get your copy of rdBaker, unzip it and have a look at the @README.txt@ file for the installation instructions:
+
+<quote>
+1. Place rdBaker in the root along side /cake_install/app.
+2. chmod /cake_install/rdBaker/tmp to 0777
+3. launch http://localhost/cake_install/rdBaker/
+</quote>
+
+Not too hard, innit?
+
+!http://base--/img/pictures/rdbaker.jpg! 
+
+Good. So you try accessing something like @http://localhost/php/test/cakephp/cake_test/rdBaker/@ (that's on my own local WAMP server) and you'll get a nice page asking you to "supply your ingredients" via a simple form. 
+Unlike its command line cousin, rdBaker doesn't require you to fill in _all_ the fields, but just the full path to the save directory (which is normally already filled in) and of course the name of the model (Post, User, Comment).
+Then you can select the type of output and choose whether you want to generate an empty controller, a scaffolded one or the _full_ option including all the most common CRUD(Create, Retrieve, Update, Delete) methods.
+Finally - if you like - you can enter any association or valitation rules for your model, then press the _Bake it!_ button and voil&aacute;, in you'll find three directories (controllers, models and views) in your save directory containing all the MVC(Model View Controller) entities you need regarding a particular model:
+
+<pre><code>
+		rdBaker Result Array
+(
+    [0] => notes_controller.php created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpcontrollers
+    [1] => note.php created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpmodels
+    [2] => index.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+    [3] => add.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+    [4] => edit.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+    [5] => view.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+)
+</code></pre>
+
+But there's more! By checking the appropriate checkbox, you can get all the stuff packed in a zip file!
+
+Not bad at all, and fast as well. 
+
+Now the bad things...
+The script works fine, but there's something which could be improved, perhaps:
+
+* If you choose to put everything in a zip file, the file will be named "baked_by_rdBaker.zip" - not a big deal, but maybe it could be personalized according to the model name entered.
+* Regardless you want to add validation rules to your model or not, you'll _always_ find some validation rules for a _title_ and _body_ field. I checked and they are hardcoded in the template file (rdBaker/views/helpers/templates/full/model.txt):
+<pre><code>
+  var $validate = array(
+		'title'=>VALID_NOT_EMPTY,
+		'body'=>VALID_NOT_EMPTY);
+</code></pre>
+* In the baked index.thtml view, there will always be a column named "Title". This, again, is hardcoded in the template.
+  
+Other than these things, everything seems to work fine. A really nice script!

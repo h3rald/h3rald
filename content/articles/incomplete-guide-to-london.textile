@@ -1,0 +1,232 @@
+----- 
+permalink: incomplete-guide-to-london
+title: Fabio's (In)complete Guide to London
+tags: 
+- travelling
+type: article
+filter_pre: textile
+-----
+This summer I finally had a chance to spend _a whole week_ in London. The city itself was not new to me, since I visited it 6 times before this one, but this summer was different, in a word: Roxy (my fiancee)'s brother Caspar was happy to host us at his place, for free.<a name="top"></a>
+
+h3. Table of Contents
+
+* "Preamble":#pre
+* "Transportation":#trans
+** "Planes":#planes
+** "Trains, coaches and cabs":#trains
+** "The tube and buses":#tube
+* "Food":#food
+** "Rubbish Food":#rubbish
+** "Healthy Food":#healthy
+** "Brick Lane":#brick
+* "Entertainment":#enter
+** "Clubbing":#club
+** "Museums":#museums
+** "Theatres":#theatres
+** "Shopping":#shop
+
+<a name="pre"></a> "[Back to Top]":#top
+
+h3. Preamble
+
+This summer I finally had a chance to spend _a whole week_ in London. The city itself was not new to me, since I visited it 6 times before this one, but this summer was different, in a word: Roxy (my fiancee)'s brother Caspar was happy to host us at his place, for free.
+
+Although we obviously had to pay for our flight, transport, food, etc. etc., we didn't have to pay for accommodation, which was indeed quite an achievement, considering the prices of hotels and flats in London. The bad news is that this Guide, although already lacking a lot of information (try describing everything you can do in London in a single, not-too-boring article), will not contain any particular hints and tips on how to find accommodation in one of the most interesting cities in Europe - unless of course you get to stay at Caspar's place.
+
+<a name="trans"></a> "[Back to Top]":#top
+
+h3. Transportation
+
+Getting there is relatively easy and if you come from Europe there's a quick answer to the universal traveller's question:
+
+_"Is there any cheap, reliable and on-time airline?"_
+
+<a name="planes"></a> "[Back to Top]":#top
+
+h4. Planes
+
+Yes, there is. Apparently some Irish man thought he could make millions by buying loads of Boeing 737-800 and selling cheap flight tickets to everyone going to or from London, and he actually did. "RyanAir":http://www.ryanair.com is the answer: a cheap-but-reliable airline which will make you arrive even early than you expected by paying tickets as low as 1p (plus 20-30 Euro airport taxes). Unfortunately they don't provide full meals aboard, they don't have any cutlery on board for you to steal, unlike "BA":http://www.britishairways.com/travel/globalgateway.jsp/global/public/en_, and flight attendants are not hot either, unlike "BA":http://www.britishairways.com/travel/globalgateway.jsp/global/public/en_, but since I'm happily engaged and Roxanne doesn't fancy me stealing BA cutlery it's better this way indeed. 
+Unfortunately we booked only a month before and thus the flight for both of us (return) was about 80 Euro in the end, but still not bad.
+
+Luggage check? Not bad, unless you plan to arrive or depart right after an unfoiled bomb plot like I did: I had to take off my shoes, got checked everywhere, they emptied out my hand luggage, turned on and off my laptop and confiscated my gel-ink pen. Way to go!
+
+<a name="trains"></a> "[Back to Top]":#top
+
+h4. Trains, coaches and cabs
+
+!</img/pictures/london/cab.jpg!
+
+The next question of the London newbie arriving in Stansted airport is:
+
+_"Cool, now I'm in the middle of nowhere in England, where's London then?"_
+
+Nice innit? They sell you a cheap flight and then it seems you still have a 45-minutes journey to get to the actual city, and this is possible - apparently - only through the Stansted Express, the _fastest_ way to get to London from Stansted. Dear as hell (about 25 ENGLISH POUNDS return, per head!). 
+Luckily there's an alternative in the form of an endless amount coaches going from Stansted to London and vice-versa every now and then. I went with "Terravision":http://www.terravision.it/ but there are many others. Significantly cheaper (34 Euro for two people return!).
+The Stansted Express is the first example of how trains in the UK can be a lot dearer than you expect, especially if you come from Italy where you can go from Genoa to the Cinque Terre for as low as five Euro (for 100Km that is). Considering that Roxy and I spent about two pounds for about 15 Km to get from Victoria Station to Bromley South one way, well, yes, it is more expensive! 
+
+Once we got to Liverpool Street Station from Stansted with a load of (empty) suitcases, a weird pakistani guy in a a black leather jacket turns up out of nowhere and heads towards us. Damn airport regulations: unfortunately my almighty Victorinox pocket knife was in my suitcase. Luckily the guy approaches and simply asks:
+
+Him: "Hey mate, need a taxi? ...A taxi mate? A taxi?"
+Me: "How much"
+Him: "Where to?"
+Me: "[Somewhere in Hackney]"
+Him: "20 pounds"
+Me: "Bye"
+
+Just an unregistered cab driver. There are apparently millions around and they can spot a foreigner (especially Italians, it seems) from miles. Be prepared, and be aware that a cab from Liverpool Street for a 5-minutes drive in the night should not cost more than 6 pounds...
+
+<a name="tube"></a> "[Back to Top]":#top
+
+h4. The tube and buses
+
+Here are some tips for smooth travalling via the underground or buses:
+1. Do not use a bus unless you can't use the Tube for some particular reason (e.g. you need to go to Zone 3 or 4 and your Oyster card can be used only in zone 1 and 2)
+2. Do not catch the Circle Line, always try a combination of two or more (e.g. District and Central) instead, because delays are frequent
+3. Get down at Leicester Square if you're going to Covent Garden: it's just 300 metres away and Covent Garden station is small and packed
+4. Always check whether the line you're catching is marked with "Good Service", try another route if there delays are expected
+5. Keep right on escalators - there's always some lunatic running up/down on the left side, from time to time, and trust me, he WILL mind being stopped for no valid reason
+6. Mind the gap! (Especially at Bank station)
+7. Mind the sweaty guys wearing suite and holding a briefcase, at peek hours, they can be deadly especially on escalators (See 5.).
+
+<a name="food"></a> "> Back to Top <":#top
+
+h3. Food
+
+I already noticed this during the previous visits: in London you can eat everywhere. Quite literally, both in the city centre and surrounding areas. If you can - and also if you feel brave enough to try at random - the areas surrounding the city centre are probably cheaper than the 4-million different food chains providing any kind of meal near Oxford Street & Co. and possibly - arguably - more tasty.
+
+If you dare to venture in the land of the Turkish/Bangladesh/Indian food shops you're more than welcome to do so, but be prepared to a potentially long trial-and-error process: in the end you'll eventually find the right one. Caspar recommended a particular one, and the "humus sandwitch":http://www.astray.com/recipes/?show=Humus%20sandwich%20spread was really great. Doner Kebab? Roxy insisted with the rumors they use roadkill for those (she's vegetarian anyway) so she didn't let me have one, aww.
+
+<a name="rubbish"></a> "[Back to Top]":#top
+
+h4. Rubbish Food
+
+I recently came across an interesting "image":http://www.princeton.edu/%7Eina/infographics/starbucks.html which gave me a better picture of how horrendously sick the world has become when it comes to rubbish food. 
+Yes, "McDonald's":http://www.mcdonalds.com/, "Starbucks":http://www.starbucks.com/ & their nasty friends ("Pizza Hut":http://www.pizzahut.com/, "KFC":http://www.kfc.com/, "Burger King":http://www.bk.com/...) are still there making millions at every corner, in London as well. Well, not quite: I noticed they were less last time, and apart from a few kids fretting for their _Happy Meal_, they weren't so packed. I was pleased to notice that a load of new-ish healthier alternative are now available (see next section). 
+
+<a name="healthy"></a> "[Back to Top]":#top
+
+h4. Healthy Food
+
+!>/img/pictures/london/pret.png!
+
+This was the relatively new surprise. Relatively new because I already noticed some of them last year, but this time I had a chance to try them all: they _healthy food gang_! This is the REAL food trend for London, it seems, and I was very glad about it.
+The first one seems to have been "Pret a Manger":http://www.pret.com/ a London-established company which is now spreading - apparently - in the US as well. They "preach and believe":http://www.pret.com/about/ in the importance of healthy food and fight a silent - but effective - quest against aforementioned Rubbish Food Giants.  
+
+bq.
+"Pret operates a bit like a restaurant. Every Pret has its own kitchen (except for one or two of the tiny ones). You won't find 'sell by' dates on our fresh sandwiches and salads. We don't sell 'factory' stuff. We offer our food to charity at the end of each day rather than keep it over."
+
+Sounds like a good plan. The food is indeed very nice and tasty and they even _apologize_ for charging VAT when eating in. A carefully-thought marketing campaign or the just plain simple truth (Wot!)? Only time will tell, let's hope for the best.
+Another example of healthy food around London? Well, real, tasty "Cornish pasties":http://www.westcornwallpasty.co.uk/flash.html can be bought for a few quid around in the biggest stations and streets, for example. Freshly baked in Cornwall, and brought all over England the same day - or so they make out.
+
+_"Hey, what the hell is a pasty man?"_
+"Go back where you belong, you "emmit":http://www.urbandictionary.com/define.php?term=emmet!"
+
+Roxanne and Caspar both lived in (West!) Cornwall for years, and they really appreciated their fellow pirates trying to take over the world.
+
+<a name="brick"></a>  "[Back to Top]":#top
+
+h4. Brick Lane
+
+_"Come in my restaurant... good food, cheap..."_
+"No."
+_"C'mon, I make a discount for you"_
+"How much?"
+_"15% off"_
+"No way mate, last time it was 25% with a free round of drinks!"
+_"You came here before? Impossible, we don't do 25% off, we do 20% off maximum"_
+"No, 25% off, it was 25% off, but doesn't matter, I'll go somewhere else..."
+_"No wait, 20% off and free drinks, ok?"_
+"25%"
+_"OK, 25% and free drinks, but you come in OK? Good food!"_
+
+This is just an example of conversation between a guy working for a restaurant in "Brick Lane":http://www.visitbricklane.com/ and a "potential customer". Brick Lane (aka Banglatown) is a street in London which became popular for the moltitude of Indian/Bangladesh restaurants. There are literally dozens of them, and this fierce competition causes the owner to repeteadly offer "deals" to potential customers: getting 25% off the bill is not unusual, and sometimes if you can argue it well you can even get free drinks. Caspar took us to a really good place he went before, and the curry and rice and other typical dishes were absolutely fabulous. Price? 11 pounds per head for a filling (and spicy!) dinner.
+
+<a name="enter"></a>  "[Back to Top]":#top
+
+h3. Entertainment
+
+So what can you do in London, other than meandering with the underground to get the most out of your Oyster card and eat out every day? Well, you can have fun of course! There's loads to do for every taste. This is an _incomplete_ guide, so I'll just mention a few possibilities, but be aware that there's much, much more than this.
+
+<a name="club"></a>  "[Back to Top]":#top
+
+h4. Clubbing
+
+Each weekend, the following equation holds, for the average Londoner aged 20-30 at least:
+
+@100 pounds + Club + Friends = Loads of booze + Fun + Terrible hangover and amnesia the day after@
+
+That's basically what the traditional Londoners (or maybe we shall generalise to all of England...) do every saturday night: they get trashed. Why? It's not clever, it's not good... but it's bloody good fun!
+Clubs, pubs and bars are the best place for this kind of activity: they are comfortable, there's normally cool music on, air conditioning, totally hyper staff, and a huge bouncer too! 
+We went to "The Ditch":http://www.ditchbar.com/, a recently renovated place in Shoreditch (obviously). I must say I really liked the environment more than any club in Italy:
+
+* Good music and deejay
+* Enough people inside, but not too crowded
+* Good drinks
+* Small & comfy VIP room, obviously for us (no kidding)
+* A competent bouncer who kindly reminded us to "watch over" one of our friends, after she suddenly ordered four Vodka-RedBull at once...
+
+No wonders why Caspar & his friends carefully picked this place as their ideal candidate for their own upcoming DJ mini-event in November: it's an ideal place to spend your night.
+
+Pity that English blokes (and birds too!) get way too trashed in the end: I reckon if you could place a single half-sober, decent-looking Italian guy in a club like that, he'd have pulled almost all the (decent-looking) girls available by the end of the night. I'll definetely recommend some of my _free_ (not as in software) friends to go over to London next summer.
+
+<a name="museums"></a>  "[Back to Top]":#top
+
+h4. Museums
+
+Enough clubbing and equally shallow activities, let's focus on culture, at once!
+London is the best city in Europe (OK, _followed_ by Paris) for museums, and the best thing is that they are (nearly) all free. This time we didn't go to the "National Gallery":http://www.thebritishmuseum.ac.uk/, which hosts one of the most outstanding painting galleries in all over the world, because we already visited it too many times, so we went straight for the "British Museum":http://www.thebritishmuseum.ac.uk/. I originally went there a few years ago, and I forgot what was in it, exactly, and yes, I was amazed and perplexed at the same time:
+
+!</img/pictures/london/rosetta.jpg!
+
+I was amazed at the amount of stuff those British folks _nicked_ from all over the world: I'm not talking about a few mummies from Egypt like we did in for our mini Egyptian museum in Turin, but rather stuff like the original sarcophagus of Cleopatra (& others), the Rosetta Stone, the Ur Standard, whole monuments from Greece, gargantuan gateways from some Assirian city, and _ALL THE SCULPTURE DECORATIONS OF ATHEN'S PARTHENON!_ That was shocking really, but after all it was Napoleon who stole the Monna Lisa from us. Damn the French. (No discrimination intended, please mind the sarcasm)
+
+The "Tate Modern":http://www.tate.org.uk/modern/ was impressive as well for a few Dali's and Kandinski's paintings etc. etc., but I don't think it can ever be as breath-taking as the other ones. I certainly don't understand certain kinds of modern art, but I can't understand how a random guy could get loads of money and ovation for the critics for putting a few basket-balls in a glass box. Clever.
+
+!>/img/pictures/london/nh.jpg!
+
+To conclude this brief and silly overview of London's most remarkable museums, let's say something about the "National History Museum":http://www.nhm.ac.uk/. 
+First of all it must be noted that we have a decent equivalent in Genoa, so Roxy and I visited it not long prior to our departure for England. She liked it, and was impressed by the amount of stuffed animals on display, but she told me that the National History Museum in London was supposed to be _way better_.
+We both expected, especially judging from outside this enourmous building which was built for the purpose, big halls full of taxidermist's masterpieces, but alas, nothing like this at all. Yes, sure, there were a few stuffed animals here and there, and the minerals section was truly outstanding for completeness. The rest - in my very, very humble opinion - was a real insult to Science and to the dignity of the visitors over five years old.
+They insisted in "renovating" the interior of a marvellous building, making almost every room pitch black only to allow a kid in a million to press a button to highlight a five-lines explanation for a absolutely pointless diagram. Well done. That was a real achievement, wasn't it? I really don't understand who could ever conceive such an abomination: a formerly very respected museum turned into a poorly-designed theme park.
+OK, they probably wanted to involve younger generations into scientifical subjects through "interactivity", and that's understandable - in theory. In practice though, there are a few elements which weren't obviously considered when developing such a subtly cunning marketing strategy:
+
+* The average kid up to 5 years old enjoys pushing buttons, listening to sounds and looking at easy-to-understand (but ARE THEY?) pictures, but alas, can't really bother to read, right?
+* The average kid over 5 years old would probably like reading some explanation about some weird phenomena, but alas, he really can't be bothered to push button, move levers, etc. etc. only to highlight some text. Wake up dude, we never heard of Computer Graphics? Animation? even Educational Software, maybe with things like touchscreens etc. These kids are from the XXI century, not from the seventies ffs! Grow up (the museum's managers, not the kids of course)!
+* Instead of ruining an historical building, they could have devoted just a few rooms to kids, investing in something slightly more amazing than out-of-fashin "interactive" toys.
+
+_"Yes, but hey, we still have a huge queue of kids & families at the entrance!"_
+
+And you know why? You know what are all these people queueing for? For a damn cheesy T-rex "animatronic":http://science.howstuffworks.com/animatronic.htm! Yes, really! And no, not the one from Jurassic Park, but only its rather shitty English-made cousin. 
+The funniest thing of the whole visit? They tell you to donate "at least" three quid for their wonders, same as for the British Museum and the National Gallery. You know what? I'd rather give _thirty_ quid to a random kid if he promise not to visit such "museum"...
+
+<a name="theatres"></a>  "[Back to Top]":#top
+
+h4. Theatres
+
+Luckily London theatres are still great. Unfortunately I didn't have a chance to go to a musical this time, but I'll definitely try to make it for one during my next visit. Adverts for the shows are all over the place, from streets to underground stations, and there are truly a lot of places where it is possible to buy tickets at discounted price while apparently buying full price tickets doesn't seem to be possible...
+Anyhow, not only we didn't manage to go to a musical, but we also missed another theatrical performance by "Patrick Stewart":http://www.imdb.com/name/nm0001772/, who, for those who don't know, happens to be one of the best Shakespearean actors alive... when he doesn't "fight against the Borg":http://en.wikipedia.org/wiki/Star_Trek:_First_Contact or "plays funny tricks on a wheelchair":http://en.wikipedia.org/wiki/X-Men_(film), of course (cheesy, cheesy joke). 
+
+Nevertheless we _did_ manage to go and see a play, namely Shakespeare's Antony and Cleopatra at the "Globe":http://www.shakespeares-globe.org/navigation/framesetNS.htm. The Globe Theatre is an almost-perfect reconstruction of the famous London Theatre where Shakespeare's plays used to be acted. Like in the XVII century, you have two choices:
+
+a. Book your seat (26 pounds)
+b. Stand up on the ground, near the stage (5 pounds)
+
+!</img/pictures/london/globe.jpg!
+
+We obviously went for option b, of course, since we didn't fancy the idea of paying that much - although it can be worthwhile. Only one thing to keep in mind: _always check the duration of the play you're going to see beforehand_ - if you don't like standing up for a long time, you have to go for option a. 
+We obviously _didn't_ check how long the play was going to be - although we could have imagined it - so we ended up standing up for approx three hours (with a 15 minutes break). And you _have_ to stand up, you can't sit on the stairs and neither on the floor, and the staff is ready to enforce this rule at all costs: a 70-year-old lady brought a folded chair and decided to sit on it, only to be _kindly reminded_ by the staff that it wasn't allowed to do so. Go figure. 
+Anyhow, after all I must say it was the cheapest and the very best Shakespeare play I've ever been to so far, although I must also say that most of the ones I've been to before were acted in (yikes!) Italian (yes, we do dub theatrical works, _as well_). A really, really good idea for students and half-broke youth who shouldn't be denied of the pleasure of watching Shakespeare's masterpieces at the theatre. Please, keep it up.
+
+<a name="shop"></a>  "[Back to Top]":#top
+
+h4. Shopping
+
+Last but not least, I felt compelled to include a short section about _shopping_ in London. The universal answer to the question "Where can I find [insert random item here]" is normally "Oxford Street":http://www.oxfordstreet.co.uk/. When I visited it for the first time (I was about 14 years old, I believe) it all seemed huge... those never-ending malls et al, but now it just seems "normal". Probably because now going to malls and megastores is just the plain normality, while in the nineties (in Italy) it was rather unusual. 
+Oxford Street has them all: computer shops, endless fashion shops, gargantuan bookshops etc. etc. 
+Biggest and most expensive shop in Oxford Street? Probably "Selfridges":http://www.selfridges.com/ 
+Biggest bookshop? Definitely "Waterstone":http://www.amazon.co.uk/exec/obidos/tg/stores/static/-/waterstones/waterstones-info/202-4070483-1661418 although the biggest bookshop in London (and in Europe) is the Waterstone one in Piccadilly, just round the corner.
+"Harrods":http://www.harrods.com/Cultures/en-GB/homepageindex.htm? - it's not far from there.
+
+What if you like more traditional and less glamorous shopping? "Covent Garden":http://www.coventgardenlife.com/ and its whereabouts is probably the best choice, also for souvenirs.
+
+Had enough yet? Well, yes, let's call it a day for this article, but be aware that there's much, MUCH more to see and do in London than you can ever imagine. Unless you're from the US, of course.

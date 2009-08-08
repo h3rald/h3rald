@@ -1,0 +1,236 @@
+----- 
+permalink: inline-introduction
+title: RawLine - a 100% Ruby solution for console inline editing
+tags: 
+- ruby programming opensource rawline
+type: article
+filter_pre: textile
+-----
+One of the many things I like about Ruby is its cross-platform nature: as a general rule, Ruby code runs on everything which supports Ruby, regardless of its architecture and platform (yes, there are quite a few exceptions, but let's accept this generalization for now).
+
+More specifically, I liked the fact that I could use the "GNU Readline library":http://tiswww.case.edu/php/chet/readline/rltop.html with Ruby seamlessly on both Windows and Linux.
+Readline offers quite a lot of features which are useful for those people like me who enjoy creating command-line scripts, in a nutshell, it provides:
+
+* File/Word completion
+* History support
+* Custom key bindings which can be modified via .inputrc
+* Emacs and Vi edit modes
+
+Basically it makes your command-line interface fast and powerful, and that's not an overstatement. Ruby's own IRB can be enhanced by enabling readline and completion, and it works great -- at least on <notextile>*nix</notextile> systems.
+
+For some weird reason, some people had problems with Readline on Windows: in particular, things get nasty when you start editing long lines. Text gets garbled, the cursor goes up one or two lines and doesn't come back, and other similar leprechaun's tricks, which are not that funny after a while.
+
+Apparently there's no alternative to Readline in the Ruby world. If you wan't tab completion that's it, you're stuck. Would it be difficult to implement _some_ of Readline functionality natively in Ruby? Maybe, but the problem is that for some reason the Ruby Standard Library doesn't have low level methods to operate on keystrokes...
+
+...but luckily, the "HighLine":http://highline.rubyforge.org/ gem does! James Edward Gray II keeps pointing out here and here that HighLine's own @get_character@ method does just that: it returns the corresponding character code(s) right when a key is pressed, unlike @IO#gets()@ which waits for the user to press ENTER.
+
+Believe it or not, that tiny method can do wonders...h2. Reverse-engineering escape codes
+
+So here's a little script which uses @get_character()@ in an endless loop, diligently printing the character codes corresponding to a keystroke:
+
+<typo:code lang="ruby">
+#!/usr/local/bin/ruby -w
+
+require 'rubygems'
+require 'highline/system_extensions'
+
+include HighLine::SystemExtensions
+
+puts "Press a key to view the corresponding ASCII code(s) (or CTRL-X to exit)."
+
+loop do
+
+	print "=> "
+	char = get_character
+	case char
+	when ?\C-x: print "Exiting..."; exit;
+	else puts "#{char.chr} [#{char}] (hex: #{char.to_s(16)})";
+	end
+	
+end
+</typo:code>
+
+A pretty harmless little thing. Try to run it and press some keys, and see what you get:
+
+<div style="font-family: Monospace">
+Press a key to view the corresponding ASCII code(s) (or CTRL-X to exit).
+
+=> a [96] (hex: 61)
+
+=> 1 [49] (hex: 31)
+
+=> Q [81] (hex: 51)
+
+=> &alpha; [224] (hex: e0)
+
+=> K [75] (hex: 4b)
+
+</div>
+
+Hang on, what are the last two codes? _A left arrow key on Windows_, apparently. 
+
+*Welcome to the wonderful world of input escape sequences!*
+
+To cut a long story short, both Windows and *nix system "terminals" translate special keystrokes into sequences of two or more codes. This applies to things like DEL, INSERT, arrows, etc. etc.
+For some ideas, check out:
+
+* "Windows Scancodes":http://www.microsoft.com/whdc/device/input/Scancode.mspx (Thanks "Huff":http://64.223.189.234/node/92)
+* "VT220 Terminal Input Sequences":http://www.connectrf.com/Documents/vt220.html (Thanks "James":http://www.grayproductions.net/)
+
+Let's now assume that we're smart and we can write a program which can parse keystroke properly, including handling different input escape sequences according to the OS, what can it be used for?
+Well:
+
+* For normal characters, just print them back to the screen (@get_character@ doesn't print anything, it "steals" the keystroke)
+* For special characters, do something nice!
+
+We could setup TAB to auto-complete the current word according to an array of matches, or bind the up arrow to load the last line typed in by the user, for example, that's basically something Readline does, right?
+
+h2. RawLine: how it works and what it does
+
+I created a small project on RubyForge called "RawLine":http://rubyforge.org/projects/rawline/ (not to be confused with RubyInline, a completely different thing altogether, sorry about that) to play around with the possibilities offered by the @get_character@ method. The library is just a preview of things which can be done, but it's already usable, provided that you're brave enough to try it out, that is.
+
+The basic idea behind RawLine is to be able to parse keystrokes properly on different platforms and re-bind them to a set of predefined, cross-platform actions or a user-defined code block.
+
+h3. Basic line-editing operations
+
+The first challenge was to re-invent the wheel, i.e. re-bind keystrokes to their typical actions: a left arrow moves the cursor left, a backspace deletes the character at the left of the cursor and so on. Yes, because @get_characters@ gives you the right character codes at the price of _cancelling their normal effects_, which is a great thing, as you'll soon find out.
+
+Printing a character on the screen was one of the easiest tasks (at first). @IO#putc@ does the job pretty well: it prints a character out.
+What about moving left? Easy: print a non-descructive backspace (\b) and hope it is really not destructive. I did some tests and it seems to do as it's told and move the cursor back by one position.
+
+Moving right was a little trickier: the easiest thing I found was to re-print the character under the cursor, which will then move the cursor forward (as naive as it may seem, it does the job!). If there's nothing under the cursor, then we must be at the end of the line and it shouldn't move anywhere, so there we go.
+
+What if I move left a bit and then start typing normal characters? Well, everything is rewritten of course: this will be our "character replace mode". Unfortunately users don't like this behavior that much, so what I did was this:
+
+# Copy all characters from the one at the left of the cursor till the end of the line
+# Print the character to be inserted
+# Re-print the previously-copied characters
+# Move the cursor back at the right place
+
+Again, a primitive solution which works seamlessly on all platforms, and yes, it's fast enough that you don't notice the difference.
+
+As you may have guessed, this of course means that I always had to keep track of:
+
+* The cursor position within the line
+* The text currently printed to the screen
+
+Backspace and delete were implemented in a similar way, you can figure it out yourself or look at the source code: I won't bore you any further!
+
+h3. History management
+
+The next step was to implement a history for both the characters inputted by the user (to allow undoing and redoing operations) and for the whole lines. This was just an ordinary programming exercise: a simple buffer with some extra controls here and there, nothing too scary.
+
+So every "modification" to the current line being typed is saved in a line history buffer and all the lines entered are saved in another history buffer. All is left is to allow users to navigate through these buffers back and forth. 
+Nothing impossible: all I had to do was keeping track of the current element of the history being retrieved and then overwrite the current line with a new line stored in the buffer? How's this line overwriting done? Same old:
+
+# Move the cursor to the beginnig of the line
+# Print X spaces, where X is the line length, so that the characters are no longer displayed in the console
+# Move the cursor back to the beginning of the line
+# Print the new line.
+
+Easy and naive, as usual. But again, it works well enough.
+
+h3. Word completion
+
+The other challange was word completion. The current implementation can be summarized as follows:
+
+* If TAB (or another character, if you wish) is pressed, call a user-defined @completion_proc@ method which returns an array and show the first element of the array (in this case I actually used a cyclic RawLine::HistoryBuffer, not an array)
+* If the user presses TAB again, show another match, and so _ad infinitum_ if the user keeps pressing TAB.
+* If the user presses another key, accept the default completion and move on.
+
+Obviously this means that:
+* RawLine has to keep track of the current "word". A word is everything separated by a user defined @word_separator@, which can obviously modified at runtime, with care.
+* Regarding the @completion_proc@, typically you may want to return only the elements matching the word which is currently being written, so that's given as default parameter for your proc. Exactly like with ReadLine, the only difference is that you can access other things like _the whole line_ and _the whole history_ in real time, which can be really handy at times!
+
+Here's a simple example:
+
+<typo:code lang="ruby">
+editor.completion_proc = lambda do |word|
+	if word
+		['select', 'update', 'delete', 'debug', 'destroy'].find_all	{ |e| e.match(/^#{Regexp.escape(word)}/) }
+	end
+end
+</typo:code>
+
+h3. Custom key bindings
+
+All these pretty things are obviously bound to some keystrokes. If the key corresponds to only one code, everything is fine, but because special keys typically aren't so it was necessary to implement a mechanism to track an escape key (e.g. 0xE0 and 0 on Windows and \e on Linux) and listen to further characters, in case a known sequence is found. Anyhow, the final result of the method used for character binding is the following:
+
+@bind(key, &block)@
+
+Where key can be:
+
+* A @Fixnum@ corresponding to a single character code
+* An @Array@ of one or more character codes
+* A @String@ corresponding to an escape sequence
+* A @Symbol@ corresponding to a known escape sequence or key
+* A @Hash@ to define a new key or escape sequences
+
+So, in the end you can do things like this:
+
+<typo:code lang="ruby">
+editor.bind(:left_arrow) { editor.move_left }
+editor.bind("\etest") { editor.overwrite_line("Test!!") }
+editor.bind(?\C-z) { editor.undo }
+editor.bind([24]) { exit }
+</typo:code>
+
+Which, for Rubyists, it's far sexier and more flexible than editing an .inputrc file.
+
+h3. How do I use it, anyway?
+
+A code example is better than a thousand words, right? So here you are:
+
+<typo:code lang="ruby">
+#!/usr/local/bin/ruby -w
+
+require 'rubygems'
+require 'rawline'
+
+puts "*** Inline Editor Test Shell ***"
+puts " * Press CTRL+X to exit"
+puts " * Press CTRL+C to clear command history"
+puts " * Press CTRL+D for line-related information"
+puts " * Press CTRL+E to view command history"
+
+editor = RawLine::Editor.new
+
+editor.bind(:ctrl_c) { editor.clear_history }
+editor.bind(:ctrl_d) { editor.debug_line }
+editor.bind(:ctrl_e) { editor.show_history }
+editor.bind(:ctrl_x) { puts; puts "Exiting..."; exit }
+
+editor.completion_proc = lambda do |word|
+	if word
+		['select', 'update', 'delete', 'debug', 'destroy'].find_all	{ |e| e.match(/^#{Regexp.escape(word)}/) }
+	end
+end
+
+loop do
+	puts "You typed: [#{editor.read("=> ").chomp!}]"
+end
+</typo:code>
+
+This example can be found in examples/rawline_shell.rb within the RawLine source code or gem package. 
+
+
+h2. Current status and availability
+
+I currently "released":http://rubyforge.org/forum/forum.php?forum_id=22543 RawLine 0.1.0 on "SourceForge":http://rubyforge.org/projects/rawline, and it can be installed via:
+
+@gem install -r rawline@
+
+The RDoc documentation is available "here":http://rawline.rubyforge.org/.
+
+Feel free to try it out. First of all try the @rawline_shell.rb@ example, and see if it works on your machine. If it doesn't than maybe you try re-binding some keys (use @key_tester.rb@ to "reverse-engineer" your terminal's input escape sequences), and let me know!
+
+Status information and limitations:
+
+* It has been tested on Windows (XP, using the usual command prompt) and on Linux (ZenWalk, using XFCE Terminal). 
+* It can handle lines no longer than the maximum terminal width - 2. This is to ensure that the cursor never "falls down" to the next line.
+* On Windows, the cursor doesn't blink immedialy when moving left, but it moves, don't worry.
+* On Linux, you should really consider installing the "Termios":http://raa.ruby-lang.org/project/ruby-termios/ library for a faster experience (otherwise @get_character@ won't parse characters correctly if you press and hold a key, and that, trust me, is a real mess!).
+* RawLine is very far from being a complete replacement for the ReadLine library, and it is currently in alpha stage.
+* Release 0.1.0 has been created after 2 weeks of sporadic coding during lunch breaks and week-ends.
+
+For any ideas on where to go from here, comments and feedback, just reply below or send an email to my usual email address.

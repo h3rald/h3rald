@@ -1,0 +1,32 @@
+----- 
+permalink: "36"
+title: "ITALIA: CAMPIONE DEL MONDO!"
+tags: 
+- sport
+- soccer
+type: article
+filter_pre: textile
+-----
+_*Italy has won the World Cup!*_ 
+
+It doesn't matter if Zidane first scored on a totally unfair penalty kick at the 7th minute and then, totally out of his mind, headbutted Materazzi... WE WON, AND WE KICKED THEIR ASS, end of story :)
+
+<div align="center">
+!http://base--/img/italy/worldcup.jpg! </div>
+
+<blockquote>
+!<http://base--/img/italy/grosso.jpg! 
+
+"Italy beat France 5-3 in a penalty shoot-out to win the World Cup after an absorbing 1-1 draw in Berlin.
+
+!>http://base--/img/italy/italy1.jpg! 
+
+Fabio Grosso scored the winning goal after France's David Trezeguet missed.
+
+Playing his last game before retiring, Zinedine Zidane's career ended in disgrace after he was sent off for crazily headbutting Marco Materazzi.
+
+Zidane had put France ahead early on with a coolly-taken chipped penalty, before Materazzi levelled with a header from an Andrea Pirlo corner.
+The result caps an incredible period for Italian football, with the domestic game embroiled in a corruption scandal similar to 1982 when they last won the World Cup. "
+</blockquote>
+
+"Read More":http://news.bbc.co.uk/sport2/hi/football/world_cup_2006/4991652.stm

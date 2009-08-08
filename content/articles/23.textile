@@ -1,0 +1,80 @@
+----- 
+permalink: "23"
+title: A look at Symfony
+tags: []
+
+type: article
+filter_pre: textile
+-----
+CakePHP is THE perfect PHP framework, so _we_ don't need anything else. Oh well, no. I personally love CakePHP, but I do believe other PHP frameworks can be interesting and maybe even useful, so today I thought I'd have a look at the "Simfony Project":http://base--/bookmarks/view/simfony/. This framework seems to be mentioned here and there on the Net in many different ways, someone said it can do wonders, some said it's more advanced, others said something like _"qcodo sucks.. cake stinks.. symfony rocks!!!!!"_, so it OUGHT TO be pretty cool, definitely.
+
+!<http://base--/img/pictures/symfony.gif! _Know thy enemy_ someone said (OK, bad joke), so let's have a look at this interesting alternative to CakePHP. _No dude, not another MVC-like, pseudo-Rails, AJAX-worshipping framework!_ Yes, another one. Actually Symfony is more than that: while people _can_ say CakePHP is similar to RoR for some features and for the strong MVC architecture, Symfony chose another road. Yes, MVC is still there, but the first thing I noticed after reading their "beginners' tutorial":http://www.symfony-project.com/tutorial/my_first_project.html was that one of the things which Symfony seems to use quite regularly (and Cake doesn't)is code generators. Things like executing @symfony propel-build-sql@ or even @symfony propel-generate-crud frontend post Post@ from command line to generate your code automagically, which CakePHP - except for our little _bake_ script - doesn't use. 
+_See? Simfony is MUCH better and MUCH more advanced than Cake!_ No, hang on a minute... I just listed one thing which Symfony has more than Cake, is there any more? Yes, there is, for now: i18n - internationalization. Symfony comes with native multi-lingual support and Cake doesn't - yet - although there are rumors that i18n for Cake 2.0 is _almost done_. This is not speculation, re-read the sentence: First off I'm referring to Cake _2.0_ (which means it will take a while) and also I read it in the "Cake 2.0 ToDo List":https://trac.cakephp.org/wiki/Proposals/2.0ToDoList.
+
+One of the most recurring and yet pointless critiques to CakePHP from Symfony enthusiasts is that the sites developed with CakePHP look terrible. I perfectly agree, look at "this":http://www.h3rald.com/ and tell me if the developer is not a complete and hopeless idiot when it comes to design and look 'n' feel!
+I do agree that some CakePHP sites (mine, mainly) don't look too good, and probably the Cake Software Foundation should pay me to put it offline. I also agree that the Symfony website looks nice and is more pleasant to the eye than CakePHP's, but I do hope that the old "design contest" doesn't get forgotten...
+
+!>http://base--/img/pictures/askeet.gif! The Symfony team also did something truly remarkable: a comprehensive tutorial, an advent calendar, some great free source code to download and a fully functional Web 2.0-compliant online application _all in one_. I'm referring to "Askeet":http://base--/bookmarks/view/askeet/, a Symfony-powered website which has been built from scratch using the framework and its development is well documented in "twenty-four tutorials":http://www.symfony-project.com/askeet. In one move these guys made an interesting website, some useful documentation and self promotion... what can I say: for next Christmas we'd better chain PHPnut, gwoo, nate & the others to their chairs, close them in a small room and force them to code something like that in twenty-four days.
+If I were to mention something which Symfony did well I'd certainly say the "documentation":http://www.symfony-project.com/content/documentation.html. Screencasts, tutorials, advent calendars, a book, a wiki, API etc. etc. All done, and all good, I must admit that. The good news is that CakePHP is slowly catching up, and now the "manual":http://manual.cakephp.org looks pretty decent. 
+
+OK, enough flattering and let's talk about something I didn't like about Symfony. I downloaded the thing and it turns out it's 1.2MB in size, _a hell of a framework!_ After extracting the beast I had a look inside and found three directories: @data@, @lib@ and @bin@. Not bad. I opened @bin@ and found the three magic symfony scripts, alright; I opened @data@  and found nine directories, I opened @lib@ (the real deal) and found 25 directories! These guys maybe never heard of something called _"an organized directory structure"_, or perhaps I'm just too used to Cake's logic and essentiality.
+Browsing around I found something like 247 .dat files defining country names and currencies in all the languages of the world, script.aculo.us and prototype libraries, javascript calendars and other wonders... Weeeeheee! 
+The good thing is that Symfony seems to include pretty much everything you'd ever need, the bad thing is that _personally_ I will never use any of the thirteen Chinese-related .dat files in th i18n directory. This philosophy is exactly the opposite to Cake: at first i got pissed off when I noticed that CakePHP doesn't include prototype by default, but then I realized that if they started include _everything_ you _might_ need _someday_ we'd end up like... like Symfony, with 1.2MB of stuff 500KB of which - at least - will most likely not be of any use for the average developers.
+
+The other dangerous consequence of including more and more stuff is the so called _widget-temptation_: If you include script.aculo.us you MUST show off and offer some weird toy someone _may_ use... well, Symfony seems to go in that direction, and someone compared it to component-driven frameworks like eZ Publish rather than more general-purposes projects. I'm sure the "admin generator":http://www.symfony-project.com/content/book/page/generator.html can be damn handy, but what happens if I'm a terribly annoying guy who'd like to tweak it and change it so that it fits _my_ needs? In Cake... well, there's nothing "official" included in the core, and when you find a third-party helper or component you feel you can take a look and poke around, extend it, or change it totally. It's all up to the developers and their needs: personally think that widgets are useful, but some times people like a bit more flexibility.
+
+So the overall impression of Symfony is that - regardless its arguable, self-proclaimed, _enterprise-ready_ status - it is rather complex, with a steep(er) learning scheme which doesn't justify the extra features.
+
+From the "My first Symfony project":http://www.symfony-project.com/tutorial/my_first_project.html tutorial:
+
+bq. So, the weblog will handle posts, and you will enable comments on them. Edit the file sf_sandbox/config/schema.xml and paste the following configuration:
+<small>
+<pre><code>
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="propel" defaultIdMethod="native" noxsd="true">
+  <table name="weblog_post" phpName="Post">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="title" type="varchar" size="255" />
+    <column name="excerpt" type="longvarchar" />
+    <column name="body" type="longvarchar" />
+    <column name="created_at" type="timestamp" />
+  </table>
+ 
+  <table name="weblog_comment" phpName="Comment">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="post_id" type="integer" required="true" />
+      <foreign-key foreignTable="weblog_post">
+        <reference local="post_id" foreign="id"/>
+      </foreign-key>
+    <column name="author" type="varchar" size="255" />
+    <column name="email" type="varchar" size="255" />
+    <column name="body" type="longvarchar" />
+    <column name="created_at" type="timestamp" />
+  </table>
+</database>
+</code></pre>
+</small>
+This code is longer to read than to explain: It describes two tables Post and Comment.
+
+NO! Sorry, no. This is NOT simple. It is logic, clear and makes perfect sense, it's not that I'm retarded and I can't write or read XML files, it's just unnecessary. You create this and then call the slave-script to create the model and the corresponding database table... This is exactly the _enterprise_ way of doing things CakePHP made me forget. _Convention over configuration_. Not hundreds of configuration files.
+
+But there's more: you can even configure your views with some simple @.yml@ (!) file:
+<pre><code>
+default:
+  http_metas:
+    content-type: text/html; charset=utf-8
+  metas:
+    title:        The best weblog ever
+    robots:       index, follow
+    description:  symfony project
+    keywords:     symfony, project
+    language:     en
+</code></pre>
+
+Sure, it's good. It helps, and it's certainly useful, but I'd rather code a custom component to do the same thing with a few arrays. Again, this is arguable.
+Validation is done through .yml files, and you can configure your administrator backend through a .yml file too! Cake has .ini-based ACL, and that's about it: if I don't want to use them I don't use them. 
+Clearly you probably don't have to edit all settings in the configuration files, but I just don't like the approach, personally.
+
+Oddly enough, Symfony's slogan seems to be "professional web tools for lazy folks"...
+
+It all depends on what you need. For _my_ needs I chose CakePHP, and "here's why":https://trac.cakephp.org/wiki/Cake/About.
