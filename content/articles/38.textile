@@ -1,13 +1,15 @@
 ----- 
 permalink: "38"
+filters_pre: 
+- redcloth
 title: Akelos is real, after all...
+date: 2006-08-02 01:33:00 +02:00
 tags: 
 - frameworks
 - php
 - web-development
 - review
 type: article
-filter_pre: textile
 -----
 Bermi Ferrer kept his promise, and even if a few were skeptic on the "pre-announced":http://base--/blog/view/34/ features of his upcoming Akelos framework, last week he sent me a "development preview" and a few days ago he opened the development SVN repository to the public:
 

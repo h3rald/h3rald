@@ -1,10 +1,12 @@
 ----- 
 permalink: thoughts-on-firefox3-and-opera95
+filters_pre: 
+- redcloth
 title: Thoughts on Firefox 3 and Opera 9.5
+date: 2008-06-13 05:18:00 +02:00
 tags: 
 - browsers review firefox opera
 type: article
-filter_pre: textile
 -----
 Opera 9.5 is out, Firefox 3 too (more or less), so, which browser are you going to use today?
 This new generatio of browsers offers plenty of new, innovative features and improvements over the past, in both cases:

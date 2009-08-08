@@ -1,10 +1,12 @@
 ----- 
 permalink: to-rest-or-not-to-rest
+filters_pre: 
+- redcloth
 title: To REST or not to REST?
+date: 2007-09-24 05:48:00 +02:00
 tags: 
 - rails
 type: article
-filter_pre: textile
 -----
 Lately I've been reading quite a bit about Rails' REST approach, and to be totally honest I'm not 100% convinced it can always be a good idea. The purpose of this post is to re-evaluate the situation, and ask other people their opinion on the matter.
 

@@ -1,11 +1,13 @@
 ----- 
 permalink: "40"
+filters_pre: 
+- redcloth
 title: "Introducing: \"CakePHP Recipes\""
+date: 2006-11-02 05:25:00 +01:00
 tags: 
 - cakephp
 - writing
 type: article
-filter_pre: textile
 -----
 Despite all my efforts to keep the whole thing quiet for the time being, a few days ago I entered the words "CakePHP Recipes" in Google and discovered - to my astonishment - that my new book about the CakePHP framework is already for (pre)sale in many popular online bookstores.
 

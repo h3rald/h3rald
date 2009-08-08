@@ -1,10 +1,12 @@
 ----- 
 permalink: "404"
+filters_pre: 
+- redcloth
 title: Page Not Found
+date: 2008-10-26 11:34:54 +01:00
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. Page Not Found
 

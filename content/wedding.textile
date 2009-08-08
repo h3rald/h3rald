@@ -1,10 +1,12 @@
 ----- 
 permalink: wedding
+filters_pre: 
+- redcloth
 title: Wedding
+date: 2009-06-06 05:53:12 +02:00
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. Roxanne & Fabio's Wedding
 

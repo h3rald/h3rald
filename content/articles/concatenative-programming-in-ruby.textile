@@ -1,10 +1,13 @@
 ----- 
 permalink: concatenative-programming-in-ruby
+filters_pre: 
+- erb
+- redcloth
 title: Concatenative programming in Ruby
+date: 2009-03-28 07:24:00 +01:00
 tags: 
 - ruby concatenative programming
 type: article
-filter_pre: textile
 -----
 A while ago, I sat down examining a few "alternative programming languages":http://www.h3rald.com/articles/10-programming-languages I might decide to learn someday. Each of those languages has its own peculiarities, and I didn't choose them randomly, I chose them based on their popularity, power, paradigm and how actively they are developed.
 
@@ -35,11 +38,11 @@ Got it? Let's take it one step further. When you enter @dup@ and then @*@, you a
 
 In Ruby, this would be:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 def square(x)
   x*x
 end
-</typo:code>
+<% end %>
 
 What's unusual here? &mdash; Simple, there are no _variables_ involved. Joy doesn't need any explicit variable or _formal parameters_ of any sort.
 
@@ -49,9 +52,9 @@ There's more. Take the following code:
 
 The @map@ combinator expects a list and a _quoted program_ (the same one used to compute the square) and produces a new list containing the result of that program applied to each element of the original list. Basically the equivalent of:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 [1,2,3,4].map { |e| e*e }
-</typo:code>
+<% end %>
 
 Do you notice anything different? &mdash; Yes, Joy doesn't need blocks or lambdas either, it uses _quoted programs_ instead, which are nothing but slightly fancier lists (or arrays, as you like).
 
@@ -80,15 +83,15 @@ If you think about the following expression in postfix notation:
 
 We _could_ translate it into infix notation (@2 + 2@), because Ruby supports it, but it's not general enough. What you could do is this though:
 
-<typo:code lang="ruby">2.send(:+, 2)</typo:code>
+<% highlight :ruby do %>2.send(:+, 2)<% end %>
 
 Message sending. I can see all the SmallTalk sympathizers drooling already. Well yes, In Ruby, _everything_ is an object, so _everything_ has a receiver and maybe some parameters. In other words, every method call can be reduced to the following syntax:
 
-<typo:code lang="ruby">receiver.send(method, *params)</typo:code>
+<% highlight :ruby do %>receiver.send(method, *params)<% end %>
 
 In this way, it is safe to assume that everything has a receiver, which could be understood as a function parameter, and may have 0 or more parameters. Take the following then:
 
-<typo:code lang="ruby">[2, 2, :+]</typo:code>
+<% highlight :ruby do %>[2, 2, :+]<% end %>
 
 It's not too different from Joy, and it's still Ruby code. All you have to do is use something to do the following:
 
@@ -104,9 +107,9 @@ Unfortunately Ruby's @arity@ method isn't that reliable. For example: @"test".in
 
 For example like this:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 ["Ciao, Fabio", /Ciao/, "Hello", :sub|2]
-</typo:code>
+<% end %>
 
 If we define a | operator for the Symbol class, it's not too bad after all. It's heavy, but in this way we can use _any_ Ruby method in postfix notation.
 
@@ -114,7 +117,7 @@ h3. Introducing the Concatenative Ruby DSL
 
 "Concatenative":/concatenative is a simple Ruby DSL for concatenative programming. You can write concatenative programs inside ordinary Ruby arrays and execute them by calling either @Array#execute@ or @Kernel#concatenate@, like this:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 require 'concatenative'
 
 concatenate(
@@ -125,7 +128,7 @@ concatenate(
   [:*],
   :linrec
  )
-</typo:code>
+<% end %>
 
 This simple program calculates the factorial of 10. As you can see, no matter how unusual it may look, it is perfectly valid Ruby code and it is equivalent to the following Joy code:
 

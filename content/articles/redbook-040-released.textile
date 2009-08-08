@@ -1,10 +1,12 @@
 ----- 
 permalink: redbook-040-released
+filters_pre: 
+- redcloth
 title: "Announcement: RedBook v0.4.0 released"
+date: 2007-11-28 08:34:00 +01:00
 tags: 
 - opensource productivity redbook ruby
 type: article
-filter_pre: textile
 -----
 I'm pleased to announce a new release of the RedBook daily logging and time tracking script. This release introduces two new operations, four stats-related directives and a brand new Windows Installer able to setup RedBook in a blink, with (almost) no configuration at all.
 

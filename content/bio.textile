@@ -1,10 +1,12 @@
 ----- 
 permalink: bio
+filters_pre: 
+- redcloth
 title: About Fabio Cevasco
+date: 
 tags: []
 
 type: page
-filter_pre: textile
 -----
 !>http://www.h3rald.com/img/author_fabio_cevasco.jpg! 
 

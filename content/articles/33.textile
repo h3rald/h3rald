@@ -1,12 +1,14 @@
 ----- 
 permalink: "33"
+filters_pre: 
+- redcloth
 title: Information Mapping
+date: 2006-06-02 06:10:00 +02:00
 tags: 
 - productivity
 - writing
 - note-taking
 type: article
-filter_pre: textile
 -----
 As I thought, my job also represents a great opportunity to learn new things. I don't mean only new technical stuff, but also a great deal of tips, best practices and methods to efficiently write documentation material in proper English. Some theory about "Information Mapping":http://www.infomap.com/ was by far the most interesting topic I learnt about this week. 
 

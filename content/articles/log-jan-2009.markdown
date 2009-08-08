@@ -1,10 +1,12 @@
 ----- 
 permalink: log-jan-2009
+filters_pre: 
+- bluecloth
 title: Personal Log - January 2009
+date: 2009-01-25 11:51:00 +01:00
 tags: 
 - personal_log wedding
 type: article
-filter_pre: markdown smartypants
 -----
 Those who read my blog regularly may have noticed how I normally refrain from posting articles concerning my own life. I used to have a more blog-like web site, but things changed: _"Who would want to read about my life, anyway?"_ &mdash; That's what I always thought. Hence, I focused on writing general-interest, computer-related articles about programming in Ruby, about some IT book which came out, or about the latest chapter in the Browser Wars. You'll find all this in the [archives](/archives/). 
 

@@ -1,11 +1,13 @@
 ----- 
 permalink: "29"
+filters_pre: 
+- redcloth
 title: Writing more articles...
+date: 2006-05-14 06:26:00 +02:00
 tags: 
 - website
 - writing
 type: article
-filter_pre: textile
 -----
 Yes, I know, I've been slaking a little bit, and haven't posted on my blog in a while. Well, I actually _didn't_ slack at all in these days getting ready to start my job, looking for a damn fitted kitchen for my house and... writing more articles.
 

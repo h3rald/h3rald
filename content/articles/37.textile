@@ -1,12 +1,14 @@
 ----- 
 permalink: "37"
+filters_pre: 
+- redcloth
 title: Some updates
+date: 2006-07-25 03:07:00 +02:00
 tags: 
 - website
 - cakephp
 - design
 type: article
-filter_pre: textile
 -----
 Quite a bit of time passed since the last blog post, and I'm actually sorry about that, but as I thought, I don't have as much free time as I used to be. Work is work, after all!
 This post will be multipurpose as actually I bluid up a few things to write about in the last few days... erhm, ok, _weeks_.

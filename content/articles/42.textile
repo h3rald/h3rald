@@ -1,11 +1,13 @@
 ----- 
 permalink: "42"
+filters_pre: 
+- redcloth
 title: Too many cooks spoil the Cake book
+date: 2007-03-07 02:45:00 +01:00
 tags: 
 - cakephp
 - writing
 type: article
-filter_pre: textile
 -----
 I am sorry to announce that my upcoming book, CakePHP Recipes, will not be published anymore. As a matter of fact, it wasn't finished because some of the people involved failed to comply with the terms of their contract in delivering material which was suitable for publication.
 

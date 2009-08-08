@@ -1,10 +1,12 @@
 ----- 
 permalink: efficient-ruby-code-shortcut-review
+filters_pre: 
+- redcloth
 title: "Book Review: Writing Efficient Ruby Code"
+date: 2008-01-21 05:47:00 +01:00
 tags: 
 - ruby review books
 type: article
-filter_pre: textile
 -----
 !>/files/efficient_ruby_shortcut.jpeg!
 

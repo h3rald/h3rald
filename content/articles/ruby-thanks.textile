@@ -1,10 +1,12 @@
 ----- 
 permalink: ruby-thanks
+filters_pre: 
+- redcloth
 title: Thanks
+date: 2007-09-14 11:43:00 +02:00
 tags: 
 - ruby writing internet
 type: article
-filter_pre: textile
 -----
 It looks like my "last article":/articles/ten-reasons-to-learn-ruby was not too bad after all. Quite a few thousands of people ended up reading it since it was published nearly 10 days ago: not too bad.
 

@@ -1,10 +1,12 @@
 ----- 
 permalink: back-from-holiday
+filters_pre: 
+- redcloth
 title: Back from holiday
+date: 2007-08-30 04:59:00 +02:00
 tags: 
 - personal website writing
 type: article
-filter_pre: textile
 -----
 I'm back. I was so eager to go on holiday that I didn't even bother writing a post about it, too bad. I actually when on holiday for a week but I thought I'd take three weeks off from my blog duties in favor of laziness and relax, but unfortunately my laptop decided to go wrong as well, so I didn't actually manage to relax that much.
 

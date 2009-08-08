@@ -1,10 +1,13 @@
 ----- 
 permalink: git-for-the-locals
+filters_pre: 
+- erb
+- redcloth
 title: Git for the Locals
+date: 2008-07-15 06:18:00 +02:00
 tags: 
 - programming
 type: article
-filter_pre: textile
 -----
 _"This is a *local* shop for *local* people, we want no trouble here!"_
 
@@ -36,7 +39,7 @@ And stop moaning about the command line not being user friendly. You want a new 
 git init
 git add .
 git commit
-</typo:code>
+<% end %>
 
 This will create your new repository in the current directory, add all your files and filders recursively, and perform the initial commit. What's so hard in this? Nothing. And it's faster than SVN, for sure.
 

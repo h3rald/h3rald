@@ -1,11 +1,13 @@
 ----- 
 permalink: "31"
+filters_pre: 
+- redcloth
 title: "Watch out: CakePHP screencasts"
+date: 2006-05-20 15:47:00 +02:00
 tags: 
 - cakephp
 - tutorial
 type: article
-filter_pre: textile
 -----
 Tutorials are great, articles are helpful, manuals are essential and the API is your best friend, but there's still something missing there... Unfortunately podcasts are not yet available, but the CakePHP team is proud to announce the creation of two "screencasts":http://cakephp.org/pages/screencasts in an effort to help new bakers familiarizing with CakePHP's concepts. 
 This is old news now, the screencasts section came together with the "site overhaul":http://base--/blog/view/24 but I only got a chance to take a look at them (one of them only, to be totally honest) recently, and so here's a spoil... erhm, a _detailed_ description of John Anderson's screencast about the "Blog Tutorial":http://manual.cakephp.org/chapter/18.

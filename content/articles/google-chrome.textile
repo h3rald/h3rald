@@ -1,10 +1,12 @@
 ----- 
 permalink: google-chrome
+filters_pre: 
+- redcloth
 title: "Chrome: Google did it again!"
+date: 2008-09-03 02:31:00 +02:00
 tags: 
 - browsers review google
 type: article
-filter_pre: textile
 -----
 !</files/google-chrome/chrome-logo.jpg!
 

@@ -1,10 +1,13 @@
 ----- 
 permalink: apache2-upgrade
+filters_pre: 
+- erb
+- redcloth
 title: Beware of sudden upgrades!
+date: 2007-12-20 07:41:00 +01:00
 tags: 
 - website rails
 type: article
-filter_pre: textile
 -----
 Yesterday I got a rather annoying early Christmas present: when visiting my site, I noticed that the raw source code of my dispatch.fcgi file (yes, I'm on shared hosting with FastCGI, for now) was displayed "as it is" instead of being interpreted.
 
@@ -32,7 +35,7 @@ AddHandler fastcgi-script .fcgi
 
 # Apache 2:
 AddHandler fcgid-script .fcgi
-</typo:code>
+<% end %>
 
 See? Different. This is due to the fact that "@mod_fcgid@ is used instead of @mod_fastcgi@ on Apache 2":http://wiki.rubyonrails.org/rails/pages/Debian+mod_fastcgi+Notes. 
 

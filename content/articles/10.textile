@@ -1,11 +1,13 @@
 ----- 
 permalink: "10"
+filters_pre: 
+- redcloth
 title: Italian General Elections - 2006
+date: 2006-04-09 07:33:00 +02:00
 tags: 
 - italy
 - politics
 type: article
-filter_pre: textile
 -----
 !>http://www.berluscastop.it/v_imag/sodom1.gif! 
 

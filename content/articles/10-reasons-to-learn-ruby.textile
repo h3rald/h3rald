@@ -1,10 +1,13 @@
 ----- 
 permalink: 10-reasons-to-learn-ruby
+filters_pre: 
+- erb
+- redcloth
 title: 10 Reasons to Learn Ruby
+date: 2007-09-05 12:40:00 +02:00
 tags: 
 - ruby
 type: article
-filter_pre: textile
 -----
 h3. Preamble
 
@@ -58,19 +61,19 @@ _- "No, silly, they are numbers!"_
 
 In Ruby, numbers, strings, Boolean values _et al_ are objects. Really. This means you'll write things like:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 "YOU SHOULDN'T ALWAYS USE CAPITALS".downcase #=> outputs "you shouldn't always use capitals"
 -12.abs #=> outputs 12
-</typo:code>
+<% end %>
 
 instead of something like:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 # PHP Code
 
 strtolower("YOU SHOULDN'T ALWAYS USE CAPITALS");
 abs(-12);
-</typo:code>
+<% end %>
 
 You save time, you save brackets, and it just makes more sense. 
 
@@ -88,19 +91,19 @@ s
 
 In Ruby, you can simply add the method to the original class, without having to hack the original source code, and even for system classes! You want to have a method to automatically convert a measurement from meters to feet? You can simply extend the Numeric class as follows:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 class Numeric
   def feet
 	self*3.2808399
   end
 end
-</typo:code>
+<% end %>
 
 From now on, all your numbers will have a _feet_ method, which can be used just like any other method that was originally defined for the class:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 5.feet #=> Returns 16.4041995
-</typo:code>
+<% end %>
 
 Basically, Ruby classes are never closed and can be modified at any time from anywhere. Use with care, of course.
 
@@ -113,19 +116,19 @@ h4. #8 You don't really need XML
 
 XML is a nice, general-purpose markup language which can be processed by every programming language and used everywhere. Unfortunately, it can also be quite verbose to write, very difficult to parse, and let's be honest, it's not really readable at first glance in many cases, unlike the following code snippet:
 
-<typo:code lang="yaml">
+<% highlight :yaml do %>
 regexp: !ruby/regexp /a-zA-Z/
 number: 4.7
 string: a string
-</typo:code>
+<% end %>
 
 This is definitely easier and more readable than XML, isn't it? Welcome to YAML, Ruby's favorite markup (but not really[6]) language, which can be used to represent any Ruby object in a simple, clear and yet complete way. 
 Ruby _can_ parse XML, but YAML's simplicity convinced a lot of developers to use it as an alternative to XML for configuration files, for example (Rails does this).
 The code snipped presented before was obtained by executing the following line of Ruby code:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 {"string" => "a string", "number" => 4.7, "regexp" => /a-zA-Z/}.to_yaml
-</typo:code>
+<% end %>
 
 The _to_yaml_ method is defined for the Object class, which is the father of all of the other classes, and thus it is available in all Ruby objects. This means that you can convert anything into YAML _and_ re-convert anything back into Ruby objects, with total transparency for the developer. So much for parsing, huh?
 
@@ -133,7 +136,7 @@ h4. #9 Lambda is much more than a Greek letter
 
 Ruby borrows some magic from Lisp and Perl with Proc objects and blocks. Procs are _"blocks of code that have been bound to a set of local variables. Once bound, the code may be called in different contexts and still access those variables." _[7] Consider the following:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
    def gen_times(factor)
 	 return Proc.new {|n| n*factor }
    end
@@ -144,15 +147,15 @@ Ruby borrows some magic from Lisp and Perl with Proc objects and blocks. Procs a
    times3.call(12)               #=> 36
    times5.call(5)                #=> 25
    times3.call(times5.call(4))   #=> 60
-</typo:code>
+<% end %>
 
 I could have used the _lambda_ method instead of _Proc.new_ and gotten the same result. This should ring a bell for people who know Perl and Python (or Lisp)[8].  You can do the same thing in PHP as well, but most people don't really use the function.[9]
 
 Additionally, Ruby makes extensive use of blocks, sort of "unborn Procs"[10], for example, to iterate the contents of an object and execute some code, like the _each_ method available for the Array class:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 [1, 2, 4, 6, 8].each {|c| puts c*2} #=> outputs each element multiplied by 2 in a new line. 
-</typo:code>
+<% end %>
 
 Should the code in the block exceed one line, you're advised (but not required) to include the block within _do ... end_ instead of using braces. Ruby folks don't like braces much, really.
 

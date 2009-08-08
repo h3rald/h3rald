@@ -1,10 +1,13 @@
 ----- 
 permalink: rawline
+filters_pre: 
+- erb
+- redcloth
 title: RawLine
+date: 2009-02-28 14:02:13 +01:00
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. RawLine
 
@@ -19,28 +22,28 @@ h3. Installation
 
 The simplest method to install RawLine is to install the gem:
 
-<typo:code>gem install rawline</typo:code>
+<typo:code>gem install rawline<% end %>
 
 h3. Usage
 
 Editor initialization:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 require 'rawline'
 editor = RawLine::Editor.new
-</typo:code>
+<% end %>
 
 Key binding:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 editor.bind(:ctrl_z) { editor.undo }
 editor.bind(:up_arrow) { editor.history_back }
 editor.bind(:ctrl_x) { puts "Exiting..."; exit }
-</typo:code>
+<% end %>
 
 Setup word completion
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 editor.completion_proc = lambda do |word|
 	if word
 		['select', 'update', 'delete', 'debug', 'destroy'].find_all  { |e| e.match(/^#{Regexp.escape(word)}/) }
@@ -48,30 +51,30 @@ editor.completion_proc = lambda do |word|
 end
 
 editor.completion_append_string = " "
-</typo:code>
+<% end %>
 
 Read input:
 
-<typo:code lang="ruby">editor.read("=> ", true)</typo:code>
+<% highlight :ruby do %>editor.read("=> ", true)<% end %>
 
 h3. Replacing Readline
 
 Simply include the RawLine (or Rawline) module:
 
-<typo:code lang="ruby">include Rawline</typo:code>
+<% highlight :ruby do %>include Rawline<% end %>
 
 â€¦and youâ€™ll get:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 readline(prompt, add_history) # RawLine::Editor#read(prompt, add_history)
 HISTORY # RawLine::Editor#history
 FILENAME_COMPLETION_PROC # Rawline::Editor#filename_completion_proc
 # ...
-</typo:code>
+<% end %>
 
 but also:
 
-<typo:code lang="ruby">Rawline.editor # RawLine::Editor</typo:code>
+<% highlight :ruby do %>Rawline.editor # RawLine::Editor<% end %>
 
 â€¦which opens a world of endless possibilities! ;-)
 

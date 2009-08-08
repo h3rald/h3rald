@@ -1,10 +1,12 @@
 ----- 
 permalink: "41"
+filters_pre: 
+- redcloth
 title: Comments temporarily disabled
+date: 2007-01-07 06:53:00 +01:00
 tags: 
 - website
 type: article
-filter_pre: textile
 -----
 As a few of you might have noticed, I decided to disable comments on all the sections of this site, as a temporary measure against spam.
 

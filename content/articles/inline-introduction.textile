@@ -1,10 +1,13 @@
 ----- 
 permalink: inline-introduction
+filters_pre: 
+- erb
+- redcloth
 title: RawLine - a 100% Ruby solution for console inline editing
+date: 2008-03-10 06:59:00 +01:00
 tags: 
 - ruby programming opensource rawline
 type: article
-filter_pre: textile
 -----
 One of the many things I like about Ruby is its cross-platform nature: as a general rule, Ruby code runs on everything which supports Ruby, regardless of its architecture and platform (yes, there are quite a few exceptions, but let's accept this generalization for now).
 
@@ -28,7 +31,7 @@ Believe it or not, that tiny method can do wonders...h2. Reverse-engineering esc
 
 So here's a little script which uses @get_character()@ in an endless loop, diligently printing the character codes corresponding to a keystroke:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 #!/usr/local/bin/ruby -w
 
 require 'rubygems'
@@ -48,7 +51,7 @@ loop do
 	end
 	
 end
-</typo:code>
+<% end %>
 
 A pretty harmless little thing. Try to run it and press some keys, and see what you get:
 
@@ -144,13 +147,13 @@ Obviously this means that:
 
 Here's a simple example:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 editor.completion_proc = lambda do |word|
 	if word
 		['select', 'update', 'delete', 'debug', 'destroy'].find_all	{ |e| e.match(/^#{Regexp.escape(word)}/) }
 	end
 end
-</typo:code>
+<% end %>
 
 h3. Custom key bindings
 
@@ -168,12 +171,12 @@ Where key can be:
 
 So, in the end you can do things like this:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 editor.bind(:left_arrow) { editor.move_left }
 editor.bind("\etest") { editor.overwrite_line("Test!!") }
 editor.bind(?\C-z) { editor.undo }
 editor.bind([24]) { exit }
-</typo:code>
+<% end %>
 
 Which, for Rubyists, it's far sexier and more flexible than editing an .inputrc file.
 
@@ -181,7 +184,7 @@ h3. How do I use it, anyway?
 
 A code example is better than a thousand words, right? So here you are:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 #!/usr/local/bin/ruby -w
 
 require 'rubygems'
@@ -209,7 +212,7 @@ end
 loop do
 	puts "You typed: [#{editor.read("=> ").chomp!}]"
 end
-</typo:code>
+<% end %>
 
 This example can be found in examples/rawline_shell.rb within the RawLine source code or gem package. 
 

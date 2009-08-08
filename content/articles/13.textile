@@ -1,11 +1,13 @@
 ----- 
 permalink: "13"
+filters_pre: 
+- redcloth
 title: Baking a new CakeArticle
+date: 2006-04-13 16:21:00 +02:00
 tags: 
 - cakephp
 - writing
 type: article
-filter_pre: textile
 -----
 Too right. Enough being a lazy writer, it's time to seriously produce something. I could sit here and pretend that long blog posts can make up for the lack of new articles, but I'd like to write something _proper_ and new. Judging by the latest stats people come here hoping to find either a blog _entirely_ devoted to CakePHP or some CakePHP related content. Well, actually they can "find":http://base--/tags/CakePHP/ quite a bit, but I'd like to be able to sport more Cake-related articles, bookmarks, and posts. My main problem is that I could add ten bookmarks about Cake right away, but the _latest addition_ showed on the front page would feature only bookmarks, which would be bad (yes, I do worry about silly things). At the moment this blog is the second easiest way to provide fresh content frequently enough to encourage visitors to come back, but articles could be even better.
 

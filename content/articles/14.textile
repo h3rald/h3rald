@@ -1,12 +1,14 @@
 ----- 
 permalink: "14"
+filters_pre: 
+- redcloth
 title: CakePHP hybrids
+date: 2006-04-14 09:55:00 +02:00
 tags: 
 - cakephp
 - web-development
 - php
 type: article
-filter_pre: textile
 -----
 When I first talked to gwoo, CakePHP's project manager, I asked him if Cake had any potential _limitations_. I asked him - I was kidding actually - wether it would be possible to build an application like Gmail using the framework and he - very seriously - simply said _"yes, why not?"_. 
 I repeat myself when I say that CakePHP leaves plenty of freedom to developers within the bounds of its MVC structure: once you grasp the basic logic behind it, your possibilities are endless. I don't want to act as a Ruby on Rails fanatic and boast that _you can do anything  with CakePHP_ and things like that, but I can certainly say that CakePHP can be _extended_ and _integrated_ with other collections of scripts, frameworks and projects. With limitations, of course: you probably don't want to force an integration between CakePHP and another MVC/Event Driven/Whatever framework, simply because it would be rather pointless and potential conflicts may occur.

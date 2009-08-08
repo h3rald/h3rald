@@ -1,10 +1,12 @@
 ----- 
 permalink: rawline-020
+filters_pre: 
+- redcloth
 title: "New Release: RawLine 0.2.0"
+date: 2008-04-02 05:33:00 +02:00
 tags: 
 - ruby programming opensource rawline
 type: article
-filter_pre: textile
 -----
 -InLine- RawLine 0.2.0 is out!
 

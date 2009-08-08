@@ -1,11 +1,13 @@
 ----- 
 permalink: "26"
+filters_pre: 
+- redcloth
 title: bake.php - Easy baking for lazy folks
+date: 2006-05-06 15:43:00 +02:00
 tags: 
 - cakephp
 - frameworks
 type: article
-filter_pre: textile
 -----
 When I first tried Ruby on Rails I was literally amazed by the _generator_ script. Yes, I was young and inexperienced then (six/seven months ago), but you must admit that getting a controller, a model, all the basic views generated automatically by 
 

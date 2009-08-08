@@ -1,10 +1,12 @@
 ----- 
 permalink: ruby-lang-italian
+filters_pre: 
+- redcloth
 title: Italian translation of Ruby-Lang.org finally available!
+date: 2008-11-15 14:48:00 +01:00
 tags: 
 - ruby
 type: article
-filter_pre: textile
 -----
 "[Vai alla versione italiana]":#italian-version
 

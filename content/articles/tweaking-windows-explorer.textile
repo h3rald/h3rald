@@ -1,12 +1,14 @@
 ----- 
 permalink: tweaking-windows-explorer
+filters_pre: 
+- redcloth
 title: Tweaking Windows Explorer
+date: 2007-06-29 11:28:00 +02:00
 tags: 
 - windows
 - review
 - software
 type: article
-filter_pre: textile
 -----
 If you asked me what file manager I used on Windows, up to a month ago I'd have answered something like: "A43":http://www.primitus.us/a43/ or "CubicExplorer":http://www.cubicreality.com/, for sure _anything but Windows Explorer_.
 Well, it turns out that I had to change my mind after all...

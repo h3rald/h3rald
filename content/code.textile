@@ -1,10 +1,12 @@
 ----- 
 permalink: code
+filters_pre: 
+- redcloth
 title: Code
+date: 
 tags: []
 
 type: page
-filter_pre: textile
 -----
 Available Open Source programs and scripts:
 

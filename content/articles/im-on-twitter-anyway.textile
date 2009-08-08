@@ -1,10 +1,12 @@
 ----- 
 permalink: im-on-twitter-anyway
+filters_pre: 
+- redcloth
 title: I'm on Twitter, anyway...
+date: 2008-05-18 11:04:00 +02:00
 tags: 
 - personal review programming
 type: article
-filter_pre: textile
 -----
 I've been neglecting my blog, I know. The truth is that I'm quite busy in this period: I have more responsibilities in my daily full-time jobs, my lunch breaks are getting shorter and I don't have much free time. At any rate, here's what's going on:
 

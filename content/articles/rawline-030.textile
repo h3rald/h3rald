@@ -1,10 +1,13 @@
 ----- 
 permalink: rawline-030
+filters_pre: 
+- erb
+- redcloth
 title: "RawLine 0.3.0 released \xC3\xA2\xE2\x82\xAC\xE2\x80\x9D now with Readline emulation"
+date: 2009-03-01 07:47:00 +01:00
 tags: 
 - ruby opensource rawline
 type: article
-filter_pre: textile
 -----
 "RawLine":/rawline 0.3.0 has been "released":http://rubyforge.org/projects/rawline. This new milestones fixes some minor bugs and adds some new functionalities, must notably:
 
@@ -16,7 +19,7 @@ Some of you asked for Readline compatibility/emulation and that was actually not
 
 The @RawLine@ module (you can spell it "Rawline" as well, if you wish) now behaves like @Readline@. This means that you can now use RawLine like this (taken from examples/readline_emulation.rb):
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 include Rawline
 
 puts "*** Readline Emulation Test Shell ***"
@@ -30,11 +33,11 @@ Dir.chdir '..'
 loop do
 	puts "You typed: [#{readline("=> ", true).chomp!}]"
 end
-</typo:code>
+<% end %>
 
 Basically you get a @readline@ method, a @HISTORY@ constant like the one exposed by Readline (Rawline's is a RawLine::HistoryBuffer object though &mdash; much more manageable), and a @FILENAME_COMPLETION_PROC@ constant, which provides basic filename completion. Here it is:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 	def filename_completion_proc
 			lambda do |word|
 				dirs = @line.text.split('/')
@@ -48,7 +51,7 @@ Basically you get a @readline@ method, a @HISTORY@ constant like the one exposed
 				Dir.entries(dir).select { |e| (e =~ /^\./ && @match_hidden_files && word == '') || (e =~ /^#{word}/ && e !~ /^\./) }
 			end
 		end
-</typo:code>
+<% end %>
 
 You can find this function as part of the @RawLine::Editor@ class. The result is not exactly the same Readline, because completion matches are not displayed underneath the line but inline and can be cycled through &mdash; which is one of Readline's completion modes anyway.
 

@@ -1,13 +1,15 @@
 ----- 
 permalink: "34"
+filters_pre: 
+- redcloth
 title: "Akelos Framework: too good to be true?"
+date: 2006-06-10 11:26:00 +02:00
 tags: 
 - frameworks
 - php
 - web-development
 - review
 type: article
-filter_pre: textile
 -----
 Someone recently added a comment to my article about "Rails-inspired PHP frameworks":http://base--/articles/rails-inspired-php-frameworks/ pointing out that I forgot another Rails-like framework, in my round-up. He obviously posted a link to this rather mysterious Rails port in PHP and spam or not, I'd like to thank this guy for letting me know of the existance of "Akelos":http://base--/bookmarks/view/akelos-framework, a new PHP framework which seems simply too good to be true.
 

@@ -1,13 +1,15 @@
 ----- 
 permalink: mongrel-shortcut-review
+filters_pre: 
+- redcloth
 title: "Book Review: Mongrel Digital Shortcut"
+date: 2007-12-15 03:42:00 +01:00
 tags: 
 - review
 - books
 - rails
 - ruby
 type: article
-filter_pre: textile
 -----
 If you ever considered about developing an deploying a Rails application in the last year or so, you must have heard of "Mongrel":http://mongrel.rubyforge.org/index.html before. If you didn't, I'd recommend you learn more about it because up to now it proved to be one of the few essential ingredients for deploying _scalable_ Rails applications.
 

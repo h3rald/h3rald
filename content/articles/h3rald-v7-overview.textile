@@ -1,11 +1,13 @@
 ----- 
 permalink: h3rald-v7-overview
+filters_pre: 
+- redcloth
 title: Back on Track...
+date: 2007-06-22 14:38:00 +02:00
 tags: 
 - website
 - rails
 type: article
-filter_pre: textile
 -----
 ...or better, on "Rails":http://www.rubyonrails.org_. 
 Yep, this 7th (!) version of the H3RALD website is powered by the overly-popular Ruby web framework _and_ by the "Typo":http://www.typosphere.org blogging platform.

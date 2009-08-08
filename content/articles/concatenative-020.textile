@@ -1,10 +1,13 @@
 ----- 
 permalink: concatenative-020
+filters_pre: 
+- erb
+- redcloth
 title: Concatenative 0.2.0 released
+date: 2009-04-19 09:42:00 +02:00
 tags: 
 - ruby concatenative
 type: article
-filter_pre: textile
 -----
 Version 0.2.0. of the "Concatenative":/concatenative DSL has been "released":http://rubyforge.org/frs/?group_id=8068&release_id=33575. 
 
@@ -26,9 +29,9 @@ Oddly enough, I realized that it is possible to defined methods named after rese
 
 Here's how the lookup works. Say you have the following program: 
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 [[1,2,3], [4.5.6], :concat]
-</typo:code>
+<% end %>
 
 If @:concat@ has been defined by the user (@:concat <= [...]@), that definition will be used, otherwise the @Concatenative::Kernel@ combinator @concat@ will be called. If you want to use the corresponding Ruby method, all you have to do is specifying the arity explicitly using the @|@ operator.
 

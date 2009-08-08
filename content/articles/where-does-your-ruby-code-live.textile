@@ -1,11 +1,13 @@
 ----- 
 permalink: where-does-your-ruby-code-live
+filters_pre: 
+- redcloth
 title: Where does your Ruby code live?
+date: 2008-11-08 13:34:00 +01:00
 tags: 
 - ruby
 - programming
 type: article
-filter_pre: textile
 -----
 Back when I wrote my "10 reasons to learn Ruby":/articles/10-reasons-to-learn-ruby article, I mentioned "RubyGems":http://www.rubygems.org/ in _Reason #1_ as one of they key features of the Ruby programming languages.
 Indeed, gems make getting Ruby programs as easy as typing @gem install <something>@ from the command line. When you want to distribute something new in Ruby, there's no need to give people download links, zip files or setup programs, just "tell them to get the gem":http://adam.blog.heroku.com/past/2008/11/2/pony_the_express_way_to_send_email_from_ruby/. That's perfectly normal, and extremely cool.

@@ -1,10 +1,13 @@
 ----- 
 permalink: concatenative
+filters_pre: 
+- erb
+- redcloth
 title: Concatenative
+date: 2009-03-28 07:21:00 +01:00
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. Concatenative
 
@@ -27,13 +30,13 @@ h3. Usage
 
 Initialization:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 require 'concatentive'
-</typo:code>
+<% end %>
 
 Execute a Concatenative program:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
         concatenate(
                 10,
                 [0, :==],
@@ -42,14 +45,14 @@ Execute a Concatenative program:
                 [:*],
                 :linrec
         )
-</typo:code>
+<% end %>
 
 The program above returns the factorial of 10, computed using the linrec combinator. It is also possible to execute arrays directly and define concatenative programs as symbols.
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
                 :factorial << [[0, :==], [:pop, 1], [:dup, 1, :- , :factorial, :*], :if]
                 [5, :factorial].execute
-</typo:code>
+<% end %>
 
 The program above calculates the factorial of 5, using explicit recursion.
 
@@ -61,11 +64,11 @@ You can use all Ruby methods in Concatenative programs as well, making sure that
 
 Example:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
         concatenate(
                 "Goodbye, World!", /Goodbye/, "Hello", :sub|2
         )
-</typo:code>
+<% end %>
 
 The program above is equivalent to "Goodbye, World!".sub(/Goodbye/, "Hello").
 

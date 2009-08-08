@@ -1,12 +1,14 @@
 ----- 
 permalink: cakephp-overview
+filters_pre: 
+- redcloth
 title: An overview of the CakePHP framework
+date: 2006-05-30 15:50:20 +02:00
 tags: 
 - cakephp
 - review
 - tutorial
 type: article
-filter_pre: textile
 -----
 _"There are many frameworks available for the PHP programming language nowadays, and especially a lot of RAD (Rapid Application Development) frameworks which aim to make web development faster, less tedious and more organized. CakePHP was one of the first frameworks to port the RAD philosophy - which became so popular after Ruby on Rails - to the PHP programming language. CakePHP v1.0 is now one of the most popular and intuitive solutions for PHP programming, let's discover why..."_
 

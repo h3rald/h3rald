@@ -1,10 +1,12 @@
 ----- 
 permalink: simply-on-rails-1-concepts-map
+filters_pre: 
+- redcloth
 title: "Simply on Rails - Part 1: Concepts and Bubbles"
+date: 2007-07-07 07:43:00 +02:00
 tags: 
 - rails website web20
 type: article
-filter_pre: textile
 -----
 The first thing I do when I start developing a new application is write down some ideas. 
 

@@ -1,12 +1,14 @@
 ----- 
 permalink: "43"
+filters_pre: 
+- redcloth
 title: Time for a diet...
+date: 2007-03-09 11:59:00 +01:00
 tags: 
 - cakephp
 - rant
 - writing
 type: article
-filter_pre: textile
 -----
 My fianc&eacute;e keeps telling me that too many cakes are not good for me, and I never listen: I always liked cakes! I *did* like the CakePHP(TM)[1] framework too, once, and I *did* write "some articles":http://www.h3rald.com/projects/view/cakephp-herald about it in the past, and I believe at least a bunch of Bakers found them useful, especially at the time.
 I do believe the Cake(TM) Software Foundation[1] quite liked having their framework featured on popular websites like php|architect and SitePoint, and I believe that I contributed - to some extent - to make it one of the most popular frameworks available for the PHP programming language.

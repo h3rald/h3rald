@@ -1,12 +1,14 @@
 ----- 
 permalink: "8"
+filters_pre: 
+- redcloth
 title: New site operative
+date: 2006-04-06 16:57:00 +02:00
 tags: 
 - website
 - web-development
 - cakephp
 type: article
-filter_pre: textile
 -----
 Yes, it works. Perhaps it's a tiny bit slower than expected but the new h3raLd.com seems to work.
 I'll probably find some new exciting bugs to fix in the next few hours, as usual - that will be annoying but perfectly normal.

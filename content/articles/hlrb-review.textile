@@ -1,10 +1,12 @@
 ----- 
 permalink: hlrb-review
+filters_pre: 
+- redcloth
 title: "Book Review: Humble Little Ruby Book"
+date: 2007-10-03 05:53:00 +02:00
 tags: 
 - ruby review books
 type: article
-filter_pre: textile
 -----
 After reading the very first paragraph of Mr. Neighborly's "Humble Little Ruby Book":http://www.humblelittlerubybook.com/ (HLRB for short, from now on) it was very clear to me that it was going to be quite an unconventional read:
 

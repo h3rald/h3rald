@@ -1,11 +1,13 @@
 ----- 
 permalink: herald-vim-color-scheme
+filters_pre: 
+- redcloth
 title: Herald (Vim Color Scheme)
+date: 2009-06-17 06:11:00 +02:00
 tags: 
 - programming
 - vim
 type: article
-filter_pre: textile
 -----
 I use "Vim":http://www.vim.org a lot. It's my editor of choice when I code (mainly in Ruby), and also when I write my blog post and articles (mainly in Textile).
 One thing I always liked about Vim was it powerful syntax highlighting: there's probably a syntax highlighting file for every programming language ever created, even the new ones ("Nimrod":http://force7.de/nimrod/index.html? Sure, "here":http://www.vim.org/scripts/script.php?script_id=2632!).

@@ -1,10 +1,12 @@
 ----- 
 permalink: log-feb-2009
+filters_pre: 
+- redcloth
 title: Personal Log - February 2009
+date: 2009-02-27 13:09:00 +01:00
 tags: 
 - "personal_log ruby "
 type: article
-filter_pre: textile
 -----
 This has been a rather busy month, hence the lack of general Internet activity. I really wanted to post some more articles to my site, but for one reason or another I had to procrastinate more and more, and here we are at the end of the month again.
 

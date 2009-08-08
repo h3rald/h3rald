@@ -1,10 +1,12 @@
 ----- 
 permalink: design-patterns-in-ruby-review
+filters_pre: 
+- redcloth
 title: "Book Review: Design Patterns in Ruby"
+date: 2008-04-11 05:41:00 +02:00
 tags: 
 - ruby review books
 type: article
-filter_pre: textile
 -----
 !>/files/design_patterns_in_ruby.jpg! 
 

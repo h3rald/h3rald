@@ -1,6 +1,9 @@
 ----- 
 permalink: review-services
+filters_pre: 
+- redcloth
 title: Review Services
+date: 2007-12-14 12:24:00 +01:00
 tags: 
 - review
 - website
@@ -8,7 +11,6 @@ tags:
 - tools
 - books
 type: article
-filter_pre: textile
 -----
 When it comes to software, I definitely like to try out new things. My collegues takes the piss out of me because every -week- day I come up with "some new tool they _have_ to start using" and so on.
 As a matter of fact, I like reviewing software as well. I enjoy writing and analyzing new things, evaluating all the new possibilities they may offer, and I also tend to have a rather critical eye for what doesn't _feel_ right. I'll use a tool for months but still try out new ones which claim to do the same thing â€” but better â€” as they come out.

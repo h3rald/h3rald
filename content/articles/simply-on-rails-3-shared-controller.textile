@@ -1,16 +1,19 @@
 ----- 
 permalink: simply-on-rails-3-shared-controller
+filters_pre: 
+- erb
+- redcloth
 title: "Simply on Rails - Part 3: LiteController"
+date: 2007-07-22 06:03:00 +02:00
 tags: 
 - rails
 type: article
-filter_pre: textile
 -----
 Enough with concepts, ideas and diagrams: it's time to start coding something. Everyone knows what's the first step when creating a Rails applications, but anyhow, here it is:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 rails italysimply
-</typo:code>
+<% end %>
 
 Then I create a new development database, load it up with the schema I "previously":/blog/simply-on-rails-2-database-design prepared and modify the @config/database.yml@ to be able to connect to it. Nothing new here.
 I actually had to modify the schema a little bit:
@@ -39,7 +42,7 @@ Anyhow, I'll still have to add and modify data in those tables, so it looks like
 Here's the controller:
 
 %{color:red}*app/controllers/admin/lite_controller.rb*%
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 class Admin::LiteController < ApplicationController
 
   layout 'admin'
@@ -98,32 +101,32 @@ class Admin::LiteController < ApplicationController
     end
   end
 end
-</typo:code>
+<% end %>
 
 Then all I need to do is create eight controllers with just a few lines of code in each:
 
 %{color:red}*app/controllers/admin/statuses_controller.rb*%
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 class Admin::StatusesController < Admin::LiteController
   def model
     Status
   end
 end
-</typo:code>
+<% end %>
 
 Basically, I just need to specify which model the specific controller takes care of, Ruby's inheritance does the rest. The model name will be passed to the views like this:
 
 %{color:red}*app/controllers/admin/lite_controller.rb*%
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 def prepare
 	@item_name = model.to_s
 end
-</typo:code>
+<% end %>
 
 And each method uses the @model@ method to access the model, like this:
 
 %{color:red}*app/controllers/admin/lite_controller.rb*%
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 def create
 	@item = model.new(params[:"#{@item_name.downcase}"])
 	if @item.save
@@ -133,20 +136,20 @@ def create
 		render('lite/new')
 	end
 end
-</typo:code>
+<% end %>
 
 Note how the params are collected:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 @item = model.new(params[:"#{@item_name.downcase}"])
-</typo:code>
+<% end %>
 
 @params[:"#{@item_name.downcase}"]@ at runtime becomes @params[:status]@ or @params[:role]@ etc. etc., depending on which controller is called. Sweet.
 
 The views? Modified accordingly:
 
 %{color:red}*app/views/lite/edit.rb*%
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 <h1>Editing <%= @item_name %></h1>
 
 <% form_tag :action => 'update', :id => @item do %>
@@ -156,10 +159,10 @@ The views? Modified accordingly:
 
 <%= link_to 'Show', :action => 'show', :id => @item %> |
 <%= link_to 'Back', :action => 'list' %>
-</typo:code>
+<% end %>
 
 %{color:red}*app/views/lite/_form.rb*%
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 <%= error_messages_for 'item' %>
 <!--[form:lite]-->
 <p><label for="<%= @item_name.downcase %>_name">Name: </label>
@@ -169,4 +172,4 @@ The views? Modified accordingly:
   <%= text_field @item_name.downcase, 'level',  {:value => @item.level} %></p>
 <% end %>
 <!--[eoform:lite]-->
-</typo:code>
+<% end %>

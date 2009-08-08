@@ -1,10 +1,12 @@
 ----- 
 permalink: herald-vim-color-scheme
+filters_pre: 
+- redcloth
 title: herald.vim
+date: 2009-06-23 08:20:01 +02:00
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. herald.vim
 

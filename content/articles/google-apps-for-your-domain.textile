@@ -1,6 +1,9 @@
 ----- 
 permalink: google-apps-for-your-domain
+filters_pre: 
+- redcloth
 title: "Google Apps for your domain: a shared hosting killer service?"
+date: 2006-08-28 05:51:00 +02:00
 tags: 
 - google
 - internet
@@ -8,7 +11,6 @@ tags:
 - web20
 - review
 type: article
-filter_pre: textile
 -----
 A while ago Google started offering services like "Google Mail":http://mail.google.com/mail/ (Gmail) and "Google Calendar":http://www.google.com/calendar/ to domain owners. Sure everyone likes Gmail, but one of the few bad things about it is that it never feels "unique": your email address is always gonna be <something>@gmail.com or <something>@googlemail.com. Not a big deal? Well, sure, not really, but it really depends on the people using the service and how fussy they are:
 

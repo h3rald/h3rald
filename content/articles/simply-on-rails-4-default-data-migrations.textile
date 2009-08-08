@@ -1,10 +1,13 @@
 ----- 
 permalink: simply-on-rails-4-default-data-migrations
+filters_pre: 
+- erb
+- redcloth
 title: "Simply On Rails - Part 4: Quick and Easy Default Data Migrations"
+date: 2007-09-15 13:10:00 +02:00
 tags: 
 - rails ruby databases
 type: article
-filter_pre: textile
 -----
 In the "last post":http://www.h3rald.com/blog/simply-on-rails-3-shared-controller of this series I tried to find a DRY(Don't Repeat Yourself) solution to deal with tables storing "ancillary" data, i.e. names of user roles, predefined categories, page state names and other similar things.
 I personally chose to put this kind of data to make my application more dynamic, although I could have decided to use ENUMs or simply ordinary varchar fields -- that would have been easier, but less flexible. For now, I'm sticking with my original choice.
@@ -16,7 +19,7 @@ All you have to do is create a migration to load the specified YAML files and yo
 
 I wanted to take a little step further, allowing the migration to load data from _all YAML files in a specific directory_, automatically.Let's start creating the YAML files then and place them all in one directory of the application like @/db/migrate/defaults@. Here's the one I used for user roles, for example:
 
-<typo:code lang="yaml">
+<% highlight :yaml do %>
 visitor:
 	id: 1
 	name: Visitor
@@ -51,13 +54,13 @@ webmaster:
 	id: 7
 	name: Webmaster
 	level: 1000
-</typo:code>
+<% end %>
 
 The important thing to remember is to provide a unique string to identify each record, before specifying each fiels. The other files look similar, so I won't bother listing them here. 
 
 And here's the simple code for the migration:
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 require 'active_record/fixtures'
 
 class LoadDefaults < ActiveRecord::Migration
@@ -92,7 +95,7 @@ class LoadDefaults < ActiveRecord::Migration
 	end
 
 end
-</typo:code>
+<% end %>
 
 Basically the migration will look in a directory named "defaults" for some YAML files named after a particular database table, and it will attempt to load all the records defined in each one of them. 
 The @down@ method of the migration _deletes all the data in the specified tables_, so use with care...

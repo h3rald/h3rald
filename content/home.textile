@@ -1,10 +1,12 @@
 ----- 
 permalink: home
+filters_pre: 
+- redcloth
 title: Home
+date: 
 tags: []
 
 type: page
-filter_pre: textile
 -----
 Welcome to H3RALD.com, Fabio Cevasco's personal web site. 
 ---

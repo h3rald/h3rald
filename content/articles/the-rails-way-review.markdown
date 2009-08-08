@@ -1,12 +1,14 @@
 ----- 
 permalink: the-rails-way-review
+filters_pre: 
+- bluecloth
 title: "Book Review: The Rails Way"
+date: 2009-01-04 09:03:00 +01:00
 tags: 
 - rails
 - books
 - review
 type: article
-filter_pre: markdown smartypants
 -----
 > "Programming books are pointless: you buy them, you read them and you chuck them because they're already out-of-date!"
 

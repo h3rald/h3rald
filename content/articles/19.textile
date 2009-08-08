@@ -1,10 +1,12 @@
 ----- 
 permalink: "19"
+filters_pre: 
+- redcloth
 title: (Almost) working at Siemens
+date: 2006-04-22 03:04:57 +02:00
 tags: []
 
 type: article
-filter_pre: textile
 -----
 In a recent "blog post":http://www.h3rald.com/blog/view/12/ I was evaluating two job proposals which I was offered, one involving a multi-national company and the other a regional/national but apparently successful IT business.
 Actually only yesterday I got an official offer from the multi-national company, to be precise, and after evaluating my future possibilities (it took approx 0.03s) I decided to accept this one. To be precise I didn't _officially_ tell them I'd like to start working with them, and I took a few days to "think about it", only because of the damn weekend in between.

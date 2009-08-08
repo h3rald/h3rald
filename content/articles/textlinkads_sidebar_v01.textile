@@ -1,10 +1,12 @@
 ----- 
 permalink: textlinkads_sidebar_v01
+filters_pre: 
+- redcloth
 title: Text Link Ads sidebar for Typo
+date: 2007-11-17 04:47:00 +01:00
 tags: 
 - rails opensource
 type: article
-filter_pre: textile
 -----
 I thought it would be nice to share the code of the sidebar I created to display "Text Link Ads":http://www.text-links-ads.com sponsor links on my Typo powered blog.
 

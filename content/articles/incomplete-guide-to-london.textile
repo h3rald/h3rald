@@ -1,10 +1,12 @@
 ----- 
 permalink: incomplete-guide-to-london
+filters_pre: 
+- redcloth
 title: Fabio's (In)complete Guide to London
+date: 2006-08-23 06:23:24 +02:00
 tags: 
 - travelling
 type: article
-filter_pre: textile
 -----
 This summer I finally had a chance to spend _a whole week_ in London. The city itself was not new to me, since I visited it 6 times before this one, but this summer was different, in a word: Roxy (my fiancee)'s brother Caspar was happy to host us at his place, for free.<a name="top"></a>
 

@@ -1,7 +1,7 @@
 // Thanks http://jqueryfordesigners.com/coda-slider-effect/
 (function(){
  $.slider = function(){
- var $panels = $('#slider .scrollContainer > div');
+ var $panels = $('#slider .scrollContainer > div.panel');
  var $container = $('#slider .scrollContainer');
 
  // if false, we'll float all the panels left and fix the width 

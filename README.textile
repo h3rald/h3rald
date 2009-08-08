@@ -1,9 +1,13 @@
 h2. Dependencies
 
-The following ruby gems are required to compile the site:
-* nanoc
-* extlib
+h3. Ruby Gems
 
-Additionally, the following gems are required to execute db:migration tasks:
-* mysql
-* sequel
+* nanoc (generate static site)
+* extlib (Rake tasks)
+* mysql (Typo migration)
+* sequel (Typo migration)
+* bb-ruby (BBCode filter)
+
+h3. Other
+
+* pygments (code highlighting)

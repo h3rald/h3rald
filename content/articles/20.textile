@@ -1,11 +1,13 @@
 ----- 
 permalink: "20"
+filters_pre: 
+- redcloth
 title: In memory of Vittorio Cevasco (1916-2006)
+date: 2006-04-26 05:36:00 +02:00
 tags: 
 - personal
 - family
 type: article
-filter_pre: textile
 -----
 Yesterday my grandpa passed away, due to an aggravation of his health condition, breathing problems and various other complications. He died in hospital, on Liberation Day, the Italian national holiday celebrating the liberation of our country from the nazi-fascist regime by the Allied troops and partisans on April 25th 1945. He died exactly 61 years after that day.
 

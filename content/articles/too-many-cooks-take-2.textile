@@ -1,10 +1,12 @@
 ----- 
 permalink: too-many-cooks-take-2
+filters_pre: 
+- redcloth
 title: "Too many cooks... take #2"
+date: 2007-09-02 06:41:00 +02:00
 tags: 
 - cakephp writing rant
 type: article
-filter_pre: textile
 -----
 Today I was not going to post on my blog. I have the flu, I don't feel very well so I started reading some news feeds on Google Reader. That lasted for about half an hour, so I decided to check my old Netvibes account where I kept other feeds, including a bunch of CakePHP-related blogs.
 

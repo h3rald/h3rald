@@ -1,12 +1,14 @@
 ----- 
 permalink: the-internet-philosopher
+filters_pre: 
+- redcloth
 title: The Internet Philosopher
+date: 2006-05-11 13:00:41 +02:00
 tags: 
 - internet
 - writing
 - travelling
 type: article
-filter_pre: textile
 -----
 Recently I got this rather short email from a guy named Daniel Lampinen:
 

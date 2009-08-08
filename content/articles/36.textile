@@ -1,11 +1,13 @@
 ----- 
 permalink: "36"
+filters_pre: 
+- redcloth
 title: "ITALIA: CAMPIONE DEL MONDO!"
+date: 2006-07-12 09:19:00 +02:00
 tags: 
 - sport
 - soccer
 type: article
-filter_pre: textile
 -----
 _*Italy has won the World Cup!*_ 
 

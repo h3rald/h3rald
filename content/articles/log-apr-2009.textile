@@ -1,13 +1,15 @@
 ----- 
 permalink: log-apr-2009
+filters_pre: 
+- redcloth
 title: Personal Log - April 2009
+date: 2009-04-28 06:11:00 +02:00
 tags: 
 - personal_log
 - ruby
 - books
 - wedding
 type: article
-filter_pre: textile
 -----
 April is tratidionally a rather busy month: Easter, public holidays, and &mdash; always &mdash; some deadline to meet at work. Moreover, my birthday is also in April which makes it even more busy! Let's see what happened this year...h3. Using Ruby in a corporate environment
 

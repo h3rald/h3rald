@@ -1,10 +1,13 @@
 ----- 
 permalink: redbook-050-released
+filters_pre: 
+- erb
+- redcloth
 title: "Announcement: RedBook v0.5.0 released"
+date: 2007-12-16 08:07:00 +01:00
 tags: 
 - opensource productivity redbook ruby
 type: article
-filter_pre: textile
 -----
 This new beta release of RedBook introduces quite a few changes when it comes to configuration and setup. Here's some highlights...h3. Regexp changes
 
@@ -25,7 +28,7 @@ A new, interesting feature I decided to introduce in this release is _variables_
 :var_friday_evening: "friday at 8 pm"
 
 :var_week_report: ":select :duration :from :%monday_morning :to :%friday_evening" 
-</typo:code>
+<% end %>
 
 In this way, every time you type in :%week_report in RedBook, it will expand to: @:select :duration :from monday at 8 am :to friday at 8 pm@. By the way, completion is supported, so you'll only have to type in something like @:%we@ and hit <tab>.
 

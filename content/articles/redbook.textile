@@ -1,10 +1,12 @@
 ----- 
 permalink: redbook
+filters_pre: 
+- redcloth
 title: RedBook - A simple Ruby program for your daily logging needs
+date: 2007-09-29 14:05:00 +02:00
 tags: 
 - ruby productivity software tools redbook
 type: article
-filter_pre: textile
 -----
 Logging your daily activities is important. If you don't believe me you'd better check at least these three posts on LifeHacker, which feature different scripts and applications:
 

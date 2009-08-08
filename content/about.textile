@@ -1,10 +1,12 @@
 ----- 
 permalink: about
+filters_pre: 
+- redcloth
 title: About
+date: 
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. About this Web Site
 

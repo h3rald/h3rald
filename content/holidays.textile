@@ -1,10 +1,12 @@
 ----- 
 permalink: holidays
+filters_pre: 
+- redcloth
 title: Holidays
+date: 2009-03-22 06:50:29 +01:00
 tags: []
 
 type: page
-filter_pre: textile
 -----
 h2. Holiday House in Sessarego (GE), Italy
 

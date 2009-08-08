@@ -1,10 +1,13 @@
 ----- 
 permalink: ruby-facets
+filters_pre: 
+- erb
+- redcloth
 title: A glance at Ruby facets
+date: 2007-07-01 12:11:00 +02:00
 tags: 
 - ruby review programming
 type: article
-filter_pre: textile
 -----
 _"Code is poetry"._
 
@@ -22,7 +25,7 @@ h3. Syntax Overview
 Forget semicolons, you'll never use one ever again in Ruby, as there's no need to add them at the end of each line. Same goes with those annoying curly brackets: they are just used for delimiting hashes and blocks (more on all this later on).  Ruby uses _def_ and _end_  keywords instead: you'll never believe how this does _not_  add unnecessary verbosity to your code, but rather helps you manage it.
 This is a relief for me especially, because on Italian keyboards you have to press Alt Gr+SHIFT+&egrave; to get an open curly bracket, which says it all. So let's take a look at our first silly Ruby function, shall we?
 
-<typo:code lang="ruby">
+<% highlight :ruby do %>
 def hello(name=nil)
   if name then
     print 'Hello, '+name+'!'
@@ -30,7 +33,7 @@ def hello(name=nil)
     print 'Hello!'
   end
 end
-</typo:code>
+<% end %>
 
 
 

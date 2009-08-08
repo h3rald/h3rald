@@ -1,10 +1,12 @@
 ----- 
 permalink: "35"
+filters_pre: 
+- redcloth
 title: Some essential tools to survive in a corporate environment
+date: 2006-06-18 07:55:26 +02:00
 tags: []
 
 type: article
-filter_pre: textile
 -----
 A month has passed since I started working at the "MES Expertise Center":http://base--/bookmarks/view/mes-expertise.center/, and I must say I'm very impressed after all. I started with a two-weeks course on SIMATIC IT Production Suite, the flagship product developed by Siemens here in Genoa, and it was a real piece of cake: the trainers were very prepared and everything was explained very clearly for both us internal workers and the customers attending the lessons. In my opinion this is one of the most successful things Siemens and Microsoft achieved when they opened the MES Expertise Center: creating a place where both Siemens staff and partners can learn and experiment new cutting-edge MES-related products. Even during the course, when someone asked a particularly complex question and the trainer couldn't answer, consultants or even R&D staff were immediately contacted (also because they were literally next door...) to provide an authoritative and exhaustive answer. 
 
