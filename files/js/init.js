@@ -26,6 +26,7 @@ $(document).ready(function() {
 		var text = node.nodeValue;
 		var first_letter = text.substr(0,1);
 		var match = /[a-zA-Z]/.test(first_letter);
+		node.nodeValue = text.slice(1,text.length);
 		if ( match ) {
 			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
 		}
