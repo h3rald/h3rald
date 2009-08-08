@@ -1,0 +1,61 @@
+----- 
+permalink: "35"
+title: Some essential tools to survive in a corporate environment
+tags: []
+
+type: article
+filter_pre: textile
+-----
+A month has passed since I started working at the "MES Expertise Center":http://base--/bookmarks/view/mes-expertise.center/, and I must say I'm very impressed after all. I started with a two-weeks course on SIMATIC IT Production Suite, the flagship product developed by Siemens here in Genoa, and it was a real piece of cake: the trainers were very prepared and everything was explained very clearly for both us internal workers and the customers attending the lessons. In my opinion this is one of the most successful things Siemens and Microsoft achieved when they opened the MES Expertise Center: creating a place where both Siemens staff and partners can learn and experiment new cutting-edge MES-related products. Even during the course, when someone asked a particularly complex question and the trainer couldn't answer, consultants or even R&D staff were immediately contacted (also because they were literally next door...) to provide an authoritative and exhaustive answer. 
+
+OK, enough with the promotional speech now, let's talk about what I did _after_ the course, during the last two weeks. I thought I'd start writing some manual or online help as I was originally told, but my boss wanted me to spend six weeks down with the consultants to learn more about SIMATIC IT and acively work with it in real-world application. "This is not a drill, soldier" comes to mind... ;)
+
+SIT consultants -- I tought -- are tough people who travel around the world to customers plants to deploy and create taylored MES solutions for various kinds of industries, from Food and Beverage to Automotive. Indeed they are, but they are damn great and fun to work with: in these two weeks these guys made me learn a lot of things simply by working on their testing servers and virtual machines, making you _feel_ you're doing something useful. I soon learnt the importance, for the morale, of those rituals they call "coffee breaks": I still can't stop crying for laughter (literally) when people start competing with each other by telling the most hilarious (and true) stories about their "adventures" in foreign countries.
+
+!<http://base--/img/pictures/siemens/e8020.jpg! Another great thing of working in a company which among other things "makes computers":http://www.fujitsu-siemens.com/ is the equipment they provide. Right after attending the course I was given a brand new "LifeBook E8020":http://reviews.zdnet.co.uk/hardware/notebooks/0,39023985,39191340,00.htm to use for work, and the only bad thing about it is that I can't take it at home! The complaints about the low battery life are complete nonsense, as that little baby can stay up for about 5-6 hours (no kidding!), and it also came with a huge 2GB RAM - the maximum it can handle, I think.
+
+What software I used most, so far? Read on...
+
+
+h3. VMware Workstation
+
+!>http://base--/img/pictures/tools/vmware.gif! Why the scary amount of RAM? Simple: for virtual machines. Most of the tests and work is done using "VMware":http://www.vmware.com Workstation and pre-built virtual machines represent the best and fastest way to work, especially when testing software because:
+
+* No installation is required: just transfer a 8GB file on your machine, double-click on it and there you go -- and yes, this means a lot of time saved
+* If you mess something up, you don't compromise your "real" operating system and you just change virtual machine -- and since we do anyway every three weeks once a new build of the product comes out, it's not a big deal
+
+The downside of virtualization is that you need plenty of resources available on your host OS, memory in particular, but as I said 2GB of RAM (one of which goes to the virtual machine) are more than enough.
+
+h3. Internet Explorer 7 beta 2 (FREE)
+
+!>http://base--/img/pictures/tools/ie7.gif! ??"So now you're connected to the main network, and you can now use Internet Explorer to access both the intranet and the Internet of course".?? 
+*Wrong*. I won't use the bloody thing: Internet Explorer 6 simply sucks, and we all know why. Really, I tried to use it, but then after five minutes of "tabless" browsing and other annoyances I downloaded and installed Firefox. There, done.
+*Wrong again*. Half of the corporate intranet sites and portals were build in ASP using proprietary technologies (== ActiveX galore!), so yes, half of the pages didn't come up right in Firefox. And if the portal for corporate quality standards is not displayed correctly a few days before a big company audit... well, that's simply not good, so I thought about choosing a Firefox alternative: "Internet Explorer 7 beta 2":http://www.microsoft.com/windows/ie/default.mspx.
+Nevermind the official page, I couldn't stop laughing at what uncle Bill wrote there:
+
+_We heard you._
+
+_You wanted it easier and more secure_
+
+For a few moments I thought they were introducing a new, revolutionary brand of condoms. Unfortunately it's just a web browser. 
+
+Of course no problems with the WGA crap since obviously I'm running a genuine copy of Windows XP Professional (another good thing of working for a certified Microsoft partner): I immediately downloaded and installed IE7, and now things are slightly better. It is obviously not as versatile as Firefox, but it does the job alright, I must say.
+
+h3. SyncToy (FREE)
+
+Once in a while Microsoft comes up with a little useful FREE utility. I must spend more time on MS download center because I'm sure I'll find some more useful tools: "someone":http://techtics.iblogzz.com/2006/04/30/windows-defender-genuine-crack/ even managed to crack Windows Defender installation using the Orca MSI package editor, which is part of Microsoft Platform SDK components... So yes, searching carefully in MS downloads is worth it!
+I didn't need to find anything like that of course, but I did need a free, fully-featured synchronization utility! I use my USB flash drive a lot in these days, and especially now that I have a laptop at home, a laptop at work and a few virtual machines, keeping the stuff up to date was becoming a problem. Yes, there are some other sync utilities available on the Net, but most of them are commercial or shareware, Microsoft "SyncToy":http://base--/bookmarks/view/synctoy, amazingly, can help you to keep your stuff synchronized totally for free.
+
+SyncToy can manage many "folder pairs" on different locations and perform various types of actions: synchronize, echo, contribute, combine and subscribe, according to your needs. Furthermore, a handy "preview" shows the user what files will be created/overwritten/moved/delete before a particular action is performed... truly a wonderful little utility.
+
+
+h3. Notepad++ (FREE)
+
+Last but not least, another free tool, GPL-licensed this time: "Notepad++":http://base--/bookmarks/view/notepadplus/: a portable, lightweight, feature-rich multi-purpose text editor. It's absolutely free to use and distribute and it's 100% portable: it lives permanently on my USB drive, but I also installed it on both my laptops and it's currently my text editor of choice.
+Two weeks ago they told me I'd have "programmed" something using "G2":http://www.gensym.com/?p=what_it_is_g2, a proprietary, real-time rule engine platform by Gensym. The thing uses its own "natural" programming language, with its own syntax, its functions etc. etc.
+Now, imagine having to write some _structures_ like this:
+
+structure('entity_name': "TEST", 'entity_content': sequence(structure('entity_name': "TEST2", 'attribute1: "some text", 'attribute2: "more text", 'entity_content': sequence("some content"))))
+
+...This is just a simple example, things are much more complex than this in reality and believe me, I really felt I needed some custom editor able to handle that syntax. 
+The easiest solution for all my problems was just Notepad++: in a few minutes I was able to create a custom language highlighter for g2, and everything became really much easier.

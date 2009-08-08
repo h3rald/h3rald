@@ -1,0 +1,73 @@
+----- 
+permalink: "33"
+title: Information Mapping
+tags: 
+- productivity
+- writing
+- note-taking
+type: article
+filter_pre: textile
+-----
+As I thought, my job also represents a great opportunity to learn new things. I don't mean only new technical stuff, but also a great deal of tips, best practices and methods to efficiently write documentation material in proper English. Some theory about "Information Mapping":http://www.infomap.com/ was by far the most interesting topic I learnt about this week. 
+
+h3. What is Information Mapping?
+
+*Definition[1]* 
+<blockquote>The Information Mapping method is a research-based approach to the analysis, organization, and visual presentation of information.</blockquote> 
+
+*Information Mapping is media independent*
+<blockquote>The method is both subject matter and media independent; that is, it can be applied to the subject matter of any industry, and it can be presented on paper, on a computer screen, verbally, or in a multimedia presentation. </blockquote>
+
+*Key Concepts*
+<blockquote>Information Mapping is an integrated set of easy-to-learn principles, techniques, and standards. It enables authors to break complex information into its most basic elements and then present those elements optimally for readers. The result is a set of precisely defined information modules that are consistent from author to author and document to document.</blockquote>
+
+
+*Purpose*
+<blockquote>
+The method helps writers analyze, organize, and present information with clarity focus and impact. Information That Works. The goal of the analysis component is to determine the
+
+* purpose
+* audience needs, and
+* information types.
+
+The goal of the organization is to create an overall structure for the information, based on the results of your analysis. Finally, the goal of the presentation component is to format the information to make it clear and accessible to your audience.
+</blockquote>
+
+fn1. Contents were taken from "InfoMap.com":http://www.infomap.com/index.cfm/TheMethod/ and were re-formatted and re-organized into an information map.
+
+
+h3. Key Concepts 
+
+*Introduction*
+<blockquote>The Information Mapping method relies on some important principles according to which information should be organized. This method also defines new units of information to replace paragraphs, sections and chapters and tries to divide information into a few main set types, each with its own rules and structures.</blockquote> 
+
+*Principles*
+<blockquote>
+
+| *Name* | *Explanation* |
+| Chuncking | Writers should group information into small, manageable units. |
+| Relevance | Writers should make sure that al information in a chunck relates to one main point (function or purpose). |
+| Labeling | Writers should provide a label for every unit of information. |
+| Consistency | Writers should use similar labels, word, formats for similar subject matters. |
+| Integrated Graphics | The use of tables, images, diagrams and lists is encouraged. |
+| Accessible Detail | Documents should provide sufficient details where necessary, to make the information more accessible for the readers. |
+| Hierarchy |  Small, relevant units of information should be organized into a hierarchy. |
+
+</blockquote>
+
+*Information Types*
+<blockquote>
+
+| *Name* | *Definition* |
+| Procedure | Set of steps to obtain a specified outcome |
+| Process | A series of changes through the time for some purpose |
+| Structure	| Something which can be defined into multiple parts |
+| Concept | Group of physical objects, conditions, relations, ... |
+| Principle	| Statement of what should be done, assumptions |
+| Fact | Statement presented with no supporting evidence |
+| Classification | The sorting of a group of specimen into classes |
+
+</blockquote>
+
+*Conclusion*
+<blockquote>Although it may initially seem too schematic, Information Mapping is a valid method to organize and present information to those readers who just need "facts" without any unnecessary distraction. This method it is used with some modifications in many technical manuals and documentation written by many companies.</blockquote>

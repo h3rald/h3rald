@@ -1,0 +1,172 @@
+----- 
+permalink: simply-on-rails-3-shared-controller
+title: "Simply on Rails - Part 3: LiteController"
+tags: 
+- rails
+type: article
+filter_pre: textile
+-----
+Enough with concepts, ideas and diagrams: it's time to start coding something. Everyone knows what's the first step when creating a Rails applications, but anyhow, here it is:
+
+<typo:code lang="ruby">
+rails italysimply
+</typo:code>
+
+Then I create a new development database, load it up with the schema I "previously":/blog/simply-on-rails-2-database-design prepared and modify the @config/database.yml@ to be able to connect to it. Nothing new here.
+I actually had to modify the schema a little bit:
+
+* I changed all the names for the foreign keys to something more evocative than "has_many" or "has_one"
+* I added a _level_ column to the _states_, _availabilities_ and _conditions_ table
+* I removed the _description_ column from the categories table
+
+Great, but... hang on: now some of the database tables look awfully similar with each other:
+
+* statuses
+* states
+* roles
+* types
+* tags
+* conditions
+* availabilities
+* categories
+
+They all have a name column, some of them have a name column as well, they'll hold only a relative small number of records which will hardly ever be deleted. In fact, I was tempted to use Enums for some of those things...
+Anyhow, I'll still have to add and modify data in those tables, so it looks like I kinda need to create 8 controllers, 8 models and about four views for each one of them. No way. Fair enough for the controllers and models, but I'm not going to create 32 views which all look exactly the same. Rails should be smarter than that!And it is, luckily. Derek Sivers & C. came out with an interesting "Shared Controller":http://dereksivers.com/rails-shared-controller.html concept, which could be just what I'm looking for in this case. Actually I need something really simple in this case:
+
+* Put all the CRUD logic into one controller
+* Create only one set of views
+
+Here's the controller:
+
+%{color:red}*app/controllers/admin/lite_controller.rb*%
+<typo:code lang="ruby">
+class Admin::LiteController < ApplicationController
+
+  layout 'admin'
+
+  before_filter :prepare
+  
+  def prepare
+    @item_name = model.to_s
+  end
+  
+  def index
+    list
+  end
+
+  verify :method => :post, :only => [ :destroy, :create, :update ],
+         :redirect_to => { :action => :list }
+
+  def list
+    ordering = model.column_names.include?('level') ? 'level ASC' : 'name ASC'
+    @items = model.find(:all, :order => ordering)  
+    render('lite/list')
+  end
+
+  def show
+    @item = model.find(params[:id])
+    render('lite/show')
+  end
+
+  def new
+    @item = model.new
+    render('lite/new')
+  end
+
+  def create
+    @item = model.new(params[:"#{@item_name.downcase}"])
+    if @item.save
+      flash[:notice] = @item_name+' was successfully created.'
+      redirect_to :action => 'list'
+    else
+      render('lite/new')
+    end
+  end
+
+  def edit
+    @item = model.find(params[:id])
+    render('lite/edit')
+  end
+
+  def update
+     @item = model.find(params[:id])
+    if @item.update_attributes(params[:"#{@item_name.downcase}"])
+      flash[:notice] = @item_name+' was successfully updated.'
+      redirect_to :action => 'list'
+    else
+      render('lite/edit')
+    end
+  end
+end
+</typo:code>
+
+Then all I need to do is create eight controllers with just a few lines of code in each:
+
+%{color:red}*app/controllers/admin/statuses_controller.rb*%
+<typo:code lang="ruby">
+class Admin::StatusesController < Admin::LiteController
+  def model
+    Status
+  end
+end
+</typo:code>
+
+Basically, I just need to specify which model the specific controller takes care of, Ruby's inheritance does the rest. The model name will be passed to the views like this:
+
+%{color:red}*app/controllers/admin/lite_controller.rb*%
+<typo:code lang="ruby">
+def prepare
+	@item_name = model.to_s
+end
+</typo:code>
+
+And each method uses the @model@ method to access the model, like this:
+
+%{color:red}*app/controllers/admin/lite_controller.rb*%
+<typo:code lang="ruby">
+def create
+	@item = model.new(params[:"#{@item_name.downcase}"])
+	if @item.save
+		flash[:notice] = @item_name+' was successfully created.'
+		redirect_to :action => 'list'
+	else
+		render('lite/new')
+	end
+end
+</typo:code>
+
+Note how the params are collected:
+
+<typo:code lang="ruby">
+@item = model.new(params[:"#{@item_name.downcase}"])
+</typo:code>
+
+@params[:"#{@item_name.downcase}"]@ at runtime becomes @params[:status]@ or @params[:role]@ etc. etc., depending on which controller is called. Sweet.
+
+The views? Modified accordingly:
+
+%{color:red}*app/views/lite/edit.rb*%
+<typo:code lang="ruby">
+<h1>Editing <%= @item_name %></h1>
+
+<% form_tag :action => 'update', :id => @item do %>
+  <%= render :partial => 'lite/form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @item %> |
+<%= link_to 'Back', :action => 'list' %>
+</typo:code>
+
+%{color:red}*app/views/lite/_form.rb*%
+<typo:code lang="ruby">
+<%= error_messages_for 'item' %>
+<!--[form:lite]-->
+<p><label for="<%= @item_name.downcase %>_name">Name: </label>
+<%= text_field @item_name.downcase, 'name',  {:value => @item.name} %></p>
+<% if @item.methods.include?('level') then %> 
+  <p><label for="<%= @item_name.downcase %>_level">Level: </label>
+  <%= text_field @item_name.downcase, 'level',  {:value => @item.level} %></p>
+<% end %>
+<!--[eoform:lite]-->
+</typo:code>

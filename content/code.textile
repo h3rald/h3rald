@@ -1,0 +1,31 @@
+----- 
+permalink: code
+title: Code
+tags: []
+
+type: page
+filter_pre: textile
+-----
+Available Open Source programs and scripts:
+
+h3. RedBook - A day logger program written in Ruby
+
+*Description:* RedBook is a simple but effective Ruby program made to help you keep track of your daily actions, tasks and accomplishments. 
+
+*Features:* Log timestamped messages with optional tags, load/display data matching custom message and tag filters or within a specific time frame, generate custom reports in TXT, YAML or CSV format, calculate the time elapsed between two or more messages.
+
+p=. "Home Page":http://redbook.h3rald.com  | "Development Page":http://code.google.com/p/redbook/ | "Download":http://code.google.com/p/redbook/downloads/list | "Tutorial":http://www.h3rald.com/articles/redbook
+
+h3. RawLine
+
+*Description:* RawLine is an attempt to build a 100% Ruby library able to provide some of the functionality offered by ReadLine, plus additional features such as a more intuitive way to bind characters to specific keys or key sequences.
+
+p=. "Introduction":http://www.h3rald.com/blog/inline-introduction | "Project Page":http://rubyforge.org/projects/rawline/
+
+h3. Text Link Ads sidebar for Typo
+
+*Description:* A Typo sidebar to display 
+"Text Link Ads":http://www.text-link-ads.com sponsor links.
+
+p=. "Download":http://www.h3rald.com/files/textlinkads_sidebar_v0.2.zip | "Announcement":http://www.h3rald.com/blog/textlinkads_sidebar_v01
+

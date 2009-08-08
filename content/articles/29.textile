@@ -1,0 +1,18 @@
+----- 
+permalink: "29"
+title: Writing more articles...
+tags: 
+- website
+- writing
+type: article
+filter_pre: textile
+-----
+Yes, I know, I've been slaking a little bit, and haven't posted on my blog in a while. Well, I actually _didn't_ slack at all in these days getting ready to start my job, looking for a damn fitted kitchen for my house and... writing more articles.
+
+Nothing special, and nothing too technical, to be honest, but equally interesting. First of all I updated my "An IE Lover's Guide to Firefox":http://base--/articles/view/ie-lovers-guide-to-firefox/ a little bit and people at SpreadFirefox.com and "FirefoxFacts":http://www.firefoxfacts.com/ liked it. Glad to hear that, unfortunately some guy who wrote about "Firefox Myths":http://mywebpages.comcast.net/SupportCD/FirefoxMyths.html wasn't too impressed, but at any rate he read it anyway. 
+
+OK, this wasn't a new article at all, but "this one":http://base--/articles/view/the-internet-philosopher/ is fresh, at least. It's about a Swedish guy who decided to emigrate to India pursuing an ideal: writing for his own opinions and ideas. And he gets paid for that too! After reading more about him on his "website":http://base--/bookmarks/view/ropix I decided to write something about him. An interesting and rather unusual read. Pity that some sections of his homepage are in Swedish only.
+
+Finally, yesterday I felt inspired and decided to write "another roundup":http://base--/articles/view/social-bookmarking-services featuring ten popular social bookmarking websites. Trying all those services was fun, with a few exceptions of course. The bad news is that there are already various reviews about social bookmarking sites and thus the Digg folk doesn't seem to be particularly interested in "reading another one":http://digg.com/software/Ten_popular_social_bookmarking_services_reviewed, but hey! After all I can't expect of getting dugg for every roundup I write, can't I?
+
+That's about it. And what about the CakePHP article I promised "long ago":http://base--/blog/view/13/ to CakePHP beginners? It's done, written and ready to be published! Unfortunately the magazine I submitted it to is taking quite a bit to review it and - most important - to tell me whether they'll publish it or not. Let's hope for the best.

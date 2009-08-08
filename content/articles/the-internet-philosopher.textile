@@ -1,0 +1,155 @@
+----- 
+permalink: the-internet-philosopher
+title: The Internet Philosopher
+tags: 
+- internet
+- writing
+- travelling
+type: article
+filter_pre: textile
+-----
+Recently I got this rather short email from a guy named Daniel Lampinen:
+
+<blockquote>
+Hi. Respect for being an internet addict - that's good. I have moved to India just to afford and get time to be on the internet as much as possible:
+
+"http://www.ropix.org/english.html":http://www.ropix.org/english.html
+</blockquote>
+
+Spam? Yeah, must be: I get this kind of stuff all the time, and this looked like another person asking for money. Or maybe not? After all this guy is not asking for anything in his mail, he's just telling me something about myself and perhaps try to get me to visit his site[1]. I did indeed - after all it was just one click away - mostly for curiosity.That website was one of the most plain ones I've ever come across, perhaps to help the visitor to understand that _content_ is the only think that matters, not _design_. Daniel seems to be Swedish, and he immediately apologizes for his imperfect English: indeed there are some mistakes here and there, but I could understand _enough_ about him, his way of living and his beliefs that I decided to write this article about him.
+
+h3. An Internet Philosopher
+
+_"I'm trying to live for my opinions and ideas"_
+
+!>/img/pictures/lampinen/piccadilly.jpg!
+
+This is Daniel's "statement" which guides his entire life. He lives for his opinions and ideas, he lives to debate them with others, to talk to others about them, and eventually getting money for doing so: that would be his ideal way of living, and he partly realized it already.
+It all started last year (2005), when he was a mailman in Stockholm: that was a boring job, probably like a million other jobs anywhere in the world. He didn't want to do that, and - believe it or not - he didn't want a business career either: he just wanted to spend time on the Internet, creating _things_. Not cool websites or successful e-businesses, just express his own opinions, thoughts and ideas and spread them online, he defines himself a _philosopher_, and yet I could not find anything better to define him: he literally lives for his thoughts. 
+
+A few months ago the Italian Telecom broadcasted one of the most peculiar adverts I've ever seen: they were portraying an hypothetical past, where Gandhi was appearing on TV, on the Internet, on mobile phones, on big screens in the streets pronouncing one of his famous speeches. The advert ends with a sentence like _"Imagine what could have happened if he could have used our communication systems"_, trying to promote Telecom's services, and it has been criticized[2] many times for this. 
+I immediately thought about this advert while reading Daniel's homepage. Obviously he's far from being Gandhi, but at least he attempts to live in a simple and honest way and tries to communicate with as many people as possible. And he lives in India, he recently moved there from Sweden mainly because it's much, MUCH cheaper than any country in Europe or in the rest of the Rich World.
+
+!</img/pictures/lampinen/cow.jpg!
+
+From what I could read about him, his life is quite simple: he tries to spend as little money as possible and not in futile things. He lives in a cheap hotel in Puri, India, where he can access the Internet - that's all that matters. Perhaps it may sound a bit freaky, but certainly not as freaky as going out getting trashed every night, buying drugs or waste money on trendy clothes - at least from someone's point of view.
+
+_"Yeah, OK, it's all good so far but how can he live like that? Has he got a job?"_
+
+Yes and no - not in a traditional way, at least. He sells stuff, his thoughts, ideas and writings to be more precise, and no, there are no set prices: he goes _"[...] by this principle (the Annalakshmi[3] principle): pay as much as you think my work is worth.[4]"_.
+It's quite similar to charity and it's an interesting idea, whose success highly depends on the conscience of the giver: _the more honest his soul his, the more he'll give_. 
+
+
+h3. Business Talk
+
+Don't call him a beggar. Daniel has his own way of seeing the economy of the Rich World and also his own views when it comes to money:
+
+!>/img/pictures/lampinen/money.jpg!
+
+<blockquote>
+"This should be mentioned: give money to Unicef instead of to me. But give money to me instead of buying a expensive new couch.
+[...] If I can inspire you to consume less, it may be worth some money. How would the world look like if everybody payed each other because they wanted to, not only because they legally had to? Pretty good, right? On some places in the world there's today restaurants where you can pay as much as you thought that the food was worth. See this like a newspaper or a book that you can choose to pay for.
+
+There's plenty of different policies on what you should put your money on. On of the policies is to follow the market totally (except when it comes to classic charity). That one use to result in that you think it's ok to buy a Gucci bag for $1000 but think it's out of the question to give something to someone that "doesn't wanna work for the money".
+
+[...] It can even be fun to get fooled by a souvenir salesman in a warm country - if you let go of some of the pride and the "millimeter justice". Do that. You can still give as much or more to Unicef. I prefer a society where people put money on other people - both those struck by a catastrophe and rich people in your country - instead of buying un-necessary stuff.[5]"
+</blockquote>
+
+Daniel accepts donations in many ways[6], and it must be noted is that his supporters may even choose how he should use his money, you can tell him what to buy or not to buy, and he'll respect your decision: someone told him not to buy drugs and he never did, while another asked him to buy good food, and maybe a beer at local restaurants, and he did exactly that[7].
+If you're curious about what he buys, Daniel added a list of expenses[8] to his site which diligently updates every time he spends money. Prices are in indian rupees (1$ is about 45 rupees!), and it looks like this:
+
+* 10 Bread
+* 9 Tip to roomservice
+* 30 Internet ticket
+* 10 Drinking water
+* 40 Riksa taxi
+* 10 Muffins
+* 10 Bananas
+* 25 Bread and chips
+* 10 Tip to roomservice
+* 36 Candy
+* 15 Bread
+* 20 Internet ticket
+* 12 Tip to roomservice
+* 20 Tip to roomservice
+* 7268 Hotel room for 8-18 April (plus food+bewerages+internet+laundry)
+* 15 Tip roomservice
+
+In a nutshell, when it comes to money and buying things, Daniel lives by this simple rule:
+
+bq. "Work with unwanted things as little as possible, consume as little as possible, communicate as much as possible"
+
+But is it really that simple? Could _you_ live like him and still be happy? Certainly he has a big advantage: he lives in India, where everything costs much less than in Europe or the US. If you decide to try, he can help: he can give anybody suggestions on how to live cheaper and even keep you motivated to do so, and all he asks in exchange is what YOU think his suggestions are worth. All the payments for this service must be made through a Swedish company[9], which is technically his employer. 
+
+He can also sell "ideas" in the same way: you start emailing him explaining your situation and your needs, and he'll try his best to come up with a solution and his own opinions. You won't believe it, but a Swedish company[10] was really pleased to hear his opinions and thoughts about innovation and used his suggestions to improve their services.
+
+
+h3. An Internet Addict 
+
+!</img/pictures/lampinen/view.jpg!
+
+Perhaps one of the most interesting things about Daniel's website is his journal. Not a proper blog, but just a single static webpage hosting all his daily thoughts: you can't comment to them, but reading some passages may be interesting enough. 
+The best way to do so is trying to search for a particular word (in Firefox it's pretty easy) and read what he wrote about that, I tried with "Internet" and here's something I came across:
+
+bq. "Now I'm finally realizing my two year old plans to be in a poor country. The only thing I'm gonna do is thinking, and surfing on the internet, see how long my money will last, and try to get new money to my VISA card by doing work that can be done with a brain and internet, for example producing ideas and point of views to companies in rich countrys. What's good for everybody, is that I don't need many dollars/euros to survive."
+
+This was one of his early posts, and yes, that's exactly what he started to do...
+
+bq. So, I'm living at the internet. Hotel room, beach, internet. That's pretty monotonous. But all together better than better than s[**]t job. I'm gonna contact medias that cover the internet and offer to write things in behalf of a person that have filled his life with only internet.
+
+bq. Internet, internet, internet. I'm happily addicted to something that makes me smarter and finding the right people. The only thing you need is a cable. People are crowding at the internet cafes here at the tourist street by the beach, and it's a nice atmosphere.
+
+An happy internet addict. Although how good this addiction is can be debatable, Daniel seems to have found his perfect way of living, and the only thing he needs is an Internet connection and his brain. 
+
+bq. "Yesterday I searched on Google for the swedish words for "I am an internet addict" and e-mailed the words "respect for being an internet addict - that is good" to the bloggers that had written the sentence "I am an internet addict" during the last year."
+
+Yes, that's exactly the message I got by email a few days ago. At first I must say I found it even a bit offensive: _"I am not an Internet addict! You might be, but I'm not."_ - He obviously didn't mean to insult neither me nor any other blogger he mailed: for him, "being an internet addict" is probably one of the best things people - especially young people - can do. 
+
+Shocked? Yes, it's understandable: we hear a lot about Internet addiction in these days, and I was reading in a recent study[11] which pointed out that:
+
+bq. "[...] When 54 percent of Internet addicts say they have a history of depression, 52 percent drug or alcohol abuse and 34 percent an anxiety disorder, it seems even clearer that cyberspace is just another place for unhealthy and self-destructive behaviors to manifest themselves."
+
+Is it though? Daniel Lampinen truly admints he's an Internet addict, but he most definitely doesn't have any history of drug or alcohol abuse:
+
+bq. "On [the] Give me money [page] there's now a list of demands from the givers. The first demand come from the latest giver: no drugs. Which I'm fine with. As you can see on What I'm buying, I've only bought one joint (in Christiania in Copenhagen). And that was just a statement because I think others is gonna be free to do it. I never take anything to "get away from reality", or to "have fun". Not even beer, which I only take to relax. That's how dull I am. The reality rules."
+
+There you are. 
+So why did he choose to become an Internet addict? Well, most definitely because he was tired of the Rich World's society: he had a boring job which he didn't enjoy, and he simply realised that the Internet _could_ - at least sometimes - be better than ordinary life. He openly admits he's a weird human being, and he's fine with that, but you can be sure of two things:
+
+* he's totally, absolutely honest, in anything he does, and he's not afraid to express his own opinions without adjusting them according to the people around him
+* he maintained his individuality at the cost of living in a poorer country
+
+How many people in the Rich World can accomplish either of these things? Please raise your hands...
+
+h3. Notes
+
+Very special thanks to Daniel Lampinen for allowing me to write about him and providing all the pictures for this article.
+
+fn1. Daniel Lampinen's "website":http://www.ropix.org/english.html, English version.
+
+fn2. "Gandhi e Telecom Italia":http://www.zeusnews.it/index.php3?ar=stampa&cod=3432 - Comments on the famous Italian advert. [Italian]
+
+fn3. "Annalakshmi":http://www.annalakshmi.org/index.php - _A non-profit organization dedicated to bringing the joy of Indian culinary, visual and performing arts to one and all._
+_Annalakshmi is an international chain of vegetarian restaurants that augments its dining experience by showcasing Indian arts and handicrafts as well as cultural dance and music performances. Inspired by the Hindu concept for Abundance, Annalakshmi operates on the basis of "Eat as you Want, Pay as you Wish" where the guest decides not just what to order but also how much to pay._
+
+fn4. From Daniel Lampinen's "UI Ideas":http://www.ropix.org/ideas.html page.
+
+fn5. From Daniel Lampinen's "Money":http://www.ropix.org/money.html page.
+
+fn6. Daniel's "Money page":http://www.ropix.org/money.html lists all possible ways to dive him money, most notably:
+
+* "Paypal":https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=800825%40gmail%2ecom&item_name=Ropix&no_shipping=0&no_note=1&tax=0&currency_code=USD&bn=PP%2dDonationsBF&charset=UTF%2d8
+* His IBAN bank account number (an international number):
+SE1580000008201644439081
+With this code: BIC. SWEDSESS
+* His "free page":http://www.ropix.org/free.html. 
+
+fn7. It's documented in the "Gustav 100Kr":http://www.ropix.org/gustav100kr.html page.
+
+fn8. Daniel's "list":http://www.ropix.org/expenses.html of expenses.
+
+fn9. "F-Bolaget AB":http://www.f-bolaget.se/index.html
+
+fn10. "Intip":http://www.intip.se/
+
+fn11. "Is Internet addiction a real problem?":http://arstechnica.com/news.ars/post/20060510-6795.html - Arstecnica.com

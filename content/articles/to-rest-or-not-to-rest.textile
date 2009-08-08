@@ -1,0 +1,45 @@
+----- 
+permalink: to-rest-or-not-to-rest
+title: To REST or not to REST?
+tags: 
+- rails
+type: article
+filter_pre: textile
+-----
+Lately I've been reading quite a bit about Rails' REST approach, and to be totally honest I'm not 100% convinced it can always be a good idea. The purpose of this post is to re-evaluate the situation, and ask other people their opinion on the matter.
+
+Let's see...
+
+h3. Key Benefits
+
+To cut a long story short, from my understanding REST can be a good thing because:
+
+* It introduces the powerful concept of "resources", which is independent from the presentation. This basically means that you can have your "resources" represented in HTML. XML etc. etc. "for free". If you are making an extensive use of web services, this is truly a bless. 
+* Each CRUD action is carried out using a different HTTP command (get, post, put and delete). At present, because most browsers don't understand PUT or DELETE requested, this is somehow simulated by Rails.
+* By thinking and modeling your application in terms of resources, everything should always be "in the right place".
+
+h3. Downsides?
+
+Let's now try to summarize what made me think more carefully this approach...
+
+* While I really like Rails' convention over configuration philosophy, this sounds a tiny bit too extreme for me. In the end it could be good, but it requires developers to completely re-think the way they develop their application in order to be 100% RESTful.
+* URLs aren't that pretty anymore. While "someone":http://themysteriouswaysofruby.blogspot.com/2007/04/pretty-restful-urls-in-rails.html suggested a way to improve the way RESTful URLs look, that sounds like extra hassle to me. It's subjective, I know, but I really don't like using IDs in the url... I'd rather go for an univocal code any day (check out this site... I don't even like dates in my blog). 
+* Sometimes, it may take quite a bit to figure out how to model some functionality using resources. While it is straightforward when you want to perform CRUD operations, modeling a search action or authentication may be a bit tricky and may also feel a bit forced. Again, maybe it's just me.
+* It may be a bit too early to take full advantage of this approach. PUT and DELETE are simulated, and this doesn't sound right -- agreed, that's the only way for now, but it still sounds like a forceful workaround. Browsers are not RESTful (yet)!
+* All resources are virtually accessible by a URL. I'm not a security expert, but this scares me a bit.
+
+Here are some posts which made me think a bit:
+
+* "Looking for a good argument against REST":http://gilesbowkett.blogspot.com/2007/04/looking-for-good-argument-against-rest.html
+
+* "RESTful Myths: Unraveling the Confusion":http://www.ipbabble.com/2007/07/restful_myths.html
+
+* "Why Canâ€™t Web Apps Be REST-ful?":http://blog.livollmers.net/index.php/2007/06/26/why-cant-web-apps-be-rest-ful/
+
+The bottom line is: is REST really worth the hassle? Especially for small and simple applications like a blog, is it really worthwhile to coerce myself to adopt a RESTful approach when I could accomplish exactly the same things with much less hassle? 
+
+In other words, is REST really the answer to everything or in _some cases_ it is just _not necessary_? 
+
+And also (OK, this may sound harsh and impolite): does it really make sense to push people to adopt a RESTful approach no matter what? Sometimes someone may get the feeling that Rails is all about REST now. Is that true, or is there still room for -freedom- other views?
+
+Looking forward to hear your comments, but please be nice and civilized!

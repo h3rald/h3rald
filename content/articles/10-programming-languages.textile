@@ -1,0 +1,255 @@
+----- 
+permalink: 10-programming-languages
+title: 10 programming languages worth checking out
+tags: 
+- programming
+type: article
+filter_pre: textile
+-----
+If you program for fun or profit, chances are that you know C, C++, Java, PHP, Perl, Python or Ruby. These programming languages are all widely known, and, to a different degree, used in commercial applications. At least some of them can safely be considered _mainstream_, even if that word has become so overused and misused that has almost lost its original meaning, if it ever had one.
+If you are earning your living by coding, it's often one of these languages that pays the bills. Nevertheless, true hackers frequently meander in other directions, exploring and discovering different paradigms and methodologies, sometimes to the most "esoteric":http://esolangs.org/wiki/Main_Page extremes.
+
+bq. "The most obvious common 'personality' characteristics of hackers are high intelligence, consuming curiosity, and facility with intellectual abstractions. Also, most hackers are 'neophiles', stimulated by and appreciative of novelty (especially intellectual novelty). Most are also relatively individualistic and anti-conformist."
+
+p((((. &ndash; Eric S. Raymond, ??"The Jargon File":http://catb.org/jargon/html/personality.html?? 
+
+Even if you're particularly devoted to one of the languages mentioned above, it is normal to be curious about what else is out there. As the end of the year approaches, I find myself thinking about learning &ndash; or at least become acquainted with &ndash; some less known, more experimental, programming languages.
+I was originally planning on learning another programming language as a New Year's Resolution, which is quite common among programmers. The most difficult task turned out to be _choosing_ a particular language: there are so many out there which makes it very hard to decide.
+
+This article deals with ten possible candidates, and it's far from being an exhaustive list. The programming languages described henceforth are very different from each other, but they all have one thing in common: they all stimulate my curiosity in their own, very different ways.* "Haskell":#haskell
+* "Erlang":#erlang
+* "Io":#io
+* "PLT Scheme":#plt-scheme
+* "Clojure":#clojure
+* "Squeak":#squeak
+* "OCaml":#ocaml
+* "Factor":#factor
+* "Lua":#lua
+* "Scala":#scala
+
+h3(#haskell). Haskell
+
+I tried to learn Haskell in the past. Quietly, I started diving into the multitude of articles, tutorials, overviews and even books about this fascinating academic language which claims to achieve functional purity though remaining extremely useful, practical and efficient. Sadly, I'm still not able to fully grasp some of its most crucial concepts, such as "monads":http://en.wikibooks.org/wiki/Programming:Haskell_monads, but this still doesn't put me off _wishing_ to learn the language.
+
+If you've never enountered Haskell before, I find "The Evolution of a Haskell Programmer":http://www.willamette.edu/~fruehr/haskell/evolution.html an amusing and informative read. Although aiming to be humorous in a way, it serves a very important didascalic purpose: it is one of the most complete collections of the different paradigms and programming approaches Haskell allows.
+
+Besides its very elegant, pragmatic and almost-magical syntax, what really intrigues me about this language is what it offers, in terms of features:
+
+* 9 different "implementations":http://www.haskell.org/haskellwiki/Implementations (multiple compilers _and_ interpreters)
+* Countless "standard libraries":http://haskell.org/ghc/docs/latest/html/libraries/ "packages":http://hackage.haskell.org/packages/archive/pkg-list.html which can be used to solve _any_ programming challenge
+* Abundant "learning material":http://www.haskell.org/haskellwiki/Books_and_tutorials
+* "Speed":http://www.haskell.org/haskellwiki/Why_Haskell_matters#The_speed_of_Haskell that rivals C and C++
+* Very mature cross-platform compatibility
+
+The catch? It is likely to be very different from any other language you might have encountered before, and that's probably the reason why some people find it difficult to learn and master. That being said, if you are looking for a challenging (but very rewarding, I believe) New Year's Resolution, you should definitely go for this.
+
+h4. To get you started...
+
+* "Official Haskell Wiki":http://www.haskell.org/
+* "Haskell Wikibook":http://en.wikibooks.org/wiki/Haskell
+* "Real World Haskell":http://book.realworldhaskell.org/read/index.html
+* "37 Reasons to Love Haskell":http://cdsmith.wordpress.com/2007/07/29/37-reasons-to-love-haskell-playing-off-the-ruby-article/
+* "Haskell for the Ruby Guy":http://antoniocangiano.com/2007/03/13/haskell-eye-for-the-ruby-guy/
+* "A-Z of Programming Languages: Haskell":http://www.techworld.com.au/article/261007/-z_programming_languages_haskell
+* "Learn you a Haskell for Great Good!":http://learnyouahaskell.com/
+* "Haskell Hacking":http://cgi.cse.unsw.edu.au/~dons/blog/2008/05/16
+
+h3. Erlang
+
+"Erlang":http://erlang.org/ is a concurrent programming language originally developed by Ericsson for their real-time applications. It goes without saying that with these premise, Erlang seems the most natural answer to all concurrency problems you may encounter in your life as a programmer.
+Developing with concurrency in mind feels natural and easy in Erlang, and the performance of Erlang-powered systems can be unmatched.
+
+Quite a few interesting applications have been developed in this language, such as:
+
+* "CouchDB":http://couchdb.apache.org/, a popular distributed, document-oriented database
+* "Yaws":http://yaws.hyber.org/, a high-performance web server
+* even "Facebook Chat":http://www.facebook.com/note.php?note_id=14218138919&id=9445547199
+
+The price Erlang adepts have to pay, as Damien Katz (CouchDB creator and Erlang enthusiast) "points out":http://damienkatz.net/2008/03/what_sucks_abou.html, is:
+
+* Awkward syntax, inspired by Prolog
+* Weird if expressions
+* Difficult string operations
+* No classes or namespaces
+
+...this list could go on. Damien's article is an interesting read, enough to put anyone off learning the language if read superficially. On the other hand, it provides an invaluable resource for newcomers who wish to be prepared before taking on the challenge of learning Erlang to build their next scalable, concurrent and industry-proof application.
+
+h4. To get you started...
+
+* "Official Erlang Web Site":http://www.erlang.org/
+* "An Introduction to Erlang":http://www.onlamp.com/pub/a/onlamp/2007/09/13/introduction-to-erlang.html
+* "Erlang Style Concurrency":http://www.defmacro.org/ramblings/concurrency.html
+* "PlanetErlang":http://www.planeterlang.org/
+* "Erlang Projects":http://www.erlang-projects.org/
+
+h3(#io). Io
+
+"Io":http://iolanguage.com/ is a relatively new programming language by Steve Dekorte which recently surfaced from Google's oblivion (if you tried googling for it a few months ago, you couldn't event find its home page) thanks to a short vut stimulating "article":http://hackety.org/2008/01/05/ioHasAVeryCleanMirror.html by "_why":http://whytheluckystiff.net/. It doesn't have the best name for a programming language, that's for sure, but it's definitely a breath of fresh air in terms of the way it works.
+
+Its unusual, minimalist and yet elegant and powerful syntax reminds of Smalltalk, but the language goes far beyond that. Io is an object-oriented, prototype-based, message-based and fully-reflective programming language. This means that you use messages like in Smalltalk, you create objects like in Javascript and every bit of your code can be inspected and passed around as you see fit.
+
+If you think Ruby allows fancy (and potentially dirty) tricks like metaprogramming and monkey-patching, Io takes this to a whole different level, imposing virtually no limitation to the programmer. What's truly amazing is that its grammar and syntax are so minimal that you can learn them in literally 10 minutes. After that, you can start experimenting, first with its extremely small core and then with its extension libraries and bindings.
+
+Io has indeed a lot of potential. Granted, it's still young and under development, but also already quite efficient and suitable for real-world tasks demanding high speed and concurrency. It is implemented in C, but Ola Bini started to design a similar language called "Ioke":http://kenai.com/projects/ioke/ for the Java Virtual Machine.
+
+h4. To get you started...
+
+* "Official Io Web Site":http://iolanguage.com/
+* "Io Repository on Github":http://github.com/stevedekorte/io/tree/master
+* "Io user group":http://tech.groups.yahoo.com/group/iolanguage/
+* "Io has a very clean mirror":http://hackety.org/2008/01/05/ioHasAVeryCleanMirror.html
+* "Io Notes":http://iota.flowsnake.org/
+* "Io Language Notes":http://wiki.type-z.org/index.php/Io/IoLanguage
+* "Blame it on Io! A slow-paced introduction to the Io language":http://ozone.wordpress.com/2006/03/15/blame-it-on-io/
+* "Io Wikibook":http://en.wikibooks.org/wiki/Programming:Io
+
+h3(#plt-scheme). PLT Scheme
+
+I stumbled upon the "PLT Scheme web site":http://plt-scheme.org/ while browsing for different Lisp flavors about a year ago. At the time, I was determined to learn the rudiments of Lisp and I started reading a few articles and books on this old and yet still popular language.
+Although I was originally put off by certain Common Lisp literature, which dismissed Scheme as an almost-heretic attempt to revitalize an venerable language, I soon found out that Scheme &ndash; and PLT Scheme in particular &ndash; is definitely worthy of attention and interest.
+
+Being a technical writer, I immediately became fond of the "PLT Scheme Guide":http://docs.plt-scheme.org/guide/, one of the clearest and most well-organized examples of documentation available for a programming language I've ever come across.
+The manual is exquisitely crafted  as a Getting Started Manual and a Reference Book at the same time, though remaining pleasant to read sequentially: a rare trait in technical documentation. Best of all, it's free: you simply have no real excuse not to read it.
+
+Besides its excellent documentation, PLT Scheme feels like a fresh and modern implementation of one of the two most important dialects of Lisp. It's cross-platform, it has an extensive "collection of packages":http://planet.plt-scheme.org/ and a very active community behind it. 
+After my first attempt to learn Haskell, I felt compelled to try out PLT Scheme and it immediately felt much easier and more user friendly to learn, partly because of "DrScheme":http://download.plt-scheme.org/drscheme/ a dedicated IDE/learning tool optimized to get you started and feel comfortable with the language.
+Caveats? None, unless you have an adversion for parenthesis, that is.
+
+h4. To get you started...
+
+* "Official PLT Scheme Web Site":http://plt-scheme.org/
+* "PLT Scheme Guide":http://docs.plt-scheme.org/guide/index.html
+* "PLaneT":http://planet.plt-scheme.org/
+* "Quick: An Introduction to PLT Scheme with Pictures":http://docs.plt-scheme.org/quick/
+* "More: Systems Programming with PLT Scheme":http://docs.plt-scheme.org/more/
+
+h3(#clojure). Clojure
+
+"Clojure":http://clojure.org/ is the most recent and notable attempt to bring Lisp back to life and ready to face the challenges posed to IT systems by the new century: concurrency and scalability. Because it runs on the Java Virtual Machine, you also get Java interoperability for free, in a more Lispy flavour. Although I'm a bit reluctant to deal with anything related to Java nowadays, Clojure's approach makes it more appealing.
+
+Unlike other Lisps (and Schemes) you may have encountered before, Clojure comes with some interesting additions:
+
+* "Multimethods":http://clojure.org/multimethods
+* "Agents asynchronous actions":http://clojure.org/agents
+* Some interestings "special forms":http://clojure.org/special_forms
+* Many pre-built "data structures":http://clojure.org/data_structures, like Vectors, Maps, Sets, Collections, ...
+
+Despite all this, Rich Hickey became increasingly popular both in the Lisp and Java world for creating such an interesting and well-designed language. Unlike with many new (and old) programming languages, I have yet to find a single blog post or article which is seriously criticizing Clojure in any way.
+
+h4. To get you started...
+
+* "Official Clojure Web Site":http://clojure.org
+* "Clojure User Group":http://groups.google.com/group/clojure
+* "Clojure presentation on InfoQ":http://www.infoq.com/presentations/hickey-clojure
+* "Trying Clojure":http://netzhansa.blogspot.com/2008/10/trying-clojure.html
+* "My first look at Clojure":http://groups.google.com/group/clojure/msg/f038decc18c7da37
+* "Enclojure":http://enclojure.net/Index.html
+
+h3(#squeak). Squeak
+
+"Squeak":http://www.squeak.org/ has become one of the most popular Smalltalk implementations available. It has been used in some very interesting projects:
+
+* "EToys":http://wiki.laptop.org/go/Smalltalk_Development_on_XO, a kids-oriented but powerful development environment built in Squeak, was included as part of the educational sofware suite of the "OLPC":http://www.laptop.org.
+* "Seaside":http://www.seaside.st/ is a modern and very productive web framework running on Squeak.
+* "Croquet":http://www.croquetproject.org/index.php/Main_Page is a development solution to build complex, multi-user virtual worlds.
+
+If you ask "Randal Schwartz":http://www.stonehenge.com/merlyn/, he'll explain you "why":http://www.infoq.com/articles/smalltalk-comeback-schwartz Squeak and Smalltalk are at least worth a look. Personally, while I'm attracted by Smalltalk's unique approach to programming and its friendly syntax, I am still a bit overwhelmed by the way it works. 
+Squeak, and Smalltalk in general, runs inside (literally) a virtual machine written in Squeak itself. This means that:
+
+* You write your code inside Squeak
+* You debug, inspect and interact your code inside squeak
+* You run your code inside Squeak
+* You can install Squeak on virtually any platform, including mobile phones, fairly easily
+
+Everything lives inside Squeak. It's very weird to picture this without actually trying it, so I suggest you "download it":http://www.squeak.org/Download/ and give it a try: it will definitely be an unusual but intriguing experience.
+
+Smalltalk takes programming to a whole different level, which is simply unimaginable for other languages. In return, it asks you to fully embrace the Smalltalk way of doing things, according to which external text editors, external version control systems and other common tools familiar to traditional programmers simply loose their purpose.
+
+h4. To get you started...
+
+* "Official Squeak Web Site":http://www.squeak.org/
+* "Squeak by Example":http://squeakbyexample.org/
+* "SqueakLand":http://www.squeakland.org/
+* "Ruby's Roots: Smalltalk Comeback and Randal Schwartz on Smalltalk":http://www.infoq.com/articles/smalltalk-comeback-schwartz
+* "FLOSS Weekly 29: Dan Ingalls":http://twit.tv/floss29
+
+h3(#ocaml). OCaml
+
+Like Smalltalk, "OCaml":http://caml.inria.fr/ has been getting more attention recently than in the past. Sure, not everyone is planning to learn is these days, but after reading "this article":http://enfranchisedmind.com/blog/2008/04/14/useful-things-about-static-typing/ I admit I was eager to give it a proper try.
+
+Despite being statically typed, OCaml offers some of the features which are common in dynamically typed languages like Ruby, such as duck typing, the possibility of creating Domain-Specific Languages and even extending the language syntax with custom operators and constructs.
+
+Additionally, the  "OCaml Batteries Included":http://batteries.forge.ocamlcore.org/ project was created as an attempt to bundle a standard set of commonly-used library together with the language core. Even if this project is still in alpha stage, it definitely "looks promising":http://dutherenverseauborddelatable.wordpress.com/2008/11/07/a-taste-of-ocaml-batteries-included/.
+
+h4. To get you started...
+
+* "Official Caml Web Site":http://caml.inria.fr/
+* "Objective Caml Tutorial":http://www.ocaml-tutorial.org/
+* "A Concise Introduction to Objective Caml":http://www.csc.villanova.edu/~dmatusze/resources/ocaml/ocaml.html
+* "The OCaml Alliance Network":http://wiki.cocan.org/
+* "OCaml News":http://ocamlnews.blogspot.com/
+* "OCaml Batteries Included":http://batteries.forge.ocamlcore.org/
+
+h3. Factor
+
+"Factor":http://factorcode.org/ is to Forth what "Clojure":http://clojure.org is to Common Lisp: a reincarnation of an ancient language in a more modern and practical form. In the specific case, although it borrows from Lisp and Self as well, Factor retains the main characteristics of its ancestor: it's stack-based, concatenative and has postfix notation.
+While this is enough to put some people off, if you digg deeper you'll discover that Factor offers all the most important features available in contemporary programming languages: garbage collection, dynamic typing, an object system, ... they're just presented in a very different way:
+
+bq. "Learning Factor is tough. One reason for this is that Factor is very different from other programming languages. Programmers today are used to imperative programming languages where data is stored and passed around in named variables (or function calls, which name their variables). Factor is the opposite of this. A lot of code tends to be written in a functional style, and even more jarringly, variables are rare, only referenced in a small fraction of words. Nobody intends to change any of this; it's a feature, not a bug!"
+
+p(((. &ndash; Daniel Ehrenberg, ??"Learning Factor":http://useless-factor.blogspot.com/2008/01/learning-factor.html??
+
+Like Haskell, Factor demands a completely different programming approach to what you may be used to, but once you get past that, it can be as useful as any other language, if not more. The "Furnace":http://docs.factorcode.org/content/article-furnace.html web framework, which powers the "Concatenative":http://concatenative.org/ wiki, is entirely built in Factor and runs on top of a Factor web server.
+
+h4. To get you started...
+
+* "Official Factor Web Site":http://factorcode.org/
+* "Factor on the Concatenative Wiki":http://concatenative.org/wiki/view/Factor
+* "Factor Documentation":http://docs.factorcode.org/
+* "Learn Factor":http://learnfactor.org/
+* "Planet Factor":http://planet.factorcode.org/
+
+h3(#lua). Lua
+
+"Lua":http://www.lua.org/ ("Moon" in Portuguese), is a lightweight and fast scripting language which can be easily embedded in other systems. Compared to the other languages mentioned in this article, it is definitely the less alien of the lot: if you know a tiny bit of C or Java, you'll be able to understand (and possibly write) 80% of Lua code without reading a single line of its documentation. 
+
+Despite its simplicity, Lua is considered a multi-paradigm language supporting imperative, functional and even object-oriented approaches. More specifically, Lua's _tables_ provide a simple but powerful way to create arrays, hashes and even classes (or better, prototypes). Simple (and multiple) inheritance is achieved through _metatables_, which allow calls to undefined functions to be _transferred_ to parent tables.
+
+Lua programs are not interpreted in the traditional way: they are compiled to bytecode and then executed in the Lua Virtual Machine. As a result, Lua code tends to be executed much faster than other interpreted languages, so fast that "as fast as Lua" has become a proverbial expression.
+Lua found its niche in embedded applications and games development, basically everywhere there's the need to provide a fast scripting language which is also very easy to learn and extend with C or other languages.
+
+h4. To get you started...
+
+* "Official Lua Web Site":http://www.lua.org/
+* "Lua Manual":http://www.lua.org/manual/
+* "Lua-users":http://lua-users.org/
+* "Learning Lua":http://icculus.org/~theoddone33/lua/
+* "Lua for Beginners":http://lua.gts-stolberg.de/en/index.php?uml=1
+
+h3(#scala). Scala
+
+You may not be happy to see "Scala":http://www.scala-lang.org/ in this list instead of other very valid and equally powerful languages for the Java Virtual Machine such as "Groovy":http://groovy.codehaus.org/. While there was no doubt on whether Clojure should have been included or not, I was a bit hesitant to include Scala. In the end, I chose to do so simply because Scala fits better in this list than other languages: as you should have noticed by now, I am somehow more inclined to learn functional languages as opposed to their object-oriented counterparts.
+
+Scala is both object oriented and functional. It offers the best of both worlds: classes, traits and mixins which may be familiar to OOP lovers but also anonymous functions, currying and pattern matching which may please Haskell enthusiasts. Additionally, it's also compatible with Java: so if you use Java for work, trying out Scala for pleasure is definitely the most logical next step, especially if you want to experiment with functional programming in the meantime.
+
+Compared to learning a fully-functional (no pun intended) language like Haskell, Clojure or PLT Scheme, learning Scala is definitely easier and will feel less alien.
+
+h4. To get you started...
+
+* "Official Scala Web Site":http://www.scala-lang.org/
+* "The Case for Scala":http://blogs.zdnet.com/Burnette/?p=690
+* "Scala Wiki":http://scala.sygneca.com/
+* "Learning Scala with Project Euler":http://grok-code.com/75/learning-scala-with-project-euler/
+* "Roundup: Scala for Java Refugees":http://www.codecommit.com/blog/scala/roundup-scala-for-java-refugees
+
+h3. Epilogue
+
+There are so many interesting programming language out there that it's very hard to keep track of all of them. I hope this list can aid you in the right direction, whichever it may be. 
+Some people may debate over the very essence of this article: why _choosing_ a programming language? Why spending time and energy in a task which may lead to a lot of confusion in your mind and lead you nowhere? What's the purpose of learning something which may feel totally alien to you?
+
+A programming language is ultimately just a tool to get your job done. If you have to write an end-user, desktop GUI application which will always run on Windows and which needs to inteface with Microsoft technologies, you'll choose C# over Haskell, there's no doubt about that. Especially if 500 developers in your company already develop in C# and you don't, as a matter of fact, have a saying on the matter.
+
+But what if you _could_ choose? What if you wanted to develop your own geeky command line application to automate a particular task for yourself, and not because someone else tells you to do so? Would you be willing to experiment with something totally different and potentially difficult just for the sake of learning new things?
+
+If the answer is yes, then you should take a look at this list again. Not now, maybe not this month or this year, but when you feel the time is right, and give one of these languages a shot. It may not end well (so far I attempted to learn Haskell twice, with no luck), but I promise you it will be worthwhile, in the long run. 
+If you already mastered some of these languages already, or even all of them, be assured that they're plenty out there ready to be discovered and open your mind even more. Or, if you prefer, there are a lot of minds out there which may need guidance in learning and discovery. Help them. Write articles, tutorials, books, educate and evangelize: ultimately, that will be your greatest reward.

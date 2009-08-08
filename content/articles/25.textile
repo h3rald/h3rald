@@ -1,0 +1,34 @@
+----- 
+permalink: "25"
+title: Digg Effect -  the day after
+tags: 
+- digg
+- web20
+- web development
+- internet
+type: article
+filter_pre: textile
+-----
+...So it turns out that my "last article":http://www.h3rald.com/articles/view/rails-inspired-php-frameworks/ appeared on "Digg":http://www.digg.com homepage. 
+This was quite a pleasant surprise: I didn't expect that an article submitted to _my own site_ could make it that far! I thought you'd need a relatively well-known website, mafia's support, some divine intervention and a terrific amount of luck, but it seems that sometimes an interesting article about an interesting subject can be enough. I'll probably write a more detailed report of what happened soon, in another article rather than a blog post, but for now I just wanted to post a short summary here.
+
+Two days ago I decided to write a roundup of the six Rails-inspired PHP frameworks, CakePHP, Symfony, PHP on Trax, Code Igniter, Biscuit and Pipeline. The reason for this was that I couldn't find anything comparing all of them and such comparison could have been useful for some new _bakers_. OK, I confess, when I started writing the article I thought I'd submit it to Digg and see what happens: I saw that another "roundup":http://www.phpit.net/article/ten-different-php-frameworks/ made it to the first page and people were quoting it everywhere on the net. It's a nice article, but - in my humble opinion - not too exhaustive. 
+Then I read a comment by someone to the "digg":http://digg.com/programming/CakePHP_1.0_has_been_released_ of the latest Cake release stating:
+
+bq. Yes, they are similar - both were inspired by Rails, but Cake has gone further to differentiate themselves. Here's a decent (but not great) overview of some frameworks: http://www.phpit.net/article/ten-different-php-frameworks/
+
+At that point, I thought that another round up, perhaps more Cake-centric, was in order. The other reason was that in one of my recent "blog posts":http://www.h3rald.com/blog/view/23/ I tried to compare CakePHP and Symfony, but obviously my emotions got in the way and in the end I noticed I was kinda _attacking_ Symfony. That was a blog post though, and that's half-allowed, but I felt that I should have written a slightly more objective _article_ mentioning also all the other competitors.
+
+Anyhow, right when I went to submit my article to Digg, it turns out that another guy wrote "a similar round up":http://digg.com/programming/5_Next_Generation_PHP_Frameworks, which made it to Digg's homepage. That was an annoying cohincidence, but in the end things didn't go too bad: his roundup was more generic, while mine was more specific and detailed.
+
+!<http://base--/img/pictures/dugg_detail.png!
+
+After submitting my article the reaction wasn't instantaneous... 5, 7, 10, 13 diggs in the first two hours. Then shortly I made it to 30 and when the 40th visitor dugg it my article was moved to the first page!
+I immediately noticed it when I refreshed my stats page: a minute before my girlfriend was here telling me "oh look, over 400 visitors... not too bad". Then I refreshed the page and it said _539_, I refreshed again and said 600-something... eeep... Digg effect!
+
+A special praise goes to my new hosting company, "BlueHost":http://www.bluehost.com/track/h3rald/CODE5: the server didn't go down and it managed the extra traffic fine! A good test for CakePHP as well, since I built this site with it.
+
+So here I am... over 5000 visitors read my article, about 600 people dugg it, nearly 40 people commented it on digg.com and 20 directly on my site. And - except for the usual _Rails-is-better-than-anything-else_ comments - they were generally positive. Over 250 people bookmarked on del.icio.us and many blogs mentioned it in many different countries.
+
+Money? Didn't make much with adsense at all: programmers _don't_ click on ads!
+Bandwidth? About 1GB was gone in the first five hours, now is obviously slowing down: oh well, I still have another 398GB available till the end of the month :P

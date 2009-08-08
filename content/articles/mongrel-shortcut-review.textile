@@ -1,0 +1,158 @@
+----- 
+permalink: mongrel-shortcut-review
+title: "Book Review: Mongrel Digital Shortcut"
+tags: 
+- review
+- books
+- rails
+- ruby
+type: article
+filter_pre: textile
+-----
+If you ever considered about developing an deploying a Rails application in the last year or so, you must have heard of "Mongrel":http://mongrel.rubyforge.org/index.html before. If you didn't, I'd recommend you learn more about it because up to now it proved to be one of the few essential ingredients for deploying _scalable_ Rails applications.
+
+Mongrel is a creation of "Zed Shaw":http://www.zedshaw.com/ who started writing a replacement for FastCGI to use with Rails, and ended up creating a brand new, HTTP web server who turned out to be one of the best things the Rails community ever saw happening.
+
+It was created to be simple to use and configure, nevertheless it _does_ require some skill to set it up and tune it. Documentation is there, along with plenty of blog posts, but there's also an interesting "book":http://www.informit.com/store/product.aspx?isbn=0321483502&rl=1 from "Addison Wesley Professional":http://www.awprofessional.com/ which is definetely worth a read.
+
+!>/files/mongrel_shortcut.jpeg!
+
+"Mongrel: Serving, Deploying, and Extending Your Ruby Applications" &ndash; that's the title of the book. A _Digital Shortcut_, 100-odd pages long, in _landscape_ format to make it easier to read on a computer, straight to the point with no added sugar for just 15$ (PDF only). I must say Addison Wesley got it right: the book's format is, as a matter of fact, _optimized for web developers_, especially those who can't afford to read a 500-pages book covering everything about a subject just to find that one thing they don't know about.
+This _shortcut_ can be seen, essentially, as an expanded cheatsheet which will teach you the basics about Mongrel and also give you plenty of advice on how to learn more about it. 
+
+Let's have a closer look at it.
+
+
+
+h3. Overview, Introduction & Getting Started
+
+The first three -chapters- sections (there are no chapters, just _sections_) of the book are meant to be a gentle introduction to Mongrel and its world. The main author is "Matt Pelletier":http://www.informit.com/authors/bio.aspx?a=0260912e-6ed8-4ed1-882a-c357e644feec, but Zed Show's contributions are definitely one of the book's best selling points. 
+Zed's thoughts are scattered here and there in many _sidebars_ throughout the book (there's at least one in each section): you'll see an odd-looking face (Zed's self-caricature) with some text next to it; when you read it, you'll notice that they are _actually_ Zed's own thoughts, straight from his mind, with no editorial filter whatsoever in-between. 
+Be warned: the text included within the *Zed Sez* sidebars is highly opinionated, that's precisely what Zed _feels_ to say about something, and he'll just say it: just the plain, simple thoughts of an experienced programmer. As the author explains in *Section 1*: _"[...] You may not agree with everything he says, but you probably should."_
+
+*Section 2* is a general introduction about Mongrel. It explains _what_ it is, _when_ and _why_ it was made, and _how_ it works. There's nothing new to learn if you already used Mongrel before, probably, but it's definitely the first thing to show to someone who's new to Mongrel and its world, and possibly a bit skeptical about it. 
+The last subsection _"What can Mongrel do for me"_ is an attempt to -brainwash- persuade you to fully embrace Mongrel and its philosophy, whether you are a developer, a sysadmin or even a manager: assertions like _"Mongrel is pretty damned secure."_ and _"Mongrel's license is capitalist-friendly."_ will definitaly make some of you (managers) happy.
+
+*Section 3* is slightly more juicy than the previous one, as it explains how to install and use Mongrel. Basically that's what everyone who ever used it already knows, but it's still necessary for the book's consistency, after all. After reading this section, you'll probably have your first Mongrel up and running and serving your little Rails application's pages, and you'll begin to wonder why the hell you need to keep reading this book now that everything seems to work already...
+
+
+h3. Section 4: Configurations
+
+...aka "a truly useful Mongrel cheatsheet". This section dives deep(er) into Mongrel's configuration by explaining what each start parameter does in detail. The parameters are presented in tabular form in a very well-organized way. As you would expect from an high-quality cheatsheet.
+
+Then the author will explore a few commonly used deployment scenarios, in particular:
+
+* *Standalone* &ndash; The simplest configuration possible, with just one Mongrel instance serving both static and dynamic pages.
+* *mongrel&#95;cluster* &ndash; How to use _"a pack of mongrels"_ together to handle more traffic.
+* *Behind a static web server* &ndash; The most common (and most scalable) option, used to serve static content faster using a front-end server and use Mongrel only to handle Ruby pages.
+
+Towards the end of the section, for the developer's delight, the author will discuss two common, useful scenarios where Mongrel can be used:
+
+* *Apache 2 + mod_proxy_balancer + mongrel&#95;cluster* 
+* *Nginx + mongrel&#95;cluster*
+
+The difference here is that detailed instructions are provided on how to setup and configure each server, including example file sources. This can be particularly useful for the Nginx example, as most of the documentation for this fantastic, lightweight Mongrel fron-end is scattered around the web (or written in Russian in a "well known place":http://sysoev.ru/nginx/).
+
+
+h3. Section 5: Production Deployment
+
+This section introduces one of the most important part of the life cycle of a Rails application: the deployment on a production server. The author is pretty honest about the whole subject:
+
+<blockquote>
+<em>"You will not do this in a day. If you are expecting to code until 1 minute before your deadline and then simply point and click and have an instant server then you need to take some kind of
+medication because you are violently hallucinating. You will need at least a week of 8 hours days to make sure your first deployment works and to have the time to do it right."</em>
+</blockquote>
+
+Sounds terribly true. Especially for larger projects demanding good performance under heavy traffic. Scared? Probably, if you never deployed a Rails application "properly" before, but at least the book comes to the rescue by providing an overview of what you need to perform a deployment and why it is such a complex and delicate process.
+
+Not only this, but also a "Best Practices Rubric" is also provided for the developer's own private enjoyement. It's written as a list of questions like:
+
+_11. Do you have a shared location where you can document the deployment, such as a Wiki or CMS?_
+_12. Do you know how to use httperf or ab and know what the statistics mean?_
+
+After these 13 questions, the author provides the key to give a meaning to your answers:
+
+<blockquote>
+<em>"For each question you answer with "NO", add 10 hours to your time estimate for completion. This may seem unrealistic, since saying "NO" to everything means it'll take 190 hours (about one
+month), but this estimate is actually low according to most first deployment experiences."</em>
+</blockquote>
+
+If you answered "NO" too many times to these questions, you may want to read on through the next subsection which states 17 "worst practices": an invaluable read for beginners!
+
+But after all this section is not only about stating the obvious (...right?): a full example scenario is describedand examined throughly to give you an idea of how a deployment _should_ be made, using three different machines:
+
+* One for Apache (as a front-end to Mongrel)
+* One for the Mongrel cluster and the Rails application
+* One for the database
+
+Maybe something you'll never do if you just want to run your grandma's site on Rails, but certainly something you may want to start looking at if your grandma becomes really popular and your small server gets grounded by several thousands of visitors per day.
+
+The last part of the section will give you a brief introduction on monitoring your applications and on which tools you should be using, although it does not discuss the subject in detail at all, it's just meant to point you to the right direction.
+
+
+h3. Section 6: Extending Mongrel
+
+This section digs deeper into the software code internals and describes _how to teach new tricks to your Mongrel_, i.e. how to extend its functionality.
+
+Before you begin, though, don't forget what Zed himself has to say about Mongrel's simplicity:
+
+<blockquote>
+_"I've always had a different aesthetic sense when I write my software. I value simplicity and directness and try to write software that follows this approach. I jokingly call it the Shibumi School of Software Structure. All I do is apply this rule: When given two possible designs with equal end results, pick the simpler one. I then ruthlessly strip the solution down to its finest elements, but no more."_
+</blockquote>
+
+Mongrel's architecture is not that complex, and this section is sufficient to get you started by providing an overview of the main classes involved (HttpServer, HttpRequest, HttpResponse, HttpHandler, URIClassifier), and how they work together.
+Note that the book won't describe anything about the APIs of these classes. but after all, the project's "RDoc documentation":http://mongrel.rubyforge.org/rdoc/files/README.html should cover all the details you need. 
+
+The rest of the section focuses on how to extend Mongrel, by:
+
+* Writing custom handlers in Ruby
+* Creating custom filters to perform security checks, clean up requests and preliminary file processing
+* Creating plugins and distributing them as rubygems
+
+Two working examples are also provided:
+
+* An example handler to deflate content (if the browser supports deflate)
+* An example "duck" plugin, to make Mongrel quack like a duck when it's started (not the most useful thing in the world, but serves the purpose)
+
+
+h2. Debugging, Performance & Security
+
+The last three sections deals with other important aspects concerning the deployment of your application, how to debug, how to improve performance and how to secure your application.
+
+*Section 7* introduces two debugging modes:
+
+* Dash-Bee logging (-B) 
+* USR1 logging (lighter)
+
+And also gives you an idea on what to look for when debugging an application. Nothing too detailed, granted, but enough to make sure you are pointed in the right direction.
+
+Again, Zed's wisdom and wit are remarkable:
+
+<blockquote>
+<em>"These people's problem is they suffer from Potpourri Turd Syndromeâ€”a belief that their you-know-what don't stink and smells like fine dew on freshly cut grass. Whenever there's a bug, they go
+running like kids in a candy store to other people's code trying to find fault and just assume that it's nothing they wrote.
+[...]
+When you run into a problem with your application, always assume it's your fault first. Mongrel's not perfect, but its code is minuscule compared to the size of Rails and most likely even your own appli-cation code. Mongrel also powers many large and medium deployments without any problems. If there's an error, the evidence already says it's in your code, so bite the bullet and start investigating it as if it's your problem."</em>
+</blockquote>
+
+Similarly, *Section 8* is a short but useful overview on performance tips and tricks and deployment tuning. The most useful thing is probably the checklist of the "tuning process", which illustrates the simple steps to take to tune your application. 
+
+Finally, *Section 9* addresses some common security concerns and clarifies how Mongrel deals with them. The answer is normally "Mongrel strictly does this" or "Mongrel doesn't support this feature". After all, you should have understood by now that Mongrel is an example of simplicity and that it deliberately does not aim to offer all the feature you'd expect by a server like Apache:
+
+<blockquote>
+<em>"As you probably see, Mongrel say, "No" in many places where most Web servers say, "Yes, OK." Sometimes this is because no one using Mongrel has needed it yet, sometimes it's because there's a
+better, simpler way to accomplish the same goal. Mongrel is a different kind of Web server, and frequently you can solve your problem with a different solution."</em> 
+</blockquote>
+
+
+h2. Conclusion
+
+If Mongrel is opinionated software, this is definitely an opinionated book which fully embraces the project's philosopy of simplicity above everything else. It's an interesting read and it won't bore you to death by deliberately skipping long and potentially tedious subjects and adding interesting insights instead (like the Zed Sez sidebars). Perhaps it is a bit too direct towards certain people, who may get even get offended (as planned) by some of the author's assertions.
+
+Despite being a 100-pages book, this _shortcut_ covers pretty much everything you need to know *about Mongrel*. It will _not_ teach you everything about deployment, security, performance tweaks and debugging though: as the authors often state throughout the book, a lot of (big) books are available on those subject, and it wouldn't make sense to even attempt to discuss them in this shortcut.
+
+Similarly, you won't find complex examples either, but that's acceptable because simple examples are often the only thing you need to grasp the basics of a concept or feature, and then use them as a "scaffold" for your own code.
+
+Globally, the book is well balanced and _optimized_ for its size: lightweight introductory sections at first, then the "real juice" in the middle, and a few overview sections on advanced topics towards the end. You can read it easily in a few hours, perhaps less, and whenever you need to look something up in a hurry it will be fairly easy to locate.
+
+A good read, and a _must_ for everyone who wants to learn more about Mongrel or Rails deployment.

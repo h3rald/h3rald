@@ -1,0 +1,222 @@
+----- 
+permalink: what-is-ajax
+title: What is AJAX?
+tags: 
+- internet
+- web20
+- ajax
+- web-development
+type: article
+filter_pre: bbcode
+-----
+[i]"The Web is changing. The 30-year-old terminal-like technology it was originally is gradually giving way to new ways of doing things. The power of AJAX allows for rich user interaction without the trouble that has bugged traditional web applications."[/i]This is the introduction to the script.aculo.us[1] website, and regardless your opinion about the so-called AJAX [i]programming technique[/i], they are fundamentally right: the web is changing.  AJAX is at least one way to do things in a different way, enhancing - although arguably, in some cases -  users' browsing experience.
+
+[b]Application examples[/b]
+What is AJAX then? Nothing too new, but not too old either. I'd define AJAX as the [i]rebirth of Javascript[/i], for example, it's not only Javascript we're talking about. The acronym stands for Asynchronous Javascript And XML and it already gives an idea of the fundamentals of the technology: something build on [i]asynchronous server requests and responses [/i]. This may be clear to coders, but the best way to try explaining this to everyday internet users is showing some famous applications:
+
+[i]Gmail[2][/i]: The first example? The most famous? The most used? Perhaps. Google aimed to impress both end users and geeks with it's free, long awaited email service. What's so unusual in this webmail application?
+[list]
+[*]An innovative and intuitive interface, more similar to a desktop application than a traditional webpage.
+[*]Rich formatting through an effective, easy-to-use editor.
+[*]Online spell checker.
+[*]Instant (one click) email tagging, labels, contact groups etc.
+[*]Email auto save.
+[/list]
+
+[i]Kiko[3][/i]: This is a very neat online calendar, free to use and customizable. Features include:
+[list]
+[*]Multiple user/contacts/events administration.
+[*]Personalization of the right click menu (it overrides your browser's default behavior).
+[*]Drag and drop events across the calendar.
+[*]Easily switch through different calendar views without any page refresh.
+-	[/list]
+
+[i]Writely[4][/i]: An online word processor. Although it is not as advanced as its desktop's cousins, this is a truly admirable effort to port a desktop application to the web. The service is free for now and it allows users to create, edit, share and export text documents. Among its features there are:
+[list]
+[*]High degree of document formatting - modify font size, style, colors, alignment, insert images and links etc.
+[*]Enhanced exporting options - it can create html documents, Word documents, zip files etc.
+[*]Online spell-checker.
+[*]Ability to easily share and publish your work.
+[/list]
+
+This list can continue[5], as new "AJAX-powered" applications are created nearly every day. 
+[quote]AJAX provides the web developer the ability to create web applications that look and feel like applications that run on the desktop. It does this by solving the 'partial update' problem. AJAX makes it possible for a web application to request data from the server (usually in response to a button click or other java script 'event') and change a part of the current page to reflect the result of the query. Prior to AJAX, if the web developer wanted to retrieve any information from the server a full page update was required. This may mean a full page load when the user clicks a help icon, spell checks a document or performs a drag and drop operation that changes data on the server. AJAX solves this problem and opens the door for a host of AJAX-powered web applications
+There were some unconventional solutions to this problem prior to AJAX. I have ignored them for the purpose of this article as they were hacky or relied on a feature in a particular browser [/quote]
+
+[b]How does it work?[/b]
+Ajax[7] is fundamentally the union of various technologies - not something new by itself:
+[list]
+[*] (X)HTML, CSS, etc., used as presentation layer and format the information retrieved by the server: nothing special here.
+[*]The XMLHttpRequest[8] object, which allows data exchange between client and server "silently", in an asynchronous way, without the need of refreshing and reloading a whole web page
+[*]The Dom Object Model (DOM)[9], a Object-Oriented way to represent and access HTML or XML.
+[*]XML and XSLT used for data interchange and manipulation
+[/list]
+
+The magic is undoubtedly in the XMLHttpRequest object, originally invented by Microsoft as an ActiveX object and then made available as a standard Javascript class by Mozilla-based browsers. At least something which [i]seems[/i] to be compatible with [i]most[/i] browsers then.
+
+A necessary step in any Javascript script using the XMLHttpRequest object would be something like:
+
+[code]
+if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+    http_request = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+}
+[/code]
+
+In order to have an http_request object to use later on which is independent from the browser type.
+
+Let's now examine an example of elementary Ajax application[10]. The following code is broken into different parts and commented, the uncommented source and a demo is available on degraeve.com[10].
+
+For this simple example we need to create a simple server-side script which will be called by our Ajax application. The script can be in any language, this one is in Perl.
+
+[code]
+#!/usr/bin/perl -w
+use CGI;
+
+$query = new CGI;
+
+$secretword = $query-param('w');
+$remotehost = $query-remote_host();
+
+print $query-header;
+print "<p>The secret word is <b>$secretword</b> and your IP is <b>$remotehost</b>.
+ [/code]
+
+Basically it creates a new CGI object named $query, used to access the parameter which will be passed by our submission form, "w", and get the user's IP address.
+The script will then print a the page header and a phrase containing the word entered in our form and the user's IP address.
+
+And here's the simple Ajax application:
+
+[code]
+<html>
+<head>
+<title>Simple Ajax Example</title>
+
+<script language="Javascript">
+[/code]
+
+[i]Comment: Just the first HTML tags of the page, and the beginning of the script[/i]
+
+[code]
+function xmlhttpPost(strURL) {
+    var xmlHttpReq = false;
+    var self = this;
+    // Mozilla/Safari
+    if (window.XMLHttpRequest) {
+        self.xmlHttpReq = new XMLHttpRequest();
+    }
+    // IE
+    else if (window.ActiveXObject) {
+        self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+[/code]
+
+[i]Comment: First of all we create a function named xmlhttpPost, which takes the parameter strURL, i.e. the web address of the script we created earlier. In the first part of the function, we create the HTMLHttpRequest object independently of the browser, which in this case is called self.xmlHttpReq. [/i]
+[code]
+ 
+    self.xmlHttpReq.open('POST', strURL, true);
+
+    self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+[/code]
+
+[i]Comment: with the method open we initialize the connection, specifying that we want to send a POST request to the page "strURL" and that the connection is asynchronous (true). The third parameter is actually true by default and could have been omitted in this case. 
+As we want to use the POST method, we need to set the content-type header for our request, in this case "application/x-www-form-urlencoded". [/i]
+
+[code]
+    self.xmlHttpReq.onreadystatechange = function() {
+        if (self.xmlHttpReq.readyState == 4) {
+            updatepage(self.xmlHttpReq.responseText);
+        }
+    }
+    self.xmlHttpReq.send(getquerystring());
+}
+[/code]
+
+
+[i]Comment: This is the crucial part, as we need to send the request and also define the behavior of our application once the response is received. The request is sent using the "send" method, which sends a properly formatted query string (see below), but before that we need to setup a "listener" to monitor what happens to our request.
+The readyState variables is updated according to the status of the connection, and can assume the following values:
+[list]
+[*]0 - Uninitialised
+[*]1 - Loading
+[*]2 - Loaded
+[*]3 - Interactive
+[*]4 - Completed
+[/list]
+
+We want to update our page once we are sure that the connection with the script has been established, therefore we setup a listener (onreadystatechange) to update the page via the function update page defined below only if the connection's state is "Completed" (self.xmlHttpReq.readyState == 4). The  self.xmlHttpReq.responseText variable which is sent to the update page function contains the response generated by our CGI script. [/i]
+
+[code]
+function getquerystring() {
+    var form     = document.forms['f1'];
+    var word = form.word.value;
+    qstr = 'w=' + escape(word);  // NOTE: no '?' before querystring
+    return qstr;
+}
+[/code]
+
+[i]Comment: This function simply formats the parameter sent to the script as "w=typedword" where "typedword" is the word typed in the form of our application. [/i]
+
+[code]
+function updatepage(str){
+    document.getElementById("result").innerHTML = str;
+}
+[/code]
+
+[i]Comment: Finally, this function inserts the response we got from the CGI script into an HTML element with id=result, through the method innerHTML. [/i]
+
+[code]
+</script>
+</head>
+
+<form name="f1">
+  <pword: <input name="word" type="text"  >
+  <input value="Go" type="button" >onclick='JavaScript:xmlhttpPost("/cgi-bin/simple-ajax-example.cgi")'</p>
+  <div id="result"></div>
+</form>
+</body>
+</html>
+[/code]
+
+[i]Comment: This is the final part of the application, which defines our form containing a text field and a submit button. Note that our xmlhttpPost function is called once the button is clicked, through the on click attribute. [/i]
+
+That's it. 
+The first reaction after reading so far would probably be "Ajax is not easy at all", well, I never said it was. To create a simple application which just prints something on the screen we had to go through a lot of code, and we could have done something similar with much less hassle. This was just a trivial example, very different from those large scale applications available online.
+
+There's good news though, there are plenty of frameworks and toolkits which makes life easier for developers interested in using this programming technique. There are in particular various libraries built upon the Prototype[11] framework such as the already mentioned Script.aculo.us[1] and Rico[12] for examples, and various frameworks which integrate Ajax in some way in any server side language, like Ruby on Rails[13] or CakePHP[14], for example.
+
+[b]Conclusion[/b]
+Undoubtedly Ajax can be used to create really powerful and innovative applications, but it shouldn't be abused or mis-used. There are a few things to keep in mind, when developing an Ajax application:
+[list]
+[*]It requires Javascript to be enable on the client browser, and the developer obviously can't control that
+[*]The application may not compatible with all browsers, in particular older browsers will definitely not be able to access it.
+[*]It can be too much of a surprise for the user who never used an Ajax application before: it may experience delays in responses, some basic functionalities like the "Back" button might not work as expected etc.
+[/list]
+
+There are actually many more things to consider [15] before even start planning to develop an application, and can basically be summarized as follows:
+
+[i]"Do not use Ajax in your web application unless you know what you're doing"[/i]
+
+Luckily, there are a lot of articles and resources[16] out there, waiting for you.
+
+
+[b]Notes and Resources[/b]
+[small]
+[1] Script.aculo.us AJAX toolkit: [url]http://www.script.aculo.us [/url]
+[2] Gmail - Google's online webmail: [url]http://mail.google.com/mail[/url]
+[3] Kiko  - Online calendar: [url]http://www.kiko.com/[/url]
+[4] Writely - Online word processor: [url]http://www.writely.com/[/url] 
+[5] A venture forth Blog - Top 10 Ajax applications: [url]http://www.aventureforth.com/?p=13[/url]
+[6] HTTP - Webopedia entry: [url]http://www.webopedia.com/TERM/H/HTTP.html[/url]
+[7] AJAX - Wikipedia Page: [url]http://en.wikipedia.org/wiki/AJAX[/url]
+[8] XMLHTTP Wikipedia Page: http://en.wikipedia.org/wiki/XMLHTTP
+
+[9] Dom Object Model - Wikipedia Page: [url]http://en.wikipedia.org/wiki/Document_Object_Model[/url]
+[10] degraeve.com - Simple Ajax Example: [url]http://www.degraeve.com/reference/simple-ajax-example.php[/url]
+[11] Prototype Javascript Framework: [url]http://prototype.conio.net/[/url]
+[12] Rico open-source Javascript library: [url]http://openrico.org/[/url]
+[13] Ruby on Rails: [url]http://www.rubyonrails.org[/url]
+[14] CakePHP framework: [url]http://www.cakephp.org[/url]
+[15] Alex Bosworth's Weblog: Ajax Mistakes: [url]http://sourcelabs.com/ajb/archives/2005/05/ajax_mistakes.html[/url]
+[16] AjaxMatters.com: [url]http://www.ajaxmatters.com/r/welcome[/url]
+[/small]

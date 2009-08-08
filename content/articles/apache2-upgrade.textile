@@ -1,0 +1,39 @@
+----- 
+permalink: apache2-upgrade
+title: Beware of sudden upgrades!
+tags: 
+- website rails
+type: article
+filter_pre: textile
+-----
+Yesterday I got a rather annoying early Christmas present: when visiting my site, I noticed that the raw source code of my dispatch.fcgi file (yes, I'm on shared hosting with FastCGI, for now) was displayed "as it is" instead of being interpreted.
+
+After the initial moment of anger and stress (I immediately realized it was BlueHost's fault, not mine), I opened two tickets and went to bed, hoping to see everything solved in the morning.
+
+Unluckily it wasn't the case, so I posted on BlueHost forum trying to be as polite as possible complaining because the issue wasn't being dealt with. It turns out that for such issues you're supposed to use the "Live Chat" feature instead of the tickets, so that's what I did.
+
+After a quick chat with "Christian", it turns out that BlueHost decided to perform a server upgrade "silently" upgrading to Apache2, PHP5, MySQL4.1, etc. etc.
+Cool, pity that nobody told me that! 
+
+I was expecting some sort of PHP upgrade (not that I care like that), which was supposed to happen according to the last BlueHost newsletter:
+
+<blockquote>
+<em>"To alleviate any issues in the future with certain scripts that only run on one
+version of PHP we have developed the ability to run PHP4 and PHP5 on the same server
+simultaneously. This will be rolled out to all users in the next couple of weeks. Some
+servers already have this ability while most will see it in the next two weeks."</em>
+</blockquote> 
+
+But... hang on? Does it say anything about migrating to Apache2? I don't think so! What's worse, is that quite a few things changed with Apache2, in particular the way FastCGI handlers are declared:
+
+<typo:code>
+# Apache 1.3:
+AddHandler fastcgi-script .fcgi
+
+# Apache 2:
+AddHandler fcgid-script .fcgi
+</typo:code>
+
+See? Different. This is due to the fact that "@mod_fcgid@ is used instead of @mod_fastcgi@ on Apache 2":http://wiki.rubyonrails.org/rails/pages/Debian+mod_fastcgi+Notes. 
+
+The fix was easy, of course, and now my site is up and running again (and actually running faster)... but, I wonder, why the hell wasn't I informed? Is it acceptable? It sounds like I might end up on a VPS sooner than expected, unless BlueHost doesn't roll out some new exciting feature soon, as I think it might...

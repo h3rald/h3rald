@@ -1,0 +1,130 @@
+----- 
+permalink: redbook-040-released
+title: "Announcement: RedBook v0.4.0 released"
+tags: 
+- opensource productivity redbook ruby
+type: article
+filter_pre: textile
+-----
+I'm pleased to announce a new release of the RedBook daily logging and time tracking script. This release introduces two new operations, four stats-related directives and a brand new Windows Installer able to setup RedBook in a blink, with (almost) no configuration at all.
+
+Let's have a closer look...h2. New Operations
+
+Suppose that you just logged a message and you noticed one of these two things happened:
+
+* You didn't really wanted to log it
+* You made a silly typo in the message or in the tags
+
+What can you do about it? Up to RedBook 0.3, the only solution was to open the YAML file and correct the mistake manually. From now on there's also another simpler way to operate in such situations: using the :update and :delete operations!
+
+
+h3. :update
+
+This operation can be used to update the message and or the tags of a previously-logged activity. The usage is simple: load a dataset first, and then execute an @:update@ command like:
+
+@:update 4 :message My updated message :with new_tag1 new_tag2@
+
+This will update the 4th message of the dataset modifying its message and tags. Of course you can update either of the two things or both; the timestamp of the activity will not be changed.
+
+h3. :delete
+
+The delete operation can be used to completely delete a message from the log. Just load a dataset using a @:select@ operation and then execute a @:delete@ command, e.g.:
+
+* @:delete 1@ _(will delete the first activity)_
+* @:delete 4 2 7 9@ _(will delete activity #2, #4, #7 and #9)_
+* @:delete@ _(will delete the entire dataset)_
+
+A confirmation message will appear before deleting the message(s).
+
+*IMPORTANT*
+_Due to the architecture of the application, whenever an @:update@ or @:delete@ occurs the log file will be reloaded in memory and completely overwritten. This doesn't cause problems, although for big log files (10,000+ activities) this may take a few seconds._
+
+
+h2. Statistics
+
+Another important new feature introduced by this release is _time tracking_. It was actually already there, kind of: the @:calc@ operation was already able to calculate the time elapsed between two activities... however, this is not really practical. 
+
+Since last release, it is possible to log the completion of an activity using the @:finish@ command. This will basically re-log the same activity prepending _[COMPLETED]_ to its message.
+If you started using the @:finish@ command to complete your activities, RedBook can now calculate the following stats for you:
+
+* Count the number of messages in a dataset
+* Calculate the average time spent for the completed activities in a dataset
+* Calculate the total time spent for the completed activities in a dataset
+* Calculate the duration of each completed activity in a dataset
+
+Each of these calculations is performed by adding special directive to a @:select@ command, as explained in the following sections.
+
+h3. :count
+
+This directive can be added to a @:select@ command to return just the number of message of the loaded dataset. 
+In other words, executing the following:
+
+@:select :count :with mail !work@
+
+...will return the number of activities tagged with _mail_ but not with _personal_, without listing all the activities.
+
+h3. :avg
+
+The @:avg@ directive can be used to calculate the average time spent on activities matching certain criteria, for example:
+
+@:select Status Meeting :avg :with meeting@
+
+...will return the average time spent on activities whose messages matches _/Status Meeting/_ and are tagged with _meeting_. 
+
+h3. :total
+
+Similarly, @:total@ can be used to return the total time spent on activities matching certain criteria, e.g.:
+
+@:select :total :with mail work@
+
+...will return the total time spent on activities tagged with _mail_ and _work_.
+
+h3. :duration
+
+Lastly, @:duration@ will print each completed task along with its duration. The syntax is similar to the others:
+
+@:select :duration :with break@
+
+This will print each completed activity tagged with _break_ along with its duration.
+
+h3. :nodiff and _concurrent
+
+The logic behind the above-mentioned directives may seem trivial to implement, but it is not. The fun part was telling RedBook to subtract the duration of each sub-activity contained in another activity... a feature I considered necessary for time tracking purpose. However, if you start your work day with a _Working Day_ activity and you complete that activity using the @:finish@ command, when calculating the duration of the working day RedBook will subtract the duration of _all the completed sub-activities_ from the duration of _Working Day_. This is not OK, so I added the directive @:nodiff@ which can be used to prevent RedBook from calculating the difference between the parent activity's duration and the duration of each of its child activity.
+
+What if you're doing two things at once? use the special @_concurrent@ tag, and that activity will be considered symultaneous to its parent activity for time tracking purposes.
+
+
+h2. Activity Status Filters
+
+RedBook is now fully aware of the "status" of each activity, so it is possible to display only activities in a certain status using the following directives:
+
+h3. :plain
+
+Executing @:select :plain :from today@ will return all the activities logged today, omitting their completions (if any), i.e. any activity beginning with _[COMPLETED]_.
+
+h3. :pending
+
+Executing @:select :pending :from today@ will return all the activities logged today which have not been completed yet. Again, this was not too trivial to implement, but it seems to work (it also smart enough to detect if the same activity has been relogged etc. etc.). 
+
+*WARNING:* 
+_Using this directive with a large dataset may cause RedBook to take some time before delivering the result, due to the amount of iterations to perform. Use with care._
+
+h3. :completed
+
+Executing @:select :completed :from today@ will return all the activities logged today which have been completed.
+
+
+h2. Windows Installer
+
+I decided to spend some time (half an hour) and create a proper setup file for Windows using InnoSetup. The setup will take care of almost everything for you, so you have no excuse not to try RedBook because it's not user-friendly to install! 
+
+Check out the "manual":http://redbook.h3rald.com for more details.
+
+
+h2. RubyForge Project
+
+Finally, I registered a new "RubyForge Project":http://rubyforge.org/projects/redbook/ for RedBook, which include a public SVN repository updated every week (Assembla doesn't allow anonymous checkouts, unfortunately).
+This project will also host the official RedBook Gem, scheduled for the 1.0 release.
+
+
+p=. *["DOWNLOAD":http://www.assembla.com/spaces/files/redbook] | ["MANUAL":http://redbook.h3rald.com/]*

@@ -1,0 +1,84 @@
+----- 
+permalink: rawline
+title: RawLine
+tags: []
+
+type: page
+filter_pre: textile
+-----
+h2. RawLine
+
+RawLine is a 100% Ruby alternative to the ReadLine library, providing some of its most popular features such as:
+
+    * Basic line editing operations
+    * Word completion
+    * History Management
+    * Custom key/key sequences bindings
+
+h3. Installation
+
+The simplest method to install RawLine is to install the gem:
+
+<typo:code>gem install rawline</typo:code>
+
+h3. Usage
+
+Editor initialization:
+
+<typo:code lang="ruby">
+require 'rawline'
+editor = RawLine::Editor.new
+</typo:code>
+
+Key binding:
+
+<typo:code lang="ruby">
+editor.bind(:ctrl_z) { editor.undo }
+editor.bind(:up_arrow) { editor.history_back }
+editor.bind(:ctrl_x) { puts "Exiting..."; exit }
+</typo:code>
+
+Setup word completion
+
+<typo:code lang="ruby">
+editor.completion_proc = lambda do |word|
+	if word
+		['select', 'update', 'delete', 'debug', 'destroy'].find_all  { |e| e.match(/^#{Regexp.escape(word)}/) }
+	end
+end
+
+editor.completion_append_string = " "
+</typo:code>
+
+Read input:
+
+<typo:code lang="ruby">editor.read("=> ", true)</typo:code>
+
+h3. Replacing Readline
+
+Simply include the RawLine (or Rawline) module:
+
+<typo:code lang="ruby">include Rawline</typo:code>
+
+â€¦and youâ€™ll get:
+
+<typo:code lang="ruby">
+readline(prompt, add_history) # RawLine::Editor#read(prompt, add_history)
+HISTORY # RawLine::Editor#history
+FILENAME_COMPLETION_PROC # Rawline::Editor#filename_completion_proc
+# ...
+</typo:code>
+
+but also:
+
+<typo:code lang="ruby">Rawline.editor # RawLine::Editor</typo:code>
+
+â€¦which opens a world of endless possibilities! ;-)
+
+h3. Resources
+
+* "News and Articles":http://www.h3rald.com/tags/rawline
+* "RDoc Documentation":http://rawline.rubyforge.org [on RubyForge]
+* "Download Files":http://rubyforge.org/projects/rawline [on RubyForge]
+* "Source Code":http://github.com/h3rald/rawline/tree/master [on GitHub]
+* "Issue Tracking":http://h3rald.lighthouseapp.com/projects/26374-rawline/overview [on LightHouse]

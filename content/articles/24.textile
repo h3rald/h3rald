@@ -1,0 +1,60 @@
+----- 
+permalink: "24"
+title: CakePHP 1.0 released
+tags: 
+- cakephp
+- web-development
+type: article
+filter_pre: textile
+-----
+As "Digg":http://digg.com/programming/CakePHP_1.0_has_been_released_ points out, the first _stable_ version of CakePHP was released, yesterday. I should have posted yesterday about it, and no, I didn't forget: I was just busy downloading the new version, have a look at the new site, talk to people etc.
+
+Anyhow, it's ready, just baked and smells damn good. Go get it if you didn't already, it's available at "the usual place":http://cakeforge.org/frs/?group_id=23, even this time you won't be disappointed. CakePHP now reached the 1.0 milestone, in a way which reminds me a lot about Mozilla Firefox: a lot of people were already using it _before_ it went stable officially! 
+
+!<http://base--/img/pictures/CakePHP_1.0.png! 
+
+The CakePHP Team has been humble enough not to declare their product _stable_ before the time. I personally considered CakePHP stable _enough_ since RC2... and considering that this site and many others have been built on alpha, beta and RC version, I think people can get an idea of Cake's reliability.
+Nothing (too) new came out the oven this time: CakePHP 1.0 is mainly a bugfix release, with all the features we've learnt to love. It's just _better_: a lot of things have been fixed, model associations work better, etc. etc. You can read the "changelog/announcement":http://cakeforge.org/frs/shownotes.php?group_id=23&release_id=85 or have a look below for a quick summary of the new features and most interesting fixes:
+
+<pre><code>
+Revision: [2420]
+Added fix for Ticket #320.
+Fixed Model::save() so it will only allow a model to save itself.
+Fixed Model::save() when saving a HABTM association
+
+Revision: [2437]
+Adding fix for Model::findNeighbours().
+Was returning all associations and fields. Now recursive
+is set to 0 and only returns the prev and next keys array
+
+Revision: [2456]
+"Enables use of Controller::$data in addition to Controller::$params['data']"
+
+Revision: [2490]
+Fixing a bug that occurs when connecting to two different
+databases on the same server, and enabling cross-database
+model associations
+
+Revision: [2491]
+Adding Microsoft SQL Server driver [EXPERIMENTAL]
+
+Revision: [2577]
+Adding $alias property to enable future Oracle support
+
+Revision: [2625]
+Bringing all DB drivers up to date
+
+Revision: [2653]
+Adding check for custom error class in app/.
+Added check for AppController::appError(); will be called if this method 
+is in AppController.
+</code></pre>
+
+!>http://base--/img/pictures/cakesite.png!
+
+If you're not too excited about this new release, maybe you should have a look at "www.cakephp.org":http://www.cakephp.org. Different? Damn right it is: it looks like someone listened to our prayers for a new website design. The merciful soul is "Armando Sosa":http://www.nolimit-studio.com/, the winner of CakePHP's design contest. He's a latin-american web designer who had the GREAT idea of thinking about an _innovative_ design for the Cake site... Actually my dad didn't think that way: _"That's not new, that way of advertising was all over the place when I was a kid!"_ And he's right, Armando thought that a fifties-like template would have been perfect for Cake. Forget all the smooth, roundy-and-chubby, toons-like "official" Web 2.0 designs (beta), the new Cake site needs to stand out of the crowd...
+
+!<http://base--/img/pictures/fonz.jpg!
+
+<br /><br />
+_Heyyy! Well done guys..._

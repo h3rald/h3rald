@@ -1,0 +1,187 @@
+----- 
+permalink: 10-reasons-to-learn-ruby
+title: 10 Reasons to Learn Ruby
+tags: 
+- ruby
+type: article
+filter_pre: textile
+-----
+h3. Preamble
+
+I discovered Ruby fairly recently, through the excellent Ruby on Rails framework[1]. Although I don't consider myself a Ruby expert by any means, I read the PickAxe[2], I've coded a few utilities for my personal use in Ruby and I'm currently developing with Rails during my free time. 
+Ruby is currently my programming language of choice; I started off with Turbo Pascal in high school, discovered C and C++ at university, did my thesis in Java and learned PHP from scratch because I wanted to learn how to make websites quickly and easily. I guess I feel compelled to code sometimes, more as a form of entertainment than anything else.  Rather dissatisfied with what I tried language-wise, I was determined to start learning either Python or Ruby. I chose the latter because I didn't want incorrect indentation to break my code[3], and here I am, heaping praise upon it.
+
+There are plenty[4] of introductions, tutorials, articles and essays of different sorts which aim to guide the novice and advise the guru on how to get the most out of Ruby. This article, however, is not one of them.
+ 
+It's more of a modest, humble, and incomplete list of a few reasons which may (or may not) entice you to use Ruby or at least play with it a bit. A word of caution: if you are using another programming language for work or whatever, don't complain to me if you don't want to use it anymore - that's exactly what happened to me, but luckily, it didn't matter.  Ruby is a very beautiful and elegant language, but like all things of this sort, it may well poison your mind and corrupt your soul...
+
+You have been warned.
+h3. Why learn Ruby?
+
+h4. #1 - You get all the treats without the tricks
+
+Ruby borrows from all the best programming languages out there, from smalltalk to Java, Perl to Python[5]. Basically, here's the features and functionalities Ruby gives you which you may have seen elsewhere:
+
+* _Exceptions:_ Believe it or not, exceptions are one of the most important things to master when developing any kind of application. PHP4 programmers probably won't know anything about them and they'll tell you to just print stuff on the screen or use their "extremely advanced" class for error handling. Please, ignore them. Fortunately for all of us, Ruby comes with try/catch (or better, begin/rescue) blocks and a series of predefined, extensible Exceptions to handle errors properly.
+* _Namespaces:_ Ruby modules make excellent and easy-to-use namespaces, for the joy of Java and C++ enthusiasts.
+* _Built-in Regular Expressions:_ For all the Perl monkeys, you can put something between slashes and it will become a regular expression, ready to be matched with a =~ operator.
+* _Overloadable operators:_ Ruby lets you define operators like +, -, etc., for any of your classes.
+* _Packages:_ Called "gems", they really are solid and precious indeed...and they work! Packages support dependencies, and they can be either cross-platform or platform-dependent.
+* _Interactive Shell:_ the Interactive Ruby Shell can be used to test Ruby code instantly, similar to the Python console.
+* _Unit Testing_: The @Test::Unit@ module makes things so easy that you really don't have any excuse not to test your code.
+
+
+h4. #2 - You'll love the little things
+
+Ruby is elegant. Why's that? Because it doesn't focus on making code _concise_ so much as _readable and usable_. Here are some tips to help you out:
+
+*  You can use both _if_ and _unless_ in condition statements. Of course you can just use _if_ and negate the condition, but _unless_ can be less error-prone at times. Furthermore, you can use both operators as conditional modifiers, after a statement rather than before: _order.new unless order.exists_.
+*  You can use question marks and exclamation marks at the end of your methods. Although no convention is enforced, ? is added if the method should return true or false, while ! is used to clarify that the method does something forcefully, like destroying a database record, chopping off the last character of a string, etc.
+*  You can use the _alias_ directives to create an alias for a method already defined. In this way you can have an _exist_ and an _exists_ method at no additional cost or repetition.
+*  You can use the _attr_reader_, _attr_writer_ or _attr_accessor_ directives to automatically generate getter and setter methods for specified class members.
+*  Some naming conventions are enforced for your own sanity: constants, classes and modules are capitalized, methods and members must start with a lowercase letter; global variables are prepended by a $, instance variables by <code>@</code> and class variables by <code>@@</code>; etc.
+*  Parentheses are optional in method calls.  You can therefore write _File.open("/home/h3rald/test.txt")_ or simply _File.open "/home/h3rald/test.txt"_, which is particularly handy with methods that don't take parameters.
+
+
+h4. #3 - You won't ever use a semicolon again
+
+You want to add another instruction? Just go on the next line. Hit <return> and you're done. In Ruby, like in Python, newlines matter and you don't have to remember to end your instructions with a semicolon. Unfortunately this means that you won't be able to write your whole program in a single line of code, like the C++ folks... that's too bad, isn't it?
+
+*UPDATE:* Indeed you CAN use semicolons as line delimiters in Ruby as well, the point, however, is that you don't have to.
+
+h4. #4 - Everything is an object, as it should be
+
+When I studied Java they taught me that everything is an object. 
+
+_- "So 14 and 374346.678 are objects then?"_
+_- "No, silly, they are numbers!"_
+
+In Ruby, numbers, strings, Boolean values _et al_ are objects. Really. This means you'll write things like:
+
+<typo:code lang="ruby">
+"YOU SHOULDN'T ALWAYS USE CAPITALS".downcase #=> outputs "you shouldn't always use capitals"
+-12.abs #=> outputs 12
+</typo:code>
+
+instead of something like:
+
+<typo:code lang="ruby">
+# PHP Code
+
+strtolower("YOU SHOULDN'T ALWAYS USE CAPITALS");
+abs(-12);
+</typo:code>
+
+You save time, you save brackets, and it just makes more sense. 
+
+h4. #5 - Everything has a value
+
+Or "you'll hardly ever use return to return values". In a nutshell, all Ruby instructions return a value, even variable assignments, so you don't really need to use the "return" keyword at the end of a method; the value of the last assignment or _any_ other expression will always be returned.
+
+h4. #6 - You can alter your environment in any way you like
+
+The first time I saw this, it really freaked me out. Imagine a typical programming situation: you start using a system class or a class written by someone else and you notice that you'd like to have an additional method. At this point you have a few ways to handle this in ordinary programming languages:
+s
+* You modify the developer's source code, if you have access to it. This is normally not a good idea, and you shouldn't do it.
+* You derive a new class from the original one, and you implement the new method there. This is a good idea, but it could be overkill for just one method, and you may have to update some of your other code accordingly.
+* You give up, and you just create the method outside the class, somewhere else. This can be done, but it is not very elegant and goes against Object Oriented Programming.
+
+In Ruby, you can simply add the method to the original class, without having to hack the original source code, and even for system classes! You want to have a method to automatically convert a measurement from meters to feet? You can simply extend the Numeric class as follows:
+
+<typo:code lang="ruby">
+class Numeric
+  def feet
+	self*3.2808399
+  end
+end
+</typo:code>
+
+From now on, all your numbers will have a _feet_ method, which can be used just like any other method that was originally defined for the class:
+
+<typo:code lang="ruby">
+5.feet #=> Returns 16.4041995
+</typo:code>
+
+Basically, Ruby classes are never closed and can be modified at any time from anywhere. Use with care, of course.
+
+h4. #7 You won't get unicorns from birds and horses, but you'll still get donkeys if you want
+
+I distinctly remember my C++ professor at university using animals to illustrate key object-oriented concepts like classes and inheritance. Weird things came in when she tried to explain multiple inheritance to inherit a class Pegasus from a class Bird and a class Horse. It had methods like "fly" and "neigh"... crazy stuff, anyhow, Ruby does not offer multiple inheritance. 
+This seems to be the trend, after all, and of course it's up to tastes. I don't quite fancy multiple inheritances, as they may lead to unpredictable things. Nevertheless, it is possible to create "mix-ins" using Ruby modules, so that members and methods defined in a module will be added to a particular class if the module is included in it. 
+
+h4. #8 You don't really need XML
+
+XML is a nice, general-purpose markup language which can be processed by every programming language and used everywhere. Unfortunately, it can also be quite verbose to write, very difficult to parse, and let's be honest, it's not really readable at first glance in many cases, unlike the following code snippet:
+
+<typo:code lang="yaml">
+regexp: !ruby/regexp /a-zA-Z/
+number: 4.7
+string: a string
+</typo:code>
+
+This is definitely easier and more readable than XML, isn't it? Welcome to YAML, Ruby's favorite markup (but not really[6]) language, which can be used to represent any Ruby object in a simple, clear and yet complete way. 
+Ruby _can_ parse XML, but YAML's simplicity convinced a lot of developers to use it as an alternative to XML for configuration files, for example (Rails does this).
+The code snipped presented before was obtained by executing the following line of Ruby code:
+
+<typo:code lang="ruby">
+{"string" => "a string", "number" => 4.7, "regexp" => /a-zA-Z/}.to_yaml
+</typo:code>
+
+The _to_yaml_ method is defined for the Object class, which is the father of all of the other classes, and thus it is available in all Ruby objects. This means that you can convert anything into YAML _and_ re-convert anything back into Ruby objects, with total transparency for the developer. So much for parsing, huh?
+
+h4. #9 Lambda is much more than a Greek letter
+
+Ruby borrows some magic from Lisp and Perl with Proc objects and blocks. Procs are _"blocks of code that have been bound to a set of local variables. Once bound, the code may be called in different contexts and still access those variables." _[7] Consider the following:
+
+<typo:code lang="ruby">
+   def gen_times(factor)
+	 return Proc.new {|n| n*factor }
+   end
+
+   times3 = gen_times(3)
+   times5 = gen_times(5)
+
+   times3.call(12)               #=> 36
+   times5.call(5)                #=> 25
+   times3.call(times5.call(4))   #=> 60
+</typo:code>
+
+I could have used the _lambda_ method instead of _Proc.new_ and gotten the same result. This should ring a bell for people who know Perl and Python (or Lisp)[8].  You can do the same thing in PHP as well, but most people don't really use the function.[9]
+
+Additionally, Ruby makes extensive use of blocks, sort of "unborn Procs"[10], for example, to iterate the contents of an object and execute some code, like the _each_ method available for the Array class:
+
+<typo:code lang="ruby">
+[1, 2, 4, 6, 8].each {|c| puts c*2} #=> outputs each element multiplied by 2 in a new line. 
+</typo:code>
+
+Should the code in the block exceed one line, you're advised (but not required) to include the block within _do ... end_ instead of using braces. Ruby folks don't like braces much, really.
+
+h4. #10 - You can go on Rails
+
+Last but not least, you can always use Ruby on Rails for developing web applications. Deployment may not be as easy as it is with PHP, but Rails was built in Ruby because Ruby has features no other language can offer.
+
+h3. Conclusion
+
+Time's up. You've probably made up your mind about Ruby already, and you are either playing with it already, or you're totally ignoring it.  However, the next time you're frustrated because your code looks ugly and you think you could have done the same thing with half the code you got, don't blame me!
+
+h3. Notes
+
+fn1. "Ruby on Rails":http://www.rubyonrails.org, MVC Web Development Framework.
+
+fn2. "Programming Ruby (2nd Ed.)":http://www.pragmaticprogrammer.com/title/ruby/index.html, by Dave Thomas & others, Pragmatic Programmers, 2004
+
+fn3. Not entirely correct, but sort of. For more information on Python's indentation rules and myths, read "Python: Myths about Indentation":http://www.secnetix.de/~olli/Python/block_indentation.hawk.
+
+fn4. For a list of Ruby tutorials, refer to the "Documentation":http://www.ruby-lang.org/en/documentation/ section of the Official Ruby Website.
+
+fn5. For more information on Ruby, and in particular on the similarities and differences with other languages, refer to "Ruby from Other Languages":http://www.ruby-lang.org/en/documentation/ruby-from-other-languages/.
+
+fn6. YAML is Not a Markup Language.
+
+fn7. Definition and example taken from the official Ruby documentation for class "Proc":http://www.ruby-doc.org/core/classes/Proc.html.
+
+fn8. For some example on lambda functions in Python, see "Python: Lambda Functions":http://www.secnetix.de/~olli/Python/lambda_functions.hawk.
+
+fn9. For examples of "lambda functions" in PHP using create_function(), see "this":http://www.webmasterworld.com/forum88/7414.htm.
+
+fn10. For more detailed information on Ruby's Procs, blocks etc. refer to "Understanding Ruby blocks, Procs and methods":http://eli.thegreenplace.net/2006/04/18/understanding-ruby-blocks-procs-and-methods.

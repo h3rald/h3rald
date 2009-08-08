@@ -1,0 +1,33 @@
+----- 
+permalink: rawline-020
+title: "New Release: RawLine 0.2.0"
+tags: 
+- ruby programming opensource rawline
+type: article
+filter_pre: textile
+-----
+-InLine- RawLine 0.2.0 is out!
+
+*Raw*Line is the new name for InLine, in case you didn't guess. The name was changed to avoid name collision problems with the RubyInline project.
+
+Here's what's new:
+
+* Added /examples and /test directory to gem.
+* Escape codes can now be used in prompt.
+* It is now possible to use bind(key, &block) with a String as key, even if the corresponding escape sequence is not defined.
+* Added Editor#write_line(string) to print a any string (and "hit return").
+* Library name changed to "RawLine" to avoid name collision issues (Bug "18879":http://rubyforge.org/tracker/?func=detail&aid=18879&group_id=5622&atid=21788).
+* Provided alternative implementation for left and right arrows if terminal
+supports escape sequences (on Windows, it requires the Win32Console gem).
+
+In particular, I decided to provide an "optimized implementation" for the left and right arrows using escape sequences rather than shameful hacks. This is now possible because the Win32Console gem now enables ANSI escape sequences on Windows as well (weehee!). 
+
+So:
+
+* If you're on <notextile>*nix</notextile> all good, your terminal is smart and can understand escape sequences => the new implementation will be used.
+* If you're on Windows and you installed Win32Console, your termnal is smart and can understand escape sequences => the new implementation will be used.
+* If you're on Windows and you didn't install Win32Console, then your terminal is stupid and it doesn't understand escape sequences, so the old implementation will be used.
+
+The new implementation is significantly faster than the old one, on Windows at least, and the cursor now blinks properly when left or right arrows are pressed.
+
+I re-emplemented only cursor movement because I'm still having some problems in getting the delete/insert escapes to work properly (or better: how I want them to work!).

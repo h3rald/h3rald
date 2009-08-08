@@ -1,51 +1,11 @@
------
+----- 
+permalink: home
 title: Home
+tags: []
 
+type: page
+filter_pre: textile
 -----
-<div class="panel" id="home">
-
-h2. Home
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam orci, consequat a varius sed, malesuada in leo. Donec non urna a risus bibendum aliquam. Ut luctus, diam sed faucibus iaculis, diam diam bibendum massa, non adipiscing ligula diam facilisis tortor. Suspendisse potenti. Maecenas auctor tristique hendrerit. Aenean vestibulum dolor ut lorem hendrerit in tempus orci sagittis. Nullam pretium suscipit malesuada. Pellentesque in sodales ante. Integer a pulvinar est. Nullam sodales, tellus scelerisque eleifend tincidunt, lectus massa fringilla enim, non sodales mauris enim vel lectus. Nulla facilisi. Nam semper mollis vulputate. Curabitur et dolor mauris, quis aliquam ipsum. Quisque a sem diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Nullam semper, magna sed porttitor posuere, ante orci pulvinar odio, vel pellentesque nibh quam eu risus.
-
-Maecenas ut erat et tortor luctus iaculis id congue orci. Nulla condimentum enim eleifend nibh ornare tincidunt. Morbi euismod erat in enim vulputate sagittis. Sed luctus sagittis commodo. Maecenas hendrerit orci quis mauris ornare venenatis. Pellentesque congue augue non massa pharetra tempus. In hac habitasse platea dictumst. Sed porta molestie orci vel semper. Pellentesque sed congue est. Mauris sed orci vel leo feugiat faucibus et sed nisl. Nullam purus elit, aliquam sed tempor sit amet, lacinia tincidunt massa. Cras orci libero, lobortis sed gravida quis, tristique ac ligula. Curabitur suscipit malesuada justo ut elementum.
-
-Fusce eget nibh at urna suscipit mollis sed ut purus. Curabitur et augue est. Maecenas vulputate vestibulum mi vitae aliquet. Morbi egestas pulvinar nibh, quis gravida quam hendrerit eu. Integer quis condimentum neque. Donec ultricies sodales dui vitae porta. Suspendisse lobortis elit id sapien accumsan quis posuere libero mollis. Quisque interdum neque vitae tellus pulvinar dignissim. Nam consectetur orci non leo pretium ut viverra nisl sodales. Etiam eu pellentesque enim. Etiam in massa augue. Nunc quis arcu orci, eget feugiat purus. Suspendisse nec lorem lacus, vitae commodo lorem. Nulla vulputate mi et eros venenatis tincidunt. In mollis neque sit amet leo facilisis convallis vestibulum nibh aliquam. Cras sagittis dui sed dolor facilisis cursus. Maecenas condimentum vestibulum condimentum. Suspendisse molestie tempus arcu eget aliquet. Fusce quis quam at orci faucibus imperdiet. 
-
-</div>
-<div class="panel" id="tags">
-
-h2. Tags
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam orci, consequat a varius sed, malesuada in leo. Donec non urna a risus bibendum aliquam. Ut luctus, diam sed faucibus iaculis, diam diam bibendum massa, non adipiscing ligula diam facilisis tortor. Suspendisse potenti. Maecenas auctor tristique hendrerit. Aenean vestibulum dolor ut lorem hendrerit in tempus orci sagittis. Nullam pretium suscipit malesuada. Pellentesque in sodales ante. Integer a pulvinar est. Nullam sodales, tellus scelerisque eleifend tincidunt, lectus massa fringilla enim, non sodales mauris enim vel lectus. Nulla facilisi. Nam semper mollis vulputate. Curabitur et dolor mauris, quis aliquam ipsum. Quisque a sem diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Nullam semper, magna sed porttitor posuere, ante orci pulvinar odio, vel pellentesque nibh quam eu risus.
-
-Maecenas ut erat et tortor luctus iaculis id congue orci. Nulla condimentum enim eleifend nibh ornare tincidunt. Morbi euismod erat in enim vulputate sagittis. Sed luctus sagittis commodo. Maecenas hendrerit orci quis mauris ornare venenatis. Pellentesque congue augue non massa pharetra tempus. In hac habitasse platea dictumst. Sed porta molestie orci vel semper. Pellentesque sed congue est. Mauris sed orci vel leo feugiat faucibus et sed nisl. Nullam purus elit, aliquam sed tempor sit amet, lacinia tincidunt massa. Cras orci libero, lobortis sed gravida quis, tristique ac ligula. Curabitur suscipit malesuada justo ut elementum.
-
-Fusce eget nibh at urna suscipit mollis sed ut purus. Curabitur et augue est. Maecenas vulputate vestibulum mi vitae aliquet. Morbi egestas pulvinar nibh, quis gravida quam hendrerit eu. Integer quis condimentum neque. Donec ultricies sodales dui vitae porta. Suspendisse lobortis elit id sapien accumsan quis posuere libero mollis. Quisque interdum neque vitae tellus pulvinar dignissim. Nam consectetur orci non leo pretium ut viverra nisl sodales. Etiam eu pellentesque enim. Etiam in massa augue. Nunc quis arcu orci, eget feugiat purus. Suspendisse nec lorem lacus, vitae commodo lorem. Nulla vulputate mi et eros venenatis tincidunt. In mollis neque sit amet leo facilisis convallis vestibulum nibh aliquam. Cras sagittis dui sed dolor facilisis cursus. Maecenas condimentum vestibulum condimentum. Suspendisse molestie tempus arcu eget aliquet. Fusce quis quam at orci faucibus imperdiet. 
-
-
-</div>
-<div class="panel" id="projects">
-
-h2. Projects
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam orci, consequat a varius sed, malesuada in leo. Donec non urna a risus bibendum aliquam. Ut luctus, diam sed faucibus iaculis, diam diam bibendum massa, non adipiscing ligula diam facilisis tortor. Suspendisse potenti. Maecenas auctor tristique hendrerit. Aenean vestibulum dolor ut lorem hendrerit in tempus orci sagittis. Nullam pretium suscipit malesuada. Pellentesque in sodales ante. Integer a pulvinar est. Nullam sodales, tellus scelerisque eleifend tincidunt, lectus massa fringilla enim, non sodales mauris enim vel lectus. Nulla facilisi. Nam semper mollis vulputate. Curabitur et dolor mauris, quis aliquam ipsum. Quisque a sem diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Nullam semper, magna sed porttitor posuere, ante orci pulvinar odio, vel pellentesque nibh quam eu risus.
-
-Maecenas ut erat et tortor luctus iaculis id congue orci. Nulla condimentum enim eleifend nibh ornare tincidunt. Morbi euismod erat in enim vulputate sagittis. Sed luctus sagittis commodo. Maecenas hendrerit orci quis mauris ornare venenatis. Pellentesque congue augue non massa pharetra tempus. In hac habitasse platea dictumst. Sed porta molestie orci vel semper. Pellentesque sed congue est. Mauris sed orci vel leo feugiat faucibus et sed nisl. Nullam purus elit, aliquam sed tempor sit amet, lacinia tincidunt massa. Cras orci libero, lobortis sed gravida quis, tristique ac ligula. Curabitur suscipit malesuada justo ut elementum.
-
-Fusce eget nibh at urna suscipit mollis sed ut purus. Curabitur et augue est. Maecenas vulputate vestibulum mi vitae aliquet. Morbi egestas pulvinar nibh, quis gravida quam hendrerit eu. Integer quis condimentum neque. Donec ultricies sodales dui vitae porta. Suspendisse lobortis elit id sapien accumsan quis posuere libero mollis. Quisque interdum neque vitae tellus pulvinar dignissim. Nam consectetur orci non leo pretium ut viverra nisl sodales. Etiam eu pellentesque enim. Etiam in massa augue. Nunc quis arcu orci, eget feugiat purus. Suspendisse nec lorem lacus, vitae commodo lorem. Nulla vulputate mi et eros venenatis tincidunt. In mollis neque sit amet leo facilisis convallis vestibulum nibh aliquam. Cras sagittis dui sed dolor facilisis cursus. Maecenas condimentum vestibulum condimentum. Suspendisse molestie tempus arcu eget aliquet. Fusce quis quam at orci faucibus imperdiet. 
-
-				
-</div>
-<div class="panel" id="about">
-
-h2. About
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut diam orci, consequat a varius sed, malesuada in leo. Donec non urna a risus bibendum aliquam. Ut luctus, diam sed faucibus iaculis, diam diam bibendum massa, non adipiscing ligula diam facilisis tortor. Suspendisse potenti. Maecenas auctor tristique hendrerit. Aenean vestibulum dolor ut lorem hendrerit in tempus orci sagittis. Nullam pretium suscipit malesuada. Pellentesque in sodales ante. Integer a pulvinar est. Nullam sodales, tellus scelerisque eleifend tincidunt, lectus massa fringilla enim, non sodales mauris enim vel lectus. Nulla facilisi. Nam semper mollis vulputate. Curabitur et dolor mauris, quis aliquam ipsum. Quisque a sem diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Nullam semper, magna sed porttitor posuere, ante orci pulvinar odio, vel pellentesque nibh quam eu risus.
-
-Maecenas ut erat et tortor luctus iaculis id congue orci. Nulla condimentum enim eleifend nibh ornare tincidunt. Morbi euismod erat in enim vulputate sagittis. Sed luctus sagittis commodo. Maecenas hendrerit orci quis mauris ornare venenatis. Pellentesque congue augue non massa pharetra tempus. In hac habitasse platea dictumst. Sed porta molestie orci vel semper. Pellentesque sed congue est. Mauris sed orci vel leo feugiat faucibus et sed nisl. Nullam purus elit, aliquam sed tempor sit amet, lacinia tincidunt massa. Cras orci libero, lobortis sed gravida quis, tristique ac ligula. Curabitur suscipit malesuada justo ut elementum.
-
-Fusce eget nibh at urna suscipit mollis sed ut purus. Curabitur et augue est. Maecenas vulputate vestibulum mi vitae aliquet. Morbi egestas pulvinar nibh, quis gravida quam hendrerit eu. Integer quis condimentum neque. Donec ultricies sodales dui vitae porta. Suspendisse lobortis elit id sapien accumsan quis posuere libero mollis. Quisque interdum neque vitae tellus pulvinar dignissim. Nam consectetur orci non leo pretium ut viverra nisl sodales. Etiam eu pellentesque enim. Etiam in massa augue. Nunc quis arcu orci, eget feugiat purus. Suspendisse nec lorem lacus, vitae commodo lorem. Nulla vulputate mi et eros venenatis tincidunt. In mollis neque sit amet leo facilisis convallis vestibulum nibh aliquam. Cras sagittis dui sed dolor facilisis cursus. Maecenas condimentum vestibulum condimentum. Suspendisse molestie tempus arcu eget aliquet. Fusce quis quam at orci faucibus imperdiet. 
-
-								
-</div>
+Welcome to H3RALD.com, Fabio Cevasco's personal web site. 
+---
+popular:10-programming-languages|10-reasons-to-learn-ruby|firefox-lovers-guide-to-opera|komodo-edit-review|rails-inspired-php-frameworks

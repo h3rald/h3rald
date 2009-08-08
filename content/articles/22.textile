@@ -1,0 +1,136 @@
+----- 
+permalink: "22"
+title: Ten minutes on Rails (while eating Cake)
+tags: 
+- cakephp
+- rails
+- web-development
+type: article
+filter_pre: textile
+-----
+Today I decided to do something different, something I've been dying to do since before coming across CakePHP: give Rails a _proper_ try. Like many other PHP developers out there, when "Ruby on Rails":http://www.rubyonrails.org came out I felt damn jealous and terribly tempted to learn Ruby _only_ to start using such an amazing web development framework. At the time I actually even started reading various tutorials about it, and I was literally amazed at how RoR revolutioned the way of developing web applications.
+
+!<http://base--/img/pictures/rails.gif! 
+
+One of the main problems which made me - sadly - abandon Rails was Ruby itself: personally I've never seen a programming language with a cleaner and more elegant syntax, but also - at least at the time - there weren't many hosts supporting it. LuckilyI found CakePHP quickly after that...
+Now however, more and more hosting companies boast full Rails support, and so when recently I "had to move":http://base--/blog/view/21/ to a new host, I made sure it was Rails-friendly, _just in case I wanted to give Rails another try, someday_.
+Oh well, the temptation was so strong that today, only a two days after switching to my new host, I felt I _had_ to try it, I _had_ to taste something different than the usual Cake.
+
+I decided to (re-)read and follow the "OnLamp tutorial":http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html about RoR, step by step, once again. I quickly typed @rails cookbook@ from my shell and voil&aacute;, rails silently creates the skeleton of my application:
+
+README
+Rakefile
+app/
+components/
+config/
+db/
+doc/
+favicon.ico
+index.html
+lib/
+log/
+public/
+script/
+structure.txt
+test/
+tmp/
+vendor/
+
+That's familiar: it's very similar to what CakePHP's directory structure used to look like. Now Cake _evolved_ and adopted its own schema, which - I must say - seems more functional than RoR's, at least at a first glance:
+
+* app/
+** config/
+** controllers/
+** models/
+** plugins/
+** tmp/
+** vendors/
+** views/
+** webroot/
+* cake/
+** config/
+** docs/
+** libs/
+* vendors/
+
+!>http://base--/img/pictures/cakephp.png! 
+
+Cake felt the necessity to divide what you can mess with (@app/@, @vendors/@) from what you'd better not touch (@cake/@). Rails just left everything on the same level. 
+
+After creating my database and the necessary tables I have to edit @config/database.yml@, which corresponds to Cake's @app/config/database.php@. Then things start to become a bit different from Cake, as Rails offers some very handy built in scripts which can be used to automatically create your application's files, i.e. executing @ruby script/generate controller Recipe@ creates the controller and other bits: 
+
+bc. exists  app/controllers/
+exists  app/helpers/
+create  app/views/recipe
+exists  test/functional/
+create  app/controllers/recipe_controller.rb
+create  test/functional/recipe_controller_test.rb
+create  app/helpers/recipe_helper.rb
+
+
+And so on. Anyhow... I followed the tutorial and yes, it was a nice read. CakePHP borrowed a lot from Rails but not everything. Inevitably Ruby's syntax is less verbose and looks very very clean:
+
+<pre><code>
+class RecipeController < ApplicationController
+	scaffold :recipe
+	
+	def list
+		@recipes = Recipe.find_all
+	end
+	
+	def edit
+		@recipe = Recipe.find(@params["id"])
+		@categories = Category.find_all
+	end
+end
+</code></pre>
+
+While CakePHP's, simply because it uses PHP and not Ruby, looks less pretty:
+
+<pre><code>
+class RecipesController extends AppController
+{
+	var $scaffold;
+
+	function list()
+	{
+		$this->set('recipes', $this->Recipe->findAll());
+	}
+
+	function edit($id)
+	{
+		$this->set('recipe', $this->Recipe->find("id = $id"));
+		$this->set('categories', $this->Category->findAll());
+	}
+
+}
+</code></pre>
+
+CakePHP Development Team did a great job translating some of Rails functionalities into PHP, and the while CakePHP's syntax is *much* cleaner if compared to PHP's standard spaghetti-code approach, Ruby just looks much more clear, sorry. _Imagine a world without funny unnecessary brackets, pointless semicolons and where everything just looks better_: that's Ruby.
+
+Sigh. Now I do understand why Rails was built in Ruby and not in PHP: simply because a PHP's Rails would have been outscored by its "Ruby port"!
+
+One thing I liked about Rails which has not been ported in Cake (yet) is a somehow smarter way of scaffolding. While the Ruby code above actually works, the CakePHP's edit method doesn't, or better, it does but not as expected: when you remove @var $scaffold@ the scaffold is just plain gone, and you have to code everything yourself, while in Ruby you can leave the scaffold and then develop methods one by one, and still be able to use scaffolded methods if you didn't define the custom ones.
+
+The other thing I noticed about RoR is that it definitely handles errors better! This is probably another language issue. I basically forgot to set a category for the recipes, and when executing my custom list of recipes I got a very, very well structured error page showing something like:
+
+<pre><code>
+NoMethodError in Recipe#index
+
+Showing app/views/recipe/index.rhtml where line #18 raised:
+
+You have a nil object when you didn't expect it!
+The error occured while evaluating nil.name
+
+Extracted source (around line #18):
+
+15:  <% @recipes.each do |recipe| %>
+16:   <tr>
+17:    <td><%= link_to recipe.title, :action => "show", :id => recipe.id %></td>
+18:    <td><%= recipe.category.name %></td>
+19:    <td><%= recipe.date %></td>
+20:   </tr>
+21:  <% end %>
+</code></pre>
+
+I took a screenshot of the page, because it was too nice: "check it out":http://base--/img/pictures/rails_error.jpg. This error page really tells you what's wrong, and even prints the lines of code around the error! It also lets the developer check the full backtrace and every sort of information... Can we have this in CakePHP please? I actually started to develop something like this, but seemed quite hard to do in PHP.

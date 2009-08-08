@@ -1,0 +1,34 @@
+----- 
+permalink: h3rald-v7-overview
+title: Back on Track...
+tags: 
+- website
+- rails
+type: article
+filter_pre: textile
+-----
+...or better, on "Rails":http://www.rubyonrails.org_. 
+Yep, this 7th (!) version of the H3RALD website is powered by the overly-popular Ruby web framework _and_ by the "Typo":http://www.typosphere.org blogging platform.
+
+Nope, I decided not to re-develop my website entirely from scratch this time, although I was tempted to, for three simple reasons:
+
+# My "coding time" is close to non-existent nowadays, and even with a framework like Rails re-developing a site from scratch would have taken at least _some_ time, which at the moment I don't have.
+# Typo is a fairly robust and feature-rich blogging platform, and after learning a little bit of Rails I could customize it to my needs straight away. URLs didn't break thanks to Rails' routing system, migration was easy enough, and developing the missing bits (like a rudimentary BBCode parser and a TextLinkAds sidebar) wasn't hard at all.
+# I wanted to take a break from my site, not code it again.
+_Fair enough, but why the new site anyway?_ 
+
+Again, there's more than one answer:
+
+* Lately I didn't feel comfortable sporting a Cake-powered website \- that makes sense, to an extent, right? Good.
+* I got fed up with spam. I wanted to re-open comments but I didn't want to implement spam protection for the old site.
+* To be totally honest, I got fed up with PHP itself as well, after trying out Ruby for a few days and ordering  and reading the 2nd edition of the "PickAxe":http://www.pragmaticprogrammer.com/titles/ruby/, which I _highly_ recommend.
+
+...But let's say something about what's new in this new release, shall we?
+
+* A new, black (and red) theme. Something completely different. Probably not that good, but quite useful: Every day I check my site from my laptop at work, and if it looks like a big black blob I know that I have to regulate my monitor. I showed it to my parents on their old monitor, and they realized that perhaps it's time to buy an LCD one...
+* Comments, trackbacks, desktop client support, theme support, a cool admin area and everything else Typo offers.
+* Full RSS feeds. With no ads. So you don't need to see this black blob anymore, if you really don't like it.
+* No projects or bookmarks, just my blog and my articles. Let's keep it simple.
+
+More to come...
+

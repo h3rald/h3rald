@@ -1,0 +1,78 @@
+----- 
+permalink: concatenative
+title: Concatenative
+tags: []
+
+type: page
+filter_pre: textile
+-----
+h2. Concatenative
+
+Concatenative is a Ruby DSL(Domain-specific Language) for concatenative programming. It is heavily inspired by "Joy":http://www.latrobe.edu.au/philosophy/phimvt/joy.html, a minimalist programming language by Manfred von Thun. Like Joy, Concatenative features:
+
+* function composition, instead of function application
+* quotation, instead of abstraction
+* no formal parameters
+* no variable assignments
+
+Plus, it allows you to use Ruby objects and methods in a concatenative fashion.
+
+h3. Installation
+
+The simplest method to install Concatenative is to install the gem:
+
+@gem install concatenative@
+
+h3. Usage
+
+Initialization:
+
+<typo:code lang="ruby">
+require 'concatentive'
+</typo:code>
+
+Execute a Concatenative program:
+
+<typo:code lang="ruby">
+        concatenate(
+                10,
+                [0, :==],
+                [1, :+],
+                [:dup, 1, :-],
+                [:*],
+                :linrec
+        )
+</typo:code>
+
+The program above returns the factorial of 10, computed using the linrec combinator. It is also possible to execute arrays directly and define concatenative programs as symbols.
+
+<typo:code lang="ruby">
+                :factorial << [[0, :==], [:pop, 1], [:dup, 1, :- , :factorial, :*], :if]
+                [5, :factorial].execute
+</typo:code>
+
+The program above calculates the factorial of 5, using explicit recursion.
+
+You can use all Ruby methods in Concatenative programs as well, making sure that the right number of arguments (and the methodâ€™s receiver) are retrieved from the stack correctly. For this to work, Concatenative must know the arity of the method in advance, so the following rules are applied:
+
+    * All operators have an arity of 1
+    * All other method have an arity of 0
+    * If a method has a different arity, you must specify it explicitly using the pipe (|) operator.
+
+Example:
+
+<typo:code lang="ruby">
+        concatenate(
+                "Goodbye, World!", /Goodbye/, "Hello", :sub|2
+        )
+</typo:code>
+
+The program above is equivalent to "Goodbye, World!".sub(/Goodbye/, "Hello").
+
+
+h3. Resources
+
+* "News and Articles":http://www.h3rald.com/tags/concatenative
+* "RDoc Documentation":http://concatenative.rubyforge.org [on RubyForge]
+* "Download Files":http://rubyforge.org/projects/concatenative [on RubyForge]
+* "Source Code and Issue Tracking":http://github.com/h3rald/concatenative [on GitHub]

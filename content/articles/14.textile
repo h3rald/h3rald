@@ -1,0 +1,51 @@
+----- 
+permalink: "14"
+title: CakePHP hybrids
+tags: 
+- cakephp
+- web-development
+- php
+type: article
+filter_pre: textile
+-----
+When I first talked to gwoo, CakePHP's project manager, I asked him if Cake had any potential _limitations_. I asked him - I was kidding actually - wether it would be possible to build an application like Gmail using the framework and he - very seriously - simply said _"yes, why not?"_. 
+I repeat myself when I say that CakePHP leaves plenty of freedom to developers within the bounds of its MVC structure: once you grasp the basic logic behind it, your possibilities are endless. I don't want to act as a Ruby on Rails fanatic and boast that _you can do anything  with CakePHP_ and things like that, but I can certainly say that CakePHP can be _extended_ and _integrated_ with other collections of scripts, frameworks and projects. With limitations, of course: you probably don't want to force an integration between CakePHP and another MVC/Event Driven/Whatever framework, simply because it would be rather pointless and potential conflicts may occur.
+
+What I keep finding online is other open source projects adopting CakePHP as _backend_ and _structure_. I'm sure there are many examples which could be mentioned here, but I chose two in particular: one has been around for a few months and the other is just born.
+
+!<http://base--/img/pictures/amfphp.jpg! 
+
+"AMFPHP":http://amfphp.org/ is quite an interesting project:
+
+bq. "[it] is an open-source Flash Remoting gateway. It's fast, reliable, 100% free and open-source. Flash Remoting is a technology built into the Flash player core that enables sending data between the server and the client seemlessly."
+
+In other words, it makes lifes much easier for developers who'd like to integrate their flash animations and script more tightly into their PHP application. If you are curious to see some results, head off to AMFPHP "showcase":http://amfphp.org/showcase.html.
+Cool, but what has this project to do with CakePHP? Well, gwoo recently created "CakeAMFPHP":http://cakeforge.org/projects/cakeamfphp/, a CakeForge project which just yesterday reached its "0.4.0 release":http://rd11.com/posts/view/21, and it's fully compatible with AMFPHP 1.2.3 and CakePHP 0.10 final.
+Here's an excerpt taken from CakeAMFPHP README.txt file:
+
+bq. "[...] 
+1) get CakePHP 0.10 final (http://cakephp.org)
+2) get amfphp 1.2.3 (http://amfphp.org)
+3) get the UFO js http://www.bobbyvandersluis.com/ufo/
+4) put amfphp into /app/vendors
+5) put cakeamfphp into vendors
+6) put the cake_gateway.php in /app/webroot
+7) put the cakeamfphp.php in /app/views/helpers
+8) put CakeMySqlAdpater.php in /app/vendors/amfphp-core/adapters
+9) Voila: NetServices.setDefaultGatewayUrl( 'http://localhost/cake_install/cake_gateway.php');
+Access the service browser through
+http://localhost/cake_install/vendors/cakeamfphp/cakebrowser/"
+
+The installation doesn't seem too painful at all. And - guess what - gwoo recently updated a very informative tutorial showing how to create a simple - but still impressive - bullettin board with CakeAMFPHP.
+
+_"Cool, but I never liked flash, what about AJAX?"_
+
+!<http://base--/img/pictures/qooxdoo.gif! 
+
+CakePHP has a nice AJAX helper to be used in conjunction with "prototype":http://prototype.conio.net/, but there are truly a lot of libraries, mini-frameworks, pre-built applications to create interactive desktop-like user interfaces. Some people may already know "qooxdoo":http://qooxdoo.oss.schlund.de/,
+
+bq. "[...] an advanced open-source JavaScript-based GUI toolkit. qooxdoo continues where simple HTML is not enough. This way qooxdoo can help you implement your AJAX-enhanced web 2.0 application - easier than ever before." 
+
+In a recent "discussion":http://groups.google.com/group/cake-php/browse_thread/thread/ba219c64cd794764/1d77973293514618?lnk=raot on CakePHP user group someone suggested the possibility to integrate qooxdoo with CakePHP. Apparently qooxdoo people were "evaluating":http://www.nabble.com/Re%3A-qooxdoo-PHP-framework-project-p3799302.html various MVC frameworks, and Cake was obviously listed together with two other Rails clones for PHP. The good news is that "100rk":http://cakeforge.org/users/a100rk/ just started a new project called "CQX":http://cakeforge.org/projects/cqx, which - although still in pre-alpha a development demo is already available, and it _shows off_ most of qooxdoo's features... "Take a look":http://cqx.100rk.org/trunk/
+
+Best of luck to 100rk and his brand new project, I really hope to see more of it soon!

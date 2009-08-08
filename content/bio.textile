@@ -1,0 +1,26 @@
+----- 
+permalink: bio
+title: About Fabio Cevasco
+tags: []
+
+type: page
+filter_pre: textile
+-----
+!>http://www.h3rald.com/img/author_fabio_cevasco.jpg! 
+
+Fabio Cevasco is an IT enthusiast who's very fond of writing. 
+
+After graduating in IT Engineering at the University of Genoa, Italy, in November 2005, he started writing various articles concerning programming, software and Information Technology in general always trying to convey his interest for technology and innovation to his readers.
+He wrote quite a few articles and reviews which have been published or mentioned on various online magazines and websites, such as:
+
+* "10 Reasons To Learn Ruby":http://www.h3rald.com/articles/10-reasons-to-learn-ruby
+* "Fabio's (In)complete Guide to London":http://www.h3rald.com/articles/incomplete-guide-to-london
+* "An overview of the CakePHP framework":http://base--/articles/view/cakephp-overview/
+* "Review of ten popular social bookmarking services":http://base--/articles/view/social-bookmarking-services/
+* "Rails-inspired PHP frameworks":http://base--/articles/view/rails-inspired-php-frameworks/
+* "CakePHP - A 'tasty' solution for PHP programming":http://base--/articles/view/cakephp/
+* "Ma.gnolia - Social bookmarking made (extremely) easy":http://base--/articles/view/ma.gnolia/
+* "An IE Lover's Guide to Firefox":http://base--/articles/view/ie-lovers-guide-to-firefox/
+* "Slax - A small, complete and 'nice-looking' Linux live distribution":http://www.h3rald.com/articles/view/slax/
+
+Currently, Fabio is working full time as a technical writer for a multinational IT company in Genoa, Italy. Although he literally writes documentation and manuals eight hours a day, he still enjoys writing articles now and then, in the free time. 

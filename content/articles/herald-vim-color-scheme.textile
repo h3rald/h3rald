@@ -1,0 +1,45 @@
+----- 
+permalink: herald-vim-color-scheme
+title: Herald (Vim Color Scheme)
+tags: 
+- programming
+- vim
+type: article
+filter_pre: textile
+-----
+I use "Vim":http://www.vim.org a lot. It's my editor of choice when I code (mainly in Ruby), and also when I write my blog post and articles (mainly in Textile).
+One thing I always liked about Vim was it powerful syntax highlighting: there's probably a syntax highlighting file for every programming language ever created, even the new ones ("Nimrod":http://force7.de/nimrod/index.html? Sure, "here":http://www.vim.org/scripts/script.php?script_id=2632!).
+
+Furthermore, Vim allows you to create color schemes, and that's surprisingly easy to do. Everything you need to do is in the "docs":http://vimdoc.sourceforge.net/htmldoc/syntax.html, but that may put you off, so you can just start by editing an existing one -- that's what I did.h3. InfiniteRed Black
+
+I've been using the "ir_black":http://blog.infinitered.com/entries/show/8 color scheme for near enough a year. It's an excellent color scheme, recommended especially for writing Ruby code:
+
+!=/images/herald.vim/ir_black_vim_example.png! 
+
+I honestly thought this was the best Vim color scheme until I discovered Moria...
+
+h3. Moria
+
+Recently I switched to "moria":http://www.vim.org/scripts/script.php?script_id=1464, mainly because I find it easier on the eyes. It's a matter of taste, of course:
+
+!=/images/herald.vim/moria_vim_example.png! 
+
+The trick is in the background: it's not completely black. Still, I didn't quite like the colors, so I decided to write my own...
+
+h3. Herald
+
+Meet <strong> "herald.vim":/files/herald.vim </strong> (this is a direct link to the raw file, but you may also want to check my "stash":http://github.com/h3rald/stash/tree/master on GitHub or the "script page":http://www.vim.org/scripts/script.php?script_id=2684 on Vim.org):
+
+!=/images/herald.vim/herald_vim_example.png! 
+
+To sum up, here's the _features_ offered by this new color scheme:
+* It's easier to differentiate syntax elements; in particular reserved words like @if@ or @end@, constants (symbols) and identifiers (instance variables).
+* Operators are highlighted and easier to notice.
+* Dark gray background and black column/row selectors.
+* Added highlight for titles (useful for Textile)
+* Comments do not stand out, unlike in most color schemes
+* Support for 256 color terminal (special thanks to "Wolfgang Frisch":http://www.frexx.de/xterm-256-notes/ for providing all the info and tools required)
+
+So what do you think? Is it tool colorful perhaps? How would *you* improve it?
+
+

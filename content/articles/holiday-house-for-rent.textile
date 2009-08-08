@@ -1,0 +1,18 @@
+----- 
+permalink: holiday-house-for-rent
+title: Holiday house for rent
+tags: 
+- personal
+type: article
+filter_pre: textile
+-----
+<img src="/images/sessarego/outside.jpg" style="float:left; border: 1px solid #B80000; margin-right: 10px;" />
+
+Part of my family house in the countryside is now available for rent! It's located in the small village of "Sessarego":http://italia.indettaglio.it/eng/liguria/genova_bogliasco_sessarego.html, a few minutes away from the coast, on the Italian Riviera.
+We've been living there recently for 6 months when I started working and then moved to the city in order to be nearer to my workplace, but we still go there on holidays or on the odd week end, sometimes.
+
+The house is fully furnished, it has been recently renovated, and offers all major comforts and services (utilities, TV, internet, phone, etc.). It can be ideal as a holiday house for writers, programmers, or anyone who would like to take a break from the chaotic city life without giving up all the commodities of modern life, such as the Internet.
+
+<div style="padding: 30px"></div>
+
+*For more information, see "this page":/holidays and feel free to "contact me":/about if you want to book your stay or you needmore details!*

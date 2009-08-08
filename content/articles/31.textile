@@ -1,0 +1,90 @@
+----- 
+permalink: "31"
+title: "Watch out: CakePHP screencasts"
+tags: 
+- cakephp
+- tutorial
+type: article
+filter_pre: textile
+-----
+Tutorials are great, articles are helpful, manuals are essential and the API is your best friend, but there's still something missing there... Unfortunately podcasts are not yet available, but the CakePHP team is proud to announce the creation of two "screencasts":http://cakephp.org/pages/screencasts in an effort to help new bakers familiarizing with CakePHP's concepts. 
+This is old news now, the screencasts section came together with the "site overhaul":http://base--/blog/view/24 but I only got a chance to take a look at them (one of them only, to be totally honest) recently, and so here's a spoil... erhm, a _detailed_ description of John Anderson's screencast about the "Blog Tutorial":http://manual.cakephp.org/chapter/18.
+
+!<http://base--/img/pictures/CakePHP_1.0.png! 
+
+There's something I'll never do: a screencast. Recording every mouse movement, every word or piece of code typed in half an hour? No way! And what happens if I mistype something? People will keep pointing out the fact that I was starting to type @</h2>@ to close a @</h1>@ tag, or that I waited an eternity like five full seconds before deciding what to do. I guess I'm quite paranoid... John did it, and he did it well. Using just bash, vim and Safari he was able to record an excellent 30-minutes screencast featuring the blog tutorial. 
+Before people start complaining that the blog tutorial should be completed in fifteen minutes, keep in mind that John's screencast is meant to show everything clearly to new users, via a trial and error approach if necessary.
+
+Here's what happens in the screencast, nothing new if your read the blog tutorial, but still interesting, especially if you're new to Cake. Unfortunately there's no audio, but the video talks by itself and John will occasionally write some comments here and there.
+
+_*0:01 - 5:00*_
+
+* SVN checkout to get the latest CakePHP version
+* make app/tmp writeable
+* execute queries (table posts)
+* insert some test posts
+* create database config file: modify 3 lines of database.php
+* CakePHP is now able to connect to database
+* create app/models/post.php model
+* create posts_controller.php [John uses Vim as preferred PHP editor]
+* try to access /posts/, error: missing method index()
+* create function index() in postscontroller.php able to fetch posts
+* refresh, missing index view
+* create index.thtml displaying the raw posts array
+
+_*5:01 - 10:00*_
+
+* index.thtml: display posts with table and foreach iteration
+* add hyperlink in index.thtml to view posts
+* access /posts/view/1 -> missing method view()
+* add view() method in postscontroller.php
+* create view.thtml to display 
+* Raw view post with pre tags and print_r()
+
+_*10:01 - 15:00*_
+
+* display post properly with @<p>@ tags
+* add link in index.thtml to add a post
+* missing method -> add() 
+* add add() in controller
+* missing view [trial and error, trial and error...]  
+* create add.thtml, using the Html Helper to create input tags easily
+
+_*15:01 - 20:00*_
+
+* add.thtml (continued)
+* testing add form
+* view added post
+* start adding another (for validation purposes) [stop before submitting]
+* modify post.php model, valid_not_empty for title and body
+* modify view to trigger validation @$html->tagErrorMsg()@
+* test: no body, message displayed
+* test: no title, message displayed
+* add another post, everything works
+* [pause: five seconds]
+* back to the controller, create delete() function
+
+_*20:01 - 25:00*_
+
+* delete function (continued)
+* add "Actions" table column in index.thtml, with link delete post
+* delete two posts
+* take a breath
+* add link in index.thtml to edit post
+* refresh page, mouse over edit links... 
+* back to controller, add edit function [we learnt abour CakePHP errors alright]
+
+_*25:01 - 27:38*_
+
+* pause, 5 sec [should I write edit.thtml from scratch]
+* copy add.thtml as edit.thtml
+* change just the title and form action
+* [pause: 3 sec]
+* test edit link
+* edit a post
+* move around, switch views
+* edit config/routes.php
+* set default route to posts/index
+* refresh -  all done!
+
+That's it. All in a 40MB .mov file. Download it from "here":http://www.archive.org/download/CakePHP_BlogTutorialJohn/BlogTutorial.mov.

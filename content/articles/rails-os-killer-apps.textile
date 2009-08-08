@@ -1,0 +1,89 @@
+----- 
+permalink: rails-os-killer-apps
+title: Rails-powered Open Source Killer Apps, Anyone?
+tags: 
+- rails
+- ruby
+- writing
+- rant
+type: article
+filter_pre: textile
+-----
+Lately I've been meandering around the web to find a good CMS for a family site I'd like to set up. 
+Why a CMS? Well, for a few simple reasons:
+
+# I don't have enough free time to fiddle with Rails and make my own (I'm an _Hobbyist Programmer(TM)_: I code for fun and enlightment, not for money)
+# Even if I had the time, I'm _sure_ there are plenty of CMSes out there which suits my needs.
+
+It turns out that reason #2 is not really applicable in this case, especially if we restrict the field to Ruby + Rails/Merb/&lt;insert cool DRY framework here&gt;.h3. Rails-powered CMSes
+
+_Name a Rails-powered CMS, quick!_
+
+Easy: "Radiant":http://radiantcms.org/.
+
+Hmm, no. As much as I do like Radiant, it really cannot be considered a general-purpose CMS, can it? When it comes to build nearly-static sites in a clean and neat way I'd pick it any day, but it lacks quite a lot of community features like comments, ability to create forums, etc. etc. It does, however, support multilingual content in a rudimentary, yet effective way: create each translated page manually and use consistent URL conventions (/en/about, /it/about, etc.).
+
+I'm not saying that there aren't enough CMSes built on Rails, just that there's no "killer app" in the pack. A "killer" CMS would be something as powerful as Drupal, but easier to use and more modular.
+
+Here's an incomplete list of the Rails CMSes I'm currently aware of:
+
+|_. Name |_. First Impressions/Comments |
+| "Radiant":http://radiantcms.org/ | Mature, suitable for administering static sites |
+| "Typo":http://www.typosphere.org/ | Mature, one of the best blogging engines out there (my opinion is slightly biased though) |
+| "Mephisto":http://mephistoblog.com/ | Mature, blogging engine |
+| "Rubricks":http://rubricks.org/index_en.html | Under development, basic features if compared to other non-Rails solutions |
+| "Slate":http://slateinfo.blogs.wvu.edu/ | Missing a lot of features if compared to competitors |
+| "Beast":http://beast.caboo.se | Forum engine, extremely ligtweight |
+| "RailFrog":http://www.railfrog.com/ | Not sure if it's still being updated, not so many features |
+| "Zena":http://zenadmin.org/en | Alpha, looks promising although it doesn't offer many features |
+| "simplelog":http://simplelog.net/ | Yet another blogging engine. Simple and easy to use |
+| "oooopen rcms":http://rcms.oopen.de/ | Early development stage (dead?), minimal feature set |
+| "Geego":http://www.geegocms.com/ | Multilingual, not so many out-of-the-box features | 
+
+_[Psst, if you know any other Rails CMS I missed out, mention it in a comment and I'll update this table!]_
+
+h3. Developing Proprietary Web Applications with Rails
+
+What's wrong with all of these? Normally one of three things: either they are mature, production-ready but focused on only one particular function (blog, forum, etc.), or they are still too new to be used seriously or they are slowly heading towards oblivion.
+
+What's going on here? Rails is a damn fine framework which offers all the modularity and power you need to build sites! Why isn't there a fully fledged CMS to rival Drupal? 
+I think that part of the problem is that Rails is _too_ good. *Why build a CMS from scratch when you can develop a web site from scratch much more easily, tailored to your customer?* 
+
+
+Rails has been used to build a few "mainstream" sites like Twitter (no bashing please!), Basecamp, GitHub and many more. What do these sites have in common? _They are not open source_. You cannot deploy your own Twitter on your server (You can with "Laconica":http://laconi.ca/trac/, though), you cannot deploy your own Basecamp to your server (you can with "ProjectPier":http://www.projectpier.org/, an open source fork of "ActiveCollab":http://www.activecollab.com/).
+
+It feels like that even though Rails itself is open source, *there aren't that many open source Rails-powered projects after all*. Maybe there are, but they do not really compare with similar alternatives offered in other languages. This is the reason why, despite its utter ugliness, PHP is still the _Open Source King of the Web_, and that's very, very sad in my opinion.
+
+h3. Dreams on Rails
+
+The annoying thing is that Rails _is suitable_ to build CMSes, and good ones, too! Take Radiant and Typo, for example: they both excel in their own ways, _in their own worlds_.
+Theorethically speaking, *there's no reason why someone couldn't develop a modular system to glue different components together*: you'd need common user administration and common workflow, a few hooks, and a solid set of conventions on how to build third-party components.
+Hell guys, the folks at Drupal developed a huge (and successful) product with a million different ways to extend it _in PHP_. Even without using OOP! Every damn hook in the core is a _function_.
+
+What does it take to do something like this using Rails, o Merb, or whatever else you like? You already have a very solid and consistent framework to build on (Rails), a way to automate tasks (Rake) and a language which lets you do everything you want, in a very elegant and organized way.
+
+*Rails lacks successful open source projects, in particular CMSes*. I wish someone could fix this: not by coding the _n^th^_ CMS with the only two or three features you need, but by developing an _high level application framework_ to build complex, dynamic and interactive web sites. Don't even develop the whole damn thing: just come up with a set of conventions on how to extend a very basic core, and tell people how they can contribute, or even integrate existing applications into it.
+
+The community will do the rest, hopefully... Or maybe are you too busy trying to roll out your newest, closed source startup?
+
+*If someone decides to develop such a powerful, high-level framework and is determined to keep it user-friendly and open source, I hereby promise to write the documentation for it*, articles, and books. And I'm not kidding.
+
+h3. [UPDATED] A Glimpse of Hope
+
+A few of the commenters of this article brought up a few interesting points and actually gave me a little bit of hope. "Luigi Montanez":http://salesforceonrails.com/ pointed out that Rails was built to help developers build web sites. For now, Rails deployment isn't as seamless as end users would like it, so there's no point creating a killer app for such users if they can't even get it to run on their $2/month shared hosting environment.
+Nevertheless, there seems to be at least _three_ different open source "social network engines" powered by Rails:
+
+* "Insoshi":http://portal.insoshi.com/
+* "Community Engine":http://www.communityengine.org/
+* "Lovd By Less":http://lovdbyless.com/
+
+These are not CMSes _in the early 2000's sense_, obviously, but they do provide the basis to effectively build a late Web 2.0-ish community web site. Each one of these project seems stable and mature enough to be used in production, but surely not as well-known as many other PHP-based solutions.
+
+On the other hand, "Priit Tamboom":http://priit.mx.ee/ mentioned "adva cms":http://adva-cms.org/, a project still in alpha stage which aims to be more traditional and site-agnostic:
+
+<blockquote>
+"[...] Different from other Rails applications the all-engines approach of adva cms allows you to build your own applications on top of it. It also makes it very flexible and extensible: our plan is to make it possible to only pick those engines/features that you really need for your application and omit the rest. As they are still all designed to work together seemlessly and reuse each others functionality the whole plattform feels much more consistent to a collection of similar but separate Rails applications. [...]"
+</blockquote>
+
+This sounds _exactly_ like what I was hoping would come out from the Rails community: something in between a web development framework and an high-level CMS. 
+I'm definitely going to try it out (it's an ideal weekend project) and I'll report back once I know more about it.

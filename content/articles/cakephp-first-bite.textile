@@ -1,0 +1,11 @@
+----- 
+permalink: cakephp-first-bite
+title: "The CakePHP Framework: Your First Bite"
+tags: 
+- cakephp
+- tutorial
+- review
+type: article
+filter_pre: textile
+-----
+According to a recent study, PHP is one of the most popular programming languages in the world. In spite of this, PHP is often criticized for its inconsistent naming conventions, its lack of important features as compared to other languages (like namespaces) and its inherent disorganization. Furthermore, PHP is very easy to learn, and this has often led to the common misconception that most PHP developers are inexperienced and that their code is therefore prone to security vulnerabilities and exploits."Read the full article":http://www.sitepoint.com/article/application-development-cakephp on "SitePoint.com":http://www.sitepoint.com/
