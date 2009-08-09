@@ -8,6 +8,7 @@ date: 2008-07-15 06:18:00 +02:00
 tags: 
 - programming
 type: article
+toc: true
 -----
 _"This is a *local* shop for *local* people, we want no trouble here!"_
 
@@ -35,7 +36,7 @@ In a few click, you'll be able to use Git (and Bash!) right away: no tricks, no 
 
 And stop moaning about the command line not being user friendly. You want a new repository _anywhere_? Just type in the following:
 
-<typo:code>
+<% highlight :text do %>
 git init
 git add .
 git commit

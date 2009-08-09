@@ -10,6 +10,7 @@ tags:
 - rails
 - ruby
 type: article
+toc: true
 -----
 If you ever considered about developing an deploying a Rails application in the last year or so, you must have heard of "Mongrel":http://mongrel.rubyforge.org/index.html before. If you didn't, I'd recommend you learn more about it because up to now it proved to be one of the few essential ingredients for deploying _scalable_ Rails applications.
 
@@ -131,7 +132,7 @@ And also gives you an idea on what to look for when debugging an application. No
 Again, Zed's wisdom and wit are remarkable:
 
 <blockquote>
-<em>"These people's problem is they suffer from Potpourri Turd Syndromeâ€”a belief that their you-know-what don't stink and smells like fine dew on freshly cut grass. Whenever there's a bug, they go
+<em>"These people's problem is they suffer from Potpourri Turd Syndrome—a belief that their you-know-what don't stink and smells like fine dew on freshly cut grass. Whenever there's a bug, they go
 running like kids in a candy store to other people's code trying to find fault and just assume that it's nothing they wrote.
 [...]
 When you run into a problem with your application, always assume it's your fault first. Mongrel's not perfect, but its code is minuscule compared to the size of Rails and most likely even your own appli-cation code. Mongrel also powers many large and medium deployments without any problems. If there's an error, the evidence already says it's in your code, so bite the bullet and start investigating it as if it's your problem."</em>

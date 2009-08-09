@@ -5,8 +5,10 @@ filters_pre:
 title: Personal Log - February 2009
 date: 2009-02-27 13:09:00 +01:00
 tags: 
-- "personal_log ruby "
+- personal_log
+- ruby
 type: article
+toc: true
 -----
 This has been a rather busy month, hence the lack of general Internet activity. I really wanted to post some more articles to my site, but for one reason or another I had to procrastinate more and more, and here we are at the end of the month again.
 
@@ -20,7 +22,7 @@ It turns out I was wrong. Other than the fact that our industries are more or le
 * We have an awful lot of foreign business going on, a lot of multi-national companies opened up through the years lured by cheap workers and acceptable craftmanship.
 * Our government already -wastes- invests a lot of money regularly, every year, to fuel a colossal, "nepotistic":http://dictionary.reference.com/browse/nepotistic, pointless bureaucratic machine they insist on calling "State".
 
-Result: the recession is starting to hit properly over here too. People are saving money, they don't go out buying pointless crap, they are scared to ask for a raise at work... the usual. I work for a foreign company which has been, as were most, forced to save some money to compensate some not-so-good First Quarter's revenues. This means less unnecessary expenses, less training, less travelling and less outsourcing, which didn't help improving the daily work experiece. Personally, I'm not that affected by all this, nevertheless it made me bless the day my fiancÃ©e persuaded me to stop uni after my Bachelor's Degree to get a very rewarding, not-so-stressful job.
+Result: the recession is starting to hit properly over here too. People are saving money, they don't go out buying pointless crap, they are scared to ask for a raise at work... the usual. I work for a foreign company which has been, as were most, forced to save some money to compensate some not-so-good First Quarter's revenues. This means less unnecessary expenses, less training, less travelling and less outsourcing, which didn't help improving the daily work experiece. Personally, I'm not that affected by all this, nevertheless it made me bless the day my fiancée persuaded me to stop uni after my Bachelor's Degree to get a very rewarding, not-so-stressful job.
 
 h3. No 'Net @ Home
 

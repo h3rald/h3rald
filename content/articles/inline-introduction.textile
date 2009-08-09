@@ -6,8 +6,12 @@ filters_pre:
 title: RawLine - a 100% Ruby solution for console inline editing
 date: 2008-03-10 06:59:00 +01:00
 tags: 
-- ruby programming opensource rawline
+- ruby
+- programming
+- opensource
+- rawline
 type: article
+toc: true
 -----
 One of the many things I like about Ruby is its cross-platform nature: as a general rule, Ruby code runs on everything which supports Ruby, regardless of its architecture and platform (yes, there are quite a few exceptions, but let's accept this generalization for now).
 

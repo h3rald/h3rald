@@ -9,6 +9,7 @@ tags:
 - rails
 - tutorial
 type: article
+toc: true
 -----
 This article is an attempt to port a famous Ruby on Rails tutorial to PHP using an emerging PHP MVC framework, CakePHP. CakePHP was inspired by Rails' philosophy of Rapid Application Development. It implements a lot of the features and concepts that made Ruby on Rails popular in a very short time. Although Ruby's syntax and way of doing things is known to be much more elegant than other programming languages, there is yet hope for PHP to get more organized and effi cient. This tutorial will follow its Rails counterpart step-by-step, covering the essential steps to create a simple, yet fully functional, web application.
 Register on the "International PHP Magazine":http://www.php-mag.net/magphpde/psecom,id,20,archive,2,noeid,20,.html to read the full article.

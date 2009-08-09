@@ -5,8 +5,11 @@ filters_pre:
 title: Personal Log - May 2009
 date: 2009-05-31 06:35:00 +02:00
 tags: 
-- personal_log programming wedding
+- personal_log
+- programming
+- wedding
 type: article
+toc: true
 -----
 Yet another extremely busy month, as you can see from the total absence of blog posts and lack of tweets even. Things are getting pretty hectic at work now I guess: less people, more work, more responsibility, same money. They call it ??contingency??; it's the latest trend in the Western World, didn't you know? I'm really not impressed. I can't complain though I guess: I still enjoy my job very much and I know it could be much worse, so it's just a matter of enduring until autumn -- or so they say.
 

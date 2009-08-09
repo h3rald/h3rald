@@ -9,6 +9,7 @@ tags:
 - review
 - software
 type: article
+toc: true
 -----
 If you asked me what file manager I used on Windows, up to a month ago I'd have answered something like: "A43":http://www.primitus.us/a43/ or "CubicExplorer":http://www.cubicreality.com/, for sure _anything but Windows Explorer_.
 Well, it turns out that I had to change my mind after all...
@@ -99,7 +100,7 @@ Right next to it I placed some of the buttons available for *QT TabBar*:
 * Lock \- Lock current tab
 * Topmost \- Force explorer to stay on top of other windows
 
-Then I decided to enable the *Links* Explorer toolbar, which can be configured to display bookarks and shortcuts placed in the Favorites > Links folder. As shortcuts, I dragged each drive available on my system and voilÃ : poor man's Drive Toolbar! Unfortunately, unlike in the _proper_ drive toolbars offered by alternative file managers, all drive shortcuts will remain there (with a red question mark) even when the drive is not connected to the system. I can live with that.
+Then I decided to enable the *Links* Explorer toolbar, which can be configured to display bookarks and shortcuts placed in the Favorites > Links folder. As shortcuts, I dragged each drive available on my system and voilà: poor man's Drive Toolbar! Unfortunately, unlike in the _proper_ drive toolbars offered by alternative file managers, all drive shortcuts will remain there (with a red question mark) even when the drive is not connected to the system. I can live with that.
 
 Right to the address bar (we're going to substitute it in the next section though), I decided to place *QT ToolBar 2*, which is available - hear, hear - after installing the QT ToolVar 2 extension.
 At first it looks like a search filter toolbar, and yes, it can be used for this _as well_ Just type .jpg in the search box and it will show only the JPG files in the current folder. Easy enough.

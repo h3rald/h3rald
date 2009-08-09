@@ -5,14 +5,17 @@ filters_pre:
 title: "Too many cooks... take #2"
 date: 2007-09-02 06:41:00 +02:00
 tags: 
-- cakephp writing rant
+- cakephp
+- writing
+- rant
 type: article
+toc: true
 -----
 Today I was not going to post on my blog. I have the flu, I don't feel very well so I started reading some news feeds on Google Reader. That lasted for about half an hour, so I decided to check my old Netvibes account where I kept other feeds, including a bunch of CakePHP-related blogs.
 
 Two posts immediately grab my attention:
 
-"I donâ€™t trust CakePHP or what should you say in public?":http://cakebaker.42dh.com/2007/08/27/i-dont-trust-cakephp-or-what-should-you-say-in-public/
+"I don’t trust CakePHP or what should you say in public?":http://cakebaker.42dh.com/2007/08/27/i-dont-trust-cakephp-or-what-should-you-say-in-public/
 
 and 
 
@@ -26,7 +29,7 @@ That's because it might have put  "CakePHP and the team in a bad light". Well, I
 
 I even found a bunch of comment which link this incident to what happened to me a few months ago:
 
-_"I said it when Fabio/H3rald left, and Iâ€™ll say it againâ€”I think the biggest weakness of Cake is that the core dev team is quick to cut people out who donâ€™t hold to every dogma the devs do. Fundamentalism, ego, call it what you will, a great community will only count for so long if the core keeps alienating its biggest allies. (not that theyâ€™re neccessarily alienating you, dho. I truly hope you stick around. You do seem to be taking it well.)"_
+_"I said it when Fabio/H3rald left, and I’ll say it again—I think the biggest weakness of Cake is that the core dev team is quick to cut people out who don’t hold to every dogma the devs do. Fundamentalism, ego, call it what you will, a great community will only count for so long if the core keeps alienating its biggest allies. (not that they’re neccessarily alienating you, dho. I truly hope you stick around. You do seem to be taking it well.)"_
 
 ^^^ Whoever you are, you're 100% right.
 

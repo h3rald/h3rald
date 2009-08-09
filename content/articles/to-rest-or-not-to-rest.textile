@@ -7,6 +7,7 @@ date: 2007-09-24 05:48:00 +02:00
 tags: 
 - rails
 type: article
+toc: true
 -----
 Lately I've been reading quite a bit about Rails' REST approach, and to be totally honest I'm not 100% convinced it can always be a good idea. The purpose of this post is to re-evaluate the situation, and ask other people their opinion on the matter.
 
@@ -36,7 +37,7 @@ Here are some posts which made me think a bit:
 
 * "RESTful Myths: Unraveling the Confusion":http://www.ipbabble.com/2007/07/restful_myths.html
 
-* "Why Canâ€™t Web Apps Be REST-ful?":http://blog.livollmers.net/index.php/2007/06/26/why-cant-web-apps-be-rest-ful/
+* "Why Can’t Web Apps Be REST-ful?":http://blog.livollmers.net/index.php/2007/06/26/why-cant-web-apps-be-rest-ful/
 
 The bottom line is: is REST really worth the hassle? Especially for small and simple applications like a blog, is it really worthwhile to coerce myself to adopt a RESTful approach when I could accomplish exactly the same things with much less hassle? 
 

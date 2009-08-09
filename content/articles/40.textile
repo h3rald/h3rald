@@ -8,6 +8,7 @@ tags:
 - cakephp
 - writing
 type: article
+toc: true
 -----
 Despite all my efforts to keep the whole thing quiet for the time being, a few days ago I entered the words "CakePHP Recipes" in Google and discovered - to my astonishment - that my new book about the CakePHP framework is already for (pre)sale in many popular online bookstores.
 

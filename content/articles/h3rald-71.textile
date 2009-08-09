@@ -8,6 +8,7 @@ tags:
 - website
 - rails
 type: article
+toc: true
 -----
 I finally decided to redesign my web site. About 2 years passed since last time and I think this was long overdue: a lot of people liked the black _Nitefall_ theme, but a lot of people found a bit too dark for their liking.
 

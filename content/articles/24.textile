@@ -8,6 +8,7 @@ tags:
 - cakephp
 - web-development
 type: article
+toc: true
 -----
 As "Digg":http://digg.com/programming/CakePHP_1.0_has_been_released_ points out, the first _stable_ version of CakePHP was released, yesterday. I should have posted yesterday about it, and no, I didn't forget: I was just busy downloading the new version, have a look at the new site, talk to people etc.
 

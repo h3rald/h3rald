@@ -5,8 +5,11 @@ filters_pre:
 title: "Chrome: Google did it again!"
 date: 2008-09-03 02:31:00 +02:00
 tags: 
-- browsers review google
+- browsers
+- review
+- google
 type: article
+toc: true
 -----
 !</files/google-chrome/chrome-logo.jpg!
 

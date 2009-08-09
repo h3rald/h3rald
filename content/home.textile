@@ -7,6 +7,7 @@ date:
 tags: []
 
 type: page
+toc: true
 -----
 Welcome to H3RALD.com, Fabio Cevasco's personal web site. 
 ---

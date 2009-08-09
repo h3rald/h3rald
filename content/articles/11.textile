@@ -8,6 +8,7 @@ tags:
 - cakephp
 - blogging
 type: article
+toc: true
 -----
 I should write more. I noticed that I since I decided to take a break from "zZine Magazine":http:www.zzine.org I more or less stopped writing - and started _baking_ again with "CakePHP":http://www.cakephp.org/. As a result I finally recoded this website and _refreshed_ a little bit my almost-rusty baking skills.
 

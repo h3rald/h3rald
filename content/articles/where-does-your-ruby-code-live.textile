@@ -8,6 +8,7 @@ tags:
 - ruby
 - programming
 type: article
+toc: true
 -----
 Back when I wrote my "10 reasons to learn Ruby":/articles/10-reasons-to-learn-ruby article, I mentioned "RubyGems":http://www.rubygems.org/ in _Reason #1_ as one of they key features of the Ruby programming languages.
 Indeed, gems make getting Ruby programs as easy as typing @gem install <something>@ from the command line. When you want to distribute something new in Ruby, there's no need to give people download links, zip files or setup programs, just "tell them to get the gem":http://adam.blog.heroku.com/past/2008/11/2/pony_the_express_way_to_send_email_from_ruby/. That's perfectly normal, and extremely cool.
@@ -19,7 +20,7 @@ Back in the day, if you wanted to find something written in Ruby, all you had to
 
 h3. Can we just have git, please?
 
-RubyForge had, until recently, one major problem: it only allowed CVS and SVN repositories, and you had to make your choice when creating the project, once and for all. So when the cool guys at "GitHub":http://github.com/ rolled out their _social code hosting_ web site, most of the _crÃ©me de la crÃ©me_ of RubyForge flocked there in mass migration: "Rails":http://github.com/rails/rails/tree/master, "Merb":http://github.com/wycats/merb-core/tree/master, "RSpec":http://github.com/dchelimsky/rspec/tree/master... you name it.
+RubyForge had, until recently, one major problem: it only allowed CVS and SVN repositories, and you had to make your choice when creating the project, once and for all. So when the cool guys at "GitHub":http://github.com/ rolled out their _social code hosting_ web site, most of the _créme de la créme_ of RubyForge flocked there in mass migration: "Rails":http://github.com/rails/rails/tree/master, "Merb":http://github.com/wycats/merb-core/tree/master, "RSpec":http://github.com/dchelimsky/rspec/tree/master... you name it.
 Once the big guys made the switch, a lot jumped on the GitHub bandwagon of course. Result: we have a lot of projects still on RubyForge, but quite a few (and important ones) on GitHub. 
 
 Why did people move there? Well, at first it was because they wanted a sleek-looking git host, and RubyForge didn't offer git at the time. But "git is now available on RubyForge":http://drnicwilliams.com/2008/04/08/git-for-rubyforge-accounts/, so why don't people use it? 

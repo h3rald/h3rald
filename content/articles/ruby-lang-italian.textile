@@ -7,6 +7,7 @@ date: 2008-11-15 14:48:00 +01:00
 tags: 
 - ruby
 type: article
+toc: true
 -----
 "[Vai alla versione italiana]":#italian-version
 
@@ -66,55 +67,55 @@ Enjoy Ruby, now finally "in Italian":http://www.ruby-lang.org/it/ too!
 
 h2. &Egrave; finalmente disponibile la traduzione italiana di Ruby-Lang.org
 
-Sono veramente contento di annunciare che il sito ufficiale del linguaggio di programmazione Ruby Ã¨ ora disponibile anche in Italiano:
+Sono veramente contento di annunciare che il sito ufficiale del linguaggio di programmazione Ruby è ora disponibile anche in Italiano:
 
 *"www.ruby-lang.org/it/":www.ruby-lang.org/it/*
 
 h3. In principio...
 
-Tutto incominciÃ² nel luglio del 2007, quando dopo un'occhiata piÃ¹ da vicino al sito mi accorsi che apparentemente non era disponibile in italiano! Com'era possibile? Era giÃ  tradotto in molte lingue tra cui francese, spagnolo, giapponese, coreano... ma niente italiano.
+Tutto incominciò nel luglio del 2007, quando dopo un'occhiata più da vicino al sito mi accorsi che apparentemente non era disponibile in italiano! Com'era possibile? Era già tradotto in molte lingue tra cui francese, spagnolo, giapponese, coreano... ma niente italiano.
 
-Mandai immediatamente un'email al webmaster, e in poche ore "Curt Hibbs":http://curthibbs.wordpress.com/ (giÃ , proprio "quel":http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html Curt Hibbs!) mi inviÃ² le istruzioni su come iniziare a tradurre:
+Mandai immediatamente un'email al webmaster, e in poche ore "Curt Hibbs":http://curthibbs.wordpress.com/ (già, proprio "quel":http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html Curt Hibbs!) mi inviò le istruzioni su come iniziare a tradurre:
 
 <blockquote>
-"[...] La traduzione del sito di Ruby Ã¨ articolata in due parti: 1) la traduzione iniziale degli attuali contenuti e 2) il continuo aggiornamento della versione italiana ogniqualvolta vengono create nuove pagine.
+"[...] La traduzione del sito di Ruby è articolata in due parti: 1) la traduzione iniziale degli attuali contenuti e 2) il continuo aggiornamento della versione italiana ogniqualvolta vengono create nuove pagine.
 
-Questo sforzo Ã¨ molto piÃ¹ sostenibile nel lungo termine se riesci a mettere insieme una squadra di almeno tre persone dedite a tradurre e ad aggiornare il sito. [...]"
+Questo sforzo è molto più sostenibile nel lungo termine se riesci a mettere insieme una squadra di almeno tre persone dedite a tradurre e ad aggiornare il sito. [...]"
 </blockquote>
 
-...PerchÃ¨ _tre_ persone per tradurre "solo poche pagine"? Questo quello che mi chiesi in quel momento: sembrava veramente essere una questione di pochi giorni, e sicuramente una persona sarebbe stata piÃ¹ che sufficiente. Successivamente capii perchÃ¨ tre persone erano necessarie.
+...Perchè _tre_ persone per tradurre "solo poche pagine"? Questo quello che mi chiesi in quel momento: sembrava veramente essere una questione di pochi giorni, e sicuramente una persona sarebbe stata più che sufficiente. Successivamente capii perchè tre persone erano necessarie.
 
-Comunque, non ero il primo ad offrirmi volontario per la traduzione italiana: *"Raul Parolari":http://www.raulparolari.com* si era giÃ  fatto avanti, ma stava ancora aspettando altre due persone per poter iniziare, ovviamente.
+Comunque, non ero il primo ad offrirmi volontario per la traduzione italiana: *"Raul Parolari":http://www.raulparolari.com* si era già fatto avanti, ma stava ancora aspettando altre due persone per poter iniziare, ovviamente.
 
 Alla fine, riuscimmo comunque a persuadere Curt che _ce la potevamo fare_, anche senza una tersa persona ad aiutarci. Incominciammo a tradurre quindi di buona lena, e di fatto riuscimmo a tradurre molto durante la prima settimana.
 
-h3. Tradurre Ã¨ facile, non Ã¨ cosÃ¬?
+h3. Tradurre è facile, non è così?
 
-Tradurre dall'inglese all'italiano sembra facile se sei madrelingua e conosci bene l'inglese: non puÃ² essere difficile, giusto? Facilissimo, ovvio. 
-Per la maggior parte Ã¨ cosÃ¬, di fatto: facile e veloce. Ma le cose tendono a complicarsi un pochettino quando hai a che fare con modi di dire e linguaggio un po' piÃ¹ tecnico.
+Tradurre dall'inglese all'italiano sembra facile se sei madrelingua e conosci bene l'inglese: non può essere difficile, giusto? Facilissimo, ovvio. 
+Per la maggior parte è così, di fatto: facile e veloce. Ma le cose tendono a complicarsi un pochettino quando hai a che fare con modi di dire e linguaggio un po' più tecnico.
 
-Personalmente, non vado mai su siti italiani. &Egrave; una mia scelta personale (mi piace tantissimo la lingua inglese), e ho imparato a non fare caso a quello che gli altri pensano di questa scelta. Devo ammettere che Ã¨ stato difficile per me tradurre alcune parti del sito di Ruby: non perchÃ¨ fossero difficili da capire, ma perchÃ¨ in qualche caso una traduzione non Ã¨ semplicemente in grado di rendere giustizia al testo originale.
+Personalmente, non vado mai su siti italiani. &Egrave; una mia scelta personale (mi piace tantissimo la lingua inglese), e ho imparato a non fare caso a quello che gli altri pensano di questa scelta. Devo ammettere che è stato difficile per me tradurre alcune parti del sito di Ruby: non perchè fossero difficili da capire, ma perchè in qualche caso una traduzione non è semplicemente in grado di rendere giustizia al testo originale.
 
-Alcuni pezzi della traduzione, per questa ragione, potrebbero suonare un po' strani alle orecchie di Italiani d.o.c., specialmente per quanto riguarda gli esempi di codice. Alla fine abbiamo deciso di tradurre la maggior parte del codice (ove possibile, ovviamente): @puts sentence@ Ã¨ quindi diventato @puts frase@, e altri simili orrori. Qualche volta mi chiedo se non avessimo fatto meglio a lasciare il codice originale cosÃ¬ com'era, ma d'altra parta abbiamo cercato di fare il possibile per rendere le cose piÃ¹ semplici anche per persone che non sanno una parola di inglese.
+Alcuni pezzi della traduzione, per questa ragione, potrebbero suonare un po' strani alle orecchie di Italiani d.o.c., specialmente per quanto riguarda gli esempi di codice. Alla fine abbiamo deciso di tradurre la maggior parte del codice (ove possibile, ovviamente): @puts sentence@ è quindi diventato @puts frase@, e altri simili orrori. Qualche volta mi chiedo se non avessimo fatto meglio a lasciare il codice originale così com'era, ma d'altra parta abbiamo cercato di fare il possibile per rendere le cose più semplici anche per persone che non sanno una parola di inglese.
 
 h3. Stagnazione
 
-Col tempo, l'iniziale interesse nella traduzione Ã¨ andato affievolendosi, lo ammetto. Sia io che Raul abbiamo praticamente interrotto la traduzione ad un certo punto, e mi dispiace veramente tanto. Sapete com'Ã¨: incominci entusiasta e poi piano piano inizi a perdere interesse, ti dedichi ad altri progetti, il lavoro, la famiglia, eccetera.
+Col tempo, l'iniziale interesse nella traduzione è andato affievolendosi, lo ammetto. Sia io che Raul abbiamo praticamente interrotto la traduzione ad un certo punto, e mi dispiace veramente tanto. Sapete com'è: incominci entusiasta e poi piano piano inizi a perdere interesse, ti dedichi ad altri progetti, il lavoro, la famiglia, eccetera.
 
-*"Davide D'Agostino":http://www.lipsiasoft.com/* venne in nostro aiuto nel Dicembre 2007. Penso che sia quello "piÃ¹ italiano" del gruppo, tanto da essere in grado di proporre soluzioni interessanti per alcuni pezzi particolarmente difficili da tradurre. Che ci crediate oppure no, l'80% del sito era pronto e tradotto all'inizio del 2008: rimanevano solamente alcune piccole parti ancora da tradurre, e poi... beh, abbiamo un po' lasciato perdere, di nuovo. La traduzione del sito era tra le mie cose da fare, c'Ã¨ sempre stata: "SÃ¬, certo, _dovrei_ dare un'occhiata a Ruby-Lang.org"... mi sono ripetuto questa frase periodicamente, senza di fatto fare nulla.
+*"Davide D'Agostino":http://www.lipsiasoft.com/* venne in nostro aiuto nel Dicembre 2007. Penso che sia quello "più italiano" del gruppo, tanto da essere in grado di proporre soluzioni interessanti per alcuni pezzi particolarmente difficili da tradurre. Che ci crediate oppure no, l'80% del sito era pronto e tradotto all'inizio del 2008: rimanevano solamente alcune piccole parti ancora da tradurre, e poi... beh, abbiamo un po' lasciato perdere, di nuovo. La traduzione del sito era tra le mie cose da fare, c'è sempre stata: "Sì, certo, _dovrei_ dare un'occhiata a Ruby-Lang.org"... mi sono ripetuto questa frase periodicamente, senza di fatto fare nulla.
 
-Poi, finalmente, due settimane fa mi sono deciso a finire il lavoro traducendo le poche pagine rimaste, revisionando il tutto, facendo un po' di pulizie qua e lÃ , ed ecco qui: il sito puÃ² ora essere visitato da tutti gli italiani che lo desiderano.
+Poi, finalmente, due settimane fa mi sono deciso a finire il lavoro traducendo le poche pagine rimaste, revisionando il tutto, facendo un po' di pulizie qua e là, ed ecco qui: il sito può ora essere visitato da tutti gli italiani che lo desiderano.
 
-La cosa piÃ¹ ironica? Sono bastate solo poche oro di "lavoro" per mettere le cose a posto, ma quasi un anno per trovare finalmente la forza di volontÃ  per farlo...
+La cosa più ironica? Sono bastate solo poche oro di "lavoro" per mettere le cose a posto, ma quasi un anno per trovare finalmente la forza di volontà per farlo...
 
 h3. E adesso?
 
-Ora il sito Ã¨ accessibile e lo terremo aggiornato d'ora in avanti. 
-Spero sinceramente che possa contribuire ad avvicinare sempre piÃ¹ italiani al mondo di Ruby, anche se sono sicuro che ci sono moltissime altre persone lÃ  fuori che avrebbero fatto un lavoro piÃ¹ ben fatto del nostro, e sicuramente in tempi molto piÃ¹ brevi... ma dopotutto, alla fine ce l'abbiamo fatta, no?
+Ora il sito è accessibile e lo terremo aggiornato d'ora in avanti. 
+Spero sinceramente che possa contribuire ad avvicinare sempre più italiani al mondo di Ruby, anche se sono sicuro che ci sono moltissime altre persone là fuori che avrebbero fatto un lavoro più ben fatto del nostro, e sicuramente in tempi molto più brevi... ma dopotutto, alla fine ce l'abbiamo fatta, no?
 
-Vorrei spendere ancora due parole per ringraziare nuovamente *"Raul Parolari":http://www.raulparolari.com* e *"Davide D'Agostino":http://www.lipsiasoft.com/* per avermi aiutato a tradurre questo sito. Finalmente ora capisco perchÃ¨ Curt voleva tre persone nel gruppo di traduzione!
+Vorrei spendere ancora due parole per ringraziare nuovamente *"Raul Parolari":http://www.raulparolari.com* e *"Davide D'Agostino":http://www.lipsiasoft.com/* per avermi aiutato a tradurre questo sito. Finalmente ora capisco perchè Curt voleva tre persone nel gruppo di traduzione!
 
-Un'ultima cosa: se qualcuno di voi trova un errore (e ce ne saranno molti, ne sono sicuro), o se ha un suggerimento per migliorare l'attuale traduzione, puÃ² "contattarmi":/about/: cercherÃ² di correggere il sito quanto prima possibile.
+Un'ultima cosa: se qualcuno di voi trova un errore (e ce ne saranno molti, ne sono sicuro), o se ha un suggerimento per migliorare l'attuale traduzione, può "contattarmi":/about/: cercherò di correggere il sito quanto prima possibile.
 
 E ora, divertitevi con Ruby, ora anche "in italiano":http://www.ruby-lang.org/it/!
 

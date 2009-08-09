@@ -10,6 +10,7 @@ tags:
 - cakephp
 - rails
 type: article
+toc: true
 -----
 There are various articles online examining many PHP frameworks, providing short reviews or comparative charts, but I could not find yet an article  examining the so called _"Rails-inspired frameworks"_ anywhere on the web, so I decided to write my own...
 

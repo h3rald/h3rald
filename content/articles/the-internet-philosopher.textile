@@ -9,6 +9,7 @@ tags:
 - writing
 - travelling
 type: article
+toc: true
 -----
 Recently I got this rather short email from a guy named Daniel Lampinen:
 

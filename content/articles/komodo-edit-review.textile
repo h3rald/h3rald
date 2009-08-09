@@ -5,8 +5,11 @@ filters_pre:
 title: A closer look at Komodo Edit
 date: 2007-11-25 07:23:00 +01:00
 tags: 
-- review programming software
+- review
+- programming
+- software
 type: article
+toc: true
 -----
 <a href="http://digg.com/programming/A_closer_look_at_Komodo_Edit">
 <img src="http://digg.com/img/badges/180x35-digg-button.png" width="180" height="35" alt="Digg!" />

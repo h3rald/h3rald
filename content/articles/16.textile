@@ -9,6 +9,7 @@ tags:
 - web-development
 - databases
 type: article
+toc: true
 -----
 One of the most recurring questions on CakePHP User Group is probably _"Does Cake support X database?"_. Sure, most of us tend to use just MySQL for our websites and applications, but in certain situations some more _exotic_ database support makes the difference. A partial answer to the question above could be _"Yes, probably, at least partially"_: CakePHP offers support for some database "natively" (i.e. Cake folks made some _ad hoc_ database drivers), others through either "ADOdb":http://adodb.sourceforge.net/ or "PEAR::DB":http://pear.php.net/package/DB. 
 

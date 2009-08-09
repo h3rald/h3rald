@@ -8,6 +8,7 @@ tags:
 - databases
 - review
 type: article
+toc: true
 -----
 MySQL[1] is a great database solution. Literally millions of people who use it can tell you that it is a well-performing, feature-rich database solution for almost any size project: it is low-cost (often free), and available on the majority of webservers all over the world. When I first discovered MySQL while learning some basic PHP programming, I almost immediately wondered how I'd effectively access MySQL and manage my databases other than through PHP code or command line. I was pointed to PHPMyAdmin[2], which I still use as a quick, general-purpose MySQL front-end. However, I wondered if there was anything better than that, and maybe not confined within a browser window...
 
@@ -32,7 +33,7 @@ After specifying your credentials, the program will connect to the MySQL server 
 
 [i]So when I click on a database or a table the corresponding structure is displayed, right?[/i]
 
-Wrong. When you do that, nothing happens.  Remember the multi-tabbed lower panel, which is supposed to display results, table data, objects, etc.? Well, the focus is set to the [i]Result[/i] column by default, so if you want to display the database or table structure you need to click on the [i]Objects[/i] table, and voilÃ¯Â¿Â½ , the structure appears. Fortunately this behaviour can be changed by  modifying the program's options, through the Tools menu.
+Wrong. When you do that, nothing happens.  Remember the multi-tabbed lower panel, which is supposed to display results, table data, objects, etc.? Well, the focus is set to the [i]Result[/i] column by default, so if you want to display the database or table structure you need to click on the [i]Objects[/i] table, and voilï¿½ , the structure appears. Fortunately this behaviour can be changed by  modifying the program's options, through the Tools menu.
  
 Clicking on [i]Table data[/i] will display the first 50 records of the selected table, while the [i]Result[/i] and [i]Messages[/i] tabs will still be empty; the editor wasn't used, so there's no result to show, and we didn't get any errors or other messages from MySQL yet, so everything is as it should be.
 

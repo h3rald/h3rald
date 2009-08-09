@@ -5,8 +5,12 @@ filters_pre:
 title: "Announcement: RedBook v0.3.0 released"
 date: 2007-10-25 07:18:00 +02:00
 tags: 
-- redbook ruby productivity opensource
+- redbook
+- ruby
+- productivity
+- opensource
 type: article
+toc: true
 -----
 It's time for a new beta release of RedBook. This was actually going to be a fairly modest release in terms of features, but I actually ended up implementing a lot more than expected, even things which were planned for the first production release 1.0. So, let's see what's new
 

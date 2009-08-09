@@ -3,11 +3,14 @@ permalink: rawline-030
 filters_pre: 
 - erb
 - redcloth
-title: "RawLine 0.3.0 released \xC3\xA2\xE2\x82\xAC\xE2\x80\x9D now with Readline emulation"
+title: "RawLine 0.3.0 released \xE2\x80\x94 now with Readline emulation"
 date: 2009-03-01 07:47:00 +01:00
 tags: 
-- ruby opensource rawline
+- ruby
+- opensource
+- rawline
 type: article
+toc: true
 -----
 "RawLine":/rawline 0.3.0 has been "released":http://rubyforge.org/projects/rawline. This new milestones fixes some minor bugs and adds some new functionalities, must notably:
 

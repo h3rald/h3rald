@@ -7,6 +7,7 @@ date: 2006-05-18 13:13:07 +02:00
 tags: []
 
 type: article
+toc: true
 -----
 Yes, I started "working" at the "Siemens/Microsoft MES Expertise Center":http://base--/bookmarks/view/siemens-mes/ two days ago, and you can tell from the lack of activity on my blog, for example. That's the first _real_ and _full-time_ job for me, and yes, I noticed the difference from an "I-get-up-whenever-and-do-whatever" policy to a slightly stricter "get-up-at-seven-and-go-to-work" policy: I obviously don't have the same amount of free time as before, nevertheless I really can't complain. 
 

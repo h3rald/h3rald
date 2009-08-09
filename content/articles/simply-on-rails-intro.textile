@@ -5,8 +5,10 @@ filters_pre:
 title: Simply on Rails?
 date: 2007-06-30 06:00:00 +02:00
 tags: 
-- " rails web20"
+- rails
+- web20
 type: article
+toc: true
 -----
 So finally my site is back up, I don't have to worry about coding anymore: just writing about whatever I like, no more Cake, no more MVC, no more frameworks...
 

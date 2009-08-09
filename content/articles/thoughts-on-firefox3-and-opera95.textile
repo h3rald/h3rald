@@ -5,8 +5,12 @@ filters_pre:
 title: Thoughts on Firefox 3 and Opera 9.5
 date: 2008-06-13 05:18:00 +02:00
 tags: 
-- browsers review firefox opera
+- browsers
+- review
+- firefox
+- opera
 type: article
+toc: true
 -----
 Opera 9.5 is out, Firefox 3 too (more or less), so, which browser are you going to use today?
 This new generatio of browsers offers plenty of new, innovative features and improvements over the past, in both cases:
@@ -126,7 +130,7 @@ It is really up to you. I don't have a true favorite as for now: Firefox 3 is ve
 
 Opera, on the other hand, charmes me for what it can do out-of-the-box: it's fast, sleek, has almost everything I need with no configuration at all. It's ideal if you use multiple systems, including mobile devices.
 
-Definitely I will not abandon any of the two as for now: I'll probaly use Firefox for a more enhanced browsing experience, but I'll definitely use Opera when I'm in a hurry to look something up for example, and every time my fiancÃ©e is using Firefox on the same account. 
+Definitely I will not abandon any of the two as for now: I'll probaly use Firefox for a more enhanced browsing experience, but I'll definitely use Opera when I'm in a hurry to look something up for example, and every time my fiancée is using Firefox on the same account. 
 
 There's no absolute winner in the Browser Wars yet: just different browsers for different occasions!
 

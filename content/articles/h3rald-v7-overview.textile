@@ -8,6 +8,7 @@ tags:
 - website
 - rails
 type: article
+toc: true
 -----
 ...or better, on "Rails":http://www.rubyonrails.org_. 
 Yep, this 7th (!) version of the H3RALD website is powered by the overly-popular Ruby web framework _and_ by the "Typo":http://www.typosphere.org blogging platform.

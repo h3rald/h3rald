@@ -5,8 +5,12 @@ filters_pre:
 title: Rails-Doc.org - A First Look
 date: 2008-06-19 07:30:00 +02:00
 tags: 
-- rails ruby writing review
+- rails
+- ruby
+- writing
+- review
 type: article
+toc: true
 -----
 When you decided to learn Ruby on Rails (if you did, that is), chances are that you bought a book. I did, too, actually: there are a lot of very interesting and fairly comprehensive books out there after all.
 

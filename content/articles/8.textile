@@ -9,6 +9,7 @@ tags:
 - web-development
 - cakephp
 type: article
+toc: true
 -----
 Yes, it works. Perhaps it's a tiny bit slower than expected but the new h3raLd.com seems to work.
 I'll probably find some new exciting bugs to fix in the next few hours, as usual - that will be annoying but perfectly normal.

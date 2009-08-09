@@ -7,6 +7,7 @@ date: 2009-03-22 06:50:29 +01:00
 tags: []
 
 type: page
+toc: true
 -----
 h2. Holiday House in Sessarego (GE), Italy
 
@@ -101,7 +102,7 @@ h3. Details & Price
 | *Appliances* | Gas cooker, electrical oven, fridge, freezer, dish washer |
 |_\2. Price |
 | *October &ndash; May* | *June &ndash; September* |
-| 500â‚¬/week | 700â‚¬/week | 
+| 500€/week | 700€/week | 
 
 <div style="padding: 10px;"></div>
 

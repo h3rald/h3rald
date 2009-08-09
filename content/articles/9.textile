@@ -7,6 +7,7 @@ date: 2006-04-07 16:13:58 +02:00
 tags: []
 
 type: article
+toc: true
 -----
 Today I had my _n^th^_  job interview. Yes, I'm getting used to them by now, and it's becoming quite entertaining: if they _paid_ me for just take interviews I'd do that for all my life quite happily! 
 But since that's not going to happen I'd better get a move on and find a so called _real job_. Actually this time it wasn't the usual complete waste of time and this company _nearly_ made me a proper offer: they're gonna see me again next week, so let's hope for the best. 

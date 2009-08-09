@@ -7,6 +7,7 @@ date: 2006-04-18 08:47:00 +02:00
 tags: 
 - cakephp
 type: article
+toc: true
 -----
 Gustavo Carreno just "announced":http://groups.google.com/group/cake-php/browse_thread/thread/4e13231cc383b9bb/6414184c1058fadb#6414184c1058fadb a new release of the "CakePHP Offline Manual":http://cakeforge.org/frs/?group_id=53&release_id=82. Personally I was extremely happy to download this new release because it finally contains documentation and howtos related to CakePHP's Model Associations, which is perhaps one of the most used _advanced_ CakePHP features.
 So I'll have no excuses not to learn how to use them, great...

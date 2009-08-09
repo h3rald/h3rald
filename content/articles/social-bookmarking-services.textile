@@ -9,6 +9,7 @@ tags:
 - review
 - internet
 type: article
+toc: true
 -----
 Social bookmarking[1] is perhaps one of the pillars of Web 2.0, allowing people to save, tag and share their Internet bookmarks online anytime, anywhere. Since _del.icio.us_[2] came out, the Web is not the same anymore: no more IE favourites or Firefox bookmarks, no more "Save page as..." etc., people nowadays want to do _everything_ online without being bond to a single computer, and also make everything they do or read public - apparently. This is one of the key concepts of Web 2.0[3]: sharing information in a quick and easy way, without any restrictions.Del.icio.us was the first, but of course not the only one social bookmarking system which became popular in a few months: many other followed its example, many companies developed their own alternative to del.icio.us, adding and removing features, changing bits etc. etc. Result: someone said that _"[...] There is almost 1 new social bookmark/digg like service appears one daily basis [...]"_[4].
 

@@ -10,6 +10,7 @@ tags:
 - web-development
 - review
 type: article
+toc: true
 -----
 Someone recently added a comment to my article about "Rails-inspired PHP frameworks":http://base--/articles/rails-inspired-php-frameworks/ pointing out that I forgot another Rails-like framework, in my round-up. He obviously posted a link to this rather mysterious Rails port in PHP and spam or not, I'd like to thank this guy for letting me know of the existance of "Akelos":http://base--/bookmarks/view/akelos-framework, a new PHP framework which seems simply too good to be true.
 

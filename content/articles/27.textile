@@ -7,6 +7,7 @@ date: 2006-05-08 11:50:00 +02:00
 tags: 
 - cakephp
 type: article
+toc: true
 -----
 Right after my "last blog post":http://base--/blog/view/26 I decided to log on #cakephp on irc.freenode.org as usual, and gwoo pops in and says "h3raLd, you didn't review rdBaker yet!"
 That's right, I didn't yet, so I may as well do it today.

@@ -8,6 +8,7 @@ tags:
 - cakephp
 - frameworks
 type: article
+toc: true
 -----
 When I first tried Ruby on Rails I was literally amazed by the _generator_ script. Yes, I was young and inexperienced then (six/seven months ago), but you must admit that getting a controller, a model, all the basic views generated automatically by 
 

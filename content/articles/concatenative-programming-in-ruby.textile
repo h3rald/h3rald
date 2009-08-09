@@ -6,8 +6,11 @@ filters_pre:
 title: Concatenative programming in Ruby
 date: 2009-03-28 07:24:00 +01:00
 tags: 
-- ruby concatenative programming
+- ruby
+- concatenative
+- programming
 type: article
+toc: true
 -----
 A while ago, I sat down examining a few "alternative programming languages":http://www.h3rald.com/articles/10-programming-languages I might decide to learn someday. Each of those languages has its own peculiarities, and I didn't choose them randomly, I chose them based on their popularity, power, paradigm and how actively they are developed.
 

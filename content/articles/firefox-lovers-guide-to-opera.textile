@@ -5,8 +5,12 @@ filters_pre:
 title: A Firefox Lover's Guide to Opera
 date: 2007-12-28 14:19:00 +01:00
 tags: 
-- browsers review opera firefox
+- browsers
+- review
+- opera
+- firefox
 type: article
+toc: true
 -----
 bq. *Note:* This article can be considered a sequel for "An IE Lover's Guide to Firefox":http://www.h3rald.com/articles/ie-lovers-guide-to-firefox, which described Firefox through the eyes of an Internet Explorer fan. Similarly, this article describes Opera's features from the point of view of a user &ndash; myself &ndash; who has been using Firefox for years and is now considering another browser switch.
 

@@ -10,6 +10,7 @@ tags:
 - cakephp
 - frameworks
 type: article
+toc: true
 -----
 I "already":http://www.h3rald.com/blog/34 "covered":http://www.h3rald.com/blog/38 the Akelos PHP framework in the past, but for those who don't know it, Akelos seems to be one of the few "Rails-inspired PHP frameworks":http://www.h3rald.com/articles/rails-inspired-php-frameworks still worth mentioning, besides CakePHP and Symphony of course.
 

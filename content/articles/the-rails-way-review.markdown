@@ -9,12 +9,13 @@ tags:
 - books
 - review
 type: article
+toc: true
 -----
 > "Programming books are pointless: you buy them, you read them and you chuck them because they're already out-of-date!"
 
 <div style="float:right"><img src="/files/therailsway.jpeg" alt="cover" /></div>
 
-This is a quote from my fiancÃ©e, who always pointed out the ephemeral nature of programming books and therefore _highly discouraged me_ from buying any more. The sad thing is that this is partly true: if you buy a new programming book it _will_ eventually become outdated pretty quickly, especially if it's about newish technologies like [Ruby on Rails](http://rubyonrails.org/).  
+This is a quote from my fiancée, who always pointed out the ephemeral nature of programming books and therefore _highly discouraged me_ from buying any more. The sad thing is that this is partly true: if you buy a new programming book it _will_ eventually become outdated pretty quickly, especially if it's about newish technologies like [Ruby on Rails](http://rubyonrails.org/).  
 _[The Rails Way](http://www.informit.com/store/product.aspx?isbn=0321445619)_ is no exception: Rails 2.2 has been out for a while and introduced a few new features &ndash; most notably Internationalization support &ndash; which are not mentioned neither in this book nor in others.
 
 That being said, _The Rails Way_ by [Obie Fernandez](http://obiefernandez.com/) is still the best and most comprehensive book on Rails v2 currently on the market. It's the book you simply cannot afford to ignore, if you are using (or are planning to use) this popular Ruby web framework.### Contents

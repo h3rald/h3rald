@@ -5,8 +5,10 @@ filters_pre:
 title: Text Link Ads sidebar for Typo
 date: 2007-11-17 04:47:00 +01:00
 tags: 
-- rails opensource
+- rails
+- opensource
 type: article
+toc: true
 -----
 I thought it would be nice to share the code of the sidebar I created to display "Text Link Ads":http://www.text-links-ads.com sponsor links on my Typo powered blog.
 

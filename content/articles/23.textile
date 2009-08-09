@@ -7,6 +7,7 @@ date: 2006-05-01 13:42:46 +02:00
 tags: []
 
 type: article
+toc: true
 -----
 CakePHP is THE perfect PHP framework, so _we_ don't need anything else. Oh well, no. I personally love CakePHP, but I do believe other PHP frameworks can be interesting and maybe even useful, so today I thought I'd have a look at the "Simfony Project":http://base--/bookmarks/view/simfony/. This framework seems to be mentioned here and there on the Net in many different ways, someone said it can do wonders, some said it's more advanced, others said something like _"qcodo sucks.. cake stinks.. symfony rocks!!!!!"_, so it OUGHT TO be pretty cool, definitely.
 

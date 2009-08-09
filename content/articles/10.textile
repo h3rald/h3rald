@@ -8,6 +8,7 @@ tags:
 - italy
 - politics
 type: article
+toc: true
 -----
 !>http://www.berluscastop.it/v_imag/sodom1.gif! 
 

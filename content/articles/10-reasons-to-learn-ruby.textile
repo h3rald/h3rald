@@ -8,6 +8,7 @@ date: 2007-09-05 12:40:00 +02:00
 tags: 
 - ruby
 type: article
+toc: true
 -----
 h3. Preamble
 

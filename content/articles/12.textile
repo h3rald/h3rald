@@ -7,6 +7,7 @@ date: 2006-04-13 13:47:08 +02:00
 tags: []
 
 type: article
+toc: true
 -----
 The time has come. The times when I used to meander around reading stuff on the Net and writing about whatever I wanted are over. Incidentally, the world may end, _your_ laptop could explode and I could knock at your door in a few minutes asking for money, imagine that!
 Nothing of the above, alright, bad joke, but sooner or later the time to _start doing something_ comes, at some point you ought to start making some real money. It's time to settle down, my fiance&eacute; are eager to get our own independence, move to our new house (which we're still doing up) etc. etc. Fair enough. I spent the last five months wasting my time looking for a job, a _proper_ job having something to do with IT(Information Technology) and finally something seems to be possible.

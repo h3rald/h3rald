@@ -10,6 +10,7 @@ tags:
 - books
 - wedding
 type: article
+toc: true
 -----
 April is tratidionally a rather busy month: Easter, public holidays, and &mdash; always &mdash; some deadline to meet at work. Moreover, my birthday is also in April which makes it even more busy! Let's see what happened this year...h3. Using Ruby in a corporate environment
 

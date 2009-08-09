@@ -9,6 +9,7 @@ tags:
 - rails
 - web-development
 type: article
+toc: true
 -----
 Today I decided to do something different, something I've been dying to do since before coming across CakePHP: give Rails a _proper_ try. Like many other PHP developers out there, when "Ruby on Rails":http://www.rubyonrails.org came out I felt damn jealous and terribly tempted to learn Ruby _only_ to start using such an amazing web development framework. At the time I actually even started reading various tutorials about it, and I was literally amazed at how RoR revolutioned the way of developing web applications.
 

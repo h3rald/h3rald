@@ -11,16 +11,17 @@ tags:
 - tools
 - books
 type: article
+toc: true
 -----
 When it comes to software, I definitely like to try out new things. My collegues takes the piss out of me because every -week- day I come up with "some new tool they _have_ to start using" and so on.
-As a matter of fact, I like reviewing software as well. I enjoy writing and analyzing new things, evaluating all the new possibilities they may offer, and I also tend to have a rather critical eye for what doesn't _feel_ right. I'll use a tool for months but still try out new ones which claim to do the same thing â€” but better â€” as they come out.
-Unfortunately â€” or fortunately, depends how you look at it â€” when it comes to software, there are very few _silver bullets_, and things keep changing: that's the way it is and the way it will be. 
+As a matter of fact, I like reviewing software as well. I enjoy writing and analyzing new things, evaluating all the new possibilities they may offer, and I also tend to have a rather critical eye for what doesn't _feel_ right. I'll use a tool for months but still try out new ones which claim to do the same thing — but better — as they come out.
+Unfortunately — or fortunately, depends how you look at it — when it comes to software, there are very few _silver bullets_, and things keep changing: that's the way it is and the way it will be. 
 
 I must try to write up a page (and ideally update it regularly, that's the hard part) listing all the tools I use, at some point... but at any rate, if you coded some new app you think kicks ass or you found a hidden jewel in the labyrinth of freeware, just let me know: I'll definitely try it out, and if it's worth a post I'll blog about it.
 
 *The same applies to books*, actually, as I like reading, especially those which are related to Ruby or programming, nowadays.
 
 The cost of such reviews and articles? Depends! Certainly I wouldn't mind donations or some compensation of some form, especially from publishers or software companies. It may be money, books, software or even nothing: it really depends on what I have to review.
-Please be aware that I am *not* doing this full time, and I already have a job and a fiancÃ©e to look after, but I'll do my best to publish as much as I can on my site or even elsewhere elsewhere [Note: on e-zines, magazines & similar, not on your brother's friend's mother-in-law's crappy blog!].
+Please be aware that I am *not* doing this full time, and I already have a job and a fiancée to look after, but I'll do my best to publish as much as I can on my site or even elsewhere elsewhere [Note: on e-zines, magazines & similar, not on your brother's friend's mother-in-law's crappy blog!].
 
-For any inquiries, contact me (*h3rald [â€”atâ€”] h3rald.com*).
+For any inquiries, contact me (*h3rald [—at—] h3rald.com*).

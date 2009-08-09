@@ -5,8 +5,12 @@ filters_pre:
 title: "New Release: RawLine 0.2.0"
 date: 2008-04-02 05:33:00 +02:00
 tags: 
-- ruby programming opensource rawline
+- ruby
+- programming
+- opensource
+- rawline
 type: article
+toc: true
 -----
 -InLine- RawLine 0.2.0 is out!
 

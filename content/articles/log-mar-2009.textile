@@ -5,8 +5,11 @@ filters_pre:
 title: Personal Log - March 2009
 date: 2009-03-30 06:04:00 +02:00
 tags: 
-- personal_log wedding ruby
+- personal_log
+- wedding
+- ruby
 type: article
+toc: true
 -----
 Another month _without_ the Internet at home. This is getting really annoying, and I decided to change provider, *again*, hoping that I'll eventually get my broadband back, someday. Luckily I can still go online at work, but of course it's not the same thing: my time on Twitter and Facebook is now basically limited to weekends only, when Roxanne and I go down to Tuscany to stay with her parents.
 

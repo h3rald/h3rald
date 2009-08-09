@@ -8,6 +8,7 @@ tags:
 - cakephp
 - web-development
 type: article
+toc: true
 -----
 _"CakePHP will officially support Internationalization (i18n) from version 2.0"_. That is to say: not right now. That doesn't mean we have to wait, no chance! I'm Italian and there are plenty of bakers speaking a language other than English who might want to develop a multi-lingual website.
 

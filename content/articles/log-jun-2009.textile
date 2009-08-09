@@ -10,6 +10,7 @@ tags:
 - ruby
 - wedding
 type: article
+toc: true
 -----
 Welcome to yet another of my extremely boring, excessively fragmented "personal log":/tags/personal_log posts. I'm seriously thinking of dropping the whole series in favor of more frequent (and shorter) blog posts, starting from next year. This means you'll probably have to read _another six_ of these priceless gems, until december 2009.
 As usual, feel free to skim through as each of the following _sections_ is almost completely unrelated to the others.h3. H3RALD Web Site v8.0

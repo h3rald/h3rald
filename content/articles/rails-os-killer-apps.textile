@@ -10,6 +10,7 @@ tags:
 - writing
 - rant
 type: article
+toc: true
 -----
 Lately I've been meandering around the web to find a good CMS for a family site I'd like to set up. 
 Why a CMS? Well, for a few simple reasons:

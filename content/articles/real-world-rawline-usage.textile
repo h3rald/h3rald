@@ -6,8 +6,10 @@ filters_pre:
 title: Real-world Rawline usage
 date: 2009-03-07 04:54:00 +01:00
 tags: 
-- ruby rawline
+- ruby
+- rawline
 type: article
+toc: true
 -----
 So I finally decided to update "RawLine":/rawline last week, and I added a more Readline-like API. When I first started the project, I was determined _not_ to do that, because the current Readline wrapper shipped with Ruby is not very Ruby-ish: it's a wrapper, after all!
 

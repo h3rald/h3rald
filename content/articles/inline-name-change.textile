@@ -5,8 +5,12 @@ filters_pre:
 title: "InLine name change: what's your opinion?"
 date: 2008-03-27 06:30:00 +01:00
 tags: 
-- ruby programming opensource rawline
+- ruby
+- programming
+- opensource
+- rawline
 type: article
+toc: true
 -----
 I've been kindly asked by the lead developer of "RubyInLine":http://www.zenspider.com/ZSS/Products/RubyInline/ to change the name of my "InLine":http://rubyforge.org/projects/inline/ project, due to potential confusion and conflicts.
 

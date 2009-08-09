@@ -7,6 +7,7 @@ date: 2006-05-10 09:55:26 +02:00
 tags: []
 
 type: article
+toc: true
 -----
 I signed it yesterday, around 3PM. I gave "them":http://base--/bookmarks/view/siemens/ all the necessary documents and they presented me their contract to sign, I'll have to hand it in on Tuesday at 9AM, my first day at work.
 

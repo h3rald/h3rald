@@ -5,8 +5,10 @@ filters_pre:
 title: "Simply on Rails - Part 2: Database Design"
 date: 2007-07-14 11:27:00 +02:00
 tags: 
-- rails databases
+- rails
+- databases
 type: article
+toc: true
 -----
 This week I attended a course for work on how to _Implement Databases with Microsoft SQL Server 2005_. An interesting course indeed, which made me realize how feature-rich Bill's product is, compared to the Open Source alternatives like MySQL. It also made me realize how nice it is to implement database-related logic (read: Models) using a _proper_ programming language rather than using triggers, stored procedures, functions and other goodies offered by Transact-SQL.
 

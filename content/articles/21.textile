@@ -9,6 +9,7 @@ tags:
 - hosting
 - review
 type: article
+toc: true
 -----
 Today is my birthday! "Not too happy":http://base--/blog/view/20/, but still my birthday after all. What presents did I get from my relatives and friends? Well, various things, but I told my parents and uncles I actually needed some web space... _"What? Didn't you have the hosting sorted out?"_
 Well, I had, up to a few days ago when my friends and hosting provider, DeWayne Lehman, decided to close down his "company":http://www.block-house.com. The reason being, to cut a long story short, that he can't keep up with competition: he doesn't have enough customers, and he can't afford server upgrades, while other companies are literally giving space away.

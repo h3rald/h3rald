@@ -6,8 +6,10 @@ filters_pre:
 title: Beware of sudden upgrades!
 date: 2007-12-20 07:41:00 +01:00
 tags: 
-- website rails
+- website
+- rails
 type: article
+toc: true
 -----
 Yesterday I got a rather annoying early Christmas present: when visiting my site, I noticed that the raw source code of my dispatch.fcgi file (yes, I'm on shared hosting with FastCGI, for now) was displayed "as it is" instead of being interpreted.
 
@@ -29,7 +31,7 @@ servers already have this ability while most will see it in the next two weeks."
 
 But... hang on? Does it say anything about migrating to Apache2? I don't think so! What's worse, is that quite a few things changed with Apache2, in particular the way FastCGI handlers are declared:
 
-<typo:code>
+<% highlight :text do %>
 # Apache 1.3:
 AddHandler fastcgi-script .fcgi
 

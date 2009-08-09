@@ -5,8 +5,11 @@ filters_pre:
 title: "Simply on Rails - Part 1: Concepts and Bubbles"
 date: 2007-07-07 07:43:00 +02:00
 tags: 
-- rails website web20
+- rails
+- website
+- web20
 type: article
+toc: true
 -----
 The first thing I do when I start developing a new application is write down some ideas. 
 

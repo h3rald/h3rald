@@ -7,6 +7,7 @@ date: 2006-04-21 09:39:03 +02:00
 tags: []
 
 type: article
+toc: true
 -----
 Once upon a time I used "BBcode":http://en.wikipedia.org/wiki/BBCode. "CyberArmy":http://base--/bookmarks/view/cyberarmy and all its affiliated sites adopted it as _de-facto_ standard for forums and articles, so consequently more or less all my articles are bbcoded. 
 I could copy and paste the _BBcodeHelper_ I coded for this site, and it could be quite an interesting read for some people... well, tough luck: today I'd like to talk about "Textile":http://base--/bookmarks/view/textile-reference/ instead, which now I consider _the answer_ to all text formatting problems.

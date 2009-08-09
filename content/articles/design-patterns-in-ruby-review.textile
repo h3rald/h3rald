@@ -5,8 +5,11 @@ filters_pre:
 title: "Book Review: Design Patterns in Ruby"
 date: 2008-04-11 05:41:00 +02:00
 tags: 
-- ruby review books
+- ruby
+- review
+- books
 type: article
+toc: true
 -----
 !>/files/design_patterns_in_ruby.jpg! 
 
@@ -35,7 +38,7 @@ The chapter ends with an outline of the patterns which will be presented through
 
 <blockquote>
 "The reason that I included the introductory chapter about Ruby in there was to make the book accessible to folks with little or no Ruby background.
-Now honestly, I donâ€™t think that you could come to my book with no background in Ruby and walk away from it an expert Ruby programmer &mdash; itâ€™s not really that kind of introductory book.
+Now honestly, I don’t think that you could come to my book with no background in Ruby and walk away from it an expert Ruby programmer &mdash; it’s not really that kind of introductory book.
 But I do think that someone with experience in other languages could read my book and come away knowing about Ruby, understanding what all the shouting is about."
 </blockquote>
 

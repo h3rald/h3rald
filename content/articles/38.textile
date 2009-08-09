@@ -10,6 +10,7 @@ tags:
 - web-development
 - review
 type: article
+toc: true
 -----
 Bermi Ferrer kept his promise, and even if a few were skeptic on the "pre-announced":http://base--/blog/view/34/ features of his upcoming Akelos framework, last week he sent me a "development preview" and a few days ago he opened the development SVN repository to the public:
 

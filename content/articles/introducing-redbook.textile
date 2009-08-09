@@ -5,8 +5,13 @@ filters_pre:
 title: Introducing RedBook (and the new Code section)
 date: 2007-09-29 02:12:00 +02:00
 tags: 
-- ruby productivity software tools redbook
+- ruby
+- productivity
+- software
+- tools
+- redbook
 type: article
+toc: true
 -----
 I'm somehow pleased to announce the opening of a new section on this site. Nothing too big actually, it's just a "page":/code/ with a few (one for now) brief descriptions of open source programs and scripts I made and I'd like to share with my readers.
 

@@ -6,8 +6,11 @@ filters_pre:
 title: A glance at Ruby facets
 date: 2007-07-01 12:11:00 +02:00
 tags: 
-- ruby review programming
+- ruby
+- review
+- programming
 type: article
+toc: true
 -----
 _"Code is poetry"._
 

@@ -8,6 +8,7 @@ tags:
 - sport
 - soccer
 type: article
+toc: true
 -----
 _*Italy has won the World Cup!*_ 
 

@@ -8,6 +8,7 @@ tags:
 - writing
 - tools
 type: article
+toc: true
 -----
 Since in these days (and even more in near future) I'm really writing a lot I thought it would be good to share my thoughts on some writing programs and tools I started using for writing these blog posts, articles, and more.
 

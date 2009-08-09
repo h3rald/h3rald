@@ -5,8 +5,11 @@ filters_pre:
 title: "Book Review: Writing Efficient Ruby Code"
 date: 2008-01-21 05:47:00 +01:00
 tags: 
-- ruby review books
+- ruby
+- review
+- books
 type: article
+toc: true
 -----
 !>/files/efficient_ruby_shortcut.jpeg!
 
@@ -43,7 +46,7 @@ Other useful tips include, for example:
 * do not use @return@ unless you have to
 * test in order of expected case frequency
 * Use parallel assignment (@a, b = 5, 6@) where applicable
-* If a module gets included in only one other class (or module), itâ€™s preferable to open the class instead.
+* If a module gets included in only one other class (or module), it’s preferable to open the class instead.
 
 I deliberately chose not to elaborate any further on the tips listed above because otherwise I'll give a big chunk of the contents of the book itself. If you know Ruby enough, you may already know why such reccommendations make sense, but if you don't, _Writing Efficient Ruby Code_ can be a short but very interesting read.
 

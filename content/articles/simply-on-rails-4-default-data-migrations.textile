@@ -6,8 +6,11 @@ filters_pre:
 title: "Simply On Rails - Part 4: Quick and Easy Default Data Migrations"
 date: 2007-09-15 13:10:00 +02:00
 tags: 
-- rails ruby databases
+- rails
+- ruby
+- databases
 type: article
+toc: true
 -----
 In the "last post":http://www.h3rald.com/blog/simply-on-rails-3-shared-controller of this series I tried to find a DRY(Don't Repeat Yourself) solution to deal with tables storing "ancillary" data, i.e. names of user roles, predefined categories, page state names and other similar things.
 I personally chose to put this kind of data to make my application more dynamic, although I could have decided to use ENUMs or simply ordinary varchar fields -- that would have been easier, but less flexible. For now, I'm sticking with my original choice.

@@ -6,8 +6,10 @@ filters_pre:
 title: Concatenative 0.2.0 released
 date: 2009-04-19 09:42:00 +02:00
 tags: 
-- ruby concatenative
+- ruby
+- concatenative
 type: article
+toc: true
 -----
 Version 0.2.0. of the "Concatenative":/concatenative DSL has been "released":http://rubyforge.org/frs/?group_id=8068&release_id=33575. 
 

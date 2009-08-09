@@ -5,8 +5,12 @@ filters_pre:
 title: "Announcement: RedBook v0.2.0 released"
 date: 2007-10-08 05:05:00 +02:00
 tags: 
-- redbook ruby productivity opensource
+- redbook
+- ruby
+- productivity
+- opensource
 type: article
+toc: true
 -----
 <blockquote>
 _"Release Early, Release Often"_

@@ -8,6 +8,7 @@ tags:
 - cakephp
 - writing
 type: article
+toc: true
 -----
 I am sorry to announce that my upcoming book, CakePHP Recipes, will not be published anymore. As a matter of fact, it wasn't finished because some of the people involved failed to comply with the terms of their contract in delivering material which was suitable for publication.
 

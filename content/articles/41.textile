@@ -7,6 +7,7 @@ date: 2007-01-07 06:53:00 +01:00
 tags: 
 - website
 type: article
+toc: true
 -----
 As a few of you might have noticed, I decided to disable comments on all the sections of this site, as a temporary measure against spam.
 

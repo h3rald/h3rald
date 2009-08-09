@@ -7,6 +7,7 @@ date: 2009-04-24 01:54:00 +02:00
 tags: 
 - personal
 type: article
+toc: true
 -----
 <img src="/images/sessarego/outside.jpg" style="float:left; border: 1px solid #B80000; margin-right: 10px;" />
 

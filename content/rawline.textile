@@ -8,6 +8,7 @@ date: 2009-02-28 14:02:13 +01:00
 tags: []
 
 type: page
+toc: true
 -----
 h2. RawLine
 
@@ -22,7 +23,7 @@ h3. Installation
 
 The simplest method to install RawLine is to install the gem:
 
-<typo:code>gem install rawline<% end %>
+<% highlight :text do %>gem install rawline<% end %>
 
 h3. Usage
 
@@ -63,7 +64,7 @@ Simply include the RawLine (or Rawline) module:
 
 <% highlight :ruby do %>include Rawline<% end %>
 
-â€¦and youâ€™ll get:
+…and you’ll get:
 
 <% highlight :ruby do %>
 readline(prompt, add_history) # RawLine::Editor#read(prompt, add_history)
@@ -76,7 +77,7 @@ but also:
 
 <% highlight :ruby do %>Rawline.editor # RawLine::Editor<% end %>
 
-â€¦which opens a world of endless possibilities! ;-)
+…which opens a world of endless possibilities! ;-)
 
 h3. Resources
 

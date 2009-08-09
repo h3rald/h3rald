@@ -9,6 +9,7 @@ tags:
 - ajax
 - review
 type: article
+toc: true
 -----
 The so-called "AJAX Start Pages" are not a new concept anymore, and like for almost any other offspring of Web 2.0 there is more than one to chose from. Hence the increasing number of comparative reviews on the Web nowadays (Yes, I'm guilty of that too). I soon learnt that for any "good and useful thing" on the web there are at least _n_ clones: consider for example social bookmarking, community-powered news sites,  php frameworks...
 And no, you can't use the word clone because it has a strong negative connotation nowadays so let's just say that whenever someone comes up with a new idea, others examine it, process it and in a few weeks (days?) some _very, very similar application_ comes out, and it's _better_ than the previous one. 

@@ -8,6 +8,7 @@ date: 2007-07-22 06:03:00 +02:00
 tags: 
 - rails
 type: article
+toc: true
 -----
 Enough with concepts, ideas and diagrams: it's time to start coding something. Everyone knows what's the first step when creating a Rails applications, but anyhow, here it is:
 
@@ -150,26 +151,26 @@ The views? Modified accordingly:
 
 %{color:red}*app/views/lite/edit.rb*%
 <% highlight :ruby do %>
-<h1>Editing <%= @item_name %></h1>
+<h1>Editing &lt;%= @item_name %&gt;</h1>
 
-<% form_tag :action => 'update', :id => @item do %>
-  <%= render :partial => 'lite/form' %>
-  <%= submit_tag 'Edit' %>
-<% end %>
+&lt;% form_tag :action => 'update', :id => @item do %&gt;
+  &lt;%= render :partial => 'lite/form' %&gt;
+  &lt;%= submit_tag 'Edit' %&gt;
+&lt;% end %&gt;
 
-<%= link_to 'Show', :action => 'show', :id => @item %> |
-<%= link_to 'Back', :action => 'list' %>
+&lt;%= link_to 'Show', :action => 'show', :id => @item %&gt; |
+&lt;%= link_to 'Back', :action => 'list' %&gt;
 <% end %>
 
 %{color:red}*app/views/lite/_form.rb*%
 <% highlight :ruby do %>
-<%= error_messages_for 'item' %>
+&lt;%= error_messages_for 'item' %&gt;
 <!--[form:lite]-->
-<p><label for="<%= @item_name.downcase %>_name">Name: </label>
-<%= text_field @item_name.downcase, 'name',  {:value => @item.name} %></p>
-<% if @item.methods.include?('level') then %> 
-  <p><label for="<%= @item_name.downcase %>_level">Level: </label>
-  <%= text_field @item_name.downcase, 'level',  {:value => @item.level} %></p>
-<% end %>
+<p><label for="&lt;%= @item_name.downcase %&gt;_name">Name: </label>
+&lt;%= text_field @item_name.downcase, 'name',  {:value => @item.name} %&gt;</p>
+&lt;% if @item.methods.include?('level') then %&gt; 
+  <p><label for="&lt;%= @item_name.downcase %&gt;_level">Level: </label>
+  &lt;%= text_field @item_name.downcase, 'level',  {:value => @item.level} %&gt;</p>
+&lt;% end %&gt;
 <!--[eoform:lite]-->
 <% end %>

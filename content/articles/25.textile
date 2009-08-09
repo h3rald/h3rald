@@ -10,6 +10,7 @@ tags:
 - web development
 - internet
 type: article
+toc: true
 -----
 ...So it turns out that my "last article":http://www.h3rald.com/articles/view/rails-inspired-php-frameworks/ appeared on "Digg":http://www.digg.com homepage. 
 This was quite a pleasant surprise: I didn't expect that an article submitted to _my own site_ could make it that far! I thought you'd need a relatively well-known website, mafia's support, some divine intervention and a terrific amount of luck, but it seems that sometimes an interesting article about an interesting subject can be enough. I'll probably write a more detailed report of what happened soon, in another article rather than a blog post, but for now I just wanted to post a short summary here.
