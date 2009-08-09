@@ -69,13 +69,12 @@ filter: erb
 					</div>
 					<div id="header-right">
 						<ul id="navigation">
-							<li><a href="#home" class="cross-link">Home</a></li>
-							<li><a href="#tags" class="cross-link">Tags</a></li>
-							<li><a href="#projects" class="cross-link">Projects</a></li>
-							<li><a href="#about" class="cross-link">About</a></li>
+							<li><a href="/#home" class="cross-link">Home</a></li>
+							<li><a href="/#tags" class="cross-link">Tags</a></li>
+							<li><a href="/#projects" class="cross-link">Projects</a></li>
+							<li><a href="/#about" class="cross-link">About</a></li>
 						</ul>
 						<div id="search_form"></div>
-
 					</div>
 				</div>
 			</div>
@@ -91,17 +90,17 @@ filter: erb
 				<!-- CONTENT START -->
 				<div id="content" class="clearfix">
 					<div id="search_results"></div>
-					<% if @page.permalink != 'home' then %>
-						<h2><%= @page.title %></h2>
+					<% if @page.type != 'page' then %>
+					<h2><%= @page.title %></h2>
 					<% end %>
 					<% if @page.permalink == 'home' then %>
 					<div id="slider">
 						<div class="scroll">
 							<div class="scrollContainer">
-					<% end %>
+								<% end %>
 								<%= @page.content %>
 
-					<% if @page.permalink == 'home' then %>
+								<% if @page.permalink == 'home' then %>
 							</div><!-- .scrollContainer -->
 						</div><!-- .scroll -->
 					</div><!-- #slider -->
@@ -116,23 +115,15 @@ filter: erb
 		</div> <!-- WRAPPER END -->
 		<div id="footer">
 			<div id="footer-container">
-				<div id="services">
-					<div class ="footer-left">
-						<div id="backtype">
-							<h3><img src="/images/icons/backtype.png" alt="BackType"/>&nbsp;<a href="http://www.backtype.com/h3rald">Comments</a></h3>
-						</div>
-					</div>
-					<div class ="footer-center">
-						<div id="twitter">
-							<h3><img src="/images/icons/twitter.png" alt="Twitter" />&nbsp;<a href="http://www.twitter.com/h3rald">Tweets</a></h3>
-						</div>
-					</div>
-					<div class ="footer-right">
-						<div id="delicious">
-							<h3><img src="/images/icons/delicious.png" alt="Delicious" />&nbsp;<a href="http://www.delicious.com/h3rald">Bookmarks</a></h3>
-						</div>
-					</div>
-				</div> <!-- SERVICES END -->
+
+
+				<% if @page.permalink == 'home' then %>
+				<%= render 'services' %>
+				<% end %>
+
+				<% if @page.type == 'article' then %>
+				<%= render 'comments' %>
+				<% end %>
 
 				<div class="footer-div">
 					H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-2009 <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/" class="link">CSS 2.1</a>
