@@ -46,9 +46,10 @@ var twitter_feed = function(feed){
 	display_feed(feed, "#twitter")
 };
 
+// http://api.backtype.com/user/h3rald/comments.json?key=47bf0031e3a18a598b85&html=1
 function backtype_comments()
 {
-	$.getJSON("/extras/comments.json",
+	$.getJSON("/data/comments.json",
 			function(data){
 			var comment_list = $("<ul></ul>");
 			$.each(data.comments, function(i, comment){

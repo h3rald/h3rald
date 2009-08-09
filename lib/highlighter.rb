@@ -7,8 +7,11 @@ module Nanoc::Helpers::Filtering
 		# Seamlessly ripped off from the filter method...
 		# Capture block
 		data = capture(&block)
+		# Reconvert <% %>
+		data.gsub! /&lt;%/, '<%'
+		data.gsub! /%&gt;/, '%>'
 		# Filter captured data
-		filtered_data = "<notextile>"+Albino.colorize(data, syntax)+"</notextile>" rescue data 
+		filtered_data = "\n<notextile>"+Albino.colorize(data, syntax)+"</notextile>\n" rescue data 
 		# Append filtered data to buffer
 		buffer = eval('_erbout', block.binding)
 		buffer << filtered_data

@@ -2,8 +2,11 @@ require 'rubygems'
 require 'extlib'
 require 'pathname'
 require 'fileutils'
-require 'mysql' rescue nil
-require 'sequel' rescue nil
+begin
+	require 'mysql'
+	require 'sequel'
+rescue Exception => e
+end
 require 'yaml'
 require 'iconv'
 
@@ -82,6 +85,9 @@ namespace :db do
 			meta['filters_pre'], extension = get_filter db, a[:text_filter_id]
 			contents = a[:body]+a[:extended].to_s
 			if contents.match /<typo:code/ then
+				# troubles if erb filter is enabled!
+				contents.gsub! /<%/, '&lt;%'
+				contents.gsub! /%>/, '%&gt;'
 				contents = convert_code_blocks contents
 				meta['filters_pre'] = ['erb'].concat meta['filters_pre']
 			end
