@@ -127,6 +127,10 @@ blockquote, .note
 
 /*** HOME Page ***/
 
+#services
+{
+	height: 450px;
+}
 #services li
 {
 	margin-left: 0;

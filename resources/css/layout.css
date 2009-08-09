@@ -149,21 +149,22 @@ body
 
 #wrapper {
 	min-height: 100%;
-	margin-bottom: -450px;
+	margin-bottom: -40px;
 	position: relative;
 	background: #fff url('../images/bkg.png') top repeat;
 }  
 
 #border-top
 {
-	background: #000 url('../images/border-top.png') top repeat-x;
+	background: #000 url('../images/border-top.png') bottom repeat-x;
 	height: 35px;
 }
 
 #border-bottom
 {
-	background: #000 url('../images/border-bottom.png') bottom repeat-x;
-	height: 35px;
+	background: #000 url('../images/border-bottom.png') top repeat-x;
+	height: auto;
+	padding-top: 35px
 }
 
 .inner-border 
@@ -179,7 +180,7 @@ body
 
 #footer {
 	position: relative;
-	height: 450px;
+	height: 40px;
 	font-family: Georgia, Serif;
 	width: 100%;
 	font-size: 95%;
@@ -189,7 +190,7 @@ body
 
 .clearfooter
 {
-	height: 450px;
+	height: 40px;
 	clear: both;
 }
 .footer-left, .footer-right, .footer-center

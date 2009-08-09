@@ -110,21 +110,21 @@ filter: erb
 			</div>
 			<!-- CONTAINER END -->
 			<div class="inner-border"></div>
-			<div id="border-bottom"></div>
+			<div id="border-bottom">
+				<% if @page.permalink == 'home' then %>
+				<%= render 'services' %>
+				<% end %>
+				<% if @page.type == 'article' then %>
+				<script type="text/javascript">
+    			var disqus_developer = 1; 
+				</script> 
+				<%= render 'comments' %>
+				<% end %>
+			</div>
 			<div class="clearfooter"></div>
 		</div> <!-- WRAPPER END -->
 		<div id="footer">
 			<div id="footer-container">
-
-
-				<% if @page.permalink == 'home' then %>
-				<%= render 'services' %>
-				<% end %>
-
-				<% if @page.type == 'article' then %>
-				<%= render 'comments' %>
-				<% end %>
-
 				<div class="footer-div">
 					H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-2009 <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/" class="link">CSS 2.1</a>
 				</div>

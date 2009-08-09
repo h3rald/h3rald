@@ -2,6 +2,7 @@ require 'rubygems'
 require 'extlib'
 require 'pathname'
 require 'fileutils'
+require 'nanoc'
 
 
 namespace :site do
@@ -12,18 +13,25 @@ namespace :site do
 		output.rmtree
 	end
 
-	task :update => [:copy_files] do
+	task :update => [:copy_resources, :build_tag_pages] do
 		system "nanoc co"
 	end
 
-	task :run => [:copy_files] do
+	task :run => [:copy_resources, :build_tag_pages] do
 		system "nanoc aco"
 	end
 
-	task :rebuild => [:clear_output, :copy_files, :update] do
+	task :rebuild => [:clear_output, :update] do
 	end
 
-	task :copy_files do
+	task :build_tag_pages do
+		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
+    site.load_data
+		# TODO
+		# site.pages.each { |p| p.tags ...}
+	end
+
+	task :copy_resources do
 		pwd = Pathname.new Dir.pwd
 		copy_f = lambda do |src|
 			if src.file? then
