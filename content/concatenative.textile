@@ -4,6 +4,8 @@ filters_pre:
 - erb
 - redcloth
 title: Concatenative
+comments: []
+
 date: 2009-03-28 07:21:00 +01:00
 tags: []
 

@@ -3,6 +3,91 @@ permalink: to-rest-or-not-to-rest
 filters_pre: 
 - redcloth
 title: To REST or not to REST?
+comments: 
+- :date: 2007-09-24 11:51:45 +02:00
+  :author: Matt Beedle
+  :url: http://matt-beedle.com
+  :id: 85
+  :body: |-
+    Interesting article.  Just a couple of points I would like to make.
+    
+    First of, you mention URLs.  It's very simple to make these look nice, just using to_param, and find_by_foo.  I have a phone site which is almost completely RESTful.  Here is a once of the longest urls: http://best-mobile-phones.org.uk/manufacturers/LG/phones/KE850-Prada/offers
+    
+    Secondly, although in a pure RESTful design each controller contains only 7 actions, it is easy to add other custom ones.  I have written an article about it before here: http://matt-beedle.com/2007/07/17/custom-rest-routes/
+    
+    The point of REST is more that it encourages good application design.  Thin controllers (containing little logic) and thick models (containing most of the logic).
+- :date: 2007-09-24 11:57:44 +02:00
+  :author: dates
+  :url: ""
+  :id: 86
+  :body: on blogs are good.  When research a topic, sometimes it is the date stamp on a blog that lets me know if the information is too dated to consider or not.
+- :date: 2007-09-24 12:01:27 +02:00
+  :author: MS
+  :url: ""
+  :id: 87
+  :body: |-
+    Have you seen how Microsoft is suggesting to encode their nextgen REST SDK?  Ugly.
+    
+    http://astoria.mslivelabs.com/Overview.doc
+- :date: 2007-09-24 12:04:32 +02:00
+  :author: browsers
+  :url: ""
+  :id: 88
+  :body: can in fact do different HTTP commands (WebDAV).  This is how Outlook Web Access works.
+- :date: 2007-09-24 23:29:42 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 90
+  :body: |-
+    @Matt
+    
+    Thanks for your comment. I bookmarked your article for later use. May I ask why your site is _mostly_ RESTful? What couldn't you use REST for? That's what I keep noticing: people end up doing sites which are _not_ 100% RESTful... why?
+- :date: 2007-09-25 05:00:31 +02:00
+  :author: Matt Beedle
+  :url: http://matt-beedle.com
+  :id: 91
+  :body: "Hi Fabio,\n\n\
+    The home page, contact-us, terms, disclaimer, etc are not RESTful.  These are just normal mapped routes as they do not really correspond to a resource.  I know it is easy for beginners to get confused when learning REST based design for the first time, I certainly did.  One could decide to create a contact_us controller, a terms controller etc, each with just a show action to render the page.  Obviously this would be overkill.  \n\n\
+    A more viable approach could be to create a foo controller with custom routes for each page.  However, this is unnecessary.\n\n\
+    The point I am trying to make is that REST is not a mutually exclusive design methodology.  It works very well for database driven sites, and this is where is should be used.  Where it doesn't fit, don't use it. A site doesn't need to be entirely REST based.  When you think of it in these terms, the question REST or not to REST does not really fit.  Maybe something like \"When should I REST\" would be more apt.\n\n\
+    Apologies for the long rambling post! "
+- :date: 2007-11-28 15:45:44 +01:00
+  :author: Plop
+  :url: ""
+  :id: 139
+  :body: |-
+    Nobody asks you to use integer as id :)
+    
+    /users/plop
+    
+    meaning params[:id] == "plop"
+    
+    class User < AR::Base
+      def self.find(*args)
+        if args.first.is_a?(String) and !args.first.numeric?
+          find_by_username(args.shift,*args) or raise ActiveRecord::RecordNotFound
+        else
+          super
+        end
+      end
+    
+      def to_param
+        username
+      end
+    end
+- :date: 2007-11-28 16:00:16 +01:00
+  :author: plop
+  :url: ""
+  :id: 140
+  :body: |+
+    oooh nasty code display in my previous comment...
+    
+    that's better: http://pastie.caboo.se/123207
+    
+    
+    then write user_path(user) or user_path(user.login)
+    
+    
 date: 2007-09-24 05:48:00 +02:00
 tags: 
 - rails

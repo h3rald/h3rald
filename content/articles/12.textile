@@ -3,6 +3,8 @@ permalink: "12"
 filters_pre: 
 - redcloth
 title: Choosing the right IT job
+comments: []
+
 date: 2006-04-13 13:47:08 +02:00
 tags: []
 

@@ -4,6 +4,8 @@ filters_pre:
 - erb
 - redcloth
 title: A glance at Ruby facets
+comments: []
+
 date: 2007-07-01 12:11:00 +02:00
 tags: 
 - ruby

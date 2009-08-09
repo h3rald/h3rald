@@ -4,6 +4,32 @@ filters_pre:
 - erb
 - redcloth
 title: "Simply On Rails - Part 4: Quick and Easy Default Data Migrations"
+comments: 
+- :date: 2007-09-15 23:41:30 +02:00
+  :author: Pei Mei
+  :url: http://www.railsjitsu.com/
+  :id: 76
+  :body: "Very nice. I still prefer to include my migrations as rails code User.create() in my migrations to avoid having developers create dodgy yaml files though, especially with pks.\n  "
+- :date: 2007-09-16 02:40:46 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 79
+  :body: Indeed, indeed you are right. You have to be careful when you prepare the YAML files, and in certain situation (and for certain kind of data) a more standard approach is recommendable.
+- :date: 2007-11-27 16:35:58 +01:00
+  :author: Mike
+  :url: http://www.floristone.com
+  :id: 137
+  :body: |-
+    Cool code and post. I second the idea of using Migrations with such application.
+    
+    Thanks
+- :date: 2007-12-22 02:47:20 +01:00
+  :author: Electrical Repair
+  :url: http://www.asaprepair.com/content/Electrical-Repair/
+  :id: 171
+  :body: |
+    Migrations would make the application much more flexible in terms of moving it among different DB servers and more.
+
 date: 2007-09-15 13:10:00 +02:00
 tags: 
 - rails

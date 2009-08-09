@@ -3,6 +3,8 @@ permalink: "14"
 filters_pre: 
 - redcloth
 title: CakePHP hybrids
+comments: []
+
 date: 2006-04-14 09:55:00 +02:00
 tags: 
 - cakephp

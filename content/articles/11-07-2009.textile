@@ -3,6 +3,32 @@ permalink: 11-07-2009
 filters_pre: 
 - redcloth
 title: 11th of July 2009
+comments: 
+- :date: 
+  :author: Roxanne
+  :url: ""
+  :id: 2722
+  :body: |-
+    Unfortunately, I can only fully comprehend a small number of your articles,this being one of them of course! and as are all the ones I can understand, it's very good.
+    the wife 
+    Roxanne.
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2723
+  :body: Look! The one above is the _first_ comment by my wife on this web site! I love you little one, thanks!!
+- :date: 
+  :author: Elora
+  :url: http://www.eloradaphne.wordpress.com
+  :id: 2726
+  :body: How touching you guys! I wish I could have been there, you guys seem to have had a great time...I would love to see a video of you dancing Fabio, could be interesting......
+- :date: 
+  :author: Roxanne
+  :url: ""
+  :id: 2727
+  :body: |-
+    Eeek, I suppose I should be keeping a better eye on what you do in your spare time now! 
+    I love you too.
 date: 2009-07-26 12:54:00 +02:00
 tags: 
 - wedding

@@ -3,6 +3,8 @@ permalink: "15"
 filters_pre: 
 - redcloth
 title: I18n
+comments: []
+
 date: 2006-04-15 15:15:00 +02:00
 tags: 
 - cakephp

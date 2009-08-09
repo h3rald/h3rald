@@ -3,6 +3,8 @@ permalink: obama-may-come-to-genoa
 filters_pre: 
 - redcloth
 title: Barack Obama may visit Genoa (Italy) on October 12th
+comments: []
+
 date: 2008-08-11 04:09:00 +02:00
 tags: 
 - politics

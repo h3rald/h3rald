@@ -3,6 +3,8 @@ permalink: mongrel-shortcut-review
 filters_pre: 
 - redcloth
 title: "Book Review: Mongrel Digital Shortcut"
+comments: []
+
 date: 2007-12-15 03:42:00 +01:00
 tags: 
 - review

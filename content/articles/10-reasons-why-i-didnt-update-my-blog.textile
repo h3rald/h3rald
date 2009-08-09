@@ -3,6 +3,39 @@ permalink: 10-reasons-why-i-didnt-update-my-blog
 filters_pre: 
 - redcloth
 title: 10 reasons why I didn't update my blog
+comments: 
+- :date: 2008-10-09 01:44:25 +02:00
+  :author: tcd
+  :url: ""
+  :id: 265
+  :body: |-
+    Feeling guilty is stupid, IMHO. One should be free to do whatever s/he wishes to do with his/her OWN blog. 
+    
+    Dammit, *you* are the owner of this blog. :)
+    
+    It is NOT the blog owning you! :p
+    
+    I have a blog that gets updated irregularly, with a lot of postponing behind the scenes, but I usually don't waste time in pondering about all those points you've highlighted in your post.
+    
+    I just write in it whenever I have something I _really_ want to write. :)
+    
+    Blogging should be a pleasure, not a via crucis :p
+    
+    (apologies about double or triple copies of this comment: had noscript activated LOL)
+- :date: 2008-10-09 02:41:58 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 266
+  :body: |-
+    Yep, you're definitely right, and if you notice, my blog is _still_ updated irregularly.
+    
+    It was a rant about not being able to keep up with "mainstream" blogs: my blog is not "optimized" for a particular audience interested on a specific subject. 
+    
+    I gave up on that when I got upset with the whole CakePHP thing, and I noticed that the minute I stopped being a "CakePHP blog" the number of visitors significantly dropped.  
+    
+    Nowadays... well, I'm just like you I guess: I write only when I have the time to write and when I have something _significant_ to write about almost any subject.
+    
+    Unfortunately sometimes I do end up feeling guilty about not writing though, but let's say I'm slowly improving...
 date: 2008-06-12 03:30:00 +02:00
 tags: 
 - internet

@@ -3,6 +3,20 @@ permalink: tweaking-windows-explorer
 filters_pre: 
 - redcloth
 title: Tweaking Windows Explorer
+comments: 
+- :date: 
+  :author: John
+  :url: ""
+  :id: 271
+  :body: Thanks for this great tutorial, well whtever it is. I typically use Linux alternating between Suse9.0 and Debian. This customization of the Explorer is fantastic, Thank You
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 273
+  :body: |-
+    Thanks John.
+    
+    I'm on Fedora Core 9 at home but I have to use Windows at work... I recently changed my default shell (although still using Windows Explorer as main file manager) to "bb4Win":http://www.bb4win.org/news.php (BlackBox for Windows): it's just so much faster!
 date: 2007-06-29 11:28:00 +02:00
 tags: 
 - windows

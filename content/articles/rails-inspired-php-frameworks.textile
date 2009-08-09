@@ -3,6 +3,70 @@ permalink: rails-inspired-php-frameworks
 filters_pre: 
 - redcloth
 title: Rails-inspired PHP frameworks
+comments: 
+- :date: 2007-07-31 20:57:30 +02:00
+  :author: George
+  :url: ""
+  :id: 43
+  :body: |
+    Hey, great article and amazingly designed site you got here. Thanks for the info.
+
+- :date: 2007-10-18 10:22:03 +02:00
+  :author: RailsGuy
+  :url: ""
+  :id: 101
+  :body: |-
+    It's funny how PHP developers are just now discovering MVC. This pattern has been around long before the internet and was adapted into MVC2 for web application mostly by pioneering Java developers.
+    
+    If Rails is what these PHP frameworks strive to be, then why not just use Rails? PHP frameworks will never be as good as Rails, not unless they change PHP itself. The language is just not dynamic enough to do what rails does with Ruby's reflection and meta programming.
+    
+    This post shows just how fragmented the PHP community is, and will continue to be.
+- :date: 2007-10-18 15:23:11 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 102
+  :body: "RailsGuy: Thanks for your comment. A year ago I would have argued endlessly on how CakePHP is better than Rails and all that. Now I agree 100% with you and this very site is now powered by Rails and Typo! :-)"
+- :date: 2007-12-17 13:56:57 +01:00
+  :author: lexor@cyberspace.org
+  :url: ""
+  :id: 169
+  :body: |-
+    The article seems to be truthful. Symfony could be different a year ago, but I can't agree that it's directory structure is confusing and disorganized. You can customize it, some folders are required to store data provided by functionality that is missing from other frameworks - think about it!
+    
+    >>Uses too many configuration files, not suitable for simple projects
+    I know the only simple project - "Hello, world!". You can't create infinitely simple and mega powerful framework - these are contradictory requirements.
+    Btw, do you know that a powerful admin interface can be generated based on a config file ONLY?
+    
+    >>Steep learning curve
+    It's worth it.
+- :date: 2008-01-13 15:56:32 +01:00
+  :author: Arrms
+  :url: ""
+  :id: 200
+  :body: |-
+    Some php developers have been doing mvc style work since 2000.
+    
+    Including hacked reflection and dynamic type code. 
+    
+    PHP 5 is a big step towards fixing a lot of the issues, and a lot of the comments made seem very un-informed about php.  Yes php has a lot of bad programmers around because its so easy to hack up some webpages.
+    
+    I've used a lot of the frameworks around and they are all fine as long as long as you do what they want, when you want to do something they don't do is when you run into problems.
+    
+    Rails and Ruby look great but if scalability is a big issue then its just not viable. I'm sure that will be fixed in the future. It will be the same as php, there will be a huge amount of poor programming done in these initial days etc etc.
+    
+    And I'm not a big fan of any of the PHP frameworks out there at the moment, they could be done a lot better. The more decent frameworks are only seen in commercial products unfortunately.
+    
+    PHP has reflection now, and you can call methods and classes using variables... which seems to be what ruby claims as dynamicness that php doesn't have. Using wonderful reflection magic is going to involve a performance hit. So if that's a great claim on why to use language X, and your going to go crazy using it thats all well and good, but your performance and bugging are going to be a pain.
+    
+    
+    Activerecord magical database crazyness, is all great, but if you want to tweak performance quite often you have to do some of the work yourself anyway. And I really fail to see some of the real differences that people claim.
+    
+    But anyway, good review etc etc.
+- :date: 2008-07-04 10:29:54 +02:00
+  :author: karan
+  :url: ""
+  :id: 245
+  :body: i have learn more from your site it is very useful to student who study php
 date: 2006-05-03 14:57:00 +02:00
 tags: 
 - frameworks

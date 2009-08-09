@@ -3,6 +3,8 @@ permalink: "20"
 filters_pre: 
 - redcloth
 title: In memory of Vittorio Cevasco (1916-2006)
+comments: []
+
 date: 2006-04-26 05:36:00 +02:00
 tags: 
 - personal

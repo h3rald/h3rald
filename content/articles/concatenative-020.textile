@@ -4,6 +4,8 @@ filters_pre:
 - erb
 - redcloth
 title: Concatenative 0.2.0 released
+comments: []
+
 date: 2009-04-19 09:42:00 +02:00
 tags: 
 - ruby

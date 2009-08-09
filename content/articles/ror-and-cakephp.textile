@@ -3,6 +3,8 @@ permalink: ror-and-cakephp
 filters_pre: 
 - redcloth
 title: Ruby on Rails & CakePHP
+comments: []
+
 date: 2006-07-07 09:52:28 +02:00
 tags: 
 - cakephp

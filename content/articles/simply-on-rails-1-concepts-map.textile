@@ -3,6 +3,8 @@ permalink: simply-on-rails-1-concepts-map
 filters_pre: 
 - redcloth
 title: "Simply on Rails - Part 1: Concepts and Bubbles"
+comments: []
+
 date: 2007-07-07 07:43:00 +02:00
 tags: 
 - rails

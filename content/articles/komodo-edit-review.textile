@@ -3,6 +3,102 @@ permalink: komodo-edit-review
 filters_pre: 
 - redcloth
 title: A closer look at Komodo Edit
+comments: 
+- :date: 2007-11-25 11:23:02 +01:00
+  :author: dafi
+  :url: http://dafizilla.wordpress.com/
+  :id: 126
+  :body: |-
+    I like Komodo, too ;-)
+    
+    Consider macros are a powerful tool, they are very sophisticated.
+    Komodo macros have the power of VBA on Microsoft world.
+    
+    I've totally replaced UltraEdit the killer application on Windows Editor.
+    To cover all missing UltraEdit features I've written the MoreKomodo extension
+- :date: 2007-11-25 18:37:12 +01:00
+  :author: Bernard
+  :url: ""
+  :id: 127
+  :body: |-
+    Komodo Edit also has syntax completion for  the most known javascript libraries such as JQuery, Dojo, YUI or ExtJs. The CSS completion is also very handy.
+    
+    I've been using it extensively for the last 4 months on Windows XP and on Ubuntu and I can say that I'll never use anything else now for Python, HTML, CSS & javascript.
+- :date: 2007-11-26 05:29:34 +01:00
+  :author: JGiles
+  :url: ""
+  :id: 128
+  :body: Why not just save the dollars and use Scite? It seems to have most of what you're talking about.
+- :date: 2007-11-26 05:37:23 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 130
+  :body: |-
+    @JGiles
+    
+    Komodo _Edit_ is FREE, unlike Komodo _IDE_. That's why I reviewed it in the first place: I don't like spending money on Editors and IDEs either!
+    Scite is good, and I use it sometimes, but Komodo offers much more features and has less "rough edges", for what I could see.
+- :date: 2007-11-26 07:28:46 +01:00
+  :author: Stavros
+  :url: ""
+  :id: 131
+  :body: |-
+    Intype is only free for now, since it's an alpha, afterwards it'll cost something like $25 which is WAY too much for what I saw. I installed it, looked at it for a minute and uninstalled it, since I didn't see any good features that free editors don't have.
+    
+    I still mourn the loss of AnyEdit. It was by far the best editor, but it's not actively supported any more, and has many bugs :/ I wish someone would pick up its development.
+- :date: 2007-11-26 12:15:42 +01:00
+  :author: Nikhil
+  :url: ""
+  :id: 132
+  :body: "You missed out another important point: it is extensible. Komodo Edit is built on the Mozilla XUL framework and you can create plugins much like you write extensions in Firefox. For eg, it doesnt display the list of open files like Notepad++ or Textpad, but you can quite easily create a plugin which does this."
+- :date: 2007-11-26 19:20:40 +01:00
+  :author: MorknMindy
+  :url: ""
+  :id: 133
+  :body: |-
+    jEdit still blows it out of the water. For an 'editor' its severely lacking. I also take an instant dislike to anything using the scintilla control. I am _SO_ over the scintilla control. Every man + dog has written a wrapper around it and called it the next super programmer editor.
+    
+    Last time I tried komodo edit it was slow and a tad buggy regarding auto complete and tags.
+- :date: 2007-11-27 05:44:44 +01:00
+  :author: Korayem
+  :url: http://korayem.net
+  :id: 134
+  :body: Komodo is the best IDE for Pythoneers
+- :date: 2008-01-04 03:16:18 +01:00
+  :author: Xscratch
+  :url: ""
+  :id: 195
+  :body: "Fabio, thanks for great article, I love Komodo Edit too.\n\
+    I noticed however you made some typos in the first part of it:\n\
+    1) \"Their commercial IDE, Komodo Edit, which I personally tried quite a long time ago\"\n\
+    I think you meant Komodo IDE\n\n\
+    2) \"It costs money \xE2\x80\x93 this is not great in a world where Eclipse and Netvibes are free\"\n\
+    Netvibes or NetBean?\n\n\
+    See you!\n\n\
+    PS: Is strange for an italian to write in (dummy) english in a blog of a compatriot :-)\n\n"
+- :date: 2008-04-22 15:19:58 +02:00
+  :author: Ruk
+  :url: ""
+  :id: 232
+  :body: "Komodo is very nice but you make a mistake to say that is using 60K memory when is using 57,720K so looks you are missing some 3 digits :d "
+- :date: 2008-04-22 16:05:53 +02:00
+  :author: vioan
+  :url: http://www.vioan.ro
+  :id: 233
+  :body: thank you for a really nice article. Yesterday I started to play with Komodo Edit and today I found your article, which is great. I am sure that Komodo will be my main tool, beside vim/gvim :).
+- :date: 2008-05-27 11:14:13 +02:00
+  :author: Todd
+  :url: ""
+  :id: 235
+  :body: |
+    For those missing the code browser feature, you might like to try out the Source Tree extension, which gets you most of the same features:
+    http://community.activestate.com/komodo-extension/source-tree
+
+- :date: 
+  :author: Rahul
+  :url: ""
+  :id: 2582
+  :body: Guys have you tried Netbeans EA (Early Accesss) for Python, works great also supports debugging, code assisting and pylint support in built. Also Eclipse (Pydev) is equally cool
 date: 2007-11-25 07:23:00 +01:00
 tags: 
 - review

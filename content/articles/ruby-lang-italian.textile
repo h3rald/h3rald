@@ -3,6 +3,25 @@ permalink: ruby-lang-italian
 filters_pre: 
 - redcloth
 title: Italian translation of Ruby-Lang.org finally available!
+comments: 
+- :date: 
+  :author: Luca Sabato
+  :url: http://sabatia.it
+  :id: 564
+  :body: "*Ottimo lavoro!!!* Mi spiace non essere stato io il terzo ;( comunque sia _cercher\xC3\xB2_ di aiutarvi nel possibile a mantenere attivo questo progetto di traduzione.\n\n\
+    Alla prossima."
+- :date: 
+  :author: Magrabi
+  :url: http://magrabi.wordpress.com
+  :id: 2646
+  :body: |-
+    i wanna to translate the site into arabic , whats the way to begin ?
+    thnx
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2649
+  :body: "@Magrabi: All you have to do is contact the webmaster of Ruby-Lang.org (webmaster@ruby-lang.org) and ask ;-) As far as I know, the Arabic translation was started already, but it seems to be still in _draft_, so they may need your help!"
 date: 2008-11-15 14:48:00 +01:00
 tags: 
 - ruby

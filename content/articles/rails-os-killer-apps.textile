@@ -3,6 +3,196 @@ permalink: rails-os-killer-apps
 filters_pre: 
 - redcloth
 title: Rails-powered Open Source Killer Apps, Anyone?
+comments: 
+- :date: 
+  :author: Matthew Williams
+  :url: ""
+  :id: 371
+  :body: |-
+    All the sites you mentioned are "proprietary" because they monetize.  A company that releases a product is in the game to make money.  GitHub is doing so, Basecamp is very much doing so, Twitter has a ton of funding and will soon be making money one way or another, so why give that up?  The fact that you're expecting sites built with Rails to just expose their source to the world is asking for a little too much.
+    
+    Scour http://www.rubyforge.org and find some Open Source projects.  There are some really great Open Source projects out there (take a look at http://www.redmine.org/), you just need to look.
+    
+    The list of your CMS's is I think as extensive as it's going to get for the Rails world.  Drupal is a very mature project.  I'm sure if you looked at Drupal a few years ago, it was in similar shape as Radiant or Typo.  Give it time.
+    
+    But again, because the framework is Open Source, it's asking way too much for any products written with the framework to be Open Source.
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 373
+  :body: "Thank you Matthew. You're right, RedMine is indeed an interesting open source project, but what I'm trying to say is that Rails developers seems more focused on building something which can \"monetize\" quickly rather than investing time and energy in complex open source projects.\n\n\
+    I don't blame them, really! If I were a full-time web developer I'd probably do something similar!\n\n\
+    What I wanted to point out in a rather exaggerated and provocative way is that even if Ruby and Rails are MUCH better organized than PHP and any PHP framework, there are still _a lot_ of complex open source projects (not only Drupal, but take Joomla, Mediawiki, e107, etc.), in particular CMSes, which offer a lot of features.\n\
+    The current open source Rails projects are great, and some of them are quite successful (this very blog runs Typo, and I think it's an awesome blogging engine!), I just wish there were more.\n\n\
+    Maybe is just a matter of time... what's shocking is that the few \"general purpose\" CMS either are not doing very well or are just focusing on niches, like blogging. "
+- :date: 
+  :author: Luigi Montanez
+  :url: http://salesforceonrails.com
+  :id: 376
+  :body: |-
+    There are quite a few reasons there's no widely adopted open-source Rails CMS:
+    
+    1. Rails deployment isn't as easy as PHP deployment (though Passenger has done much to change that).
+    
+    2. You get into Rails because you want to build highly customized (and good) web apps, not implement a standard CMS. PHP CMS frameworks are Good Enough, and they serve the niche of people who want a semi-customize website but don't want to code it.
+    
+    3. Ruby, Rails, and Merb are geared toward developers, while PHP is geared towards people who want to make websites. That's not a knock on PHP, but it is a significant difference.
+    
+    4. CMSes are so early 2000's. These last few years, social networks have been all the rage (soon to be replaced by mobile apps). I'd point out that there ARE a bunch of out-of-the-box open-source social networking projects for Rails.
+    
+    - http://portal.insoshi.com/
+    
+    - http://www.communityengine.org/
+    
+    - http://lovdbyless.com/
+- :date: 
+  :author: lowell
+  :url: ""
+  :id: 383
+  :body: |-
+    A few things.
+    
+    First, about your 'About' page. Here in the United States, our IT admins tend to be extremely conservative when it comes to upgrading (regardless of benefit); this is the biggest reason that IE6 is still being used. Reading your 'About' page caused me to fire up VMWare Fusion and load this in IE6 - I wasn't ready to believe that you would go so far as to actively 'exclude' those without choice. I placed in exclude in quotes because you claim incompatibility with older browsers, but it isn't like your blog is on the cutting edge of CSS - I mean, you do claim it to be minimalist, don't you? In fact, it's humorous to me that the only 'incompatibility' I as able to find is an image transparency issue. Okay, fine, we get it - you develop web apps and you're cool and know better than many. There's no need to go out of your way to be an a*s about it.
+    
+    As for the Rails app rant, well.. The final product isn't what we share because all the fun is in building it. We aren't PHP script junkies that cut and paste random code, you know that. What we do share is arguably much more important => plugins and gems.
+    
+    BTW, points for using a Rails app for your blog. :) I can't count how many similar Rails rants I've read on WordPress lol..
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 385
+  :body: "Thanks Luigi for bringing up excellent comments and lowell for... well, bringing up good comments too.\r\n\
+    \r\n\
+    *@Luigi*: Indeed, I didn't know those three, and they look interesting.\r\n\
+    \r\n\
+    *@lowell*: I'll probably change the /about page, alright. Here in Italy, and especially in companies, IE6 is sadly still the way to go so... yes, I know what you mean. I did want to actively lock people out actually, but then I thought a banner would suffice to get the point across: after all, as you pointed out, my site does not break completely in IE6.\r\n\
+    As for using Typo... well, I wouldn't have dared to say something even slightly unpleasant about Rails from a WordPress blog! "
+- :date: 
+  :author: Priit Tamboom
+  :url: http://priit.mx.ee
+  :id: 389
+  :body: |-
+    Have you played with Adva-CMS? http://adva-cms.org (it's under very active development at the moment, so be warned). It's a kind of next evolution compared to Radiant. It's agnostic to what you build. So you can add blog, wiki, forum and your main apps directory is empty for your custom app.
+    
+    I wrote about adva at my blog: http://priit.mx.ee/posts/4
+    
+    Cheers,
+    Priit <br/>
+    ps. i'm new adva dev, so I might not be very objective :-)
+- :date: 
+  :author: Aaron Farr
+  :url: http://www.cubiclemuses.com
+  :id: 415
+  :body: |-
+    I see Radiant as a great compromise between writing up your own customized CMS and a full fledged system like Drupal.  I'm currently using it for my own website (http://cubiclemuses.com) as well as the ApacheCon websites (http://us.apachecon.com), so it's really flexible.
+    
+    Radiant is _not_ good for member sites with lots of users, but for a basic CMS, it's pretty nice.
+- :date: 
+  :author: job grades
+  :url: http://jobgrades.com
+  :id: 416
+  :body: Hey, take a look at Merb and merb-slices. I think the slices feature has the ability to offer a better foundation for "open source killer apps" than Ruby on Rails. slices are like "mini-apps". In merb, it's designed in a way that can be turned on/off/altered really easily. There's a video on the merbcamp.com website that explains the concept very well.
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 417
+  :body: |-
+    @job grades
+    Yes! Merb slices seem to be really interesting. All you need now is ...more slices and an ad-hoc site to easily distribute them. Add something to automatize download/update/installation and you have a very good foundation indeed.
+- :date: 
+  :author: Dave Sailer
+  :url: http://ultralighter.blogspot.com
+  :id: 419
+  :body: "I found you via a note at RubyFlow (http://www.rubyflow.com/). Thank you. This post is exactly the sort of thing that I'm interested in at the moment.\r\n\
+    \r\n\
+    Another good source of general Ruby/Rails information that I've newly discovered is \"A Fresh Cup: Notes from a Recovered Microsoft addict\" (http://afreshcup.com/).\r\n\
+    \r\n\
+    A recent post there referred in turn to a Rails testing post at Caboose: \"We've stopped using rSpec...\"  (http://blog.caboo.se/articles/2008/11/4/we-ve-stopped-using-rspec)\r\n\
+    \r\n\
+    This turned out to be somewhat relevant to the CMS issue in that in following up on Rails testing options I found Thoughtbot, Inc., which in turn has a product/service called \"Widgetfinger\" (http://www.widgetfinger.com/).\r\n\
+    \r\n\
+    Widgetfinger is deliberately limited but might be interesting to some: \"The widgetfinger service is 'Simple content management made for the modern web designer'.  The tool was built to solve problems that we saw in our client work, and is meant to manage very basic 'brochure style' websites.\" "
+- :date: 
+  :author: Pratik
+  :url: http://m.onkey.org
+  :id: 420
+  :body: |-
+    Component/slice based approach is nothing new. Rails engines has allowed people to do that for years now.
+    
+    @Fabio : Maybe you want to check out http://www.opensourcerails.com/
+- :date: 
+  :author: Tim Kadom
+  :url: http://blog.skiptree.com
+  :id: 432
+  :body: |+
+    Comatose is a CMS which can be dropped into an existing Rails app as well.  check it out.
+    
+    http://wiki.rubyonrails.org/rails/pages/Comatose
+    
+- :date: 
+  :author: rick
+  :url: ""
+  :id: 463
+  :body: "Pratik: there's also the desert plugin by the pivotal guys.  They used it to build their own in-house platform.  There's also tog, a mish mash of popular plugins providing social network features."
+- :date: 
+  :author: gaspard
+  :url: http://zenadmin.org
+  :id: 752
+  :body: "Just a passing note on zena (http://zenadmin.org). I am biased since I wrote the damn thing, but I must react to your quick description: \"Alpha, looks promising although it doesn\xE2\x80\x99t offer many features\".\n\n\
+    I think this CMS has many more features then most top notch CMS out there. Give me a competitor for:\n\n\
+    1. *really* powerful templating language, editable through the browser with support for ajax.\n\n\
+    2. multi-lingual, versioned content.\n\n\
+    3. custom classes for you content, defined through the browser (no code to write).\n\n\
+    4. powerful image manipulation (automatic resizing/limiting for multiple contexts).\n\n\
+    5. groups based access rights to any item in the CMS.\n\n\
+    6. publication workflow (redaction -> proposition -> publication).\n\n\
+    7. multi-host (one app, many websites).\n\n\
+    8. context based caching (cache expires when needed, not because a clock says so).\n\n\
+    9. comments (with captcha for anonymous visitors).\n\n\
+    10. import an xhtml template with images ===> you have your initial template.\n\n\
+    11. etc"
+- :date: 
+  :author: gaspard
+  :url: http://zenadmin.org
+  :id: 756
+  :body: |-
+    And just a note about your idea of a powerful base, with conventions. If you need to extend zena, it si very easy to write your own models (they should inherit from the base class "Node") with their own validations, versions, special database content, etc.
+    
+    Let me know if you would like more details on specific features / needs.
+    
+    By the way... I'd *love* having someone writing tutorials and introductory materials :-).
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 759
+  :body: |-
+    @gaspard
+    
+    Sorry for sounding a bit harsh with my first description: I actually need to take a (much) closer look at Zena. Let me say that it looks very interesting (I definitely missed some of the features you mentioned!) and I can't write to try it out properly (I'm just waiting for a week-end and a bit of spare time).
+    
+    Here's a deal: I'll try it out and write about it, let's see what happens :-)
+    
+    Incidentally, "Zena" is actually the name in dialect of my city (Genoa, Italy)... how did you pick the name?
+- :date: 
+  :author: gaspard
+  :url: http://zenadmin.org
+  :id: 779
+  :body: |-
+    "zena" is short for "zen admin" (relaxing, peaceful content management).
+    
+    I did not know about the dialect name of Genoa. Nice. A CMS that is somehow related to an important seaport is a step towards openness.
+    
+    Let me know if you have any questions or need any help.
+- :date: 
+  :author: Torsten Becker
+  :url: ""
+  :id: 2683
+  :body: adva-cms is undergoing a lot of development lately with many new features. Please let us know, how your success was with testing adva-cms. Do not hesitate to contact us for any question.
+- :date: 
+  :author: Sam Rose
+  :url: http://wagn.org
+  :id: 2721
+  :body: Don't forget about wagn!
 date: 2008-11-02 10:41:00 +01:00
 tags: 
 - rails

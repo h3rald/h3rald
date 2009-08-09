@@ -3,6 +3,12 @@ permalink: review-services
 filters_pre: 
 - redcloth
 title: Review Services
+comments: 
+- :date: 2008-04-03 07:26:36 +02:00
+  :author: rssnewsdigest
+  :url: http://rssnewsdigest.com/top_search.php
+  :id: 227
+  :body: http://www.digitalidnews.com/articles/2007/07/24/safenet-chosen-by-security-biometric-clearing-network-to-provide-security-for-registered-traveler-program
 date: 2007-12-14 12:24:00 +01:00
 tags: 
 - review

@@ -3,6 +3,43 @@ permalink: where-does-your-ruby-code-live
 filters_pre: 
 - redcloth
 title: Where does your Ruby code live?
+comments: 
+- :date: 
+  :author: murphee
+  :url: http://jroller.com/page/murphee
+  :id: 450
+  :body: |-
+    I'd say the best way is to 
+     - slap your project on Github 
+     - then: sign up for Rubyforge (projects usually take a day or two to be approved, at least that used to be the case)
+    
+    Use Ryan Davis' hoe to manage your project's rake file. It configures your rake file with a task to push a new release to Rubyforge. 
+    Voila: done. 
+    You get the best of both worlds: github's magic and the benefits of RubyGems. 
+    Github also offers you the option to easily offer experimental Gems, eg. if you fork a project, change something with it: you can instantly install that as a gem as well (although you have to add github as source to Gems). Ain't no easier way to distribute a forked version of an existing gem. 
+    
+    As for that rant you linked to (about Github not being profitable)... well, Github consists of 3 fulltime employees and has made them shitloads of money in the few months it's been around. 
+    Eg. see this interview with Tom Preston-Werner:
+    http://www.infoq.com/interviews/preston-werner-powerset-github-ruby
+    Sure - doesn't mean it'll stick around forever... but the benefit of Git is that you always have the full history of the project on your local disk - even if Github goes away this second. Try getting that with CVS/SVN at any other hoster, where you have to manually do regular snapshots of the history (if the hoster even offers that). 
+    So, even if Github might become history at some point, it's still easy to continue by just moving your git repository to, say, Rubyforge's git servers. Github's remarkably free of lock-in, at least when it comes to data. 
+    
+    PS: InfoQ covered this problem some time ago:
+    http://www.infoq.com/news/2008/08/gems-from-rubyforge-and-github
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 473
+  :body: |-
+    So I guess the best solution &ndash; for now &ndash; is to go for a "scattered" setup: 
+    
+    a) GitHub for the repository (assuming you like Git)
+    
+    b) (Optional) LightHouse for bug tracking
+    
+    c) RubyForge just for the gem
+    
+    I'd still like a *proper* directory of gems (with a proper search), maybe scraping RubyForge data (like APIdock did with Ruby/Rails/RSpec documentation). Did anybody ever come up with something similar? Would anyone be interested?
 date: 2008-11-08 13:34:00 +01:00
 tags: 
 - ruby

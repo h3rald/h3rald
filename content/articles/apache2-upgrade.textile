@@ -4,6 +4,47 @@ filters_pre:
 - erb
 - redcloth
 title: Beware of sudden upgrades!
+comments: 
+- :date: 2007-12-29 15:30:21 +01:00
+  :author: Teju
+  :url: ""
+  :id: 179
+  :body: "Your post saved my site....thanks! Bluehost generally rocks, but they've disappointed this time.\n\n\
+    You're luckier than I am - my live chat guy (Dave) told me that the addhandler  problem was my 'website design issue' and he couldn't help me. "
+- :date: 2008-01-02 12:28:34 +01:00
+  :author: t12345
+  :url: ""
+  :id: 192
+  :body: |-
+    My Live chat session was not that helpful. I have checked everything the support guy asked me to but instead of providing any suggestion he dumped a long message explaining how pointless was talking to me and closed the session.
+    I moved to VPS, no more Bluehost for me.
+- :date: 2008-01-02 13:38:36 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 193
+  :body: |-
+    Wow, looks like I was lucky! The guy I spoke to was smart enough to figure out the problem in less than 3 minutes, I must say. 
+    
+    @t12345: Out of curiosity, which VPS host are you going for?
+- :date: 2008-01-02 13:55:41 +01:00
+  :author: t12345
+  :url: ""
+  :id: 194
+  :body: "slicehost.com\n\
+    VPS is much better but it takes long time to install everything by yourself. Bluehost completely ignored my cries for help so I had no other choice. "
+- :date: 2008-01-10 11:53:52 +01:00
+  :author: J Cooper
+  :url: ""
+  :id: 197
+  :body: Thank you! This saved me too! Stupid bluehost :(
+- :date: 2008-02-27 08:16:07 +01:00
+  :author: dfavre
+  :url: ""
+  :id: 210
+  :body: |-
+    Thanks!  This solved a long-standing problem that I've had with my site.
+    
+    My only problem with BH is the way they handle upgrades on their shared hosts.  I've had my RoR app go offline several times due to upgrading the Rails version on my server without notice.
 date: 2007-12-20 07:41:00 +01:00
 tags: 
 - website

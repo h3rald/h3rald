@@ -3,6 +3,8 @@ permalink: "28"
 filters_pre: 
 - redcloth
 title: (Ready to start) working at Siemens
+comments: []
+
 date: 2006-05-10 09:55:26 +02:00
 tags: []
 

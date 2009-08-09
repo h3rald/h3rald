@@ -3,6 +3,33 @@ permalink: rails-doc-first-look
 filters_pre: 
 - redcloth
 title: Rails-Doc.org - A First Look
+comments: 
+- :date: 2008-06-20 00:05:03 +02:00
+  :author: falkenberg.tumblr.com
+  :url: ""
+  :id: 241
+  :body: It would be great to have an OpenID login.
+- :date: 2008-06-20 10:55:20 +02:00
+  :author: nachokb
+  :url: ""
+  :id: 242
+  :body: |-
+    Another thing I'll miss is multi-version support:
+    
+    "The next big release, coming out in a couple of months, will include support for multiple versions of Rails and version handling/separation on class-module-method level."
+    -- http://blog.nodeta.fi/2008/06/20/rails-doc-org-out-now/
+- :date: 2008-06-20 15:42:35 +02:00
+  :author: Marcus
+  :url: ""
+  :id: 243
+  :body: |-
+    It'd be really nice to be able to actually "search" the documentation--the equivalent of 
+    
+    finder methods site:http://api.rubyonrails.org/
+    
+    on Google. On this site if I don't know the name of the method I'm searching for (or if I don't guess correctly) the search just doesn't work.
+    
+    It's definitely nice to see someone working on this problem though! I think it's an interesting alternative, the inline notes feature is pretty cool.
 date: 2008-06-19 07:30:00 +02:00
 tags: 
 - rails

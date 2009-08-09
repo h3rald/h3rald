@@ -3,6 +3,8 @@ permalink: "41"
 filters_pre: 
 - redcloth
 title: Comments temporarily disabled
+comments: []
+
 date: 2007-01-07 06:53:00 +01:00
 tags: 
 - website

@@ -3,6 +3,8 @@ permalink: "24"
 filters_pre: 
 - redcloth
 title: CakePHP 1.0 released
+comments: []
+
 date: 2006-05-03 05:06:00 +02:00
 tags: 
 - cakephp

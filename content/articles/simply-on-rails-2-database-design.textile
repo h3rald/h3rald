@@ -3,6 +3,8 @@ permalink: simply-on-rails-2-database-design
 filters_pre: 
 - redcloth
 title: "Simply on Rails - Part 2: Database Design"
+comments: []
+
 date: 2007-07-14 11:27:00 +02:00
 tags: 
 - rails

@@ -3,6 +3,8 @@ permalink: "19"
 filters_pre: 
 - redcloth
 title: (Almost) working at Siemens
+comments: []
+
 date: 2006-04-22 03:04:57 +02:00
 tags: []
 

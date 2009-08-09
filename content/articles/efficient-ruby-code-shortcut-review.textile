@@ -3,6 +3,20 @@ permalink: efficient-ruby-code-shortcut-review
 filters_pre: 
 - redcloth
 title: "Book Review: Writing Efficient Ruby Code"
+comments: 
+- :date: 2008-01-21 07:49:29 +01:00
+  :author: Matthew Williams
+  :url: ""
+  :id: 204
+  :body: Thanks for the review, I immediately headed over to the InformIT page and purchased the PDF but it still hasn't shown up in my account for download.  Any idea how long I should be waiting for my copy?  InformIT has the day off and I'm getting anxious.  Especially compared to the Peepcode.com PDF's that get customized with your name in the footer on every page of the PDF and are delivered immediately.  But it's been over an hour now and I'm starting to get anxious.  Hopefully InformIT will pull through the PDF will show up in my account!
+- :date: 2008-01-22 23:28:01 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 205
+  :body: |
+    Matthew: if you can give me your email address (e.g. via your next comment, it won't be displayed publicly) I'll put you in contact with one of AW editor, and she'll try sorting out your problem. I'm sure you'll get your PDF pretty fast...
+    
+
 date: 2008-01-21 05:47:00 +01:00
 tags: 
 - ruby

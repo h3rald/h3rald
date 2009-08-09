@@ -3,6 +3,69 @@ permalink: herald-vim-color-scheme
 filters_pre: 
 - redcloth
 title: Herald (Vim Color Scheme)
+comments: 
+- :date: 
+  :author: Wm Tanksley
+  :url: ""
+  :id: 2712
+  :body: |
+    Very nice.
+    
+    I also appreciate a color scheme that degrades elegantly to low-color modes, so that I can use the essentially same scheme even when I'm remotely logged in. Degrading to 256 is good, but can you degrade to 16? I use baycomb for exactly this reason; it's honestly not as nice as your scheme (for example, it doesn't highlight the cursor row and column), but it does have a lot of features, and it smoothly degrades to lower numbers of colors.
+    
+    -Wm
+
+- :date: 
+  :author: Mario
+  :url: ""
+  :id: 2713
+  :body: I still find Desert to be the best universal color theme for VIM. It works for any language and it distinguishes between more text elements than any other theme I have tried.
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2714
+  :body: |-
+    @Wm Tanksley:
+    I will make it degrade to 16 colors, even if it won't look great, obviously... I'll try my best.
+    
+    @Mario:
+    Thanks for pointing out desert: I personally don't like it much, but I can check it out to see what elements it highlights and how.
+- :date: 
+  :author: Oz
+  :url: ""
+  :id: 2715
+  :body: Brilliant scheme - you are enabling my laziness by doing such a good job I can now cross off of my todo list the task of customizing my own further. Thanks.
+- :date: 
+  :author: Johannes
+  :url: http://johanneshoff.com
+  :id: 2716
+  :body: |-
+    Nice color scheme. I tried using moria as well, and you've fixed the biggest downside (to me, at least), which is to intrusive comments.
+    
+    Your vimrc file also gave me a lot of inspiration, by the way :)
+- :date: 
+  :author: "Beno\xC3\xAEt"
+  :url: ""
+  :id: 2717
+  :body: Looks good, but the visual mode lacks contrast (for me).
+- :date: 
+  :author: "Caio Rom\xC3\xA3o"
+  :url: http://blog.caioromao.com
+  :id: 2718
+  :body: Hey, that's the first theme I see which doesn't seem to suck when using `cursorline` and `cursorcolumn`. Thanks!
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2719
+  :body: |-
+    Version 0.2.0 released!
+    
+    See "the new project page":/herald-vim-color-scheme for more information.
+- :date: 
+  :author: iain
+  :url: http://iain.nl/
+  :id: 2720
+  :body: It does look incredibly colorful. I don't know if I'll like it, but I will give it a spin. I am using ir_black at the moment.
 date: 2009-06-17 06:11:00 +02:00
 tags: 
 - programming

@@ -3,6 +3,8 @@ permalink: "34"
 filters_pre: 
 - redcloth
 title: "Akelos Framework: too good to be true?"
+comments: []
+
 date: 2006-06-10 11:26:00 +02:00
 tags: 
 - frameworks

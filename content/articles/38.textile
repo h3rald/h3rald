@@ -3,6 +3,17 @@ permalink: "38"
 filters_pre: 
 - redcloth
 title: Akelos is real, after all...
+comments: 
+- :date: 2007-09-06 22:57:09 +02:00
+  :author: jervis
+  :url: ""
+  :id: 52
+  :body: nice
+- :date: 2008-05-23 09:05:07 +02:00
+  :author: ": ]"
+  :url: ""
+  :id: 234
+  :body: shit happens. . .
 date: 2006-08-02 01:33:00 +02:00
 tags: 
 - frameworks

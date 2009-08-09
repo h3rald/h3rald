@@ -3,6 +3,8 @@ permalink: "17"
 filters_pre: 
 - redcloth
 title: New CakePHP Manual (with associations!)
+comments: []
+
 date: 2006-04-18 08:47:00 +02:00
 tags: 
 - cakephp

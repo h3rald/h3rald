@@ -3,6 +3,86 @@ permalink: google-chrome
 filters_pre: 
 - redcloth
 title: "Chrome: Google did it again!"
+comments: 
+- :date: 2008-09-03 23:43:05 +02:00
+  :author: roshan mehta
+  :url: ""
+  :id: 252
+  :body: "i like your post bcoz it is not biased.Chrome doesn't have those awesome plugins that firefox have.It don't have download accelerator like \"down them all\".It also don't warn me visiting dangerous site as wot does in firefox.I love firefox and keep using that and what if i have to search article in wikipedia.here, first i have to visit wikipedia.org and about speed tune up utilities optimizes my firefox.  "
+- :date: 2008-09-04 16:08:24 +02:00
+  :author: Andre
+  :url: http://andreagandino.com
+  :id: 253
+  :body: |-
+    Nice post, Fabio.
+    
+    Chrome did it, yep. A fast, elegant browser with a neat UI. Oh, and with a great rendering engine too, like Webkit, even if they're using an older version of it (as of today, it doesn't has support for neither text-shadow nor anti-aliased border radius, while Safari's build does).
+    
+    I'm pretty sure they'll fix those things quickly.
+    
+    Plus, it comes with the DOM inspector pre-installed, which makes it good for developing too (it's not as good as Firebug in my opinion, but, hey, it's better than nothing).
+    
+    But it's the marketing side of the whole thing that impressed me the most. Everyone was talking about it even before the browser itself was released; and when it did, it was a choir of compliments.
+    
+    So, while I patiently wait for a Mac version to be released, I wonder if this will be the time that I change my browser of choice.
+- :date: 2008-09-04 16:08:52 +02:00
+  :author: Andre
+  :url: http://andreagandino.com
+  :id: 254
+  :body: Oh, by the way, thanks for adding me to your Links sidebar! ;)
+- :date: 2008-09-05 02:36:13 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 255
+  :body: |-
+    Google did an outstanding job as far as marketing goes: everyone was talking about Chrome immediately after the release, even non-tech newspapers!
+    
+    I'm currently trying it out as my default browser, and I'm satisfied so far. People started complaining about privacy and security issues, but they're likely to be fixed very soon, especially in the latest "Chromium Builds":http://build.chromium.org/buildbot/snapshots/chromium-rel-xp/ (that's what I'm using right now).
+- :date: 2008-09-05 11:28:59 +02:00
+  :author: AdamC
+  :url: ""
+  :id: 256
+  :body: |+
+    Google did it? Please..
+    
+    JavaScript is the language in Silverlight 1.0. And guess what? It gets compiled (JIT) and then executed. 
+    
+    IE8 (beta) already runs different tabs in different processes.
+    
+    So, yeah, Google did it. Did what exactly, again? 
+    
+    I mean, let's just give some credit where credit is due, especially since it was Microsoft too that created XmlHttpReques object that is basis for Ajax.
+    
+- :date: 2008-09-07 15:44:20 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 257
+  :body: |-
+    @AdamC
+    
+    If you read the whole article, you should understand I actually agree with you: Google didn't create anything new, they just got all the best features from IE8, Firefox 3.1, Safari 4 (all of which has still to come out) and bundled into an open source product. 
+    
+    Google's secret is simple and yet amazing: "don't do anything new, just do it better than others". they built a fortune with that, and with clever marketing.
+- :date: 2008-09-08 04:22:30 +02:00
+  :author: Marius
+  :url: ""
+  :id: 258
+  :body: |-
+    Good article. Covers most of what I would be interested in knowing about Chrome.
+    
+    One thing that I've seen in several places though, is that people attribute the things Google have borrowed (Speed Dial, etc.), but I've yet to see anyone attribute the Incognito mode to the Safari guys, who've had "Private browser" for quite some time now... I guess it's just because the Safari version is just a menu option, that isn't really advertised anywhere.
+- :date: 2008-09-12 11:03:29 +02:00
+  :author: Bill
+  :url: http://www.0092ff.com/software/google-chrome-beta-for-windows
+  :id: 260
+  :body: "It\xE2\x80\x99s weird looking at first, but it seems pretty fast. I opened a few of my pages just to see if they rendered differently and for the most part, they were fine. As a web designer, all I need is another browser that I have to design my pages for. I\xE2\x80\x99m hoping that Chrome renders code the way it should (like Firefox). Just out of curiosity, I also checked the memory usage and needless to say, it was a lot less than my current Firefox session (6,656K compared to that of Firefox using 162,340K)."
+- :date: 
+  :author: Dagger1234
+  :url: ""
+  :id: 2706
+  :body: "Im currently using Google Chrome\xE2\x84\xA2 and i can find no substantial problems with the way it works, as a internet usage moderator, i rely on a fast connection, and this program really does offer this to me. I also love the fact that the entire program is open-sourced, so that i can really see what is going on. Although Google\xE2\x84\xA2 have just taken their ideas from other browsers which are openly available, they have to be credited for their genius of doing this first. I find it shocking that no-one else had thought to do this first... combining the best of the best to create a well made piece of software, BRAVO!\r\n\
+    \r\n\
+    \xE2\x80\xA01234"
 date: 2008-09-03 02:31:00 +02:00
 tags: 
 - browsers

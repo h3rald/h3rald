@@ -3,6 +3,216 @@ permalink: firefox-lovers-guide-to-opera
 filters_pre: 
 - redcloth
 title: A Firefox Lover's Guide to Opera
+comments: 
+- :date: 2007-12-28 15:35:26 +01:00
+  :author: cvm
+  :url: ""
+  :id: 173
+  :body: "bq. \"No find as you type \xE2\x80\x93 Another big disappointment for who comes from Firefox or Safari: Opera still uses a dialog box to perform page searches.\"\r\n\
+    \r\n\
+    Try pressing \".\" - DOT and write word or try stable Opera (search ASyouTYPE field in View bar).\r\n\
+    \r\n\
+    UserJS: http://my.opera.com/community/forums/topic.dml?id=149014\r\n\
+    \r\n\
+    bq. \"No spell clecking \xE2\x80\x93 Again, both Firefox and Safari now offer text fields spell checking. Opera doesn\xE2\x80\x99t yet.\"\r\n\
+    \r\n\
+    Standard: http://www.opera.com/support/tutorials/opera/spellcheck/\r\n\
+    \r\n\
+    UserJS: http://my.opera.com/community/forums/topic.dml?id=182282\r\n"
+- :date: 2007-12-28 15:46:11 +01:00
+  :author: Fabio Cevasco
+  :url: ""
+  :id: 174
+  :body: |-
+    Thanks cvm for pointing out two fixes to two of my "annoyances"! I updated the article accordingly.
+    
+    P.S.: The find as you type looks fantastic! I didn't know that, thanks!
+- :date: 2007-12-28 16:36:12 +01:00
+  :author: Ameer
+  :url: http://ameer1234567890.blogspot.com
+  :id: 175
+  :body: "<blockquote>Auto-start widget? \xE2\x80\x93 This is a feature enhancement Opera Dev Team should consider: allow users to configure certain widgets to start automatically when Opera starts.</blockquote>\r\n\
+    You can do that by keeping the required widgets open, when you close Opera and then using the \"Continue from last time\" start up option."
+- :date: 2007-12-28 16:44:52 +01:00
+  :author: Ameer
+  :url: http://ameer1234567890.blogspot.com
+  :id: 176
+  :body: |-
+    Opera has a couple of ruler widgets which are equal to and sometimes even better than the firefox "Measure It" extension.
+    Have a look at <a href="http://widgets.opera.com/search/?order=name&q=ruler" target="_blank">here</a>.
+    
+    <blockquote>SearchStatus gives me Alexa Rank and Google Pagerank:</blockquote>
+    Does <a href="http://www.puzzleclub.ru/files/seobar/" target="_blank">this</a> serve the purpose?
+- :date: 2007-12-29 02:35:47 +01:00
+  :author: cvm
+  :url: ""
+  :id: 177
+  :body: "\"Use keyboard shortcuts \xE2\x80\x93 Believe it or not, you can literally use Opera without a mouse.\"\r\n\
+    Try PASTE&GO feature. Select and copy (CTRL+C) part of text or link and use PASTE&GO (CTRL+B). "
+- :date: 2007-12-29 06:39:29 +01:00
+  :author: cvm
+  :url: ""
+  :id: 178
+  :body: Ops, Opera 9.5 PASTE&GO feature = CTRL+SHIFT+V but in keyboard preferences is possible select NEW (Opera 9.50.) keyboard setup or Opera 9.2 compatible setup.
+- :date: 2007-12-29 19:36:16 +01:00
+  :author: Ed
+  :url: ""
+  :id: 181
+  :body: |-
+    I'm surprised that you knew about Sleipnir.
+    How did you know that?
+- :date: 2007-12-30 01:05:27 +01:00
+  :author: Ayush
+  :url: http://my.opera.com/AyushJ/blog/
+  :id: 183
+  :body: "bq. OK, I won\xE2\x80\x99t be able to access my favorite tags as quickly [...]\r\n\
+    \r\n\
+    You can add http://files.myopera.com/gcampos/files/delicious_panel/index.html to panel or your main del.icio.us page and turn on view>small screen\r\n\
+    \r\n\
+    bq. Additionally, Opera tabs [\xE2\x80\xA6]\r\n\
+    \r\n\
+    You can also arrange tabs (minimize/restore/cascade/tile etc.)\r\n\
+    \r\n\
+    bq. Default Browser Problems \xE2\x80\x93 Setting Opera as default browser on Windows doesn\xE2\x80\x99t seem to set the file icons accordingly (or worse, it resets them to the default file icon).\r\n\
+    \r\n\
+    That was a known bug in 9.5b (and is fixed in latest snapshots - http://my.opera.com/desktopteam/ )\r\n"
+- :date: 2007-12-30 02:59:20 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 184
+  :body: |-
+    @Ed: I've spent _a lot_ of time looking around for alternative Windows browsers. Sleipnir is very popular in Japan and actively developed, but not too stable. I also tried all the variants of K-Meleon and then I finally decided to give Opera another shot!
+    
+    @Ayush: Thanks but... I can't access the link for the del.icio.us panel (403 forbidden). Thanks for the other tips too!
+- :date: 2007-12-30 03:51:12 +01:00
+  :author: Ed
+  :url: ""
+  :id: 185
+  :body: |
+    @Fabio
+    right, that's why I knew of Sleipnir.  Though I didn't like it much for the idea of using Trident as it's HTML rendering engine.
+    I also have tried Opera a while back but it was kind of hard to get yourself used to the new way.  I'm using Firefox now and I'm a heavy user of keyboard shortcut :P
+
+- :date: 2007-12-30 11:29:44 +01:00
+  :author: Ayush
+  :url: http://my.opera.com/AyushJ/blog/
+  :id: 186
+  :body: "@Fabio: Copy the url and paste it in a new tab"
+- :date: 2007-12-30 11:32:51 +01:00
+  :author: Ayush
+  :url: http://my.opera.com/AyushJ/blog/
+  :id: 187
+  :body: Oh and my name is Ayush not Ajush
+- :date: 2007-12-31 15:29:59 +01:00
+  :author: alex
+  :url: ""
+  :id: 188
+  :body: |
+    if you want to get some of the functionality of your firefox extensions in opera you should check this
+    
+    http://files.myopera.com/Rijk/blog/extensions.html
+    
+    
+    
+
+- :date: 2007-12-31 16:28:50 +01:00
+  :author: bpm
+  :url: ""
+  :id: 189
+  :body: "can also do inline search only on link anchors: comma instead of period."
+- :date: 2008-01-01 08:45:22 +01:00
+  :author: Nilotpal
+  :url: http://freewebsoftwarereviews.blogspot.com
+  :id: 190
+  :body: "For me, Opera is better because it is more stable, faster, more standards compliant and more secure than any of the other browsers. Somehow, I think these basic features are neglected by other browsers for additional features. I do hope you will have a good time with Opera. You will feel irritated sometimes with web pages not displaying properly (though most times that is a problem with the web page and not the browser), and I think you will find the \"Open with\" option on right click useful. \r\n\
+    And I think you missed one of the main uses of syncing, it synces with your Opera Mini on your mobile. This is a very useful feature for people like me who spend their commuting time reading feeds from their favorite sites and newspapers.  "
+- :date: 2008-01-01 14:07:25 +01:00
+  :author: mabdul
+  :url: ""
+  :id: 191
+  :body: "Hi,\r\n\
+    was reading this block because your entry on operawatch!\r\n\
+    \r\n\
+    at first: Opera can't handle gopher / wais. that is imo a big problem (see http://my.opera.com/mabdul/blog/show.dml/1180506 )\r\n\
+    \r\n\
+    2.) Opera has an built in html-\"notepad\" --> klick on source-code and edit it your way ;) --> click on \"apply changes\" and then voil\xC3\xA0 ;)\r\n\
+    \r\n\
+    ok, thats all for the first ;)\r\n\
+    \r\n\
+    after any changes send me an mail opera [ at ] mabdul [ dot ] de"
+- :date: 2008-01-07 13:48:25 +01:00
+  :author: DrLaunch
+  :url: http://my.opera.com/drlaunch/blog/
+  :id: 196
+  :body: |-
+    I couldn't find any eyedropper tools for Opera but I found one for Windows. I haven't tried it my self yet. Get it from http://www.tucows.com/preview/194554
+    
+    There is a Web Developer Toolbar for Opera but I don't know how it compares to the Firefox one. Get it from http://operawiki.info/WebDevToolbar
+    
+    As for Gmail manager, you could use the built in Opera mail client or you could set up forwarding from one Gmail account to another. You can also send from several mail addresses in one Gmail account.
+    
+    You can use del.icio.us as fast as and as easily as in Firefox with Pocket. Pocket can import your bookmarks and post them to del.icio.us, all without leaving the page you're browsing. Skip the unsupported browser nonsense on the front page and just install the bookmarklet from http://thinkpocket.com/admin/jump/get_bookmarklet
+    
+    There have been ways to synchronise opera before Opera Link too. Opera's settings are stored in one folder, and a lot of these settings can be copied to other Opera installations. Osync can sync your Opera profile. Get it from http://sourceforge.net/projects/osync
+    
+    To fix the Google Reader plugin problems in Opera switch to list view and press Space to scroll and go to the next story.
+    
+    You can use some incompatible sites in Opera with Meadco's Neptune plugin or open the page in another browser. Check out the following buttons: http://operawiki.info/CustomButtons#webdev
+- :date: 2008-01-10 17:08:45 +01:00
+  :author: Doug
+  :url: ""
+  :id: 198
+  :body: |-
+    Hi from Canada,
+    I'm looking for a replacement for dogear which I used in Firfox,it marks the spot you stopped reading so you can pick up the again later.I might have missed it,Opera has a lot of Widgets etc, any ideas? thanks.
+    flipper1@eastlink.ca
+- :date: 2008-01-15 21:27:43 +01:00
+  :author: GT500
+  :url: http://www.gt500.org/
+  :id: 201
+  :body: You need to edit your spell check description. It doesn't make a whole lot of sense, and it doesn't link to OSpell ( http://opera.gt500.org/ospell/ )
+- :date: 2008-01-18 22:54:28 +01:00
+  :author: anon
+  :url: ""
+  :id: 203
+  :body: I'm not sure that Opera not being Open Source is such a bad thing. Sure we all want to see more great software become Open Source, but Opera has done a fantastic job of maintaining the position of being the most secure web browser as they are. You have to respect that. I'm not saying that it's not something I would like to see, but I'm also not wishing for it anytime soon. I'd rather see them continue their work as is and making the best web browser availible.
+- :date: 2008-02-10 22:31:02 +01:00
+  :author: social media helps improving alexa ranking?
+  :url: http://www.alexa.com/data/details/main?url=www.fortunehotels.in
+  :id: 209
+  :body: Facebook.com is the online social networking site. Here people come into contact with each other and build up relations whether personal or http://www.alexa.com/data/details/main?url=www.fortunehotels.in business.
+- :date: 2008-04-10 04:31:41 +02:00
+  :author: martinlock
+  :url: ""
+  :id: 229
+  :body: If you depend on link or site selling as a form of monetization you will definitely want to increase your http://www.alexa.com/data/details/main?url=www.fortunehotels.in Alexa rank, because it will increase your bargaining power when it comes to ad pricing.
+- :date: 2008-06-27 17:47:46 +02:00
+  :author: EroSan
+  :url: http://my.opera.com/erosan
+  :id: 244
+  :body: |-
+    I'm using Opera 9.5, and i wanted to add a few things...
+    
+    There is a widget called multiGmail, that lets you monitor more than one gmail account, and easily access their inboxes (in case your girlfriend decides to switch to opera) ;)
+    
+    Also, the thing about not wanting to synch in your friends computer is cool. You can still access your bookmarks in html form if you log into my.opera.com
+    
+    Regards.
+- :date: 2008-10-08 01:13:55 +02:00
+  :author: murphy83@gmx.net
+  :url: ""
+  :id: 263
+  :body: |
+    Hi,
+    
+    Great article - Indeed I've been using Opera since version 3.x in a time where "Netscape Navigator" was not activly developed anymore, IE coming up with many security problems and slow speed as well as non-standard conformance.
+    I got to it by an article in the ct magazine (see www.heise.de/ct/) as they listed the current status of browser development at this time - well I soon got kind of addicted to using it everyday - secure, fast, standard compliant and one big point - very open to feature-requests by the users. Customized search was discussed in forums already back in 2000 if I remember correctly.
+
+- :date: 
+  :author: udkl_12_98
+  :url: ""
+  :id: 1889
+  :body: Firefox is a BIG hypeBox .... Opera rocks ... I've been an ardent Opera user and propogator since I took to the Internet....
 date: 2007-12-28 14:19:00 +01:00
 tags: 
 - browsers

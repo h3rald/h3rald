@@ -3,6 +3,305 @@ permalink: 10-programming-languages
 filters_pre: 
 - redcloth
 title: 10 programming languages worth checking out
+comments: 
+- :date: 
+  :author: Nikhil
+  :url: http://kodeclutz.blogspot.com
+  :id: 2593
+  :body: Great list. It's good to see factor getting more and more publicity, although I haven't 'got' it yet.
+- :date: 
+  :author: Dmitriy Kopylenko
+  :url: http://grailscrowd.com/members/dima767
+  :id: 2594
+  :body: No mention of Groovy. Sad... :-(
+- :date: 
+  :author: Dmitriy Kopylenko
+  :url: http://grailscrowd.com/members/dima767
+  :id: 2595
+  :body: On the other hand one might consider Groovy 'mainstream' and not so 'esoteric'
+- :date: 
+  :author: James
+  :url: http://jamesconroyfinn.com
+  :id: 2596
+  :body: Great article. I was hoping to see Brainfuck and Whitespace. ;)
+- :date: 
+  :author: Foo
+  :url: ""
+  :id: 2598
+  :body: |-
+    I like to think of Groovy as "poorly conceived".  The slowness of Ruby without the elegance.
+    
+    Here's the least smart piece of text in the piece:  "Unlike other Lisps (and Schemes) you may have encountered before, Clojure comes with some interesting additions:"
+    
+    Um... Common Lisp has two of those (data types, multimethods), and the other two are trivially added with macros.  Clojure's cute, sort of, but Common Lisp is where most of the momentum is.
+- :date: 
+  :author: Walter Bright
+  :url: http://www.digitalmars.com/d/
+  :id: 2599
+  :body: One can also consider the D programming language, http://www.digitalmars.com/d, which is a modern systems programming language.
+- :date: 
+  :author: Chris Papadopoulos
+  :url: http://informationrain.com/
+  :id: 2600
+  :body: |+
+    I've had a lot of fun lately playing around with Processing and would mention it as an alternative to programmers who want something fun to escape their normal work. Also, learning to problem solve in a visual environment instead of working with things like databases can be very stimulating.
+    
+    http://processing.org/
+    
+    
+- :date: 
+  :author: Mitch
+  :url: http://softwareindustrialization.com
+  :id: 2601
+  :body: What do you think of F#?
+- :date: 
+  :author: Tim Locke
+  :url: ""
+  :id: 2602
+  :body: "Another interesting project written in Smalltalk is Scratch: http://scratch.mit.edu/"
+- :date: 
+  :author: Michael
+  :url: http://videotree.blogspot.com
+  :id: 2603
+  :body: "Have a look at newLisp -- Lisp as a lighter weight scripting language. "
+- :date: 
+  :author: Jeff
+  :url: ""
+  :id: 2604
+  :body: |
+    REBOL should be on the list. http://www.rebol.com/
+    
+    Otherwise, it is a great list. My only real disappointment is that the "newer" versions of old standby languages are there in place of the goodies. Factor vs. Forth, Clojure vs. Lisp. While those new incarnations might breath new life into the old, I can almost guarantee that Factor will fade away, but good ol' Forth will still be around.
+    
+    Also, if you were going to put a Forth language on the list that wasn't ANS Forth, I'd have put Colorforth up there (http://www.colorforth.com/cf.html) - as least that one is made by the inventor of Forth. ;-)
+
+- :date: 
+  :author: Brian
+  :url: http://htdp.org/
+  :id: 2607
+  :body: |-
+    Another great resource for PLT Scheme is the book How to Design Programs. Its free online at http://htdp.org/
+    
+    My Computer Science Fundamentals class at northeastern university used PLT Scheme and that was the book which was used to teach not just the language but good design practices.
+    
+    I definitely recommend you check it out.
+- :date: 
+  :author: mgroves
+  :url: http://www.mgroves.com
+  :id: 2608
+  :body: Interesting that you mention C# 1 time, and never mention VB, even though those are two languages that "pay the bills" for many, many programmers.
+- :date: 
+  :author: WebGlad
+  :url: http://www.webglad.com/
+  :id: 2610
+  :body: "Really good article. I liked this statement:\n\n\
+    \xE2\x80\x9CThe most obvious common \xE2\x80\x98personality\xE2\x80\x99 characteristics of hackers are high intelligence, consuming curiosity, and facility with intellectual abstractions.\"\n\n\
+    While I don't consider myself to be a hacker, I have a curiosity that I can't hamper. Sometimes it works to the detriment of my productivity. Still, it does lead me to explore articles like yours."
+- :date: 
+  :author: chomotus
+  :url: http://www.google.com
+  :id: 2611
+  :body: for me J has no competition as a functional language..
+- :date: 
+  :author: Ed Borasky
+  :url: ""
+  :id: 2614
+  :body: "Most of us programmers fall into the class \"specially if 500 developers in your company already develop in C# and you don\xE2\x80\x99t, as a matter of fact, have a saying on the matter.\" A programming language needs a *compelling* advantage over the more general and widely-used ones in order to be worth studying for most of us.\n\n\
+    And I find the argument that learning another language makes you a better programmer somewhat flawed. It's more the other way around -- really good programmers find it easy to learn the semantics of programming languages."
+- :date: 
+  :author: Elmer
+  :url: ""
+  :id: 2617
+  :body: |-
+    Revolution: Is a must on this list!    http://www.runrev.com
+    
+    Revolution is a programming environment you can quickly understand. Achieve immediate results with a visual, drag-and-drop interface builder. Use English, the language you already know, to describe program logic. Deploy powerful cross-platform solutions without the huge learning curve of other development environments.
+    
+    http://www.runrev.com
+- :date: 
+  :author: Glad_if_I
+  :url: ""
+  :id: 2623
+  :body: |-
+    When you wrote that Haskell's has "Speed that rivals C and <notextile>C++</notextile>" I looked at the link that you provided and it proved you wrong.  That is to say it stated that in computer processing that both C and <notextile>C++</notextile> is processes faster.  While it stated that in some instances it beat C++ it did suggest that if optimization was a factor you had better write the program in C.  The speed it talked about in the article was how fast it was for the programmer to write the code in Haskell than in C and <notextile>C++</notextile>.  
+    
+    Now if you had stated:
+    "The Speed at which it takes to program something in Haskell rivals that of C and <notextile>C++.</notextile>"
+    
+    I would be okay with that but the way you stated it was misleading.  It was a lie.  I am not trying to be mean but when you talk about programming speed that means how fast the computer processes.  Each programmer creates and edits code at their own speed.  It is a subjective property of each programmer.  Maybe it is easier to program in Haskell and thus faster supposedly.  But the way you wrote it was misleading.
+    
+    C is the fastest language for a reason.  Because it is one step above assembler which in turn is faster than C.  If you are going to make statements that are a lie.  Do not link to a page that disagrees with you.
+- :date: 
+  :author: pRtkL xLr8r
+  :url: http://www.deadpumpkin.com
+  :id: 2624
+  :body: Why on earth isn't QuickBasic on this list???
+- :date: 
+  :author: Mark Stock
+  :url: http://machete-lang.blogspot.com/
+  :id: 2625
+  :body: |-
+    No mention of my _fill_in_the_blank_ language!  :(
+    
+    ;)
+- :date: 
+  :author: sam
+  :url: http://www.skyfly-travels.com
+  :id: 2626
+  :body: |
+    Really good article. I liked this.
+
+- :date: 
+  :author: sam
+  :url: http://www.skyfly-travels.com
+  :id: 2627
+  :body: |
+    Really good one
+
+- :date: 
+  :author: Christian
+  :url: ""
+  :id: 2630
+  :body: |-
+    You may want to take a look at PowerShell. Focused on Administration of IT, but able to do so much more. 
+    
+    http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx
+    
+    http://blogs.msdn.com/powershell/
+- :date: 
+  :author: BK
+  :url: http://puppylinux.com
+  :id: 2632
+  :body: |
+    Here's another, Genie (and Vala):
+    
+    http://puppylinux.com/genie
+
+- :date: 
+  :author: Oliver
+  :url: ""
+  :id: 2635
+  :body: |-
+    I'd second the mention of J above. I'm only starting out on it, but it's very satisfying how your initial bewilderment of the program text turns into comprehension relatively quickly.
+    
+    My language <i>du jour</i> is Mozart/Oz (http://www.mozart-oz.org). Mozart made me get to grips with Emacs just to play with the Oz Programmer's Interface (Oz is a virtual machine Mozart runs on).
+- :date: 
+  :author: Andreas Schipplock
+  :url: http://schipplock.de
+  :id: 2636
+  :body: And what about Ada 2005? Ada is breathing! :)
+- :date: 
+  :author: clj
+  :url: ""
+  :id: 2637
+  :body: "Alright, you've just motivated me to write the critique of Clojure (+ the annoyance with the (background) FUD against Java that sometimes accompanies Clojure.)  "
+- :date: 
+  :author: Dave
+  :url: http://www.davidrware.com
+  :id: 2640
+  :body: Very awesome article! I'm on Christmas vacation and was bored, looking for something to occupy my time and now I think I found something to. Thanks for the great read and hours of amusement.
+- :date: 
+  :author: Ulf Wiger
+  :url: http://ulf.wiger.net/weblog
+  :id: 2641
+  :body: |
+    Damien Katz' article is indeed an interesting read, but it mainly addresses those already sold on Erlang. Others might perhaps first want to read http://sdtimes.com/link/33124, in which Katz explains how he threw away his <notextile>C++</notextile> based CouchDB after having played around with Erlang for a week, and then rewrote in 1.5 months what had taken him 6 months to write in <notextile>C++</notextile>. Otherwise, one could easily get the impression that Katz isn't very fond of Erlang... ;-)
+
+- :date: 
+  :author: Phil
+  :url: http://technomancy.us
+  :id: 2647
+  :body: "> Foo: Um\xE2\x80\xA6 Common Lisp has two of those (data types, multimethods), and the other two are trivially added with macros. Clojure\xE2\x80\x99s cute, sort of, but Common Lisp is where most of the momentum is.\n\n\
+    Common Lisp's non-list compound data types are crippled because they're not composable in the same way lists are. Furthermore, only vectors have syntax literals, making the rest a huge pain do deal with. Clojure's biggest innovation was making it so you could start writing your program with lists, then swap in a more appropriate data structure for perf later without modifying any of your code.\n\n\
+    Common Lisp has a lot of things, but momentum is not one of them."
+- :date: 
+  :author: PatzZ
+  :url: http://tutorial-net.blogspot.com/
+  :id: 2651
+  :body: hey you changed my mind i'll look into those future thanks
+- :date: 
+  :author: JeGX
+  :url: http://www.geeks3d.com
+  :id: 2665
+  :body: |-
+    Nice overview!
+    Another programming/scripting language is <a href="http://squirrel-lang.org">Squirrel</a>. And here is a tool to play with Lua: <a href="http://www.ozone3d.net/demoniak3d/">Demoniak3D</a>.
+- :date: 
+  :author: Dan
+  :url: http://mayerdan.com
+  :id: 2678
+  :body: Learning a new language is on my list as well, good list keep it up.
+- :date: 
+  :author: Michael
+  :url: ""
+  :id: 2679
+  :body: What about the greatest and most serious language out there? LOLcode was totaly forgotten in this article.
+- :date: 
+  :author: Napolux
+  :url: http://www.napolux.com
+  :id: 2680
+  :body: Well. If squeak is here I want also LOLcode.
+- :date: 
+  :author: botchagalupe
+  :url: http://johnmwillis.com
+  :id: 2681
+  :body: Great post...
+- :date: 
+  :author: w43L
+  :url: http://blog.w43l.com
+  :id: 2682
+  :body: "nice article, but who have time for learning of these languages\n\n\
+    :("
+- :date: 
+  :author: e
+  :url: ""
+  :id: 2686
+  :body: |+
+    yeah, leaving off J?  The J community is like a parallel universe where they are quietly going about their own thing . . . undaunted by the rest of the world.  You download it.  You get an IDE, training materials, tons of examples, tutorials . . .access to all kinds of free, whole, books.  You can make GUIs and games and 3D stuff ...
+    
+    I want to freeze time and spend like two or three uninterrupted years on J. You don't even need parameters if you don't want.  Want to operate on whole matrices?  Go ahead.  insanely beautiful plots?  http://www.jsoftware.com/
+    
+    Also get ready for something amazing and quite entertaining at the same time in Frink: http://futureboy.homeip.net/frinkdocs/  I won't spoil the surprise.
+    
+    Try Joy to see how simple it can get, especially to get a taste of the theory.
+    
+    Clean is supposed to be fast, fast fast.
+    
+    
+    
+- :date: 
+  :author: Bertrand
+  :url: ""
+  :id: 2687
+  :body: <a href="http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/lua/">mod_lua</a> coming to an apache server near you.
+- :date: 
+  :author: Etienne
+  :url: http://madariaga.wordpress.com
+  :id: 2688
+  :body: |-
+    Nice article. 
+    
+    One of the things I find useful when looking for a new language to learn, is having a quick glance at its syntax. I know if I don't like how its code _looks_ I won't like the language. If I am interested by it, I might give some more insight to a particular language.
+- :date: 
+  :author: David
+  :url: http://www.autohotkey.com
+  :id: 2689
+  :body: I think you missed Autohotkey.com which is excellent for its purpose.
+- :date: 
+  :author: Astor
+  :url: ""
+  :id: 2693
+  :body: "Even if it's not really a \"functionnal paradigm oriented\" programming language, you should definitively take a look at \"the D programming language\" : http://www.digitalmars.com/d/ . It kind of tries to compell with C/C++ for system programming (yep inline assembly code is possible), but also offer some nice features as far as concurrency is concerned, like \"pure\" keyword for functions or shared/unshared global state for multithreaded operations."
+- :date: 
+  :author: MAK
+  :url: ""
+  :id: 2707
+  :body: |-
+    Hello, I wanted to communicate with you via email, but the email link on your floating menu uses a mailto mechanism and since I'm under OpenBSD with no mailto link set in Firefox, I'm unable to get through to you (I even tried viewing source :-)
+    
+    Could you please write back to me on the email address mentioned in this post?
+    
+    Thanks.
 date: 2008-12-21 15:01:15 +01:00
 tags: 
 - programming

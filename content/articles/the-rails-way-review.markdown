@@ -3,6 +3,24 @@ permalink: the-rails-way-review
 filters_pre: 
 - bluecloth
 title: "Book Review: The Rails Way"
+comments: 
+- :date: 
+  :author: Obie Fernandez
+  :url: http://obiefernandez.com
+  :id: 2684
+  :body: |-
+    Fabio,
+    
+    Thank you for publishing your comprehensive review and especially for including constructive criticism from the perspective of a technical writer. You may or may not know that I'm starting to work on the second edition. Rest assured that I will do my best to take your feedback into account.
+    
+    Cheers,
+    Obie
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2685
+  :body: "Thank you for your comment Obie! \n\n\
+    I'm looking forward to reading it then... Actually I thought you were gonna wait for Rails 3! "
 date: 2009-01-04 09:03:00 +01:00
 tags: 
 - rails

@@ -4,6 +4,42 @@ filters_pre:
 - erb
 - redcloth
 title: Real-world Rawline usage
+comments: 
+- :date: 
+  :author: gabriel
+  :url: http://tagaholic.me
+  :id: 2698
+  :body: |-
+    Nice work! Loving the irb script. For anyone unsure of how to add keybindings to the above irb script, try this:
+    
+    editor = Rawline.editor
+    #move to beginning of line
+    editor.bind(:ctrl_a) { editor.move_left while (!editor.line.bol?) }
+    # move to end of line
+    editor.bind(:ctrl_e) { editor.move_right while (!editor.line.eol?) }
+- :date: 
+  :author: gabriel
+  :url: http://tagaholic.me
+  :id: 2699
+  :body: |
+    uggh, that last bit should read:
+    
+    editor = Rawline.editor
+    
+    editor.bind(:ctrl_a) { editor.move_left while (!editor.line.bol?) }
+     #move to beginning of line
+    
+    editor.bind(:ctrl_e) { editor.move_right while (!editor.line.eol?) }
+    #move to end of line
+
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2700
+  :body: |-
+    Yep, that's it! Thanks Gabriel for pointing it out!
+    
+    I'm glad you're enjoying using RawLine.
 date: 2009-03-07 04:54:00 +01:00
 tags: 
 - ruby

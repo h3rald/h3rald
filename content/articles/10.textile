@@ -3,6 +3,8 @@ permalink: "10"
 filters_pre: 
 - redcloth
 title: Italian General Elections - 2006
+comments: []
+
 date: 2006-04-09 07:33:00 +02:00
 tags: 
 - italy

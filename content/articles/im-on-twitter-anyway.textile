@@ -3,6 +3,8 @@ permalink: im-on-twitter-anyway
 filters_pre: 
 - redcloth
 title: I'm on Twitter, anyway...
+comments: []
+
 date: 2008-05-18 11:04:00 +02:00
 tags: 
 - personal

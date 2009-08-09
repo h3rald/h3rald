@@ -3,6 +3,8 @@ permalink: "31"
 filters_pre: 
 - redcloth
 title: "Watch out: CakePHP screencasts"
+comments: []
+
 date: 2006-05-20 15:47:00 +02:00
 tags: 
 - cakephp

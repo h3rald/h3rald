@@ -3,6 +3,8 @@ permalink: "16"
 filters_pre: 
 - redcloth
 title: Databases supported by CakePHP
+comments: []
+
 date: 2006-04-17 07:30:00 +02:00
 tags: 
 - cakephp

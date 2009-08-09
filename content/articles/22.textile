@@ -3,6 +3,8 @@ permalink: "22"
 filters_pre: 
 - redcloth
 title: Ten minutes on Rails (while eating Cake)
+comments: []
+
 date: 2006-04-29 15:29:00 +02:00
 tags: 
 - cakephp

@@ -3,6 +3,8 @@ permalink: log-jan-2009
 filters_pre: 
 - bluecloth
 title: Personal Log - January 2009
+comments: []
+
 date: 2009-01-25 11:51:00 +01:00
 tags: 
 - personal_log

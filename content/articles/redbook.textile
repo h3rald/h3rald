@@ -3,6 +3,86 @@ permalink: redbook
 filters_pre: 
 - redcloth
 title: RedBook - A simple Ruby program for your daily logging needs
+comments: 
+- :date: 2007-09-30 06:16:02 +02:00
+  :author: David Cumps
+  :url: http://blog.cumps.be
+  :id: 92
+  :body: |-
+    I've always wondered, what do you log in these systems? I already log most of my time at work in timetracking systems, that I couldn't imagine logging spare time, what's going to be the benefit?
+    
+    Ofcourse, a script like this instead of some bloated time tracking system which has a GUI that makes you take ages for inputting something.
+- :date: 2007-09-30 06:48:48 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 93
+  :body: "We have a time tracking system at work, but I normally tend to use it once a day... I use this script everyday to quickly keep track of what I'm doing _while_ I'm doing it, rather than trying to remember it afterwards ;-) "
+- :date: 2007-10-01 03:43:18 +02:00
+  :author: bryan
+  :url: ""
+  :id: 94
+  :body: |
+    pretty cool.. any idea how to make backspace/delete work correctly on a mac?  Im suffering from ^H disease. :) 
+
+- :date: 2007-10-01 05:06:28 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 95
+  :body: |-
+    @bryan
+    
+    Thanks for pointing it out. I'm looking into it, although I think to fix that I'll have to use either the Curses or Readline libraries, and I was trying to avoid it... I'll have a look (suggestions are welcome of course!)
+- :date: 2007-10-01 05:17:20 +02:00
+  :author: Viktor Nordling
+  :url: ""
+  :id: 96
+  :body: |-
+    Looks neat!
+    
+    I think it would be a perfect plugin for Launchy: (http://www.launchy.net/). Then I could just hit alt+space, write log | message and move on!
+    
+    For similar plugins for Launchy, please see: http://todoist.com/Help/viewLaunchy/
+    
+    Cheers,
+    Viktor Nordling
+- :date: 2007-10-01 12:40:28 +02:00
+  :author: Dharivs
+  :url: ""
+  :id: 97
+  :body: |-
+    Nice!
+    
+    You are my God! I was just about to implement it, but I couldn't... Thanks a lot :)
+- :date: 2007-10-02 14:46:13 +02:00
+  :author: bryan
+  :url: ""
+  :id: 98
+  :body: |
+    Fabio:
+    
+    I'm afraid I've never used those libraries myself.. I'm a web guy, don't get into the command line stuff much.. but I'll keep checking back to see if you or anyone else does anything with it.. I think this looks like a nice logger tool. :) 
+
+- :date: 2007-10-02 15:27:01 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 99
+  :body: I scheduled key bindings and support for international characters for the "1.0" release... Or hopefully before, you never know! I'm also trying to plan a few "milestones":http://www.assembla.com/spaces/milestones/index/bWE7NkzCqr3k25abIlDkbG?spaces_tool_id=ceS8UazCqr3k25abIlDkbG.
+- :date: 2007-10-19 06:27:29 +02:00
+  :author: James O'Kelly
+  :url: ""
+  :id: 103
+  :body: I'll be trying RedBook out, thanks for the tip Fabio! And I totally agree about the command line, and Quicksilver is just crazy sexy. I don't even remember how to use my launcher anymore :)
+- :date: 2007-10-20 03:44:09 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 104
+  :body: "Hello James, thanks. Well, actually next week I'll probably release v0.3, which comes with Readline support (which means history and proper key bindings for mac/*nix users) and quite a few new features. \n\
+    By the way, I don't seem to be able to find your email address anywhere... "
+- :date: 2008-03-12 17:52:49 +01:00
+  :author: mrnovell.com
+  :url: ""
+  :id: 216
+  :body: This is great, I am going to have my IT team start using it. Will there be a feature to where we can have central logging.
 date: 2007-09-29 14:05:00 +02:00
 tags: 
 - ruby

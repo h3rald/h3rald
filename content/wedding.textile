@@ -3,6 +3,8 @@ permalink: wedding
 filters_pre: 
 - redcloth
 title: Wedding
+comments: []
+
 date: 2009-06-06 05:53:12 +02:00
 tags: []
 

@@ -3,6 +3,8 @@ permalink: holiday-house-for-rent
 filters_pre: 
 - redcloth
 title: Holiday house for rent
+comments: []
+
 date: 2009-04-24 01:54:00 +02:00
 tags: 
 - personal

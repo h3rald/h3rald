@@ -3,6 +3,8 @@ permalink: introducing-redbook
 filters_pre: 
 - redcloth
 title: Introducing RedBook (and the new Code section)
+comments: []
+
 date: 2007-09-29 02:12:00 +02:00
 tags: 
 - ruby

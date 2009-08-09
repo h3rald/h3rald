@@ -3,6 +3,8 @@ permalink: cakephp-overview
 filters_pre: 
 - redcloth
 title: An overview of the CakePHP framework
+comments: []
+
 date: 2006-05-30 15:50:20 +02:00
 tags: 
 - cakephp

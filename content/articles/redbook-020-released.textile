@@ -3,6 +3,8 @@ permalink: redbook-020-released
 filters_pre: 
 - redcloth
 title: "Announcement: RedBook v0.2.0 released"
+comments: []
+
 date: 2007-10-08 05:05:00 +02:00
 tags: 
 - redbook

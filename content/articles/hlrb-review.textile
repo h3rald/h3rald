@@ -3,6 +3,8 @@ permalink: hlrb-review
 filters_pre: 
 - redcloth
 title: "Book Review: Humble Little Ruby Book"
+comments: []
+
 date: 2007-10-03 05:53:00 +02:00
 tags: 
 - ruby

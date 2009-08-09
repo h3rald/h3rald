@@ -3,6 +3,8 @@ permalink: h3rald-71
 filters_pre: 
 - redcloth
 title: Introducing H3RALD.com v7.1
+comments: []
+
 date: 2008-10-27 05:29:00 +01:00
 tags: 
 - website

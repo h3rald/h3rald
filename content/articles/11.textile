@@ -3,6 +3,8 @@ permalink: "11"
 filters_pre: 
 - redcloth
 title: Meet some Cake(PHP) bakers!
+comments: []
+
 date: 2006-04-11 17:03:00 +02:00
 tags: 
 - cakephp

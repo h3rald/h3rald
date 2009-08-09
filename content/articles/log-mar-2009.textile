@@ -3,6 +3,14 @@ permalink: log-mar-2009
 filters_pre: 
 - redcloth
 title: Personal Log - March 2009
+comments: 
+- :date: 
+  :author: Magrabi
+  :url: http://magrabi.wordpress.com
+  :id: 2694
+  :body: |-
+    congratulation . 
+    hope to married soon and live a wonderful life .
 date: 2009-03-30 06:04:00 +02:00
 tags: 
 - personal_log

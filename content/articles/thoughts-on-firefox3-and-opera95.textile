@@ -3,6 +3,45 @@ permalink: thoughts-on-firefox3-and-opera95
 filters_pre: 
 - redcloth
 title: Thoughts on Firefox 3 and Opera 9.5
+comments: 
+- :date: 2008-06-13 06:59:23 +02:00
+  :author: Friend
+  :url: ""
+  :id: 236
+  :body: You may want to note that Quick Find, the Opera history search, not only searches titles, but also all the content in the pages you have visited. This makes it a lot more useful than the limited Firefox implementation.
+- :date: 2008-06-14 01:19:15 +02:00
+  :author: ben
+  :url: ""
+  :id: 237
+  :body: |-
+    I really like Opera, but I think FF3 is such a big improvement that it has hit the tipping point. A lot of opera's adoption was from people who hated FF2's primitive UI, slow speed, and memory footprint. All have been solved enough that its larger user base will pretty make the solid winner.
+    
+    That said, I still use Opera. I don't like the new theme, because its harder to tell which tab is active (its not lit up enough), but luckily they have the classic skin.
+    
+    I think FF vs. Opera will be the same as Linux vs FreeBSD. The former has the critical mass, worse code base, and the religious fanatics. The latter is excellent, a niche, and their users are silently happy.
+- :date: 2008-06-14 04:26:28 +02:00
+  :author: wupperbayer
+  :url: ""
+  :id: 238
+  :body: |-
+    As an addition to what Friend already said, Opera not only shows history entries in its adress bar while entering terms, but bookmarks, too (found by its title and its address). You can also use Quick Find in two other ways: Either search through opera:historysearch or through Opera's history panel.
+    
+    Otherwise, nice review! It's really hard to claim one browser is much better than the other, as they're both very good. It certainly depends on personal preferences.
+- :date: 2008-06-15 09:37:05 +02:00
+  :author: Opera user
+  :url: ""
+  :id: 239
+  :body: "FF3 is much better than FF2 and comes close to Opera, I must admit some things do better than Opera. Only if I could use FF without mouse as I do in Opera. There nothing like Opera's SHIFT + arrows in FF. "
+- :date: 2008-06-16 00:40:47 +02:00
+  :author: Opera Synthesiser
+  :url: ""
+  :id: 240
+  :body: Opera is still edges the Firefox, but just barely. That said, Firefox still has more users but Opera is improving with every single update.
+- :date: 2008-07-22 06:21:35 +02:00
+  :author: Daniel
+  :url: ""
+  :id: 250
+  :body: I like the fact that a star shows up in the FF3 url box that indicates the page is in your fav folder and that you can modify it rigth away. FF has always been much more user friendly than Opera for most short cuts. Only recently has Opera modified one that was already in FF. Ctrl+t for tab, ctrl+b bookmark, ctrl+h history etc. these are the basic shortcuts Opera or any browser should have.
 date: 2008-06-13 05:18:00 +02:00
 tags: 
 - browsers

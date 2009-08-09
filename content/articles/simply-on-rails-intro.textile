@@ -3,6 +3,8 @@ permalink: simply-on-rails-intro
 filters_pre: 
 - redcloth
 title: Simply on Rails?
+comments: []
+
 date: 2007-06-30 06:00:00 +02:00
 tags: 
 - rails

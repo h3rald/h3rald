@@ -4,6 +4,26 @@ filters_pre:
 - erb
 - redcloth
 title: "Simply on Rails - Part 3: LiteController"
+comments: 
+- :date: 2007-09-08 04:26:55 +02:00
+  :author: Aleksandr
+  :url: http://www.ajaxrussia.com
+  :id: 58
+  :body: Why aren't you using REST?
+- :date: 2007-09-08 04:39:37 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 59
+  :body: |-
+    @Aleksandr: 
+    
+    Good question!
+    
+    The answer is that being it my first project in Rails, I was still a bit unsure about REST.
+    
+    <spoiler>
+    On a side note, I'm currently considering using "ActiveScaffold":http://activescaffold.com/ for things like this now... Will blog about it soon-ish.
+    </spoiler>
 date: 2007-07-22 06:03:00 +02:00
 tags: 
 - rails

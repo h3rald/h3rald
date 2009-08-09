@@ -3,6 +3,8 @@ permalink: "23"
 filters_pre: 
 - redcloth
 title: A look at Symfony
+comments: []
+
 date: 2006-05-01 13:42:46 +02:00
 tags: []
 

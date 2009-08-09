@@ -3,6 +3,8 @@ permalink: ruby-thanks
 filters_pre: 
 - redcloth
 title: Thanks
+comments: []
+
 date: 2007-09-14 11:43:00 +02:00
 tags: 
 - ruby

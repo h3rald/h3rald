@@ -3,6 +3,8 @@ permalink: "9"
 filters_pre: 
 - redcloth
 title: Riddle me this... and you'll get the job!
+comments: []
+
 date: 2006-04-07 16:13:58 +02:00
 tags: []
 

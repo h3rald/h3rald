@@ -4,6 +4,40 @@ filters_pre:
 - erb
 - redcloth
 title: Git for the Locals
+comments: 
+- :date: 2008-07-15 07:14:31 +02:00
+  :author: Daniel Hofstetter
+  :url: http://cakebaker.42dh.com
+  :id: 246
+  :body: Do you have any experience with the Eclipse plugin for Git?
+- :date: 2008-07-15 10:12:48 +02:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 247
+  :body: |-
+    @Daniel
+    
+    No, not really. I don't use Eclipse, it's not for _local_ people: we only use Vim around here :P
+    
+    I was literally amazed at how Git is easy to use right from the command line!
+- :date: 2008-07-15 14:43:23 +02:00
+  :author: Ronen
+  :url: http://javadevelopmentforthemasses.blogspot.com
+  :id: 248
+  :body: |
+    You can actually add your usb drive as a remote repo and push pull from it without the need for a sync tool, small google search lead me to this entry (not mine):
+    http://timwise.blogspot.com/2008/05/sharing-work-between-computers-with-usb.html
+
+- :date: 2008-07-16 08:07:03 +02:00
+  :author: Paolo Bonzini
+  :url: ""
+  :id: 249
+  :body: Yes, your points about not needing a server, being able to move the repo as you wish, and so on, is exactly what I meant when I wrote "if Subversion is CVS done right, git is RCS done right" in my own git tutorial -- http://smalltalk.gnu.org/blog/bonzinip/using-git-without-feeling-stupid-part-1 if you care.
+- :date: 2008-07-24 12:52:13 +02:00
+  :author: LurkingPixel
+  :url: http://is.gd/Fo2?357621748
+  :id: 251
+  :body: Subversion supports local repositories as well. Maybe not the same form as Git, but you certainly don't need to run a server to have an SVN repo.
 date: 2008-07-15 06:18:00 +02:00
 tags: 
 - programming

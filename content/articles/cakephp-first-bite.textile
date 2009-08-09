@@ -3,6 +3,8 @@ permalink: cakephp-first-bite
 filters_pre: 
 - redcloth
 title: "The CakePHP Framework: Your First Bite"
+comments: []
+
 date: 2006-07-14 04:03:00 +02:00
 tags: 
 - cakephp

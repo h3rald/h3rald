@@ -3,6 +3,8 @@ permalink: "43"
 filters_pre: 
 - redcloth
 title: Time for a diet...
+comments: []
+
 date: 2007-03-09 11:59:00 +01:00
 tags: 
 - cakephp

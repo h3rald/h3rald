@@ -3,6 +3,52 @@ permalink: h3rald-v7-overview
 filters_pre: 
 - redcloth
 title: Back on Track...
+comments: 
+- :date: 2007-06-24 08:43:42 +02:00
+  :author: kabturek
+  :url: http://kabturek.info
+  :id: 4
+  :body: |-
+    please please allow a diffrent color scheme ( black on white) or whatever .. now i have to use a bookmarklet on every page that resets the styles :)
+    
+    greets,
+- :date: 2007-06-24 09:06:44 +02:00
+  :author: anon
+  :url: ""
+  :id: 5
+  :body: I always suspected this was why Cake might eventually fail. Not because the code is weak, but because the core community drives people and possibilities away. Rails has always had a much better culture of openness and freedom. Interesting to see the first high-profile switch...
+- :date: 2007-06-24 10:20:22 +02:00
+  :author: Fabio Cevasco
+  :url: ""
+  :id: 6
+  :body: |+
+    lol @ kabturek... The new theme aims to be relaxing for the eyes, energy-saving and different from the previous one (not that there was anything wrong with it, I just wanted to try something completely different), however I can understand that it could be a bit disturbing for someone... I'll see about changing it or implementing a theme switcher... who knows!
+    
+    
+    
+- :date: 2007-06-26 04:38:53 +02:00
+  :author: AD7six
+  :url: http://www.noswad.me.uk
+  :id: 9
+  :body: |-
+    Hi H3rald,
+    
+    I hope to still find your articles interesting, whichever MVC flavour they may be.
+    
+    I like the new site with the exception that I can read almost nothing of what is written in red :). Hypocritical though it may seem (I know that kabturek has his bookmarklet to hand when he visits my site, that he isn't alone, and that I also need to put that style switcher in place). Please choose a brighter red or something else a bit higher contrast :)
+    
+    Cheers,
+    
+    AD
+- :date: 2007-06-26 04:49:43 +02:00
+  :author: AD7six
+  :url: http://www.noswad.me.uk
+  :id: 10
+  :body: |-
+    PS. The nav bar is completely invisible (at least to me) until I mouse over. I like black themes but atm it feels like my monitor has it's contrast set too low and brightness too high - except of course it hasn't. I wrote about "colour contrast":http://www.noswad.me.uk/MiBlog/Contrast before, you might want to test your colours out on "Snook's colour contrsat checker":http://snook.ca/technical/colour_contrast/colour.html
+    In any event good to see you writing again.
+    Cheers!
+    AD
 date: 2007-06-22 14:38:00 +02:00
 tags: 
 - website

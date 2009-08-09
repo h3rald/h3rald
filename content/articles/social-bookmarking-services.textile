@@ -3,6 +3,51 @@ permalink: social-bookmarking-services
 filters_pre: 
 - redcloth
 title: Review of ten popular social bookmarking services
+comments: 
+- :date: 2007-06-29 08:22:18 +02:00
+  :author: Marc
+  :url: http://www.socialmarc.com
+  :id: 11
+  :body: |-
+    Great Review! Do you have one for 
+    social bookmarking in the enterprise
+    ?
+- :date: 2007-06-29 11:22:57 +02:00
+  :author: Fabio Cevasco
+  :url: ""
+  :id: 12
+  :body: "Hello Marc,\n\n\
+    Nice try, you did indeed made me look at your site - which by chance features a social bookmarking service for enterprises - but I don't think I'll focus on that right now.\n\n\
+    I work for quite a large company who's more inclined in using IBM and Microsoft products, rather than new Web 2.0 startups - not that that's necessarily a good thing, by any means. I'd just like to ask you: how do you plan to convince large enterprises to use your service? "
+- :date: 2007-12-15 12:05:29 +01:00
+  :author: Raaj
+  :url: ""
+  :id: 168
+  :body: |
+    Thsi bookmarking and social networking stuff is going hot on the web. I do like your approach, would you please write a review about http://www.Tagza.com - Its young, funky new bookmarking web site.
+    
+    Cheers
+    
+    Raaj
+
+- :date: 2008-09-28 20:46:27 +02:00
+  :author: heath
+  :url: ""
+  :id: 262
+  :body: |
+    I would add www.IPopU.com to that list, its a pretty big Social Bookmarking site with 15,000+ members, and tens of thousands of submissions already. Clean simple layout, easy navigation, quick and easy submissions.Many categories to suite a variety of niches across the net.
+    
+    Check it out.
+
+- :date: 
+  :author: sam2008
+  :url: ""
+  :id: 433
+  :body: |-
+    Most social bookmark services encourage users to organize their bookmarks with informal tags instead of the traditional browser-based system of folders, although some services feature categories/folders or a combination of folders and tags.
+    ===============================================
+    Sam
+    <a href="http://www.widecircles.com">Social Bookmarking</a>
 date: 2006-05-13 15:06:27 +02:00
 tags: 
 - web20

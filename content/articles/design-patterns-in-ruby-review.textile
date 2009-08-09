@@ -3,6 +3,12 @@ permalink: design-patterns-in-ruby-review
 filters_pre: 
 - redcloth
 title: "Book Review: Design Patterns in Ruby"
+comments: 
+- :date: 2008-04-16 02:54:41 +02:00
+  :author: kint1@libero.it
+  :url: ""
+  :id: 231
+  :body: "ASSOLUTAMENTE OT: se solo fossero arrivati prima a questo: http://logs.cakephp.nu/cakephp/chat.log.2008-04-16 forse cakephp sarebbe da un'altra parte. Ciao e buon lavoro"
 date: 2008-04-11 05:41:00 +02:00
 tags: 
 - ruby

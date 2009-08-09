@@ -4,6 +4,82 @@ filters_pre:
 - erb
 - redcloth
 title: RawLine - a 100% Ruby solution for console inline editing
+comments: 
+- :date: 2008-03-10 08:19:47 +01:00
+  :author: Vidar Hokstad
+  :url: http://www.hokstad.com/
+  :id: 214
+  :body: |+
+    For moving right (or any other direction), your best bet is probably to look at VT100 escape sequences. They're pretty straightforward, and supported on a wide range of terminals. If you want truly portable terminal handling, though, you really, really want to read up on Terminfo, but using VT100 works on most modern systems.
+    
+- :date: 2008-03-10 09:05:06 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 215
+  :body: |-
+    Yes, I tried using output escape sequences for moving the cursor, and on Linux works fine. The problem is that VT*** escape sequences don't work on "modern" Windows Systems! 
+    So I left the original, "naive but cross-platform" implementation for now, at least until I find a way to do the same thing on Windows too (and also a proper way to delete characters).
+    
+    Thanks a lot!
+- :date: 2008-03-14 16:46:30 +01:00
+  :author: gthiesfeld
+  :url: http://blog.robustlunchbox.com
+  :id: 217
+  :body: The win32console gem handles escape sequences.  Take a look.
+- :date: 2008-03-15 04:37:34 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 218
+  :body: |-
+    @gthiesfeld
+    
+    Win32Console is a very cool gem, and for now I only got it working for text coloring, and that's quite cool. By the way, InLine is compatible with Win32Console, unlike Readline (that's one of the reasons why I made it in the first place!).
+    
+    Actually it seems to be able to do much more, now that I took a closer look, but unfortunately it's not too well documented. I should spend some time digging through its code. The problem though is that it seems to be a port of a Perl module, and the "coding standards" followed may not be too familiar.
+    
+    Thanks!
+- :date: 2008-03-15 08:48:29 +01:00
+  :author: j
+  :url: ""
+  :id: 219
+  :body: I don't get an 'examples' folder?
+- :date: 2008-03-15 13:05:06 +01:00
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com/
+  :id: 220
+  :body: |-
+    @j
+    
+    You're right... I just noticed that they're not shipped with the gem due to a silly mistake in the Rakefile... aww, my fault! Anyhow:
+    
+    - The source of both the examples is in this article
+    
+    - The _examples_ folder should be in the .zip and .tar.gz packages.
+- :date: 2008-03-17 12:38:18 +01:00
+  :author: Gordon Thiesfeld
+  :url: http://blog.robustlunchbox.com
+  :id: 221
+  :body: "I've submitted a large patch to Justin Bailey, the maintainer of the win32console gem that fixes a few bugs and makes the code more idiomatic.  It should be released any time now.  It also adds a redefined putc, so that it will buffer escape sequences and pass other characters straight through.  You might find that useful for InLine.  "
+- :date: 2008-03-17 14:44:15 +01:00
+  :author: Matt S.
+  :url: ""
+  :id: 222
+  :body: |+
+    This looks interesting... and helpful.
+    
+    The test files are missing from the gem as well.
+    $ ruby test/test_all.rb 
+    test/test_all.rb:7:in `require': no such file to load -- test_history_buffer (LoadError)
+    	from test/test_all.rb:7
+    
+- :date: 2008-03-21 10:50:18 +01:00
+  :author: Christian P
+  :url: ""
+  :id: 223
+  :body: |-
+    I would love to integrate inline as I am a WinXP user. How may get the benefits of this gem when using rail script/console or irb?
+    
+    Thanks for you work!
 date: 2008-03-10 06:59:00 +01:00
 tags: 
 - ruby

@@ -3,6 +3,8 @@ permalink: "13"
 filters_pre: 
 - redcloth
 title: Baking a new CakeArticle
+comments: []
+
 date: 2006-04-13 16:21:00 +02:00
 tags: 
 - cakephp

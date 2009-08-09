@@ -3,6 +3,17 @@ permalink: log-feb-2009
 filters_pre: 
 - redcloth
 title: Personal Log - February 2009
+comments: 
+- :date: 
+  :author: Dana
+  :url: ""
+  :id: 2691
+  :body: I like the "Recession time!" article, very honest.
+- :date: 
+  :author: Marko
+  :url: http://www.solidnybank.com/
+  :id: 2692
+  :body: Nice article!
 date: 2009-02-27 13:09:00 +01:00
 tags: 
 - personal_log

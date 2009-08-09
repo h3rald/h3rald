@@ -3,6 +3,8 @@ permalink: firefox3-revealed
 filters_pre: 
 - redcloth
 title: Firefox 3 Revealed
+comments: []
+
 date: 2008-06-17 04:46:00 +02:00
 tags: 
 - firefox

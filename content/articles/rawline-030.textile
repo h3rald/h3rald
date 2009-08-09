@@ -4,6 +4,19 @@ filters_pre:
 - erb
 - redcloth
 title: "RawLine 0.3.0 released \xE2\x80\x94 now with Readline emulation"
+comments: 
+- :date: 
+  :author: Daniel Berger
+  :url: http://www.sapphire-lang.org
+  :id: 2690
+  :body: Very nice, thank you!
+- :date: 
+  :author: Lars Christensen
+  :url: ""
+  :id: 2711
+  :body: |
+    Great job! The first example is a bit broken however, since String#chomp! return nil if the string is never modified. Try String#chomp.
+
 date: 2009-03-01 07:47:00 +01:00
 tags: 
 - ruby

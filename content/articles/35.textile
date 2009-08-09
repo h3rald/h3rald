@@ -3,6 +3,8 @@ permalink: "35"
 filters_pre: 
 - redcloth
 title: Some essential tools to survive in a corporate environment
+comments: []
+
 date: 2006-06-18 07:55:26 +02:00
 tags: []
 

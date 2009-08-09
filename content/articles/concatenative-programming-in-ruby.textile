@@ -4,6 +4,25 @@ filters_pre:
 - erb
 - redcloth
 title: Concatenative programming in Ruby
+comments: 
+- :date: 
+  :author: Nick
+  :url: http://nruth.tumblr.com
+  :id: 2695
+  :body: |-
+    This looks a lot like reverse polish notation, or similar ideas you'd see in SMC and SECD abstract machines. As for minimalism you might like to look at the pure lambda calculus as a 'minimal' programming language, it is to software what the Turing machine is to hardware.
+    
+    I have to say it struck me as counter-productive looking for a way to do such low level coding in a high level language like Ruby, but from a hobbyists point of view, or as a learning exercise, who cares :)
+    
+    Thanks for the links.
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2696
+  :body: |-
+    It _is_ Reverse Polish Notation. Yes, normally concatenative languages are fairly low level, but not always: Factor is an example of modern, higher level concatenative language, for instance.
+    
+    Obviously you won't start using Concatenative for your next web application, but it could be a good way to look into concatenative programming. I'll try to improve performance a little bit, but unfortunately certain optimization won't be possible due to the very nature of Ruby (especially for what concerns recursion).
 date: 2009-03-28 07:24:00 +01:00
 tags: 
 - ruby

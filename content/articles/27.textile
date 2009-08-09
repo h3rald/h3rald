@@ -3,6 +3,8 @@ permalink: "27"
 filters_pre: 
 - redcloth
 title: "rdBaker: Bake your CakePHP application online"
+comments: []
+
 date: 2006-05-08 11:50:00 +02:00
 tags: 
 - cakephp

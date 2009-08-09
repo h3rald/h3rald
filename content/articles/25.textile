@@ -3,6 +3,8 @@ permalink: "25"
 filters_pre: 
 - redcloth
 title: Digg Effect -  the day after
+comments: []
+
 date: 2006-05-05 03:59:00 +02:00
 tags: 
 - digg

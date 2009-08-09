@@ -3,6 +3,46 @@ permalink: rawline-020
 filters_pre: 
 - redcloth
 title: "New Release: RawLine 0.2.0"
+comments: 
+- :date: 
+  :author: Magrabi
+  :url: http://magrabi.wordpress.com
+  :id: 2645
+  :body: "congratulation ,\n\
+    i wanna to ask you how can you write big applicaion like this project in ruby ,\n\
+    iam beginner in ruby , can you tell me some bit about your begin in programming ??\n\
+    thanx "
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2650
+  :body: "@Magrabi: First of all, RawLine is a _tiny_ project, it's actually a really small library! If you want to learn more about programming in Ruby, start from the \"official Ruby web site\":http://www.ruby-lang.org, follow the 20-minute tutorial, and then experiment yourself!"
+- :date: 
+  :author: Magrabi
+  :url: http://magrabi.wordpress.com
+  :id: 2654
+  :body: |
+    thnx dude but i already write scripts in ruby to do small things ,
+    i wanna to ask about your journey in programming in all ,
+    as you mentioned in the 10 things to learn ruby you say that you begin in school then you learn another languages in collage , how much time you spent to be good at programming ??
+
+- :date: 
+  :author: Fabio Cevasco
+  :url: http://www.h3rald.com
+  :id: 2656
+  :body: |-
+    It takes years and a lot of dedication to become a good programmer. I was good at high school and at uni, even if we did just a few exams on C++ and my thesis in Java. 
+    
+    Then, when I started looking for work, I choose to become a Technical Writer pursuing a wonderful opportunity which turned out to be the best thing to do. I am now a Technical Leader and I write/coordinate technical documentation, and I'm programming just in my spare time :-)
+    
+    It doesn't matter how long it takes, you just have to love learning new things, always. (btw, I'm trying to learn a bit of Haskell too!)
+- :date: 
+  :author: Magrabi
+  :url: http://magrabi.wordpress.com
+  :id: 2657
+  :body: |-
+    thnx Mr.Fabio ,
+    your feeds is now readed by My Google Reader :D
 date: 2008-04-02 05:33:00 +02:00
 tags: 
 - ruby

@@ -3,6 +3,8 @@ permalink: akelos-interview
 filters_pre: 
 - redcloth
 title: An Interview with the creator of the Akelos Framework
+comments: []
+
 date: 2007-07-19 05:02:00 +02:00
 tags: 
 - php

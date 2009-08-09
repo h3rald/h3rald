@@ -4,6 +4,8 @@ filters_pre:
 - erb
 - redcloth
 title: "Announcement: RedBook v0.5.0 released"
+comments: []
+
 date: 2007-12-16 08:07:00 +01:00
 tags: 
 - opensource

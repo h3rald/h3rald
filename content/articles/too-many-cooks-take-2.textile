@@ -3,6 +3,29 @@ permalink: too-many-cooks-take-2
 filters_pre: 
 - redcloth
 title: "Too many cooks... take #2"
+comments: 
+- :date: 2007-09-02 14:18:10 +02:00
+  :author: Anon
+  :url: ""
+  :id: 46
+  :body: I'm glad you agree.
+- :date: 2007-09-03 02:02:36 +02:00
+  :author: Sebastian
+  :url: ""
+  :id: 47
+  :body: |-
+    ... or symfony, if you want to stick with PHP(5)
+    
+    http://www.symfony-project.com/
+    
+    Sebastian
+- :date: 2007-11-26 05:29:44 +01:00
+  :author: daniel
+  :url: ""
+  :id: 129
+  :body: |+
+    well, having a disagreement with the dev team doesn't have to mean that you must stop using the application they develop, right?
+    
 date: 2007-09-02 06:41:00 +02:00
 tags: 
 - cakephp

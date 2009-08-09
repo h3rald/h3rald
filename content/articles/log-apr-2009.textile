@@ -3,6 +3,12 @@ permalink: log-apr-2009
 filters_pre: 
 - redcloth
 title: Personal Log - April 2009
+comments: 
+- :date: 
+  :author: Elora
+  :url: ""
+  :id: 2701
+  :body: May 8 here we come!!!
 date: 2009-04-28 06:11:00 +02:00
 tags: 
 - personal_log

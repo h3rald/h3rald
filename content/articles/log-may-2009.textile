@@ -3,6 +3,8 @@ permalink: log-may-2009
 filters_pre: 
 - redcloth
 title: Personal Log - May 2009
+comments: []
+
 date: 2009-05-31 06:35:00 +02:00
 tags: 
 - personal_log
