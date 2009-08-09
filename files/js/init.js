@@ -3,18 +3,7 @@ $(document).ready(function() {
 		$.slider();
 		$('#up-arrow').click(function(){ $.scrollTo('#header', 1000)});
 		$('#down-arrow').click(function(){ $.scrollTo('#footer', 1000)});
-		var change_opacity = function() {
-		$(this).hover(function() {
-			$(this).stop().animate({ opacity: 1.0 }, 300);
-			},
-			function() {
-			$(this).stop().animate({ opacity: 0.3 }, 300);
-			}
-			);
-		};
-		$('.half-hidden').css('opacity', 0.3);
-		$('.half-hidden').each(change_opacity)
-
+	
 		// Drop Caps
 		$('h2 + p').each(function(){
 		var first_paragraph = this;//$('#content p')[0];
@@ -25,13 +14,10 @@ $(document).ready(function() {
 		}
 		var text = node.nodeValue;
 		var first_letter = text.substr(0,1);
-		var match = /[a-zA-Z]/.test(first_letter);
 		node.nodeValue = text.slice(1,text.length);
-		if ( match ) {
-			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
-		}
+		$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
 		});
-		Cufon.replace('.dropcap', {fontFamily: 'Chopin'});
+		Cufon.replace('.dropcap', {fontFamily: 'Mutlu'});
 
 });
 

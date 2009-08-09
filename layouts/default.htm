@@ -30,11 +30,13 @@ filter: erb
 		<script src="/js/cufon-yui.js" type="text/javascript"></script>
 		<script src="/js/Chopin_400.font.js" type="text/javascript"></script>
 		<script src="/js/Cardo_400.font.js" type="text/javascript"></script>
+		<script src="/js/Mutlu_400.font.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			Cufon.replace('h2', {fontFamily: 'Chopin'});
-			Cufon.replace('h3', {fontFamily: 'Chopin'});
-			Cufon.replace('#services h3', {fontFamily: 'Chopin'});
-			Cufon.replace('#navigation a', {fontFamily: 'Chopin'});
+			Cufon.replace('h2', {fontFamily: 'Mutlu'});
+			Cufon.replace('h3', {fontFamily: 'Mutlu'});
+			Cufon.replace('h4', {fontFamily: 'Mutlu'});
+			Cufon.replace('#services h3', {fontFamily: 'Mutlu'});
+			Cufon.replace('#navigation a', {fontFamily: 'Mutlu'});
 			function tweets_received(){
 				$('.twitter-item[title]').qtip(dark_tooltip);
 			}
@@ -89,15 +91,21 @@ filter: erb
 				<!-- CONTENT START -->
 				<div id="content" class="clearfix">
 					<div id="search_results"></div>
+					<% if @page.permalink != 'home' then %>
+						<h2><%= @page.title %></h2>
+					<% end %>
+					<% if @page.permalink == 'home' then %>
 					<div id="slider">
 						<div class="scroll">
 							<div class="scrollContainer">
-
+					<% end %>
 								<%= @page.content %>
 
+					<% if @page.permalink == 'home' then %>
 							</div><!-- .scrollContainer -->
 						</div><!-- .scroll -->
 					</div><!-- #slider -->
+					<% end %>
 				</div>
 				<!-- CONTENT END -->
 			</div>
