@@ -51,7 +51,7 @@ body
 	width: 100%;
 	background-color: #000;
 	padding: 5px 0;
-	height: 60px;
+	height: 70px;
 }
 
 #logo
@@ -116,6 +116,11 @@ body
 	height: 100%;
 }
 
+#main
+{
+	background: #fff url('../images/bkg.png') top repeat;
+}
+
 #palette
 {
 	position: fixed;
@@ -142,6 +147,7 @@ body
 #content
 {
 	text-align: justify;
+	padding: 0 10px;
 }
 
 /* FOOTER */
@@ -150,8 +156,7 @@ body
 #wrapper {
 	min-height: 100%;
 	margin-bottom: -40px;
-	position: relative;
-	background: #fff url('../images/bkg.png') top repeat;
+	background: #000;
 }  
 
 #border-top
@@ -165,18 +170,13 @@ body
 	background: #000 url('../images/border-bottom.png') top repeat-x;
 	height: auto;
 	padding: 0 30px;
-	padding-top: 40px;
+	padding-top:40px;
 }
 
 .inner-border 
 {
 	background: #000 url('../images/redcloth.png') top repeat-x;
 	height: 30px;
-}
-
-
-#logo
-{
 }
 
 #footer {
@@ -200,6 +200,8 @@ body
 	float:left;
 	text-align: left;
 	font-size: 90%;
+	display:block;
+	height: 430px;
 }
 
 .footer-left

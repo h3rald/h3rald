@@ -5,7 +5,6 @@ h2, h3, h4, h5
 	font-family: Georgia, Serif;
 	font-weight: normal;
 	color: #B80000;
-	text-align: center; 
 }
 
 h1
@@ -18,6 +17,7 @@ h2
 {
 	margin: 0;
 	font-size: 45px;
+	text-align: center; 
 }
 
 h3
@@ -66,6 +66,18 @@ em {
 {
 	padding-top: 35px;
 	vertical-align: middle;
+}
+
+#content ul
+{
+	list-style-type: none;	
+}
+
+#content li
+{
+	vertical-align: middle;
+	background: url("../images/icons/bullet.png") top left no-repeat;
+	padding-left: 20px;
 }
 
 

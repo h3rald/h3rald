@@ -127,10 +127,6 @@ blockquote, .note
 
 /*** HOME Page ***/
 
-#services
-{
-	height: 450px;
-}
 #services li
 {
 	margin-left: 0;
@@ -145,9 +141,36 @@ blockquote, .note
 {
 	list-style-type: none;
 	padding: 0.2em;
-	border: 1px solid #000;
 	margin: 3px 2px;
 	color: #BDB7BA;
+}
+
+/*** Arrows ***/
+
+#down-arrow
+{
+	background: url('../images/icons/down.png');
+	display: block;
+	height: 41px;
+	width: 40px;
+}
+
+#down-arrow:hover
+{
+	background: url('../images/icons/down_hover.png');
+}
+
+#up-arrow
+{
+	background: url('../images/icons/up.png');
+	display: block;
+	height: 41px;
+	width: 40px;
+}
+
+#up-arrow:hover
+{
+	background: url('../images/icons/up_hover.png');
 }
 
 /**** TABLES ****/
