@@ -42,7 +42,8 @@
 #         GitHub // http://github.com
 #
 require 'rubygems'
-require 'open4'
+require 'open3'
+require 'win32/open3' if RUBY_PLATFORM.match /win32/
 
 class Albino
 	@@bin = 'pygmentize'
@@ -62,7 +63,7 @@ class Albino
 
 	def execute(command)
 		output = ''
-		Open4.popen4(command) do |pid, stdin, stdout, stderr|
+		Open3.popen3(command) do |stdin, stdout, stderr|
 			stdin.puts @target
 			stdin.close
 			output = stdout.read.strip

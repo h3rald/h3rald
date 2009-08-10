@@ -164,7 +164,8 @@ body
 {
 	background: #000 url('../images/border-bottom.png') top repeat-x;
 	height: auto;
-	padding-top: 35px
+	padding: 0 30px;
+	padding-top: 40px;
 }
 
 .inner-border 
@@ -192,6 +193,7 @@ body
 {
 	height: 40px;
 	clear: both;
+	background: #000;
 }
 .footer-left, .footer-right, .footer-center
 {

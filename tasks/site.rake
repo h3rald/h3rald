@@ -25,9 +25,9 @@ namespace :site do
 	end
 
 	task :build_tag_pages do
-		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
-    site.load_data
 		# TODO
+		#site = Nanoc::Site.new(YAML.load_file('config.yaml'))
+    #site.load_data
 		# site.pages.each { |p| p.tags ...}
 	end
 
