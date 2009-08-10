@@ -1,0 +1,16 @@
+----- 
+:type: page
+:permalink: redbook
+:title: "Tag: redbook"
+:filters_pre: 
+- erb
+- redcloth
+-----
+
+6 items are tagged with _redbook_:
+
+<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('redbook')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+dir = (pg.attributes[:type] == 'page') ? '' : '/articles'
+%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="<%= dir %>/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+<% end %>
+		

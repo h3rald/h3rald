@@ -1,0 +1,16 @@
+----- 
+:type: page
+:permalink: website
+:title: "Tag: website"
+:filters_pre: 
+- erb
+- redcloth
+-----
+
+11 items are tagged with _website_:
+
+<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('website')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+dir = (pg.attributes[:type] == 'page') ? '' : '/articles'
+%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="<%= dir %>/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+<% end %>
+		

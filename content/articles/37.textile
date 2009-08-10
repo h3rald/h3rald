@@ -9,7 +9,6 @@ date: 2006-07-25 03:07:00 +02:00
 tags: 
 - website
 - cakephp
-- design
 type: article
 toc: true
 -----

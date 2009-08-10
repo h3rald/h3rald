@@ -120,7 +120,7 @@ Two working examples are also provided:
 * An example "duck" plugin, to make Mongrel quack like a duck when it's started (not the most useful thing in the world, but serves the purpose)
 
 
-h2. Debugging, Performance & Security
+h3. Debugging, Performance & Security
 
 The last three sections deals with other important aspects concerning the deployment of your application, how to debug, how to improve performance and how to secure your application.
 
@@ -150,7 +150,7 @@ better, simpler way to accomplish the same goal. Mongrel is a different kind of 
 </blockquote>
 
 
-h2. Conclusion
+h3. Conclusion
 
 If Mongrel is opinionated software, this is definitely an opinionated book which fully embraces the project's philosopy of simplicity above everything else. It's an interesting read and it won't bore you to death by deliberately skipping long and potentially tedious subjects and adding interesting insights instead (like the Zed Sez sidebars). Perhaps it is a bit too direct towards certain people, who may get even get offended (as planned) by some of the author's assertions.
 

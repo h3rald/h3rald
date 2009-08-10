@@ -7,9 +7,8 @@ comments: []
 
 date: 2006-05-05 03:59:00 +02:00
 tags: 
-- digg
 - web20
-- web development
+- web-development
 - internet
 type: article
 toc: true

@@ -8,7 +8,6 @@ comments: []
 date: 2006-04-26 05:36:00 +02:00
 tags: 
 - personal
-- family
 type: article
 toc: true
 -----
