@@ -260,6 +260,12 @@ input[type=text]:focus
 
 /* Google Search */
 
+#search_form
+{
+	clear:both;
+	margin-left: 10px;
+}
+
 .gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark
 {
 	display:none;
@@ -268,7 +274,6 @@ input[type=text]:focus
 table.gsc-search-box
 {
 	height: 25px;
-	margin-top: -13px;
 }
 
 .gsc-control, .gsc-resultsRoot
@@ -295,7 +300,7 @@ table.gsc-search-box
 	height: 20px;
 	font-size: 80%;
 	color: #ccc;
-	margin-top: -5px;
+	margin-top: -2px;
 	font-style: italic;
 	font-family: Georgia, Serif;
 	border: none;

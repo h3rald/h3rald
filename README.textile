@@ -11,3 +11,4 @@ h3. Ruby Gems
 h3. Other
 
 * pygments (code highlighting)
+* A cron job to fetch backtype comments.json and save it to /output/data.

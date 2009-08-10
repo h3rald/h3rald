@@ -41,11 +41,11 @@ namespace :site do
 		output.rmtree
 	end
 
-	task :update => [:copy_resources, :build_tag_pages] do
+	task :update => [:copy_resources] do
 		system "nanoc co"
 	end
 
-	task :run => [:copy_resources, :build_tag_pages] do
+	task :run => [:copy_resources] do
 		system "nanoc aco"
 	end
 
@@ -91,8 +91,7 @@ namespace :site do
 		end
 		file_dirs = [Pathname.new(pwd/'resources/images'), 
 			Pathname.new(pwd/'resources/js'),
-			Pathname.new(pwd/'resources/css'),
-			Pathname.new(pwd/'resources/data')]
+			Pathname.new(pwd/'resources/css')]
 		files = [pwd/'resources/.htaccess']
 		files.each { |f| copy_f.call f }
 		file_dirs.each do |d|

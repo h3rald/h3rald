@@ -81,15 +81,17 @@ body
 
 #navigation
 {
-	color: #ccc;
-	margin-top: -3px;
+	padding-right: 60px;
+	margin-top: -5px
 }
 
 #navigation li
 {
-	display: inline;
+	display: block;
+	float: left;
 	list-style-type: none;
-	padding-right: 10px;
+	width: 100px;
+	text-align: center;
 }
 
 
