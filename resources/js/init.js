@@ -14,10 +14,12 @@ $(document).ready(function() {
 		}
 		var text = node.nodeValue;
 		var first_letter = text.substr(0,1);
-		node.nodeValue = text.slice(1,text.length);
-		$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
-		});
-		Cufon.replace('.dropcap', {fontFamily: 'Mutlu'});
-
+		if (first_letter.match(/[a-zA-Z]/))
+		{
+			node.nodeValue = text.slice(1,text.length);
+			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
+			});
+			Cufon.replace('.dropcap', {fontFamily: 'Mutlu'});
+		}
 });
 

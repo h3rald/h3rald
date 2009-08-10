@@ -90,9 +90,7 @@ filter: erb
 				<!-- CONTENT START -->
 				<div id="content" class="clearfix">
 					<div id="search_results"></div>
-					<% if @page.type != 'page' then %>
 					<h2><%= @page.title %></h2>
-					<% end %>
 					<% if @page.permalink == 'home' then %>
 					<div id="slider">
 						<div class="scroll">
