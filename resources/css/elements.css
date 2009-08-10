@@ -217,26 +217,45 @@ th
 
 /**** FORMS ****/
 
-input[type="submit"], input[type="button"]
+input[type=submit]
 {
-	border: 1px solid #313634;
-	background-color: #C0C0C0;
-	font-family: Georgia, Serif;
-	font-style: italic;
-	font-size: 110%;
+	color: #ccc;
+	border: 1px solid #A4282D;
+	background: #333;
+	outline:none;
 }
 
-input:hover, input:active
+input[type=submit]:hover
 {
-	border-color: #C0C0C0;
-	background-color: #fff;
-	color: #000;
+	border: 1px solid #CF282D;
+	background: #ccc;
+	color: #333;
 }
 
-input[type="text"], textarea
+input[type=submit]:active
 {
-	border: 1px solid #C0C0C0;
-	background-color: #E2E9EB;
+	background: #aaa;
+}
+
+input[type=text]
+{
+	color: #ccc;
+	border: 1px solid #A4282D;
+	background: #333;
+	outline:none;
+	height: 18px;
+}
+
+input[type=text]:hover
+{
+	border: 1px solid #CF282D;
+	background: #ccc;
+	color: #333;
+}
+
+input[type=text]:focus
+{
+	background: #aaa;
 }
 
 /* Google Search */
