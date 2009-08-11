@@ -103,13 +103,3 @@ a:hover, a.gs-title:hover, .gsc-cursor-page:hover
 	color: #CF282D;
 }
 
-#content h2 a, #content h3 a
-{
-	color: #B80000;
-}
-
-#content h2 a:hover, #content h3 a:hover
-{
-	color: #FF0900;
-}
-

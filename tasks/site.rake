@@ -52,7 +52,7 @@ namespace :site do
 	task :rebuild => [:clear_output, :update] do
 	end
 
-	task :build_tag_pages do
+	task :tags do
 		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
 		site.load_data
 		tagdir = Pathname(Dir.pwd)/'content/tags'

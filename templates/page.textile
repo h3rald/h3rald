@@ -1,0 +1,12 @@
+-----
+permalink: page
+filters_pre: 
+- redcloth
+title: New page!
+date: 
+type: page
+-----
+
+h2. Title
+
+...

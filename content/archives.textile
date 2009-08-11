@@ -1,0 +1,15 @@
+-----
+# Built-in 
+filters_pre: 
+- redcloth
+
+# Custom 
+permalink: page
+title: New page!
+date: 
+type: page
+
+-----
+h2. Title
+
+<div id="search_form"></div>

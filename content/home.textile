@@ -11,6 +11,27 @@ tags: []
 type: page
 toc: true
 -----
-Welcome to H3RALD.com, Fabio Cevasco's personal web site. 
----
+<div class="panel" id="home">
+
+h2. Home
+
 popular:10-programming-languages|10-reasons-to-learn-ruby|firefox-lovers-guide-to-opera|komodo-edit-review|rails-inspired-php-frameworks
+
+</div>
+<div class="panel" id="archives">
+
+h2. Archives
+
+	<div id="search_form"></div>
+	<div id="search_results"></div>
+</div>
+<div class="panel" id="projects">
+
+h2. Projects
+
+</div>
+<div class="panel" id="about">
+
+h3. About
+
+</div>
