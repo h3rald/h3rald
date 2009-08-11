@@ -1,4 +1,5 @@
 ----- 
+summary:  "Featuring this month: wedding planning, easter in London, XBox gaming and more."
 permalink: log-apr-2009
 filters_pre: 
 - redcloth

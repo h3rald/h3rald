@@ -1,4 +1,6 @@
 ----- 
+summary: "An in-depth review of the Opera browser, with the eyes of a Firefox enthusiast. A useful comparison of the two browsers, whether you're planning to _switch_ or not."
+popular: true
 permalink: firefox-lovers-guide-to-opera
 filters_pre: 
 - redcloth

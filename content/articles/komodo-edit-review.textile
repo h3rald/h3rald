@@ -1,4 +1,6 @@
 ----- 
+summary: "A comprehensive review of the free editor from ActiveState, and why it's a very interesting alternative to more complex and heavy IDEs."
+popular: true
 permalink: komodo-edit-review
 filters_pre: 
 - redcloth

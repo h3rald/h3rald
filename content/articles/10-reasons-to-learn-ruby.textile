@@ -1,4 +1,6 @@
 ----- 
+summary: "Ten possible reasons to learn the Ruby Programming Language. Mostly related to the language's syntax and most useful idioms."
+popular: true
 permalink: 10-reasons-to-learn-ruby
 filters_pre: 
 - erb

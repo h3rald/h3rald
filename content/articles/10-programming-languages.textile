@@ -1,4 +1,6 @@
 ----- 
+popular: true
+summary: "A quick comparison of 10 non-mainstream programming languages, highlighting their main features, pros and cons. Each section contains also a list of links to get you started with a particular language."
 permalink: 10-programming-languages
 filters_pre: 
 - redcloth

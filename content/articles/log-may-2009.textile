@@ -1,4 +1,5 @@
 ----- 
+summary: "Featuring this month: Wedding planning, impression on the Star Trek premiere in Genoa, some comments on the Nimrod programming language, and more."
 permalink: log-may-2009
 filters_pre: 
 - redcloth

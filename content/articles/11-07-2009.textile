@@ -1,4 +1,5 @@
 ----- 
+summary: "All you need to know about my wedding, from the arrival in Ireland 'till the departure from AbbeyGlen Castle. With official pictures and famous quotes."
 permalink: 11-07-2009
 filters_pre: 
 - redcloth

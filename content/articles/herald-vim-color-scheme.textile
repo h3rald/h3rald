@@ -1,4 +1,5 @@
 ----- 
+summary: "My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!"
 permalink: herald-vim-color-scheme
 filters_pre: 
 - redcloth

@@ -17,7 +17,7 @@ $(document).ready(function() {
 		if (first_letter.match(/[a-zA-Z]/)){
 			node.nodeValue = text.slice(1,text.length);
 			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
-			Cufon.replace('.dropcap', {fontFamily: 'Mutlu'});
+			Cufon.replace('.dropcap', {fontFamily: 'Mutlu', fontSize: '40px'});
 			};
 		});
 });

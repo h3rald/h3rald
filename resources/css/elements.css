@@ -145,6 +145,29 @@ blockquote, .note
 	color: #BDB7BA;
 }
 
+#latest-articles
+{
+	float:left;
+	width: 400px;
+}
+
+#popular-articles
+{
+	float:right;
+	width: 400px;
+}
+
+.clearleft
+{
+	clear:both;
+}
+
+.article-item
+{
+	padding: 0.5em 0;
+	display: block;
+}
+
 /*** Arrows ***/
 
 #down-arrow

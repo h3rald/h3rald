@@ -1,0 +1,9 @@
+-----
+filter: erb
+-----
+<div class="article-item"> 
+	<h4><a href="/articles/<%= @article.attributes[:permalink]%>/"><%= @article.attributes[:title]%></a></h4><% unless (@article.attributes[:tags].empty?) then %><div class="article-tags"><%=	"Tagged as: "+@article.attributes[:tags].map{ |t| %{<a href="/tags/#{t}" class="tag">#{t}</a>} }.join(", ") %>
+	</div>
+	<% end %><%	if (@article.attributes[:summary]) then %><div class="article-summary"><%= @article.attributes[:summary] %>
+	</div><% end %>
+</div>

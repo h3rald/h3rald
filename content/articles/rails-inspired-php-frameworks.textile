@@ -1,4 +1,6 @@
 ----- 
+summary: "A roundup of six different PHP frameworks inspired by Ruby on Rails. Each with essential details, comments, pros and cons."
+popular: true
 permalink: rails-inspired-php-frameworks
 filters_pre: 
 - redcloth
