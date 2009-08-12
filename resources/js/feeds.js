@@ -1,17 +1,21 @@
 function feed_entry(entry, element){
-	var published_at = Date.parse(entry.publishedDate).toString('ddd, dd MMM at HH:mm:ss');
-
+	parsed_date = Date.parse(entry.publishedDate);
+	if (parsed_date){
+		var published_at = parsed_date.toString('ddd, dd MMM at HH:mm:ss');
+	} else {
+		var published_at = entry.publishedDate;
+	}
 	switch(element)
 	{
 		case "#twitter":
-			var content = "&#0187; "+published_at+" GMT:<br />"+entry.title
+			var content = "<em>&#0187; "+published_at+" GMT:</em><br />"+entry.title
 			.replace(/^h3rald:/, '')
 			.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/, '<a href="$1">$1</a>')
 			.replace(/ @([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/$1">@$1</a>')
 			.replace(/ #([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
 			break;
 		case "#delicious":
-			var content = "&#0187; "+published_at+":<br /><a href='"+entry.link+"'>"+entry.title+"</a>";
+			var content = "<em>&#0187; "+published_at+":</em><br /><a href='"+entry.link+"'>"+entry.title+"</a>";
 			content += "<br />tags: ";
 			var categories = Array();
 			for (i=0; i<entry.categories.length; i++)
@@ -24,8 +28,8 @@ function feed_entry(entry, element){
 	return $("<li class='feed-item'></li>").html(content);
 };
 function display_feed(feed, element){
-
-	if(!feed){
+	if (!feed){
+		$('<p>An error occurred while retrieving this feed.</p>').appendTo(element);
 		return false;
 	}
 	var feed_list = $("<ul></ul>");
@@ -39,9 +43,6 @@ function display_feed(feed, element){
 var delicious_feed = function(feed){
 	display_feed(feed, "#delicious")
 };
-var backtype_feed = function(feed){
-	display_feed(feed, "#backtype")
-};
 var twitter_feed = function(feed){
 	display_feed(feed, "#twitter")
 };
@@ -54,16 +55,13 @@ function backtype_comments()
 			var comment_list = $("<ul></ul>");
 			$.each(data.comments, function(i, comment){
 				c = $("<li></li>").addClass('feed-item-ext');
-				c.html("&#0187; "+Date.parse(comment.comment.date).toString("dddd, d MMMM - HH:mm:ss")+" GMT:<br />");
+				c.html("<em>&#0187; "+Date.parse(comment.comment.date).toString("dddd, d MMMM - HH:mm:ss")+" GMT:</em><br />");
 				c.append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
 				c.appendTo(comment_list);
 				if ( i == 6 ) {
-					comment_list.appendTo("#backtype")
+					comment_list.appendTo("#backtype").fadeIn(1000);
 					return false;	
 					}
 				});
 			});
 }
-backtype_comments()
-$.jGFeed('http://feeds.delicious.com/v2/rss/h3rald', delicious_feed, 6)
-$.jGFeed('http://twitter.com/statuses/user_timeline/h3rald.rss', twitter_feed, 8)
