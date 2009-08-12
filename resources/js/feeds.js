@@ -1,17 +1,17 @@
 function feed_entry(entry, element){
-	var published_at = $.timeago(entry.publishedDate);
+	var published_at = Date.parse(entry.publishedDate).toString('ddd, dd MMM at HH:mm:ss');
 
 	switch(element)
 	{
 		case "#twitter":
-			var content = entry.title
+			var content = "&#0187; "+published_at+" GMT:<br />"+entry.title
 			.replace(/^h3rald:/, '')
 			.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/, '<a href="$1">$1</a>')
 			.replace(/ @([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/$1">@$1</a>')
 			.replace(/ #([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
 			break;
 		case "#delicious":
-			var content = "&#0187; <a href='"+entry.link+"'>"+entry.title+"</a>";
+			var content = "&#0187; "+published_at+":<br /><a href='"+entry.link+"'>"+entry.title+"</a>";
 			content += "<br />tags: ";
 			var categories = Array();
 			for (i=0; i<entry.categories.length; i++)
@@ -21,7 +21,7 @@ function feed_entry(entry, element){
 			content += categories.join(', ').replace(/ $/, '');
 			break;
 	}
-	return $("<li class='feed-item'></li>").attr("title", published_at).html(content);
+	return $("<li class='feed-item'></li>").html(content);
 };
 function display_feed(feed, element){
 
@@ -53,8 +53,8 @@ function backtype_comments()
 			function(data){
 			var comment_list = $("<ul></ul>");
 			$.each(data.comments, function(i, comment){
-				c = $("<li></li>").addClass('feed-item-ext').attr('title', comment.comment.content);
-				c.html("<em>On: </em>");
+				c = $("<li></li>").addClass('feed-item-ext');
+				c.html("&#0187; "+Date.parse(comment.comment.date).toString("dddd, d MMMM - HH:mm:ss")+" GMT:<br />");
 				c.append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
 				c.appendTo(comment_list);
 				if ( i == 6 ) {

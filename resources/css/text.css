@@ -51,7 +51,6 @@ h2 + p:first-line {
 	cursor: pointer;
 	font-style: italic;
 	height: 50px;
-	display: block;
 }
 
 em {

@@ -26,7 +26,7 @@ popular = get_max_articles.call sorted_p
 
 h2. Welcome
 
-This is Fabio Cevasco's web site, featuring his "articles":/#articles and open source "projects":/#projects. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
+This is Fabio Cevasco's web site, featuring his "articles":/#archives and open source "projects":/#projects. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
 
 You can contact him by writing an email to _h3rald [at] h3rald [dot] com_, or through:
 

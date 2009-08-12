@@ -29,17 +29,12 @@ filter: erb
 		<script src="/js/search.js" type="text/javascript"></script>
 		<script src="/js/jquery-1.3.2.js" type="text/javascript"></script>
 		<script src="/js/cufon-yui.js" type="text/javascript"></script>
-		<script src="/js/Chopin_400.font.js" type="text/javascript"></script>
-		<script src="/js/Cardo_400.font.js" type="text/javascript"></script>
 		<script src="/js/Mutlu_400.font.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			Cufon.replace('#navigation a', {fontFamily: 'Mutlu', hover: true, fontSize: '35px'});
 			Cufon.replace('h2', {fontFamily: 'Mutlu', fontSize: '40px'});
 			Cufon.replace('h3', {fontFamily: 'Mutlu', hover: true, fontSize: '35px'});
 			Cufon.replace('#article-content h4', {fontFamily: 'Mutlu', fontSize: '28px'});
-			function tweets_received(){
-				$('.twitter-item[title]').qtip(dark_tooltip);
-			}
 </script> 
 
 <!-- JQuery Plugins -->
@@ -49,8 +44,11 @@ filter: erb
 <script src="/js/jquery.localscroll-min.js" type="text/javascript"></script>
 <script src="/js/jquery.serialScroll-min.js" type="text/javascript"></script>
 <script src="/js/slider.js" type="text/javascript"></script>
-<script src="/js/jquery.timeago.js" type="text/javascript"></script>
 <script src="/js/jquery.jgfeed-min.js" type="text/javascript"></script>
+
+
+<script src="/js/date.js" type="text/javascript"></script>
+<script src="/js/feeds.js" type="text/javascript"></script>
 <script src="/js/init.js" type="text/javascript"></script>
 
 	</head>
@@ -79,7 +77,7 @@ filter: erb
 			</div>
 			<!-- HEADER END -->
 			<div id="border-top"></div>
-			<div class="inner-border"></div>
+			<div class="inner-border"><img id="feed" src="/images/icons/rssfeed.png" /></div>
 			<!-- MAIN START -->
 			<div id="main">
 				<!-- CONTAINER START -->
@@ -133,12 +131,7 @@ filter: erb
 					</div>
 				</div> <!-- END FOOTER CONTAINER-->
 			</div> <!-- END FOOTER -->
-			<script src="/js/feeds.js" type="text/javascript"></script>
-			<script src="/js/jquery.qtip.js" type="text/javascript"></script>
 			<script type="text/javascript">
-				// tooltip
-			$('.feed-item[title]').qtip(dark_tip);
-			$('.feed-item-ext[title]').qtip(extended_tip);
 			Cufon.now();
 			</script>
 		</body>
