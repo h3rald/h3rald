@@ -5,9 +5,9 @@ $(document).ready(function() {
 		$('#up-arrow').click(function(){ $.scrollTo('#header', 1000)});
 		$('#down-arrow').click(function(){ $.scrollTo('#footer', 1000)});
 		// Feeds
-		backtype_comments();
-		$.jGFeed('http://feeds.delicious.com/v2/rss/h3rald', delicious_feed, 6);
+		backtype_comments(8);
 		$.jGFeed('http://twitter.com/statuses/user_timeline/h3rald.rss', twitter_feed, 8);
+		$.jGFeed('http://feeds.delicious.com/v2/rss/h3rald', delicious_feed, 8);
 		// Drop Caps
 		$('h2 + p').each(function(){
 		var first_paragraph = this;//$('#content p')[0];

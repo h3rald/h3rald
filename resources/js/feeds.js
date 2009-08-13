@@ -1,21 +1,25 @@
+function format_date(d){
+	return $.timeago(Date.parse(d));
+}
+
 function feed_entry(entry, element){
-	parsed_date = Date.parse(entry.publishedDate);
-	if (parsed_date){
-		var published_at = parsed_date.toString('ddd, dd MMM at HH:mm:ss');
-	} else {
-		var published_at = entry.publishedDate;
-	}
+	var published_at = format_date(entry.publishedDate); 
+	var it = $("<li></li>").addClass('feed-item');
 	switch(element)
 	{
 		case "#twitter":
-			var content = "<em>&#0187; "+published_at+" GMT:</em><br />"+entry.title
+			var content = entry.title
 			.replace(/^h3rald:/, '')
 			.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/, '<a href="$1">$1</a>')
 			.replace(/ @([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/$1">@$1</a>')
 			.replace(/ #([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
+			dt = $("<span></span>").addClass('feed-item-date').html(published_at+":");
+			tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
+			it.append(dt);
+			it.append(tx)
 			break;
 		case "#delicious":
-			var content = "<em>&#0187; "+published_at+":</em><br /><a href='"+entry.link+"'>"+entry.title+"</a>";
+			var content = "<a href='"+entry.link+"'>"+entry.title+"</a>";
 			content += "<br />tags: ";
 			var categories = Array();
 			for (i=0; i<entry.categories.length; i++)
@@ -23,9 +27,13 @@ function feed_entry(entry, element){
 				categories[i] = "<a href='http://delicious.com/h3rald/"+entry.categories[i]+"'>"+entry.categories[i]+"</a> ";
 			}
 			content += categories.join(', ').replace(/ $/, '');
+			dt = $("<span></span>").addClass('feed-item-date').html(published_at+":");
+			tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
+			it.append(dt);
+			it.append(tx)
 			break;
 	}
-	return $("<li class='feed-item'></li>").html(content);
+	return it;
 };
 function display_feed(feed, element){
 	if (!feed){
@@ -36,7 +44,7 @@ function display_feed(feed, element){
 	var entries = feed.entries;
 	for(var i=0; i<entries.length; i++){
 		var entry = entries[i];
-		feed_entry(entry, element).appendTo(feed_list).fadeIn(1000);
+		feed_list.append(feed_entry(entry, element)).fadeIn(1000);
 	}
 	feed_list.appendTo(element)
 };
@@ -48,17 +56,19 @@ var twitter_feed = function(feed){
 };
 
 // http://api.backtype.com/user/h3rald/comments.json?key=47bf0031e3a18a598b85&html=1
-function backtype_comments()
+function backtype_comments(max)
 {
 	$.getJSON("/data/comments.json",
 			function(data){
 			var comment_list = $("<ul></ul>");
 			$.each(data.comments, function(i, comment){
-				c = $("<li></li>").addClass('feed-item-ext');
-				c.html("<em>&#0187; "+Date.parse(comment.comment.date).toString("dddd, d MMMM - HH:mm:ss")+" GMT:</em><br />");
-				c.append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
+				c = $("<li></li>").addClass('feed-item');
+				dt = $("<span></span>").addClass('feed-item-date').html(format_date(comment.comment.date)+":");
+				tx = $("<span>&#0187; </span>").addClass('feed-item-text').append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
+				c.append(dt);
+				c.append(tx);
 				c.appendTo(comment_list);
-				if ( i == 6 ) {
+				if ( i == max ) {
 					comment_list.appendTo("#backtype").fadeIn(1000);
 					return false;	
 					}

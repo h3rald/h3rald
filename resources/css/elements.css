@@ -137,12 +137,23 @@ blockquote, .note
 	float: left;
 }
 
-.feed-item, .feed-item-ext
+.feed-item
 {
 	list-style-type: none;
-	padding: 0.2em;
-	margin: 3px 2px;
+	margin: 0.8em 0.3em;
 	color: #BDB7BA;
+}
+
+.feed-item-text, .feed-item-date
+{
+	display: block;
+}
+
+.feed-item-text
+{
+	margin-top: 0.3em;
+	margin-left: 1em;
+	font-style: italic;
 }
 
 #latest-articles
