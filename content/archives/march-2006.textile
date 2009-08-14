@@ -1,0 +1,15 @@
+----- 
+:type: page
+:permalink: march-2006
+:title: "Archive: March 2006"
+:filters_pre: 
+- erb
+- redcloth
+-----
+
+1 item was written in _March 2006_:
+
+<% articles_by_month.select{|i| i[0] == "March 2006"}[0][1].each do |pg|
+%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+<% end %>
+		

@@ -16,6 +16,7 @@ function OnLoad() {
 	search_options.setExpandMode(google.search.SearchControl.EXPAND_MODE_OPEN);
 
   searchControl.addSearcher(webSearch, search_options);
+	searchControl.setResultSetSize(google.search.Search.LARGE_RESULTSET);
 
 
   searchControl.draw(document.getElementById("search_results"), draw_options);

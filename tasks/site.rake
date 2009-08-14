@@ -13,11 +13,11 @@ module SiteUtils
 		meta[:type] = 'page'
 		meta[:filters_pre] = ['erb', 'redcloth']
 		meta[:permalink] = name
-		contents = %{\n#{count} items are tagged with _#{name}_:
+		pl = (count == 1) ? ' is' : 's are'
+		contents = %{\n#{count} item#{pl} tagged with _#{name}_:
 
 <% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('#{name}')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
-dir = (pg.attributes[:type] == 'page') ? '' : '/articles'
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="<%= dir %>/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		}
 		# Write file
@@ -27,7 +27,29 @@ dir = (pg.attributes[:type] == 'page') ? '' : '/articles'
 			f.puts "-----"
 			f.puts contents
 		end	
+	end
 
+	def write_archive_page(dir, name, count)
+		# Create archive page
+		meta = {}
+		meta[:title] = "Archive: #{name}"
+		meta[:type] = 'page'
+		meta[:filters_pre] = ['erb', 'redcloth']
+		meta[:permalink] = name.downcase.gsub /\s/, '-'
+		pl = (count == 1) ? ' was' : 's were'
+		contents = %{\n#{count} item#{pl} written in _#{name}_:
+
+<% articles_by_month.select{|i| i[0] == "#{name}"}[0][1].each do |pg|
+%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+<% end %>
+		}
+		# Write file
+		(dir/"#{meta[:permalink]}.textile").open('w+') do |f|
+			f.print "--"
+			f.puts meta.to_yaml
+			f.puts "-----"
+			f.puts contents
+		end
 	end
 end
 
@@ -55,9 +77,9 @@ namespace :site do
 	task :tags do
 		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
 		site.load_data
-		tagdir = Pathname(Dir.pwd)/'content/tags'
-		tagdir.rmtree if tagdir.exist?
-		tagdir.mkpath
+		dir = Pathname(Dir.pwd)/'content/tags'
+		dir.rmtree if dir.exist?
+		dir.mkpath
 		tags = {}
 		# Collect tag and page data
 		site.pages.each do |p|
@@ -72,9 +94,39 @@ namespace :site do
 		end
 		# Write pages
 		tags.each_pair do |k, v|
-			write_tag_page tagdir, k, v
+			write_tag_page dir, k, v
 		end
 	end
+
+	task :archives do
+		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
+		site.load_data
+		dir = Pathname(Dir.pwd)/'content/archives'
+		dir.rmtree if dir.exist?
+		dir.mkpath
+		m_articles = []
+		index = -1
+		current_month = ""
+		# Collect month and page data
+		articles = site.pages.select{|p| p.attributes[:date] && p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
+		articles.each do |a|
+			month = a.attributes[:date].strftime("%B %Y")
+			if current_month != month then
+				# new month
+				m_articles << [month, [a]]
+				index = index + 1
+				current_month = month
+			else
+				# same month
+				m_articles[index][1] << a
+			end
+		end
+		# Write pages
+		m_articles.each do |m|
+			write_archive_page dir, m[0], m[1].length
+		end
+	end
+
 
 	task :copy_resources do
 		pwd = Pathname.new Dir.pwd
