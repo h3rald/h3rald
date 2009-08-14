@@ -46,6 +46,7 @@
  function trigger(data) {
 	 var el = $('#slider .navigation').find('a[href$="' + data.id + '"]').get(0);
 	 selectNav.call(el);
+	 $.scrollTo('#header');
  }
 
  if (window.location.hash) {
@@ -64,7 +65,7 @@
 
 
  var scrollOptions = {
-target: $scroll, // the element that has the overflow
+				target: $scroll, // the element that has the overflow
 
 				// can be a selector which will be relative to the target
 				items: $panels,
