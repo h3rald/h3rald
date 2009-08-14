@@ -179,6 +179,13 @@ blockquote, .note
 	display: block;
 }
 
+/** Share buttons **/
+
+.inner-border img
+{
+	margin-top: 7px;
+}
+
 /*** Palette ***/
 
 #down-arrow
@@ -252,7 +259,7 @@ th
 
 /**** FORMS ****/
 
-input[type=submit]
+#content input[type=submit]
 {
 	color: #333;
 	border: 2px solid #333;
@@ -263,20 +270,20 @@ input[type=submit]
 
 }
 
-input[type=submit]:hover
+#content input[type=submit]:hover
 {
 	border: 2px solid #CF282D;
 	background: #eee;
 	color: #121212;
 }
 
-input[type=submit]:active
+#content input[type=submit]:active
 {
 	background: #aaa;
 	outline:none;
 }
 
-input[type=text]
+#content input[type=text]
 {
 	color: #333;
 	border: 2px solid #333;
@@ -287,13 +294,13 @@ input[type=text]
 	vertical-align: middle;
 }
 
-input[type=text]:hover
+#content input[type=text]:hover
 {
 	border: 2px solid #CF282D;
 	background: #FFEA8D;
 }
 
-input[type=text]:focus, input[type=text]:active
+#content input[type=text]:focus, #content input[type=text]:active
 {
 	border: 2px solid #CF282D;
 	background: #FFEA8D;
