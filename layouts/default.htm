@@ -91,18 +91,18 @@ filter: erb
 							<div class="scroll">
 								<div class="scrollContainer">
 									<%= @page.content %>
-									<% else %>
-									<div id="article-content">
-										<h2><%= @page.title %></h2>
-										<%= @page.content %>
-									</div>
-									<% end %>
+						<% else %>
+						<div id="article-content">
+							<h2><%= @page.title %></h2>
+							<%= @page.content %>
+						</div>
+						<% end %>
 
 									<% if @page.permalink == 'home' then %>
 								</div><!-- .scrollContainer -->
 							</div><!-- .scroll -->
 						</div><!-- #slider -->
-						<% end %>
+									<% end %>
 					</div>
 					<!-- CONTENT END -->
 				</div>

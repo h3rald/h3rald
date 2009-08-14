@@ -12,8 +12,6 @@ tags: []
 type: page
 toc: true
 -----
-h2. RawLine
-
 RawLine is a 100% Ruby alternative to the ReadLine library, providing some of its most popular features such as:
 
     * Basic line editing operations

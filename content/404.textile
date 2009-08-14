@@ -11,6 +11,4 @@ tags: []
 type: page
 toc: true
 -----
-h2. Page Not Found
-
-The page you're looking for cannot be found. Try searching the "archives":/archives/.
+The page you're looking for cannot be found. Try searching the "archives":/#archives/.

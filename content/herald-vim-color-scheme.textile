@@ -11,8 +11,6 @@ tags: []
 type: page
 toc: true
 -----
-h2. herald.vim
-
 *herald* is a dark color scheme for "Vim":http://www.vim.org which aims to be easy to read, eye-appealing, portable on multiple terminals, and suitable for source code highlighting in multiple languages.
 
 You can get the latest version *"HERE":/files/herald.vim* (direct link).

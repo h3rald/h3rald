@@ -1,0 +1,14 @@
+----- 
+permalink: "500"
+filters_pre: 
+- redcloth
+title: Internal Server Error
+comments: []
+
+date: 2008-10-26 11:34:54 +01:00
+tags: []
+
+type: page
+toc: true
+-----
+Something went wrong. Go back <a href="/">home</a>!

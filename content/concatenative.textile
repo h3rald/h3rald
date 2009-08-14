@@ -12,8 +12,6 @@ tags: []
 type: page
 toc: true
 -----
-h2. Concatenative
-
 Concatenative is a Ruby DSL(Domain-specific Language) for concatenative programming. It is heavily inspired by "Joy":http://www.latrobe.edu.au/philosophy/phimvt/joy.html, a minimalist programming language by Manfred von Thun. Like Joy, Concatenative features:
 
 * function composition, instead of function application
