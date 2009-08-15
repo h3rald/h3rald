@@ -1,54 +1,4 @@
-li.comment
-{
-	list-style-type: none;
-	margin: 10px 0;
-	border-bottom: 1px dashed #ccc;
-	padding-bottom: 20px;
-	clear: both;
-	display: block;
-}
-
-#content li.comment p
-{
-	line-height:1.5em;
-	margin: 0.5em 0em;
-}
-
-
-li.comment li
-{
-  list-style-type: disc;
-  margin: 0;
-  margin-left: 40px;
-  padding: 3px;
-  display: inline;
-  min-height: 0;
-}
-
-.comments label
-{
-	font-family: Georgia,  Serif;
-	font-style: italic;
-	color: #313634;
-}
-
-.comment .author
-{
-	float: left;
-	width: 80px;
-	text-align: center;
-}
-
-.comment .content
-{
-	height: 100%;
-	margin-left: 80px;
-}
-
-.gravatar
-{
-	border: 1px solid #313634;
-}
+/*** CONTENT ***/
 
 #content img
 {
@@ -112,7 +62,6 @@ blockquote, .note
 
 .tag, .link, .cross-link, #taglist a, #timeline a
 {
-	color: #B80000;
 	margin: 0 1px;
 	font-family: Georgia, Serif;
 	font-style: italic;
@@ -141,7 +90,6 @@ blockquote, .note
 {
 	list-style-type: none;
 	margin: 0.8em 0.3em;
-	color: #BDB7BA;
 }
 
 .feed-item-text, .feed-item-date
@@ -212,6 +160,27 @@ blockquote, .note
 #up-arrow:hover
 {
 	background: url('../images/icons/up_hover.png');
+}
+
+/*** COMMENTS ***/
+
+#idc-container-parent, #legacy-comments;
+{
+	padding: 5px;
+}
+
+.legacy-comment
+{
+	padding: 5px 0;
+}
+
+.lc-header
+{
+	display: block;
+	height: 20px;
+	border: 1px solid #232323;
+	background: #121212;
+	padding: 5px;
 }
 
 /**** TABLES ****/

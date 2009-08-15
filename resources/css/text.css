@@ -75,6 +75,11 @@ em {
 	padding-left: 20px;
 }
 
+#footer, #border-bottom
+{
+	color: #BDB7BA;
+}
+
 /**** Article Lists ****/
 
 .article-list h3

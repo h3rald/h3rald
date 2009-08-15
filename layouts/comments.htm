@@ -1,4 +1,14 @@
 -----
 filter: erb
 -----
-<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/h3rald/embed.js"></script><noscript><a href="http://h3rald.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<div id="comments">
+	<%= render 'legacy_comments' if @page.comments && @page.comments.length > 0 %>
+<script>
+var idcomments_acct = '7a8e41c4b06641909304090b010e8009';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+</div>
+

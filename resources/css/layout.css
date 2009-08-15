@@ -169,8 +169,6 @@ body
 {
 	background: #000 url('../images/redcloth.png') top repeat-x;
 	height: 30px;
-	text-align: center;
-	padding-left: 610px;
 }
 
 #footer {
@@ -218,6 +216,19 @@ body
 	clear: both;
 	font-size: 95%;
 	color: #CACACA;
+}
+
+#share
+{
+	margin:auto;
+	padding: 5px;
+	text-align: center;
+}
+
+#comments
+{
+	width: 900px;
+	margin:auto;
 }
 
 /* slider */
