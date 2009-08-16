@@ -164,7 +164,7 @@ blockquote, .note
 
 /*** COMMENTS ***/
 
-#idc-container-parent, #legacy-comments;
+#idc-container-parent, #legacy-comments
 {
 	padding: 5px;
 }

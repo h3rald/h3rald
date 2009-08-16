@@ -1,8 +1,8 @@
 $(document).ready(function() {
 		// Feeds
-		backtype_comments(7);
-		$.jGFeed('http://twitter.com/statuses/user_timeline/h3rald.rss', twitter_feed, 7);
-		$.jGFeed('http://feeds.delicious.com/v2/rss/h3rald', delicious_feed, 7);
+		display_opinions(7);
+		display_tweets(7);
+		display_bookmarks(7);
 		// Drop Caps
 		$('h2 + p').each(function(){
 		var first_paragraph = this;//$('#content p')[0];

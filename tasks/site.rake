@@ -61,6 +61,7 @@ namespace :site do
 		output = Pathname.new(Dir.pwd)/'output'
 		puts "Deleting all files in output dir..."
 		output.rmtree
+		(output/'data').mkpath
 	end
 
 	task :update => [:copy_resources] do

@@ -47,20 +47,13 @@ h2 + p:first-line {
 #services h3
 {
 	border: 1px solid #000;
-	text-align: left;
-	cursor: pointer;
 	font-style: italic;
-	height: 50px;
+	padding-top: 10px;
+	text-align: center;
 }
 
 em {
 	font-style: italic;
-}
-
-
-#services h3 a
-{
-	padding-top: 10px;
 }
 
 #content ul

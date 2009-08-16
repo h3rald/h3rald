@@ -3,7 +3,7 @@ permalink: home
 filters_pre: 
 - erb
 - redcloth
-title: Welcome
+title: Home
 type: page
 -----
 <%
@@ -13,6 +13,7 @@ all_articles = latest_articles
 latest = latest_articles 5
 popular = popular_articles 5
 %>
+h2. Welcome
 
 This is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles":/archives/ and <%= 5 %> open source "projects":/projects/. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
 

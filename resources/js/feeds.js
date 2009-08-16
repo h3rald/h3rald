@@ -2,76 +2,80 @@ function format_date(d){
 	return $.timeago(Date.parse(d));
 }
 
-function feed_entry(entry, element){
-	var published_at = format_date(entry.publishedDate); 
-	var it = $("<li></li>").addClass('feed-item');
-	switch(element)
-	{
-		case "#twitter":
-			var content = entry.title
-			.replace(/^h3rald:/, '')
-			.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/, '<a href="$1">$1</a>')
-			.replace(/ @([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/$1">@$1</a>')
-			.replace(/ #([a-zA-Z1-9_]*)/, ' <a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
-			dt = $("<span></span>").addClass('feed-item-date').html(published_at+":");
-			tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
-			it.append(dt);
-			it.append(tx)
-			break;
-		case "#delicious":
-			var content = "<a href='"+entry.link+"'>"+entry.title+"</a>";
-			content += "<br />tags: ";
-			var categories = Array();
-			for (i=0; i<entry.categories.length; i++)
-			{
-				categories[i] = "<a href='http://delicious.com/h3rald/"+entry.categories[i]+"'>"+entry.categories[i]+"</a> ";
+function get_json_data(uri, max, element){
+	$.getJSON(uri,
+		function(data){
+			var list = $("<ul></ul>");
+			for (var i=0; i<max; i++){
+				switch(element){
+					case "#backtype":
+						var item = backtype_entry(data.comments[i])
+					break;
+					case "#delicious":
+						var item = delicious_entry(data[i])
+					break;
+					case "#twitter":
+						var item = twitter_entry(data[i])
+					break;
+				}			
+				item.appendTo(list);
 			}
-			content += categories.join(', ').replace(/ $/, '');
-			dt = $("<span></span>").addClass('feed-item-date').html(published_at+":");
-			tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
-			it.append(dt);
-			it.append(tx)
-			break;
+			list.appendTo(element).fadeIn(1000);
+		});
+}
+
+function backtype_entry(comment){
+	var c = $("<li></li>").addClass('feed-item');
+	var dt = $("<span></span>").addClass('feed-item-date').html(format_date(comment.comment.date)+":");
+	var tx = $("<span>&#0187; </span>").addClass('feed-item-text').append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
+	c.append(dt);
+	c.append(tx);
+	return c
+}
+
+function twitter_entry(tweet){
+	var it = $("<li></li>").addClass('feed-item');
+	var content = tweet.text
+		.replace(/^h3rald:/, '')
+		.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/g, '<a href="$1">$1</a>')
+		.replace(/@([a-zA-Z1-9_]*)/g, '<a href="http://www.twitter.com/$1">@$1</a>')
+		.replace(/#([a-zA-Z1-9_]*)/g, '<a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
+	var dt = $("<span></span>").addClass('feed-item-date').html(format_date(tweet.created_at)+":");
+	var tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
+	it.append(dt);
+	it.append(tx);
+	return it
+}
+
+function delicious_entry(bookmark){
+	var it = $("<li></li>").addClass('feed-item');
+	var content = "<a href='"+bookmark.u+"'>"+bookmark.d+"</a>";
+	content += "<br />tags: ";
+	var categories = Array();
+	for (i=0; i<bookmark.t.length; i++)
+	{
+		categories[i] = "<a href='http://delicious.com/h3rald/"+bookmark.t[i]+"'>"+bookmark.t[i]+"</a> ";
 	}
-	return it;
-};
-function display_feed(feed, element){
-	if (!feed){
-		$('<p>An error occurred while retrieving this feed.</p>').appendTo(element);
-		return false;
-	}
-	var feed_list = $("<ul></ul>");
-	var entries = feed.entries;
-	for(var i=0; i<entries.length; i++){
-		var entry = entries[i];
-		feed_list.append(feed_entry(entry, element)).fadeIn(1000);
-	}
-	feed_list.appendTo(element)
-};
-var delicious_feed = function(feed){
-	display_feed(feed, "#delicious")
-};
-var twitter_feed = function(feed){
-	display_feed(feed, "#twitter")
-};
+	content += categories.join(', ').replace(/ $/, '');
+	dt = $("<span></span>").addClass('feed-item-date').html(format_date(bookmark.dt)+":");
+	tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
+	it.append(dt);
+	it.append(tx);
+	return it
+}
+
 
 // http://api.backtype.com/user/h3rald/comments.json?key=47bf0031e3a18a598b85&html=1
-function backtype_comments(max)
-{
-	$.getJSON("/data/comments.json",
-			function(data){
-			var comment_list = $("<ul></ul>");
-			$.each(data.comments, function(i, comment){
-				c = $("<li></li>").addClass('feed-item');
-				dt = $("<span></span>").addClass('feed-item-date').html(format_date(comment.comment.date)+":");
-				tx = $("<span>&#0187; </span>").addClass('feed-item-text').append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
-				c.append(dt);
-				c.append(tx);
-				c.appendTo(comment_list);
-				if ( i == max ) {
-					comment_list.appendTo("#backtype").fadeIn(1000);
-					return false;	
-					}
-				});
-			});
+function display_opinions(max){
+	get_json_data("/data/opinions.json", max, '#backtype')
+}
+
+// http://twitter.com/status/user_timeline/h3rald.json
+function display_tweets(max){
+	get_json_data("/data/tweets.json", max, '#twitter')
+}
+
+// http://feeds.delicious.com/v2/json/h3rald
+function display_bookmarks(max){
+	get_json_data("/data/bookmarks.json", max, '#delicious')
 }
