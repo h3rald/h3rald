@@ -64,7 +64,7 @@ em {
 #content li
 {
 	vertical-align: middle;
-	background: url("../images/icons/bullet.png") top left no-repeat;
+	background: url("../images/theme/icons/bullet.png") top left no-repeat;
 	padding-left: 20px;
 }
 

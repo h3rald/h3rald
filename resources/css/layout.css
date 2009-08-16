@@ -110,7 +110,7 @@ body
 
 #main
 {
-	background: #fff url('../images/bkg.png') top repeat;
+	background: #fff url('../images/theme/bkg.png') top repeat;
 }
 
 #content
@@ -130,13 +130,13 @@ body
 
 #border-top
 {
-	background: #000 url('../images/border-top.png') bottom repeat-x;
+	background: #000 url('../images/theme/border-top.png') bottom repeat-x;
 	height: 35px;
 }
 
 #border-bottom
 {
-	background: #000 url('../images/border-bottom.png') top repeat-x;
+	background: #000 url('../images/theme/border-bottom.png') top repeat-x;
 	height: auto;
 	padding: 0 30px;
 	padding-top:40px;
@@ -144,7 +144,7 @@ body
 
 .inner-border 
 {
-	background: #000 url('../images/redcloth.png') top repeat-x;
+	background: #000 url('../images/theme/redcloth.png') top repeat-x;
 	height: 30px;
 }
 

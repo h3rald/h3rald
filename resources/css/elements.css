@@ -31,7 +31,7 @@ blockquote, .note
 	font-style:italic;
 	padding:0 0 0 33px;
 	margin: 0;
-	background: url(/images/theme/quote.gif) no-repeat top left;
+	background: url(/images/theme/theme/quote.gif) no-repeat top left;
 }
 
 
@@ -138,7 +138,7 @@ blockquote, .note
 
 #down-arrow
 {
-	background: url('../images/icons/down.png');
+	background: url('../images/theme/icons/down.png');
 	display: block;
 	height: 41px;
 	width: 40px;
@@ -146,12 +146,12 @@ blockquote, .note
 
 #down-arrow:hover
 {
-	background: url('../images/icons/down_hover.png');
+	background: url('../images/theme/icons/down_hover.png');
 }
 
 #up-arrow
 {
-	background: url('../images/icons/up.png');
+	background: url('../images/theme/icons/up.png');
 	display: block;
 	height: 41px;
 	width: 40px;
@@ -159,7 +159,7 @@ blockquote, .note
 
 #up-arrow:hover
 {
-	background: url('../images/icons/up_hover.png');
+	background: url('../images/theme/icons/up_hover.png');
 }
 
 /*** COMMENTS ***/
@@ -332,7 +332,7 @@ td.gsc-branding-img
 
 div.gsc-clear-button
 {
-	background: transparent url('../images/icons/close.png') no-repeat center 50%;
+	background: transparent url('../images/theme/icons/close.png') no-repeat center 50%;
 	width: 10px;
 	height: 10px;
 }
