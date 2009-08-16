@@ -113,29 +113,6 @@ body
 	background: #fff url('../images/bkg.png') top repeat;
 }
 
-#palette
-{
-	position: fixed;
-	margin-top: 20px;	
-	margin-left: -46px;
-	width: 32px;
-	z-index: 3000;
-}
-
-#palette li
-{
-	list-style-image: none;
-	list-style-type: none;
-	height: 32px;
-	width: 32px;
-	vertical-align: middle;
-	text-align: center;
-}
-
-#palette li:hover
-{
-}
-
 #content
 {
 	text-align: justify;

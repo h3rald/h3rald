@@ -3,14 +3,8 @@ permalink: home
 filters_pre: 
 - erb
 - redcloth
-title: Home
-comments: []
-
-date: 
-tags: []
-
+title: Welcome
 type: page
-toc: true
 -----
 <%
 max_items = 5
@@ -18,12 +12,9 @@ max_items = 5
 all_articles = latest_articles
 latest = latest_articles 5
 popular = popular_articles 5
-tags = sorted_site_tags
-%><div class="panel" id="home">
+%>
 
-h2. Welcome
-
-This is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles":/#archives and <%= 5 %> open source "projects":/#projects. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
+This is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles":/archives/ and <%= 5 %> open source "projects":/projects/. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
 
 You can contact him by writing an email to _h3rald [at] h3rald [dot] com_, or through:
 
@@ -53,76 +44,3 @@ popular.each do |a|
 <% end %> 
 </div>
 <div class="clearleft"></div>
-</div>
-<div class="panel" id="archives">
-h2. Archives
-
-<notextile>
-	<div id="search_form"></div>
-	<div id="search_results"></div>
-	<h3>Articles by Topic</h3>
-	<table id="taglist">
-	<% c = 0
-		 tags.each do |t|
-			 c = c+1 %>
-			<%= "<tr>" if c%5 == 1 %>
-			<td><%= tag_link_with_count(t[0], t[1]) %></td>
-			<%= "</tr>" if c%5 == 0 %>
-		<% end %></tr>
-	</table>
-	<h3>Articles by Month</h3>
-	<table id="timeline">
-	<% c = 0
-		 articles_by_month.each do |m|
-			 c = c+1 %>
-			<%= "<tr>" if c%5 == 1 %>
-			<td><%= month_link_with_count(m[0], m[1].length) %></td>
-			<%= "</tr>" if c%5 == 0 %>
-		<% end %></tr>
-	</table>
-</div>
-</notextile>
-
-
-
-<div class="panel" id="projects">
-
-h2. Projects
-
-</div>
-<div class="panel" id="about">
-
-h2. About
-
-This is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be.
-
-This site was designed to work with all the major modern browsers (hint: Internet Explorer 6 is _not_ a modern browser). It validates as XHTML 1.1 Strict and CSS 2.1.
-
-
-h3. Under the Hood
-
-This site is powered by:
-
-* -A customized version of the "Typo":http://www.typosphere.org blogging engine.-
-* -The "Ruby on Rails":http://www.rubyonrails.org web framework for the "Ruby":http://www.ruby-lang.org programming language.-
-* -The "MySQL":http://www.mysql.com database engine.-
-* -The "Apache":http://www.apache.org web server.-
-* Just "Nanoc":http://nanoc.stoneship.org/, <em>"[...] a site compiler written in Ruby for building awesome web sites."</em> 
-
-h3. Licensing
-
-My "articles":/#archives and other material available on this web site are lincesed under the _Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported_license. For other uses, contact me.
-
-
-<p style="text-align:center">
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
-</p>
-
-h3. Credits
-
-I'd like to thank the following people for their work, which made this web site possible:
-
-* "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "Nanoc":http://nanoc.stoneship.org/ site compiler.
-* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo.
-
-</div>

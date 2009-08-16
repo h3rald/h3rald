@@ -37,11 +37,7 @@ filter: erb
 
 <!-- JQuery Plugins -->
 <script src="/js/jquery.preload.js" type="text/javascript"></script>
-<script src="/js/tooltips.js" type="text/javascript"></script>
 <script src="/js/jquery.scrollTo-min.js" type="text/javascript"></script>
-<script src="/js/jquery.localscroll-min.js" type="text/javascript"></script>
-<script src="/js/jquery.serialScroll-min.js" type="text/javascript"></script>
-<script src="/js/slider.js" type="text/javascript"></script>
 <script src="/js/jquery.jgfeed-min.js" type="text/javascript"></script>
 <script src="/js/jquery.timeago.js" type="text/javascript"></script>
 
@@ -65,10 +61,10 @@ filter: erb
 					</div>
 					<div id="header-right">
 						<ul id="navigation">
-							<li><a href="<%= (@page.permalink == 'home') ? "#home" : "/#home" %>" class="cross-link">Home</a></li>
-							<li><a href="<%= (@page.permalink == 'home') ? "#archives" : "/#archives" %>" class="cross-link">Archives</a></li>
-							<li><a href="<%= (@page.permalink == 'home') ? "#projects" : "/#projects" %>" class="cross-link">Projects</a></li>
-							<li><a href="<%= (@page.permalink == 'home') ? "#about" : "/#about" %>" class="cross-link">About</a></li>
+							<li><a href="/" class="cross-link">Home</a></li>
+							<li><a href="/archives/" class="cross-link">Archives</a></li>
+							<li><a href="/projects/" class="cross-link">Projects</a></li>
+							<li><a href="/about/" class="cross-link">About</a></li>
 						</ul>
 					</div>
 				</div>
@@ -81,10 +77,6 @@ filter: erb
 			<div id="main">
 				<!-- CONTAINER START -->
 				<div id="container">
-					<ul id="palette">
-						<li><a href="#" id="up-arrow"></a></li>
-						<li><a href="#" id="down-arrow"></a></li>
-					</ul>
 					<!-- CONTENT START -->
 					<div id="content" class="clearfix">
 						<% if @page.permalink == 'home' then %>
