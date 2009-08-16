@@ -144,8 +144,10 @@ namespace :site do
 		end
 		file_dirs = [Pathname.new(pwd/'resources/images'), 
 			Pathname.new(pwd/'resources/js'),
+			Pathname.new(pwd/'resources/img'),
+			Pathname.new(pwd/'resources/files'),
 			Pathname.new(pwd/'resources/css')]
-		files = [pwd/'resources/.htaccess']
+		files = [pwd/'resources/.htaccess', pwd/'resources/robots.txt',  pwd/'resources/favicon.ico']
 		files.each { |f| copy_f.call f }
 		file_dirs.each do |d|
 			d.find do |src|
