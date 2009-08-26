@@ -2,7 +2,7 @@
 filter: erb
 -----
 <div id="comments">
-	<%= render 'legacy_comments' if @page.comments && @page.comments.length > 0 %>
+	<%= render 'legacy_comments' if @item[:comments] && @item[:comments].length > 0 %>
 <script>
 var idcomments_acct = '7a8e41c4b06641909304090b010e8009';
 var idcomments_post_id;

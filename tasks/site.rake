@@ -2,7 +2,7 @@ require 'rubygems'
 require 'extlib'
 require 'pathname'
 require 'fileutils'
-require 'nanoc'
+require 'nanoc3'
 
 module SiteUtils
 
@@ -16,7 +16,7 @@ module SiteUtils
 		pl = (count == 1) ? ' is' : 's are'
 		contents = %{\n#{count} item#{pl} tagged with _#{name}_:
 
-<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('#{name}')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('#{name}')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		}
@@ -65,25 +65,25 @@ namespace :site do
 	end
 
 	task :update => [:copy_resources] do
-		system "nanoc co"
+		system "nanoc3 co"
 	end
 
 	task :run => [:copy_resources] do
-		system "nanoc aco"
+		system "nanoc3 aco"
 	end
 
 	task :rebuild => [:clear_output, :update] do
 	end
 
 	task :tags do
-		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
+		site = Nanoc3::Site.new('.')
 		site.load_data
 		dir = Pathname(Dir.pwd)/'content/tags'
 		dir.rmtree if dir.exist?
 		dir.mkpath
 		tags = {}
 		# Collect tag and page data
-		site.pages.each do |p|
+		site.items.each do |p|
 			next unless p.attributes[:tags]
 			p.attributes[:tags].each do |t|
 				if tags[t]
@@ -100,7 +100,7 @@ namespace :site do
 	end
 
 	task :archives do
-		site = Nanoc::Site.new(YAML.load_file('config.yaml'))
+		site = Nanoc3::Site.new(YAML.load_file('config.yaml'))
 		site.load_data
 		dir = Pathname(Dir.pwd)/'content/archives'
 		dir.rmtree if dir.exist?

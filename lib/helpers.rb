@@ -1,10 +1,12 @@
-module Nanoc::Helpers::Tagging
+require 'redcloth'
+
+module Nanoc3::Helpers::Tagging
 
 	def site_tags
 		ts = {}
-		@pages.each do |p|
-			next unless p.tags
-			p.tags.each do |t|
+		@items.each do |p|
+			next unless p[:tags]
+			p[:tags].each do |t|
 				if ts[t]
 					ts[t] = ts[t]+1
 				else
@@ -25,16 +27,16 @@ module Nanoc::Helpers::Tagging
 
 end
 
-module Nanoc::Helpers::Site
+module Nanoc3::Helpers::Site
 
 	def latest_articles(max=nil)
-		total = @site.pages.select{|p| p.attributes[:date] && p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
+		total = @site.items.select{|p| p.attributes[:date] && p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
 		max ||= total.length
 		total[0..max-1]
 	end
 
 	def popular_articles(max=nil)
-		total = @site.pages.select{|p| p.attributes[:date] && p.attributes[:type] == 'article' && p.attributes[:popular]}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse
+		total = @site.items.select{|p| p.attributes[:date] && p.attributes[:type] == 'article' && p.attributes[:popular]}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse
 		max ||= total.length
 		total[0..max-1]
 	end
@@ -67,5 +69,6 @@ module Nanoc::Helpers::Site
 
 end
 
-include Nanoc::Helpers::Tagging
-include Nanoc::Helpers::Site
+include Nanoc3::Helpers::Tagging
+include Nanoc3::Helpers::Site
+include Nanoc3::Helpers::Rendering

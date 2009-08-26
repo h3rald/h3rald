@@ -1,15 +1,15 @@
 ----- 
 :type: page
-:permalink: web-development
 :title: "Tag: web-development"
 :filters_pre: 
 - erb
 - redcloth
+:permalink: web-development
 -----
 
 2 items are tagged with _web-development_:
 
-<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('web-development')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('web-development')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		

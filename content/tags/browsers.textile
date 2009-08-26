@@ -1,15 +1,15 @@
 ----- 
 :type: page
-:permalink: browsers
 :title: "Tag: browsers"
 :filters_pre: 
 - erb
 - redcloth
+:permalink: browsers
 -----
 
 7 items are tagged with _browsers_:
 
-<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('browsers')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('browsers')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		

@@ -7,7 +7,7 @@ filters:
 	<p>
 	<em>These comments were imported automatically from an old version of this web site. Scroll <a href="#idc-container-parent">down</a> for the newest stuff.</em>
 	</p>
-	<% @page.comments.each do |c| %>
+	<% @item[:comments].each do |c| %>
 	<div id="comment-<%=c[:id]%>" class="legacy-comment">
 		<div class="lc-header"><%= (c[:url].empty?) ? c[:author] : %{<a href="#{c[:url]}">#{c[:author]}</a>} %></div>
 		<div class="lc-body">

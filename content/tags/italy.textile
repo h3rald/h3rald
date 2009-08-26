@@ -1,15 +1,15 @@
 ----- 
 :type: page
-:permalink: italy
 :title: "Tag: italy"
 :filters_pre: 
 - erb
 - redcloth
+:permalink: italy
 -----
 
 3 items are tagged with _italy_:
 
-<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('italy')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('italy')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		

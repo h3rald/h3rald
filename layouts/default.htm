@@ -5,7 +5,7 @@ filter: erb
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
-		<title><%= @page.title %> - H3RALD</title>
+		<title><%= @item[:title] %> - H3RALD</title>
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.h3rald.com/rss" />
 		<link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.h3rald.com/atom" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -79,23 +79,10 @@ filter: erb
 				<div id="container">
 					<!-- CONTENT START -->
 					<div id="content" class="clearfix">
-						<% if @page.permalink == 'home' then %>
-						<div id="slider">
-							<div class="scroll">
-								<div class="scrollContainer">
-									<%= @page.content %>
-						<% else %>
 						<div id="article-content">
-							<h2><%= @page.title %></h2>
-							<%= @page.content %>
+							<h2><%= @item[:title] %></h2>
+							<%= yield %>
 						</div>
-						<% end %>
-
-									<% if @page.permalink == 'home' then %>
-								</div><!-- .scrollContainer -->
-							</div><!-- .scroll -->
-						</div><!-- #slider -->
-									<% end %>
 					</div>
 					<!-- CONTENT END -->
 				</div>
@@ -108,7 +95,7 @@ filter: erb
 <a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="http://static.addtoany.com/buttons/share_save_120_16.gif" width="120" height="16" alt="Share/Save/Bookmark"/></a><script type="text/javascript">a2a_linkname=document.title;a2a_linkurl=location.href;a2a_onclick=1;a2a_prioritize=["delicious","stumbleupon","friendfeed","twitter","dzone","digg","reddit","slashdot","facebook","newsvine","sphere","ping"];</script><script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 <a class="a2a_dd" href="http://www.addtoany.com/subscribe?linkname=&amp;linkurl=http%3A%2F%2Fwww.h3rald.com%2Frss%2F"><img src="http://static.addtoany.com/buttons/subscribe_120_16.gif" width="120" height="16" alt="Subscribe"/></a><script type="text/javascript">a2a_linkname=document.title;a2a_linkurl="http://www.h3rald.com/rss/";a2a_onclick=1;</script><script type="text/javascript" src="http://static.addtoany.com/menu/feed.js"></script>
 				</div>
-				<% if @page.type == 'article' then %>
+				<% if @item[:type] == 'article' then %>
 					<%= render 'comments' %>
 					<% else %>
 					<%= render 'services' %>

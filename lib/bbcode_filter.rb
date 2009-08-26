@@ -1,10 +1,10 @@
 require 'rubygems'
 require 'bb-ruby'
 
-class BbcodeFilter < Nanoc::Filter
+class BbcodeFilter < Nanoc3::Filter
 	identifier :bbcode
 
-	def run(content)
+	def run(content, args)
 		content.bbcode_to_html
 	end
 

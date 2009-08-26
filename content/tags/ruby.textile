@@ -1,15 +1,15 @@
 ----- 
 :type: page
-:permalink: ruby
 :title: "Tag: ruby"
 :filters_pre: 
 - erb
 - redcloth
+:permalink: ruby
 -----
 
 27 items are tagged with _ruby_:
 
-<% @site.pages.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('ruby')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('ruby')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		

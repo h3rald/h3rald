@@ -12,6 +12,7 @@ require 'iconv'
 
 module TypoUtils
 
+	# Ignored by Nanoc 3
 	def get_filter(db, fid)
 		filter = db[:text_filters].where("id = ?", fid).get(:name).downcase
 		# Multiple filters are not handled (e.g. markdown smartypants)

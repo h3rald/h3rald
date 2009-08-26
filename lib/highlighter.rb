@@ -1,7 +1,7 @@
 
 # Monkey patch Nanoc::Helpers::Filtering
 
-module Nanoc::Helpers::Filtering
+module Nanoc3::Helpers::Filtering
 
 	def highlight(syntax, &block)
 		# Seamlessly ripped off from the filter method...
@@ -19,4 +19,4 @@ module Nanoc::Helpers::Filtering
 
 end
 
-include Nanoc::Helpers::Filtering
+include Nanoc3::Helpers::Filtering

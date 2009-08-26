@@ -75,7 +75,7 @@ create  app/helpers/recipe_helper.rb
 
 And so on. Anyhow... I followed the tutorial and yes, it was a nice read. CakePHP borrowed a lot from Rails but not everything. Inevitably Ruby's syntax is less verbose and looks very very clean:
 
-<pre><code>
+<% highlight :ruby do %>
 class RecipeController < ApplicationController
 	scaffold :recipe
 	
@@ -88,11 +88,11 @@ class RecipeController < ApplicationController
 		@categories = Category.find_all
 	end
 end
-</code></pre>
+<% end %>
 
 While CakePHP's, simply because it uses PHP and not Ruby, looks less pretty:
 
-<pre><code>
+<% highlight :php do %>
 class RecipesController extends AppController
 {
 	var $scaffold;
@@ -109,7 +109,7 @@ class RecipesController extends AppController
 	}
 
 }
-</code></pre>
+<% end %>
 
 CakePHP Development Team did a great job translating some of Rails functionalities into PHP, and the while CakePHP's syntax is *much* cleaner if compared to PHP's standard spaghetti-code approach, Ruby just looks much more clear, sorry. _Imagine a world without funny unnecessary brackets, pointless semicolons and where everything just looks better_: that's Ruby.
 
@@ -119,7 +119,7 @@ One thing I liked about Rails which has not been ported in Cake (yet) is a someh
 
 The other thing I noticed about RoR is that it definitely handles errors better! This is probably another language issue. I basically forgot to set a category for the recipes, and when executing my custom list of recipes I got a very, very well structured error page showing something like:
 
-<pre><code>
+<% highlight :ruby do %>
 NoMethodError in Recipe#index
 
 Showing app/views/recipe/index.rhtml where line #18 raised:
@@ -129,13 +129,13 @@ The error occured while evaluating nil.name
 
 Extracted source (around line #18):
 
-15:  <% @recipes.each do |recipe| %>
+15:  &lt;% @recipes.each do |recipe| %&gt;
 16:   <tr>
-17:    <td><%= link_to recipe.title, :action => "show", :id => recipe.id %></td>
-18:    <td><%= recipe.category.name %></td>
-19:    <td><%= recipe.date %></td>
+17:    <td>&lt;%= link_to recipe.title, :action => "show", :id => recipe.id %&gt;</td>
+18:    <td>&lt;%= recipe.category.name %&gt;</td>
+19:    <td>&lt;%= recipe.date %&gt;</td>
 20:   </tr>
-21:  <% end %>
-</code></pre>
+21:  &lt;% end %&gt;
+<% end %>
 
 I took a screenshot of the page, because it was too nice: "check it out":http://base--/img/pictures/rails_error.jpg. This error page really tells you what's wrong, and even prints the lines of code around the error! It also lets the developer check the full backtrace and every sort of information... Can we have this in CakePHP please? I actually started to develop something like this, but seemed quite hard to do in PHP.

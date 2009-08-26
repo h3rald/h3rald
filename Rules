@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+
+"a-look-at-drupal.bbcode
+boolean-search.bbcode
+cakephp.bbcode
+from-firefox-to-deer-park.bbcode
+google-earth.bbcode
+ie-lovers-guide-to-firefox.bbcode
+ma.gnolia.bbcode
+next-generation-dvds.bbcode
+pagerank.bbcode
+perfect-browser.bbcode
+pre-review-of-ie7.bbcode
+project-gutenberg.bbcode
+project-windstone.bbcode
+quick-overview-of-sqlite.bbcode
+server-packages.bbcode
+slax.bbcode
+sqlyog5-review.bbcode
+web-promotion.bbcode
+what-is-ajax.bbcode
+log-jan-2009.bluecloth
+the-rails-way-review.bluecloth".split(/\n/).each do |s|
+	f, ident, fil = s.match(/(.+)\.(.+)$/).to_a
+	compile "/articles/#{ident}" do
+		rep.filter fil.to_sym
+		layout 'default'
+	end
+end
+
+compile /archives/ do
+	rep.filter :erb
+	layout 'default'
+end
+
+compile /\/(home|projects|about)/ do
+	rep.filter :erb
+	rep.filter :redcloth
+	layout 'default'
+end
+	
+compile '*' do
+	rep.filter :redcloth
+	layout 'default'
+end
+
+route '*' do
+  item.identifier + 'index.html'
+end
+
+layout '*', :erb
