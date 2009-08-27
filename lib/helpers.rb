@@ -27,10 +27,105 @@ module Nanoc3::Helpers::Tagging
 
 end
 
-module Nanoc3::Helpers::Site
+module Nanoc3::Helpers::Blogging
+
+	def prepare_feed(params)
+		# Extract parameters
+		@item[:limit] ||= 10
+		@item[:articles] = params[:articles] || latest_articles(10) || []
+		@item[:content_proc] = params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:last)}
+		@item[:excerpt_proc] = params[:excerpt_proc] || lambda { |a| a[:excerpt] }
+		@item[:author_name] ||= @site.config[:author]
+		@item[:author_uri] ||= @site.config[:base_url]
+		raise RuntimeError.new('Cannot build feed: site configuration has no base_url') 	if @site.config[:base_url].nil?
+		raise RuntimeError.new('Cannot build feed: feed item has no title') if @item[:title].nil?
+		raise RuntimeError.new('Cannot build feed: no articles') if @item[:articles].empty?
+		raise RuntimeError.new('Cannot build feed: one or more articles doesn\'t have a date') if @item[:articles].any? { |a| a[:date].nil? }
+		@item[:last] = @item[:articles].first
+	end
+
+	def rss_feed(params={})
+		require 'builder'
+		require 'time'
+		prepare_feed params
+		# Create builder
+		buffer = ''
+		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
+		# Build feed
+		xml.instruct!
+		xml.rss(:version => '2.0') do
+			xml.channel do
+				xml.title @item[:title]
+				xml.language 'en-us'
+				xml.updated @item[:last][:date].rfc822
+				xml.ttl '40'
+				xml.description
+				@item[:articles].each do |a|
+					xml.item do
+						xml.title a[:title]
+						xml.description @item[:content_proc].call(a)
+						xml.pubDate a[:date].rfc822
+						xml.guid url_for(a)
+						xml.link url_for(a)
+						xml.author @site.config[:author]
+						xml.comments url_for(a)+'#comments'
+						a[:tags].each do |t|
+							xml.category t
+						end
+					end
+				end
+			end
+			buffer
+		end
+	end
+
+	# Redefine atom_feed method
+	def atom_feed(params={})
+		require 'builder'
+		require 'time'
+		prepare_feed params
+		buffer = ''
+		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
+		xml.instruct!
+		xml.feed(:xmlns => 'http://www.w3.org/2005/Atom') do
+			xml.id      @site.config[:base_url] + '/'
+			xml.title   @item[:title]
+			xml.updated @item[:last][:date].to_iso8601_time
+			xml.link(:rel => 'alternate', :href => @site.config[:base_url])
+			xml.author do
+				xml.name  @item[:author_name]
+				xml.uri   @item[:author_uri]
+			end
+			@item[:articles].each do |a|
+				xml.entry do
+					xml.id        atom_tag_for(a)
+					xml.title     a[:title], :type => 'xhtml'
+					xml.published a[:date].to_iso8601_time
+					xml.updated   a.mtime.to_iso8601_time
+					xml.link(:rel => 'alternate', :href => url_for(a))
+					a[:tags].each do |t|
+						xml.category(:term => t, :scheme => "#{@site.config[:base_url]}/tags/#{t}/")
+					end
+					summary = @item[:excerpt_proc].call(a)
+					xml.summary   summary, :type => 'xhtml' unless summary.nil?
+					xml.content   @item[:content_proc].call(a), :type => 'xhtml'
+				end
+			end
+		end
+		buffer
+	end
+
+	def atom_tag_for(item)
+		require 'time'
+		hostname        = @site.config[:base_url].sub(/.*:\/\/(.+?)\/?$/, '\1')
+		formatted_date  = item[:date].to_iso8601_date
+		'tag:' + hostname + ',' + formatted_date + ':' + (item.reps[0].path || item.identifier)
+	end
+
+
 
 	def latest_articles(max=nil)
-		total = @site.items.select{|p| p.attributes[:date] && p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
+		total = @site.items.select{|p| p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
 		max ||= total.length
 		total[0..max-1]
 	end
@@ -70,5 +165,5 @@ module Nanoc3::Helpers::Site
 end
 
 include Nanoc3::Helpers::Tagging
-include Nanoc3::Helpers::Site
+include Nanoc3::Helpers::Blogging
 include Nanoc3::Helpers::Rendering

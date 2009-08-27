@@ -4,3 +4,5 @@ data_sources:
   layouts_root: /
   type: filesystem_combined
 output_dir: output
+base_url: "http://www.h3rald.com"
+author: "Fabio Cevasco"

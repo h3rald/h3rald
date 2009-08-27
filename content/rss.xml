@@ -1,0 +1,6 @@
+---
+permalink: 'rss'
+type: 'feed'
+title: 'Latest Articles (RSS) - HERALD'
+---
+<%= rss_feed %>

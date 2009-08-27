@@ -6,8 +6,10 @@ filter: erb
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<title><%= @item[:title] %> - H3RALD</title>
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.h3rald.com/rss" />
-		<link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.h3rald.com/atom" />
+		<% if @item[:feed] then %>
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.h3rald.com/<%= @item[:feed]%>rss/" />
+		<link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.h3rald.com/<%= @item[:feed]%>atom/" />
+		<% end %>
 		<meta name="author" content="Fabio Cevasco" />
 		<meta name="copyright" content="Fabio Cevasco" />
 		<meta name="robots" content="all, follow" />

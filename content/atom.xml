@@ -1,0 +1,6 @@
+---
+permalink: 'atom'
+type: 'feed'
+title: 'Latest Articles (Atom) - HERALD'
+---
+<%= atom_feed %>

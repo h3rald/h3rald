@@ -2,11 +2,12 @@ h2. Dependencies
 
 h3. Ruby Gems
 
-* nanoc (generate static site)
+* nanoc3 (generate static site)
 * extlib (Rake tasks)
 * mysql (Typo migration)
 * sequel (Typo migration)
 * bb-ruby (BBCode filter)
+* builder (Feeds)
 
 h3. Other
 
