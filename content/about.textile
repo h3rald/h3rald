@@ -6,10 +6,15 @@ filters_pre:
 title: About
 type: page
 -----
+!</images/theme/heraldry/pegasus.png!
+
+!>/images/theme/heraldry/unicorn.png!
+
 This is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be.
 
 This site was designed to work with all the major modern browsers (hint: Internet Explorer 6 is _not_ a modern browser). It validates as XHTML 1.1 Strict and CSS 2.1.
 
+<br />
 
 h3. Under the Hood
 
@@ -36,4 +41,5 @@ I'd like to thank the following people for their work, which made this web site 
 
 * "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "Nanoc":http://nanoc.stoneship.org/ site compiler.
 * "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo.
+* The staff of "Archive.org":http://www.archive.org, for scanning the first edition of "A Complete Guide to Heraldry":http://www.archive.org/details/completeguidetoh00foxduoft, and making it available to the public. All the images featuring heraldric beasts, monsters and symbols are taken from there.
 
