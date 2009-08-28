@@ -9,7 +9,7 @@
 
 6 items are tagged with _firefox_:
 
-<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('firefox')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% articles_tagged_with('firefox').each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		

@@ -25,6 +25,10 @@ module Nanoc3::Helpers::Tagging
 		site_tags.sort{|a, b| a[1] <=> b[1]}.reverse
 	end
 
+	def articles_tagged_with(tag)
+		@site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?(tag)}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse
+	end
+
 end
 
 module Nanoc3::Helpers::Blogging

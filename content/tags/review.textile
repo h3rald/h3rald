@@ -9,7 +9,7 @@
 
 33 items are tagged with _review_:
 
-<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('review')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
+<% articles_tagged_with('review').each do |pg|
 %>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
 <% end %>
 		

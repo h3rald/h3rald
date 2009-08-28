@@ -3,55 +3,7 @@ require 'extlib'
 require 'pathname'
 require 'fileutils'
 require 'nanoc3'
-
-module SiteUtils
-
-	def write_tag_page(dir, name, count)
-		# Create tag page
-		meta = {}
-		meta[:title] = "Tag: #{name}"
-		meta[:type] = 'page'
-		meta[:filters_pre] = ['erb', 'redcloth']
-		meta[:permalink] = name
-		pl = (count == 1) ? ' is' : 's are'
-		contents = %{\n#{count} item#{pl} tagged with _#{name}_:
-
-<% @site.items.select{|p| p.attributes[:tags] && p.attributes[:tags].include?('#{name}')}.sort{|a,b| a.attributes[:date] <=> b.attributes[:date]}.reverse.each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
-<% end %>
-		}
-		# Write file
-		(dir/"#{name}.textile").open('w+') do |f|
-			f.print "--"
-			f.puts meta.to_yaml
-			f.puts "-----"
-			f.puts contents
-		end	
-	end
-
-	def write_archive_page(dir, name, count)
-		# Create archive page
-		meta = {}
-		meta[:title] = "Archive: #{name}"
-		meta[:type] = 'page'
-		meta[:filters_pre] = ['erb', 'redcloth']
-		meta[:permalink] = name.downcase.gsub /\s/, '-'
-		pl = (count == 1) ? ' was' : 's were'
-		contents = %{\n#{count} item#{pl} written in _#{name}_:
-
-<% articles_by_month.select{|i| i[0] == "#{name}"}[0][1].each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
-<% end %>
-		}
-		# Write file
-		(dir/"#{meta[:permalink]}.textile").open('w+') do |f|
-			f.print "--"
-			f.puts meta.to_yaml
-			f.puts "-----"
-			f.puts contents
-		end
-	end
-end
+require 'lib/utils.rb'
 
 include SiteUtils
 
@@ -69,7 +21,7 @@ namespace :site do
 	end
 
 	task :run => [:copy_resources] do
-		system "nanoc3 aco"
+		system "nanoc3 aco -s thin"
 	end
 
 	task :rebuild => [:clear_output, :update] do
