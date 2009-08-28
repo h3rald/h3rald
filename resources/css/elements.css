@@ -60,18 +60,6 @@ blockquote, .note
 	margin-left: 0;
 }
 
-.tag, .link, #taglist a, #timeline a, #navigation a
-{
-	margin: 0 1px;
-	border: none;
-}
-
-.tag:hover, .link:hover, #navigation a:hover, #taglist a:hover
-{
-	color: #FF0900;
-	border: none;
-}
-
 /*** HOME Page ***/
 
 #services li
@@ -123,6 +111,13 @@ blockquote, .note
 {
 	padding: 0.5em 0;
 	display: block;
+}
+
+.tag
+{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 0.95em;
 }
 
 /** Share buttons **/
