@@ -60,15 +60,13 @@ blockquote, .note
 	margin-left: 0;
 }
 
-.tag, .link, .cross-link, #taglist a, #timeline a
+.tag, .link, #taglist a, #timeline a, #navigation a
 {
 	margin: 0 1px;
-	font-family: Georgia, Serif;
-	font-style: italic;
 	border: none;
 }
 
-.tag:hover, .link:hover, .cross-link:hover, #taglist a:hover
+.tag:hover, .link:hover, #navigation a:hover, #taglist a:hover
 {
 	color: #FF0900;
 	border: none;
@@ -134,41 +132,13 @@ blockquote, .note
 	margin-top: 7px;
 }
 
-/*** Palette ***/
-
-#down-arrow
-{
-	background: url('../images/theme/icons/down.png');
-	display: block;
-	height: 41px;
-	width: 40px;
-}
-
-#down-arrow:hover
-{
-	background: url('../images/theme/icons/down_hover.png');
-}
-
-#up-arrow
-{
-	background: url('../images/theme/icons/up.png');
-	display: block;
-	height: 41px;
-	width: 40px;
-}
-
-#up-arrow:hover
-{
-	background: url('../images/theme/icons/up_hover.png');
-}
-
 /*** COMMENTS ***/
 
-#idc-container-parent, #legacy-comments
+#legacy-comments, #intensedebate
 {
-	padding: 5px;
+	max-width:800px;
+	margin:auto;
 }
-
 .legacy-comment
 {
 	padding: 5px 0;

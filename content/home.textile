@@ -22,7 +22,7 @@ This is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles
 
 You can contact him by writing an email to _h3rald [at] h3rald [dot] com_, or through "Twitter":http://www.twitter.com/h3rald, "LinkedIn":http://www.linkedin.com/pub/dir/Fabio/Cevasco, "Delicious":http://www.delicious.com/h3rald, "Facebook":http://www.facebook.com/h3rald, "Shelfari":http://www.shelfari.com/h3rald, or "FriendFeed":http://friendfeed.com/h3rald.
 
-<br />
+<br style="clear:both" />
 
 <div class="article-list" id="latest-articles">
 h3. Latest Articles

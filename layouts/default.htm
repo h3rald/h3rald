@@ -60,11 +60,9 @@ filter: erb
 				<!-- CONTAINER START -->
 				<div id="container">
 					<!-- CONTENT START -->
-					<div id="content" class="clearfix">
-						<div id="article-content">
-							<h2><%= @item[:title] %></h2>
-							<%= yield %>
-						</div>
+					<div id="content" class="clearfix<%= (@item[:permalink] == 'home') ? ' home' : ' standard' %>">
+						<h2><%= @item[:title] %></h2>
+						<%= yield %>
 					</div>
 					<!-- CONTENT END -->
 				</div>

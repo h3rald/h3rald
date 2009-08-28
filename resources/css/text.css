@@ -46,11 +46,16 @@ h2 + p:first-line {
 
 #services h3
 {
-	border: 1px solid #000;
-	font-style: italic;
 	padding-top: 10px;
 	text-align: center;
 }
+
+#navigation a
+{
+	font-size: 2em;
+	font-family: Georgia, Serif;
+}
+
 
 em {
 	font-style: italic;
@@ -78,6 +83,7 @@ em {
 .article-list h3
 {
 	margin-bottom: 1.5em;
+	text-align: center;
 }
 
 .article-item h4

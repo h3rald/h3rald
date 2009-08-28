@@ -1,7 +1,7 @@
 Cufon.replace('#navigation a', {fontFamily: 'Mutlu', hover: true, fontSize: '35px'});
 Cufon.replace('h2', {fontFamily: 'Mutlu', fontSize: '40px'});
 Cufon.replace('h3', {fontFamily: 'Mutlu', hover: true, fontSize: '35px'});
-Cufon.replace('#article-content h4', {fontFamily: 'Mutlu', fontSize: '28px'});
+Cufon.replace('.standard h4', {fontFamily: 'Mutlu', fontSize: '28px'});
 $(document).ready(function() {
 		// Feeds
 		display_opinions(7);
@@ -17,8 +17,11 @@ $(document).ready(function() {
 			}
 			var text = node.nodeValue;
 			var first_letter = text.substr(0,1);
-			node.nodeValue = text.slice(1,text.length);
-			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
+			if (first_letter.match(/a-zA-Z/))
+			{
+				node.nodeValue = text.slice(1,text.length);
+				$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
+			}
 			});
 		Cufon.replace('.dropcap', {fontFamily: 'Mutlu'});
 		});

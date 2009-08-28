@@ -83,8 +83,7 @@ body
 {
 	display: inline;
 	list-style-type: none;
-	padding-left: 35px;
-	
+	padding-left: 10px;
 }
 
 #ie-warning
@@ -138,8 +137,15 @@ body
 {
 	background: #000 url('../images/theme/border-bottom.png') top repeat-x;
 	height: auto;
-	padding: 0 30px;
+	padding: 0;
 	padding-top:40px;
+	width: 100%;
+}
+
+#services
+{
+	margin:auto;
+	width: 900px;
 }
 
 .inner-border 
@@ -206,38 +212,4 @@ body
 {
 	width: 900px;
 	margin:auto;
-}
-
-/* slider */
-
-#slider {
-  width: 850px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.scroll {
-  height: auto;
-  overflow: auto;
-  position: relative; /* fix for IE to respect overflow */
-  clear: left;
-}
-
-.scrollContainer div.panel {
-  height: auto;
-  width: 850px;
-}
-.scrollButtons {
-  position: absolute;
-  top: 100px;
-	z-index: 3000;
-  cursor: pointer;
-}
-
-.scrollButtons.left {
-  left: -20px;
-}
-
-.scrollButtons.right {
-  right: -20px;
 }
