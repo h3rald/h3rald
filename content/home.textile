@@ -5,7 +5,7 @@ filters_pre:
 - redcloth
 title: Home
 type: page
-feed: ''
+feed: '/'
 -----
 <%
 max_items = 5

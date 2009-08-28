@@ -7,8 +7,8 @@ filter: erb
 	<head>
 		<title><%= @item[:title] %> - H3RALD</title>
 		<% if @item[:feed] then %>
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.h3rald.com/<%= @item[:feed]%>rss/" />
-		<link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.h3rald.com/<%= @item[:feed]%>atom/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS" href="<%= @item[:feed]%>rss/" />
+		<link rel="alternate" type="application/atom+xml" title="ATOM" href="<%= @item[:feed]%>atom/" />
 		<% end %>
 		<meta name="author" content="Fabio Cevasco" />
 		<meta name="copyright" content="Fabio Cevasco" />
@@ -19,7 +19,7 @@ filter: erb
 		<meta name="country" content="United States" />
 		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
 		<meta name="keywords" content="h3rald, fabio cevasco, ruby, rails technical writing, reviews, software, browsers, cakephp, genova, technical articles" />
-		<link rel="shortcut icon" href="http://www.h3rald.com/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta content="44.388041;9.073248" name="ICBM" />
 

@@ -11,31 +11,23 @@ FileETag None
 # Compress text files.
 <IfModule mod_deflate.c>
   SetOutputFilter DEFLATE
-# compress content with type html, text, js, and css
+	# compress content with type html, text, js, and css
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/x-javascript
   <IfModule mod_headers.c>
-# properly handle requests coming from behind proxies
+		# properly handle requests coming from behind proxies
     Header append Vary User-Agent
   </IfModule>
-</IfModule>
-
-# Properly handle old browsers that do not support compression
-<IfModule mod_deflate.c>
+	# Properly handle old browsers that do not support compression
   BrowserMatch ^Mozilla/4 gzip-only-text/html
   BrowserMatch ^Mozilla/4\.0[678] no-gzip
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-# Explicitly exclude binary files from compression just in case
+	# Explicitly exclude binary files from compression just in case
   SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|pdf|swf|ico|zip)$ no-gzip
 </IfModule>
 
 # Custom errors
 ErrorDocument 404 /404/index.html
 ErrorDocument 500 /500/index.html
-
-# Force simple error message for requests for non-existent favicon.ico.
-<Files favicon.ico>
-  ErrorDocument 404 "The requested file favicon.ico was not found."
-</Files>
 
 # Set the default handler.
 DirectoryIndex index.html
@@ -45,14 +37,17 @@ DirectoryIndex index.html
   # Enable expirations.
   ExpiresActive On
 
-  # Cache all files for 1 hour after access (A).
-  ExpiresDefault A3600
+  # Cache all files for 10 hour after access (A).
+  ExpiresDefault A36000
 
 </IfModule>
 
-# Various rewrite rules.
+# Rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
+	
+	RewriteRule ^rss$ /rss.xml
+	RewriteRule ^atom$ /atom.xml
 
   RewriteRule ^$ /home/index.html [L,QSA]
 </IfModule>
