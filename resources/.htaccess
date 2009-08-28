@@ -4,6 +4,30 @@ Options -Indexes
 # Follow symbolic links in this directory.
 Options +FollowSymLinks
 
+# Unset ETags
+Header unset ETag
+FileETag None
+
+# Compress text files.
+<IfModule mod_deflate.c>
+  SetOutputFilter DEFLATE
+# compress content with type html, text, js, and css
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/x-javascript
+  <IfModule mod_headers.c>
+# properly handle requests coming from behind proxies
+    Header append Vary User-Agent
+  </IfModule>
+</IfModule>
+
+# Properly handle old browsers that do not support compression
+<IfModule mod_deflate.c>
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+# Explicitly exclude binary files from compression just in case
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|pdf|swf|ico|zip)$ no-gzip
+</IfModule>
+
 # Custom errors
 ErrorDocument 404 /404/index.html
 ErrorDocument 500 /500/index.html
