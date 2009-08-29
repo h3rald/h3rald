@@ -33,13 +33,27 @@ end
 
 module Nanoc3::Helpers::Blogging
 
+	def reencode_html_entities(string)
+		require 'htmlentities'
+		$KCODE = 'u'
+		coder = HTMLEntities.new
+		# Change named entities to their unicode counterparts
+		string.gsub!(/&.+?;/) do |m|
+			coder.encode(coder.decode(m), :decimal)
+		end
+		# Encode & in URLs
+		string.gsub! /&(.+?)=/, '&amp;\1='
+		string
+	end	
+
 	def prepare_feed(params)
 		# Extract parameters
 		@item[:limit] ||= 10
 		@item[:articles] = params[:articles] || latest_articles(10) || []
-		@item[:content_proc] = params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:pre)}
+		@item[:content_proc] = params[:content_proc] || lambda { |a| reencode_html_entities(a.reps[0].content_at_snapshot(:pre))}
 		@item[:excerpt_proc] = params[:excerpt_proc] || lambda { |a| a[:excerpt] }
 		@item[:author_uri] ||= @site.config[:base_url]
+		@item[:author_name] ||= @site.config[:author_name]
 		raise RuntimeError.new('Cannot build feed: site configuration has no base_url') 	if @site.config[:base_url].nil?
 		raise RuntimeError.new('Cannot build feed: feed item has no title') if @item[:title].nil?
 		raise RuntimeError.new('Cannot build feed: no articles') if @item[:articles].empty?
@@ -101,20 +115,22 @@ module Nanoc3::Helpers::Blogging
 				xml.name  @item[:author_name]
 				xml.uri   @item[:author_uri]
 			end
+			count = 0
 			@item[:articles].each do |a|
 				xml.entry do
 					xml.id        atom_tag_for(a)
 					xml.title     a[:title]
 					xml.published a[:date].to_iso8601_time
-					xml.updated   a.mtime.to_iso8601_time
+					xml.updated   (a.mtime-count).to_iso8601_time
+					count = count+1
 					xml.link(:rel => 'alternate', :href => url_for(a))
 					a[:tags].each do |t|
 						xml.category(:term => t, :scheme => "#{@site.config[:base_url]}/tags/#{t}/")
 					end
 					summary = @item[:excerpt_proc].call(a)
-					xml.summary   summary, :type => 'xhtml' unless summary.nil?
-					xml.content(:type => 'xhtml') do |c|
-						c << %{<div xmlns="http://www.w3.org/1999/xhtml">\n#{@item[:content_proc].call(a)}\n</div>}
+					xml.summary   summary, :type => 'html' unless summary.nil?
+					xml.content(:type => 'html') do |c|
+						c << %{<![CDATA[\n#{@item[:content_proc].call(a)}]]>\n}
 					end
 				end
 			end

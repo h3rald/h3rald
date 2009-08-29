@@ -45,11 +45,12 @@ DirectoryIndex index.html
 # Rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
-	
-	RewriteRule ^rss$ /rss.xml
-	RewriteRule ^atom$ /atom.xml
-
-  RewriteRule ^$ /home/index.html [L,QSA]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !(.*)/$
+	RewriteRule ^(.+[^/])$ /$1/  [R=301]
+	RewriteRule ^rss/$ /rss.xml [L]
+	RewriteRule ^atom/$ /atom.xml [L]
+  RewriteRule ^$ /home/index.html [L]
 </IfModule>
 
 
