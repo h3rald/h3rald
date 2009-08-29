@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/redbook/
+:feed_title: Tag 'redbook'
 :permalink: redbook
 -----
 

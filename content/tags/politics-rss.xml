@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'politics' (RSS Feed)
+:permalink: tags/politics/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('politics'))%>

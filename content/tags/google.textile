@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/google/
+:feed_title: Tag 'google'
 :permalink: google
 -----
 

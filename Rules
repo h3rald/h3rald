@@ -26,6 +26,10 @@ compile '*' do
 	layout 'default'
 end
 
+route /\/tags\/.+?-(atom|rss)/ do
+	item.identifier.gsub(/(.+)-(rss|atom)\/$/, '\1/\2') + '.xml'
+end
+
 route '/(atom|rss)/' do
 	item.identifier.gsub(/\/$/, '') + '.xml'
 end

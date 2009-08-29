@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/web20/
+:feed_title: Tag 'web20'
 :permalink: web20
 -----
 

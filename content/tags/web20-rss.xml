@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'web20' (RSS Feed)
+:permalink: tags/web20/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('web20'))%>

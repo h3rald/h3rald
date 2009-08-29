@@ -9,7 +9,7 @@ include SiteUtils
 
 namespace :site do
 
-	task :clear_output do
+	task :clean do
 		output = Pathname.new(Dir.pwd)/'output'
 		puts "Deleting all files in output dir..."
 		output.rmtree
@@ -24,7 +24,7 @@ namespace :site do
 		system "nanoc3 aco -s thin"
 	end
 
-	task :rebuild => [:clear_output, :update] do
+	task :rebuild => [:clean, :update] do
 	end
 
 	task :tags do
@@ -48,6 +48,8 @@ namespace :site do
 		# Write pages
 		tags.each_pair do |k, v|
 			write_tag_page dir, k, v
+			write_tag_feed_page dir, k, 'RSS'
+			write_tag_feed_page dir, k, 'Atom'
 		end
 	end
 

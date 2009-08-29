@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'personal_log' (RSS Feed)
+:permalink: tags/personal_log/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('personal_log'))%>

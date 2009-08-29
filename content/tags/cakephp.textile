@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/cakephp/
+:feed_title: Tag 'cakephp'
 :permalink: cakephp
 -----
 

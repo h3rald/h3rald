@@ -6,6 +6,7 @@ filters_pre:
 title: Home
 type: page
 feed: '/'
+feed_title: 'Latest Articles'
 -----
 <%
 max_items = 5

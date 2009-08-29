@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'travelling' (RSS Feed)
+:permalink: tags/travelling/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('travelling'))%>

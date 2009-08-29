@@ -1,7 +1,6 @@
 ---
 permalink: 'rss'
 type: 'feed'
-title: 'Latest Articles (RSS) - HERALD'
-path: '/rss/'
+title: 'H3RALD - Articles (RSS Feed)'
 ---
 <%= rss_feed %>

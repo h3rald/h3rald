@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/firefox/
+:feed_title: Tag 'firefox'
 :permalink: firefox
 -----
 

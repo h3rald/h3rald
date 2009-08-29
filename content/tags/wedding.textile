@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/wedding/
+:feed_title: Tag 'wedding'
 :permalink: wedding
 -----
 

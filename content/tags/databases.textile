@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/databases/
+:feed_title: Tag 'databases'
 :permalink: databases
 -----
 

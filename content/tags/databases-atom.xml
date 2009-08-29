@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'databases' (Atom Feed)
+:permalink: tags/databases/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('databases'))%>

@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'ie' (RSS Feed)
+:permalink: tags/ie/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('ie'))%>

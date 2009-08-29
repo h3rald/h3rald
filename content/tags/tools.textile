@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/tools/
+:feed_title: Tag 'tools'
 :permalink: tools
 -----
 

@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'vim' (RSS Feed)
+:permalink: tags/vim/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('vim'))%>

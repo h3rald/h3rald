@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'software' (RSS Feed)
+:permalink: tags/software/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('software'))%>

@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/web-development/
+:feed_title: Tag 'web-development'
 :permalink: web-development
 -----
 

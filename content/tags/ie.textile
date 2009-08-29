@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/ie/
+:feed_title: Tag 'ie'
 :permalink: ie
 -----
 

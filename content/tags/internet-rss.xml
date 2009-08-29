@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'internet' (RSS Feed)
+:permalink: tags/internet/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('internet'))%>

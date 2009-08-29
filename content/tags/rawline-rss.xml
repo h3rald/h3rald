@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'rawline' (RSS Feed)
+:permalink: tags/rawline/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('rawline'))%>

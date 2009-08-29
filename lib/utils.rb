@@ -1,11 +1,12 @@
 module SiteUtils
 
 	def write_tag_page(dir, tag, count)
-		# Create tag page
 		meta = {}
 		meta[:title] = "Tag: #{tag}"
 		meta[:type] = 'page'
 		meta[:filters_pre] = ['erb', 'redcloth']
+		meta[:feed] = "/tags/#{tag}/"
+		meta[:feed_title] = "Tag '#{tag}'"
 		meta[:permalink] = tag
 		pl = (count == 1) ? ' is' : 's are'
 		contents = %{\n#{count} item#{pl} tagged with _#{tag}_:
@@ -18,8 +19,17 @@ module SiteUtils
 		write_item dir/"#{tag}.textile", meta, contents
 	end
 
+	def write_tag_feed_page(dir, tag, format)
+		f = format.downcase
+		meta = {}
+		meta[:title] = "H3RALD - Tag '#{tag}' (#{format} Feed)"	
+		meta[:type] = 'feed'
+		meta[:permalink] = "tags/#{tag}/#{f}"
+		contents = %{<%= #{f}_feed(:articles => articles_tagged_with('#{tag}'))%>}
+		write_item dir/"#{tag}-#{f}.xml", meta, contents
+	end
+
 	def write_archive_page(dir, name, count)
-		# Create archive page
 		meta = {}
 		meta[:title] = "Archive: #{name}"
 		meta[:type] = 'page'

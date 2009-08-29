@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/browsers/
+:feed_title: Tag 'browsers'
 :permalink: browsers
 -----
 

@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'review' (RSS Feed)
+:permalink: tags/review/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('review'))%>

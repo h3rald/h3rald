@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/php/
+:feed_title: Tag 'php'
 :permalink: php
 -----
 

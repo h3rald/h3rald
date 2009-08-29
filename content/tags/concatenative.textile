@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/concatenative/
+:feed_title: Tag 'concatenative'
 :permalink: concatenative
 -----
 

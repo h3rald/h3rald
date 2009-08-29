@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'google' (Atom Feed)
+:permalink: tags/google/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('google'))%>

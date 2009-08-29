@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/vim/
+:feed_title: Tag 'vim'
 :permalink: vim
 -----
 

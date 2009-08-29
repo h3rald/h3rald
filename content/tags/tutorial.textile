@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/tutorial/
+:feed_title: Tag 'tutorial'
 :permalink: tutorial
 -----
 

@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/writing/
+:feed_title: Tag 'writing'
 :permalink: writing
 -----
 

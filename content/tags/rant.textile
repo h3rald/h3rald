@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/rant/
+:feed_title: Tag 'rant'
 :permalink: rant
 -----
 

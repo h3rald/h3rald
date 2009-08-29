@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/review/
+:feed_title: Tag 'review'
 :permalink: review
 -----
 

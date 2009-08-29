@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'php' (RSS Feed)
+:permalink: tags/php/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('php'))%>

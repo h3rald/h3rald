@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'italy' (RSS Feed)
+:permalink: tags/italy/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('italy'))%>

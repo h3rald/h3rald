@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'software' (Atom Feed)
+:permalink: tags/software/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('software'))%>

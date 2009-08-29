@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'tutorial' (Atom Feed)
+:permalink: tags/tutorial/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('tutorial'))%>

@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'personal' (Atom Feed)
+:permalink: tags/personal/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('personal'))%>

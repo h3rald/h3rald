@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/ajax/
+:feed_title: Tag 'ajax'
 :permalink: ajax
 -----
 

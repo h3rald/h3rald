@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/internet/
+:feed_title: Tag 'internet'
 :permalink: internet
 -----
 

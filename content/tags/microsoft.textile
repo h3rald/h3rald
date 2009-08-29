@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/microsoft/
+:feed_title: Tag 'microsoft'
 :permalink: microsoft
 -----
 

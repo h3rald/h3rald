@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/italy/
+:feed_title: Tag 'italy'
 :permalink: italy
 -----
 

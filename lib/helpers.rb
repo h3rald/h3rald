@@ -34,6 +34,7 @@ end
 module Nanoc3::Helpers::Blogging
 
 	def reencode_html_entities(string)
+=begin
 		require 'htmlentities'
 		$KCODE = 'u'
 		coder = HTMLEntities.new
@@ -43,6 +44,7 @@ module Nanoc3::Helpers::Blogging
 		end
 		# Encode & in URLs
 		string.gsub! /&(.+?)=/, '&amp;\1='
+=end
 		string
 	end	
 
@@ -110,7 +112,7 @@ module Nanoc3::Helpers::Blogging
 			xml.title   @item[:title]
 			xml.updated @item[:last][:date].to_iso8601_time
 			xml.link(:rel => 'alternate', :href => @site.config[:base_url])
-			xml.link(:rel => 'self', :href => @site.config[:base_url]+@item[:path])
+			xml.link(:rel => 'self', :href => @site.config[:base_url]+"/#{@item[:permalink]}/")
 			xml.author do
 				xml.name  @item[:author_name]
 				xml.uri   @item[:author_uri]
@@ -121,7 +123,7 @@ module Nanoc3::Helpers::Blogging
 					xml.id        atom_tag_for(a)
 					xml.title     a[:title]
 					xml.published a[:date].to_iso8601_time
-					xml.updated   (a.mtime-count).to_iso8601_time
+					xml.updated((a.mtime-count).to_iso8601_time)
 					count = count+1
 					xml.link(:rel => 'alternate', :href => url_for(a))
 					a[:tags].each do |t|

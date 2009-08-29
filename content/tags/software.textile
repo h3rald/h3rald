@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/software/
+:feed_title: Tag 'software'
 :permalink: software
 -----
 

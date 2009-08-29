@@ -7,8 +7,8 @@ filter: erb
 	<head>
 		<title><%= @item[:title] %> - H3RALD</title>
 		<% if @item[:feed] then %>
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="<%= @item[:feed]%>rss/" />
-		<link rel="alternate" type="application/atom+xml" title="ATOM" href="<%= @item[:feed]%>atom/" />
+		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%> (RSS Feed)" href="<%= @item[:feed]%>rss/" />
+		<link rel="alternate" type="application/atom+xml" title="H3RALD - <%= @item[:feed_title]%> (Atom Feed)" href="<%= @item[:feed]%>atom/" />
 		<% end %>
 		<meta name="author" content="Fabio Cevasco" />
 		<meta name="copyright" content="Fabio Cevasco" />

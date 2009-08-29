@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/ruby/
+:feed_title: Tag 'ruby'
 :permalink: ruby
 -----
 

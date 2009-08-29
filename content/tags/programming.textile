@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/programming/
+:feed_title: Tag 'programming'
 :permalink: programming
 -----
 

@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'opera' (Atom Feed)
+:permalink: tags/opera/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('opera'))%>

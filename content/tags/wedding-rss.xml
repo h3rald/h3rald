@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:title: H3RALD - Tag 'wedding' (RSS Feed)
+:permalink: tags/wedding/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('wedding'))%>

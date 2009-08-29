@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/opera/
+:feed_title: Tag 'opera'
 :permalink: opera
 -----
 

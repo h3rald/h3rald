@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/personal_log/
+:feed_title: Tag 'personal_log'
 :permalink: personal_log
 -----
 

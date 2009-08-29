@@ -4,6 +4,8 @@
 :filters_pre: 
 - erb
 - redcloth
+:feed: /tags/rails/
+:feed_title: Tag 'rails'
 :permalink: rails
 -----
 
