@@ -5,4 +5,6 @@ data_sources:
   type: filesystem_combined
 output_dir: output
 base_url: "http://www.h3rald.com"
-author: "Fabio Cevasco"
+author_name: "Fabio Cevasco"
+author_email: "h3rald@h3rald.com"
+

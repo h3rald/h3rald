@@ -37,9 +37,8 @@ module Nanoc3::Helpers::Blogging
 		# Extract parameters
 		@item[:limit] ||= 10
 		@item[:articles] = params[:articles] || latest_articles(10) || []
-		@item[:content_proc] = params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:last)}
+		@item[:content_proc] = params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:pre)}
 		@item[:excerpt_proc] = params[:excerpt_proc] || lambda { |a| a[:excerpt] }
-		@item[:author_name] ||= @site.config[:author]
 		@item[:author_uri] ||= @site.config[:base_url]
 		raise RuntimeError.new('Cannot build feed: site configuration has no base_url') 	if @site.config[:base_url].nil?
 		raise RuntimeError.new('Cannot build feed: feed item has no title') if @item[:title].nil?
@@ -61,8 +60,9 @@ module Nanoc3::Helpers::Blogging
 			xml.channel do
 				xml.title @item[:title]
 				xml.language 'en-us'
-				xml.updated @item[:last][:date].rfc822
+				xml.lastBuildDate @item[:last][:date].rfc822
 				xml.ttl '40'
+				xml.link @site.config[:base_url]
 				xml.description
 				@item[:articles].each do |a|
 					xml.item do
@@ -71,7 +71,7 @@ module Nanoc3::Helpers::Blogging
 						xml.pubDate a[:date].rfc822
 						xml.guid url_for(a)
 						xml.link url_for(a)
-						xml.author @site.config[:author]
+						xml.author @site.config[:author_email]
 						xml.comments url_for(a)+'#comments'
 						a[:tags].each do |t|
 							xml.category t
@@ -96,6 +96,7 @@ module Nanoc3::Helpers::Blogging
 			xml.title   @item[:title]
 			xml.updated @item[:last][:date].to_iso8601_time
 			xml.link(:rel => 'alternate', :href => @site.config[:base_url])
+			xml.link(:rel => 'self', :href => @site.config[:base_url]+@item[:path])
 			xml.author do
 				xml.name  @item[:author_name]
 				xml.uri   @item[:author_uri]
@@ -103,7 +104,7 @@ module Nanoc3::Helpers::Blogging
 			@item[:articles].each do |a|
 				xml.entry do
 					xml.id        atom_tag_for(a)
-					xml.title     a[:title], :type => 'xhtml'
+					xml.title     a[:title]
 					xml.published a[:date].to_iso8601_time
 					xml.updated   a.mtime.to_iso8601_time
 					xml.link(:rel => 'alternate', :href => url_for(a))
@@ -112,7 +113,9 @@ module Nanoc3::Helpers::Blogging
 					end
 					summary = @item[:excerpt_proc].call(a)
 					xml.summary   summary, :type => 'xhtml' unless summary.nil?
-					xml.content   @item[:content_proc].call(a), :type => 'xhtml'
+					xml.content(:type => 'xhtml') do |c|
+						c << %{<div xmlns="http://www.w3.org/1999/xhtml">\n#{@item[:content_proc].call(a)}\n</div>}
+					end
 				end
 			end
 		end
