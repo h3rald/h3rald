@@ -79,3 +79,12 @@ function display_tweets(max){
 function display_bookmarks(max){
 	get_json_data("/data/bookmarks.json", max, '#delicious')
 }
+
+/*
+http://github.com/api/v2/json/commits/list/h3rald/concatenative/master 
+http://github.com/api/v2/json/commits/list/h3rald/redbook/master 
+http://github.com/api/v2/json/commits/list/h3rald/glyph/master 
+http://github.com/api/v2/json/commits/list/h3rald/stash/master 
+http://github.com/api/v2/json/commits/list/h3rald/rawline/master 
+http://github.com/api/v2/json/commits/list/h3rald/h3rald/master 
+*/

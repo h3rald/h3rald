@@ -33,26 +33,11 @@ end
 
 module Nanoc3::Helpers::Blogging
 
-	def reencode_html_entities(string)
-=begin
-		require 'htmlentities'
-		$KCODE = 'u'
-		coder = HTMLEntities.new
-		# Change named entities to their unicode counterparts
-		string.gsub!(/&.+?;/) do |m|
-			coder.encode(coder.decode(m), :decimal)
-		end
-		# Encode & in URLs
-		string.gsub! /&(.+?)=/, '&amp;\1='
-=end
-		string
-	end	
-
 	def prepare_feed(params)
 		# Extract parameters
 		@item[:limit] ||= 10
 		@item[:articles] = params[:articles] || latest_articles(10) || []
-		@item[:content_proc] = params[:content_proc] || lambda { |a| reencode_html_entities(a.reps[0].content_at_snapshot(:pre))}
+		@item[:content_proc] = params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:pre)}
 		@item[:excerpt_proc] = params[:excerpt_proc] || lambda { |a| a[:excerpt] }
 		@item[:author_uri] ||= @site.config[:base_url]
 		@item[:author_name] ||= @site.config[:author_name]
