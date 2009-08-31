@@ -11,7 +11,9 @@
 
 33 items are tagged with _review_:
 
-<% articles_tagged_with('review').each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+			<ul>
+<% articles_tagged_with('review').each do |a|
+%><%= render 'dated_article', :article => a %>
 <% end %>
+</ul>
 		

@@ -11,7 +11,9 @@
 
 2 items are tagged with _microsoft_:
 
-<% articles_tagged_with('microsoft').each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+			<ul>
+<% articles_tagged_with('microsoft').each do |a|
+%><%= render 'dated_article', :article => a %>
 <% end %>
+</ul>
 		

@@ -11,9 +11,11 @@ module SiteUtils
 		pl = (count == 1) ? ' is' : 's are'
 		contents = %{\n#{count} item#{pl} tagged with _#{tag}_:
 
-<% articles_tagged_with('#{tag}').each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+			<ul>
+<% articles_tagged_with('#{tag}').each do |a|
+%><%= render 'dated_article', :article => a %>
 <% end %>
+</ul>
 		}
 		# Write html page
 		write_item dir/"#{tag}.textile", meta, contents

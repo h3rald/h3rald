@@ -56,7 +56,7 @@ function delicious_entry(bookmark){
 	var categories = Array();
 	for (i=0; i<bookmark.t.length; i++)
 	{
-		categories[i] = "<a href='http://delicious.com/h3rald/"+bookmark.t[i]+"'>"+bookmark.t[i]+"</a> ";
+		categories[i] = "<a href='http://delicious.com/h3rald/"+bookmark.t[i]+"'>"+bookmark.t[i]+"</a>";
 	}
 	content += categories.join(', ').replace(/ $/, '');
 	var dt = $("<span></span>").addClass('feed-item-date').html(format_date(bookmark.dt)+":");

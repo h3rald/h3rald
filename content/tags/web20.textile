@@ -11,7 +11,9 @@
 
 8 items are tagged with _web20_:
 
-<% articles_tagged_with('web20').each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
+			<ul>
+<% articles_tagged_with('web20').each do |a|
+%><%= render 'dated_article', :article => a %>
 <% end %>
+</ul>
 		

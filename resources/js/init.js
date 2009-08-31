@@ -13,13 +13,14 @@ $(document).ready(function() {
 			node = node.firstChild;
 			}
 			var text = node.nodeValue;
+			if (!text) return false;
 			var first_letter = text.substr(0,1);
 			if (first_letter.match(/[a-z]/i)){
 				node.nodeValue = text.slice(1,text.length);
 				$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
 			}
 			});
-		Cufon.replace('.dropcap', {fontFamily: 'Mutlu', fontSize: '30px'});
+		Cufon.replace('.dropcap', {fontFamily: 'Mutlu', fontSize: '40px'});
 		});
 Cufon.now();
 
