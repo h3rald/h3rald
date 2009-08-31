@@ -45,9 +45,6 @@ DirectoryIndex index.html
 # Rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI} !(.*)/$
-	RewriteRule ^(.+[^/])$ /$1/  [R=301]
 	RewriteRule ^(rss|atom)/$ /$1.xml [L]
 	RewriteRule ^tags/(.+)/(rss|atom)/$ /tags/$1/$2.xml [L]
   RewriteRule ^$ /home/index.html [L]

@@ -23,9 +23,6 @@ type: page
 			<%= "</tr>" if c%5 == 0 %>
 		<% end %></tr>
 	</table>
-<p style="margin: auto; text-align: center">
-<img src="/images/theme/heraldry/eagle.png" />
-</p>
 	<h3>Articles by Month</h3>
 	<table id="timeline">
 	<% c = 0

@@ -16,6 +16,7 @@ function get_json_data(uri, options){
 					break;
 					case "#twitter":
 						var item = twitter_entry(data[i])
+					break;
 					case "#github":
 						var item = github_entry(data.commits[i], options.repo)
 					break;

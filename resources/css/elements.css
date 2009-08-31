@@ -1,65 +1,3 @@
-/*** CONTENT ***/
-
-#content img
-{
-	margin: 0 5px;
-	padding: 2px;
-}
-
-#content li
-{
-	margin-left: 25px;
-	line-height: 1.5em;
-}
-
-#content p
-{
-	line-height:1.5em;
-	margin: 1.7em 0;
-}
-
-#footer div
-{
-	line-height: 1.5em;
-}
-
-
-blockquote, .note
-{
-	font-family: Georgia, Serif;
-	color:#555;
-	font-style:italic;
-	padding:0 0 0 33px;
-	margin: 0;
-	background: url(/images/theme/theme/quote.gif) no-repeat top left;
-}
-
-
-.day
-{
-	font-style: italic;
-}
-
-.info
-{
-	margin: 0.5em 0;
-	padding: 0;
-	vertical-align: bottom;
-	display: block;
-	height: 1em;
-	color: #CACACA; 
-}
-
-.info img
-{
-	vertical-align: bottom;
-}
-
-.no-margin-left
-{
-	margin-left: 0;
-}
-
 /*** HOME Page ***/
 
 #services li
@@ -122,10 +60,9 @@ blockquote, .note
 
 .project-data
 {
-	background: #E3DCE0;
-	border: 3px double #A4282D;
-	padding: 5px;
-	margin: 10px 0 10px 10px;
+	border-left: 1px dashed #A4282D;
+	padding: 0 1em 1em 1.5em;
+	margin: 0 0 0 1.5em;
 	height: 300px;
 }
 
