@@ -8,14 +8,14 @@
 
 #content li
 {
-	margin-left: 40px;
+	margin-left: 25px;
 	line-height: 1.5em;
 }
 
 #content p
 {
 	line-height:1.5em;
-	margin: 1.8em 0;
+	margin: 1.7em 0;
 }
 
 #footer div
@@ -90,13 +90,13 @@ blockquote, .note
 	font-style: italic;
 }
 
-#latest-articles
+.left-column
 {
 	float:left;
 	width: 400px;
 }
 
-#popular-articles
+.right-column
 {
 	float:right;
 	width: 400px;
@@ -118,6 +118,15 @@ blockquote, .note
 	font-weight: bold;
 	font-style: italic;
 	font-size: 0.95em;
+}
+
+.project-data
+{
+	background: #E3DCE0;
+	border: 3px double #A4282D;
+	padding: 5px;
+	margin: 10px 0 10px 10px;
+	height: 300px;
 }
 
 /** Share buttons **/

@@ -108,6 +108,7 @@ module Nanoc3::Helpers::Blogging
 					xml.id        atom_tag_for(a)
 					xml.title     a[:title]
 					xml.published a[:date].to_iso8601_time
+					# Subtract a few seconds to avoid having the same update time (compilation time)
 					xml.updated((a.mtime-count).to_iso8601_time)
 					count = count+1
 					xml.link(:rel => 'alternate', :href => url_for(a))
@@ -131,8 +132,6 @@ module Nanoc3::Helpers::Blogging
 		formatted_date  = item[:date].to_iso8601_date
 		'tag:' + hostname + ',' + formatted_date + ':' + (item.reps[0].path || item.identifier)
 	end
-
-
 
 	def latest_articles(max=nil)
 		total = @site.items.select{|p| p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 

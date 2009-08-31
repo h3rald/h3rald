@@ -8,16 +8,24 @@ comments: []
 
 date: 2009-02-28 14:02:13 +01:00
 tags: []
-
-type: page
-toc: true
+type: project
+github: rawline
+links:
+- "Documentation": http://rawline.rubyforge.org
+- "Download": http://rubyforge.org/projects/rawline 
+- "Source": http://github.com/h3rald/rawline/tree/master 
+- "Tracking": http://h3rald.lighthouseapp.com/projects/26374-rawline/overview 
 -----
-RawLine is a 100% Ruby alternative to the ReadLine library, providing some of its most popular features such as:
 
-    * Basic line editing operations
-    * Word completion
-    * History Management
-    * Custom key/key sequences bindings
+<%= render 'project_data', :tag => 'rawline', :links => @item.attributes[:links], :status => "On Hold" %>
+
+RawLine is a 100% Ruby alternative to the ReadLine library, providing some of its most popular features such as:
+* Basic line editing operations
+* Word completion
+* History Management
+* Custom key/key sequences bindings
+
+<br style="clear:both" />
 
 h3. Installation
 
@@ -26,6 +34,7 @@ The simplest method to install RawLine is to install the gem:
 <% highlight :text do %>gem install rawline<% end %>
 
 h3. Usage
+
 
 Editor initialization:
 
@@ -77,12 +86,9 @@ but also:
 
 <% highlight :ruby do %>Rawline.editor # RawLine::Editor<% end %>
 
-…which opens a world of endless possibilities! ;-)
+...which opens a world of endless possibilities! ;-)
 
-h3. Resources
+h3. Latest Updates
 
-* "News and Articles":http://www.h3rald.com/tags/rawline
-* "RDoc Documentation":http://rawline.rubyforge.org [on RubyForge]
-* "Download Files":http://rubyforge.org/projects/rawline [on RubyForge]
-* "Source Code":http://github.com/h3rald/rawline/tree/master [on GitHub]
-* "Issue Tracking":http://h3rald.lighthouseapp.com/projects/26374-rawline/overview [on LightHouse]
+<ul><% articles_tagged_with('rawline').each do |a| %><%= render 'dated_article', :article => a %><% end %></ul>
+

@@ -7,4 +7,5 @@ output_dir: output
 base_url: "http://www.h3rald.com"
 author_name: "Fabio Cevasco"
 author_email: "h3rald@h3rald.com"
+dev: true
 

@@ -1,9 +1,10 @@
 .highlight
 {
 	font-family: "Consolas", Monospace;
-	background: #F3E6D3;
+	background: #E3DCE0;
 	border: 3px double #A4282D;
 	padding: 5px;
+	margin: 5px 0;
 	overflow: auto;
 }
 

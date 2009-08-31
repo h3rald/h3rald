@@ -25,7 +25,7 @@ You can contact him by writing an email to _h3rald [at] h3rald [dot] com_, or th
 
 <br style="clear:both" />
 
-<div class="article-list" id="latest-articles">
+<div class="article-list left-column" id="latest-articles">
 h3. Latest Articles
 
 <%
@@ -34,7 +34,7 @@ latest.each do |a|
 <%= render 'article_item', :article => a %>
 <% end %>
 </div> 
-<div class="article-list" id="popular-articles">
+<div class="article-list right-column" id="popular-articles">
 h3. Popular Articles
 
 <%
