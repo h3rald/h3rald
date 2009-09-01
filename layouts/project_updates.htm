@@ -1,0 +1,9 @@
+-----
+filters_pre: 
+- erb
+- redcloth
+-----
+h3. Latest Updates
+
+<ul><% articles_tagged_with(@tag).each do |a| %><%= render 'dated_article', :article => a %><% end %></ul>
+

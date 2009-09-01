@@ -1,5 +1,5 @@
 -----
 filter: erb
 -----
-<div class="project-data right-column" >Project Status: <strong><%= @status %></strong><div class="project-links"><%= @links.map{ |l| res=nil; l.each_pair{ |label, value| res = %{<a href="#{value}">#{label}</a>}}; res }.join(" &middot; ")  %></div><div id="github"><br />Recent Activity:</div>	
+<div class="project-data right-column" >Project Status: <strong><%= @item.attributes[:status] %></strong><div class="project-version">Version: <strong><%= @item.attributes[:version]%></strong></div><div class="project-links">Links: <%= @item.attributes[:links].map{ |l| res=nil; l.each_pair{ |label, value| res = %{<a href="#{value}">#{label}</a>}}; res }.join(" &middot; ")  %></div><div id="github">Recent Activity:</div>	
 </div>

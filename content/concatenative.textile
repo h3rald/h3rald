@@ -3,15 +3,20 @@ permalink: concatenative
 filters_pre: 
 - erb
 - redcloth
-title: Concatenative
-comments: []
-
-date: 2009-03-28 07:21:00 +01:00
-tags: []
-
-type: page
-toc: true
+title: "Project: Concatenative"
+type: project
+github: concatenative
+links:
+- "Documentation": http://concatenative.rubyforge.org
+- "Download": http://rubyforge.org/projects/concatenative 
+- "Source": http://github.com/h3rald/concatenative/tree/master 
+- "Tracking": http://github.com/h3rald/concatenative/issues
+status: On Hold
+version: 0.2.0
 -----
+
+<%= render 'project_data', :tag => 'concatenative' %>
+
 Concatenative is a Ruby DSL(Domain-specific Language) for concatenative programming. It is heavily inspired by "Joy":http://www.latrobe.edu.au/philosophy/phimvt/joy.html, a minimalist programming language by Manfred von Thun. Like Joy, Concatenative features:
 
 * function composition, instead of function application
@@ -20,6 +25,8 @@ Concatenative is a Ruby DSL(Domain-specific Language) for concatenative programm
 * no variable assignments
 
 Plus, it allows you to use Ruby objects and methods in a concatenative fashion.
+
+<div class="spacer-50"></div>
 
 h3. Installation
 
@@ -71,12 +78,6 @@ Example:
         )
 <% end %>
 
-The program above is equivalent to "Goodbye, World!".sub(/Goodbye/, "Hello").
+The program above is equivalent to @"Goodbye, World!".sub(/Goodbye/, "Hello")@.
 
-
-h3. Resources
-
-* "News and Articles":http://www.h3rald.com/tags/concatenative
-* "RDoc Documentation":http://concatenative.rubyforge.org [on RubyForge]
-* "Download Files":http://rubyforge.org/projects/concatenative [on RubyForge]
-* "Source Code and Issue Tracking":http://github.com/h3rald/concatenative [on GitHub]
+<%= render 'project_updates', :tag => 'concatenative' %>

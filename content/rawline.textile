@@ -3,11 +3,7 @@ permalink: rawline
 filters_pre: 
 - erb
 - redcloth
-title: RawLine
-comments: []
-
-date: 2009-02-28 14:02:13 +01:00
-tags: []
+title: "Project: RawLine"
 type: project
 github: rawline
 links:
@@ -15,9 +11,11 @@ links:
 - "Download": http://rubyforge.org/projects/rawline 
 - "Source": http://github.com/h3rald/rawline/tree/master 
 - "Tracking": http://h3rald.lighthouseapp.com/projects/26374-rawline/overview 
+status: On Hold
+version: 0.3.1
 -----
 
-<%= render 'project_data', :tag => 'rawline', :links => @item.attributes[:links], :status => "On Hold" %>
+<%= render 'project_data', :tag => 'rawline' %>
 
 RawLine is a 100% Ruby alternative to the ReadLine library, providing some of its most popular features such as:
 * Basic line editing operations
@@ -88,7 +86,5 @@ but also:
 
 ...which opens a world of endless possibilities! ;-)
 
-h3. Latest Updates
-
-<ul><% articles_tagged_with('rawline').each do |a| %><%= render 'dated_article', :article => a %><% end %></ul>
+<%= render 'project_updates', :tag => 'rawline' %>
 

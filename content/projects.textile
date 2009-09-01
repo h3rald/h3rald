@@ -6,18 +6,15 @@ type: page
 !</images/theme/heraldry/wyvern.png!
 
 !>/images/theme/heraldry/dragon.png!
-<div class="middle">
+
 This page lists all my _projects_. Except for a few cases, they normally are:
 * open source
 * programming-related
 * developed using the "Ruby programming language":http://www.ruby-lang.org
 * hosted on "GitHub":http://www.github.com/h3rald
-</div>
 
-<br />
-<br />
-<br />
-<br />
+<div class="spacer-50"></div>
+<div class="spacer-50"></div>
 
 - "H3RALD Web Site":/h3rald/ := This very web site, in its 8th incarnation. H3RALD.com has been operative since 2004 and through the years its backend changed from being pure vanilla HTML, to server-side PHP (Prado and CakePHP) to Ruby (Rails, Nanoc).
 - "RawLine":/rawline/ := Rawline is a Ruby library which provides a subset of the functionality of the C Readline library. Being implemented in pure Ruby, it gives Ruby developers much more control over key bindings and word completion.
