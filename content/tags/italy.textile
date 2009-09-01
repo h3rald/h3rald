@@ -3,17 +3,15 @@
 :title: "Tag: italy"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/italy/
 :feed_title: Tag 'italy'
 :permalink: italy
 -----
 
-3 items are tagged with _italy_:
-
-			<ul>
-<% articles_tagged_with('italy').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>3 items are tagged with <em>italy</em>:</p>
+<ul>
+	<% articles_tagged_with('italy').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

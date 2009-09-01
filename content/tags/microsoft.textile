@@ -3,17 +3,15 @@
 :title: "Tag: microsoft"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/microsoft/
 :feed_title: Tag 'microsoft'
 :permalink: microsoft
 -----
 
-2 items are tagged with _microsoft_:
-
-			<ul>
-<% articles_tagged_with('microsoft').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>2 items are tagged with <em>microsoft</em>:</p>
+<ul>
+	<% articles_tagged_with('microsoft').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

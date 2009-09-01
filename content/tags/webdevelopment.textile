@@ -3,17 +3,15 @@
 :title: "Tag: webdevelopment"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/webdevelopment/
 :feed_title: Tag 'webdevelopment'
 :permalink: webdevelopment
 -----
 
-12 items are tagged with _webdevelopment_:
-
-			<ul>
-<% articles_tagged_with('webdevelopment').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>12 items are tagged with <em>webdevelopment</em>:</p>
+<ul>
+	<% articles_tagged_with('webdevelopment').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

@@ -3,17 +3,15 @@
 :title: "Tag: ajax"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/ajax/
 :feed_title: Tag 'ajax'
 :permalink: ajax
 -----
 
-3 items are tagged with _ajax_:
-
-			<ul>
-<% articles_tagged_with('ajax').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>3 items are tagged with <em>ajax</em>:</p>
+<ul>
+	<% articles_tagged_with('ajax').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

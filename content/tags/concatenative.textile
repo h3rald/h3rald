@@ -3,17 +3,15 @@
 :title: "Tag: concatenative"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/concatenative/
 :feed_title: Tag 'concatenative'
 :permalink: concatenative
 -----
 
-2 items are tagged with _concatenative_:
-
-			<ul>
-<% articles_tagged_with('concatenative').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>2 items are tagged with <em>concatenative</em>:</p>
+<ul>
+	<% articles_tagged_with('concatenative').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

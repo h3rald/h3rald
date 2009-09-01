@@ -3,17 +3,15 @@
 :title: "Tag: opensource"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/opensource/
 :feed_title: Tag 'opensource'
 :permalink: opensource
 -----
 
-10 items are tagged with _opensource_:
-
-			<ul>
-<% articles_tagged_with('opensource').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>10 items are tagged with <em>opensource</em>:</p>
+<ul>
+	<% articles_tagged_with('opensource').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

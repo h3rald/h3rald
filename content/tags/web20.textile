@@ -3,17 +3,15 @@
 :title: "Tag: web20"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/web20/
 :feed_title: Tag 'web20'
 :permalink: web20
 -----
 
-8 items are tagged with _web20_:
-
-			<ul>
-<% articles_tagged_with('web20').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>8 items are tagged with <em>web20</em>:</p>
+<ul>
+	<% articles_tagged_with('web20').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

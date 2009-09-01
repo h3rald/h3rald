@@ -3,17 +3,15 @@
 :title: "Tag: personal_log"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/personal_log/
 :feed_title: Tag 'personal_log'
 :permalink: personal_log
 -----
 
-6 items are tagged with _personal_log_:
-
-			<ul>
-<% articles_tagged_with('personal_log').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>6 items are tagged with <em>personal_log</em>:</p>
+<ul>
+	<% articles_tagged_with('personal_log').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

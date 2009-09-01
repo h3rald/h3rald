@@ -54,7 +54,7 @@ namespace :site do
 	end
 
 	task :archives do
-		site = Nanoc3::Site.new(YAML.load_file('config.yaml'))
+		site = Nanoc3::Site.new('.')
 		site.load_data
 		dir = Pathname(Dir.pwd)/'content/archives'
 		dir.rmtree if dir.exist?
@@ -63,7 +63,7 @@ namespace :site do
 		index = -1
 		current_month = ""
 		# Collect month and page data
-		articles = site.pages.select{|p| p.attributes[:date] && p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
+		articles = site.items.select{|p| p.attributes[:date] && p.attributes[:type] == 'article'}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse 
 		articles.each do |a|
 			month = a.attributes[:date].strftime("%B %Y")
 			if current_month != month then

@@ -1,15 +1,15 @@
 ----- 
 :type: page
-:permalink: november-2008
 :title: "Archive: November 2008"
 :filters_pre: 
 - erb
-- redcloth
+:permalink: november-2008
 -----
 
-3 items were written in _November 2008_:
-
-<% articles_by_month.select{|i| i[0] == "November 2008"}[0][1].each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
-<% end %>
+<p>3 items were written in <em>November 2008</em>:</p>
+<ul>
+	<% articles_by_month.select{|i| i[0] == "November 2008"}[0][1].each do |a|%>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
+</ul>
 		

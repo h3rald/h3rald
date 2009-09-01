@@ -4,17 +4,17 @@ module SiteUtils
 		meta = {}
 		meta[:title] = "Tag: #{tag}"
 		meta[:type] = 'page'
-		meta[:filters_pre] = ['erb', 'redcloth']
+		meta[:filters_pre] = ['erb']
 		meta[:feed] = "/tags/#{tag}/"
 		meta[:feed_title] = "Tag '#{tag}'"
 		meta[:permalink] = tag
 		pl = (count == 1) ? ' is' : 's are'
-		contents = %{\n#{count} item#{pl} tagged with _#{tag}_:
-
-			<ul>
-<% articles_tagged_with('#{tag}').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+		contents = %{
+<p>#{count} item#{pl} tagged with <em>#{tag}</em>:</p>
+<ul>
+	<% articles_tagged_with('#{tag}').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		}
 		# Write html page
@@ -35,14 +35,16 @@ module SiteUtils
 		meta = {}
 		meta[:title] = "Archive: #{name}"
 		meta[:type] = 'page'
-		meta[:filters_pre] = ['erb', 'redcloth']
+		meta[:filters_pre] = ['erb']
 		meta[:permalink] = name.downcase.gsub /\s/, '-'
 		pl = (count == 1) ? ' was' : 's were'
-		contents = %{\n#{count} item#{pl} written in _#{name}_:
-
-<% articles_by_month.select{|i| i[0] == "#{name}"}[0][1].each do |pg|
-%>* <span class="<%= pg.attributes[:type] %>_link"> <a href="/articles/<%= pg.attributes[:permalink] %>/"><%= pg.attributes[:title] %></a></span>
-<% end %>
+		contents = %{
+<p>#{count} item#{pl} written in <em>#{name}</em>:</p>
+<ul>
+	<% articles_by_month.select{|i| i[0] == "#{name}"}[0][1].each do |a|%>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
+</ul>
 		}
 		# Write file
 		write_item dir/"#{meta[:permalink]}.textile", meta, contents

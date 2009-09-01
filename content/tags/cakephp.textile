@@ -3,17 +3,15 @@
 :title: "Tag: cakephp"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/cakephp/
 :feed_title: Tag 'cakephp'
 :permalink: cakephp
 -----
 
-23 items are tagged with _cakephp_:
-
-			<ul>
-<% articles_tagged_with('cakephp').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>23 items are tagged with <em>cakephp</em>:</p>
+<ul>
+	<% articles_tagged_with('cakephp').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

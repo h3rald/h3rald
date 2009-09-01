@@ -3,17 +3,15 @@
 :title: "Tag: rawline"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/rawline/
 :feed_title: Tag 'rawline'
 :permalink: rawline
 -----
 
-5 items are tagged with _rawline_:
-
-			<ul>
-<% articles_tagged_with('rawline').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>5 items are tagged with <em>rawline</em>:</p>
+<ul>
+	<% articles_tagged_with('rawline').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

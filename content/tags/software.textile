@@ -3,17 +3,15 @@
 :title: "Tag: software"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/software/
 :feed_title: Tag 'software'
 :permalink: software
 -----
 
-4 items are tagged with _software_:
-
-			<ul>
-<% articles_tagged_with('software').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>4 items are tagged with <em>software</em>:</p>
+<ul>
+	<% articles_tagged_with('software').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

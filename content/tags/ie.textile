@@ -3,17 +3,15 @@
 :title: "Tag: ie"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/ie/
 :feed_title: Tag 'ie'
 :permalink: ie
 -----
 
-2 items are tagged with _ie_:
-
-			<ul>
-<% articles_tagged_with('ie').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>2 items are tagged with <em>ie</em>:</p>
+<ul>
+	<% articles_tagged_with('ie').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		

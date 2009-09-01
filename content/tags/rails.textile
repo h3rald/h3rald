@@ -3,17 +3,15 @@
 :title: "Tag: rails"
 :filters_pre: 
 - erb
-- redcloth
 :feed: /tags/rails/
 :feed_title: Tag 'rails'
 :permalink: rails
 -----
 
-19 items are tagged with _rails_:
-
-			<ul>
-<% articles_tagged_with('rails').each do |a|
-%><%= render 'dated_article', :article => a %>
-<% end %>
+<p>19 items are tagged with <em>rails</em>:</p>
+<ul>
+	<% articles_tagged_with('rails').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
 </ul>
 		
