@@ -1,14 +1,6 @@
 ----- 
 permalink: "404"
-filters_pre: 
-- redcloth
 title: Page Not Found
-comments: []
-
-date: 2008-10-26 11:34:54 +01:00
-tags: []
-
 type: page
-toc: true
 -----
-The page you're looking for cannot be found. Try searching the "archives":/#archives/.
+The page you're looking for cannot be found. Try searching the "archives":/archives/, maybe you'll have better luck!

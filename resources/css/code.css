@@ -1,10 +1,15 @@
 .highlight
 {
-	font-family: "Consolas", Monospace;
-	border: 3px double #A4282D;
+	font-family: "Consolas", "Monaco", Monospace;
+	border: 1px solid #A4282D;
 	padding: 5px;
 	margin: 5px 0;
 	overflow: auto;
+}
+
+code
+{
+	font-family: "Consolas", "Monaco", Monospace;
 }
 
 .highlight .hll { background-color: #ffffcc }

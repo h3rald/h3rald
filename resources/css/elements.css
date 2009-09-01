@@ -1,3 +1,45 @@
+/*** CONTENT ***/
+
+#content img
+{
+	margin: 0 5px;
+	padding: 2px;
+}
+
+#content li, #content dd
+{
+	margin-left: 30px;
+	line-height: 1.5em;
+}
+
+#content dt
+{
+	margin-top: 1em;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#content dd
+{
+	font-style: italic;
+}
+
+#content p
+{
+	line-height:1.5em;
+	margin: 1.7em 0;
+}
+
+blockquote, .note
+{
+	font-family: Georgia, Serif;
+	color:#555;
+	font-style:italic;
+	padding:0 0 0 33px;
+	margin: 0;
+	background: url(/images/theme/theme/quote.gif) no-repeat top left;
+}
+
 /*** HOME Page ***/
 
 #services li
@@ -60,10 +102,15 @@
 
 .project-data
 {
-	border-left: 1px dashed #A4282D;
+	border-left: 1px solid #A4282D;
 	padding: 0 1em 1em 1.5em;
 	margin: 0 0 0 1.5em;
 	height: 300px;
+}
+
+ul
+{
+	overflow: hidden;
 }
 
 /** Share buttons **/
@@ -98,7 +145,7 @@
 
 table
 {
-	border-bottom: 1px solid #C0C0C0;
+	border-bottom: 1px solid #A4282D;
 }
 
 tr, td, th
@@ -106,15 +153,15 @@ tr, td, th
 	padding: 5px;
 }
 
-td, th
+td
 {
-	border-left: 1px solid #C0C0C0;
-	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #A4282D;
+	border-right: 1px solid #A4282D;
 }
 
 th
 {
-	background-color: #C0C0C0;
+	border: 1px solid #A4282D;
 }
 
 #taglist, #timeline
