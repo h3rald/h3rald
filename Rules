@@ -16,7 +16,7 @@ compile /(rss|atom)/ do
 end
 	
 compile '*' do
-	if !item[:filters_pre].empty? then
+	if item[:filters_pre] && !item[:filters_pre].empty? then
 		item[:filters_pre].each do |f|
 			rep.filter f.to_sym
 		end
