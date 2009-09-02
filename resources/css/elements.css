@@ -48,8 +48,8 @@ blockquote, .note
 
 #nav-about
 {
-	width: 119px;
-	height: 62px;
+	width: 115px;
+	height: 52px;
 	display: block;
 	background: url(../images/theme/buttons/about.png);
 }
@@ -61,8 +61,8 @@ blockquote, .note
 
 #nav-other
 {
-	width: 133px;
-	height: 62px;
+	width: 130px;
+	height: 52px;
 	display: block;
 	background: url(../images/theme/buttons/other.png);
 }
@@ -74,8 +74,8 @@ blockquote, .note
 
 #nav-projects
 {
-	width: 155px;
-	height: 62px;
+	width: 127px;
+	height: 52px;
 	display: block;
 	background: url(../images/theme/buttons/projects.png);
 }
@@ -87,8 +87,8 @@ blockquote, .note
 
 #nav-archives
 {
-	width: 157px;
-	height: 62px;
+	width: 155px;
+	height: 52px;
 	display: block;
 	background: url(../images/theme/buttons/archives.png);
 }
