@@ -1,7 +1,7 @@
-Cufon.replace('#navigation a', {fontFamily: 'Mutlu', hover: true, fontSize: '30px'});
-Cufon.replace('h2', {fontFamily: 'Mutlu', fontSize: '40px'});
-Cufon.replace('h3', {fontFamily: 'Mutlu', hover: true, fontSize: '35px'});
-Cufon.replace('.standard h4', {fontFamily: 'Mutlu', fontSize: '28px'});
+//Cufon.replace('#navigation a', {fontFamily: 'Mutlu', hover: true, fontSize: '30px'});
+//Cufon.replace('h2', {fontFamily: 'Mutlu', fontSize: '40px'});
+//Cufon.replace('h3', {fontFamily: 'Mutlu', hover: true, fontSize: '35px'});
+//Cufon.replace('.standard h4', {fontFamily: 'Mutlu', fontSize: '28px'});
 $(document).ready(function() {
 		$('.timeago').timeago();
 		// Drop Caps
@@ -20,7 +20,7 @@ $(document).ready(function() {
 				$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
 			}
 			});
-		Cufon.replace('.dropcap', {fontFamily: 'Mutlu', fontSize: '40px'});
+		//Cufon.replace('.dropcap', {fontFamily: 'Mutlu', fontSize: '40px'});
 		});
-Cufon.now();
+//Cufon.now();
 

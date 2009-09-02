@@ -1,15 +1,21 @@
 /* TEXT */
 
+body
+{
+	color: #000;
+	font: 0.9em Georgia, Serif;
+}
+
 h2, h3, h4, h5
 {
 	margin: 0;
-	font-family: Georgia, Serif;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-variant: small-caps;
 }
 
 h1
 {
 	font-size: 2em;
-	font-family: Georgia, Serif;
 }
 
 h2
@@ -32,13 +38,14 @@ h4
 }
 
 .dropcap {
-	font-size: 35px;
-	text-align: right;
-	width: 50px;
-	height: 40px;
-	display:block;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	float:left;
-	padding: 5px;
+	font-size:4.2em;
+	line-height:0.75;
+	margin-top:0.15em;
+	padding-right:0.25em;
+	text-transform: uppercase;
+
 }
 
 h2 + p:first-line {

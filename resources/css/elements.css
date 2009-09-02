@@ -36,7 +36,66 @@ blockquote, .note
 	font-style:italic;
 	padding:0 0 0 33px;
 	margin: 0;
-	background: url(/images/theme/theme/quote.gif) no-repeat top left;
+	background: url(../images/theme/theme/quote.gif) no-repeat top left;
+}
+
+/*** NAVIGATION ***/
+
+.hidden
+{
+	display: none;
+}
+
+#nav-about
+{
+	width: 119px;
+	height: 62px;
+	display: block;
+	background: url(../images/theme/buttons/about.png);
+}
+
+#nav-about:hover
+{
+	background: url(../images/theme/buttons/about_h.png);
+}
+
+#nav-other
+{
+	width: 133px;
+	height: 62px;
+	display: block;
+	background: url(../images/theme/buttons/other.png);
+}
+
+#nav-other:hover
+{
+	background: url(../images/theme/buttons/other_h.png);
+}
+
+#nav-projects
+{
+	width: 155px;
+	height: 62px;
+	display: block;
+	background: url(../images/theme/buttons/projects.png);
+}
+
+#nav-projects:hover
+{
+	background: url(../images/theme/buttons/projects_h.png);
+}
+
+#nav-archives
+{
+	width: 157px;
+	height: 62px;
+	display: block;
+	background: url(../images/theme/buttons/archives.png);
+}
+
+#nav-archives:hover
+{
+	background: url(../images/theme/buttons/archives_h.png);
 }
 
 /*** HOME Page ***/
