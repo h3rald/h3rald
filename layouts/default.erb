@@ -63,6 +63,10 @@ filter: erb
 					<!-- CONTENT START -->
 					<div id="content" class="clearfix<%= (@item[:permalink] == 'home') ? ' home' : ' standard' %>">
 						<h2><%= @item[:title] %></h2>
+						<% 	case @item[:type]
+								when 'article' then%>
+								<%= render 'article_meta', :article => @item %>
+						<% end %>
 						<%= yield %>
 					</div>
 					<!-- CONTENT END -->

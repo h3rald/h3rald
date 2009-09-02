@@ -17,6 +17,10 @@ module Nanoc3::Helpers::Tagging
 		ts
 	end
 
+	def tags_for(article)
+		article.attributes[:tags].map{|t| %{<a class="tag" href="/tags/#{t}/">#{t}</a>}}.join " &middot; "
+	end
+
 	def tag_link_with_count(tag, count)
 		%{#{link_for_tag(tag, '/tags/')} (#{count})}
 	end 

@@ -108,7 +108,6 @@ blockquote, .note
 {
 	font-weight: bold;
 	font-style: italic;
-	font-size: 0.95em;
 }
 
 .project-data
@@ -122,6 +121,21 @@ blockquote, .note
 ul
 {
 	overflow: hidden;
+}
+
+ul.article-meta
+{
+	list-style-type: none;
+}
+
+.date
+{
+	font-style: italic;
+}
+
+#content .article-meta li
+{
+	margin-left: 0;
 }
 
 /** Share buttons **/

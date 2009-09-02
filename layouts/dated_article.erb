@@ -1,0 +1,4 @@
+-----
+filter: erb
+-----
+<li><a href="/articles/<%= @article.attributes[:permalink]%>/"><%= @article.attributes[:title]%></a> (<span class="timeago" title="<%=@article.attributes[:date].to_iso8601_time%>"><%= @article.attributes[:date].strftime("%A, %d %B %Y")%></span>)</li>
