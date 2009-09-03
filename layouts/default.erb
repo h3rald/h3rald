@@ -40,22 +40,18 @@ filter: erb
 				<!-- HEADER START -->
 				<div id="header-container">
 					<div id="header-left">
-						<h1><img alt="H3RALD" id="logo" src="/images/theme/logo.png" /></h1>
+						<h1><a href="/"><img alt="H3RALD" id="logo" class="hover" src="/images/theme/logo.png"/></a></h1>
 					</div>
 					<div id="header-right">
 						<ul id="navigation">
-							<li><a href="/archives/"><span class="hidden">ARCHIVES</span><span id="nav-archives"></span></a></li>
-							<li><a href="/projects/"><span class="hidden">PROJECTS</span><span id="nav-projects"></span></a></li>
-							<li><a href="/about/"><span class ="hidden">ABOUT</span><span id="nav-about"></span></a></li>
-							<li><a href="/other"><span class="hidden">OTHER</span><span id="nav-other"></span></a></li>
+						<% ['archives', 'projects', 'about', 'other'].each do |l| %>
+							<li><a href="/<%= l %>/"><img src="/images/theme/buttons/<%= l %>.png" class="hover" alt="<%= l.upcase %>"/></a></li>
+						<% end %>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<!-- HEADER END -->
-			<div id="border-top"></div>
-			<div class="inner-border">
-			</div>
 			<!-- MAIN START -->
 			<div id="main">
 				<!-- CONTAINER START -->
@@ -74,7 +70,6 @@ filter: erb
 				<!-- CONTAINER END -->
 			</div>
 			<!-- MAIN END -->
-			<div class="inner-border"></div>
 			<div id="border-bottom">
 				<div id="share">
 					<a class="a2a_dd" href="http://www.addtoany.com/share_save"><img src="http://static.addtoany.com/buttons/share_save_120_16.gif" width="120" height="16" alt="Share/Save/Bookmark"/></a><script type="text/javascript">a2a_linkname=document.title;a2a_linkurl=location.href;a2a_onclick=1;a2a_prioritize=["delicious","stumbleupon","friendfeed","twitter","dzone","digg","reddit","slashdot","facebook","newsvine","sphere","ping"];</script>

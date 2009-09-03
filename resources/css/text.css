@@ -6,6 +6,11 @@ body
 	font: 0.9em Georgia, Serif;
 }
 
+h1
+{
+	height: 60px;
+}
+
 h2, h3, h4, h5
 {
 	margin: 0;
@@ -13,37 +18,28 @@ h2, h3, h4, h5
 	font-variant: small-caps;
 }
 
-h1
-{
-	font-size: 2em;
-}
-
 h2
 {
-	text-align: center; 
-	font-size: 1.7em;
-	margin: 1em 0 1em 0;
+	font-size: 2.3em;
 }
 
 h3
 {
-	font-size: 1.5em;
-	margin: 1.5em 0 0.8em 0;
+	font-size: 1.7em;
 }
 
 h4
 {
 	font-size: 1.3em;
-	margin: 1.2em 0 0.8em 0;
 }
 
 .dropcap {
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-	float:left;
-	font-size:4.2em;
-	line-height:0.75;
-	margin-top:0.15em;
-	padding-right:0.25em;
+	float: left;
+	font-size: 4em;
+	line-height: 0.75em;
+	margin-top: 0.15em;
+	padding-right: 0.25em;
 	text-transform: uppercase;
 
 }
@@ -83,10 +79,8 @@ em {
 
 .article-item h4
 {	
-	font-size: 1.2em;
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
 }
 
 .article-tags

@@ -1,153 +1,161 @@
-
 /**
- * jQuery-Plugin "preloadCssImages"
- * by Scott Jehl, scott@filamentgroup.com
- * http://www.filamentgroup.com
- * reference article: http://www.filamentgroup.com/lab/update_automatically_preload_images_from_css_with_jquery/
- * demo page: http://www.filamentgroup.com/examples/preloadImages/index_v2.php
- * 
- * Copyright (c) 2008 Filament Group, Inc
- * Dual licensed under the MIT (filamentgroup.com/examples/mit-license.txt) and GPL (filamentgroup.com/examples/gpl-license.txt) licenses.
+ * jQuery.Preload
+ * Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com
+ * Dual licensed under MIT and GPL.
+ * Date: 3/25/2009
  *
- * Version: 5.0, 10.31.2008
- * Changelog:
- * 	02.20.2008 initial Version 1.0
- *    06.04.2008 Version 2.0 : removed need for any passed arguments. Images load from any and all directories.
- *    06.21.2008 Version 3.0 : Added options for loading status. Fixed IE abs image path bug (thanks Sam Pohlenz).
- *    07.24.2008 Version 4.0 : Added support for @imported CSS (credit: http://marcarea.com/). Fixed support in Opera as well. 
- *    10.31.2008 Version: 5.0 : Many feature and performance enhancements from trixta
- * --------------------------------------------------------------------
+ * @projectDescription Multifunctional preloader
+ * @author Ariel Flesler
+ * @version 1.0.8
+ *
+ * @id jQuery.preload
+ * @param {String, jQuery, Array< String, <a>, <link>, <img> >} original Collection of sources to preload
+ * @param {Object} settings Hash of settings.
+ *
+ * @id jQuery.fn.preload
+ * @param {Object} settings Hash of settings.
+ * @return {jQuery} Returns the same jQuery object, for chaining.
+ *
+ * @example Link Mode:
+ *	$.preload( '#images a' );
+ *
+ * @example Rollover Mode:
+ *	$.preload( '#images img', {
+ *		find:/\.(gif|jpg)/,
+ *		replace:'_over.$1'
+ *	});
+ *
+ * @example Src Mode:
+ *	$.preload( [ 'red', 'blue', 'yellow' ], {
+ *		base:'images/colors/',
+ *		ext:'.jpg'
+ *	});
+ *
+ * @example Placeholder Mode:
+ *	$.preload( '#images img', {
+ *		placeholder:'placeholder.jpg',
+ *		notFound:'notfound.jpg'
+ *	});
+ *
+ * @example Placeholder+Rollover Mode(High res):
+ *	$.preload( '#images img', {
+ *		placeholder:true,
+ *		find:/\.(gif|jpg)/,
+ *		replace:'_high.$1'
+ *	});
  */
+;(function( $ ){
 
-;jQuery.preloadCssImages = function(settings){
-	settings = jQuery.extend({
-		statusTextEl: null,
-		statusBarEl: null,
-		errorDelay: 999, // handles 404-Errors in IE
-		simultaneousCacheLoading: 2
-	}, settings);
-	var allImgs = [],
-		loaded = 0,
-		imgUrls = [],
-		thisSheetRules,	
-		errorTimer;
+	var $preload = $.preload = function( original, settings ){
+		if( original.split ) // selector
+			original = $(original);
+
+		settings = $.extend( {}, $preload.defaults, settings );
+		var sources = $.map( original, function( source ){
+			if( !source ) 
+				return; // skip
+			if( source.split ) // URL Mode
+				return settings.base + source + settings.ext;
+			var url = source.src || source.href; // save the original source
+			if( typeof settings.placeholder == 'string' && source.src ) // Placeholder Mode, if it's an image, set it.
+				source.src = settings.placeholder;
+			if( url && settings.find ) // Rollover mode
+				url = url.replace( settings.find, settings.replace );
+			return url || null; // skip if empty string
+		});
+
+		var data = {
+			loaded:0, // how many were loaded successfully
+			failed:0, // how many urls failed
+			next:0, // which one's the next image to load (index)
+			done:0, // how many urls were tried
+			/*
+			index:0, // index of the related image			
+			found:false, // whether the last one was successful
+			*/
+			total:sources.length // how many images are being preloaded overall
+		};
+		
+		if( !data.total ) // nothing to preload
+			return finish();
+		
+		var imgs = $(Array(settings.threshold+1).join('<img/>'))
+			.load(handler).error(handler).bind('abort',handler).each(fetch);
+		
+		function handler( e ){
+			data.element = this;
+			data.found = e.type == 'load';
+			data.image = this.src;
+			data.index = this.index;
+			var orig = data.original = original[this.index];
+			data[data.found?'loaded':'failed']++;
+			data.done++;
+
+			// This will ensure that the images aren't "un-cached" after a while
+			if( settings.enforceCache )
+				$preload.cache.push( 
+					$('<img/>').attr('src',data.image)[0]
+				);
+
+			if( settings.placeholder && orig.src ) // special case when on placeholder mode
+				orig.src = data.found ? data.image : settings.notFound || orig.src;
+			if( settings.onComplete )
+				settings.onComplete( data );
+			if( data.done < data.total ) // let's continue
+				fetch( 0, this );
+			else{ // we are finished
+				if( imgs && imgs.unbind )
+					imgs.unbind('load').unbind('error').unbind('abort'); // cleanup
+				imgs = null;
+				finish();
+			}
+		};
+		function fetch( i, img, retry ){
+			// IE problem, can't preload more than 15
+			if( img.attachEvent /* msie */ && data.next && data.next % $preload.gap == 0 && !retry ){
+				setTimeout(function(){ fetch( i, img, true ); }, 0);
+				return false;
+			}
+			if( data.next == data.total ) return false; // no more to fetch
+			img.index = data.next; // save it, we'll need it.
+			img.src = sources[data.next++];
+			if( settings.onRequest ){
+				data.index = img.index;
+				data.element = img;
+				data.image = img.src;
+				data.original = original[data.next-1];
+				settings.onRequest( data );
+			}
+		};
+		function finish(){
+			if( settings.onFinish )
+				settings.onFinish( data );
+		};
+	};
+
+	 // each time we load this amount and it's IE, we must rest for a while, make it lower if you get stack overflow.
+	$preload.gap = 14; 
+	$preload.cache = [];
 	
-	function onImgComplete(){
-		clearTimeout(errorTimer);
-		if (imgUrls && imgUrls.length && imgUrls[loaded]) {
-			loaded++;
-			if (settings.statusTextEl) {
-				var nowloading = (imgUrls[loaded]) ? 
-					'Now Loading: <span>' + imgUrls[loaded].split('/')[imgUrls[loaded].split('/').length - 1] : 
-					'Loading complete'; // wrong status-text bug fixed
-				jQuery(settings.statusTextEl).html('<span class="numLoaded">' + loaded + '</span> of <span class="numTotal">' + imgUrls.length + '</span> loaded (<span class="percentLoaded">' + (loaded / imgUrls.length * 100).toFixed(0) + '%</span>) <span class="currentImg">' + nowloading + '</span></span>');
-			}
-			if (settings.statusBarEl) {
-				var barWidth = jQuery(settings.statusBarEl).width();
-				jQuery(settings.statusBarEl).css('background-position', -(barWidth - (barWidth * loaded / imgUrls.length).toFixed(0)) + 'px 50%');
-			}
-			loadImgs();
-		}
-	}
-	
-	function loadImgs(){
-		//only load 1 image at the same time / most browsers can only handle 2 http requests, 1 should remain for user-interaction (Ajax, other images, normal page requests...)
-		// otherwise set simultaneousCacheLoading to a higher number for simultaneous downloads
-		if(imgUrls && imgUrls.length && imgUrls[loaded]){
-			var img = new Image(); //new img obj
-			img.src = imgUrls[loaded];	//set src either absolute or rel to css dir
-			if(!img.complete){
-				jQuery(img).bind('error load onreadystatechange', onImgComplete);
-			} else {
-				onImgComplete();
-			}
-			errorTimer = setTimeout(onImgComplete, settings.errorDelay); // handles 404-Errors in IE
-		}
-	}
-	
-	function parseCSS(sheets, urls) {
-		var w3cImport = false,
-			imported = [],
-			importedSrc = [],
-			baseURL;
-		var sheetIndex = sheets.length;
-		while(sheetIndex--){//loop through each stylesheet
-			
-			var cssPile = '';//create large string of all css rules in sheet
-			
-			if(urls && urls[sheetIndex]){
-				baseURL = urls[sheetIndex];
-			} else {
-				var csshref = (sheets[sheetIndex].href) ? sheets[sheetIndex].href : 'window.location.href';
-				var baseURLarr = csshref.split('/');//split href at / to make array
-				baseURLarr.pop();//remove file path from baseURL array
-				baseURL = baseURLarr.join('/');//create base url for the images in this sheet (css file's dir)
-				if (baseURL) {
-					baseURL += '/'; //tack on a / if needed
-				}
-			}
-			if(sheets[sheetIndex].cssRules || sheets[sheetIndex].rules){
-				thisSheetRules = (sheets[sheetIndex].cssRules) ? //->>> http://www.quirksmode.org/dom/w3c_css.html
-					sheets[sheetIndex].cssRules : //w3
-					sheets[sheetIndex].rules; //ie 
-				var ruleIndex = thisSheetRules.length;
-				while(ruleIndex--){
-					if(thisSheetRules[ruleIndex].style && thisSheetRules[ruleIndex].style.cssText){
-						var text = thisSheetRules[ruleIndex].style.cssText;
-						if(text.toLowerCase().indexOf('url') != -1){ // only add rules to the string if you can assume, to find an image, speed improvement
-							cssPile += text; // thisSheetRules[ruleIndex].style.cssText instead of thisSheetRules[ruleIndex].cssText is a huge speed improvement
-						}
-					} else if(thisSheetRules[ruleIndex].styleSheet) {
-						imported.push(thisSheetRules[ruleIndex].styleSheet);
-						w3cImport = true;
-					}
-					
-				}
-			}
-			//parse cssPile for image urls
-			var tmpImage = cssPile.match(/[^\("]+\.(gif|jpg|jpeg|png)/g);//reg ex to get a string of between a "(" and a ".filename" / '"' for opera-bugfix
-			if(tmpImage){
-				var i = tmpImage.length;
-				while(i--){ // handle baseUrl here for multiple stylesheets in different folders bug
-					var imgSrc = (tmpImage[i].charAt(0) == '/' || tmpImage[i].match('://')) ? // protocol-bug fixed
-						tmpImage[i] : 
-						baseURL + tmpImage[i];
-					
-					if(jQuery.inArray(imgSrc, imgUrls) == -1){
-						imgUrls.push(imgSrc);
-					}
-				}
-			}
-			
-			if(!w3cImport && sheets[sheetIndex].imports && sheets[sheetIndex].imports.length) {
-				for(var iImport = 0, importLen = sheets[sheetIndex].imports.length; iImport < importLen; iImport++){
-					var iHref = sheets[sheetIndex].imports[iImport].href;
-					iHref = iHref.split('/');
-					iHref.pop();
-					iHref = iHref.join('/');
-					if (iHref) {
-						iHref += '/'; //tack on a / if needed
-					}
-					var iSrc = (iHref.charAt(0) == '/' || iHref.match('://')) ? // protocol-bug fixed
-						iHref : 
-						baseURL + iHref;
-					
-					importedSrc.push(iSrc);
-					imported.push(sheets[sheetIndex].imports[iImport]);
-				}
-				
-				
-			}
-		}//loop
-		if(imported.length){
-			parseCSS(imported, importedSrc);
-			return false;
-		}
-		var downloads = settings.simultaneousCacheLoading;
-		while( downloads--){
-			setTimeout(loadImgs, downloads);
-		}
-	}
-	parseCSS(document.styleSheets);
-	return imgUrls;
-};
+	$preload.defaults = {
+		threshold:2, // how many images to load simultaneously
+		base:'', // URL mode: a base url can be specified, it is prepended to all string urls
+		ext:'', // URL mode:same as base, but it's appended after the original url.
+		replace:'' // Rollover mode: replacement (can be left empty)
+		/*
+		enforceCache: false, // If true, the plugin will save a copy of the images in $.preload.cache
+		find:null, // Rollover mode: a string or regex for the replacement
+		notFound:'' // Placeholder Mode: Optional url of an image to use when the original wasn't found
+		placeholder:'', // Placeholder Mode: url of an image to set while loading
+		onRequest:function( data ){ ... }, // callback called every time a new url is requested
+		onComplete:function( data ){ ... }, // callback called every time a response is received(successful or not)
+		onFinish:function( data ){ ... } // callback called after all the images were loaded(or failed)
+		*/
+	};
+
+	$.fn.preload = function( settings ){
+		$preload( this, settings );
+		return this;
+	};
+
+})( jQuery );

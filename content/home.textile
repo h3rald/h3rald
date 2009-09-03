@@ -19,7 +19,7 @@ popular = popular_articles 5
 
 !>/images/theme/heraldry/lion.png!
 
-This is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles":/archives/ and <%= 5 %> open source "projects":/projects/. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
+<span class="dropcap">T</span>his is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles":/archives/ and <%= 5 %> open source "projects":/projects/. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
 
 You can contact him by writing an email to _h3rald [at] h3rald [dot] com_, or through "Twitter":http://www.twitter.com/h3rald, "LinkedIn":http://www.linkedin.com/pub/dir/Fabio/Cevasco, "Delicious":http://www.delicious.com/h3rald, "Facebook":http://www.facebook.com/h3rald, "Shelfari":http://www.shelfari.com/h3rald, or "FriendFeed":http://friendfeed.com/h3rald.
 
