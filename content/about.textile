@@ -6,11 +6,9 @@ filters_pre:
 title: About
 type: page
 -----
-!</images/theme/heraldry/pegasus.png!
-
 !>/images/theme/heraldry/unicorn.png!
 
-This is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be.
+<span class="dropcap">T</span>his is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be.
 
 This site was designed to work with all the major modern browsers (hint: Internet Explorer 6 is _not_ a modern browser). It validates as XHTML 1.1 Strict and CSS 2.1.
 

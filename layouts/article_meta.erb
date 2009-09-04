@@ -3,5 +3,5 @@ filter: erb
 -----
 <ul class="article-meta">
 	<li>Composed on <span class="date"><%= @article.attributes[:date].strftime("%A, %d %B %Y") %></span></li>
-	<li>Archived as <%= tags_for(@article) %></li>
+	<li>Archived in <%= tags_for(@article) %></li>
 </ul>

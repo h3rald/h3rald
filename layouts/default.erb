@@ -63,7 +63,10 @@ filter: erb
 								when 'article' then%>
 								<%= render 'article_meta', :article => @item %>
 						<% end %>
-						<%= yield %>
+						<hr />
+						<div class="content-body">
+							<%= yield %>
+						</div>
 					</div>
 					<!-- CONTENT END -->
 				</div>

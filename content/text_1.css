@@ -1,3 +1,5 @@
+-----
+-----
 /* TEXT */
 
 body
@@ -44,7 +46,7 @@ h4
 
 }
 
-p.first-p:first-line {
+h2 + p:first-line {
 	font-variant:small-caps;
 }
 

@@ -105,11 +105,6 @@ blockquote, .note
 	margin-left: 0;
 }
 
-#services img
-{
-	float: left;
-}
-
 .spacer-20
 {
 	display: block;
@@ -185,6 +180,9 @@ ul
 ul.article-meta
 {
 	list-style-type: none;
+	border-left: 3px solid #ccc;
+	padding-left: 1em;
+	margin-left: 0.5em;
 }
 
 .date

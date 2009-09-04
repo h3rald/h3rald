@@ -3,11 +3,9 @@ permalink: projects
 title: Projects
 type: page
 -----
-!</images/theme/heraldry/wyvern.png!
-
 !>/images/theme/heraldry/dragon.png!
 
-This page lists all my _projects_. Except for a few cases, they normally are:
+<span class="dropcap">T</span>his page lists all my _projects_. Except for a few cases, they normally are:
 * open source
 * programming-related
 * developed using the "Ruby programming language":http://www.ruby-lang.org

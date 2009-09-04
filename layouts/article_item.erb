@@ -2,7 +2,9 @@
 filter: erb
 -----
 <div class="article-item"> 
-	<h4><a href="/articles/<%= @article.attributes[:permalink]%>/"><%= @article.attributes[:title]%></a></h4><% unless (@article.attributes[:tags].empty?) then %><div class="article-tags"><%=	@article.attributes[:tags].map{ |t| %{<span class="tag"><a href="/tags/#{t}/">#{t}</a></span>} }.join(" &middot; ") %>
+	<h4><a href="/articles/<%= @article.attributes[:permalink]%>/"><%= @article.attributes[:title]%></a></h4><% unless (@article.attributes[:tags].empty?) then %>
+		<div class="date"><%= @article.attributes[:date].strftime("%A, %d %B %Y") %></div>
+		<div><%=	@article.attributes[:tags].map{ |t| %{<span class="tag"><a href="/tags/#{t}/">#{t}</a></span>} }.join(" &middot; ") %>
 	</div>
 	<% end %><%	if (@article.attributes[:summary] && !@no_summary) then %><div class="article-summary"><%= @article.attributes[:summary] %>
 	</div><% end %>

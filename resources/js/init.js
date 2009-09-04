@@ -8,18 +8,14 @@ $('img.hover').hover(function(){
 $(document).ready(function() {
 		$('.timeago').timeago();
 		// Drop Caps
-		$('h2 + p').each(function(){
-			var first_paragraph = this;//$('#content p')[0];
+		$('.content-body p').each(function(){
+			var first_paragraph = $('.content-body p:first');
+			first_paragraph.addClass('first-p');
 			if (!first_paragraph) return false;
-			var node = first_paragraph;
-			while (node.childNodes.length) {
-			node = node.firstChild;
-			}
-			var text = node.nodeValue;
-			if (!text) return false;
-			var first_letter = text.substr(0,1);
+			var t = first_paragraph.html();
+			var first_letter = t.substr(0,1);
 			if (first_letter.match(/[a-z]/i)){
-				node.nodeValue = text.slice(1,text.length);
+				first_paragraph.html(t.slice(1,t.length));
 				$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
 			}
 			});
