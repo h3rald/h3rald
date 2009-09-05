@@ -15,8 +15,12 @@ compile /(rss|atom)/ do
 	rep.filter :erb
 end
 
-compile 'css/*' do
-	rep.filter :sass if item[:filter] == 'sass'
+compile '/css/*' do
+	filter :sass, {
+    :load_paths => [Dir.pwd+"/content/css"],
+    :full_exception => true,
+    :line_numbers => true
+  }
 end
 	
 compile '*' do

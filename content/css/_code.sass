@@ -1,9 +1,10 @@
 ----- 
-filter: sass
 ----- 
-!code_font = "Consolas", "Monaco", Monospace
+=code_font
+  font-family: "Consolas", "Monaco", "Monospace"
+
 .highlight
-  font-family: !code_font
+  +code_font
   border: 1px solid #A4282D
   padding: 5px
   margin: 5px 0
@@ -11,7 +12,7 @@ filter: sass
 
 
 code
-  font-family: !code_font
+  +code_font
 
 
 .highlight

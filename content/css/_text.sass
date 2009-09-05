@@ -1,0 +1,85 @@
+-----
+-----
+=title_font
+  font-family: "Palatino Linotype", "Palatino", "Book Antiqua", "Serif"
+=body_font
+  font-family: "Georgia", "Serif"
+
+=title
+  +title_font
+  font-variant: small-caps
+  margin: 1em 0 0 0 
+
+/* TEXT */
+
+body
+  color: #000
+  +body_font
+  font-size: 0.9em
+
+h2
+  font-size: 2.3em
+  +title
+  margin: 0
+
+h3
+  font-size: 1.7em
+  +title
+
+h4
+  font-size: 1.3em
+  +title
+
+.dropcap 
+  font-family: !title_font
+  float: left
+  font-size: 4.2em
+  line-height: 0.75em
+  margin-top: 0.15em
+  padding-right: 0.25em
+  text-transform: uppercase
+
+p.first-p:first-line 
+  font-variant: small-caps
+
+#services h3
+  text-align: center
+
+em 
+  font-style: italic
+
+#footer, #border-bottom
+  color: #BDB7BA
+
+/**** Article Lists ****/
+
+.article-list h3, .left-column h3, .right-column h3
+  text-align: center
+
+.article-item h4
+  margin: 0
+  padding: 0
+
+.article-tags
+  font-size: 90%
+  padding-left: 1em
+
+.article-summary
+  padding-top: 0.5em
+  padding-left: 1em
+  font-style: italic
+
+/******* LINKS *******/
+
+a, a.gs-title
+  text-decoration: underline
+  outline: none
+
+h4 a
+  text-decoration: none
+
+a, a.gs-title, .gsc-cursor-page
+  color: #A4282D
+
+a:hover, a.gs-title:hover, .gsc-cursor-page:hover
+  color: #CF282D
