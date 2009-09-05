@@ -14,6 +14,10 @@ end
 compile /(rss|atom)/ do
 	rep.filter :erb
 end
+
+compile 'css/*' do
+	rep.filter :sass if item[:filter] == 'sass'
+end
 	
 compile '*' do
 	if item[:filters_pre] && !item[:filters_pre].empty? then
@@ -32,6 +36,10 @@ end
 
 route '/(atom|rss)/' do
 	item.identifier.gsub(/\/$/, '') + '.xml'
+end
+
+route 'css/*' do
+	item.identifier.gsub(/\/$/, '') + '.css'
 end
 
 route '*' do
