@@ -22,6 +22,10 @@ compile '/css/*' do
     :line_numbers => true
   }
 end
+
+compile 'sitemap' do
+	rep.filter :erb
+end
 	
 compile '*' do
 	if item[:filters_pre] && !item[:filters_pre].empty? then
@@ -44,6 +48,10 @@ end
 
 route 'css/*' do
 	item.identifier.gsub(/\/$/, '') + '.css'
+end
+
+route 'sitemap' do
+	item.identifier.gsub(/\/$/, '') + '.xml'
 end
 
 route '*' do
