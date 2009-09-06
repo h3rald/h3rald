@@ -1,0 +1,19 @@
+-----
+filter: erb
+-----
+<script type="text/javascript">
+	var dzone_url = '<%= url_for @item %>';
+	var dzone_title = '<%= @item[:title]%>';
+	var dzone_blurb = '<%= @item[:summary] if @item[:summary] %>';
+	var dzone_style = '2';
+	var digg_url = 'WEBSITE_URL';
+	var digg_skin = 'compact';
+	var digg_window = 'new';
+	var tweetmeme_style = 'compact';
+</script>
+<ul class="article-buttons">
+	<li><script type="text/javascript" src="http://www.reddit.com/button.js?t=1"></script></li>
+	<li><script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script></li>
+	<li><script type="text/javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js"></script> </li>
+	<li><script src="http://digg.com/tools/diggthis.js" type="text/javascript"></script></li>
+</ul>

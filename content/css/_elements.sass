@@ -139,19 +139,26 @@ ul
   overflow: hidden
 
   &.article-meta
+    float: left
     list-style-type: none
     border-left: 3px solid #ccc
     padding-left: 1em
     margin-left: 0.5em
 
+  &.article-buttons
+    text-align: center
+    list-style-type: none
+    display: block
+    margin: auto
+    
+.article-buttons li
+  display: inline
+
+.article-meta li
+  margin-left: 0
 
 .date
   font-style: italic
-
-
-#content .article-meta li
-  margin-left: 0
-
 
 .inner-border img
   margin-top: 7px
