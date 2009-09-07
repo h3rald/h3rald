@@ -33,49 +33,104 @@ blockquote, .note
 .hidden
   display: none
 
+.preload
+  background-position: -9999px -9999px
+
+#navigation a
+  display: block
+
+=button_img(!img)
+  background: url(../images/theme/buttons/#{!img}.png)
 
 #nav-about
   width: 115px
   height: 52px
-  display: block
-  background: url(../images/theme/buttons/about.png)
+  +button_img("about")
 
   &:hover
-    background: url(../images/theme/buttons/about_h.png)
+    +button_img("about_h")
+
+.nav-about 
+  +button_img("about_h")
 
 
 #nav-other
   width: 130px
   height: 52px
-  display: block
-  background: url(../images/theme/buttons/other.png)
+  +button_img("other")
 
   &:hover
-    background: url(../images/theme/buttons/other_h.png)
+    +button_img("other_h")
+
+.nav-other
+  +button_img("other_h")
 
 
 #nav-projects
   width: 127px
   height: 52px
-  display: block
-  background: url(../images/theme/buttons/projects.png)
+  +button_img("projects")
 
   &:hover
-    background: url(../images/theme/buttons/projects_h.png)
+    +button_img("projects_h")
+
+.nav-projects
+  +button_img("projects_h")
 
 
 #nav-archives
   width: 155px
   height: 52px
-  display: block
-  background: url(../images/theme/buttons/archives.png)
+  +button_img("archives")
 
   &:hover
-    background: url(../images/theme/buttons/archives_h.png)
+    +button_img("archives_h")
 
+.nav-archives
+  +button_img("archives_h")
 
 #services li
   margin-left: 0
+
+#services h3
+  display: block
+  text-align: center
+  a
+    margin: auto
+    display: block
+
+#s-opinions
+  width: 192px
+  height: 52px
+  +button_img("opinions")
+
+  &:hover
+    +button_img("opinions_h")
+
+.s-opinions
+  +button_img("opinions_h")
+
+#s-tweets
+  width: 183px
+  height: 52px
+  +button_img("tweets")
+
+  &:hover
+    +button_img("tweets_h")
+
+.s-tweets
+  +button_img("tweets_h")
+
+#s-bookmarks
+  width: 197px
+  height: 52px
+  +button_img("bookmarks")
+
+  &:hover
+    +button_img("bookmarks_h")
+
+.s-bookmarks
+  +button_img("bookmarks_h")
 
 
 .spacer-20
