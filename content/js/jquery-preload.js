@@ -1,3 +1,5 @@
+-----
+-----
 /**
  * jQuery.Preload
  * Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com

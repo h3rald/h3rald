@@ -26,6 +26,11 @@ end
 compile 'sitemap' do
 	rep.filter :erb
 end
+
+compile /\/(js\/.+?|.htaccess|robots.txt)/ do
+	# do nothing
+end
+
 	
 compile '*' do
 	if item[:filters_pre] && !item[:filters_pre].empty? then
@@ -52,6 +57,14 @@ end
 
 route 'sitemap' do
 	item.identifier.gsub(/\/$/, '') + '.xml'
+end
+
+route '/js/*' do
+	item.identifier.gsub(/\/$/, '') + '.js'
+end
+
+route 'robots.txt' do
+	item.identifier.gsub(/\/$/, '') + '.txt'
 end
 
 route '*' do

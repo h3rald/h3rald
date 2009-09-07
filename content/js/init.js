@@ -1,3 +1,5 @@
+-----
+-----
 $('img.hover').preload({find: '.png', replace: '_h.png'})
 $('img.hover').hover(function(){
 		this.src = this.src.replace('.png','_h.png');	
