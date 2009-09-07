@@ -311,7 +311,8 @@ type: article
 toc: true
 -----
 If you program for fun or profit, chances are that you know C, C++, Java, PHP, Perl, Python or Ruby. These programming languages are all widely known, and, to a different degree, used in commercial applications. At least some of them can safely be considered _mainstream_, even if that word has become so overused and misused that has almost lost its original meaning, if it ever had one.
-If you are earning your living by coding, it's often one of these languages that pays the bills. Nevertheless, true hackers frequently meander in other directions, exploring and discovering different paradigms and methodologies, sometimes to the most "esoteric":http://esolangs.org/wiki/Main_Page extremes.
+
+If you are earning your living by coding, it's often one of these languages that pays the bills. Nevertheless, true hackers frequently meander in other directions, exploring and discovering different paradigms and methodologies, sometimes to the most ["esoteric":http://esolangs.org/wiki/Main_Page] extremes.
 
 bq. "The most obvious common 'personality' characteristics of hackers are high intelligence, consuming curiosity, and facility with intellectual abstractions. Also, most hackers are 'neophiles', stimulated by and appreciative of novelty (especially intellectual novelty). Most are also relatively individualistic and anti-conformist."
 

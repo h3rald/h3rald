@@ -45,7 +45,9 @@ toc: true
 * "The honeymoon":#honeymoon 
 * "Photos":#photos
 * "Trivia":#trivia
-* "Famous quotes":#quotesh3(#prologue). Prologue
+* "Famous quotes":#quotes
+
+h3(#prologue). Prologue
 
 Roxanne and I arrived in Ireland on the 3rd of July, just over a week before the wedding day. We thought a week would have been more than enough to finish organizing our big day, and we were right: we spent a few days enjoying our holiday with relatives and going around to meet the photographer, the florist and all the others.
 
