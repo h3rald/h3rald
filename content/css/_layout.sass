@@ -23,6 +23,21 @@ body
   margin: 0
   padding: 0
 
+=button_img(!img)
+  background: url(../images/theme/#{!img}.png)
+
+#logo
+  display: block
+  width: 313px
+  height: 75px
+  +button_img("logo")
+
+  &:hover
+    +button_img("logo_h")
+
+.logo 
+  +button_img("logo_h")
+
 #header
   width: 100%
   background-color: #000

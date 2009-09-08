@@ -53,7 +53,7 @@ DirectoryIndex index.html
 	RewriteRule ^tags/([^/\.]+)/(rss|atom)/?$ /tags/$1/$2.xml [L]
 	RewriteRule ^(articles|blog|entries|tags)/?$ /archives/ [L,R=301]
 	RewriteRule ^articles/view/([^/\.]+)/?$ /articles/$1/ [L,R=301]
-	RewriteRule ^(blog|entries|archives|tags)/([^/\.]+)/?$ /articles/$2/ [L,R=301]
+	RewriteRule ^(blog|entries|archives)/([^/\.]+)/?$ /articles/$2/ [L,R=301]
 </IfModule>
 
 
