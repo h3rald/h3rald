@@ -1,0 +1,14 @@
+----- 
+:type: page
+:permalink: other
+:title: "Other"
+-----
+!>/images/theme/heraldry/gryphon.png!
+
+This is a repository for other pages and sections that are somehow unrelated to the rest of the web site. In other words, anything that is not an "article":/archives/ or a "project":/projects/ goes here so that it doesn't get lost.
+
+- "Links":/links/ := A collection of useful links to other web sites that I consider interesting, to some degree.
+- "Holidays":/rawline/ := Information on my family house in the countryside near Bogliasco, Genoa (IT); available for rent.
+
+
+
