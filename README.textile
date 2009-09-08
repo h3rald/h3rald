@@ -8,6 +8,7 @@ h3. Ruby Gems
 * sequel (Typo migration)
 * bb-ruby (BBCode filter)
 * builder (Feeds)
+* haml (SASS filter)
 
 h3. Other
 

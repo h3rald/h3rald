@@ -82,6 +82,60 @@ namespace :site do
 		end
 	end
 
+	task :article, :name do |t, args|
+		raise RuntimeError, "Name not specified" unless args[:name]
+		raise RuntimeError, "Article name can only contain letters, numbers and dashes" unless args[:name].match /^[a-zA-Z0-9-]+$/
+		meta = {}
+		meta[:permalink] = args[:name]
+		meta[:title] = ""
+		meta[:tags] = []
+		meta[:date] = Time.now
+		meta[:toc] = true
+		meta[:type] = 'article'
+		file = Pathname.new Dir.pwd/"content/articles/#{meta[:permalink]}.textile"
+		raise "File '#{file}' already exists!" if file.exist?
+		write_item file, meta, ''
+	end
+
+	task :page, :name do |t, args|
+		raise RuntimeError, "Name not specified" unless args[:name]
+		raise RuntimeError, "Page name can only contain letters, numbers and dashes" unless args[:name].match /^[a-zA-Z0-9-]+$/
+		meta = {}
+		meta[:permalink] = args[:name]
+		meta[:title] = ""
+		meta[:type] = 'page'
+		file = Pathname.new Dir.pwd/"content/#{meta[:permalink]}.textile"
+		raise "File '#{file}' already exists!" if file.exist?
+		write_item file, meta, ''
+	end
+
+	task :project, :name do |t, args|
+		raise RuntimeError, "Name not specified" unless args[:name]
+		raise RuntimeError, "Project name can only contain letters, numbers and dashes" unless args[:name].match /^[a-zA-Z0-9-]+$/
+		meta = {}
+		meta[:permalink] = args[:name]
+		meta[:title] = ""
+		meta[:github] = args[:name]
+		meta[:status] = "Active"
+		meta[:version] = "0.1.0"
+		meta[:type] = 'project'
+		meta[:links] = [{"Documentation" => "http://#{args[:name]}.rubyforge.org"},
+										{"Download" => "http://rubyforge.org/projects/#{args[:name]}"},
+										{"Source" => "http://github.com/h3rald/#{args[:name]}/tree/master"}, 
+										{"Tracking" => "http://github.com/h3rald/#{args[:name]}/issues"}]
+		contents = %{
+<%= render 'project_data', :tag => '#{args[:name]}' %>
+
+h3. Installation
+
+h3. Usage
+
+<%= render 'project_updates', :tag => '#{args[:name]}' %>
+		}
+		file = Pathname.new Dir.pwd/"content/#{meta[:permalink]}.textile"
+		raise "File '#{file}' already exists!" if file.exist?
+		write_item file, meta, contents 
+	end
 
 	task :copy_resources do
 		pwd = Pathname.new Dir.pwd
