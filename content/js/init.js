@@ -1,5 +1,8 @@
 -----
 -----
+$(function() {
+		$('#gallery a').lightBox();
+		});
 $(document).ready(function() {
 		$('.timeago').timeago();
 		// Drop Caps
