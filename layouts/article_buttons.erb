@@ -10,10 +10,22 @@ filter: erb
 	var digg_skin = 'compact';
 	var digg_window = 'new';
 	var tweetmeme_style = 'compact';
+	function delicious_counter(data) {
+		var posts = data[0].total_posts;
+		if (!posts) return;
+		var text = posts+" bookmarks";
+		if (posts == 1) { text = posts+" bookmarks" };
+		document.getElementById('delcounter').innerHTML = text;
+	}
 </script>
 <ul class="article-buttons">
 	<li><script type="text/javascript" src="http://tweetmeme.com/i/scripts/button.js"></script></li>
 	<li><script type="text/javascript" src="http://www.reddit.com/button.js?t=1"></script></li>
 	<li><script type="text/javascript" src="http://widgets.dzone.com/links/widgets/zoneit.js"></script> </li>
 	<li><script src="http://digg.com/tools/diggthis.js" type="text/javascript"></script></li>
+	<li><a href="http://www.stumbleupon.com/submit?url=<%= url_for @item %>"> <img border=0 src="http://cdn.stumble-upon.com/images/120x20_su_gray.gif" alt=""></a></li>
+	<li>
+	<script src="http://badges.del.icio.us/feeds/json/url/data?url=<%= url_for @item %>&amp;callback=delicious_counter"></script>
+	<span id="delcounter">0 bookmarks</span><img src="http://static.delicious.com/img/delicious.small.gif" /><a href="http://delicious.com/post?url=<%= url_for @item %>&amp;title=<%= @item[:title]%>">Save</a>
+	</li>
 </ul>
