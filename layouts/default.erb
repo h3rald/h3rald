@@ -25,7 +25,7 @@ filter: erb
 				when 'article' then
 					keywords = min_keywords+@item[:tags].join(', ')
 				when 'project' then
-					keywords = @item.permalink == 'h3rald' ? "fabio cevasco, "+@item[:permalink] : min_keywords+@item[:permalink]
+					keywords = @item[:permalink] == 'h3rald' ? "fabio cevasco, "+@item[:permalink] : min_keywords+@item[:permalink]
 				else
 					keywords = min_keywords+default
 				end
