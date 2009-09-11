@@ -119,20 +119,23 @@ lloogg_clientid = "2830021149dc1a04";
 				<script src="/js/compressed.js" type="text/javascript"></script>
 			<% end %>
 			<% if @item[:type] == 'page' then %>
-			<script type="text/javascript">
-			$(document).ready(function() {
-				display_opinions(7);
-				display_tweets(7);
-				display_bookmarks(7);
-				});
-			</script>
+				<script type="text/javascript">
+				$(document).ready(function() {
+					display_opinions(7);
+					display_tweets(7);
+					display_bookmarks(7);
+					});
+				</script>
+			<% end %>
+			<% if @item[:type] == 'article' then %>
+				<script src="http://badges.del.icio.us/feeds/json/url/data?url=<%= url_for @item %>&amp;callback=delicious_counter"></script>
 			<% end %>
 			<% if @item[:github] then %>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					display_commits(5, '<%= @item[:github] %>');
-				});
-			</script>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						display_commits(5, '<%= @item[:github] %>');
+					});
+				</script>
 			<% end %>
 	</body>
 </html>

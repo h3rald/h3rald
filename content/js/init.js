@@ -3,6 +3,13 @@
 $(function() {
 		$('#gallery a').lightBox();
 		});
+function delicious_counter(data) {
+		var posts = data[0].total_posts;
+		if (!posts) return;
+		var text = posts+" bookmarks";
+		if (posts == 1) { text = posts+" bookmark" };
+		$('#delcounter').text(text);
+	}
 $(document).ready(function() {
 		$('.timeago').timeago();
 		// Drop Caps
