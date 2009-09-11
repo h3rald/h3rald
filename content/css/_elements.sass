@@ -22,7 +22,7 @@
     line-height: 1.5em
     margin: 1em 0
     
-  p[style]
+  p[style] img
     +double_border
     margin: 0 5px 
     padding: 3px
@@ -180,7 +180,7 @@ blockquote, .note
   font-size: 0.8em
 
 .project-data
-  border-left = 3px double !red
+  border-left = 3px "double" !red
   padding: 0 1em 1em 1.5em
   margin: 0 0 0 1.5em
   height: 300px
@@ -191,7 +191,7 @@ ul
   &.article-meta
     float: left
     list-style-type: none
-    border-left = 3px solid !gray
+    border-left = 3px "solid" !gray
     padding-left: 0.5em
     margin-left: 0.5em
     margin-bottom: 1em
@@ -201,7 +201,7 @@ ul
     list-style-type: none
     display: block
     margin: auto
-    border = 1px solid !gray
+    border = 1px "solid" !gray
     background: #fff
     padding: 5px 0
 
@@ -239,15 +239,19 @@ ul
 table
   +double_border
 
+table
+  &#timeline, &#taglist
+    border: none
+
 tr, td, th
   padding: 5px
 
 td
-  border-left = 1px solid !red
-  border-right = 1px solid !red
+  border-left = 1px "solid" !red
+  border-right = 1px "solid" !red
 
 th
-  border = 1px solid !red
+  border = 1px "solid" !red
 
 #taglist, #timeline
   width: 100%
@@ -266,7 +270,7 @@ th
 #content input
   &[type=submit]
     color: #333
-    border = 2px solid !gray
+    border = 2px "solid" !gray
     background: #ccc
     outline: none
     padding: 0.1em 0.3em
