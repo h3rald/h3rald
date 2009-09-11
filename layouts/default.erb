@@ -18,7 +18,19 @@ filter: erb
 		<meta name="target_country" content="en-us" />
 		<meta name="country" content="United States" />
 		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
-		<meta name="keywords" content="h3rald, fabio cevasco, ruby, rails technical writing, reviews, software, browsers, cakephp, genova, technical articles" />
+		<% 	
+				min_keywords = "h3rald, fabio cevasco, "
+				default = "ruby, rails technical writing, reviews, software, browsers, articles, traveling, books, genova"
+				case @item[:type] 
+				when 'article' then
+					keywords = min_keywords+@item[:tags].join(', ')
+				when 'project' then
+					keywords = @item.permalink == 'h3rald' ? "fabio cevasco, "+@item[:permalink] : min_keywords+@item[:permalink]
+				else
+					keywords = min_keywords+default
+				end
+		%>
+		<meta name="keywords" content="<%= keywords %>" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta content="44.388041;9.073248" name="ICBM" />
