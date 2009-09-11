@@ -1,14 +1,6 @@
 -----
 -----
-=title_font
-  font-family: "Palatino Linotype", "Palatino", "Book Antiqua", "Serif"
-=body_font
-  font-family: "Georgia", "Serif"
-
-=title
-  +title_font
-  font-variant: small-caps
-  margin: 1em 0 0 0 
+@import definitions
 
 /* TEXT */
 
@@ -31,7 +23,7 @@ h4
   +title
 
 .dropcap 
-  font-family: !title_font
+  +title_font
   float: left
   font-size: 4.2em
   line-height: 0.75em
@@ -47,9 +39,6 @@ p.first-p:first-line
 
 em 
   font-style: italic
-
-#footer, #border-bottom
-  color: #BDB7BA
 
 /**** Article Lists ****/
 
@@ -72,14 +61,14 @@ em
 /******* LINKS *******/
 
 a, a.gs-title
-  text-decoration: underline
+  text-decoration: none
   outline: none
 
 h4 a
   text-decoration: none
 
 a, a.gs-title, .gsc-cursor-page
-  color: #A4282D
+  color = !red
 
 a:hover, a.gs-title:hover, .gsc-cursor-page:hover
   color: #CF282D

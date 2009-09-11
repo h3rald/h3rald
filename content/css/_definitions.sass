@@ -1,0 +1,27 @@
+-----
+-----
+
+// Variables
+!red = #A4282D 
+!gray = #555
+
+// Mixins
+=double_border
+  border = 3px double !red 
+
+=button_img(!img)
+  background: url(../images/theme/buttons/#{!img}.png)
+
+=title_font
+  font-family: "Palatino Linotype", "Palatino", "Book Antiqua", "Serif"
+
+=body_font
+  font-family: "Georgia", "Serif"
+
+=title
+  +title_font
+  font-variant: small-caps
+  margin: 1em 0 0 0
+
+=code_font
+  font-family: "Consolas", "Monaco", "Monospace"
