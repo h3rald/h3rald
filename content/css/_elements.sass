@@ -22,11 +22,6 @@
     line-height: 1.5em
     margin: 1em 0
     
-  p[style] img
-    +double_border
-    margin: 0 5px 
-    padding: 3px
-
 blockquote, .note
   color: !gray
   font-style: italic
@@ -175,9 +170,11 @@ blockquote, .note
   padding: 0.5em 0
   display: block
 
+.article-meta
+  font-size: 0.8em
+
 .tag
   font-weight: bold
-  font-size: 0.8em
 
 .project-data
   border-left = 3px "double" !red
@@ -189,9 +186,8 @@ ul
   overflow: hidden
 
   &.article-meta
-    float: left
     list-style-type: none
-    border-left = 3px "solid" !gray
+    border-left = 2px "solid" !gray
     padding-left: 0.5em
     margin-left: 0.5em
     margin-bottom: 1em
@@ -215,9 +211,6 @@ ul
 
 #content .article-meta li
   margin-left: 0
-
-.date
-  font-size: 0.8em
 
 .inner-border img
   margin-top: 7px
