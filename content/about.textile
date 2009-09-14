@@ -8,36 +8,42 @@ type: page
 -----
 !>/images/theme/heraldry/unicorn.png!
 
-<span class="dropcap">T</span>his is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be.
+ <span class="dropcap">T</span>his is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be. The source code of this site follows W3C's XHTML 1.1 and CSS 2.1 standard.
+ 
+As of version 8, h3rald.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "Nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/creating-static-web-sites-with-nanoc.
 
-This site was designed to work with all the major modern browsers (hint: Internet Explorer 6 is _not_ a modern browser). It validates as XHTML 1.1 Strict and CSS 2.1.
+h3. Requirements
 
-<br />
+The following ruby libraries (gems) have been used to create this web site:
 
-h3. Under the Hood
+* *"nanoc3":http://rubyforge.org/projects/nanoc/*, to generate the entire web site
+* *"extlib":http://rubyforge.org/projects/extlib/*, in some custom Rake tasks
+* *"bb-ruby":http://rubyforge.org/projects/bb-ruby/*, for the BBCode filter
+* *"builder":http://rubyforge.org/projects/builder/*, to create RSS and ATOM feeds
+* *"haml":http://rubyforge.org/projects/haml/*, for the SASS filter
 
-This site is powered by:
+Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://www.typosphere.org:
+* *"mysql":http://rubyforge.org/projects/mysql/*, to connect to the MySQL database used by Typo
+* *"sequel":http://rubyforge.org/projects/sequel/*, to retrieve data from the Typo database
 
-* -A customized version of the "Typo":http://www.typosphere.org blogging engine.-
-* -The "Ruby on Rails":http://www.rubyonrails.org web framework for the "Ruby":http://www.ruby-lang.org programming language.-
-* -The "MySQL":http://www.mysql.com database engine.-
-* -The "Apache":http://www.apache.org web server.-
-* Just "Nanoc":http://nanoc.stoneship.org/, <em>"[...] a site compiler written in Ruby for building awesome web sites."</em> 
+Besides Ruby-related dependencies, the following was also necessary:
+
+* *"pygments":http://pygments.org/*, a Python library for code highlighting
+* A cron job to fetch backtype comments, delicious bookmarks, tweets, and github commits in JSON format and save them to the @/output/data@ folder.
 
 h3. Licensing
 
-My "articles":/#archives and other material available on this web site are lincesed under the _Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported_license. For other uses, contact me.
+My "articles":/archives/ and all content published on this web site is licensed under the <em>Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License</em>. For other uses, contact me.
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a>
 
-<p style="text-align:center">
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
-</p>
+The source code of this web site, such as its layout, SASS/CSS stylesheets, Nanoc tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/BSD/">BSD License</a></em> and it is available on "GitHub":http://github.com/h3rald/h3rald.
 
 h3. Credits
 
 I'd like to thank the following people for their work, which made this web site possible:
 
-* "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "Nanoc":http://nanoc.stoneship.org/ site compiler.
-* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo.
-* The staff of "Archive.org":http://www.archive.org, for scanning the first edition of "A Complete Guide to Heraldry":http://www.archive.org/details/completeguidetoh00foxduoft, and making it available to the public. All the images featuring heraldric beasts, monsters and symbols are taken from there.
-
+* "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "Nanoc":http://nanoc.stoneship.org/ site publishing system.
+* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo and the navigation buttons.
+* The staff of "Archive.org":http://www.archive.org, for scanning the first edition of "A Complete Guide to Heraldry":http://www.archive.org/details/completeguidetoh00foxduoft, and making it available to the public. All the images featuring heraldic monsters are taken from this book.
+As of version 8, h3rald.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "Nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/creating-static-web-sites-with-nanoc.

@@ -4,3 +4,7 @@ title: Internal Server Error
 type: page
 -----
 Something went wrong. Try to go back "home":/ and if things improve. If not, send a "tweet":/ to _@h3rald_ and I'll try to sort it out.
+
+<p style="margin: auto; text-align: center">
+<img src="/images/theme/heraldry/pegasus.png" />
+</p>

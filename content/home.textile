@@ -11,15 +11,20 @@ feed_title: 'Latest Articles'
 <%
 max_items = 5
 
-all_articles = latest_articles
+all_articles = latest_articles.length
 latest = latest_articles 5
 popular = popular_articles 5
+all_projects = @items.select{|a| a[:type] == 'project'}.length
 %>
 !>/images/theme/heraldry/lion.png!
 
-<span class="dropcap">T</span>his is Fabio Cevasco's web site, featuring <%= all_articles.length %> "articles":/archives/ and <%= 5 %> open source "projects":/projects/. Fabio is a full-time technical writer working in Genoa, Italy. In his free time, he enjoys writing (surprise, surprise), reading about technology and programming a little bit in Ruby and other languages.
+<span class="dropcap">Y</span>ou have reached Fabio Cevasco's web site. 
 
-You can contact him by writing an email to _h3rald [at] h3rald [dot] com_, or through "Twitter":http://www.twitter.com/h3rald, "LinkedIn":http://www.linkedin.com/pub/dir/Fabio/Cevasco, "Delicious":http://www.delicious.com/h3rald, "Facebook":http://www.facebook.com/h3rald, "Shelfari":http://www.shelfari.com/h3rald, or "FriendFeed":http://friendfeed.com/h3rald.
+I am a full-time technical writer living and working in Genoa, Italy. In my free time, I enjoy reading and writing about IT-related topics and programming in different programming language, especially "Ruby":http://www.ruby-lang.org. This web site is a collection of my works, both in writing and coding, and it currently features *<%= all_articles %>* "articles":/archives/ and *<%= all_projects %>*  "projects":/projects/. 
+
+My articles cover a wide range of topics, ranging from "Ruby programming":/tags/ruby/ to "software and book reviews":/tags/reviews/, "web development":/tags/webdevelopment/ and even "travelling":/tags/travelling. This web site does not have a main theme, therefore if you want to keep up-to-date about a particular topic, simply subscribe to a specific tag feed. 
+
+You can contact me by writing an email to _h3rald [at] h3rald [dot] com_, or through "Twitter":http://www.twitter.com/h3rald, "LinkedIn":http://www.linkedin.com/pub/dir/Fabio/Cevasco, "Delicious":http://www.delicious.com/h3rald, "Facebook":http://www.facebook.com/h3rald, "Shelfari":http://www.shelfari.com/h3rald, or "FriendFeed":http://friendfeed.com/h3rald.
 
 <br style="clear:both" />
 
