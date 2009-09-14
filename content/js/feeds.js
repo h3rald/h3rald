@@ -31,7 +31,7 @@ function get_json_data(uri, options){
 
 function backtype_entry(comment){
 	var c = $("<li></li>").addClass('feed-item');
-	var dt = $("<span></span>").addClass('feed-item-date').html(format_date(comment.comment.date)+":");
+	var dt = $("<span></span>").addClass('feed-item-date').html(format_date(comment.comment.date+" GMT")+":");
 	var tx = $("<span>&#0187; </span>").addClass('feed-item-text').append($('<a></a>').attr('href', comment.comment.url).html(comment.post.title));
 	c.append(dt);
 	c.append(tx);

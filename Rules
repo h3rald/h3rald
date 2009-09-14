@@ -63,7 +63,7 @@ route '/js/*' do
 	item.identifier.gsub(/\/$/, '') + '.js'
 end
 
-route 'robots.txt' do
+route '/robots' do
 	item.identifier.gsub(/\/$/, '') + '.txt'
 end
 
