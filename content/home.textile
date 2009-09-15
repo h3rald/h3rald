@@ -18,9 +18,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 %>
 !>/images/theme/heraldry/lion.png!
 
-<span class="dropcap">Y</span>ou have reached Fabio Cevasco's web site. 
-
-I am a full-time technical writer living and working in Genoa, Italy. In my free time, I enjoy reading and writing about IT-related topics and programming in different programming language, especially "Ruby":http://www.ruby-lang.org. This web site is a collection of my works, both in writing and coding, and it currently features *<%= all_articles %>* "articles":/archives/ and *<%= all_projects %>*  "projects":/projects/. 
+<span class="dropcap">Y</span>ou have reached Fabio Cevasco's web site. I am a full-time technical writer living and working in Genoa, Italy. In my free time, I enjoy reading and writing about IT-related topics and programming in different programming language, especially "Ruby":http://www.ruby-lang.org. This web site is a collection of my works, both in writing and coding, and it currently features *<%= all_articles %>* "articles":/archives/ and *<%= all_projects %>*  "projects":/projects/. 
 
 My articles cover a wide range of topics, ranging from "Ruby programming":/tags/ruby/ to "software and book reviews":/tags/reviews/, "web development":/tags/webdevelopment/ and even "travelling":/tags/travelling. This web site does not have a main theme, therefore if you want to keep up-to-date about a particular topic, simply subscribe to a specific tag feed. 
 
