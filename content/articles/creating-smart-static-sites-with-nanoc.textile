@@ -1,0 +1,75 @@
+----- 
+:type: article
+:tags:
+- website
+- ruby
+- programming
+- vim
+- writing
+- opensource
+:date: 2009-09-15 13:32:51.049000 +02:00
+:permalink: creating-smart-static-sites-with-nanoc
+:title: "Creating Smart Static Sites with Nanoc"
+:toc: true
+-----
+
+Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change in all the pages of the site &ndash; the whole eight of them.
+
+Five years later, after rebuilding this web site "seven times":/h3rald/ using different backends (PHP + CakePHP, Ruby + Rails +Typo, etc.), I decided to make it static again, this time with a twist. It all started when I read a "post":http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html by Tom Preston-Warned that I finally decided to give it a try, and today, the 8th release of this web site is 100% static: if you load any page, there's no server-side interpretation going on, you're just browsing a plain HTML page, at most with a few AJAX calls. But let's start from the beginning.
+
+h3. How your blog works
+
+If you're using WordPress, MovableType, Typo, Mephisto, or whatever blogging platform you want, your site is _dynamic_. Somewhere there's always some server-side code which is interpreted when the page is loaded and produces HTML code dyamically: a list of your latest blog posts, their tags, the content of the posts itself. 
+
+Actually this is not exactly how it works: there's always some _caching_ behind the scenes: once your server-side code produces a list of blog post, this list isn't going to change until you write a new post, so it wouldn't make much sense to create the _same_ list _every_ the page is loaded by _anyone_ visiting the site, right? If you write a popular article and get slashdotted/dugg/reddited your web server would probably die altogether.
+
+Caching can be client-side or server-side. Client-side caching is managed internally by any (modern) web browser: when you load a page, browser can keep a copy of that page to avoid re-requesting it from the server a second time. 
+
+A more radical approach involves server-side caching, which is almost ubiquitous to all Rails-powered blogging engines, including "Typo":http://www.typosphere.org: The first time _someone_ request page A, a _permanent_ static copy of the page is made, so every time someone else requests the same page the copy will be fetched instead, thus avoiding the web server to re-interpret it. Of course this means that your application must be able to figure out and how long to keep cached copies on the server which parts of a page to cache, but Rails can (almost) do this for you.
+
+If you allow me to simplify this process in one sentence, if you're using a blogging platform it all ultimately leads to producing static web pages, with some dynamic/interactive bits. Objectively, the only thing which can't be cached or automated in some way is **comments**. 
+
+h3. Introducing Site _Compilers_
+
+The first _site compiler_ I discovered was "Webby":http://webby.rubyforge.org/:
+
+bq. [...] Webby works by combining the contents of a page with a layout to produce HTML. The layout contains everything common to all the pages &mdash; HTML headers, navigation menu, footer, etc. &mdash; and the page contains just the information for that page. You can use your favorite markup language to write your pages; Webby supports quite a few.
+
+There are quite a few applications like Webby, such as:
+* "nanoc":http://nanoc.stoneship.org/ 
+* "rassmalog":http://snk.tuxfamily.org/lib/rassmalog/doc/guide.html 
+* "Jeckyll":http://www.jekyllrb.com/ 
+* "WebGen":http://webgen.rubyforge.org/ 
+* "rog":http://rog.rubyforge.org/ 
+* "Rote":http://rote.rubyforge.org/ 
+* "hobix":http://hobix.com/ 
+* "RakeWeb":http://rakeweb.rubyforge.org/wiki/wiki.pl 
+* "RubyFrontier":http://www.apeth.com/RubyFrontierDocs/default.html 
+* "StaticMatic":http://staticmatic.rubyforge.org/ 
+* "StaticWeb":http://staticweb.rubyforge.org/ 
+* "ZenWeb":http://www.zenspider.com/ZSS/Products/ZenWeb/ 
+* "YurtCMS":http://yurtcms.roberthahn.ca/ 
+* "NanoBlogger":http://nanoblogger.sourceforge.net/ 
+
+There are probably even more, with different features, but they all try to solve the same problem: provide a way to generate static web sites in an automated way.
+
+h3. Choosing the right tool for your needs
+
+http://github.com/h3rald/h3rald/issues/closed#issue/1
+
+h3. Migrating from your blogging platform
+
+
+h3. Using metadata
+
+
+h3. Integrating 3rd-party services
+
+
+h3. Conclusion
+
+
+h4. Advantages
+
+
+h4. Disadvantages
