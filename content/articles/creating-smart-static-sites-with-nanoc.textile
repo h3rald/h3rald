@@ -9,7 +9,7 @@
 - opensource
 :date: 2009-09-15 13:32:51.049000 +02:00
 :permalink: creating-smart-static-sites-with-nanoc
-:title: "Creating Smart Static Sites with Nanoc"
+:title: "Creating Smart Static Sites with nanoc"
 :toc: true
 -----
 
@@ -37,12 +37,12 @@ bq. [...] Webby works by combining the contents of a page with a layout to produ
 
 There are quite a few applications like Webby, such as:
 * "nanoc":http://nanoc.stoneship.org/ 
-* "rassmalog":http://snk.tuxfamily.org/lib/rassmalog/doc/guide.html 
+* "Rassmalog":http://snk.tuxfamily.org/lib/rassmalog/doc/guide.html 
 * "Jeckyll":http://www.jekyllrb.com/ 
 * "WebGen":http://webgen.rubyforge.org/ 
-* "rog":http://rog.rubyforge.org/ 
+* "Rog":http://rog.rubyforge.org/ 
 * "Rote":http://rote.rubyforge.org/ 
-* "hobix":http://hobix.com/ 
+* "Hobix":http://hobix.com/ 
 * "RakeWeb":http://rakeweb.rubyforge.org/wiki/wiki.pl 
 * "RubyFrontier":http://www.apeth.com/RubyFrontierDocs/default.html 
 * "StaticMatic":http://staticmatic.rubyforge.org/ 
@@ -53,23 +53,36 @@ There are quite a few applications like Webby, such as:
 
 There are probably even more, with different features, but they all try to solve the same problem: provide a way to generate static web sites in an automated way.
 
-h3. Choosing the right tool for your needs
+I spent some time reading about each one of them, "evaluating the pros and cons":http://github.com/h3rald/h3rald/issues/closed#issue/1 and in the end I decided to go for "nanoc":http://nanoc.stoneship.org/, simply because it was the only one that seemed to fit all my needs.
 
-http://github.com/h3rald/h3rald/issues/closed#issue/1
+h3. A quick overview of nanoc
+
+nanoc (*nano* *c*ompiler) is a nifty tool written in Ruby suitable for _[...] building small to medium-sized websites_. In other words, anything which doesn't involve some fancy user interaction. For what concerns blogs, the only user interaction is _comments_ &ndash; but that's fine, because there's more than one web service for that, such as "Disqus":http://disqus.com/ or "IntenseDebate":http://intensedebate.com/.
+
+h4. Some details on the project
+
+Compared to the alternatives, nanoc is one of the most mature and most maintained, having hit just a few weeks ago its 3.0 release. Its creator, Denis Defreyne, uses it for his own "web site":http://stoneship.org/ and is involved with the project on a daily basis, both coding and offering support to nanoc users like myself who regularly ask questions on the "nanoc user group":http://groups.google.com/group/nanoc.
+
+Denis also seems very concerned about keeping documentation up-to-date &ndash; something that really impressed me from a technical writer's point of view. The "tutorial":http://nanoc.stoneship.org/tutorial/ he put together will get you started in no time, and the "manual":http://nanoc.stoneship.org/manual/ will explain everything else you may possibly want to know. When release 3.0 came out he even put together a "migration guide":http://nanoc.stoneship.org/migrating/. If this is still not enough and you don't mind spending some time extending the system, nanoc's "RDoc documentation":http://nanoc.stoneship.org/doc/3.0.0/ is very comprehensive compared to other Ruby projects.
+
+h4. Sites, Items and data sources
+
+h4. Layouts, filters, and helpers
+
+h4. Rules and tasks
+
 
 h3. Migrating from your blogging platform
 
+h4. Posts and pages
 
-h3. Using metadata
+h4. Tags
 
-
-h3. Integrating 3rd-party services
+h4. 3rd-party services
 
 
 h3. Conclusion
 
-
 h4. Advantages
-
 
 h4. Disadvantages
