@@ -4,9 +4,7 @@
 - website
 - ruby
 - programming
-- vim
 - writing
-- opensource
 :date: 2009-09-15 13:32:51.049000 +02:00
 :permalink: creating-smart-static-sites-with-nanoc
 :title: "Creating Smart Static Sites with nanoc"
@@ -17,19 +15,13 @@ Back in 2004, when I bought the h3rald.com domain, this site was static. At the 
 
 Five years later, after rebuilding this web site "seven times":/h3rald/ using different backends (PHP + CakePHP, Ruby + Rails +Typo, etc.), I decided to make it static again, this time with a twist. It all started when I read a "post":http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html by Tom Preston-Warned that I finally decided to give it a try, and today, the 8th release of this web site is 100% static: if you load any page, there's no server-side interpretation going on, you're just browsing a plain HTML page, at most with a few AJAX calls. But let's start from the beginning.
 
-h3. How your blog works
+h3. Why I don't need a blogging platform
 
-If you're using WordPress, MovableType, Typo, Mephisto, or whatever blogging platform you want, your site is _dynamic_. Somewhere there's always some server-side code which is interpreted when the page is loaded and produces HTML code dyamically: a list of your latest blog posts, their tags, the content of the posts itself. 
+There's nothing wrong with blogging platforms like Wordpress: they allow _anyone_ to publish content on the web using a user-friendly administration area. They were built with one thing in mind: make publishing content on the web something as simple as possible, even for people who don't know anything about HTML, let alone server-side scripting. What about people who _do_ know about web development though? Do they still need a blogging platform? Depends. If you are comfortable with editing files using a text editor, if you enjoy using the command-line on a daily basis, if like programming and _hacking_ a little bit, if you don't really care about fancy and user-friendly administration backends... _then you probably don't_.
 
-Actually this is not exactly how it works: there's always some _caching_ behind the scenes: once your server-side code produces a list of blog post, this list isn't going to change until you write a new post, so it wouldn't make much sense to create the _same_ list _every_ the page is loaded by _anyone_ visiting the site, right? If you write a popular article and get slashdotted/dugg/reddited your web server would probably die altogether.
+All you need is a system to transform a bunch of source files into a web site. The good news is that such system exists &ndash; and you're also spoiled for choices!
 
-Caching can be client-side or server-side. Client-side caching is managed internally by any (modern) web browser: when you load a page, browser can keep a copy of that page to avoid re-requesting it from the server a second time. 
-
-A more radical approach involves server-side caching, which is almost ubiquitous to all Rails-powered blogging engines, including "Typo":http://www.typosphere.org: The first time _someone_ request page A, a _permanent_ static copy of the page is made, so every time someone else requests the same page the copy will be fetched instead, thus avoiding the web server to re-interpret it. Of course this means that your application must be able to figure out and how long to keep cached copies on the server which parts of a page to cache, but Rails can (almost) do this for you.
-
-If you allow me to simplify this process in one sentence, if you're using a blogging platform it all ultimately leads to producing static web pages, with some dynamic/interactive bits. Objectively, the only thing which can't be cached or automated in some way is **comments**. 
-
-h3. Introducing Site _Compilers_
+h3. Introducing Site Compilers
 
 The first _site compiler_ I discovered was "Webby":http://webby.rubyforge.org/:
 
@@ -66,6 +58,55 @@ Compared to the alternatives, nanoc is one of the most mature and most maintaine
 Denis also seems very concerned about keeping documentation up-to-date &ndash; something that really impressed me from a technical writer's point of view. The "tutorial":http://nanoc.stoneship.org/tutorial/ he put together will get you started in no time, and the "manual":http://nanoc.stoneship.org/manual/ will explain everything else you may possibly want to know. When release 3.0 came out he even put together a "migration guide":http://nanoc.stoneship.org/migrating/. If this is still not enough and you don't mind spending some time extending the system, nanoc's "RDoc documentation":http://nanoc.stoneship.org/doc/3.0.0/ is very comprehensive compared to other Ruby projects.
 
 h4. Sites, Items and data sources
+
+Nanoc ships with a really neat command line tool that can do most of the work for you. @nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
+
+!>/img/nanoc/structure.png! #####################
+
+* *content* &ndash; your articles, pages, stylesheets, images, ...all the site content and assets.
+* *layouts* &ndash; the site layouts (and partial layouts)
+* *lib* &ndash; place your custom ruby code and vendor libraries here
+* *output* &ndash; your "compiled" site, ready to be deployed
+* *config.yaml* &ndash; your site's configuration file. The only one (and it's just a few lines) 
+* *Rakefile* &ndash; place any custom Rake task here
+* *Rules* &ndash; defines the rules for compilation, layout and routing
+
+Here's the default @config.yaml@ file:
+
+<% highlight :yaml do %>
+--- 
+data_sources: 
+- items_root: /
+  layouts_root: /
+  type: filesystem_compact
+  output_dir: output
+<% end %>
+
+A _data source_ in Nanoc defines where data is retrieved from to create the web site. By default, the "filesystem_compact":http://nanoc.stoneship.org/doc/3.0.0/Nanoc3/DataSources/FilesystemCompact.html data source requires that you create two files in the /content folder for each article or page of your web page:
+* One containing the actual content of the page
+* Another for the page's arbitrary metadata
+
+By personal preference, I chose the "filesystem_combined":http://nanoc.stoneship.org/doc/3.0.0/Nanoc3/DataSources/FilesystemCombined.html data source, which allows you to combine the content and the metadata of a page in a single file.
+
+The source code for this very article, for example, starts like this:
+
+<code>
+-----
+:type: article
+:tags:
+- website
+- ruby
+- programming
+- writing
+:date: 2009-09-15 13:32:51.049000 +02:00
+:permalink: creating-smart-static-sites-with-nanoc
+:title: "Creating Smart Static Sites with nanoc"
+:toc: true
+-----
+Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change in all the pages of the site &ndash; the whole eight of them.
+</code>
+
+At run time, the content goes through a Textile filter and the metadata is used in layouts, to generate tag links automatically, for example. 
 
 h4. Layouts, filters, and helpers
 

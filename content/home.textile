@@ -6,6 +6,7 @@ filters_pre:
 title: Home
 type: page
 feed: '/'
+feed_url: "http://feeds.feedburner.com/h3rald"
 feed_title: 'Latest Articles'
 -----
 <%

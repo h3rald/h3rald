@@ -6,9 +6,13 @@ filter: erb
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<title><%= @item[:title] %> - H3RALD</title>
-		<% if @item[:feed] then %>
-			<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>rss/" />
-			<link rel="alternate" type="application/atom+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>atom/" />
+		<% if @item[:feed_url] then %>
+			<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed_url]%>" />
+		<% else %>
+			<% if @item[:feed] then %>
+				<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>rss/" />
+				<link rel="alternate" type="application/atom+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>atom/" />
+			<% end %>
 		<% end %>
 		<meta name="author" content="Fabio Cevasco" />
 		<meta name="copyright" content="Fabio Cevasco" />
@@ -84,7 +88,7 @@ filter: erb
 								<div class="share">
 									<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script>
 									<% if @item[:feed] then %>
-									<a href="<% @item[:feed]%>rss/ %>"><img src="/images/theme/feed-icon-14x14.png" alt="#"/>H3RALD - <%= @item[:feed_title]%></a>
+									<a href="<% @item[:feed_url] || @item[:feed]+"rss/" %>" type="application/rss+xml" rel="alternate"><img src="/images/theme/feed-icon-14x14.png" alt="#"/>H3RALD - <%= @item[:feed_title]%></a>
 									<% end %>
 								</div>
 								<%= render 'article_buttons' if @item[:type] == 'article' %>
