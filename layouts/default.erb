@@ -83,18 +83,18 @@ filter: erb
 							<hr />
 							<div id="content-body">
 								<%= yield %>
-							</div>http://www.h3rald.com/
+							</div>
 							<div id="content-footer">
 								<div class="share">
+									<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script>
+									<% if @item[:feed] then %>
+									<a href="<%= @item[:feed_url] || @item[:feed]+"rss/" %>" type="application/rss+xml" rel="alternate"><img src="/images/theme/feed-icon-14x14.png" alt="#"/>H3RALD - <%= @item[:feed_title]%></a>
+									<% end %>
 <script language="javascript">
 	zoneIdentifier="75F7945A08B626A8";
 	var varCheckURL = (("https:" == document.location.protocol) ? "https://" : "http://");
 	document.write(unescape("%3Cscript src='" + varCheckURL + "adcode.technoratimedia.com/bootstrap/tti.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
-									<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script>
-									<% if @item[:feed] then %>
-									<a href="<%= @item[:feed_url] || @item[:feed]+"rss/" %>" type="application/rss+xml" rel="alternate"><img src="/images/theme/feed-icon-14x14.png" alt="#"/>H3RALD - <%= @item[:feed_title]%></a>
-									<% end %>
 								</div>
 								<%= render 'article_buttons' if @item[:type] == 'article' %>
 							</div>
