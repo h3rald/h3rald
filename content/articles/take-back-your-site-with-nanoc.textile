@@ -6,8 +6,8 @@
 - programming
 - writing
 :date: 2009-09-15 13:32:51.049000 +02:00
-:permalink: creating-smart-static-sites-with-nanoc
-:title: "Creating Smart Static Sites with nanoc"
+:permalink: take-back-your-site-with-nanoc
+:title: "Take back your site, with nanoc!"
 :filters_pre:
 - erb
 - redcloth
@@ -17,15 +17,17 @@
 
 Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change in all the pages of the site &ndash; the whole eight of them.
 
-Five years later, after rebuilding this web site "seven times":/h3rald/ using different backends (PHP + CakePHP, Ruby + Rails +Typo, etc.), I decided to make it static again, this time with a twist. It all started when I read a "post":http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html by Tom Preston-Warned that I finally decided to give it a try, and today, the 8th release of this web site is 100% static: if you load any page, there's no server-side interpretation going on, you're just browsing a plain HTML page, at most with a few AJAX calls. But let's start from the beginning.
+Five years later, after rebuilding this web site "seven times":/h3rald/ using different backends (PHP + CakePHP, Ruby + Rails + Typo, etc.), I decided to make it static again, this time with a twist. It all started when I read a "post":http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html by Tom Preston-Warned ("GitHub":http://www.github.com co-founder) that I finally decided to give it a try. Today, the 8th release of this web site is 100% static: if you load any page, there's no server-side interpretation going on, you're just browsing a plain HTML page, at most with a few AJAX calls. But let's start from the beginning...
 
-h3. Why I don't need a blogging platform
+h3. Why I don't need a blog platform
 
-There's nothing wrong with blogging platforms like Wordpress: they allow _anyone_ to publish content on the web using a user-friendly administration area. They were built with one thing in mind: make publishing content on the web something as simple as possible, even for people who don't know anything about HTML, let alone server-side scripting. What about people who _do_ know about web development though? Do they still need a blogging platform? Depends. If you are comfortable with editing files using a text editor, if you enjoy using the command-line on a daily basis, if like programming and _hacking_ a little bit, if you don't really care about fancy and user-friendly administration backends... _then you probably don't_.
+There's nothing inherently wrong with blog platforms like Wordpress: they allow _anyone_ to publish content on the web using a user-friendly administration area. They were built with one thing in mind: make publishing content on the web something as simple as possible, even for people who don't know anything about HTML, let alone server-side scripting. 
+
+What about people who _do_ know about web development though? Do they still need a blog platform? Depends. If you are comfortable with editing files using a text editor, if you enjoy using the command-line on a daily basis, if you like programming and _hacking_ a little bit, if you don't really care about fancy and user-friendly administration backends... _then you probably don't_.
 
 All you need is a system to transform a bunch of source files into a web site. The good news is that such system exists &ndash; and you're also spoiled for choices!
 
-h3. Introducing Site Compilers
+h3. Introducing site compilers
 
 The first _site compiler_ I discovered was "Webby":http://webby.rubyforge.org/:
 
@@ -63,9 +65,9 @@ Denis also seems very concerned about keeping documentation up-to-date &ndash; s
 
 h4. Sites, Items and data sources
 
-Nanoc ships with a really neat command line tool that can do most of the work for you. @nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
-
 !>/img/pictures/nanoc-structure.png! 
+
+Nanoc ships with a really neat command line tool that can do most of the work for you. @nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
 
 * *content* &ndash; your articles, pages, stylesheets, images, ...all the site content and assets.
 * *layouts* &ndash; the site layouts (and partial layouts)
@@ -103,8 +105,8 @@ The source code for this very article, for example, starts like this:
 - programming
 - writing
 :date: 2009-09-15 13:32:51.049000 +02:00
-:permalink: creating-smart-static-sites-with-nanoc
-:title: "Creating Smart Static Sites with nanoc"
+:permalink: take-back-your-site-with-nanoc
+:title: "Take back your site, with nanoc!"
 :toc: true
 -----
 Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly 
@@ -166,14 +168,16 @@ While tasks (as in Rake tasks) do not constitute a huge part of Nanoc (but as us
 
 You can find more information in the "manual":http://nanoc.stoneship.org/manual/#rules, along with other important information, but for now, let's say you should be familiar with _most_ of nanoc's jargon and how it works. Let's see what you can do with it, in practice.
 
-h3. Migrating from your blogging platform
+h3. Migrating from your blog platform
 
-As of version 7, h3rald.com has been powered by the "Typo":http://www.typosphere.org blogging platform. If you are not familiar with it, let's just say it's a sort of Wordpress for Rails: database backend, pretty admin front-end, tags, comments, and all sort of things a blog may need. While Typo is pleasant enough to use, it has all the inherent disadvantages of any other similar platform:
+As of version 7, h3rald.com has been powered by the "Typo":http://www.typosphere.org blog platform. If you are not familiar with it, let's just say it's a sort of Wordpress built on top of Rails: database backend, pretty admin front-end, tags, comments, and all sort of things a blog may need. While Typo is pleasant enough to use, it has all the inherent disadvantages of any other similar platform:
 * It relies on a database
 * It relies on server-side scripting to render pages
 * It uses a complex caching mechanism to produce, ultimately, semi-static pages
 * It may be subject to exploits, attacks, high server loads, and similar
 * You can't really customize it beyond a certain point
+* You have to upgrade your backend frequently, and often is not as painless as you may expect
+* You can't use versioning tools like git for your content, as it's stored in a database
 
 I'm not claiming that nanoc is blogging's silver bullet (it was not created for that), but for sure:
 * It _does not_ rely on a database
@@ -181,8 +185,10 @@ I'm not claiming that nanoc is blogging's silver bullet (it was not created for 
 * It _does not_ need a complex caching mechanism simply because it produces static pages
 * It is definitely less prone to nasty things
 * It's extremely flexible and hackable with very little effort
+* You don't have to upgrade all the time, but it is _really_ painless if you decide to
+* You can use git and similar: your content is in plain old text files
 
-Ranting is besides the point, suffice to say I recently convinced myself that switching from Typo was a _good thing_, so let's see how it worked out. 
+Rants are beside the point, suffice to say I recently convinced myself that switching from Typo to nanoc was a _good thing_, so let's see how it worked out. 
 
 h4. Posts, pages and comments
 
@@ -366,7 +372,9 @@ If you want to know how I integrated them, check out my "/js folder":http://gith
 
 h3. Conclusion
 
-I was very happy of moving to Nanoc. It didn't take me long, and I spent most of the time with non-nanoc issues (brushing up jQuery, CSS, graphics, etc.). Of course knowing the Ruby programming language helps, and if you're not comfortable with hacking your way a little bit, then maybe it's not for you. 
+I was very happy of switching to Nanoc. It didn't take me long, and I spent most of the time with non-nanoc issues (brushing up jQuery, CSS, graphics, etc.). Of course knowing the Ruby programming language helps, and if you're not comfortable with hacking your way a little bit, then maybe it's not for you. 
+
+!</img/pictures/nanoc-compile.png!
 
 Personally, I've been waiting for something like nanoc for a long time: its simple and yet powerful architecture makes you able to do virtually anything with it. For the first time in a long time, I feel like I'm in complete control of my web site, I know every bits of it and if I want to change the way it works or looks I only have to touch a few files. 
 
@@ -375,8 +383,8 @@ Nanoc's metadata is mindblowing for its simplicity and power: although you're no
 Be warned that tweaking nanoc gets addictive very quickly: you soon end up creating silly little tasks for making things just the way you want. For me, adding a new article to my blog now just means this:
 
 <% highlight :text do %>
-$ rake site:article name=creating-smart-sites-with-nanoc
-$ vim content/articles/creating-smart-sites-with-nanoc
+$ rake site:article name=take-back-your-site-with-nanoc
+$ vim content/articles/take-back-your-site-with-nanoc
 ... write & close the file ...
 $ nanoc3 compile 
 <% end %>
