@@ -2,11 +2,11 @@
 filter: erb
 -----
 <script type="text/javascript">
-	var dzone_url = '<%= url_for @item %>';
-	var dzone_title = '<%= @item[:title]%>';
-	var dzone_blurb = '<%= @item[:summary] if @item[:summary] %>';
+	var dzone_url = "<%= url_for @item %>";
+	var dzone_title = "<%= @item[:title]%>";
+	var dzone_blurb = "<%= @item[:summary] if @item[:summary] %>";
 	var dzone_style = '2';
-	var digg_url = '<%= url_for @item %>';
+	var digg_url = "<%= url_for @item %>";
 	var digg_skin = 'compact';
 	var digg_window = 'new';
 	var tweetmeme_style = 'compact';
