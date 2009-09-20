@@ -1,4 +1,6 @@
-----------$(function(){$(
+-----
+-----
+$(function(){$(
 '#gallery a'
 ).lightBox();});function delicious_counter(data){var posts=data[0].total_posts;if (!posts) return;var text=posts+
 " bookmarks"
