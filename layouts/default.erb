@@ -82,6 +82,12 @@ filter: erb
 							<% end %>
 							<hr />
 							<div id="content-body">
+								<% if @item[:toc] then %>
+									<div id="toc">
+										<span id="toctitle">Table of Contents</span>
+										<ol></ol>
+									</div>
+								<% end %>
 								<%= yield %>
 							</div>
 							<div id="content-footer">
@@ -134,6 +140,7 @@ filter: erb
 				<script src="/js/jquery.js" type="text/javascript"></script>
 				<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 				<script src="/js/jquery-lightbox.js" type="text/javascript"></script>
+				<script src="/js/jquery-toc.js" type="text/javascript"></script>
 				<script src="/js/date.js" type="text/javascript"></script>
 				<script src="/js/feeds.js" type="text/javascript"></script>
 				<script src="/js/search.js" type="text/javascript"></script>

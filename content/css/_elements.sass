@@ -176,7 +176,7 @@ blockquote, .note
   font-weight: bold
 
 .project-data
-  border-left = 3px "double" !red
+  border-left = 1px "dashed" !gray
   padding: 0 1em 1em 1.5em
   margin: 0 0 0 1.5em
   height: 300px
@@ -195,6 +195,41 @@ ul
     border = 1px "solid" !gray
     background: #fff
     padding: 5px 0
+
+#toc
+  float: right
+  width: 250px
+  padding: 10px
+  margin: 0 0 10px 15px
+  +default_border
+
+  ol
+
+    li
+      margin-left: 0.5
+
+      li
+        margin-left: 1em
+        
+        li
+          margin-left: 1.5em
+          
+          li
+            margin-left: 2em
+
+            li
+              margin-left: 2.5em
+
+  li
+    line-height: 1.2em
+
+#toctitle
+  font-variant: small-caps
+  font-weight: bold
+
+.toc-top-link
+  font-size: 13px
+  margin-left: 15px
 
 #content .article-buttons li
   font-family: "Arial", "Sans-serif"
@@ -225,7 +260,7 @@ ul
   padding: 5px
 
 table
-  +double_border
+  +default_border
 
 table
   &#timeline, &#taglist
@@ -235,11 +270,11 @@ tr, td, th
   padding: 5px
 
 td
-  border-left = 1px "solid" !red
-  border-right = 1px "solid" !red
+  border-left = 1px "dashed" !gray
+  border-right = 1px "dashed" !gray
 
 th
-  border = 1px "solid" !red
+  +default_border
 
 #taglist, #timeline
   width: 100%

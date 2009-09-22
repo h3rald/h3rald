@@ -12,9 +12,10 @@ function delicious_counter(data) {
 }
 $(document).ready(function() {
 		$('.timeago').timeago();
+		// TOC
+		$("#toc ol").tableOfContents("#content-body", {startLevel: 3, depth: 6, topLinks: "[top]"});
 		// Drop Caps
 		var first_paragraph = $('#content-body p:first');
-		//first_paragraph.addClass('first-p');
 		if (!first_paragraph) return false;
 		var t = first_paragraph.html();
 		var first_letter = t.substr(0,1);

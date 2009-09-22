@@ -322,16 +322,6 @@ Even if you're particularly devoted to one of the languages mentioned above, it 
 I was originally planning on learning another programming language as a New Year's Resolution, which is quite common among programmers. The most difficult task turned out to be _choosing_ a particular language: there are so many out there which makes it very hard to decide.
 
 This article deals with ten possible candidates, and it's far from being an exhaustive list. The programming languages described henceforth are very different from each other, but they all have one thing in common: they all stimulate my curiosity in their own, very different ways.
-* "Haskell":#haskell
-* "Erlang":#erlang
-* "Io":#io
-* "PLT Scheme":#plt-scheme
-* "Clojure":#clojure
-* "Squeak":#squeak
-* "OCaml":#ocaml
-* "Factor":#factor
-* "Lua":#lua
-* "Scala":#scala
 
 h3(#haskell). Haskell
 
