@@ -10,7 +10,7 @@ type: page
 
  <span class="dropcap">T</span>his is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be. The source code of this site follows W3C's XHTML 1.1 and CSS 2.1 standard.
  
-As of version 8, h3rald.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "Nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/creating-static-web-sites-with-nanoc.
+As of version 8, h3rald.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "Nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/take-back-your-site-with-nanoc/.
 
 h3. Requirements
 

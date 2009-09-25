@@ -1,18 +1,18 @@
 ----- 
-:type: article
-:tags:
+type: article
+tags:
 - website
 - ruby
 - programming
 - writing
-:date: 2009-09-15 13:32:51.049000 +02:00
-:permalink: take-back-your-site-with-nanoc
-:title: "Take back your site, with nanoc!"
-:filters_pre:
+date: 2009-09-15 13:32:51.049000 +02:00
+permalink: take-back-your-site-with-nanoc
+title: "Take back your site, with nanoc!"
+filters_pre:
 - erb
 - redcloth
-:toc: true
-:summary: "A quick overview on the nanoc site compiler, and how I turned my Typo-powered dynamic site into a static one, discovering the pleasures of blogging 'like a hacker'."
+toc: true
+summary: "A quick overview on the nanoc site compiler, and how I turned my Typo-powered dynamic site into a static one, discovering the pleasures of blogging 'like a hacker'."
 -----
 
 Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change in all the pages of the site &ndash; the whole eight of them.
@@ -55,7 +55,7 @@ I spent some time reading about each one of them, "evaluating the pros and cons"
 
 h3. A quick overview of nanoc
 
-nanoc (*nano* <strong>c</strong>ompiler) is a nifty tool written in Ruby suitable for _[...] building small to medium-sized websites_. In other words, anything which doesn't involve some fancy user interaction. For what concerns blogs, the only user interaction is _comments_ &ndash; but that's fine, because there's more than one web service for that, such as "Disqus":http://disqus.com/ or "IntenseDebate":http://intensedebate.com/.
+nanoc is a nifty tool written in Ruby suitable for _[...] building small to medium-sized websites_. In other words, anything which doesn't involve some fancy user interaction. For what concerns blogs, the only user interaction is _comments_ &ndash; but that's fine, because there's more than one web service for that, such as "Disqus":http://disqus.com/ or "IntenseDebate":http://intensedebate.com/.
 
 h4. Some details on the project
 
@@ -67,7 +67,7 @@ h4. Sites, Items and data sources
 
 !>/img/pictures/nanoc-structure.png! 
 
-Nanoc ships with a really neat command line tool that can do most of the work for you. @nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
+nanoc ships with a really neat command line tool that can do most of the work for you. @nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
 
 * *content* &ndash; your articles, pages, stylesheets, images, ...all the site content and assets.
 * *layouts* &ndash; the site layouts (and partial layouts)
@@ -88,26 +88,26 @@ data_sources:
   output_dir: output
 <% end %>
 
-A _data source_ in Nanoc defines where data is retrieved from to create the web site. By default, the "filesystem_compact":http://nanoc.stoneship.org/doc/3.0.0/Nanoc3/DataSources/FilesystemCompact.html data source requires that you create two files in the /content folder for each article or page of your web page:
+A _data source_ in nanoc defines where data is retrieved from to create the web site. By default, the "filesystem_compact":http://nanoc.stoneship.org/doc/3.0.0/nanoc3/DataSources/FilesystemCompact.html data source requires that you create two files in the /content folder for each article or page of your web page:
 * One containing the actual content of the page
 * Another for the page's arbitrary metadata
 
-By personal preference, I chose the "filesystem_combined":http://nanoc.stoneship.org/doc/3.0.0/Nanoc3/DataSources/FilesystemCombined.html data source, which allows you to combine the content and the metadata of a page in a single file.
+By personal preference, I chose the "filesystem_combined":http://nanoc.stoneship.org/doc/3.0.0/nanoc3/DataSources/FilesystemCombined.html data source, which allows you to combine the content and the metadata of a page in a single file.
 
 The source code for this very article, for example, starts like this:
 
 <% highlight :text do %>
 -----
-:type: article
-:tags:
+type: article
+tags:
 - website
 - ruby
 - programming
 - writing
-:date: 2009-09-15 13:32:51.049000 +02:00
-:permalink: take-back-your-site-with-nanoc
-:title: "Take back your site, with nanoc!"
-:toc: true
+date: 2009-09-15 13:32:51.049000 +02:00
+permalink: take-back-your-site-with-nanoc
+title: "Take back your site, with nanoc!"
+toc: true
 -----
 Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly 
 knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for
@@ -157,11 +157,11 @@ This source code snippet shows quite a few features of nanoc's layouts:
 
 Helpers can be used in layouts to perform common tasks, like creating links, feeds, navigation elements and so on. Check the "source code docs":http://nanoc.stoneship.org/doc/3.0.0/ for more info, and of course feel free to create your own as you see fit.
 
-Finally, filters are used to filter content markup. Nanoc ships with "almost everything you need":http://nanoc.stoneship.org/manual/#list-of-built-in-filters, from Textile to Haml to RDoc, but nobody forbids you to create your own, and it's dead easy. 
+Finally, filters are used to filter content markup. nanoc ships with "almost everything you need":http://nanoc.stoneship.org/manual/#list-of-built-in-filters, from Textile to Haml to RDoc, but nobody forbids you to create your own, and it's dead easy. 
 
 h4. Rules and tasks
 
-While tasks (as in Rake tasks) do not constitute a huge part of Nanoc (but as usual, you may need to create your own to perform custom operations), Rules became, as of version 3, one of the key concepts to grasp in order to make everything work. Rules are stored in the @Rules@ file of your nanoc site, they can be used to:
+While tasks (as in Rake tasks) do not constitute a huge part of nanoc (but as usual, you may need to create your own to perform custom operations), Rules became, as of version 3, one of the key concepts to grasp in order to make everything work. Rules are stored in the @Rules@ file of your nanoc site, they can be used to:
 * Define routes, i.e. where pages are deployed in the output folder.
 * Define how pages are compiled, which filters to apply to a particular set of pages, which layouts to use, etc.
 * Define how layout are handled, which filters to apply to a particular layout, etc.
@@ -241,7 +241,7 @@ On my old site, I used mainly Textile and Markdown to write posts. However, some
 require 'rubygems'
 require 'bb-ruby'
 
-class BbcodeFilter < Nanoc3::Filter
+class BbcodeFilter < nanoc3::Filter
   identifier :bbcode
 
   def run(content, args)
@@ -251,14 +251,14 @@ class BbcodeFilter < Nanoc3::Filter
 end
 <% end %>
 
-Yes, that's it. Granted, the @bb-ruby@ gem does all the work, but notice how easy it is to just plug in new Ruby code into Nanoc's architecture!
+Yes, that's it. Granted, the @bb-ruby@ gem does all the work, but notice how easy it is to just plug in new Ruby code into nanoc's architecture!
 
 The next big challange was code highlighting. After a quick research, I found at least a half dozen of possible solutions to highlight source code. Some were javascript based, others were based on a server-side language like PHP, Ruby or Python. Again, I looked at Jekyll for inspiration and discovered they integrated the "Pygments":http://www.pygments.org _Python_ library. Why use a Python library for code highlighting in a Ruby-based project? Because there's nothing to stop you (if you can run Python on your server, that is), because it looks very neat and because it supports a lot of different programming languages.
 
-Lazy as I am, I more or less dropped "Chris Wanstrath's Ruby wrapper":http://github.com/h3rald/h3rald/blob/master/lib/albino.rb into my @/lib@ folder (I just used Open3 instead of Open4 for Windows compatibility), and monkey-patched Nanoc's filtering helper as follows:
+Lazy as I am, I more or less dropped "Chris Wanstrath's Ruby wrapper":http://github.com/h3rald/h3rald/blob/master/lib/albino.rb into my @/lib@ folder (I just used Open3 instead of Open4 for Windows compatibility), and monkey-patched nanoc's filtering helper as follows:
 
 <% highlight :ruby do %>
-module Nanoc3::Helpers::Filtering
+module nanoc3::Helpers::Filtering
 
   def highlight(syntax, &block)
     # Seamlessly ripped off from the filter method...
@@ -276,18 +276,18 @@ module Nanoc3::Helpers::Filtering
 
 end
 
-include Nanoc3::Helpers::Filtering
+include nanoc3::Helpers::Filtering
 <% end %>
 
 There you go, another thing sorted.
 
 h4. Tags and Feeds
 
-Adding tagging support was a tiny bit more tricky. Nanoc supports content tagging out-of-the-box though metadata and a simple helper, but I wanted to create tag pages (with feeds). Nothing too difficult though, it all came down to a simple Rake task:
+Adding tagging support was a tiny bit more tricky. nanoc supports content tagging out-of-the-box though metadata and a simple helper, but I wanted to create tag pages (with feeds). Nothing too difficult though, it all came down to a simple Rake task:
 
 <% highlight :ruby do %>
   task :tags do
-    site = Nanoc3::Site.new('.')
+    site = nanoc3::Site.new('.')
     site.load_data
     dir = Pathname(Dir.pwd)/'content/tags'
     dir.rmtree if dir.exist?
@@ -372,13 +372,13 @@ If you want to know how I integrated them, check out my "/js folder":http://gith
 
 h3. Conclusion
 
-I was very happy of switching to Nanoc. It didn't take me long, and I spent most of the time with non-nanoc issues (brushing up jQuery, CSS, graphics, etc.). Of course knowing the Ruby programming language helps, and if you're not comfortable with hacking your way a little bit, then maybe it's not for you. 
+I was very happy of switching to nanoc. It didn't take me long, and I spent most of the time with non-nanoc issues (brushing up jQuery, CSS, graphics, etc.). Of course knowing the Ruby programming language helps, and if you're not comfortable with hacking your way a little bit, then maybe it's not for you. 
 
 !</img/pictures/nanoc-compile.png!
 
 Personally, I've been waiting for something like nanoc for a long time: its simple and yet powerful architecture makes you able to do virtually anything with it. For the first time in a long time, I feel like I'm in complete control of my web site, I know every bits of it and if I want to change the way it works or looks I only have to touch a few files. 
 
-Nanoc's metadata is mindblowing for its simplicity and power: although you're not dealing with a database, you can query your content in the easiest ways possible. Whenever I needed a way to easily access pages, filter them, add extra logic to them, I just added metadata. If you forget something, you don't have to change your database tables, create new relationships or anything of the sort, you simply add metadata to pages.
+nanoc's metadata is mindblowing for its simplicity and power: although you're not dealing with a database, you can query your content in the easiest ways possible. Whenever I needed a way to easily access pages, filter them, add extra logic to them, I just added metadata. If you forget something, you don't have to change your database tables, create new relationships or anything of the sort, you simply add metadata to pages.
 
 Be warned that tweaking nanoc gets addictive very quickly: you soon end up creating silly little tasks for making things just the way you want. For me, adding a new article to my blog now just means this:
 
