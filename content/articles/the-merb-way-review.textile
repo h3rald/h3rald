@@ -1,0 +1,17 @@
+----- 
+:type: article
+:permalink: the-merb-way-review
+:tags:
+- ruby
+- book
+- review
+:title: "Book Review: The Merb Way"
+:toc: true
+:date: 2009-10-02 19:41:36.788596 +02:00
+-----
+
+When I got this book from Addison Wesley to review, a few weeks ago, I remember looking at it and thinking: _"What? Is that it?"_. Somehow, after reading "The RailsWay":/articles/the-rails-way-review, I got stuck in my mind that _The Merb Way_ had to be almost equally voluminous. Instead, this latest book is about a third the previous one, which makes it roughly as long as the sum of just the chapters devoted to _ActiveRecord_ in Obie's acclaimed Rails bible.
+
+Apparently it only takes 300 pages to describe a web framework nowadays! I couldn't help feeling a bit skeptical at first, before diving in. Even in the foreword Obie Fernandez presents the book &ndash; and the whole "Merb":http://www.merbivore.com framework &ndash; with initial skepticism: isn't Ruby on Rails enough? Why do we need yet another Ruby web framework? And above all, seeing that Merb is going to eventually be merged into Rails 3 soon enough, why on Earth do we need a book about Merb at all?
+
+Needless to say, Foy Savas proved, with this book, that Merb cannot be dismissed just like that.
