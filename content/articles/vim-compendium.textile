@@ -1,0 +1,22 @@
+----- 
+permalink: "vim-compendium"
+title: A Compendium to Vim Editing
+date: 2009-10-16 19:47:08 +02:00
+tags: 
+- vim
+- programming
+type: article
+toc: true
+-----
+h3. Preamble 
+
+Vi Improved, or _Vim_ for short, is a powerful text editor that evolved from the venerable _vi_ editor, a tool common to most early Unix operating systems. While Vim adds a significant amount of and improvements, it still preserves vi's most distinctive features such as minimalism and a steep learning curve.
+
+One could debate for hours on the viability of Vim as a _modern_ text editor, as some of its concepts may indeed sound rather alien to newcomers. On the other hand, a substantial number of people firmly believes that Vim embodies the perfect tool when it comes to editing text, especially programming code. I am one of them.
+
+Vim is difficult to learn. You can learn its basics in a few hours, perhaps less, but it will take _months_ for your hands to get used to it and even more to fully master it. Extreme dedication is crucial, and by _extreme_ I mean _not using another editor at all_ if you can use Vim instead. Every Vim neophite is constantly tempted to fall back to an inferior (but _easier_) editor whenever certain circumstances arise. Unless you have _faith_, you will too. 
+
+All this to say that this article will obviously not turn you into a Vim guru overnight, but it will hopefully give you insights on how to use it more productively. 
+
+h3. Editing Modes
+
