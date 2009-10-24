@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'cakephp' (Atom Feed)
 :permalink: tags/cakephp/atom
+:title: H3RALD - Tag 'cakephp' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('cakephp'))%>

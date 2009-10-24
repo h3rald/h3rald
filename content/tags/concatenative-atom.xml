@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'concatenative' (Atom Feed)
 :permalink: tags/concatenative/atom
+:title: H3RALD - Tag 'concatenative' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('concatenative'))%>

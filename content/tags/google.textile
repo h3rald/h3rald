@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: google
 :title: "Tag: google"
 :filters_pre: 
 - erb
 :feed: /tags/google/
 :feed_title: Tag 'google'
-:permalink: google
 -----
 
 <p>5 items are tagged with <em>google</em>:</p>

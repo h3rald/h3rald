@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'databases' (RSS Feed)
 :permalink: tags/databases/rss
+:title: H3RALD - Tag 'databases' (RSS Feed)
 -----
 <%= rss_feed(:articles => articles_tagged_with('databases'))%>

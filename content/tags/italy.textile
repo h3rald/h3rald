@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: italy
 :title: "Tag: italy"
 :filters_pre: 
 - erb
 :feed: /tags/italy/
 :feed_title: Tag 'italy'
-:permalink: italy
 -----
 
 <p>3 items are tagged with <em>italy</em>:</p>

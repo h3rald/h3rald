@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: vim
 :title: "Tag: vim"
 :filters_pre: 
 - erb
 :feed: /tags/vim/
 :feed_title: Tag 'vim'
-:permalink: vim
 -----
 
 <p>2 items are tagged with <em>vim</em>:</p>

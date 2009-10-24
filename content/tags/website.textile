@@ -1,14 +1,14 @@
 ----- 
 :type: page
+:permalink: website
 :title: "Tag: website"
 :filters_pre: 
 - erb
 :feed: /tags/website/
 :feed_title: Tag 'website'
-:permalink: website
 -----
 
-<p>11 items are tagged with <em>website</em>:</p>
+<p>12 items are tagged with <em>website</em>:</p>
 <ul>
 	<% articles_tagged_with('website').each do |a| %>
 		<%= render 'dated_article', :article => a %>

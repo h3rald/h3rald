@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'personal_log' (Atom Feed)
 :permalink: tags/personal_log/atom
+:title: H3RALD - Tag 'personal_log' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('personal_log'))%>

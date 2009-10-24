@@ -1,0 +1,17 @@
+----- 
+:type: page
+:permalink: li3
+:title: "Tag: li3"
+:filters_pre: 
+- erb
+:feed: /tags/li3/
+:feed_title: Tag 'li3'
+-----
+
+<p>1 item is tagged with <em>li3</em>:</p>
+<ul>
+	<% articles_tagged_with('li3').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
+</ul>
+		

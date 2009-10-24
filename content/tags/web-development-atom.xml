@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'web-development' (Atom Feed)
 :permalink: tags/web-development/atom
+:title: H3RALD - Tag 'web-development' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('web-development'))%>

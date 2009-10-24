@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'rant' (Atom Feed)
 :permalink: tags/rant/atom
+:title: H3RALD - Tag 'rant' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('rant'))%>

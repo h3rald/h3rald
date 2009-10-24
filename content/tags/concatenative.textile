@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: concatenative
 :title: "Tag: concatenative"
 :filters_pre: 
 - erb
 :feed: /tags/concatenative/
 :feed_title: Tag 'concatenative'
-:permalink: concatenative
 -----
 
 <p>2 items are tagged with <em>concatenative</em>:</p>

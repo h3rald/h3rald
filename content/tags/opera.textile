@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: opera
 :title: "Tag: opera"
 :filters_pre: 
 - erb
 :feed: /tags/opera/
 :feed_title: Tag 'opera'
-:permalink: opera
 -----
 
 <p>2 items are tagged with <em>opera</em>:</p>

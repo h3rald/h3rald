@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: web20
 :title: "Tag: web20"
 :filters_pre: 
 - erb
 :feed: /tags/web20/
 :feed_title: Tag 'web20'
-:permalink: web20
 -----
 
 <p>8 items are tagged with <em>web20</em>:</p>
