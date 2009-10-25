@@ -1,7 +1,7 @@
 -----
 -----
 $(function() {
-		$('#gallery a').lightBox();
+		$('#gallery a').fancybox();
 		});
 function delicious_counter(data) {
 	var posts = data[0].total_posts;

@@ -18,47 +18,47 @@ h3. Photos
 	<div id="gallery">
 		<ul>
 			<li>
-			<a href="/images/sessarego/outside1.jpg" title="View from the outside">
+			<a href="/images/sessarego/outside1.jpg" title="View from the outside" rel="holidays">
 				<img src="/images/sessarego/thumb_outside1.jpg" />
 			</a>
 			</li>
 			<li>
-			<a href="/images/sessarego/inside.jpg" title="Main living area">
+			<a href="/images/sessarego/inside.jpg" title="Main living area" rel="holidays">
 				<img src="/images/sessarego/thumb_inside.jpg" />
 			</a>
 			</li>
 			<li>
-			<a href="/images/sessarego/master-bedroom.jpg" title="Master bedroom">
+			<a href="/images/sessarego/master-bedroom.jpg" title="Master bedroom" rel="holidays">
 				<img src="/images/sessarego/thumb_master-bedroom.jpg" />
 			</a>
 			</li>
 			<li>
-			<a href="/images/sessarego/bedroom.jpg" title="Spare bedroom">
+			<a href="/images/sessarego/bedroom.jpg" title="Spare bedroom" rel="holidays">
 				<img src="/images/sessarego/thumb_bedroom.jpg" />
 			</a>
 			</li>
 			<li>
-			<a href="/images/sessarego/view1.jpg" title="View from the linving room">
+			<a href="/images/sessarego/view1.jpg" title="View from the linving room" rel="holidays">
 				<img src="/images/sessarego/thumb_view1.jpg" />
 			</a>
 			</li>
 			<li>
-			<a href="/images/sessarego/view2.jpg" title="View from the bedroom">
+			<a href="/images/sessarego/view2.jpg" title="View from the bedroom" rel="holidays">
 				<img src="/images/sessarego/thumb_view2.jpg" />
 			</a>
 			</li>
                        <li>
-			<a href="/images/sessarego/sessarego.jpg" title="A view of Sessarego">
+			<a href="/images/sessarego/sessarego.jpg" title="A view of Sessarego" rel="holidays">
 				<img src="/images/sessarego/thumb_sessarego.jpg" />
 			</a>
 			</li>
                         <li>
-			<a href="/images/sessarego/floor1.gif" title="First floor (map)">
+			<a href="/images/sessarego/floor1.gif" title="First floor (map)" rel="holidays">
 				<img src="/images/sessarego/thumb_floor1.gif" />
 			</a>
 			</li>
                         <li>
-			<a href="/images/sessarego/floor2.gif" title="Second floor (map)">
+			<a href="/images/sessarego/floor2.gif" title="Second floor (map)" rel="holidays">
 				<img src="/images/sessarego/thumb_floor2.gif" />
 			</a>
 			</li>
