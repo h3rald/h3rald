@@ -2,6 +2,10 @@
 -----
 $(function() {
 		$('#gallery a').fancybox();
+		$('.fancybox').fancybox({
+			frameWidth: 850,
+			frameHeight: 450
+		});
 		});
 function delicious_counter(data) {
 	var posts = data[0].total_posts;
