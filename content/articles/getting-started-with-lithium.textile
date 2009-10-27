@@ -1,0 +1,120 @@
+----- 
+permalink: getting-started-with-lithium
+filters_pre: 
+- erb
+- redcloth
+title: Getting Started with Lithium
+date: 2009-10-27 15:48:00 +01:00
+tags: 
+- li3
+- php
+- tutorial
+type: article
+toc: true
+summary: A quick tutorial on how to get Lithium up and running, in five minutes or less.
+-----
+
+So "Lithium":http://li3.rad-dev.org/ is now officially out, and its 0.1 release can be freely "downloaded":http://rad-dev.org/lithium/versions from the official web site or by cloning the Lithium git repository. The good news is that although not many web hosts offer PHP 5.3, you can try it out youself, locally and with minimum effort.
+
+h3. Requirements
+
+According to the "Lithium Wiki":http://rad-dev.org/wiki/guides/setup, to develop applications with Lithium you need:
+* A web server, like Apache or IIS
+* PHP 5.3.0 or higher
+* Git (not required, but all example projects are on git repos, so you may as well have it)
+
+For this tutorial, more specifically, you need to download (just download, don't install anything!):
+* "mongoose":http://code.google.com/p/mongoose/, a tiny, standalone (as _in one single file_), cross-platform web server.
+* "PHP 5.3.0":http://www.php.net/downloads.php#v5, not the installer, the zip package.
+* "Lithium":http://rad-dev.org/lithium/versions (version 0.1, ad the time of writing)
+* The "li3_docs plugin":http://rad-dev.org/li3_docs. 
+
+To get the li3_docs plugin you need to "register":http://rad-dev.org/users/add on rad-dev.org, and clone the li3_docs git repository. If you don't have git installed or you don't want to read "another awesome tutorial":http://spheredev.org/wiki/Git_for_the_lazy to install it and learn how to use it, I'll save you the hassle and let you download the plugin from "here":/files/li3_docs.zip, for this time ony.
+
+**Note:** This tutorial assumes that you are on Windows. If you are not, some things may be a bit different depending on your platform.
+
+h3. Setting up the environment 
+
+Choose a directory on your sistem (let's call it **D:\lithium_test** from now on). We'll do everything in here, and you can move it anywhere you like afterwards, even on a USB stick, without breaking anything.
+
+# Unzip Lithium in **D:\lithium_test**, so that it contains the following files and directories:
+** app/
+** libraries/
+** .htaccess (it won't actually be used in this tutorial)
+# Unzip PHP 5.3.0 somewhere and copy the following files to the **D:\lithium_test** folder:
+** php5.dll
+** php-cgi.exe
+** php.ini (just get php.ini-development from the PHP package and rename it)
+# Copy the mongoose-2.8.exe executable in **D:\lithium_test** and rename it to **mongoose.exe** for convenience.
+# Create a **mongoose.conf** file containing the following lines:
+
+<% highlight :text do %>
+cgi_interp      php-cgi.exe
+cgi_ext         php
+<% end %>
+
+If you did everything correctly, your **D:\lithium_test** directory should contain the following:
+* app\
+* libraries\
+* .htaccess
+* mongoose.exe
+* mongoose.conf
+* php-cgi.exe
+* php.ini
+* php5.dll
+
+h3. Running Lithium
+
+Double click **mongoose.exe** and point your browser of choice to "http://localhost:8080/app/webroot/index.php":http://localhost:8080/app/webroot/index.php. You should see the Lithium temporary homepage (yes, I expected something fancier too):
+
+!/img/pictures/lithium/temp_homepage.png!
+
+Now, let's see if we can get the li3_docs plugin running as well:
+
+# Unzip **li3_docs.zip** and copy the **li3_docs** folder in **D:\lithium_test\app\libraries\plugins**.
+# Open **D:\lithium_test\app\config\bootstrap.php** and add the line: @Libraries::add('plugin', 'li3_docs');@ at the end. I actually found this commented out already (line 80).
+
+Go to "http://localhost:8080/app/webroot/index.php?url=docs":http://localhost:8080/app/webroot/index.php?url=docs, you should see something like this:
+
+!/img/pictures/lithium/li3_docs.png!
+
+Congratulation, you're now running your first Lithium application!
+
+h3. Fixing URLs
+
+Once the initial excitement wears off you'll notice that none of the links on the docs page works.
+
+That's because the mongoose web server does not support URL rewriting (and Lithium needs it badly right now), so we have to change the way URLs are created. "@nateabele":http://twitter.com/nateabele gave me "some tips":http://pastium.org/view/3a966c1446fcbd1d4f5a94d882256987 on how to do this; it's very simple:
+
+# Create a directory called **action** in **D:\lithium_test\app\extensions**.
+# Create a file called **Request.php**, containing the following:
+
+<% highlight :php do %>
+<?php
+namespace app\extensions\action;
+
+class Request extends \lithium\action\Request {
+
+	protected function _base() {
+		return  '?url=';
+	}
+}
+?>
+<% end %>
+
+We're basically extending the @\lithium\action\Request@ with a custom class, telling Lithium how to create the base URL.
+
+After doing so, open **D:\lithium_test\app\webroot\index.php** and change:
+
+@echo lithium\action\Dispatcher::run()@ 
+
+into:
+
+ @echo lithium\action\Dispatcher::run(new app\extensions\action\Request());@ 
+
+In this case, we're instructing the dispatcher to use our custom Request class instead of the default one.
+
+Now everything should work as expected. Reload the docs page ("http://localhost:8080/app/webroot/index.php?url=docs":http://localhost:8080/app/webroot/index.php?url=docs) and verify that the links work by navigating to @Lithium@, then @action@ and finally @Controller@. 
+
+Now you can use Lithium to display its own API locally (if things didn't work out, there's always "http://li3.rad-dev.org/docs":http://li3.rad-dev.org/docs). 
+
