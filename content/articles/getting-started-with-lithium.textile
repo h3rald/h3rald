@@ -26,7 +26,7 @@ According to the "Lithium Wiki":http://rad-dev.org/wiki/guides/setup, to develop
 For this tutorial, more specifically, you need to download (just download, don't install anything!):
 * "mongoose":http://code.google.com/p/mongoose/, a tiny, standalone (as _in one single file_), cross-platform web server.
 * "PHP 5.3.0":http://www.php.net/downloads.php#v5, not the installer, the zip package.
-* "Lithium":http://rad-dev.org/lithium/versions (version 0.1, ad the time of writing)
+* "Lithium":http://rad-dev.org/lithium/versions (version 0.1, at the time of writing)
 * The "li3_docs plugin":http://rad-dev.org/li3_docs. 
 
 To get the li3_docs plugin you need to "register":http://rad-dev.org/users/add on rad-dev.org, and clone the li3_docs git repository. If you don't have git installed or you don't want to read "another awesome tutorial":http://spheredev.org/wiki/Git_for_the_lazy to install it and learn how to use it, I'll save you the hassle and let you download the plugin from "here":/files/li3_docs.zip, for this time ony.
@@ -106,7 +106,7 @@ We're basically extending the @\lithium\action\Request@ with a custom class, tel
 
 After doing so, open **D:\lithium_test\app\webroot\index.php** and change:
 
-@echo lithium\action\Dispatcher::run()@ 
+@echo lithium\action\Dispatcher::run();@ 
 
 into:
 
