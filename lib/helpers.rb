@@ -21,8 +21,12 @@ module Nanoc3::Helpers::Tagging
 		article.attributes[:tags].map{|t| %{<a class="tag" href="/tags/#{t}/">#{t}</a>}}.join " &middot; "
 	end
 
+	def link_for_tag(tag, base_url)
+		%[<a href="#{base_url}#{tag}/" rel="tag">#{tag}</a>]
+	end
+
 	def tag_link_with_count(tag, count)
-		%{#{link_for_tag(tag+'/', '/tags/')} (#{count})}
+		%{#{link_for_tag(tag, '/tags/')} (#{count})}
 	end 
 
 	def sorted_site_tags
