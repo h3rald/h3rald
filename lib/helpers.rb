@@ -22,7 +22,7 @@ module Nanoc3::Helpers::Tagging
 	end
 
 	def tag_link_with_count(tag, count)
-		%{#{link_for_tag(tag, '/tags/')} (#{count})}
+		%{#{link_for_tag(tag+'/', '/tags/')} (#{count})}
 	end 
 
 	def sorted_site_tags
