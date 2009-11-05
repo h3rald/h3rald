@@ -17,7 +17,7 @@ The official Twitter page quickly became inadequate to manage my tweets, so I be
 
 Over the past months I tried dozens of different web-based Twitter clients, and narrowed the list of _must-have_ features to the following:
 * The interface should be simple to use and not too cluttered.
-* I should be able to categorize tweets in columns (à la TweetDeck).
+* I should be able to categorize tweets in columns (&agrave; la TweetDeck).
 * I should be able to know, when visiting the site, how many _new_ tweets I have to go through.
 * I should be able to mark tweets as read.
 * It should display media files (at least pictures) inline with the tweets.
