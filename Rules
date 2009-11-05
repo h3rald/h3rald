@@ -27,7 +27,7 @@ compile 'sitemap' do
 	rep.filter :erb
 end
 
-compile /\/(js\/.+?|.htaccess|robots)/ do
+compile /\/(js\/.+?)/ do
 	# do nothing
 end
 
@@ -61,10 +61,6 @@ end
 
 route '/js/*' do
 	item.identifier.gsub(/\/$/, '') + '.js'
-end
-
-route 'robots' do
-	item.identifier.gsub(/\/$/, '') + '.txt'
 end
 
 route '*' do

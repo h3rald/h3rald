@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'firefox' (Atom Feed)
 :permalink: tags/firefox/atom
+:title: H3RALD - Tag 'firefox' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('firefox'))%>

@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: personal
 :title: "Tag: personal"
 :filters_pre: 
 - erb
 :feed: /tags/personal/
 :feed_title: Tag 'personal'
-:permalink: personal
 -----
 
 <p>6 items are tagged with <em>personal</em>:</p>

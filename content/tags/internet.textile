@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: internet
 :title: "Tag: internet"
 :filters_pre: 
 - erb
 :feed: /tags/internet/
 :feed_title: Tag 'internet'
-:permalink: internet
 -----
 
 <p>12 items are tagged with <em>internet</em>:</p>

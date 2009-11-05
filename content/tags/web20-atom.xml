@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'web20' (Atom Feed)
 :permalink: tags/web20/atom
+:title: H3RALD - Tag 'web20' (Atom Feed)
 -----
 <%= atom_feed(:articles => articles_tagged_with('web20'))%>

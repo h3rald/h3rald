@@ -1,6 +1,6 @@
 ----- 
 :type: feed
-:title: H3RALD - Tag 'website' (RSS Feed)
 :permalink: tags/website/rss
+:title: H3RALD - Tag 'website' (RSS Feed)
 -----
 <%= rss_feed(:articles => articles_tagged_with('website'))%>

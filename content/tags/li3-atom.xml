@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:permalink: tags/li3/atom
+:title: H3RALD - Tag 'li3' (Atom Feed)
+-----
+<%= atom_feed(:articles => articles_tagged_with('li3'))%>

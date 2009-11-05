@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: webdevelopment
 :title: "Tag: webdevelopment"
 :filters_pre: 
 - erb
 :feed: /tags/webdevelopment/
 :feed_title: Tag 'webdevelopment'
-:permalink: webdevelopment
 -----
 
 <p>12 items are tagged with <em>webdevelopment</em>:</p>

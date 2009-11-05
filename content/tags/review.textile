@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: review
 :title: "Tag: review"
 :filters_pre: 
 - erb
 :feed: /tags/review/
 :feed_title: Tag 'review'
-:permalink: review
 -----
 
 <p>33 items are tagged with <em>review</em>:</p>

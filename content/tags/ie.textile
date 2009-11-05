@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: ie
 :title: "Tag: ie"
 :filters_pre: 
 - erb
 :feed: /tags/ie/
 :feed_title: Tag 'ie'
-:permalink: ie
 -----
 
 <p>2 items are tagged with <em>ie</em>:</p>

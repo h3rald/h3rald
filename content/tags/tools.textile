@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: tools
 :title: "Tag: tools"
 :filters_pre: 
 - erb
 :feed: /tags/tools/
 :feed_title: Tag 'tools'
-:permalink: tools
 -----
 
 <p>4 items are tagged with <em>tools</em>:</p>

@@ -1,11 +1,11 @@
 ----- 
 :type: page
+:permalink: microsoft
 :title: "Tag: microsoft"
 :filters_pre: 
 - erb
 :feed: /tags/microsoft/
 :feed_title: Tag 'microsoft'
-:permalink: microsoft
 -----
 
 <p>2 items are tagged with <em>microsoft</em>:</p>
