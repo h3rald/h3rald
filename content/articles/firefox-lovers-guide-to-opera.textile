@@ -417,9 +417,9 @@ In particular:
 * -*No address bar search* &ndash; Amazingly, only Firefox seems to have this feature built-in. I'm referring to the ability to type whatever in the address bar to be redirected to the site returned by a Google's _I'm feeling lucky_ search. It is possible to emulate this feature in Opera by creating a custom search for _I'm Feeling Lucky_ and assign it a short keyword like "l". In this way, for example, typing in @l h3rald@ should lead you to this website. Not quite as immediate as in Firefox though.-
 * -*No find as you type* &ndash; Another big disappointment for who comes from Firefox or Safari: Opera still uses a dialog box to perform page searches.-
 * -*No spell clecking* &ndash; Again, both Firefox and Safari now offer text fields spell checking. Opera doesn't yet.-
-* *No HTML mail composer* &ndash; Opera's built-in mail client can display HTML emails but doesn't yet allow users to create them.
+* -*No HTML mail composer* &ndash; Opera's built-in mail client can display HTML emails but doesn't yet allow users to create them.-
 * -*Auto-start widgets?* &ndash; This is a feature enhancement Opera Dev Team should consider: allow users to configure certain widgets to start automatically when Opera starts.-
-* *Google Reader + Flash problems* &ndash; Sometimes I experiences some scrolling problems when reading news which contain embedded flash movies on Google Reader.
+* -*Google Reader + Flash problems* &ndash; Sometimes I experiences some scrolling problems when reading news which contain embedded flash movies on Google Reader.-
 * *Corporate Sites* &ndash; Unfortunately some corporate web site do not support Opera or are not displayed correctly in Opera. Unfortunately there's nothing much we can do about it but trying to "mask" Opera as another browser (via *right-click > Edit Site Preferences...*)
 * -*Default Browser Problems* &ndash; Setting Opera as default browser on Windows doesn't seem to set the file icons accordingly (or worse, it resets them to the default file icon).-
 
