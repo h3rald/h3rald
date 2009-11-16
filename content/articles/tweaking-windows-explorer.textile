@@ -31,14 +31,14 @@ There's a multitude of "Explorer Replacements" which aim to be more feature-rich
 
 The only problem is that whenever I got close to choose "the one", I noticed that there always was one or two features missing somewhere, which were present in another and vice versa. Additionally, to be totally honest, the level of integration with Windows and other applications was never _complete_. 
 
-These are a few stupid, silly things which tend to be lacking or at least are not 100% functioning \- not in all the file managers I tried, but at least in some:
+These are a few stupid, silly things which tend to be lacking or at least are not 100% functioning -- not in all the file managers I tried, but at least in some:
 
-* Environment variables integration \- Alternative file managers normally are not able to parse Windows environment variables.
-* Icon overlays \- Some file managers can't render Subversion's icon overlays.
-* Strange context menus \- Sometimes right-clicking on a file or a directory may not open the standard Explorer context menu
-* Open Folder \- Third-party application allowing you to open a folder, will always open it through Windows Explorer
+* Environment variables integration -- Alternative file managers normally are not able to parse Windows environment variables.
+* Icon overlays -- Some file managers can't render Subversion's icon overlays.
+* Strange context menus -- Sometimes right-clicking on a file or a directory may not open the standard Explorer context menu
+* Open Folder -- Third-party application allowing you to open a folder, will always open it through Windows Explorer
 * auto complete address bar....
-* Special Folders \- Some special folders (e.g. Control Panel) are now accessible using alternative file manager, but others may not (e.g. Network Connections). At any rate, typing "Control Panel" will _not_ open the Control Panel in an alternative file manager.
+* Special Folders -- Some special folders (e.g. Control Panel) are now accessible using alternative file manager, but others may not (e.g. Network Connections). At any rate, typing "Control Panel" will _not_ open the Control Panel in an alternative file manager.
 
 _What about trying to "patch" Windows Explorer instead of using another program altogether?_
 
@@ -53,8 +53,10 @@ Yes, it is Windows Explorer, with just a few addons:
 * "QT TabBar":http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html#qttab (Requires .NET framework 2.0)
 * "QT Address Bar":http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html#qtadr (Requires .NET framework 2.0)
 * "QU ToolBar 2":http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html#qtt2 (Requires .NET framework 2.0)
-* "NTFS Link Shell Extension":http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.htm
-* "FileMenu Tools":http://www.lopesoft.com/en/fmtools/info.htmlh3. Explorer Tabs
+* "NTFS Link Shell Extension":http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html
+* "FileMenu Tools":http://www.lopesoft.com/en/fmtools/info.html
+
+h3. Explorer Tabs
 
 For an instant gratification, download and install QT TabBar first, logoff and logon again for the changes to take effect (or install all the other extensions first, otherwise you'll have to re-logon after installing nearly each one). As the name implies, this will add tabs to Windows Explorer, just the way you expect them to be: clean, stable and really smart.
 
@@ -78,14 +80,14 @@ Whenever you're ready, take your time to configure QT TabBar (right-click on it 
 
 Other features? Sure, there's plenty more, e.g.:
 
-* *Single Instance* \- By enabling the appropriate option, you'll only have a single instance of Windows explorer, everything will be opened in new tabs.  A must.
-* *Rearrange tabs* \- Tabs can be rearranged by dragging and dropping.
-* *Lock/Unlock* \- Lock a tab (right-click > Lock) to avoid closing it accidentally.
-* *Folder Memo* \- It is possible to set a "folder memo" for a specific folder, which can be visualized and edited afterwards (right-click > Memo for this folder).
-* *Folder Password* \- Password-protect a particular tab (right-click > Set Password...).
-* *Picture Preview* \- Preview image files simply by hovering on them with the mouse.
-* *Groups* \- It is possible to group more tabs together by adding them to groups (right-click > Add to Group > [Group Name]) which can be configured via the QT TabBar option dialog.
-* *Keyboard Shortcuts* \- Open the folder in which you unzipped QT TabBar and run QTShortcutKeyEditor.exe and enable as many as you like (they are too many to list hered), the possibilities are endless.
+* *Single Instance* -- By enabling the appropriate option, you'll only have a single instance of Windows explorer, everything will be opened in new tabs.  A must.
+* *Rearrange tabs* -- Tabs can be rearranged by dragging and dropping.
+* *Lock/Unlock* -- Lock a tab (right-click > Lock) to avoid closing it accidentally.
+* *Folder Memo* -- It is possible to set a "folder memo" for a specific folder, which can be visualized and edited afterwards (right-click > Memo for this folder).
+* *Folder Password* -- Password-protect a particular tab (right-click > Set Password...).
+* *Picture Preview* -- Preview image files simply by hovering on them with the mouse.
+* *Groups* -- It is possible to group more tabs together by adding them to groups (right-click > Add to Group > [Group Name]) which can be configured via the QT TabBar option dialog.
+* *Keyboard Shortcuts* -- Open the folder in which you unzipped QT TabBar and run QTShortcutKeyEditor.exe and enable as many as you like (they are too many to list hered), the possibilities are endless.
 
 h3. Customizing Toolbars
 
@@ -106,19 +108,20 @@ I placed this toolbar right under the menu, on the top-left side.
 
 Right next to it I placed some of the buttons available for *QT TabBar*:
 
-* Groups \- Load an existing tab group (configurable in the options)
-* Recently Closed \- open recently-closed tabs
-* Applications \- run custom applications (configurable in the options)
-* Close \- Close current tab
-* Lock \- Lock current tab
-* Topmost \- Force explorer to stay on top of other windows
+* Groups -- Load an existing tab group (configurable in the options)
+* Recently Closed -- open recently-closed tabs
+* Applications -- run custom applications (configurable in the options)
+* Close -- Close current tab
+* Lock -- Lock current tab
+* Topmost -- Force explorer to stay on top of other windows
 
 Then I decided to enable the *Links* Explorer toolbar, which can be configured to display bookarks and shortcuts placed in the Favorites > Links folder. As shortcuts, I dragged each drive available on my system and voilà: poor man's Drive Toolbar! Unfortunately, unlike in the _proper_ drive toolbars offered by alternative file managers, all drive shortcuts will remain there (with a red question mark) even when the drive is not connected to the system. I can live with that.
 
-Right to the address bar (we're going to substitute it in the next section though), I decided to place *QT ToolBar 2*, which is available - hear, hear - after installing the QT ToolVar 2 extension.
-At first it looks like a search filter toolbar, and yes, it can be used for this _as well_ Just type .jpg in the search box and it will show only the JPG files in the current folder. Easy enough.
+!>/files/toolbar2.gif! 
 
-!</files/toolbar2.gif! 
+Right to the address bar (we're going to substitute it in the next section though), I decided to place *QT ToolBar 2*, which is available - hear, hear - after installing the QT ToolVar 2 extension.
+At first it looks like a search filter toolbar, and yes, it can be used for this _as well_. Just type .jpg in the search box and it will show only the JPG files in the current folder. Easy enough.
+
 
 Of course there's (much) more to it. A _search helper_ is provided (click the little arrow pointing downwards at the end of the toolbar and select Search Helper) to perform more complex searches:
 
@@ -210,4 +213,4 @@ Something missing? Well, you can always create your own entry, if you like!
 
 h3. Conclusion
 
-I think that's enough for you to give Windows Explorer another shot \- or at least it was enough for me anyway. Be aware that there are and hopefully there will be more Windows shell extensions able to do neat things: "7-Zip":http://www.7-zip.org/, "Notepad++":http://notepad-plus.sourceforge.net/uk/site.htm and "Cream":http://cream.sourceforge.net/ all add very useful context menus, and don't forget "TortoiseSVN":http://tortoisesvn.tigris.org/, if you are a Windows-based developers (yes, they do exist).
+I think that's enough for you to give Windows Explorer another shot -- or at least it was enough for me anyway. Be aware that there are and hopefully there will be more Windows shell extensions able to do neat things: "7-Zip":http://www.7-zip.org/, "Notepad++":http://notepad-plus.sourceforge.net/uk/site.htm and "Cream":http://cream.sourceforge.net/ all add very useful context menus, and don't forget "TortoiseSVN":http://tortoisesvn.tigris.org/, if you are a Windows-based developers (yes, they do exist).
