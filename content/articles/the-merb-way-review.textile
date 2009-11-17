@@ -7,7 +7,7 @@
 - review
 :title: "Book Review: The Merb Way"
 :toc: true
-:date: 2009-11-14 19:41:36.788596 +02:00
+:date: 2009-11-17 12:15:36.788596 +02:00
 :summary: A review of "The Merb Way", by Foy Savas. This book dives deep the framework, and can be really helpful to those interested in understanding more about Merb &ndash; or about developing any modular application in Ruby.
 -----
 
