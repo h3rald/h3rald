@@ -11,7 +11,7 @@
 :summary: A review of "The Merb Way", by Foy Savas. This book dives deep the framework, and can be really helpful to those interested in understanding more about Merb &ndash; or about developing any modular application in Ruby.
 -----
 
-When I first picked up this book I was surprised by its length. Somehow, after reading "The Rails Way":/articles/the-rails-way-review, I got stuck in my mind that _The Merb Way_ had to be almost equally voluminous. Instead, this book is about 300 page long, roughly as long as the sum of the chapters devoted to _ActiveRecord_ in Obie Fernandez's acclaimed Rails bible.
+When I first picked up this book I was surprised by its length. Somehow, after reading "The Rails Way":/articles/the-rails-way-review, I got stuck in my mind that "The Merb Way":http://my.safaribooksonline.com/9780321601636 had to be almost equally voluminous. Instead, this book is about 300 page long, roughly as long as the sum of the chapters devoted to _ActiveRecord_ in Obie Fernandez's acclaimed Rails bible.
 
 Apparently it only takes 300 pages to describe a web framework nowadays! I couldn't help but feeling a bit skeptical at first. Even in the foreword, Obie Fernandez presents the book &ndash; and the whole "Merb":http://www.merbivore.com framework &ndash; with some initial skepticism: isn't Ruby on Rails enough? Why do we need yet another Ruby web framework? And above all, seeing that Merb is going to eventually be "merged into Rails 3":http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3, why on Earth do we need a book about Merb, _now_?
 
