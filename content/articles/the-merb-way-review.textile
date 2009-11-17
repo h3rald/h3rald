@@ -3,7 +3,7 @@
 :permalink: the-merb-way-review
 :tags:
 - ruby
-- book
+- books
 - review
 :title: "Book Review: The Merb Way"
 :toc: true

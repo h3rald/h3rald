@@ -1,14 +1,14 @@
 ----- 
+:feed_title: Tag 'vim'
 :type: page
 :permalink: vim
-:title: "Tag: vim"
 :filters_pre: 
 - erb
+:title: "Tag: vim"
 :feed: /tags/vim/
-:feed_title: Tag 'vim'
 -----
 
-<p>2 items are tagged with <em>vim</em>:</p>
+<p>3 items are tagged with <em>vim</em>:</p>
 <ul>
 	<% articles_tagged_with('vim').each do |a| %>
 		<%= render 'dated_article', :article => a %>
