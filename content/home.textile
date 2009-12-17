@@ -23,7 +23,9 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 
 My articles cover a wide range of topics, ranging from "Ruby programming":/tags/ruby/ to "software and book reviews":/tags/reviews/, "web development":/tags/webdevelopment/ and even "travelling":/tags/travelling. This web site does not have a main theme, therefore if you want to keep up-to-date about a particular topic, simply subscribe to a specific tag feed. 
 
-You can contact me by writing an email to _h3rald [at] h3rald [dot] com_, or through "Twitter":http://www.twitter.com/h3rald, "LinkedIn":http://www.linkedin.com/pub/dir/Fabio/Cevasco, "Delicious":http://www.delicious.com/h3rald, "Facebook":http://www.facebook.com/h3rald, "Shelfari":http://www.shelfari.com/h3rald, or "FriendFeed":http://friendfeed.com/h3rald.
+I update this site regularly, but not every day (and maybe not every week): I only write a new article when I have something important to write about. For more frivolous, extemporaneous stuff feel free to have a look at my "blog":http://blog.posterous.com, which is updated more frequently.
+
+You can contact me by writing an email to _h3rald [at] h3rald [dot] com_, or through "Twitter":http://www.twitter.com/h3rald, "LinkedIn":http://www.linkedin.com/pub/dir/Fabio/Cevasco, "Delicious":http://www.delicious.com/h3rald, "Facebook":http://www.facebook.com/h3rald, "Shelfari":http://www.shelfari.com/h3rald, "FriendFeed":http://friendfeed.com/h3rald or "Posterous":http://posterous.com/people/4aAQcmIVQl7H.
 
 <br style="clear:both" />
 
