@@ -30,6 +30,7 @@ You can contact me by writing an email to _h3rald [at] h3rald [dot] com_, or thr
 <br style="clear:both" />
 
 <div class="article-list left-column" id="latest-articles">
+
 h3. Latest Articles
 
 <%
@@ -39,6 +40,7 @@ latest.each do |a|
 <% end %>
 </div> 
 <div class="article-list right-column" id="popular-articles">
+
 h3. Popular Articles
 
 <%
