@@ -1,0 +1,39 @@
+----- 
+:type: article
+:tags: [writing]
+:date: 2009-12-18 15:37:33.045000 +01:00
+:permalink: tipcs-for-better-documentation
+:title: "10 tips for writing better documentation"
+:toc: true
+-----
+
+h3. Know Thy Audience
+
+h3. Information mapping
+
+h3. Style: Minimalism, Simplified English (Clear, Concise and Complete)
+
+h3. Appropriate usage of images
+
+h3. Concepts, Tasks and References
+
+h3. Structure your documents with accessibility in mind
+
+h3. (Don't) repeat yourself
+
+h3. An example is better than a thousand rules
+
+h3. The coworker test
+
+h3. Cheat sheets
+
+h3. Extras...
+
+h4. Separate content from presentation
+
+h4. Use semantic markup
+
+
+
+
+
