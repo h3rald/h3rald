@@ -7,7 +7,22 @@
 :toc: true
 -----
 
-h3. Know Thy Audience
+When I started working as a Technical Writer, I thought writing documentation was no different than writing tutorials or informative blog posts. Now, three years later, I admit I was wrong: "technical communication":http://en.wikipedia.org/wiki/Technical_communication is craft (not an art), and it takes time and experience to master it.
+
+Although I'm far from being an expert (some of my colleagues have 10+ years of experience in the field), I decided to share what I learnt so far, hoping that it may be useful to someone: being able to write good technical documents can be a useful skill nowadays, especially considering the amount of open source project in desperate need of good documentation.
+
+If you have no plans to write technical documentation in the near future, you should read on anyway: some of the following tips may become useful when writing your next blog post or thesis, as they can be applied to many forms of writing where _clarity_ and _completeness_ are a key requirement.
+
+h3. Know Your Audience
+
+Before writing a single word you must know who you're writing for. 
+h3. Omit needless words
+
+bq. "Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that every word tell"
+
+p((((. &mdash; William Strunk Jr., ??"The Elements of Style":http://www.bartleby.com/141/??
+
+
 
 h3. Information mapping
 
@@ -17,9 +32,11 @@ h3. Appropriate usage of images
 
 h3. Concepts, Tasks and References
 
+http://en.wikipedia.org/wiki/JoAnn_Hackos
+
 h3. Structure your documents with accessibility in mind
 
-h3. (Don't) repeat yourself
+h3. Don't repeat yourself
 
 h3. An example is better than a thousand rules
 
