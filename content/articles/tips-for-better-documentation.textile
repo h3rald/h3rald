@@ -13,7 +13,7 @@ Although I'm far from being an expert (some of my colleagues have 10+ years of e
 
 If you have no plans to write technical documentation in the near future, you should read on anyway: some of the following tips may become useful when writing your next blog post or thesis, as they can be applied to many forms of writing where _clarity_ and _completeness_ are a key requirement.
 
-h3. Know your audience
+h3. #1 &ndash; Know your audience
 
 Before writing a single word you must know who you're writing for. There's nothing worse than writing a document that nobody can understand or that doesn't tell the reader anything he or she already knows. If you're writing a developer guide, it is assumed that the average reader knows how to program already, so explaining how to create a new project in Visual Studio is totally pointless. The more you narrow down your audience, the more your document is going to be useful to your readers.
 
@@ -44,45 +44,84 @@ h4. Further reading
 * "Personas: Setting the Stage for Building Usable Information Sites":http://www.infotoday.com/online/jul03/head.shtml
 * "Technical writing audience":http://en.wikiversity.org/wiki/Technical_writing_audience
 
- 
-h3. Omit needless words
+h3. #2 &ndash; Omit needless words
 
 bq. "Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that every word tell"
 
 p((((. &mdash; William Strunk Jr., ??"The Elements of Style":http://www.bartleby.com/141/??
 
+* Simplified English
 
 h4. Example
 
+h4. Further reading
 
 
-h3. Information mapping
+h3. #3 &ndash; Infomap your topics
 
-h3. Style: Minimalism, Simplified English (Clear, Concise and Complete)
+h4. Example
 
-h3. Appropriate usage of images
+h4. Further reading
 
-h3. Concepts, Tasks and References
-
-http://en.wikipedia.org/wiki/JoAnn_Hackos
-
-h3. Structure your documents with accessibility in mind
-
-h3. Don't repeat yourself
-
-h3. An example is better than a thousand rules
-
-h3. Refactoring
-
-h3. Cheat sheets
-
-h3. Extras...
-
-h4. Separate content from presentation
-
-h4. Use semantic markup
+* "Information Mapping - H3RALD.com":http://www.h3rald.com/articles/33/
 
 
+h3. #4 &ndash; An example is better than a thousand rules
+
+h4. Example
+
+h4. Further reading
 
 
+h3. #5 &ndash; Use images wisely
 
+h4. Example
+
+h4. Further reading
+
+
+h3. #6 &ndash; Structure your documents with accessibility in mind
+
+* index and toc
+* links
+
+h4. Example
+
+h4. Further reading
+
+
+h3. #7 &ndash; Be minimalist
+
+* Ikea docs
+* Lego documentation test
+
+h4. Example
+
+h4. Further reading
+
+
+h3. #8 &ndash; Be consistent
+
+h4. Example
+
+h4. Further reading
+
+
+h3. #9 &ndash; Test and Refactor
+
+* peer review
+* rewrite
+
+h4. Example
+
+h4. Further reading
+
+
+h3. #10 &ndash; Aid your readers memory
+
+* cheat sheets
+* diagrams
+
+h4. Example
+
+h4. Further reading
