@@ -23,9 +23,9 @@ h4. Example
 
 The following is a very short profile for "John, the system integrator":
 
-<blockquote>
+<div class="block">
 John is a system integrator. He was hired by a company to "install _ProductX_ oand make it work". He knows his way around computers, and he's familiar with Microsoft technology in general. He's used to install software on all known flavours of Windows OS and he deals with SQL Server on a daily basis. Normally he doesn't read manuals unless things go wrong. 
-</blockquote>
+</div>
 
 Even by reading this simple description you have a basic idea on how to write your next installation manual. More specifically:
 * The installation wizard will be described, but not in great detail (e.g. no _Click *next* to proceed_ or similar)
@@ -41,7 +41,9 @@ h4. Further reading
 * "Know your audience. | CommunicateBetter.org":http://www.communicatebetter.org/2007/05/06/technical-communication-know-your-audience/
 * "Elements of Audience Analysis":http://core.ecu.edu/engl/henzeb/5780/audanal.htm
 * "Ad-Hoc Personas & Empathetic Focus":http://www.jnd.org/dn.mss/personas_empath.html
+* "English Composition 1: Audience Analysis":http://papyr.com/hypertextbooks/comp1/audience.htm
 * "Personas: Setting the Stage for Building Usable Information Sites":http://www.infotoday.com/online/jul03/head.shtml
+* "Making Personas More Powerful: Details to Drive Strategic and Tactical Design":http://www.boxesandarrows.com/view/making_personas_more_powerful_details_to_drive_strategic_and_tactical_design
 * "Technical writing audience":http://en.wikiversity.org/wiki/Technical_writing_audience
 
 h3. #2 &ndash; Omit needless words
@@ -54,6 +56,19 @@ p((((. &mdash; William Strunk Jr., ??"The Elements of Style":http://www.bartleby
 
 h4. Example
 
+Consider the following excerpt taken from "Introduction To Linux, §3.3: Manipulating files":http://tldp.org/LDP/intro-linux/html/sect_03_03.html:
+
+<blockquote>
+Besides the name of the file, *ls* can give a lot of other information, such as the file type, as we already discussed. It can also show permissions on a file, file size, inode number, creation date and time, owners and amount of links to the file. With the -a option to ls, files that are normally hidden from view can be displayed as well. These are files that have a name starting with a dot. A couple of typical examples include the configuration files in your home directory. When you've worked with a certain system for a while, you will notice that tens of files and directories have been created that are not automatically listed in a directory index. Next to that, every directory contains a file named just dot (.) and one with two dots (..), which are used in combination with their inode number to determine the directory's position in the file system's tree structure.
+</blockquote>
+
+It is certainly informative, but it can be made easier to understand by _omitting needless words_, as follows:
+
+<div class="block">
+*ls* can display the following information about a file, besides its name: type, size, inode number, creation date and time, owners and the numbers of links to it.
+Use *ls -a* to display hidden files, such as the configuration files in your home directory. When you use this option, *ls* displays also two special files named "." and "..", used to determine the position of a directory within the file system structure.
+</div>
+
 h4. Further reading
 
 
@@ -61,9 +76,9 @@ h3. #3 &ndash; Infomap your topics
 
 h4. Example
 
-h4. Further reading
+See my own article on "information mapping":http://www.h3rald.com/articles/33/
 
-* "Information Mapping - H3RALD.com":http://www.h3rald.com/articles/33/
+h4. Further reading
 
 
 h3. #4 &ndash; An example is better than a thousand rules
