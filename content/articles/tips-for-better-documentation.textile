@@ -13,21 +13,21 @@ Although I'm far from being an expert (some of my colleagues have 10+ years of e
 
 If you have no plans to write technical documentation in the near future, you should read on anyway: some of the following tips may become useful when writing your next blog post or thesis, as they can be applied to many forms of writing where _clarity_ and _completeness_ are a key requirement.
 
-h3. Know Your Audience
+h3. Know your audience
 
 Before writing a single word you must know who you're writing for. There's nothing worse than writing a document that nobody can understand or that doesn't tell the reader anything he or she already knows. If you're writing a developer guide, it is assumed that the average reader knows how to program already, so explaining how to create a new project in Visual Studio is totally pointless. The more you narrow down your audience, the more your document is going to be useful to your readers.
 
-As a general good practice, consider spending some time writing profiles for your potential readers, outlining their skills, their professional responsabilities and even their personal traits. Some documentation departments even made huge posters depicting a _grumpy system administrator_ or an _arrogant programmer_: as extreme as it sounds, they claimed it helped them a lot to identify what kind of people they were writing for.
+As a general good practice, consider spending some time writing profiles for your potential readers, outlining their skills, their professional responsabilities and even their personal traits. This is called _Audience Analysis_, and it focuses on identifying a set of _personas_, i.e. group of similar users who may end up reading your document. Some documentation departments even made huge posters depicting a _grumpy system administrator_ or an _arrogant programmer_: as extreme as it sounds, they claimed it helped them a lot to identify what kind of people they were writing for.
 
 h4. Example
 
-The following is a short profile for "John, the system integrator":
+The following is a very short profile for "John, the system integrator":
 
 <blockquote>
 John is a system integrator. He was hired by a company to "install _ProductX_ oand make it work". He knows his way around computers, and he's familiar with Microsoft technology in general. He's used to install software on all known flavours of Windows OS and he deals with SQL Server on a daily basis. Normally he doesn't read manuals unless things go wrong. 
 </blockquote>
 
-By looking at this profile, you have a basic idea on how to write your next installation manual. More specifically:
+Even by reading this simple description you have a basic idea on how to write your next installation manual. More specifically:
 * The installation wizard will be described, but not in great detail (e.g. no _Click *next* to proceed_ or similar)
 * The troubleshooting section should be prominent and to-the-point, with references to exact error codes or messages logged by the system.
 * There's no need to explain what a Stored Procedure is or how to Start SQL Server Management Studio, it is sufficient to explain _what to do_, not _how_.
@@ -35,12 +35,24 @@ By looking at this profile, you have a basic idea on how to write your next inst
 * Concepts and terminology specific to _ProductX_ should be avoided, unless strictly necessary.
 * An introduction on the main features offered by _ProductX_ is not required.
 
+h4. Further reading
+
+* "Online Technical Writing: Audience Analysis":http://www.io.com/~hcexres/textbook/aud.html
+* "Know your audience. | CommunicateBetter.org":http://www.communicatebetter.org/2007/05/06/technical-communication-know-your-audience/
+* "Elements of Audience Analysis":http://core.ecu.edu/engl/henzeb/5780/audanal.htm
+* "Ad-Hoc Personas & Empathetic Focus":http://www.jnd.org/dn.mss/personas_empath.html
+* "Personas: Setting the Stage for Building Usable Information Sites":http://www.infotoday.com/online/jul03/head.shtml
+* "Technical writing audience":http://en.wikiversity.org/wiki/Technical_writing_audience
+
  
 h3. Omit needless words
 
 bq. "Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that every word tell"
 
 p((((. &mdash; William Strunk Jr., ??"The Elements of Style":http://www.bartleby.com/141/??
+
+
+h4. Example
 
 
 
@@ -60,7 +72,7 @@ h3. Don't repeat yourself
 
 h3. An example is better than a thousand rules
 
-h3. The coworker test
+h3. Refactoring
 
 h3. Cheat sheets
 
