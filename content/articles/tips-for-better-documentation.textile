@@ -15,7 +15,27 @@ If you have no plans to write technical documentation in the near future, you sh
 
 h3. Know Your Audience
 
-Before writing a single word you must know who you're writing for. 
+Before writing a single word you must know who you're writing for. There's nothing worse than writing a document that nobody can understand or that doesn't tell the reader anything he or she already knows. If you're writing a developer guide, it is assumed that the average reader knows how to program already, so explaining how to create a new project in Visual Studio is totally pointless. The more you narrow down your audience, the more your document is going to be useful to your readers.
+
+As a general good practice, consider spending some time writing profiles for your potential readers, outlining their skills, their professional responsabilities and even their personal traits. Some documentation departments even made huge posters depicting a _grumpy system administrator_ or an _arrogant programmer_: as extreme as it sounds, they claimed it helped them a lot to identify what kind of people they were writing for.
+
+h4. Example
+
+The following is a short profile for "John, the system integrator":
+
+<blockquote>
+John is a system integrator. He was hired by a company to "install _ProductX_ oand make it work". He knows his way around computers, and he's familiar with Microsoft technology in general. He's used to install software on all known flavours of Windows OS and he deals with SQL Server on a daily basis. Normally he doesn't read manuals unless things go wrong. 
+</blockquote>
+
+By looking at this profile, you have a basic idea on how to write your next installation manual. More specifically:
+* The installation wizard will be described, but not in great detail (e.g. no _Click *next* to proceed_ or similar)
+* The troubleshooting section should be prominent and to-the-point, with references to exact error codes or messages logged by the system.
+* There's no need to explain what a Stored Procedure is or how to Start SQL Server Management Studio, it is sufficient to explain _what to do_, not _how_.
+* Any manual post-installation task to perform on _ProductX_ should be detailed as necessary.
+* Concepts and terminology specific to _ProductX_ should be avoided, unless strictly necessary.
+* An introduction on the main features offered by _ProductX_ is not required.
+
+ 
 h3. Omit needless words
 
 bq. "Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that every word tell"
