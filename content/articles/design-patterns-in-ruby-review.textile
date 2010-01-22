@@ -17,7 +17,6 @@ tags:
 type: article
 toc: true
 -----
-!>/files/design_patterns_in_ruby.jpg! 
 
 I finally got my hands on a shiny new copy of _Design Patterns in Ruby[1]_. The book itself is not brand new and it was already widely praised by many different people online, so I wanted to take a look for myself.
 
@@ -26,11 +25,15 @@ To my surprise, the book is a hardcover edition, which makes it look more profes
 What is it about? &mdash; well, design patters in the Ruby language of course. But it's not the usual brainwash of programming theory you would expect by a typical book on patters, it has _plenty_ of examples of real code. When I say _real code_ I don't mean the usual Dog/Cat/Horse/&lt;insert animal here&gt; classes or juke-box simulations which don't work at all etc. etc., I mean actual snippets from well known Ruby applications, like RubyGems, FXRuby and, of course, Rails.
 OK well, there's an exception perhaps: Russ _did_ include a few wild life simulations (ponds with frogs and similar), but it's only for your own good, and for the sake of tradition.
 
-Anyhow, let's start from the beginning...h3. Part I: Patters and Ruby
+Anyhow, let's start from the beginning...
+
+h3. Part I: Patters and Ruby
 
 The first part of the book serves as a general introduction to the other two parts. If you know the basics of both design patterns and Ruby, you can safely skip this as you won't find anything of overwhelming interest here. 
 
-Personally I really liked *Chapter 1* though, "Building better Programs with Patterns", in which Russ does a great job in summarizing the original GoF book[3] into four points::
+Personally I really liked *Chapter 1* though, "Building better Programs with Patterns", in which Russ does a great job in summarizing the original GoF book[3] into four points:
+
+!>/files/design_patterns_in_ruby.jpg! 
 
 * _Separate our the things that change from those that stay the same._
 * _Program to an interface, not an implementation._
