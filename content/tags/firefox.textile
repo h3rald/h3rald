@@ -1,11 +1,11 @@
 ----- 
-:feed_title: Tag 'firefox'
 :type: page
 :permalink: firefox
+:title: "Tag: firefox"
 :filters_pre: 
 - erb
-:title: "Tag: firefox"
 :feed: /tags/firefox/
+:feed_title: Tag 'firefox'
 -----
 
 <p>6 items are tagged with <em>firefox</em>:</p>

@@ -1,11 +1,11 @@
 ----- 
-:feed_title: Tag 'frameworks'
 :type: page
 :permalink: frameworks
+:title: "Tag: frameworks"
 :filters_pre: 
 - erb
-:title: "Tag: frameworks"
 :feed: /tags/frameworks/
+:feed_title: Tag 'frameworks'
 -----
 
 <p>6 items are tagged with <em>frameworks</em>:</p>

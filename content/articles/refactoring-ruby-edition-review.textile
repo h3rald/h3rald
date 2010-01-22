@@ -3,7 +3,7 @@
 :permalink: refactoring-ruby-edition-review
 :tags:
 - ruby
-- book
+- books
 - review
 :title: "Book Review: Refactoring - Ruby Edition"
 :toc: true

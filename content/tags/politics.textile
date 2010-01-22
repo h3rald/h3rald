@@ -1,11 +1,11 @@
 ----- 
-:feed_title: Tag 'politics'
 :type: page
 :permalink: politics
+:title: "Tag: politics"
 :filters_pre: 
 - erb
-:title: "Tag: politics"
 :feed: /tags/politics/
+:feed_title: Tag 'politics'
 -----
 
 <p>2 items are tagged with <em>politics</em>:</p>

@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: march-2008
+:title: "Archive: March 2008"
 :filters_pre: 
 - erb
-:title: "Archive: March 2008"
 -----
 
 <p>2 items were written in <em>March 2008</em>:</p>
