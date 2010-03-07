@@ -43,8 +43,8 @@ function twitter_entry(tweet){
 	var content = tweet.text
 		.replace(/^h3rald:/, '')
 		.replace(/((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)/g, '<a href="$1">$1</a>')
-		.replace(/@([a-zA-Z1-9_]*)/g, '<a href="http://www.twitter.com/$1">@$1</a>')
-		.replace(/#([a-zA-Z1-9_]*)/g, '<a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
+		.replace(/@([a-zA-Z0-9_-]*)/g, '<a href="http://www.twitter.com/$1">@$1</a>')
+		.replace(/#([a-zA-Z0-9_-]*)/g, '<a href="http://www.twitter.com/search?q=%23$1">#$1</a>')
 	var dt = $("<span></span>").addClass('feed-item-date').html(format_date(tweet.created_at)+":");
 	var tx = $("<span>&#0187; </span>").addClass('feed-item-text').html(content);
 	it.append(dt);
