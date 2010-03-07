@@ -1,0 +1,21 @@
+#!/bin/bash
+# $1: the file name (without extension)
+# $2: the json feed to download
+#
+# Feeds:
+# http://github.com/api/v2/json/commits/list/h3rald/concatenative/master 
+# http://github.com/api/v2/json/commits/list/h3rald/redbook/master 
+# http://github.com/api/v2/json/commits/list/h3rald/glyph/master 
+# http://github.com/api/v2/json/commits/list/h3rald/stash/master 
+# http://github.com/api/v2/json/commits/list/h3rald/rawline/master 
+# http://github.com/api/v2/json/commits/list/h3rald/h3rald/master 
+# http://api.backtype.com/user/h3rald/comments.json?key=47bf0031e3a18a598b85&html=1
+# http://twitter.com/status/user_timeline/h3rald.json
+# http://feeds.delicious.com/v2/json/h3rald
+
+data=./output/data
+
+wget -q -O $data/tmp/$1.json $2 || rm $data/tmp/$1.json
+
+cp $data/tmp/$1.json $data/$1.json
+
