@@ -13,9 +13,11 @@
 # http://twitter.com/status/user_timeline/h3rald.json
 # http://feeds.delicious.com/v2/json/h3rald
 
-data=./output/data
+current_dir=$(cd `dirname $0` && pwd)
+data=$current_dir/output/data
+
+mkdir -p $current_dir/tmp
 
 wget -q -O $data/tmp/$1.json $2 || rm $data/tmp/$1.json
 
 cp $data/tmp/$1.json $data/$1.json
-
