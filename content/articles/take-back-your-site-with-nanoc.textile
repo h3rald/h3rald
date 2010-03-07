@@ -67,7 +67,7 @@ h4. Sites, Items and data sources
 
 !>/img/pictures/nanoc-structure.png! 
 
-nanoc ships with a really neat command line tool that can do most of the work for you. @nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
+nanoc ships with a really neat command line tool that can do most of the work for you. @Nanoc3 create_site h3rald@ will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (_convention over configuration_, remember?) So:
 
 * *content* &ndash; your articles, pages, stylesheets, images, ...all the site content and assets.
 * *layouts* &ndash; the site layouts (and partial layouts)
@@ -88,11 +88,11 @@ data_sources:
   output_dir: output
 <% end %>
 
-A _data source_ in nanoc defines where data is retrieved from to create the web site. By default, the "filesystem_compact":http://nanoc.stoneship.org/doc/3.0.0/nanoc3/DataSources/FilesystemCompact.html data source requires that you create two files in the /content folder for each article or page of your web page:
+A _data source_ in nanoc defines where data is retrieved from to create the web site. By default, the "filesystem_compact":http://nanoc.stoneship.org/doc/3.0.0/Nanoc3/DataSources/FilesystemCompact.html data source requires that you create two files in the /content folder for each article or page of your web page:
 * One containing the actual content of the page
 * Another for the page's arbitrary metadata
 
-By personal preference, I chose the "filesystem_combined":http://nanoc.stoneship.org/doc/3.0.0/nanoc3/DataSources/FilesystemCombined.html data source, which allows you to combine the content and the metadata of a page in a single file.
+By personal preference, I chose the "filesystem_combined":http://nanoc.stoneship.org/doc/3.0/Nanoc3/DataSources/FilesystemCombined.html data source, which allows you to combine the content and the metadata of a page in a single file.
 
 The source code for this very article, for example, starts like this:
 
@@ -241,7 +241,7 @@ On my old site, I used mainly Textile and Markdown to write posts. However, some
 require 'rubygems'
 require 'bb-ruby'
 
-class BbcodeFilter < nanoc3::Filter
+class BbcodeFilter < Nanoc3::Filter
   identifier :bbcode
 
   def run(content, args)
@@ -258,7 +258,7 @@ The next big challange was code highlighting. After a quick research, I found at
 Lazy as I am, I more or less dropped "Chris Wanstrath's Ruby wrapper":http://github.com/h3rald/h3rald/blob/master/lib/albino.rb into my @/lib@ folder (I just used Open3 instead of Open4 for Windows compatibility), and monkey-patched nanoc's filtering helper as follows:
 
 <% highlight :ruby do %>
-module nanoc3::Helpers::Filtering
+module Nanoc3::Helpers::Filtering
 
   def highlight(syntax, &block)
     # Seamlessly ripped off from the filter method...
@@ -276,7 +276,7 @@ module nanoc3::Helpers::Filtering
 
 end
 
-include nanoc3::Helpers::Filtering
+include Nanoc3::Helpers::Filtering
 <% end %>
 
 There you go, another thing sorted.
@@ -287,7 +287,7 @@ Adding tagging support was a tiny bit more tricky. nanoc supports content taggin
 
 <% highlight :ruby do %>
   task :tags do
-    site = nanoc3::Site.new('.')
+    site = Nanoc3::Site.new('.')
     site.load_data
     dir = Pathname(Dir.pwd)/'content/tags'
     dir.rmtree if dir.exist?
@@ -386,7 +386,7 @@ Be warned that tweaking nanoc gets addictive very quickly: you soon end up creat
 $ rake site:article name=take-back-your-site-with-nanoc
 $ vim content/articles/take-back-your-site-with-nanoc
 ... write & close the file ...
-$ nanoc3 compile 
+$ Nanoc3 compile 
 <% end %>
 
 ...Exactly what I need. Nothing more, nothing less.
