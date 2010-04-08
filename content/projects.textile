@@ -15,6 +15,7 @@ type: page
 <div class="spacer-50"></div>
 
 - "H3RALD Web Site":/h3rald/ := This very web site, in its 8th incarnation. H3RALD.com has been operative since 2004 and through the years its backend changed from being pure vanilla HTML, to server-side PHP (Prado and CakePHP) to Ruby (Rails, Nanoc).
+- "Glyph":/glyph/ := A _Rapid Document Authoring Framework_ written in Ruby that can be used to create and manage books and articles.
 - "RawLine":/rawline/ := Rawline is a Ruby library which provides a subset of the functionality of the C Readline library. Being implemented in pure Ruby, it gives Ruby developers much more control over key bindings and word completion.
 - "Concatenative":/concatenative/ := A Ruby DSL for concatenative programming. Although quite slow if compared to other concatenative languages like Factor, it implements all the most common concatenative combinator and makes it possible to use Ruby objects in a concatenative way.
 - "Herald Vim Color Scheme":/herald-vim-color-scheme/ := A dark, easy-to-read color scheme for the Vim text editor. It can be used with 255, 16 or 8 colors.

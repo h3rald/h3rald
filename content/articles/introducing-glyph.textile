@@ -1,0 +1,109 @@
+----- 
+:type: article
+:tags: [glyph, ruby, frameworks, writing]
+:title: "Introducing Glyph"
+:summary: "Glyph is an extensible Rapid Document Authoring Framework written in Ruby, that can be used to create ebooks effortlessly."
+:toc: false
+:date: 2010-04-09 19:30:39.644000 +02:00
+:permalink: introducing-glyph
+filters_pre: 
+- erb
+- redcloth
+-----
+
+I've been writing technical documents for a living for the past four years, and I can tell you: there is no easy way to go about it.
+
+For example, you can use:
+* *a Word Processor* like MS Word, for example -- anyone can do that, right? Sure, but no, thanks: I strongly believe that Word Processors should not be used for writing technical documents as I firmly don't believe GUIs are suitable for doing this at a professional level.
+* *a Document Authoring Software* like Adobe Framemaker, Robohelp, etc. Still GUIs, only more complicated to use.
+* *XML, like DITA or DocBook, or other markups*, like ReStructuredText. Better, but still not easily extensible and flexible enough.
+* *your company's tools*, if you have them. That's great if they are usable enough and the result makes your boss happy.
+* *LaTeX*, and that's probably your best option, if you know what you're doing.
+* *XHTML and CSS3*, in conjunction with a PDF renderer like "Prince XML":http://www.princexml.com/ -- that's great if you know HTML and CSS, and you don't mind hand-crafting the structure of the document.
+
+h3. Lightweight markups
+
+I love Textile and Markdown. When people aren't looking, I even use them at work to generate HTML code, because it's just so much faster. Textile in particular can be used as a drop-in replacement for HTML (and a bit of LaTeX, too), as it can produce most inline HTML tags effortlessly and some block-level tags, too.
+
+For things like @<div>@ tags and @<tables>@ though, Textile is not the best thing in the world, so you normally end up falling back to HTML. 
+
+Another "problem" is that *Textile* or other similar lightweight markups cannot be extended easily, simply because they were not meant to be extended in the first place.
+
+Moreover, if you are producing a book, Textile can't help you if you want to generate things like a Table of Contents automatically or validate links: those things are simply not part of Textile's job.
+
+h3. How Glyph can help
+
+!>/img/pictures/glyph.png!
+
+There are a few projects on the Internet that tackle structured document generation. One of them is "Kitabu":http://github.com/fnando/kitabu, which looks promising and is able to produce pretty documents using Textile and Prince for PDF rendering... but again, it's not extensible because it relies too much on Textile and Markdown.
+
+"Glyph":/glyph/ is different. For one, it is much younger than any other, therefore it is most likely full of bugs. 
+
+Jokes aside, Glyph follows a much more radical approach, which consists in using a _macro language_ on top of Textile or Markdown. The good thing about it is that this macro language is very simple to learn and -- most importantly -- very easy to extend.
+
+Here's an example:
+
+<% highlight :text do %>
+section[header[Something about Glyph]
+You can use Glyph macros in conjunction
+ with _Textile_ or _Markdown_ to
+produce HTML files effortlessly.
+  section[header[What about PDFs?|pdf]
+Once you have a single, well-formatted HTML 
+file, converting it to PDF is
+extremely easy with a 3rd-party 
+renderer like =>[http://www.princexml.com|Prince].
+  ]   
+]
+<% end %>
+
+Which translates to:
+
+<% highlight :html do %>
+&lt;div class="section"&gt;
+  &lt;h2 id="h_1"&gt;Something about Glyph&lt;/h2&gt;
+  &lt;p&gt;You can use Glyph macros in conjunction with 
+     &lt;em&gt;Textile&lt;/em&gt; or &lt;em&gt;Markdown&lt;/em&gt; to
+     produce HTML files effortlessly.&lt;/p&gt;
+  &lt;div class="section"&gt;
+   &lt;h3 id="pdf"&gt;What about PDFs?&lt;/h3&gt;
+   &lt;p&gt;Once you have a single, well-formatted HTML 
+      file, converting it to PDF is
+      extremely easy with a 3rd-party renderer 
+      like &lt;a href="http://www.princexml.com"&gt;Prince&lt;/a&gt;.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+<% end %>
+
+Glyph macros can be used to:
+* Generate block-level HTML tags not commonly managed by lightweight markups, like @head@, @body@, @div@ and @table@.
+* Create and validate internal and external links.
+* Include and validate images and figures.
+* Automatically determine header levels based on the document structure.
+* Automatically generate a Table of Contents based on the document structure.
+* Store common snippets of text in a single YAML file and use them anywhere in your document, as many times as you need.
+* Store configuration settings in a YAML file and use them anywhere in your document, as many times as you need.
+* Evaluate Ruby code within your document.
+* Call macros from other macros (including snippets), carefully avoiding mutual calls.
+* Include text files in other text files.
+* Include the contents of configuration settings (author, title) in the document.
+* Filter input explicitly or implicitly, based on file extensions when including files. 
+* Manage comments and todo items.
+
+An example Glyph project? Sure, Glyph's own guide ("source":http://github.com/h3rald/glyph/tree/master/book/ -- "PDF output":http://github.com/h3rald/glyph/tree/master/book/output/pdf/). 
+
+h3. Technical Details
+
+Glyph is built on top of the following Ruby Gems:
+* "gli":http://github.com/davetron5000/gli -- For the high-level command line interface.
+* "rake":http://rake.rubyforge.org/ -- For the mid-level interdependent task layer.
+* "treetop":http://treetop.rubyforge.org/ -- For parsing Glyph Language, whose grammar is "ridiculously simple":http://github.com/h3rald/glyph/blob/master/lib/glyph/glyph_language.treetop, but it seems to work so far.
+* "extlib":http://rubyforge.org/projects/extlib/ -- Because I can't leave without it.
+
+h3. Disclaimer
+
+Glyph is *alpha software* (hence the 0.1.0 version number) -- handle with care and be aware that _everything_ could change tomorrow. If you want to keep up-to-date and/or provide feedback, feel free to join "Glyph's User Group":http://groups.google.com/group/glyph-framework.
+
+h3. For more information...
+
+...head over to "Glyph's homepage":/glyph/.
