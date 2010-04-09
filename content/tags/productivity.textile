@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: productivity
-:title: "Tag: productivity"
 :filters_pre: 
 - erb
+:permalink: productivity
 :feed: /tags/productivity/
 :feed_title: Tag 'productivity'
+:title: "Tag: productivity"
 -----
 
 <p>7 items are tagged with <em>productivity</em>:</p>

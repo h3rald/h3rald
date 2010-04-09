@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: tutorial
-:title: "Tag: tutorial"
 :filters_pre: 
 - erb
+:permalink: tutorial
 :feed: /tags/tutorial/
 :feed_title: Tag 'tutorial'
+:title: "Tag: tutorial"
 -----
 
 <p>5 items are tagged with <em>tutorial</em>:</p>

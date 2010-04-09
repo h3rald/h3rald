@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: rawline
-:title: "Tag: rawline"
 :filters_pre: 
 - erb
+:permalink: rawline
 :feed: /tags/rawline/
 :feed_title: Tag 'rawline'
+:title: "Tag: rawline"
 -----
 
 <p>5 items are tagged with <em>rawline</em>:</p>

@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: opensource
-:title: "Tag: opensource"
 :filters_pre: 
 - erb
+:permalink: opensource
 :feed: /tags/opensource/
 :feed_title: Tag 'opensource'
+:title: "Tag: opensource"
 -----
 
 <p>10 items are tagged with <em>opensource</em>:</p>

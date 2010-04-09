@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: wedding
-:title: "Tag: wedding"
 :filters_pre: 
 - erb
+:permalink: wedding
 :feed: /tags/wedding/
 :feed_title: Tag 'wedding'
+:title: "Tag: wedding"
 -----
 
 <p>6 items are tagged with <em>wedding</em>:</p>

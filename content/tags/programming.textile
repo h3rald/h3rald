@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: programming
-:title: "Tag: programming"
 :filters_pre: 
 - erb
+:permalink: programming
 :feed: /tags/programming/
 :feed_title: Tag 'programming'
+:title: "Tag: programming"
 -----
 
 <p>13 items are tagged with <em>programming</em>:</p>

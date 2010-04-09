@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: li3
-:title: "Tag: li3"
 :filters_pre: 
 - erb
+:permalink: li3
 :feed: /tags/li3/
 :feed_title: Tag 'li3'
+:title: "Tag: li3"
 -----
 
 <p>2 items are tagged with <em>li3</em>:</p>

@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: databases
-:title: "Tag: databases"
 :filters_pre: 
 - erb
+:permalink: databases
 :feed: /tags/databases/
 :feed_title: Tag 'databases'
+:title: "Tag: databases"
 -----
 
 <p>6 items are tagged with <em>databases</em>:</p>

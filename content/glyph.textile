@@ -62,7 +62,7 @@ Format your documents using Textile or Markdown, and use Glyph Macros to do ever
 
 **Glyph Source:**
 
-<pre><code>
+<% highlight :text do %>
 section[header[Something about Glyph]
 You can use Glyph macros in conjunction
  with _Textile_ or _Markdown_ to
@@ -74,11 +74,11 @@ extremely easy with a 3rd-party
 renderer like =>[http://www.princexml.com|Prince].
   ]   
 ]
-</code></pre>
+<% end %>
 
 **HTML Output:**
 
-<pre><code>
+<% highlight :html do %>
 <div class="section">
   <h2 id="h_1">Something about Glyph</h2>
   <p>You can use Glyph macros in conjunction with 
@@ -92,7 +92,7 @@ renderer like =>[http://www.princexml.com|Prince].
       like <a href="http://www.princexml.com">Prince</a>.</p>
   </div>
 </div>
-</code></pre>
+<% end %>
 
 <%= render 'project_updates', :tag => 'glyph' %>
 

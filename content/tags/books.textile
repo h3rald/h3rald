@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: books
-:title: "Tag: books"
 :filters_pre: 
 - erb
+:permalink: books
 :feed: /tags/books/
 :feed_title: Tag 'books'
+:title: "Tag: books"
 -----
 
 <p>10 items are tagged with <em>books</em>:</p>

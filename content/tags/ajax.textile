@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: ajax
-:title: "Tag: ajax"
 :filters_pre: 
 - erb
+:permalink: ajax
 :feed: /tags/ajax/
 :feed_title: Tag 'ajax'
+:title: "Tag: ajax"
 -----
 
 <p>3 items are tagged with <em>ajax</em>:</p>

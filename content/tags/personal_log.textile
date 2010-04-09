@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: personal_log
-:title: "Tag: personal_log"
 :filters_pre: 
 - erb
+:permalink: personal_log
 :feed: /tags/personal_log/
 :feed_title: Tag 'personal_log'
+:title: "Tag: personal_log"
 -----
 
 <p>6 items are tagged with <em>personal_log</em>:</p>

@@ -60,19 +60,19 @@ renderer like =>[http://www.princexml.com|Prince].
 Which translates to:
 
 <% highlight :html do %>
-&lt;div class="section"&gt;
-  &lt;h2 id="h_1"&gt;Something about Glyph&lt;/h2&gt;
-  &lt;p&gt;You can use Glyph macros in conjunction with 
-     &lt;em&gt;Textile&lt;/em&gt; or &lt;em&gt;Markdown&lt;/em&gt; to
-     produce HTML files effortlessly.&lt;/p&gt;
-  &lt;div class="section"&gt;
-   &lt;h3 id="pdf"&gt;What about PDFs?&lt;/h3&gt;
-   &lt;p&gt;Once you have a single, well-formatted HTML 
+<div class="section">
+  <h2 id="h_1">Something about Glyph</h2>
+  <p>You can use Glyph macros in conjunction with 
+     <em>Textile</em> or <em>Markdown</em> to
+     produce HTML files effortlessly.</p>
+  <div class="section">
+   <h3 id="pdf">What about PDFs?</h3>
+   <p>Once you have a single, well-formatted HTML 
       file, converting it to PDF is
       extremely easy with a 3rd-party renderer 
-      like &lt;a href="http://www.princexml.com"&gt;Prince&lt;/a&gt;.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      like <a href="http://www.princexml.com">Prince</a>.</p>
+  </div>
+</div>
 <% end %>
 
 Glyph macros can be used to:

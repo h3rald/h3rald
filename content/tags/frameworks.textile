@@ -1,14 +1,14 @@
 ----- 
 :type: page
-:permalink: frameworks
-:title: "Tag: frameworks"
 :filters_pre: 
 - erb
+:permalink: frameworks
 :feed: /tags/frameworks/
 :feed_title: Tag 'frameworks'
+:title: "Tag: frameworks"
 -----
 
-<p>6 items are tagged with <em>frameworks</em>:</p>
+<p>7 items are tagged with <em>frameworks</em>:</p>
 <ul>
 	<% articles_tagged_with('frameworks').each do |a| %>
 		<%= render 'dated_article', :article => a %>

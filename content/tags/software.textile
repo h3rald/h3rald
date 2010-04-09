@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: software
-:title: "Tag: software"
 :filters_pre: 
 - erb
+:permalink: software
 :feed: /tags/software/
 :feed_title: Tag 'software'
+:title: "Tag: software"
 -----
 
 <p>5 items are tagged with <em>software</em>:</p>

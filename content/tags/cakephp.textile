@@ -1,11 +1,11 @@
 ----- 
 :type: page
-:permalink: cakephp
-:title: "Tag: cakephp"
 :filters_pre: 
 - erb
+:permalink: cakephp
 :feed: /tags/cakephp/
 :feed_title: Tag 'cakephp'
+:title: "Tag: cakephp"
 -----
 
 <p>24 items are tagged with <em>cakephp</em>:</p>
