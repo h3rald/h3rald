@@ -90,7 +90,7 @@ Glyph macros can be used to:
 * Filter input explicitly or implicitly, based on file extensions when including files. 
 * Manage comments and todo items.
 
-An example Glyph project? Sure, Glyph's own guide ("source":http://github.com/h3rald/glyph/tree/master/book/ -- "PDF output":http://github.com/h3rald/glyph/tree/master/book/output/pdf/). 
+An example Glyph project? Sure, Glyph's own guide ("source":http://github.com/h3rald/glyph/tree/master/book/ -- "PDF output":http://github.com/h3rald/glyph/raw/master/book/output/pdf/glyph.pdf). 
 
 h3. Technical Details
 
