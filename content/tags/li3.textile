@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: li3
-:title: "Tag: li3"
 :filters_pre: 
 - erb
+:title: "Tag: li3"
 :feed: /tags/li3/
 :feed_title: Tag 'li3'
 -----

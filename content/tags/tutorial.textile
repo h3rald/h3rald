@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: tutorial
-:title: "Tag: tutorial"
 :filters_pre: 
 - erb
+:title: "Tag: tutorial"
 :feed: /tags/tutorial/
 :feed_title: Tag 'tutorial'
 -----

@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: opensource
-:title: "Tag: opensource"
 :filters_pre: 
 - erb
+:title: "Tag: opensource"
 :feed: /tags/opensource/
 :feed_title: Tag 'opensource'
 -----

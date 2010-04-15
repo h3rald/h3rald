@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: ie
-:title: "Tag: ie"
 :filters_pre: 
 - erb
+:title: "Tag: ie"
 :feed: /tags/ie/
 :feed_title: Tag 'ie'
 -----

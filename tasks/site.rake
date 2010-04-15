@@ -31,8 +31,6 @@ namespace :site do
 		site = Nanoc3::Site.new('.')
 		site.load_data
 		dir = Pathname(Dir.pwd)/'content/tags'
-		dir.rmtree if dir.exist?
-		dir.mkpath
 		tags = {}
 		# Collect tag and page data
 		site.items.each do |p|
@@ -47,9 +45,20 @@ namespace :site do
 		end
 		# Write pages
 		tags.each_pair do |k, v|
-			write_tag_page dir, k, v
-			write_tag_feed_page dir, k, 'RSS'
-			write_tag_feed_page dir, k, 'Atom'
+			unless (dir/"#{k}.textile").exist? && (dir/"#{k}-rss.xml").exist? && (dir/"#{k}-atom.xml").exist? then
+				puts "Creating tag pages for '#{k}'"
+				write_tag_page dir, k, v 
+				write_tag_feed_page dir, k, 'RSS' 
+				write_tag_feed_page dir, k, 'Atom' 
+			end
+		end
+		# Remove unused tags
+		dir.children.each do |c|
+			t = c.basename.to_s.gsub /(-(rss|atom))?\..+$/, ''
+			unless tags[t] then
+				puts "Deleting unused tag page '#{c.basename}'"
+				c.delete 
+			end
 		end
 	end
 

@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: personal
-:title: "Tag: personal"
 :filters_pre: 
 - erb
+:title: "Tag: personal"
 :feed: /tags/personal/
 :feed_title: Tag 'personal'
 -----

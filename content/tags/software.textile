@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: software
-:title: "Tag: software"
 :filters_pre: 
 - erb
+:title: "Tag: software"
 :feed: /tags/software/
 :feed_title: Tag 'software'
 -----

@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: databases
-:title: "Tag: databases"
 :filters_pre: 
 - erb
+:title: "Tag: databases"
 :feed: /tags/databases/
 :feed_title: Tag 'databases'
 -----

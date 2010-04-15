@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: vim
-:title: "Tag: vim"
 :filters_pre: 
 - erb
+:title: "Tag: vim"
 :feed: /tags/vim/
 :feed_title: Tag 'vim'
 -----

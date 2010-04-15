@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: browsers
-:title: "Tag: browsers"
 :filters_pre: 
 - erb
+:title: "Tag: browsers"
 :feed: /tags/browsers/
 :feed_title: Tag 'browsers'
 -----

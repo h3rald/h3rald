@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: travelling
-:title: "Tag: travelling"
 :filters_pre: 
 - erb
+:title: "Tag: travelling"
 :feed: /tags/travelling/
 :feed_title: Tag 'travelling'
 -----

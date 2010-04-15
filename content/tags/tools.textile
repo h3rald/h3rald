@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: tools
-:title: "Tag: tools"
 :filters_pre: 
 - erb
+:title: "Tag: tools"
 :feed: /tags/tools/
 :feed_title: Tag 'tools'
 -----

@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: php
-:title: "Tag: php"
 :filters_pre: 
 - erb
+:title: "Tag: php"
 :feed: /tags/php/
 :feed_title: Tag 'php'
 -----

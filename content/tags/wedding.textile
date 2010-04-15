@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: wedding
-:title: "Tag: wedding"
 :filters_pre: 
 - erb
+:title: "Tag: wedding"
 :feed: /tags/wedding/
 :feed_title: Tag 'wedding'
 -----

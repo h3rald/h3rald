@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: website
-:title: "Tag: website"
 :filters_pre: 
 - erb
+:title: "Tag: website"
 :feed: /tags/website/
 :feed_title: Tag 'website'
 -----

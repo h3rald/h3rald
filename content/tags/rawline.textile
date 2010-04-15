@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: rawline
-:title: "Tag: rawline"
 :filters_pre: 
 - erb
+:title: "Tag: rawline"
 :feed: /tags/rawline/
 :feed_title: Tag 'rawline'
 -----

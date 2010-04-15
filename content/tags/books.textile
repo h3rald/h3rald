@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: books
-:title: "Tag: books"
 :filters_pre: 
 - erb
+:title: "Tag: books"
 :feed: /tags/books/
 :feed_title: Tag 'books'
 -----

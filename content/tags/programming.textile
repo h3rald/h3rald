@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: programming
-:title: "Tag: programming"
 :filters_pre: 
 - erb
+:title: "Tag: programming"
 :feed: /tags/programming/
 :feed_title: Tag 'programming'
 -----

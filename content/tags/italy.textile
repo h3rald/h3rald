@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: italy
-:title: "Tag: italy"
 :filters_pre: 
 - erb
+:title: "Tag: italy"
 :feed: /tags/italy/
 :feed_title: Tag 'italy'
 -----

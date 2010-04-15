@@ -2,10 +2,28 @@
 data_sources: 
 - items_root: /
   layouts_root: /
-  type: filesystem_combined
+  type: filesystem_unified
+text_extensions: 
+- css
+- erb
+- haml
+- htm
+- html
+- js
+- less
+- markdown
+- md
+- php
+- rb
+- sass
+- txt
+- xml
+- textile
+- bbcode
+- glyph
 output_dir: output
 base_url: "http://www.h3rald.com"
 author_name: "Fabio Cevasco"
 author_email: "h3rald@h3rald.com"
-dev: false
+dev: true
 

@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: review
-:title: "Tag: review"
 :filters_pre: 
 - erb
+:title: "Tag: review"
 :feed: /tags/review/
 :feed_title: Tag 'review'
 -----

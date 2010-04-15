@@ -1,9 +1,9 @@
 ----- 
 :type: page
 :permalink: internet
-:title: "Tag: internet"
 :filters_pre: 
 - erb
+:title: "Tag: internet"
 :feed: /tags/internet/
 :feed_title: Tag 'internet'
 -----
