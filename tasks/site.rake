@@ -16,11 +16,14 @@ namespace :site do
 		(output/'data').mkpath
 	end
 
-	task :update => [:copy_resources] do
+	task :update => [:tags, :archives, :compile] do
+	end
+
+	task :compile do
 		system "nanoc3 co"
 	end
 
-	task :run => [:copy_resources] do
+	task :run do
 		system "nanoc3 aco -s thin"
 	end
 
@@ -144,33 +147,6 @@ h3. Usage
 		file = Pathname.new Dir.pwd/"content/#{meta[:permalink]}.textile"
 		raise "File '#{file}' already exists!" if file.exist?
 		write_item file, meta, contents 
-	end
-
-	task :copy_resources do
-		pwd = Pathname.new Dir.pwd
-		copy_f = lambda do |src|
-			if src.file? then
-				rel_path = src.relative_path_from(pwd/'resources').to_s
-				dst = Pathname.new(pwd/"output/#{rel_path}")
-				if !dst.exist? || dst.exist? && !FileUtils.cmp(dst.to_s, src.to_s) then
-					dst.parent.mkpath
-					FileUtils.cp src.to_s, dst.to_s
-					puts "Copied '#{src}'."
-				end
-			end
-		end
-		file_dirs = [Pathname.new(pwd/'resources/images'), 
-			Pathname.new(pwd/'resources/js'),
-			Pathname.new(pwd/'resources/img'),
-			Pathname.new(pwd/'resources/files'),
-			Pathname.new(pwd/'resources/css')]
-		files = [pwd/'resources/.htaccess', pwd/'resources/robots.txt',  pwd/'resources/favicon.ico']
-		files.each { |f| copy_f.call f }
-		file_dirs.each do |d|
-			d.find do |src|
-				copy_f.call src
-			end
-		end
 	end
 
 end

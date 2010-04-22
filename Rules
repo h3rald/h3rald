@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-compile /archives/ do
+compile /^\/archives\// do
 	rep.filter :erb
 	layout 'default'
 end
 
-compile /\/(home|projects|about)/ do
+compile /^\/(home|projects|about)/ do
 	rep.filter :erb
 	rep.filter :redcloth
 	layout 'default'
@@ -27,23 +27,37 @@ compile 'sitemap' do
 	rep.filter :erb
 end
 
-compile /\/(js\/.+?)/ do
+compile /^\/(js\/.+?)/ do
 	# do nothing
 end
 
-	
 compile '*' do
 	if item[:filters_pre] && !item[:filters_pre].empty? then
 		item[:filters_pre].each do |f|
 			rep.filter f.to_sym
 		end
+		layout 'default'
 	else
-		rep.filter :redcloth
+		unless rep.binary? then
+			case item[:extension]
+			when 'textile' then
+				rep.filter :redcloth
+				layout 'default'
+			when 'md','markdown' then
+				rep.filter :bluecloth
+				layout 'default'
+			when 'bbcode' then
+				rep.filter :bbcode
+				layout 'default'
+			when 'glyph' then
+				rep.filter :glyph
+				layout 'default'
+			end
+		end
 	end
-	layout 'default'
 end
 
-route /\/tags\/.+?-(atom|rss)/ do
+route /^\/tags\/.+?-(atom|rss)/ do
 	item.identifier.gsub(/(.+)-(rss|atom)\/$/, '\1/\2') + '.xml'
 end
 
@@ -51,12 +65,20 @@ route '/(atom|rss)/' do
 	item.identifier.gsub(/\/$/, '') + '.xml'
 end
 
-route 'css/*' do
+route '/css/*' do
 	item.identifier.gsub(/\/$/, '') + '.css'
 end
 
-route 'sitemap' do
+route '/sitemap' do
 	item.identifier.gsub(/\/$/, '') + '.xml'
+end
+
+route "/htaccess" do
+	"/.htaccess"
+end
+
+route /\/(images|img|files|favicon|robots)\// do
+	item.identifier.gsub(/\/$/, '') + ".#{item[:extension]}"
 end
 
 route '/js/*' do

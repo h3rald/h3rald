@@ -1,0 +1,15 @@
+----- 
+:type: article
+:tags: 
+- book
+- review
+:permalink: succeeding-with-agile-review
+:title: "Book Review: Succeeding with Agile"
+:toc: true
+:date: 2010-04-22 14:16:28.099000 +02:00
+-----
+article[
+$:[document.draft|true]
+![*TBD*]
+]
+
