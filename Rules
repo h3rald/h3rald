@@ -12,7 +12,10 @@ compile /^\/(home|projects|about)/ do
 end
 
 compile /(rss|atom)/ do
+	begin
 	rep.filter :erb
+	rescue Exception
+	end
 end
 
 compile '/css/*' do
@@ -24,7 +27,10 @@ compile '/css/*' do
 end
 
 compile 'sitemap' do
+	begin
 	rep.filter :erb
+	rescue Exception
+	end
 end
 
 compile /^\/(js\/.+?)/ do
@@ -50,6 +56,48 @@ compile '*' do
 				rep.filter :bbcode
 				layout 'default'
 			when 'glyph' then
+				# Create the PDF file
+				doc = %{
+document[
+	head[
+		style[default.css]
+		<style>
+			h1 { 
+			font-size: 24px; 
+			font-style:italic;
+			margin: 0.5em auto;
+			padding: 0.5em auto;
+			}
+		</style>
+	]
+	body[
+		titlepage[
+			title[]
+			subtitle[]
+			author[]
+			<span class="pubdate">\\.$[document.date]</span>
+			<div><em>Originally published on =>[http://www.h3rald.com#{item.identifier}|H3RALD.com]</em></div>
+		]
+		textile[
+				#{item.raw_content}
+		]
+	]
+]				}
+				f = Pathname.new "#{Dir.pwd}/output#{item.identifier.gsub(/\/$/, '')}.glyph"
+				f.parent.mkpath
+				# Write the new raw file using Glyph's file_write method
+				file_write f, doc
+				# Now compile the PDF (works if Prince is installed)
+				target = Glyph['document.output']
+				Glyph['document.output'] = 'pdf'
+				Glyph['document.author'] = "Fabio Cevasco"
+				Glyph['document.date'] = item[:date].strftime "%A, %d %B %Y"
+				Glyph['document.title'] = item[:title]
+				Glyph.compile f.to_s, f.to_s.gsub(/\.glyph$/, '.pdf') 
+				f.unlink
+				Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
+				Glyph.reset
+				# Filter text rep
 				rep.filter :glyph
 				layout 'default'
 			end

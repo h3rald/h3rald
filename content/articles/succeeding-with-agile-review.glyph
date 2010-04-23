@@ -5,11 +5,69 @@
 - review
 :permalink: succeeding-with-agile-review
 :title: "Book Review: Succeeding with Agile"
+:summary: ""
 :toc: true
+:pdf: true
 :date: 2010-04-22 14:16:28.099000 +02:00
 -----
-article[
-$:[document.draft|true]
-![*TBD*]
-]
+&:[book|_Succeeding with Agile_]
+&:[author|Mike Cohn]
+&:[url|![URL to the book's web site]...]
+&:[links|![Links to agile resources]...]
+&:[l_book|=>[&[url]|&[book]]]
+&:[S|_Scrum_]
+&:[ag|_agile_]
+%:[=pt|
+	n, title, contents = @params
+	interpret %{section[header[Part #{n}: #{title}]
+		#{contents}
+	]}
+=]
+--[-----------------------------------]
+
+bq. "This is not a book for those who are completely new to Scrum or agile. There are other books, classes, and even websites for that. If you are completely new to Scrum, start with one of those." 
+
+p(((((. -- &[author], &[book]
+
+Great. That's just great. Good job I started with the _Introduction_ first, otherwise the first chapters of this book would have been way too overwhelming!
+
+&[l_book] is a book that _doesn't_ teach you about &[S] or &[ag] methodologies, it won't give you a definition of ScrumMaster, sprint, or backlog... instead, it takes all that for granted and teaches how to pragmatically adopt -- or better, ADAPT(Awareness, Desire, Ability, Promotion, Transfer) to -- &[S], in the context of yourself, your team, and even your entire organization.
+
+bq. "\[...\] this book draws on my experience with &[S] over the past 15 years, but especialle the last 4. For the last 4 years, every evening after I spent the day with one of my clients, I would go back to my hotel room and make notes about problems they were facng, the question they asked, and the advice I gave."
+
+Indeed, this book is a gold mine of information, anecdotes, tips and tricks about everything you could possibly want to know about making Scrum work, at any level. If you have some knowledge about &[ag] development you definitely have some questions: _will it work?_ ... _is it really more productive?_ ... _how can I make my boss understant this?_ Well, I'm not exaggerating when I say that this book has all the answers you need. Most definitely it also answer questions you didn't think of (yet).
+
+If you don't know what all this is about, then you'd better do your homework first:
+&[links]
+
+section[header[Contents]
+
+The book is organized into five parts of different length, ranging from 20 to over 100 pages. If you read the book from the start till the very end, you'll notice that the start of each part is like a new milestone in Scrum adoption: first the author makes sure that _you_ are prepared (Part 1), then move on to deal with individuals and initial resistance (Part 2), then teams (Part 3) and finally the whole organization (Part 4), until you can finally see the fruits of you labor (PArt 5).
+
+In a way, you may well want to carry this book in your briefcase every day you go to work, and read it bit by bit, as you make progress in your quest for Scrum adoption. 
+
+	pt[I|Getting Started|
+...
+	]	 --[End of part I]
+
+	pt[II|Individuals|
+
+	] --[End of part II]
+
+	pt[III|Teams|
+
+	] --[End of part III]
+
+	pt[IV|The Organization|
+
+	] --[End of part IV]
+
+	pt[V|Next Steps|
+
+	] --[End of part V]
+] --[End of Contents section]
+
+
+
+
 

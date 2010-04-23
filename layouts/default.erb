@@ -79,6 +79,9 @@ filter: erb
 					<% if @item[:feed] then %>
 						<span><a href="<%= @item[:feed_url] || @item[:feed]+"rss/" %>" type="application/rss+xml" rel="alternate"><img src="/images/theme/feed.png" alt="#"/>RSS Feed</a></span>
 					<% end %>
+					<% if @item[:feed] then %>
+						<span><a href="<%= @item.identifier.chop %>.pdf" ><img src="/images/theme/pdf.png" alt="#"/>PDF</a></span>
+					<% end %>
 					<span><a href="http://github.com/h3rald/h3rald/raw/master/<%= @item[:file].path %>?iframe" class="fancybox"><img src="/images/theme/source.png" alt="#"/>View Source</a></span>
 				</div>
 

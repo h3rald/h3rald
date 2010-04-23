@@ -5,7 +5,13 @@ class GlyphFilter < Nanoc3::Filter
 	identifier :glyph
 
 	def run(content, args)
-		Glyph.filter content
+		doc = %{
+		textile[
+				section[
+					#{content}
+				]
+		]}
+		Glyph.filter doc
 	end
 
 end
