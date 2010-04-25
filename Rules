@@ -12,10 +12,7 @@ compile /^\/(home|projects|about)/ do
 end
 
 compile /(rss|atom)/ do
-	begin
 	rep.filter :erb
-	rescue Exception
-	end
 end
 
 compile '/css/*' do
@@ -26,11 +23,8 @@ compile '/css/*' do
   }
 end
 
-compile 'sitemap' do
-	begin
+compile "sitemap" do
 	rep.filter :erb
-	rescue Exception
-	end
 end
 
 compile /^\/(js\/.+?)/ do
