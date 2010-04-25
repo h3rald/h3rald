@@ -61,22 +61,29 @@ compile '*' do
 document[
 	head[
 		style[default.css]
+		style[css3.css]
 		<style>
 			h1 { 
 			font-size: 24px; 
-			font-style:italic;
 			margin: 0.5em auto;
 			padding: 0.5em auto;
+			}
+			.contents {
+				text-align:justify;
+				margin-bottom: 2em;
+				padding-bottom: 2em;
+				border-bottom: 1px solid #000;
 			}
 		</style>
 	]
 	body[
 		titlepage[
+			=>[http://www.h3rald.com/archives/|img[$[site.root]/images/theme/h3rald.svg|25%|25%]]
 			title[]
-			subtitle[]
 			author[]
 			<span class="pubdate">\\.$[document.date]</span>
 			<div><em>Originally published on =>[http://www.h3rald.com#{item.identifier}|H3RALD.com]</em></div>
+			toc[]
 		]
 		textile[
 				#{item.raw_content}
@@ -90,16 +97,22 @@ document[
 				# Now compile the PDF (works if Prince is installed)
 				target = Glyph['document.output']
 				Glyph['document.output'] = 'pdf'
-				Glyph['document.author'] = "Fabio Cevasco"
+				Glyph['site.root'] = ".."
 				Glyph['document.date'] = item[:date].strftime "%A, %d %B %Y"
 				Glyph['document.title'] = item[:title]
+				Glyph['document.subtitle'] = ""
 				Glyph.compile f.to_s, f.to_s.gsub(/\.glyph$/, '.pdf') 
-				f.unlink
-				Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
-				Glyph.reset
+				begin
+					f.unlink
+					Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
+				rescue
+				end
+				# Re-apply overrides
+				require 'lib/glyph-data'
 				# Filter text rep
 				rep.filter :glyph
 				layout 'default'
+				Glyph.reset
 			end
 		end
 	end

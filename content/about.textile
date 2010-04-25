@@ -16,19 +16,21 @@ h3. Requirements
 
 The following ruby libraries (gems) have been used to create this web site:
 
-* *"nanoc3":http://rubyforge.org/projects/nanoc/*, to generate the entire web site
-* *"extlib":http://rubyforge.org/projects/extlib/*, in some custom Rake tasks
-* *"bb-ruby":http://rubyforge.org/projects/bb-ruby/*, for the BBCode filter
-* *"builder":http://rubyforge.org/projects/builder/*, to create RSS and ATOM feeds
-* *"haml":http://rubyforge.org/projects/haml/*, for the SASS filter
+* *"nanoc":http://rubygems.org/gems/nanoc*, to generate the entire web site
+* *"extlib":http://rubygems.org/gems/extlib*, in some custom Rake tasks
+* *"bb-ruby":http://rubygems.org/gems/bb-ruby*, for the BBCode filter
+* *"builder":http://rubygems.org/gems/builder/*, to create RSS and ATOM feeds
+* *"haml":http://rubygems.org/gems/haml/*, for the SASS filter
+* *"glyph":http://rubygems.org/gems/glyph*, for the Glyph filter
 
 Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://www.typosphere.org:
-* *"mysql":http://rubyforge.org/projects/mysql/*, to connect to the MySQL database used by Typo
-* *"sequel":http://rubyforge.org/projects/sequel/*, to retrieve data from the Typo database
+* *"mysql":http://rubyforge.org/projects/mysql/*
+* *"sequel":http://rubyforge.org/projects/sequel/*
 
 Besides Ruby-related dependencies, the following was also necessary:
 
-* *"pygments":http://pygments.org/*, a Python library for code highlighting
+* *"pygments":http://pygments.org/*, a Python library for code highlighting.
+* *"prince":http://www.princexml.com*, a program to generate PDF files from HTML.
 * A cron job to fetch backtype comments, delicious bookmarks, tweets, and github commits in JSON format and save them to the @/output/data@ folder.
 
 h3. Licensing
