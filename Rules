@@ -55,7 +55,7 @@ compile '*' do
 document[
 	head[
 		style[default.css]
-		style[css3.css]
+		style[pagination.css]
 		<style>
 			h1 { 
 			font-size: 24px; 
@@ -95,7 +95,7 @@ document[
 				Glyph['document.date'] = item[:date].strftime "%A, %d %B %Y"
 				Glyph['document.title'] = item[:title]
 				Glyph['document.subtitle'] = ""
-				Glyph.compile f.to_s, f.to_s.gsub(/\.glyph$/, '.pdf') 
+				Glyph.compile f.to_s
 				begin
 					f.unlink
 					Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink

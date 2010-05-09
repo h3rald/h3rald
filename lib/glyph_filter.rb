@@ -6,10 +6,8 @@ class GlyphFilter < Nanoc3::Filter
 
 	def run(content, args)
 		doc = %{
-		textile[
-				section[
-					#{content}
-				]
+		section[
+#{content}
 		]}
 		Glyph.filter doc
 	end
