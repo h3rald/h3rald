@@ -13,7 +13,7 @@ links:
 - "Reference Documentation": http://yardoc.org/docs/h3rald-glyph/
 - "User Group": http://groups.google.com/group/glyph-framework
 status: Active
-version: 0.1.0
+version: 0.2.0
 -----
 
 <%= render 'project_data', :tag => 'glyph' %>
@@ -37,6 +37,9 @@ Glyph uses a simple macro system to perform a wide variety of advanced tasks:
 * Store common snippets of text in a single YAML file and use them anywhere in your document, as many times as you need.
 * Store configuration settings in a YAML file and use them anywhere in your document, as many times as you need.
 * Evaluate Ruby code within your document.
+* Include content only if certain conditions are satisfied.
+* Define macros, snippets and configuration settings directly within your document.
+* Highlight source code.
 * Call macros from other macros (including snippets), carefully avoiding mutual calls.
 * Include text files in other text files.
 * Include the contents of configuration settings (author, title) in the document.
@@ -54,7 +57,9 @@ Glyph is 100% command line. Its interface "Git's":http://git-scm.com/ for its si
 * @glyph init@ -- to initialize a new Glyph project in the current (empty) directory.
 * @glyph add introduction.textile@ -- to create a new file called _introduction.textile_.
 * @glyph compile@ -- to compile the current document into a single HTML file.
+* @glyph compile --auto@ — to keep recompiling the current document every time a file is changed.
 * @glyph compile -f pdf@ -- to compile the current document into HTML and then transform it into PDF using "Prince":http://www.princexml.com.
+* @glyph compile readme.glyph@ — to compile _readme.glyph_ located in the current directory into a single HTML file
 
 h3. Glyph macros in a nutshell
 
