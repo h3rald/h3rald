@@ -8,20 +8,17 @@
   li, dd
     margin-left: 30px
     line-height: 1.5em
-
   dt
     margin-top: 1em
     font-weight: bold
-
   dd
     font-style: italic
-
   p
     line-height: 1.5em
     margin: 1em 0
-    
+
 blockquote, .note
-  color = !gray
+  color: $gray
   font-style: italic
   padding: 0 0 0 33px
   margin: 0
@@ -39,47 +36,42 @@ blockquote, .note
 #nav-about
   width: 115px
   height: 52px
-  +button_img("about")
-
+  +button_img(about)
   &:hover
-    +button_img("about_h")
+    +button_img(about_h)
 
-.nav-about 
-  +button_img("about_h")
+.nav-about
+  +button_img(about_h)
 
 #nav-other
   width: 130px
   height: 52px
-  +button_img("other")
-
+  +button_img(other)
   &:hover
-    +button_img("other_h")
+    +button_img(other_h)
 
 .nav-other
-  +button_img("other_h")
+  +button_img(other_h)
 
 #nav-projects
   width: 127px
   height: 52px
-  +button_img("projects")
-
+  +button_img(projects)
   &:hover
-    +button_img("projects_h")
+    +button_img(projects_h)
 
 .nav-projects
-  +button_img("projects_h")
-
+  +button_img(projects_h)
 
 #nav-archives
   width: 155px
   height: 52px
-  +button_img("archives")
-
+  +button_img(archives)
   &:hover
-    +button_img("archives_h")
+    +button_img(archives_h)
 
 .nav-archives
-  +button_img("archives_h")
+  +button_img(archives_h)
 
 #services li
   margin-left: 0
@@ -94,35 +86,32 @@ blockquote, .note
 #s-opinions
   width: 192px
   height: 52px
-  +button_img("opinions")
-
+  +button_img(opinions)
   &:hover
-    +button_img("opinions_h")
+    +button_img(opinions_h)
 
 .s-opinions
-  +button_img("opinions_h")
+  +button_img(opinions_h)
 
 #s-tweets
   width: 183px
   height: 52px
-  +button_img("tweets")
-
+  +button_img(tweets)
   &:hover
-    +button_img("tweets_h")
+    +button_img(tweets_h)
 
 .s-tweets
-  +button_img("tweets_h")
+  +button_img(tweets_h)
 
 #s-bookmarks
   width: 197px
   height: 52px
-  +button_img("bookmarks")
-
+  +button_img(bookmarks)
   &:hover
-    +button_img("bookmarks_h")
+    +button_img(bookmarks_h)
 
 .s-bookmarks
-  +button_img("bookmarks_h")
+  +button_img(bookmarks_h)
 
 .spacer-20
   display: block
@@ -174,24 +163,22 @@ blockquote, .note
   font-weight: bold
 
 .project-data
-  border-left = 1px "dashed" !gray
+  border-left: 1px dashed $gray
   padding: 0 1em 1em 1.5em
   margin: 0 0 0 1.5em
   height: 300px
 
 ul
   overflow: hidden
-
   &.article-meta
     list-style-type: none
-
   &.article-buttons
     text-align: center
     list-style-type: none
     display: block
     margin: auto
-    border = 1px "solid" !gray
-    background: #fff
+    border: 1px solid $gray
+    background: white
     padding: 5px 0
 
 #toc
@@ -200,24 +187,17 @@ ul
   padding: 10px
   margin: 0 0 10px 15px
   +default_border
-
   ol
-
     li
       margin-left: 1.5em
-
       li
         margin-left: 1.5em
-        
         li
           margin-left: 1.5em
-          
           li
             margin-left: 1.5em
-
             li
               margin-left: 1.5em
-
   li
     line-height: 1.2em
 
@@ -268,8 +248,8 @@ tr, td, th
   padding: 5px
 
 td
-  border-left = 1px "dashed" !gray
-  border-right = 1px "dashed" !gray
+  border-left: 1px dashed $gray
+  border-right: 1px dashed $gray
 
 th
   +default_border
@@ -290,37 +270,32 @@ th
 
 #content input
   &[type=submit]
-    color: #333
-    border = 2px "solid" !gray
-    background: #ccc
+    color: #333333
+    border: 2px solid $gray
+    background: #cccccc
     outline: none
     padding: 0.1em 0.3em
     vertical-align: middle
-
     &:hover
-      border: 2px solid #CF282D
-      background: #eee
+      border: 2px solid #cf282d
+      background: #eeeeee
       color: #121212
-
     &:active
-      background: #aaa
+      background: #aaaaaa
       outline: none
-
   &[type=text]
-    color: #333
-    border: 2px solid #333
-    background: #fff
+    color: #333333
+    border: 2px solid #333333
+    background: white
     outline: none
     text-align: left
     height: 21px
     vertical-align: middle
-
     &:hover, &:focus, &:active
-      border: 2px solid #CF282D
+      border: 2px solid #cf282d
 
 #search_form
   clear: both
-
 
 .gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark
   display: none
@@ -338,7 +313,6 @@ table.gsc-search-box
 
 .gsc-search-box
   border: none
-
   td
     border: none
 
@@ -346,7 +320,7 @@ table.gsc-search-box
   width: 400px
 
 .gsc-branding
-  color: #000
+  color: black
   font-style: italic
   font-size: 80%
   border: none
@@ -357,17 +331,15 @@ td.gsc-branding-img
   text-align: left
 
 div.gsc-clear-button
-  background: transparent url('../images/theme/icons/close.png') no-repeat center 50%
+  background: transparent url("../images/theme/icons/close.png") no-repeat center 50%
   width: 10px
   height: 10px
-
   &:hover
     cursor: pointer
 
 .gsc-cursor-page
   display: inline
   padding-right: 7px
-
   &:hover
     cursor: pointer
 

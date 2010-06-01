@@ -1,9 +1,9 @@
 @import definitions
 
-/* TEXT */
+/* TEXT
 
 body
-  color: #000
+  color: black
   +body_font
   font-size: 0.9em
 
@@ -20,7 +20,7 @@ h4
   font-size: 1.3em
   +title
 
-.dropcap 
+.dropcap
   +title_font
   float: left
   font-size: 4.2em
@@ -29,16 +29,16 @@ h4
   padding-right: 0.25em
   text-transform: uppercase
 
-p.first-p:first-line 
+p.first-p:first-line
   font-variant: small-caps
 
 #services h3
   text-align: center
 
-em 
+em
   font-style: italic
 
-/**** Article Lists ****/
+/**** Article Lists ***
 
 .article-list h3, .left-column h3, .right-column h3
   text-align: center
@@ -55,7 +55,7 @@ em
   padding-left: 1em
   font-style: italic
 
-/******* LINKS *******/
+/******* LINKS ******
 
 a, a.gs-title
   text-decoration: none
@@ -65,7 +65,7 @@ h4 a
   text-decoration: none
 
 a, a.gs-title, .gsc-cursor-page
-  color = !red
+  color: $red
 
 a:hover, a.gs-title:hover, .gsc-cursor-page:hover
-  color: #CF282D
+  color: #cf282d

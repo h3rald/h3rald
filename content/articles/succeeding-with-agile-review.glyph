@@ -25,9 +25,8 @@
 ]
 &:[l_book|=>[&[url]|&[book]]]
 %:[=pt|
-	n, title, contents = @params
-	interpret %{section[header[Part #{n}: #{title}]
-		#{contents}
+	interpret %{section[@title[Part #{param(0)}: #{param(1)}]
+		txt[#{param(2)}]
 	]}
 =]
 --[-----------------------------------]
@@ -46,14 +45,17 @@ Indeed, this book is a gold mine of information, anecdotes, tips and tricks abou
 
 If you don't know what all this is about, then you'd better do your homework first:
 &[links]
+]
 
-section[header[Overview]
+section[@title[Overview]
 
-!>\.$[site.root]/img/pictures/succeeding-with-agile.jpg!
+image[@style[float:left;]$[site.root]/img/pictures/succeeding-with-agile.jpg]
+txt[
 
 The book is organized into five parts of different length, ranging from 20 to over 100 pages. If you read the book from the start till the very end, you'll notice that the start of each part is like a new milestone in &[S] adoption: first the author makes sure that _you_ are prepared (Part 1), then moves on to deal with individuals and initial resistance (Part 2), then teams (Part 3) and finally the whole organization (Part 4), until you can finally taste the fruits of you labor (Part 5).
 
 In a way, you may well want to carry this book in your briefcase every day you go to work, and read it bit by bit, as you make progress in your quest for &[S] adoption. 
+]
 
 	pt[I|Getting Started|
 Part I is about making sure you know _why_ becoming gile is important and beneficial to you and your work environment. It will teach you how to promote &[S], its advantages and challenges, and the different ways to go about it: Start Small or Go All In? Stealth or Public Display? Things like that. Pointless theory? Not really: everything is well documented, with success stories to support one way or the other. 
@@ -79,29 +81,34 @@ Only two chapters in this part of the book, which mainly deals with (self) asses
 	] --[End of part V]
 ] --[End of Contents section]
 
-section[header[Technical Analysis]
+section[@title[Technical Analysis]
+txt[
 I'm not exaggerating when I say that this is _by far_ the best book I've read in the past few years when it comes to the way it is organized. Start by reading the =>[http://my.safaribooksonline.com/9780321660534?portal=informit|table of contents]: if you take each chapter out and make a bulletted list of each section you'll end up with a handy (and free!) cheat sheet on how to promote and adopt Agile methodologies.
 
 This doesn't mean the book isn't a worthwhile read, but rather that it can also be used as a reference when needed.
+]
 
-section[header[Formatting and Readability]
+section[@title[Formatting and Readability]
+txt[
 From a technical writing point of view, this book is spotless. I should keep it on my desk to remind me how technical documentation should be written, except that... it's not a technical manual of course. But the formatting and the way content is laid out can make the most skilled technical writer very jealous: there's never a huge blob of boring text, never a series of pointless pictures: Mike Cohn (or his editors) did a terrific job composing this book. 
 
 You can start reading it from any point and it still makes sense, diagrams are simple and clear, and yet extremely useful, and so are the reference tables and spreadsheets. They never hurt, they are always in the right place, at the right time. And bold text is aptly used at the start of list items, so that even if you skim through the key concepts will still make it to your brain. Excellent.
 ]
+]
 
-section[header[Style and Contents]
+section[@title[Style and Contents]
+txt[
 Reading this book is like listening to a seminar hold by some charismatic icon like =>[http://en.wikipedia.org/wiki/David_Allen_(author)|David Allen] or =>[http://en.wikipedia.org/wiki/JoAnn_Hackos|JoAnn Hackos]: you never get bored, and you constantly learn something. Mike's informal and conversational style is one of the main reasons why you should read this book instead of others on the subject: he is a great communicator, and he knows how to make his point across. 
 
 As an added value, Mike also uses two types of _boxes_ throughout the book:
 * *Things to try now* -- Whenever a new strategy or practice is introduced, you'll find one of these boxes containing a bulleted list. _"Commit to running the next two or three sprints without any overtime"_, "Do you understand what motivates every other person on your team? If not, find out. How? Ask them.", ... these are just examples of some of the author's reccommendations to put you in the right track.
 * *Objection* -- Either actual quotes from customers and employees, or possible statements which may come out throughout the process of adopting &[S]. Things like _"If the product includes less than what we've planned, no one will buy it"_, or _"My team won't self organize; team members are too passive and look to me to lead"_, ... of course, what makes these objection boxes valuable is not the statement themselves, but the tips on how what to do about them. There's not a single one left unanswered: you really feel you're covered in any situation.
-]
+]]
 
 ]
 
-section[header[Final Thoughts]
-
+section[@title[Final Thoughts]
+txt[
 I really enjoyed this book. It took me ages to read it, not only because it's quite long (450 pages), but also because it's very dense of information. Another author could have made it three times longer, but I was glad Mike didn't. I'm pretty certain I'll keep it near me and read bits from it when I need to: it's pretty much the Bible of &[S] adoption. 
 
 What's wrong with it then? Not much. Perhaps the only thing I really missed was an introductory 50-page-chapter on &[S] and &[ag]. I know this is not meant to be a book for beginners, but some basic glossary or &[S] cheat sheet would have made it accessible to an even wider audience, at virtually no cost for the author or the readers, who could have just skipped that part. 

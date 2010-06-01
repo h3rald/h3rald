@@ -24,20 +24,19 @@ body
   margin: 0
   padding: 0
 
-=button_img(!img)
-  background: url(../images/theme/#{!img}.png)
+=button_img($img)
+  background: url(../images/theme/#{$img}.png)
 
 #logo
   display: block
   width: 313px
   height: 75px
-  +button_img("logo")
-
+  +button_img(logo)
   &:hover
-    +button_img("logo_h")
+    +button_img(logo_h)
 
-.logo 
-  +button_img("logo_h")
+.logo
+  +button_img(logo_h)
 
 #header
   width: 100%
@@ -63,8 +62,8 @@ body
   padding-left: 10px
 
 #ie-warning
-  border-bottom: 1px solid #F5B800
-  background-color: #FFE38F
+  border-bottom: 1px solid #f5b800
+  background-color: #ffe38f
   padding: 1em
   margin-top: -5px
   margin-bottom: 5px
@@ -81,8 +80,7 @@ body
   background: url(../images/theme/ribbon.png) repeat-x
 
 #main
-  background: #fff url(../images/theme/main.jpg)
-
+  background: white url(../images/theme/main.jpg)
 
 #content
   text-align: justify
@@ -139,20 +137,18 @@ body
 .footer-div
   clear: both
   font-size: 95%
-  color: #CACACA
+  color: #cacaca
 
 .share
   clear: both
   margin: auto
   padding: 5px
   text-align: center
- 
-  table, td, tr  
+  table, td, tr
     border: none
 
 #page-links
   text-align: right
-  
   img
     vertical-align: text-bottom
 

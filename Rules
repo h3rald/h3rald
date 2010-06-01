@@ -52,8 +52,8 @@ compile '*' do
 			when 'glyph' then
 				# Create the PDF file
 				doc = %{
-document[
-	head[
+article[
+	@head[
 		style[default.css]
 		style[pagination.css]
 		<style>
@@ -70,20 +70,16 @@ document[
 			}
 		</style>
 	]
-	body[
-		titlepage[
-			=>[http://www.h3rald.com/archives/|img[$[site.root]/images/theme/h3rald.svg|25%|25%]]
-			title[]
-			author[]
-			<span class="pubdate">\\.$[document.date]</span>
-			<div><em>Originally published on =>[http://www.h3rald.com#{item.identifier}|H3RALD.com]</em></div>
-			toc[]
-		]
-		textile[
-				#{item.raw_content}
-		]
+	@halftitlepage[
+		=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/theme/h3rald.svg]]
+		title[]
+		author[]
+		span[@class[pubdate]$[document.date]]
+		div[em[Originally published on =>[http://www.h3rald.com#{item.identifier}|H3RALD.com]]]
+		toc[]
 	]
-]				}
+#{item.raw_content}
+]}
 				f = Pathname.new "#{Dir.pwd}/output#{item.identifier.gsub(/\/$/, '')}.glyph"
 				f.parent.mkpath
 				# Write the new raw file using Glyph's file_write method
@@ -91,6 +87,7 @@ document[
 				# Now compile the PDF (works if Prince is installed)
 				target = Glyph['document.output']
 				Glyph['document.output'] = 'pdf'
+				Glyph['document.author'] = "Fabio Cevasco"
 				Glyph['site.root'] = ".."
 				Glyph['document.date'] = item[:date].strftime "%A, %d %B %Y"
 				Glyph['document.title'] = item[:title]
@@ -101,8 +98,7 @@ document[
 					Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
 				rescue
 				end
-				# Re-apply overrides
-				require 'lib/glyph-data'
+				Glyph['site.root'] = ""
 				# Filter text rep
 				rep.filter :glyph
 				layout 'default'

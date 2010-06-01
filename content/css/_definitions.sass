@@ -1,13 +1,13 @@
 // Variables
-!red = #A4282D 
-!gray = #555
+$red: #a4282d
+$gray: #555555
 
 // Mixins
 =default_border
-  border = 1px "dashed" !gray 
+  border: 1px dashed $gray
 
-=button_img(!img)
-  background: url(../images/theme/buttons/#{!img}.png)
+=button_img($img)
+  background: url(../images/theme/buttons/#{$img}.png)
 
 =title_font
   font-family: "Palatino Linotype", "Palatino", "Book Antiqua", "Serif"
@@ -24,4 +24,4 @@
   font-family: "Consolas", "Monaco", "Monospace"
 
 =darkbg_font
-  color: #CACACA
+  color: #cacaca

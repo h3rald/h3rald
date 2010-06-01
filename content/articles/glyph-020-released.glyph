@@ -17,23 +17,23 @@ I am very pleased to announce the second release of the =>[$[site.root]/glyph/|&
 
 Since the =>[$[site.root]/articles/introducing-glyph/|first release], came out, last month, a lot happened. Plenty of bugs were fixed and new features implemented, as shown by the =>[http://github.com/h3rald/glyph/blob/master/CHANGELOG.textile|changelog]. Here's a brief rundown of the most notable changes. 
 
-	section[header[What &[G] code looks like]
+	section[@title[What &[G] code looks like]
 Earlier this week I =>[http://blog.h3rald.com/making-a-custom-vim-syntax-file|blogged] about my new =>[http://github.com/h3rald/stash/blob/master/.vim/syntax/glyph.vim|&[G] vim syntax file]. I've been using it for a while, and all I can say is that it really helps! Here's what it looks like:
 
-!\.$[site.root]/img/pictures/glyph_syntax.png!
+image[\.$[site.root]/img/pictures/glyph_syntax.png]
 
 I'm sorry for the Emacs and TextMate folks, but I only use Vim, so I only made a Vim syntax file. Anyhow, &[G] grammar is very simple, so rolling out your own syntax file for your favorite editor shouldn't be too hard.
 	]
 
-	section[header[Notable features]
+	section[@title[Notable features]
 
-		section[header[Single-file compilation]
+		section[@title[Single-file compilation]
 Perhaps the most life-changing feature in this release is the possibility of compiling a single &[G] source file into an HTML or PDF file. This means you no longer need to create a full-blown project for writing a short article: just create a file anywhere and run @glyph compile filename.glyph@on it!
 
 The good thing is that with this new release you can also define snippets, configuration settings, and even macros right into your &[G] files, so you can do almost anything without having to create a project or fiddle with YAML files.
 		]
 
-		section[header[Programmatic usage]
+		section[@title[Programmatic usage]
 The second most notable feature is the possibility to use &[G] as a Ruby library, i.e. as you'd use a filter like RedCloth or MarkDown. Additionally, it is also possible to compile single files programmatically, so you can, for example, create PDF files for your articles from the same source file. Don't believe me? Feel free to click the _Download PDF_ and _View Source_ links on this very page to see for yourself...
 
 For those of you using the awesome =>[http://nanoc.stoneship.org|nanoc] static site generator, here's a few source files you may want to take a look at:
@@ -42,11 +42,11 @@ For those of you using the awesome =>[http://nanoc.stoneship.org|nanoc] static s
 * =>[http://github.com/h3rald/h3rald/blob/master/Rules|Rules] -- a rule using the @\.&[G]#compile@ method to generate PDF files. 
 		]
 
-		section[header[Auto-regeneration]
+		section[@title[Auto-regeneration]
 Another very interesting feature is the possibility to auto-regenerate your output files automatically whenever a source file is changed. Just run @glyph compile --auto@ and you're away. I'd like to thank =>[http://koraktor.github.com|Sebastian Staudt] for proposing, implementing, and testing this feature.
 		]
 
-		section[header[Conditional macros]
+		section[@title[Conditional macros]
 Finally, although it may worry some, I added the possibility to evaluate conditional expressions directly in Glyph. The syntax is a bit verbose due to the extreme simplicity of &[G] parser, but it does the job:
 
 code[=
@@ -61,7 +61,7 @@ The snippet above can be used to include the @pagination.css@ stylesheet only wh
 		]
 	]
 
-	section[header[What's next?]
+	section[@title[What's next?]
 Release 0.3.0 is currently being planned, and so are its =>[http://github.com/h3rald/glyph/issues|features]. For now, I'd like to thank the following individuals for contributing to Glyph:
 * =>[http://www.jabbslad.com|Jamie Atkinson] (Jabbslad), for spotting and fixing some bugs and providing feedback.
 * =>[http://koraktor.github.com|Sebastian Staudt] (koraktor), for spotting and fixing some bugs, proposing and implementing new features.
