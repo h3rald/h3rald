@@ -1,0 +1,30 @@
+rw:[h3rald_article|
+	article[
+		@pubdate[$[document.date]]
+		@head[
+			style[default.css]
+			style[pagination.css]
+			<style>
+				h1 { 
+					font-size: 24px; 
+					margin: 0.5em auto;
+					padding: 0.5em auto;
+				}
+				.contents {
+					text-align:justify;
+					margin-bottom: 2em;
+					padding-bottom: 2em;
+					border-bottom: 1px solid #000;
+				}
+			</style>
+		]
+		@pre-title[
+			=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/theme/h3rald.svg]]
+		]
+		@post-title[
+			div[em[Originally published on =>[http://www.h3rald.com{{identifier}}|H3RALD.com]]]
+			toc[]
+		]
+		{{content}}
+	]
+]
