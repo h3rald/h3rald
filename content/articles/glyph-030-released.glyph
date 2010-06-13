@@ -1,0 +1,87 @@
+----- 
+:type: article
+:tags: 
+- glyph
+- ruby
+- opensource
+:permalink: glyph-030-released
+:title: "Glyph 0.3.0 Released"
+:summary: "The third release of the Glyph Authoring Framework features dramatic speed improvements, the new 'glyph outline' command, alternative XML syntax, macro attributes, and more."
+:toc: true
+:pdf: true
+:date: 2010-06-13 14:10:00.000000 +02:00
+-----
+&:[yardoc|http://yardoc.org/docs/h3rald-glyph]
+&:[book|http://github.com/h3rald/glyph/raw/master/book/output/pdf/glyph.pdf]
+
+p[The third release of =>[$[site.root]/glyph/|Glyph] is out!] 
+
+p[For those checking it out for the first time, Glyph is a em[Rapid Document Authoring Framework] focused on extensibility and content reuse. For an example of what Glyph can do, have a look at Glyph's =>[&[book]|free PDF book].]
+
+p[This release brings more stability to Glyph, more speed, and features affecting Glyph's core functionality. As a consequence, some =>[http://github.com/h3rald/glyph/issues/closed#issue/121|incompatibilities] had to be introduced &ndash; but after all, better now than later.] 
+
+section[
+	@title[New parser and performance improvements]
+
+	p[This release's big news is the brand new =>[&[yardoc]/glyph/parser|Glyph Parser]. Until this release, Glyph relied on the awesome =>[http://treetop.rubyforge.org/|Treetop] library for parsing Glyph language. Treetop is great when it comes to creating language parsers effortlessly, but it can add quite a bit of an overhead especially when using =>[http://groups.google.com/group/treetop-dev/browse_thread/thread/15ff7659b2efbeed|dot star] patterns.]
+
+	p[So I ran a few benchmarks and in the end decided to write my very own (first!) parser from scratch using just the =>[http://ruby-doc.org/core/classes/StringScanner.html|StringScanner] class, which is part of Ruby Standard Library. It took me a bit to get used to it, but in the end I managed to create something able to produce an Abstract Syntax Tree exactly the way I wanted.]
+
+	p[After adding the new parser, Glyph became significantly faster. This doesn't mean it's as fast as, say, RedCloth, but I it can be used to process long books in just a few em[seconds] rather than em[minutes].]
+]
+
+section[
+	@title[Macro Attributes]
+
+	p[Glyph now supports named attributes as well as positional parameters. This is particularly handy when you want to create macros with a lot of optional arguments: in this case, positional parameters are not great. As a result, for example, the code[section] macro now takes an optional code[title] and code[id] attributes, rather than two parameters]
+	
+	p[Attributes look like macros, but they all start with a code[@] character. For example, see the the following image, showing this very section:]
+	
+	image[\.$[site.root]/img/pictures/updated_glyph_syntax.png]
+]
+
+section[
+	@title[Full XML support]
+	
+	p[Once macro attributes became available at parser level, having Glyph to produce arbitrary XML code became extremely easy. By default, now if Glyph doesn't find a macro it assumes you're inputting an XML tag of some kind, so you can write:]
+
+	highlight[=html|
+p[This is a paragraph with some em[emphasized] text.]
+img[
+  @alt[Glyph Code]
+  @width[50%]
+  @height[50%]
+  glyph_code.png
+]
+	=]
+
+	p[And get the following HTML code back:]
+	
+	highlight[=html|
+<p>This is a paragraph with some <em>emphasized</em> text.</p>
+<img 
+  alt="Glyph Code"
+  width="50%"
+  height="60%"
+  src="glyph_code.png"  
+/>
+	=]
+
+  p[...and none of the macros used in the previosu Glyph code snippet are actually defined in Glyph. Among other things, this means that em[you don't have to] use Textile or Markup within your Glyph code unless you absolutely need to (e.g. for lists, which would be a bit verbose to create using just Glyph markup).]
+]
+
+section[
+	@title[Improved code[include] macro and "safe mode"]
+
+	p[The code[include] macro now em[must] take an path to a file relative to the code[text/] directory of your project, em[or] it can also be used to include (and em[evaluate]) ruby code within your code[lib/] directory. Moreover, you can now use the code[include] macro even when compiling single Glyph files.]
+
+	p[Now, while evaluating Ruby code in an external file can be quite handy, is also quite insecure. For this reason, it is now possible to use Glyph programmatically in "safe mode", thereby forbidding the usage of certain em[unsafe] macros.]
+]
+
+section[
+	@title[What's next?]
+
+	p[Sooner or later I'll have to implement support for generating multiple files in output. This would make it possible to make the  =>[&[book]|Glyph book] available online as a collection of separate HTML file, for example, or, later on, maybe even compiled into a (ugh!) CHM file.]
+
+	p[Additionally, HTML5 support is also on the horizon: given the current Glyph architecture, it will be relatively easy to have Glyph macros to produce HTML5 code instead of XHTML. LaTeX support, on the other hand, is a completely different game, mainly because I'm not familiar with it, so if anyone feels creative and would like an easier way to produce reusable LaTeX code, =>[http://github.com/h3rald/glyph/|get forking] and contact me!]
+]
