@@ -9,26 +9,26 @@ github: glyph
 links:
 - "Repository": http://www.github.com/h3rald/glyph/
 - "Bug Tracking": http://www.github.com/h3rald/glyph/issues
+- "Development Wiki": http://wiki.github.com/h3rald/glyph
+- "Download": http://www.rubygems.org/gems/glyph
 - "Book (PDF)": http://github.com/h3rald/glyph/blob/master/book/output/pdf/glyph.pdf
-- "Reference Documentation": http://yardoc.org/docs/h3rald-glyph/
+- "Docs": http://yardoc.org/docs/h3rald-glyph/
 - "User Group": http://groups.google.com/group/glyph-framework
 status: Active
-version: 0.2.0
+version: 0.3.0
 -----
 
 <%= render 'project_data', :tag => 'glyph' %>
 
 Glyph is a _Rapid Document Authoring Framework_. 
 
-Think of it like a sort of "Ruby On Rails":http://www.rubyonrails.org but for creating text documents instead of web sites. With Glyph, you can manage your documents tidily in _projects_ that can be used to generate deliverables in different formats such as HTML or PDF (through "Prince":http://www.princexml.com).
+With Glyph, you can manage your documents tidily in _projects_ and generate deliverables in different formats such as HTML or PDF (through <a href="http://www.princexml.com/">Prince</a>).
 
 <br style="clear:both" />
 
-h3. Main Features
-
-!>/img/pictures/glyph.png!
-
-Glyph uses a simple macro system to perform a wide variety of advanced tasks:
+<div class="section">
+<h3 id="h_1">Main Features</h3>
+Glyph comes with its very own macro system to perform a wide variety of advanced tasks:
 * Generate block-level HTML tags not commonly managed by lightweight markups, like @head@, @body@, @div@ and @table@.
 * Create and validate internal and external links.
 * Include and validate images and figures.
@@ -40,64 +40,98 @@ Glyph uses a simple macro system to perform a wide variety of advanced tasks:
 * Include content only if certain conditions are satisfied.
 * Define macros, snippets and configuration settings directly within your document.
 * Highlight source code.
-* Call macros from other macros (including snippets), carefully avoiding mutual calls.
-* Include text files in other text files.
-* Include the contents of configuration settings (author, title) in the document.
-* Filter input explicitly or implicitly, based on file extensions when including files. 
-* Manage comments and todo items.
+* Call macros from other macros (including snippets), avoiding mutual calls.
+* Include text files within other text files.
+* Include the value of any configuration setting (like author, title) in the document.
+* Filter input explicitly or implicitly (based on file extensions). 
+* Manage draft comments and todo items.
+* Provide a simple, less-verbose syntax to write XML code.
 
-h3. Installation
+</div>
 
+<div class="section">
+<h3 id="h_2">Installation</h3>
 @gem install glyph@ -- simple, as always.
 
-h3. Essential Glyph Commands
+</div>
 
-Glyph is 100% command line. Its interface "Git's":http://git-scm.com/ for its simplicity and power (thanks to the "Gli":http://github.com/davetron5000/gli gem). Here are some example commands: 
+<div class="section">
+<h3 id="h_3">Essential Glyph commands</h3>
+Glyph is 100% command line. Its interface resambles <a href="http://git-scm.com/">Git's</a> for its simplicity and power (thanks to the <a href="http://github.com/davetron5000/gli">gli</a> gem). Here are some example commands: 
 
 * @glyph init@ -- to initialize a new Glyph project in the current (empty) directory.
 * @glyph add introduction.textile@ -- to create a new file called _introduction.textile_.
 * @glyph compile@ -- to compile the current document into a single HTML file.
-* @glyph compile --auto@ — to keep recompiling the current document every time a file is changed.
-* @glyph compile -f pdf@ -- to compile the current document into HTML and then transform it into PDF using "Prince":http://www.princexml.com.
-* @glyph compile readme.glyph@ — to compile _readme.glyph_ located in the current directory into a single HTML file
+* @glyph compile --auto@ -- to keep recompiling the current document every time a file is changed.
+* @glyph compile -f pdf@ -- to compile the current document into HTML and then transform it into PDF using <a href="http://www.princexml.com/">Prince</a>.
+* @glyph compile readme.glyph@ -- to compile a _readme.glyph_ located in the current directory into a single HTML file.
+* @glyph outline -l 2@ -- Display the document outline, up to second-level headers.
 
-h3. Glyph macros in a nutshell
+</div>
 
+<div class="section">
+<h3 id="macros_nutshell">Glyph macros in a nutshell</h3>
 Format your documents using Textile or Markdown, and use Glyph Macros to do everything else:
 
 **Glyph Source:**
 
-<pre><code>
-section[header[Something about Glyph]
-You can use Glyph macros in conjunction
- with _Textile_ or _Markdown_ to
+<div class="code">
+<pre>
+<code>
+section[
+  @title[Something about Glyph]
+  txt[
+You can use Glyph macros in conjunction 
+with _Textile_ or _Markdown_ to
 produce HTML files effortlessly.
-  section[header[What about PDFs?|pdf]
+  ]
+  p[
+Alternatively, you can just use em[Glyph itself]
+to generate HTML tags.
+  ]
+  section[
+    @title[What about PDFs?]
+    @id[pdf]
 Once you have a single, well-formatted HTML 
 file, converting it to PDF is
 extremely easy with a 3rd-party 
 renderer like =>[http://www.princexml.com|Prince].
   ]   
 ]
-</code></pre>
+</code>
+</pre>
+</div>
 
 **HTML Output:**
 
-<pre><code>
+<div class="code">
+<pre>
+<code>
 <div class="section">
-  <h2 id="h_1">Something about Glyph</h2>
-  <p>You can use Glyph macros in conjunction with 
-     <em>Textile</em> or <em>Markdown</em> to
-     produce HTML files effortlessly.</p>
+  <h2 id="h_10">Something about Glyph</h2>
+  <p>
+    You can use Glyph macros in conjunction with 
+    <em>Textile</em> or <em>Markdown</em> to
+    produce HTML files effortlessly.
+  </p>
   <div class="section">
    <h3 id="pdf">What about PDFs?</h3>
-   <p>Once you have a single, well-formatted HTML 
-      file, converting it to PDF is
-      extremely easy with a 3rd-party renderer 
-      like <a href="http://www.princexml.com">Prince</a>.</p>
+   <p>
+     Once you have a single, well-formatted HTML 
+     file, converting it to PDF is
+     extremely easy with a 3rd-party renderer 
+     like <a href="http://www.princexml.com">Prince</a>.
+   </p>
+   <p>
+     Alternatively, you can just use <em>Glyph itself</em>
+     to generate HTML tags.
+   </p>
   </div>
 </div>
-</code></pre>
+</code>
+</pre>
+</div>
+
+</div>
 
 <%= render 'project_updates', :tag => 'glyph' %>
-
