@@ -1,0 +1,134 @@
+----- 
+type: article
+tags:
+- review
+- ruby
+permalink: distributed-programming-with-ruby-review
+title: "Book Review: Distributed Programming with Ruby"
+toc: true
+pdf: true
+summary: "A review of Mark Bates' Distributed Programming with Ruby. All you need to get started with the right tools to build large and scalable applications in Ruby."
+date: 2010-06-21 08:53:15.139000 +02:00
+-----
+&:[book|_Distributed Programming with Ruby_]
+&:[author|Mark Bates]
+&:[url|http://www.informit.com/store/product.aspx?isbn=0321638360]
+&:[linkedbook|=>[&[url]|&[book]]]
+&:[image|$[site.root]/img/pictures/distributed-programming-with-ruby.jpg]
+&:[drb|=>[http://ruby-doc.org/stdlib/libdoc/drb/rdoc/index.html]dRuby]
+&:[rinda|=>[http://ruby-doc.org/stdlib/libdoc/rinda/rdoc/index.html|Rinda]]
+&:[pickaxe|=>[#unkwnown#|_Programming Ruby_]]
+rw:[pt|
+	section[@title[Part {{0}}: {{1}}]
+		txt[{{2}}]
+	]
+]
+--[--------------------------------------------------]
+textile[
+Back when I read &[pickaxe] for the first time, I distinctly remember a short reference to &[drb], the strong[d]istributed strong[r]u\.strong[b]y library included in the Standard Library. 
+
+_"Cool!"_  -- I thought
+
+...and that was pretty much it. The documentation for drb was pretty much nonexistent (at the time), I didn't need it, so I pretty much forgot about it altogether until this book came out.
+
+&[linkedbook] fills a very particular niche of the Ruby programming world: _distributed_ programming. Moreover, this book is somehow _justified_ by the scarce documentation on the subject:
+
+bq. Although these libraries \[drb and rinda\] have been included with Ruby for many years now, they have received little or no attention (or documentation). This has led to a lot of FUD
+(fear, uncertainty, and doubt) about what these libraries can and cannot do, and when they are appropriate to use (if at all).
+
+p(((((. -- &[author], &[book]
+
+But there's more. This book gives the reader a complete overview of what's out there, in the Ruby world, to support distributed programming. This includes quite a few gems and libraries besides the ones provided in the standard library.
+]
+section[
+	@title[Overview]
+
+	txt[
+The book is organized into five parts, each dealing with a particular set of Ruby libraries related in some ways to distributed programming.
+
+The author, Mark Bates, does a good job maintaining a sort of continuity in the examples throughout the book: you'll get accustomed to a _Logger_ class of some kind being punctually re-implemented more or less once per chapter, using a different library.
+
+Additionally, the libraries described in the book are ordered by "reverse preference" in each part of the book, so normally the libraries described later on in a part fix some of the shortcomings of the preceding ones.
+	]
+
+	image[@style[float:left;]&[image]]
+
+	pt[I|Standard Library|
+This part is the most important of all: it gives you the very basics about Distributed Programming and it describes the "building blocks" used in nearly all the other libraries described in the book. If you want you can skip some chapters in the other parts of the book, but make sure this part is crystal clear in your head before proceeding any further; if you don't know what &[drb] and &[rinda] are, that it.
+	]	
+	pt[II|Third-Party Frameworks and Libraries|
+If you read part I, you're probably a bit disappointed by DRb and Rinda and the amount of code you have to write to make simple things work in a distributed environment. The good news is that there are some Ruby gems out there that can make life simpler:
+* =>[http://seattlerb.rubyforge.org/RingyDingy/|RingyDingy]
+* =>[http://rufy.com/starfish/doc/|Starfish]
+* =>[http://github.com/markbates/distribunaut|Distribunaut] 
+* =>[http://github.com/mperham/politics|Politics]
+	]	
+	pt[III|Distributed Message Queues|
+In this part, the author introduces more in detail the concept of distribute message queues, and also the technologies and protocols available not only in the Ruby world but elsewhere. It focuses on two libraries:
+* =>[http://rubyforge.org/projects/starling/|Starling], originally used by Twitter.
+* =>[http://github.com/tmm1/amqp|AMQP], an implementation of the =>[http://www.amqp.org/|AMQP] protocol in Ruby, that can be used in conjunction with =>[http://www.rabbitmq.com/|RabbitMQ] an Erlang-based messaging system.
+	]	
+	pt[IV|Distributed Programming with Ruby on Rails|
+Finally, the book ends somewhat abruptly with this part, that deals with distributed programming in the Rails world. It feels a bit like a last-minute addendum that I would have left for an appendix, nevertheless it briefly introduces =>[http://backgroundrb.rubyforge.org/|BackgrounDRb] and =>[http://github.com/tobi/delayed_job|Delayed Job].
+	]	
+]
+
+section[
+	@title[Technical Analysis]
+
+	section[
+		@title[Formatting and Readability]
+	]
+	section[
+		@title[Style and Contents]
+	]
+]
+
+section[
+	@title[Final Thoughts]
+]
+
+--[
+Missing: =>[http://github.com/kwi/BrB|BrB]
+
+Endnotes at the end of each chapter can be annoying, mostly pointing to Wikipedia Articles.
+
+Page 86: i think I understand ... I have not been able to ... ???!!!!
+
+P91 architechtural flaw in Starfish?
+
+Too much trial and error, workarounds to fix apparent Starfish errors. No mentions on gem versions: maybe those errors are fixed now?
+
+Introduction to Starfish's MapReduce inplenentation -- interesting, easy and practical
+
+"begs" starfish author to fix his library, although fixes are easy...
+
+5. Distribunaut: spawned from Mack (both creations of the author?!!)
+
+Much easier and intuitive so far
+
+P123 D. performs a lot of magic to keep us from writing as much code -- c'mon, we're all grown-ups and we know Ruby can do wonders
+
+D uses proper Ruby idioms, nice 'borrow' method
+
+
+---- there's no silver bullet on distr. Ruby programmig!
+
+----- the author analizes pros and cons for you, makes you save time.
+
+----- teaches you bits about other necessary technologies like memcached or amqp protocols
+
+----- evolution of the same logger example: bonus points for continuity
+
+----- conclusion sections nearly always highlight pros and cons; cons solved by the next library
+
+----- diagrams where necessary
+
+----- missing: a good cheat sheet about what's best for what/feature matrix
+
+---- see p. 168 about documentation! Useful for the review intro
+
+---- plenty of useful sidebars
+
+----- No conclusion to the book!!!! 
+]
