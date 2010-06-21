@@ -75,6 +75,13 @@ Finally, the book ends somewhat abruptly with this part, that deals with distrib
 
 section[
 	@title[Technical Analysis]
+Unlike other technical books, this one can (must?) be read sequentially. Generally each chapter focuses on a library, describes how to install it and use it, and highlights its pros and cons. Typically, the "cons" are solved in the following chapter by another library, and so on...
+
+The book is not meant to contain a full technical reference of each library, and it's quite short (256 pages), so you really get the most out of it if you read it all, from start to finish. I didn't realize there are so many different libraries in this particular niche of Ruby programming, and Mark does a good job "demistifying" some of them.
+
+One thing that really struck me out of this book is the focus on gems. We're not talking about "mainstream" frameworks like Rails or Merb here, but rather of some rather specialized, smaller libraries that fullfill very specific tasks. Personally, I don't remember any other Ruby book doing this in the same way, and I was quite happy about it.
+
+On the other hand, gems are a double-edged sword: while some of them are really cool and well-maintained, others may disappear tomorrow with no prior notice. 
 
 	section[
 		@title[Formatting and Readability]
@@ -99,13 +106,12 @@ P91 architechtural flaw in Starfish?
 
 Too much trial and error, workarounds to fix apparent Starfish errors. No mentions on gem versions: maybe those errors are fixed now?
 
-Introduction to Starfish's MapReduce inplenentation -- interesting, easy and practical
+Introduction to Starfish's MapReduce implementation -- interesting, easy and practical
 
 "begs" starfish author to fix his library, although fixes are easy...
 
 5. Distribunaut: spawned from Mack (both creations of the author?!!)
 
-Much easier and intuitive so far
 
 P123 D. performs a lot of magic to keep us from writing as much code -- c'mon, we're all grown-ups and we know Ruby can do wonders
 
@@ -113,8 +119,6 @@ D uses proper Ruby idioms, nice 'borrow' method
 
 
 ---- there's no silver bullet on distr. Ruby programmig!
-
------ the author analizes pros and cons for you, makes you save time.
 
 ----- teaches you bits about other necessary technologies like memcached or amqp protocols
 
