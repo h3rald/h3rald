@@ -1,7 +1,7 @@
 ----- 
-:type: page
 :filters_pre: 
 - erb
+:type: page
 :permalink: december-2007
 :title: "Archive: December 2007"
 -----
