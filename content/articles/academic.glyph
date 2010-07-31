@@ -1,0 +1,173 @@
+----- 
+:type: article
+:tags: 
+- italy
+- personal
+- rant
+:permalink: academic
+:title: "Thoughts about the Italian Academic Education"
+:summary: "An article written by a 22-year-old IT Engineering student, out of frustration for not passing his final exam. A rather emotional, but fairly accurate piece on the absurdities of the Italian Education System."
+:toc: true
+:pdf: true
+:date: 2005-07-07 22:30:00.099000 +02:00
+-----
+textile[
+I found this article today, buried in my mailbox. I wrote it just over five years ago, the evening after failing the last, insignificant exam necessary to get my degree in IT Engineering.
+
+I eventually passed the damn thing, got my B.Sc., and found a great job right afterwards, while all my former fellow students were still studying pointless crap. Maybe some of them are still studying pointless crap right now, and they're still living with their parents. 
+
+I was very lucky. If I didn't fail that exam perhaps I would have kept studying for my master's degree for years, and maybe today I wouldn't even have a job, or be married!
+
+I decided to re-publish this article because it's part of what I am, and I'm not ashamed of it. I corrected a few of the most obvious spelling and grammar mistakes, but I didn't edit it or censor it otherwise. 
+
+It may be a senseless rant, but my opinion of the Italian Education System is still the same: If I'll have a child who wants to study anything technical someday, I'll tell him/her to get the hell out of Italy and go abroad to study in a _real_ university.
+
+p(((((((((((((((. *Fabio Cevasco* -- _Saturday, July 31st 2010_
+]
+section[
+	@title[The Pre-computer Age]
+	textile[
+Who am I? I'm just an Italian student taking the last exams to obtain my B.Sc. in IT Engineering. Obviously I'm quite interested in Information Technology and everything concerning computers or the Internet, and - believe it or not - this probably came from my parents' original dislike of computers themselves.
+
+in Italy, unlike in most of the other capitalistic countries of the world, kids tends to listen to their parents until they reach their "full maturity", i.e. 25 years of age at least (by the way, I'm 22), so, to cut a long story short, I was allowed to have a computer at home when I was 16 years old. I couldn't believe it when the technician brought it at home: sure I'd seen a computer before in my life, but that was mine, and I could use it to do something amazing, as I dreamt many times.
+
+The point is, from another point of view, that I felt behind already compared to my friends who were already boasting their records at various computer games. Fools.
+On another note, I was a bit different from other Italian kids: I always liked writing and reading in English since I was 6, because I found the language to be quite amazing or even magic for the way it sounded, as I used to say to my friends. Friends - the Italian ones, that is - who never really understood me totally, and in particular my
+passion for the Anglo-Saxon cultures: for them, writing and reading in English were just boring and difficult things you had to do at school, while I enjoyed reading The Tempest by Shakespeare when my English teacher didn't even teach me the past tense, yet. A fool?
+
+My passion for the English language was soon noticed by my parents, who let me go to England a few times, to college: basically a fashonable way for english schools and travel agencies to rob honest families, promising them that their kids would have learnt a new language enjoying themselves. Result: the kids enjoyed their holiday a lot, but basically always spoke Italian to each other (and even to English people over there) and the families were happy when they came back because after spending so much money they must have learnt something...
+	]
+]
+section[
+	@title[Using the Computer and the Internet]
+	textile[
+Back to that amazing and weird magic box called computer: I immediately enjoyed experimenting new stuff, playing with Windows (for me the word "Linux" at the time would have sounded not too different from some names of medicines my grandparents were taking), and even playing games, why not, but in English of course, because I never
+really liked Italian translations (yes, we even dub video games!).
+I remember my biggest fear was not being able to catch up with my friends who had a computer for years: I was so obsessed with that that I often stayed on the PC more than the 2-3 hours allowed by my parents, when they were away. Some time later, and relatively recently, I discovered that I catched up relatively soon, without even noticing it.
+
+I've been allowed to access the Internet when I turned 18, because my parents were scared it could be just another bad thing, and still I found myself behind if compared to my friends, who've been surfing the web long before.
+
+Only now I notice that perhaps my parents made me discover new things about PCs which my friends never bother learning, even now that they're graduating. I remember my mum calling me for a silly pseudo-scientific divulgative program where they were describing this new, totally free operating system different from Windows who was supposed to work much better. "It said the name before... it's Luxi... lixi... lunis..." - Linux.
+
+When I had access to the Internet my life really changed. I do believe that unlike my friends I used the Internet for its very purpose: sharing knowledge, or, in my case, just learning. I also made a vow to myself: to surf ONLY (unless I had to) English/International websites; a vow which I'm keeping still nowadays, which seemed utterly illogic
+to my friends and Italians in general.
+
+Immediately a whole new universe opened to my eyes: I quickly learnt how to keep up-to-date on the recent events regarding computers, I learnt some rudiments of Internet and Hacking Culture (thanks ESR for all your papers) and the Open Source movement, and linux, etc. and I noticed two things:
+* I was definetely catching up with my friends' "knowledge" in computing 
+* I would have NEVER ever managed to learn even 1/10 of all you need to know about computers: the same as in life, and I was happy with it.
+	]
+]
+section[
+	@title[The Pre-academic Period]
+	textile[
+In the meantime I was studying in a Liceo Scientifico, a kind of scientific high school where basically they make you study all sort of subjects (from geography, to maths to phylosopy, to Latin) mainly focusing - they say - on Science-related disciplines. For those who don't know, in Italy you don't get to choose what you want to study: in
+High School and University they let you choose basically a type of school, but subjects and courses cannot be changed, apart from a few exceptions.
+I "chose" a particular type of scientific school (...the exception!) where basically I agreed to study an additional subject - Computer Science - in addition to all the rest, for a total of more than 30 hours per week. I studied a lot then, because my parents taught me that Culture was important, and that "if you're ignorant you can't do anything nowadays". No, my parents weren't ignorant themselves, my dad is a Mechanical Engineer and my mum a Latin/History/Italian professor ...and yes, that helped my forma mentis a lot.
+
+I studied a wide range of subjects, including something totally irrelevant with my favourite ones: English and Computing (note: I say "Computing", not Maths), and I did quite well in the end, graduating from High School with a mark of 100/100. While I was studying Latin, Phylosophy and alikes I was thinking that at least at University I'd have studied something really more specific.
+Until the end I was undecided on which faculty to choose, whether IT Engineering or Foreign Languages. I was very fond of English and languages in general, but I primarly liked computers, so I thought that if I studied IT Engineering I'd have learnt more about computers and my already half-decent knowledge of the English language would
+have helped me in my studies ("Now they REQUIRE a good knowledge of English, at university") and in my future, when I'd have started working. FOOL.
+	]
+]
+section[
+	@title[Alice in Wonderland]
+	textile[
+That was it, I remember exactly when I went to sign my pre-enrollment papers: IT Engineering. I was so happy to have made it! Now finally I would have studied what I was meant to. 
+
+On a side note, I was never too good at Maths, I don't know why. I just didn't like it because it felt too theorethical for me, and not as useful as I thought,
+especially for programming. In High School I was taught a bit of the Pascal 3 programming language, and that turned out to be perhaps one of the most useful things I've ever studied.
+
+The first disappointment came from the courses that they setup for the first year: two BIG Maths-oriented exams in particular, and Chemistry(!). What Chemistry has to do with Computer Science remained a mystery to me, people claimed that we might be asked in the future to do some programs to help studying the structure of matter and doing
+chemical analysis... yes, and following the same logic I should have been studying the structure of languages, because AI programs and translators would certainly become key applications in the future.
+
+Oddly enough, they made us just study Chemistry.
+
+"But next year will be better" -- I was thinking, after getting fairly poor results in the Maths exams -- "next year we'll study something more exciting".
+
+Economics.
+
+They made us study Economics because they think that it's useful to know something about finance and salaries, especially when you start working. That makes sense, to an extent, of course, and it was kind of interesting even. But still I didn't study anything really useful.
+
+This is a little lie, actually, because we actually had two programming exams (out of 17) in which they taught us a bit of C++, and THAT was interesting, and I even managed to get 30/30 out of the last one: I liked it.
+
+I actually remember when the teacher came in, and insisted for us to use a unix emulator (Cygwin) to compile our C++ programs: people thought that "emulators" were used for running games released for a gaming console on the PC, and what the hell was unix? It looks like - they said - a bad copy of DOS with more difficult commands. (No comment)
+
+I lived my years at University (three, counting this one which will be the last one) feeling superior to my friends for knowing more about computers but at the same time inferior to them when it came to exams: I didn't really like most of the subjects, especially some rather abstract mathematical models which COULD BE useful, but - let's
+say it all - most people outside Italy don't really give a sh...illing about. What's the point in learning the demonstration of Cauchy theorem? Just use it maybe, and it would have a sense... No, they wanted you to study the demonstration and tell them about it, without missing a passage, which normally - for 2/3 of people at least - meant
+"learn it by heart".
+
+Also, unlike in other countries, professors are more similar to Gods than clever people, apart from a few exceptions. Every professor decides how the students have to take the exams, some of them opt for having some _compitini_ (little tests) during the semester and then the average mark on all of them (normally two or three) represents the
+exam's final mark: that's the best, probably, but it could also mean that people can cheat trying to copy from their collegues, etc. 
+
+Normal, get on, it's Italy!
+
+Some professors might allow you to use the notes you took during classes, but that's often considered a bad thing because people can potentially copy from one another ("What's that piece of paper, is it your friend's?" - "No, it's part of my notes"), and they often do. On the other hand, if a professor doesn't allow notes to be used, students
+normally do their best to sneak and use them anyway. 
+
+This is Italy, after all, the place where everything can be sorted out if you're cunning enough.
+
+But why do some people cheat? Oh well, simply because either you devote 3 full years of your life to studying pointless crap and forgetting that you're wasting the best years of your existence, or you have to do something to pass 10 exams a year. Because we REALLY do take 10 exams a year.
+
+My girlfriend (who's English and living in Italy, by the way) told me that her brother wanted to study Computing at University but switched to Politics & Journalism because they wanted him to learn Java on the very first year. I've never been taught Java -- I had to learn it all by myself for my final thesis (see below) -- but instead I learnt a ton of demonstrations of theorems and mathematical models. Great, isn't it?
+
+_"But you knew you were going to take those exams, because they are publicly available before enrolling"._
+
+That's true and it makes sense, and I probably should have chosen Computer Science instead of IT Engineering if only it was considered equally important. In Italy if you study Engineering you can (after taking yet another exam) become an Engineer, which -- unlike other countries -- is not a competent person who knows how to fix stuff and can solve problems. Rather, he's someone who got an important academic title who is treated like a demi-god because he knows (or should know) what's a differential system and how can be solved but -- sometimes -- doesn't know how to use it. 
+
+But he's an Engineer, and he can find work when others can't.
+
+To explain this concept to non-Italian, I can summarize all this with the following:
+
+In Italy Academic (Skool) Titles rulez - You ain't got none? You ain't nothin' coz I got one and I own you.
+
+And that's that. In Italy knowledge is dead. (This is an exaggeration, but please try to get my point).
+
+If you need to be competent in something, when you're working you'll have to do a practical course (even paying for it yourself) if some "knowledge" is needed. If there's no risk that things can blow up, you can remain ignorant.
+	]
+]
+section[
+	@title[The Vanishing Cheshire Cat]
+	textile[
+Up to today I could leave with it, I knew that abroad the situation was hopefully different, but I started to cope with the fact that I would have got my B. Sc. and in addition I knew more stuff than some of the others who got the degree at the same time. A few months ago I had just a few exams left and I started going to the lab for my thesis project, with a friend of mine.
+
+At that point -- oddly enough -- I was told to develop an application in Java, using some libraries, and actually make something fully functional and (somewhat) useful. I couldn't believe it! I was happy on one side, and angry on the other, because NOBODY ever taught us about Java or about creating an useful application.
+
+The Ph.D. Student who was appointed to help us with the project told us: "That's the way it works, it's normal that you don't know Java, but you know a bit of C++, and now it's time to research". That was again very shocking: it was the first time that someone ever told me something like this, and in the end we agreed on the project.
+
+Despite the fact we had to implement some new features and test them relatively at the last minute, we succeeded in developing the program. In particular, I actually played an important part being the one who actually researched something on Java already, and knew more about programming.
+
+Oddly enough, my collegue would have graduated with a higher mark than me, even if he originally thought that "SSH" was nothing but a sound used to shut people up and that HTML was a proprietary standard introduced by Microsoft having something to do with web pages. If you're reading all this mate, don't get angry at me: I have nothing against you, I just hate the System, as usual.
+
+He still probabally thinks that POP3 is something like the name of a band and that a shell can be found only at the sea. Mate, it's not your fault, don't blame me if I say this, blame the System!
+
+I mean, I don't consider myself an expert, but at least I'm better than that. I met students, at uni, who haven't the faintest idea of what a sever was. And that's pretty sad, if you ask me.
+
+Let's now come to the end of this apparently endless flow of thoughts: I still had an exam to pass in order to get the degree. Such exam counts 3/180 of the whole stuff we had to study in these three years (it is literally quantified like this on paper), and it's about Digital Controls. Cool, you may think, but it actually means MORE mathematical models to solve complex(?) situations, more theorems and other crap, even if -- I admit -- I had to take exams worse than this one. 
+
+I admit I constantly underestimated the exam and took it various times without passing it: "it's so small, I'll have to pass it eventually".
+
+This was just the way of thinking they made us adopt, nothing more, nothing less.
+
+I was quite busy testing my program and writing the thesis in this period, although we were literally told not to worry too much about it: "just google a bit on the net, copy and paste, and change some words if you feel guilty..."
+
+To the guy who told me to do so: it's just an example that is bad to read, but it's true, you can't deny it. I don't blame you, because you've really taught me a lot about working on "proper" projects (and this is NOT sarcastic, really), I blame the System.
+
+In the meantime I spent days running around here and there trying to sort out all the bureaucracy necessary to have all the papers ready for my degree, and I also talked to the professor who commissioned the project: he's by far the most helpful and altruistic professor I've ever met, and obviously offered his complete availability for helping
+us for the preparation of the degree.
+
+I just needed to pass my last exam. It was the last one, not as complex as others I took, and this time I studied more than the previous times...
+
+I didn't pass it.
+
+I don't blame the professor, because probably he's the only one who's normal in the whole lot: he's like me, I think, because I suspect he's aware that abroad students don't cheat and professors are not "flexible" on marks. I got 12/30, and I didn't pass, that was it, I didn't know his subject enough and he didn't feel he had to help me to get the degree at all. And he's right. I can't blame him, but I DO blame such a "flexible" system which in the end is totally absurd. I learnt the hard way that I shouldn't have "trusted" the Italian Way, because it has flaws.
+
+Oddly enough, people who can't even connect a network cable get their B.Sc., and all I get after spending months learning useful things and developing is just a load of B.S.
+
+I learnt my lesson and I'll probably re-take the exam, pass it, and maybe get the degree: my collegue and friend just emailed me telling me that I HAVE to help him doing the missing chapters of the thesis because he can't write them, he's not good at writing stuff, and doesn't know what to write either. He'll get his B.Sc. on September 23rd, provided that I actually decide to help him.
+
+I hope people who read this can understand my frustration apart from blaming me for being "lazy" when it came to exams and expecting help when technically I didn't deserve it. I probably won't win the nobel prize or get rich like those two american students who own the most profitable Internet business ever conceivable. I'm not as special, and I don't deserve anything special, and I never dreamt about it.
+
+All I dreamt was being able to learn, and do something useful. It looks like it will remain just a dream, here in Italy.
+	]
+]
+
