@@ -23,11 +23,19 @@ compile '/css/*' do
   }
 end
 
+compile '/styles/*' do
+	# do nothing
+end
+
 compile "sitemap" do
 	rep.filter :erb
 end
 
 compile /^\/(js\/.+?)/ do
+	# do nothing
+end
+
+compile '/glyph/book/*' do
 	# do nothing
 end
 
@@ -94,15 +102,23 @@ route /^\/tags\/.+?-(atom|rss)/ do
 end
 
 route '/(atom|rss)/' do
-	item.identifier.gsub(/\/$/, '') + '.xml'
+	item.identifier.chop + '.xml'
 end
 
 route '/css/*' do
-	item.identifier.gsub(/\/$/, '') + '.css'
+	item.identifier.chop + '.css'
+end
+
+route '/styles/*' do
+	item.identifier.chop + '.css' 
+end
+
+route '/glyph/book/*' do
+	item.identifier.chop+'.html'
 end
 
 route '/sitemap' do
-	item.identifier.gsub(/\/$/, '') + '.xml'
+	item.identifier.chop + '.xml'
 end
 
 route "/htaccess" do
@@ -110,11 +126,11 @@ route "/htaccess" do
 end
 
 route /\/(images|img|files|favicon|robots)\// do
-	item.identifier.gsub(/\/$/, '') + ".#{item[:extension]}"
+	item.identifier.chop + ".#{item[:extension]}"
 end
 
 route '/js/*' do
-	item.identifier.gsub(/\/$/, '') + '.js'
+	item.identifier.chop + '.js'
 end
 
 route '*' do
