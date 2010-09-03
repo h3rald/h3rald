@@ -19,6 +19,7 @@ $(document).ready(function() {
 		// TOC
 		$("#toc ol").tableOfContents("#content-body", {startLevel: 3, depth: 6, topLinks: "[top]"});
 		// Drop Caps
+		/*
 		var first_paragraph = $('#content-body p:first');
 		if (!first_paragraph) return false;
 		var t = first_paragraph.html();
@@ -27,5 +28,6 @@ $(document).ready(function() {
 		first_paragraph.html(t.slice(1,t.length));
 			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
 		}
+		*/
 	});
 
