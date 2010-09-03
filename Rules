@@ -67,7 +67,7 @@ compile '*' do
 					include[#{f.parent.parent.parent}/lib/data]
 					h3rald_article[
 						@identifier[#{item.identifier}]
-						@content[#{item.raw_content}]
+						@content[section[#{item.raw_content}]]
 					]
 					}
 					# Write the new raw file using Glyph's file_write method

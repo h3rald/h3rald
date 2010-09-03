@@ -1,0 +1,79 @@
+----- 
+:type: article
+:tags: 
+- glyph
+- ruby
+- opensource
+:permalink: glyph-040-released
+:title: "Glyph 0.4.0 Released"
+:summary: "Glyph 0.4.0 is out! Featuring web output, HTML5 support, stats, wkhtmltopdf, enhanced customization and much more."
+:toc: true
+:pdf: true
+:date: 2010-09-03 19:45:00.000000 +02:00
+-----
+txt[This new release of Glyph introduces an unusually large number of features, improvements and bugfixes. Not so much in terms of new macros maybe (no index or bibliography support for now, but it will come, don't worry!), but rather... pretty much everything else!]
+
+section[
+	@title[Web Output]
+	txt[
+By far the biggest feature of this release is support for multi-file output, i.e. the possibility to transform your book into a web site. You've asked for it, I needed it too, and now it's finally here.
+
+An example? Sure. Take the =>[http://github.com/downloads/h3rald/glyph/glyph.pdf|Glyph Book] (now a 98-page PDF file) for instance. My only regret was that a long PDF is quite heavy to digest and peruse, especially if you're in a hurry. It would be so much nice to have it available online, in chunks of more manageable size.
+
+Well, =>[/glyph/book/|here it is]. That's the very same document, split in several HTML files with a custom layout that matches this site's. The good news is that you can do it too: 
+	]
+	codeblock[=
+section[
+  @title[This title is compulsory]
+  @id[random_section]	
+  @src[topic_file.glyph]
+]
+	=]
+	txt[
+Note the code[@src] attribute? It basically includes the specified topic file. So by creating a @document.glyph@ file like =>[http://github.com/h3rald/glyph/blob/master/book/document.glyph|this], you can create a tidy table of contents (not a single @include@ macro) _and_ get a website for free. Glyph, as usual, takes care of anything for you, especially links between topics. Just link away like you did so far, nothing changes from previous versions, it will just work as expected (\.=>[/glyph/book/compiling/compiling.html#web_output|read more]).
+	] 
+]
+section[
+	@title[HTML5 Output]
+	txt[
+Compared to Web output, HTML5 support was trivial and only took a few hours to implement and test. You can now produce single-file HTML5-compliant documents (@html5@ output format) or even HTML5-compliant web sites (@web5@ output). Just using @section@ tags instead of @div@ tags made it worth it.
+
+Of course, the default CSS files have been updated to be compatible with HTML5 output too.
+	]
+]
+section[
+	@title[Project Statistics]
+	txt[
+Anoher big thing was a shiny new command, @glyph stats@, which brings -- guess -- stats. No more chasing after bookmark references, just type @glyph stats --bookmark=#web_output@ and you'll know where the @#web_output@ bookmark was defined _and_ what links to it. Similar stats are available for:
+* macros
+* links
+* files
+* snippets
+
+@glyph stats -m@ tells me that I used 3236 macro instances throughout the Glyph book. Just so you know.
+	]
+]
+section[
+	@title[Custom tasks and commands]
+	txt[
+"Glyph is extensible", "Glyph lets you create your own macros", ...great, but kinda limited right? No more. Glyph now lets you create _custom Rake tasks_ and even _custom commands_. 
+
+Have a look at =>[/glyph/book/extending/commands_tasks.html|this page] for more information on what you can do and how. You can now extend Glyph in any way you like (including adding custom output formats) without having to touch its core, just do it _within your own project_.
+	]
+]
+section[
+	@title[wkhtmltopdf]
+	txt[
+Last but not least, you no longer need Prince XML to produce PDF file. Granted, Prince is awesome and the PDF it produces are very, very nice... but if you want to produce PDFs commercially and want to same some money, you can now use =>[http://code.google.com/p/wkhtmltopdf/|wkhtmltopdf]: it's _free_ and _open source_, and it keeps getting better and better.
+	]
+]
+section[
+	@title[...and more to come!]
+	txt[
+After this release I'm going to take a small break from Glyph. Nothing major, I just want to redesign my site (again) and find the time to write a proper Glyph tutorial. This doesn't mean that development will be halted or anything, just that it will take a few months for Glyph 0.5.0 to come out.
+
+Meanwhile, there may be bugfix releases (depends how many bugs turn up). It would be a good time to come out of the closet and propose/vote on new =>[http://github.com/h3rald/glyph/issues|features]! 
+
+Hope you enjoy using Glyph 0.4.0, and if you need anything or feel social, remember that the doors of the =>[http://groups.google.com/group/glyph-framework|Glyph User Group] are always open!
+	]
+]
