@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+<title>Glyph</title>
+<meta name="author" content="Fabio Cevasco" />
+
+<meta name="copyright" content="Fabio Cevasco" />
+<meta name="generator" content="Glyph v0.4.0 (http://www.h3rald.com/glyph)" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Macro Errors - Glyph</title>
+		<meta name="author" content="Fabio Cevasco" />
+		<meta name="copyright" content="Fabio Cevasco" />
+		<meta name="robots" content="all, follow" />
+		<meta name="Revisit-After" content="2 Days" />
+		<meta name="language" content="en" />
+		<meta name="target_country" content="en-us" />
+		<meta name="country" content="United States" />
+		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
+		<meta name="keywords" content="h3rald, fabio cevasco, glyph, technical writing, html, html5, book" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta content="44.388041;9.073248" name="ICBM" />
+
+		<link href="/css/main.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/glyph/book/styles/default.css" rel="stylesheet" type="text/css" />
+</head>
+
+	<body>
+		<div id="wrapper">
+			<a href="http://github.com/h3rald/h3rald"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+			<div id="header">
+				<!--[if lte IE 6]>
+				<div id="ie-warning">
+					This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
+				</div>
+				<![endif]-->
+				<!-- HEADER START -->
+				<div id="header-container">
+					<div id="header-left">
+						<h1><span class="logo"></span><a id="logo" href="/" title="H3RALD"></a></h1>
+					</div>
+					<div id="header-right">
+						<ul id="navigation">
+							<li><span class="preload nav-archives"></span><a id="nav-archives" href="/archives/" title="ARCHIVES"></a></li>
+							<li><span class="preload nav-projects"></span><a id="nav-projects" href="/projects/" title="PROJECTS"></a></li>
+							<li><span class="preload nav-about"></span><a id="nav-about" href="/about/" title="ABOUT"></a></li>
+							<li><span class="preload nav-other"></span><a id="nav-other" href="/other/" title="OTHER"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- HEADER END -->
+			<div class="ribbon">
+			</div>
+			<!-- MAIN START -->
+			<div id="main">
+				<!-- CONTAINER START -->
+				<div id="container">
+					<!-- CONTENT START -->
+					<div id="content" class="clearfixstandard">
+						<div id="page-links">
+							<span><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script></span>
+						</div>
+
+						<h2>Macro Errors</h2>
+						<hr />
+						<div id="content-body">
+							<div class="navigation"><a href="/glyph/book/troubleshooting/errors_command.html">Command Errors &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/ref_commands.html">&rarr; Command Reference</a></div>
+								<p>The following errors are displayed in the form:</p>
+<p><em>message</em><br />
+&nbsp; source: <em>macro_source</em><br />
+&nbsp;  path: <em>macro_path</em></p>
+<p><em>macro_value</em></p>
+<p>Where:</p>
+<ul>
+	<li><em>message</em> is the error message.</li>
+	<li><em>macro_source</em> is the file or snippet where the error occurred.</li>
+	<li><em>macro_path</em> is the full path to the macro that returned the error, within the document syntax tree, e.g. <code>document/body/bodymatter/chapter/section/header/&amp;</code> if the error occurrent in a snippet within the header of a section in the <code>bodymatter</code> part of the document.</li>
+	<li><em>macro_value</em> is the value of the macro (shown only if Glyph is running in <a href="/glyph/book/ref_commands.html#debug_switch">debug mode</a>).</li>
+</ul>
+	
+		<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Error Message</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+			<td>Macro '<em>name</em>' takes up to <em>x</em> parameter(s) (<em>y</em> given)</td>
+			<td>Returned if the macro was called with extra parameters.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>name</em>' takes at least <em>x</em> parameter(s) (<em>y</em> given)</td>
+			<td>Returned if the macro was called with fewer parameters than expected.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>name</em>' takes exactly <em>x</em> parameter(s) (<em>y</em> given)</td>
+			<td>Returned if the macro was called with a different number of parameters than.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro not available when compiling a single file.</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro if used in <a href="/glyph/book/compiling/lite_mode.html#lite_mode">lite mode</a>.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Filter macro '<em>extension</em>' not available</td>
+			<td>Returned by a filter macro if <a href="/glyph/book/config/options.html#s_options_filters_by_file_extension"><code>options.filters_by_file_extension</code></a> setting is set to @true@, but the extension was not recognized.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Invalid regular expression: <em>regexp</em></td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_match"><code>match</code></a> macro if an invalid regular expression was supplied.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>name</em>' takes no parameters (<em>x</em> given)</td>
+			<td>Returned if the macro was called with parameters but none are requested.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>No highlighter installed. Please run: gem install coderay</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro if no highlighters are installed.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>CodeRay highlighter not installed. Please run: gem install coderay</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro if <a href="/glyph/book/config/filters.html#s_filters_highlighter"><code>filters.highlighter</code></a> setting is set to @coderay@ but <a href="http://coderay.rubychan.de/">Coderay</a> is not installed.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>UltraViolet highlighter not installed. Please run: gem install ultraviolet</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro if <a href="/glyph/book/config/filters.html#s_filters_highlighter"><code>filters.highlighter</code></a> setting is set to @ultraviolet@ but <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> is not installed.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Mutual Inclusion in parameter/attribute(<em>name</em>): '<em>value</em>'</td>
+			<td>Returned if a catch-22 situation occurs with macro inclusion, for example if the value of a snippet includes a reference to the same snippet.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Snippet '<em>snippet_id</em>' does not exist</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_snippet"><code>snippet</code></a> macro if an invalid snippet ID was supplied.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>File '<em>file_name</em>' not found</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro if an invalid file was supplied.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Filter macro '<em>macro_name</em>' not found</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro if the <a href="/glyph/book/config/options.html#s_options_filters_by_file_extension"><code>options.filters_by_file_extension</code></a> setting is set to @true@ but the file extension of the included file is not recognized as a filter macro.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>RedCloth gem not installed. Please run: gem install RedCloth</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro if the RedCloth gem is not installed.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>No MarkDown converter installed. Please run: gem install bluecloth</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_filters.html#m_markdown"><code>markdown</code></a> macro if no valid Markdown converter gem is installed. Glyph checks for: BlueCloth, Maruku, Kramdown and RDiscount.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Image/Figure not found</td>
+			<td>Retured by the <a href="/glyph/book/macros/macros_block.html#m_image"><code>image</code></a> macro or the <a href="/glyph/book/macros/macros_block.html#m_figure"><code>figure</code></a> macro respectively, if the specified image file could not be found within the <code>images/</code> folder.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Bookmark '<em>bookmark_name</em>' already exists</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_inline.html#m_anchor"><code>anchor</code></a> macro or by the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro if the anchor ID supplied as attribute has already been used in the document.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Bookmark '<em>bookmark_name</em>' already exists</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_inline.html#m_link"><code>link</code></a> macro if the anchor ID supplied as parameter has not been used in the document.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Stylesheet '<em>file_name</em>' not found</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro if the <code>.css</code> or <code>.sass</code> file supplied as parameter was not found in the <code>styles/</code> directory.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Haml is not installed. Please run: gem install haml</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro if a <code>.sass</code> file was passed as parameter but the Haml gem is not installed.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Invalid XML element: '<em>element_name</em>'</td>
+			<td>An invalid XML element name was supplied to the <code>|xml|</code> system macro (see <a href="/glyph/book/document.html#other_elements">Other HTML Elements</a>).</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Invalid XML element: '<em>element_name</em>'</td>
+			<td>An invalid XML attribute name was supplied to the <code>|xml|</code> system macro (see <a href="/glyph/book/document.html#other_elements">Other HTML Elements</a>).</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>macro_name</em>' cannot be used in safe mode</td>
+			<td>Returned if a forbidden macro was used in safe mode (see <a href="/glyph/book/compiling/programmatic_usage.html#modes">Modes</a>).</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Cannot reset 'system.<em>setting_name</em>' setting (system use only).</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_config_">config:</a> when attempting to override a setting in the <code>system.*</code> namespace.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>macro_name</em>' cannot be defined by itself</td>
+			<td>Returned by the <a href="/glyph/book/macros/macros_core.html#m_rewrite_">rewrite:</a> if it contains a macro with the same name.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>macro_a</em>' must be within a '<em>macro_b</em>' macro</td>
+			<td>Returned if a macro was used in the wrong place.</td>
+		</tr>
+	 
+		
+		<tr>
+			<td>Macro '<em>macro_a</em>' must not be within a '<em>macro_b</em>' macro</td>
+			<td>Returned if a macro was used in the wrong place.</td>
+		</tr>
+		</table>
+	
+							<div class="navigation"><a href="/glyph/book/troubleshooting/errors_command.html">Command Errors &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/ref_commands.html">&rarr; Command Reference</a></div>
+						</div>
+						<div id="content-footer">
+							<div class="share">
+								<script type="text/javascript"><!--
+									google_ad_client = "pub-2871497824158668";
+									/* 728x90, h3rald 8.0 */
+									google_ad_slot = "0081634732";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+									</script>
+									<script type="text/javascript"
+										src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+										</script>
+									</div>
+								</div>
+							</div>
+							<!-- CONTENT END -->
+						</div>
+						<!-- CONTAINER END -->
+					</div>
+					<div class="ribbon"></div>
+					<!-- MAIN END -->
+					<div id="border-bottom">
+						<div id="services">
+							<div class ="footer-left">
+								<div id="backtype">
+									<h3><span class="s-opinions preload"></span><a id="s-opinions" href="http://www.backtype.com/h3rald" title="Opinions"></a></h3>
+								</div>
+							</div>
+							<div class ="footer-center">
+								<div id="twitter">
+									<h3><span class="s-tweets preload"></span><a id="s-tweets" href="http://www.twitter.com/h3rald" title="Tweets"></a></h3>
+								</div>
+							</div>
+							<div class ="footer-right">
+								<div id="delicious">
+									<h3><span class="s-bookmarks preload"></span><a id="s-bookmarks" href="http://www.delicious.com/h3rald" title="Bookmarks"></a></h3>
+								</div>
+							</div>
+						</div> <!-- SERVICES END -->
+					</div>
+					<div class="clearfooter"></div>
+				</div> <!-- WRAPPER END -->
+				<div id="footer">
+					<div id="footer-container">
+						<div class="footer-div">
+							H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-2010 <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/validator?uri=/t_46.html" class="link">CSS 2.1</a>
+						</div>
+					</div> <!-- END FOOTER CONTAINER-->
+				</div> <!-- END FOOTER -->
+				<!-- Start of StatCounter Code -->
+				<script type="text/javascript">
+					var sc_project=6193656; 
+					var sc_invisible=1; 
+					var sc_security="57f7ee2a"; 
+				</script>
+				<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+				<!-- End of StatCounter Code -->
+				<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>	
+				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
+				<script src="/js/compressed.js" type="text/javascript"></script>
+			</body>
+		</html>

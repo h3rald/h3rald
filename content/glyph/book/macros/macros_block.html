@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+<title>Glyph</title>
+<meta name="author" content="Fabio Cevasco" />
+
+<meta name="copyright" content="Fabio Cevasco" />
+<meta name="generator" content="Glyph v0.4.0 (http://www.h3rald.com/glyph)" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Block Macros - Glyph</title>
+		<meta name="author" content="Fabio Cevasco" />
+		<meta name="copyright" content="Fabio Cevasco" />
+		<meta name="robots" content="all, follow" />
+		<meta name="Revisit-After" content="2 Days" />
+		<meta name="language" content="en" />
+		<meta name="target_country" content="en-us" />
+		<meta name="country" content="United States" />
+		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
+		<meta name="keywords" content="h3rald, fabio cevasco, glyph, technical writing, html, html5, book" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta content="44.388041;9.073248" name="ICBM" />
+
+		<link href="/css/main.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/glyph/book/styles/default.css" rel="stylesheet" type="text/css" />
+</head>
+
+	<body>
+		<div id="wrapper">
+			<a href="http://github.com/h3rald/h3rald"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+			<div id="header">
+				<!--[if lte IE 6]>
+				<div id="ie-warning">
+					This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
+				</div>
+				<![endif]-->
+				<!-- HEADER START -->
+				<div id="header-container">
+					<div id="header-left">
+						<h1><span class="logo"></span><a id="logo" href="/" title="H3RALD"></a></h1>
+					</div>
+					<div id="header-right">
+						<ul id="navigation">
+							<li><span class="preload nav-archives"></span><a id="nav-archives" href="/archives/" title="ARCHIVES"></a></li>
+							<li><span class="preload nav-projects"></span><a id="nav-projects" href="/projects/" title="PROJECTS"></a></li>
+							<li><span class="preload nav-about"></span><a id="nav-about" href="/about/" title="ABOUT"></a></li>
+							<li><span class="preload nav-other"></span><a id="nav-other" href="/other/" title="OTHER"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- HEADER END -->
+			<div class="ribbon">
+			</div>
+			<!-- MAIN START -->
+			<div id="main">
+				<!-- CONTAINER START -->
+				<div id="container">
+					<!-- CONTENT START -->
+					<div id="content" class="clearfixstandard">
+						<div id="page-links">
+							<span><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script></span>
+						</div>
+
+						<h2>Block Macros</h2>
+						<hr />
+						<div id="content-body">
+							<div class="navigation"><a href="/glyph/book/macros/macros_core.html">Core Macros &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/macros/macros_inline.html">&rarr; Inline Macros</a></div>
+								
+	<div class="section">
+<h4 id="m_box">box</h4>
+<p>Creates a titled box (<code>&lt;div&gt;</code> tag).</p>
+
+
+
+		<div class="example"><p>
+<strong>Example</strong>
+</p>
+			<pre class="lazy"><span class="line-numbers">   1 </span> box[Why boxes?|
+<span class="line-numbers">   2 </span>   Boxes can be used to make a section of text stand out from the rest of the document.
+<span class="line-numbers">   3 </span> ]
+</pre></div>
+	
+
+
+		<div class="section">
+<h5 id="h_168">Parameters</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The box title.</td>
+		</tr>
+	
+			
+		<tr>
+			<td>1</td>
+			<td>The box text.</td>
+		</tr>
+		</table>
+
+</div>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_codeblock">codeblock</h4>
+<p>Used to render a block of code within <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+
+
+
+		<div class="example"><p>
+<strong>Example</strong>
+</p>
+			<pre class="lazy"><span class="line-numbers">   1 </span> code[
+<span class="line-numbers">   2 </span>   def hello
+<span class="line-numbers">   3 </span>     puts &quot;Hello World&quot;
+<span class="line-numbers">   4 </span>   end
+<span class="line-numbers">   5 </span> ]
+</pre></div>
+	
+
+
+		<div class="section">
+<h5 id="h_170">Parameters</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The code to be formatted.</td>
+		</tr>
+		</table>
+
+</div>
+	
+
+<div class="section">
+<h5 id="h_171">Remarks</h5>
+<p>For code highlighting, see the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro.</p>
+
+</div>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_figure">figure</h4>
+<p>Includes an image in the document, with an optional caption (see <a href="/glyph/book/text_editing/images.html#img_fig">Images and Figures</a>).</p>
+
+
+
+		<div class="example"><p>
+<strong>Example</strong>
+</p>
+			<pre class="lazy"><span class="line-numbers">   1 </span> figure[
+<span class="line-numbers">   2 </span>   graph.png|Monthly Pageviews
+<span class="line-numbers">   3 </span>   @width[90%]
+<span class="line-numbers">   4 </span> ]
+</pre></div>
+	
+
+
+		<div class="section">
+<h5 id="h_173">Parameters</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The name of the image file (relative to the <code>images/</code> folder).</td>
+		</tr>
+	
+			
+		<tr>
+			<td>1</td>
+			<td>The image caption <em>(optional)</em>.</td>
+		</tr>
+		</table>
+
+</div>
+	
+
+		<div class="section">
+<h5 id="h_174">Attributes</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Attribute</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>*</td>
+			<td>Any attribute supported by the <a href="http://www.w3schools.com/tags/tag_IMG.asp">img tag</a>.</td>
+		</tr>
+		</table>
+
+</div>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_image">image</h4>
+<p>Includes an image in the document</p>
+
+
+
+		<div class="example"><p>
+<strong>Example</strong>
+</p>
+			<pre class="lazy"><span class="line-numbers">   1 </span> img[
+<span class="line-numbers">   2 </span>   holidays/landscape.jpg
+<span class="line-numbers">   3 </span>   @class[photo]
+<span class="line-numbers">   4 </span> 	@style[border: 1px solid black;]
+<span class="line-numbers">   5 </span> ]
+</pre></div>
+	
+
+
+		<div class="section">
+<h5 id="h_176">Parameters</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The name of the image file (relative to the <code>images/</code> folder).</td>
+		</tr>
+		</table>
+
+</div>
+	
+
+		<div class="section">
+<h5 id="h_177">Attributes</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Attribute</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>*</td>
+			<td>Any attribute supported by the <a href="http://www.w3schools.com/tags/tag_IMG.asp">img tag</a>.</td>
+		</tr>
+		</table>
+
+</div>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_navigation">navigation</h4>
+<p>Displays links to the document&#8217;s <span class="caps">TOC</span> and the previous/next topic (used only in <a href="/glyph/book/extending/layouts.html#layouts">layouts</a>).</p>
+
+
+
+
+
+		<div class="section">
+<h5 id="h_179">Parameters</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The ID of the current topic.</td>
+		</tr>
+		</table>
+
+</div>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_note">note</h4>
+<p>Creates a note <code>div</code> containing the value.</p>
+<strong>Aliases:</strong> <code>important, caution, tip</code>
+<p><strong>Example:</strong> <code>note[This is a note.]</code></p>
+
+
+
+		<div class="section">
+<h5 id="h_181">Parameters</h5>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The text of the note.</td>
+		</tr>
+		</table>
+
+</div>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_pubdate">pubdate</h4>
+<p>Evaluates to a date string (in the format: <em>current_month</em> <em>current_year</em>; i.e. <em>%B</em> <em>%Y</em>), within a <code>&lt;div&gt;</code> tag.</p>
+
+<p><strong>Example:</strong> <code>pubdate[]</code></p>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_revision">revision</h4>
+<p>Renders the revision of the document (based on the <a href="/glyph/book/config/document.html#s_document_revision"><code>document.revision</code></a> setting) within a <code>&lt;div&gt;</code> tag.</p>
+
+<p><strong>Example:</strong> <code>revision[]</code></p>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_subtitle">subtitle</h4>
+<p>Renders the subtitle of the document (based on the <a href="/glyph/book/config/document.html#s_document_subtitle"><code>document.subtitle</code></a> setting) within a <code>&lt;h2&gt;</code> tag.</p>
+
+<p><strong>Example:</strong> <code>subtitle[]</code></p>
+
+</div>
+	
+
+	
+	<div class="section">
+<h4 id="m_title">title</h4>
+<p>Renders the title of the document (based on the <a href="/glyph/book/config/document.html#s_document_title"><code>document.title</code></a> setting) within a <code>&lt;h1&gt;</code> tag.</p>
+
+<p><strong>Example:</strong> <code>title[]</code></p>
+
+</div>
+	
+							<div class="navigation"><a href="/glyph/book/macros/macros_core.html">Core Macros &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/macros/macros_inline.html">&rarr; Inline Macros</a></div>
+						</div>
+						<div id="content-footer">
+							<div class="share">
+								<script type="text/javascript"><!--
+									google_ad_client = "pub-2871497824158668";
+									/* 728x90, h3rald 8.0 */
+									google_ad_slot = "0081634732";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+									</script>
+									<script type="text/javascript"
+										src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+										</script>
+									</div>
+								</div>
+							</div>
+							<!-- CONTENT END -->
+						</div>
+						<!-- CONTAINER END -->
+					</div>
+					<div class="ribbon"></div>
+					<!-- MAIN END -->
+					<div id="border-bottom">
+						<div id="services">
+							<div class ="footer-left">
+								<div id="backtype">
+									<h3><span class="s-opinions preload"></span><a id="s-opinions" href="http://www.backtype.com/h3rald" title="Opinions"></a></h3>
+								</div>
+							</div>
+							<div class ="footer-center">
+								<div id="twitter">
+									<h3><span class="s-tweets preload"></span><a id="s-tweets" href="http://www.twitter.com/h3rald" title="Tweets"></a></h3>
+								</div>
+							</div>
+							<div class ="footer-right">
+								<div id="delicious">
+									<h3><span class="s-bookmarks preload"></span><a id="s-bookmarks" href="http://www.delicious.com/h3rald" title="Bookmarks"></a></h3>
+								</div>
+							</div>
+						</div> <!-- SERVICES END -->
+					</div>
+					<div class="clearfooter"></div>
+				</div> <!-- WRAPPER END -->
+				<div id="footer">
+					<div id="footer-container">
+						<div class="footer-div">
+							H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-2010 <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/validator?uri=/t_49.html" class="link">CSS 2.1</a>
+						</div>
+					</div> <!-- END FOOTER CONTAINER-->
+				</div> <!-- END FOOTER -->
+				<!-- Start of StatCounter Code -->
+				<script type="text/javascript">
+					var sc_project=6193656; 
+					var sc_invisible=1; 
+					var sc_security="57f7ee2a"; 
+				</script>
+				<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+				<!-- End of StatCounter Code -->
+				<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>	
+				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
+				<script src="/js/compressed.js" type="text/javascript"></script>
+			</body>
+		</html>

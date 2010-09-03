@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+<title>Glyph</title>
+<meta name="author" content="Fabio Cevasco" />
+
+<meta name="copyright" content="Fabio Cevasco" />
+<meta name="generator" content="Glyph v0.4.0 (http://www.h3rald.com/glyph)" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>XML Fallback - Glyph</title>
+		<meta name="author" content="Fabio Cevasco" />
+		<meta name="copyright" content="Fabio Cevasco" />
+		<meta name="robots" content="all, follow" />
+		<meta name="Revisit-After" content="2 Days" />
+		<meta name="language" content="en" />
+		<meta name="target_country" content="en-us" />
+		<meta name="country" content="United States" />
+		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
+		<meta name="keywords" content="h3rald, fabio cevasco, glyph, technical writing, html, html5, book" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta content="44.388041;9.073248" name="ICBM" />
+
+		<link href="/css/main.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/glyph/book/styles/default.css" rel="stylesheet" type="text/css" />
+</head>
+
+	<body>
+		<div id="wrapper">
+			<a href="http://github.com/h3rald/h3rald"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+			<div id="header">
+				<!--[if lte IE 6]>
+				<div id="ie-warning">
+					This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
+				</div>
+				<![endif]-->
+				<!-- HEADER START -->
+				<div id="header-container">
+					<div id="header-left">
+						<h1><span class="logo"></span><a id="logo" href="/" title="H3RALD"></a></h1>
+					</div>
+					<div id="header-right">
+						<ul id="navigation">
+							<li><span class="preload nav-archives"></span><a id="nav-archives" href="/archives/" title="ARCHIVES"></a></li>
+							<li><span class="preload nav-projects"></span><a id="nav-projects" href="/projects/" title="PROJECTS"></a></li>
+							<li><span class="preload nav-about"></span><a id="nav-about" href="/about/" title="ABOUT"></a></li>
+							<li><span class="preload nav-other"></span><a id="nav-other" href="/other/" title="OTHER"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- HEADER END -->
+			<div class="ribbon">
+			</div>
+			<!-- MAIN START -->
+			<div id="main">
+				<!-- CONTAINER START -->
+				<div id="container">
+					<!-- CONTENT START -->
+					<div id="content" class="clearfixstandard">
+						<div id="page-links">
+							<span><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script></span>
+						</div>
+
+						<h2>XML Fallback</h2>
+						<hr />
+						<div id="content-body">
+							<div class="navigation"><a href="/glyph/book/text_editing/raw_html.html">Textile or Markdown &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/stylesheets.html">&rarr; Adding Stylesheets</a></div>
+								<p>Sure Textile and Markdown are great, but sometimes you may want to just use HTML, without the extra verbosity, of course. Take tables for example: Textile offers an easy way to create them, but things may get dirty when you need to have multiple paragraphs or lists within cells.</p>
+	<p>Very early versions of Glyph used to offered some simple <code>table</code>, <code>tr</code>, <code>tr</code>, <code>td</code> macros just for that. Of course the problem was that thy didn't offer any way to customize the markup by adding, for example, CSS classes.</p>
+	<p>Instead, by default, Glyph can convert any unrecognized macro to the corresponding XML element and macro attributes to XML attributes.</p>
+	<div class="box">
+<div class="box-title">Example</div>
+<p>The following Glyph code:</p>
+		<pre class="lazy"><span class="line-numbers">   1 </span> table[@class[features]
+<span class="line-numbers">   2 </span>   tr[
+<span class="line-numbers">   3 </span> 		th[ID]
+<span class="line-numbers">   4 </span> 		th[Priority]
+<span class="line-numbers">   5 </span> 		th[Description]
+<span class="line-numbers">   6 </span>   ]
+<span class="line-numbers">   7 </span>   tr[
+<span class="line-numbers">   8 </span>     td[27]
+<span class="line-numbers">   9 </span>     td[span[@style[color:red;font-weight:bold;] HIGH]]
+<span class="line-numbers">  10 </span>     td[HTML output]
+<span class="line-numbers">  11 </span>   ]
+<span class="line-numbers">  12 </span>   tr[
+<span class="line-numbers">  13 </span>     td[42]
+<span class="line-numbers">  14 </span>     td[span[@style[color:green;font-weight:bols;] LOW]]
+<span class="line-numbers">  15 </span>     td[
+<span class="line-numbers">  16 </span>       p[Support for less-used tags:]
+<span class="line-numbers">  17 </span>       ul[
+<span class="line-numbers">  18 </span>         li[cite]
+<span class="line-numbers">  19 </span>         li[sup]
+<span class="line-numbers">  20 </span>         li[...]
+<span class="line-numbers">  21 </span>       ]
+<span class="line-numbers">  22 </span>     ]
+<span class="line-numbers">  23 </span>   ]
+<span class="line-numbers">  24 </span> ]
+</pre>
+		<p>Is translated into the following HTML code:</p>
+		<pre class="lazy"><span class="line-numbers">   1 </span> <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">table</span> <span class="MetaTag">class</span>=<span class="String"><span class="String">&quot;</span>features<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   2 </span>   <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">tr</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   3 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">th</span><span class="MetaTag">&gt;</span></span>ID<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">th</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   4 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">th</span><span class="MetaTag">&gt;</span></span>Priority<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">th</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   5 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">th</span><span class="MetaTag">&gt;</span></span>Description<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">th</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   6 </span>   <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">tr</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   7 </span>   <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">tr</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   8 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>27<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">   9 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">span</span> <span class="MetaTag">style</span>=<span class="String"><span class="String">&quot;</span>color:red;font-weight:bold;<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>HIGH<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span><span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  10 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>HTML output<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  11 </span>   <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">tr</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  12 </span>   <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">tr</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  13 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>42<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  14 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span><span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">span</span> <span class="MetaTag">style</span>=<span class="String"><span class="String">&quot;</span>color:green;font-weight:bold;<span class="String">&quot;</span></span><span class="MetaTag">&gt;</span></span>LOW<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">span</span><span class="MetaTag">&gt;</span></span><span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  15 </span>     <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  16 </span>       <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>Support for less-used tags:<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">p</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  17 </span>       <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  18 </span>         <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>cite<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  19 </span>         <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>sup<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  20 </span>         <span class="MetaTag"><span class="MetaTag">&lt;</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>...<span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">li</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  21 </span>       <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">ul</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  22 </span>     <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">td</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  23 </span>   <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">tr</span><span class="MetaTag">&gt;</span></span>
+<span class="line-numbers">  24 </span> <span class="MetaTag"><span class="MetaTag">&lt;/</span><span class="MetaTag">table</span><span class="MetaTag">&gt;</span></span>
+</pre>
+
+</div>
+	<p>Basically, if the <a href="/glyph/book/config/options.html#s_options_xml_fallback"><code>options.xml_fallback</code></a> setting is set to <code>true</code>, any macro unknown to Glyph with at most one parameter will be converted to an XML tag with the same name and any attribute will be converted to the corresponding XML attribute.</p>
+	<div class="important">
+<span class="note-title">Important</span>While macro names and attributes are validated so that an error is returned if they contain illegal character, no check is performed against any particular XML schema.
+
+</div>
+	<p>Additionally, it is possible to force macro-to-<span class="caps">XML</span> conversion by prepending an equal sign to any macro, so for example <code>=snippet[test]</code> will be converted into <code>&lt;snippet&gt;test&lt;/snippet&gt;</code>.</p>
+	<div class="section">
+<h5 id="xml_blacklist">Blacklisted XML tags</h5>
+<p>By default, the following tags are blacklisted and will be ignored:</p>
+<ul>
+	<li><code>applet</code></li>
+	<li><code>base</code></li>
+	<li><code>basefont</code></li>
+	<li><code>embed</code></li>
+	<li><code>frame</code></li>
+	<li><code>frameset</code></li>
+	<li><code>iframe</code></li>
+	<li><code>isindex</code></li>
+	<li><code>meta</code></li>
+	<li><code>noframes</code></li>
+	<li><code>noscript</code></li>
+	<li><code>object</code></li>
+	<li><code>param</code></li>
+	<li><code>title</code></li>
+</ul>
+<div class="tip">
+<p><span class="note-title">Tip</span>You can change this list by modifying the <a href="/glyph/book/config/options.html#s_options_xml_blacklist"><code>options.xml_blacklist</code></a> setting.</p>
+</div>
+
+</div>
+							<div class="navigation"><a href="/glyph/book/text_editing/raw_html.html">Textile or Markdown &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/stylesheets.html">&rarr; Adding Stylesheets</a></div>
+						</div>
+						<div id="content-footer">
+							<div class="share">
+								<script type="text/javascript"><!--
+									google_ad_client = "pub-2871497824158668";
+									/* 728x90, h3rald 8.0 */
+									google_ad_slot = "0081634732";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+									</script>
+									<script type="text/javascript"
+										src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+										</script>
+									</div>
+								</div>
+							</div>
+							<!-- CONTENT END -->
+						</div>
+						<!-- CONTAINER END -->
+					</div>
+					<div class="ribbon"></div>
+					<!-- MAIN END -->
+					<div id="border-bottom">
+						<div id="services">
+							<div class ="footer-left">
+								<div id="backtype">
+									<h3><span class="s-opinions preload"></span><a id="s-opinions" href="http://www.backtype.com/h3rald" title="Opinions"></a></h3>
+								</div>
+							</div>
+							<div class ="footer-center">
+								<div id="twitter">
+									<h3><span class="s-tweets preload"></span><a id="s-tweets" href="http://www.twitter.com/h3rald" title="Tweets"></a></h3>
+								</div>
+							</div>
+							<div class ="footer-right">
+								<div id="delicious">
+									<h3><span class="s-bookmarks preload"></span><a id="s-bookmarks" href="http://www.delicious.com/h3rald" title="Bookmarks"></a></h3>
+								</div>
+							</div>
+						</div> <!-- SERVICES END -->
+					</div>
+					<div class="clearfooter"></div>
+				</div> <!-- WRAPPER END -->
+				<div id="footer">
+					<div id="footer-container">
+						<div class="footer-div">
+							H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-2010 <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/validator?uri=/t_17.html" class="link">CSS 2.1</a>
+						</div>
+					</div> <!-- END FOOTER CONTAINER-->
+				</div> <!-- END FOOTER -->
+				<!-- Start of StatCounter Code -->
+				<script type="text/javascript">
+					var sc_project=6193656; 
+					var sc_invisible=1; 
+					var sc_security="57f7ee2a"; 
+				</script>
+				<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+				<!-- End of StatCounter Code -->
+				<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>	
+				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
+				<script src="/js/compressed.js" type="text/javascript"></script>
+			</body>
+		</html>

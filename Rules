@@ -76,6 +76,7 @@ compile '*' do
 					target = Glyph['document.output']
 					Glyph['document.output'] = 'pdf'
 					Glyph['document.author'] = "Fabio Cevasco"
+					Glyph['output.pdf.generator'] = "prince"
 					Glyph['site.root'] = ".."
 					Glyph['document.date'] = item[:date].strftime "%A, %d %B %Y"
 					Glyph['document.title'] = item[:title]
@@ -111,6 +112,10 @@ end
 
 route '/styles/*' do
 	item.identifier.chop + '.css' 
+end
+
+route '/glyph/book/' do
+	'/glyph/book/index.html'
 end
 
 route '/glyph/book/*' do

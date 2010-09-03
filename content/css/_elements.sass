@@ -21,8 +21,15 @@ blockquote, .note
   color: $gray
   font-style: italic
   padding: 0 0 0 33px
-  margin: 0
+  margin: 5px
+
+blockquote
   background: url(../images/theme/quote.png) no-repeat top left
+
+.note .note-title
+  font-style: normal
+  font-weight: bold
+  padding-right: 1em
 
 .hidden
   display: none
@@ -209,6 +216,24 @@ ul
   font-size: 13px
   margin-left: 15px
 
+.contents > #toc
+  display: none
+
+.contents ol li
+  list-style-type: none
+
+div.navigation 
+  display: block
+  margin: auto
+  text-align: center
+  margin: 2em 0
+
+div.navigation a
+  font-weight: bold
+  font-variant: small-caps
+  margin-left: 3em
+  margin-right: 3em
+
 #content .article-buttons li
   font-family: "Arial", "Sans-serif"
   font-size: 0.8em
@@ -238,7 +263,11 @@ ul
   padding: 5px
 
 table
+  margin: 10px auto
   +default_border
+
+tr
+  border-bottom: 1px solid $gray
 
 table
   &#timeline, &#taglist
@@ -248,10 +277,11 @@ tr, td, th
   padding: 5px
 
 td
-  border-left: 1px dashed $gray
-  border-right: 1px dashed $gray
+  border-left: 1px solid $gray
+  border-right: 1px solid $gray
 
 th
+  background: #cecece
   +default_border
 
 #taglist, #timeline
