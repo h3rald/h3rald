@@ -70,7 +70,7 @@
 								<p>Glyph Language is not a full-blown programming language and it is currently not Turing-complete (it does not provide loops). However, it is possible to evaluate simple ruby code snippets using the <code>ruby</code> macro (aliased to <code>%</code>), like this:</p>
 <ul>
 	<li><code>%[2 + 2]</code> &rarr; 4</li>
-	<li><code>%[Time.now]</code> &rarr; Fri Sep 03 17:23:01 +0200 2010</li>
+	<li><code>%[Time.now]</code> &rarr; Fri Sep 03 20:44:11 +0200 2010</li>
 	<li><code>%[Glyph::VERSION]</code> &rarr; 0.4.0</li>
 </ul>
 <p>The scope for the code evaluation is the Kernel module, (with all inclusions required by Glyph itself).</p>
@@ -137,6 +137,24 @@
 				<!-- End of StatCounter Code -->
 				<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>	
 				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
-				<script src="/js/compressed.js" type="text/javascript"></script>
+				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
+					<script src="/js/jquery.js" type="text/javascript"></script> 
+					<script src="/js/jquery-timeago.js" type="text/javascript"></script> 
+					<script src="/js/jquery-easing.js" type="text/javascript"></script> 
+					<script src="/js/jquery-fancybox.js" type="text/javascript"></script> 
+					<script src="/js/jquery-toc.js" type="text/javascript"></script> 
+					<script src="/js/date.js" type="text/javascript"></script> 
+					<script src="/js/feeds.js" type="text/javascript"></script> 
+					<script src="/js/search.js" type="text/javascript"></script> 
+					<script src="/js/init.js" type="text/javascript"></script> 
+				
+				
+					<script type="text/javascript"> 
+						$(document).ready(function() {
+								display_opinions(7);
+								display_tweets(7);
+								display_bookmarks(7);
+								});
+					</script> 
 			</body>
 		</html>
