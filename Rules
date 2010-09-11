@@ -24,7 +24,7 @@ compile '/styles/*' do
     	:load_paths => [Dir.pwd+"/content/styles"],
 			:syntax => :scss,
 			:style => :compact
- 	 }
+ 	 	}
 	end
 end
 
