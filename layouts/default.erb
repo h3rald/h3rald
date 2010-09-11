@@ -1,18 +1,18 @@
 -----
 filter: erb
 -----
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
+		<title>H3RALD</title>
 		<title><%= @item[:title] %> - H3RALD</title>
 		<% if @item[:feed_url] then %>
-			<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed_url]%>" />
+		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed_url]%>" />
 		<% else %>
-			<% if @item[:feed] then %>
-				<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>rss/" />
-				<link rel="alternate" type="application/atom+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>atom/" />
-			<% end %>
+		<% if @item[:feed] then %>
+		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>rss/" />
+		<link rel="alternate" type="application/atom+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>atom/" />
+		<% end %>
 		<% end %>
 		<meta name="author" content="Fabio Cevasco" />
 		<meta name="copyright" content="Fabio Cevasco" />
@@ -23,165 +23,295 @@ filter: erb
 		<meta name="country" content="United States" />
 		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
 		<% 	
-			min_keywords = "h3rald, fabio cevasco, "
-			default = "ruby, rails technical writing, reviews, software, browsers, articles, traveling, books, genova"
-			case @item[:type] 
-			when 'article' then
-				keywords = min_keywords+@item[:tags].join(', ')
-			when 'project' then
-				keywords = @item[:permalink] == 'h3rald' ? "fabio cevasco, "+@item[:permalink] : min_keywords+@item[:permalink]
-			else
-				keywords = min_keywords+default
-			end
+		min_keywords = "h3rald, fabio cevasco, "
+		default = "ruby, rails technical writing, reviews, software, browsers, articles, traveling, books, genova"
+		case @item[:type] 
+		when 'article' then
+		keywords = min_keywords+@item[:tags].join(', ')
+		when 'project' then
+		keywords = @item[:permalink] == 'h3rald' ? "fabio cevasco, "+@item[:permalink] : min_keywords+@item[:permalink]
+		else
+		keywords = min_keywords+default
+		end
 		%>
 		<meta name="keywords" content="<%= keywords %>" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8" />
 		<meta content="44.388041;9.073248" name="ICBM" />
 
-		<link href="/css/main.css" media="all" rel="stylesheet" type="text/css" />
 
+		<link rel="stylesheet" type="text/css" href="/styles/html5reset.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/style.css" />
+
+		<![if lte IE 8]>
+		<script src="/js/html5.js" type="text/javascript"></script>
+		<![endif]>
 	</head>
 	<body>
-		<div id="wrapper">
-			<a href="http://github.com/h3rald/h3rald"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
-			<div id="header">
-				<!--[if lte IE 6]>
-				<div id="ie-warning">
-					This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
-				</div>
-				<![endif]-->
-				<!-- HEADER START -->
-				<div id="header-container">
-					<div id="header-left">
-						<h1><span class="logo"></span><a id="logo" href="/" title="H3RALD"></a></h1>
-					</div>
-					<div id="header-right">
-						<ul id="navigation">
-							<% ['archives', 'projects', 'about', 'other'].each do |l| %>
-								<li><span class="preload nav-<%= l%>"></span><a id="nav-<%= l%>" href="/<%= l %>/" title="<%= l.upcase %>"></a></li>
-							<% end %>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- HEADER END -->
-			<div class="ribbon">
-			</div>
-			<!-- MAIN START -->
-			<div id="main">
-				<!-- CONTAINER START -->
-				<div id="container">
-					<!-- CONTENT START -->
-					<div id="content" class="clearfix<%= (@item[:permalink] == 'home') ? ' home' : ' standard' %>">
-<div id="page-links">
-					<span><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script></span>
-					<% if @item[:feed] then %>
-						<span><a href="<%= @item[:feed_url] || @item[:feed]+"rss/" %>" type="application/rss+xml" rel="alternate"><img src="/images/theme/feed.png" alt="#"/>RSS Feed</a></span>
-					<% end %>
-					<% if @item[:pdf] then %>
-						<span><a href="<%= @item.identifier.chop %>.pdf" ><img src="/images/theme/pdf.png" alt="#"/>Download PDF</a></span>
-					<% end %>
-					<span><a href="http://github.com/h3rald/h3rald/raw/master/<%= @item[:file].path %>?iframe" class="fancybox"><img src="/images/theme/source.png" alt="#"/>View Source</a></span>
-				</div>
+		<![if lte IE 6]>
+		<div id="ie-warning">
+			This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More &raquo;</a>]
+		</div>
+		<![endif]>
 
-						<h2><%= @item[:title] %></h2>
-						<% 	case @item[:type]
-								when 'article' then%>
-								<div id="content-header">
-									<%= render 'article_meta', :article => @item %>
-								</div>
-							<% end %>
-							<hr />
-							<div id="content-body">
-								<% if @item[:toc] then %>
-									<div id="toc">
-										<span id="toctitle">Table of Contents</span>
-										<ol></ol>
-									</div>
-								<% end %>
-								<%= yield %>
-							</div>
-							<div id="content-footer">
-								<div class="share">
-									<script type="text/javascript"><!--
+		<section id="container">
+			<nav class="home">
+				<%= ['projects', 'links'].map{|l| %{<a href="/#{l}/"><strong>#{l.upcase}</strong></a>} }.join("|") + "|" + 
+				['review', 'ruby', 'opensource', 'productivity', 'writing', 'software'].map{|l| %{<a href="/tags/#{l}/" rel="tag">#{l.upcase}</a>} }.join("|") +
+				%{|<a href="/archives/" rel="archives"><strong>MORE</strong>&nbsp;&raquo;</a> } %>
+			</nav>
+			<header class="home">
+				<nav class="left">
+					<script type="text/javascript"><!--
 google_ad_client = "pub-2871497824158668";
-/* 728x90, h3rald 8.0 */
-google_ad_slot = "0081634732";
+/* 234x60, created 9/5/10 */
+google_ad_slot = "5027018393";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+			</nav>
+			<h1>
+				<a href="#">
+					<img src="/images/h3rald.png" alt="H3RALD" class="default"/>
+					<![if !IE]>
+					<img src="/images/h3rald_hover.png" alt="H3RALD" class="hover"/>
+					<![endif]>
+				</a>
+			</h1>
+			<nav class="right">
+				<script type="text/javascript"><!--
+google_ad_client = "pub-2871497824158668";
+/* 234x60, created 9/10/10 */
+google_ad_slot = "7316796658";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+			</nav>
+			<time></time>
+		</header>
+		<!-- TODO from here -->
+		<section id="topbar">
+			<section id="social">
+				<a href="http://www.h3rald.com/rss/"><img src="/images/social/rss.png" alt="RSS" /></a>
+				<a href="http://blog.h3rald.com/"><img src="/images/social/posterous.png" alt="posterous" /></a>
+				<a href="http://www.twitter.com/h3rald/"><img src="/images/social/twitter.png" alt="RSS" /></a>
+				<a href="http://it.linkedin.com/in/fabiocevasco"><img src="/images/social/linkedin.png" alt="linkedin" /></a>
+				<a href="http://www.delicious.com/h3rald/"><img src="/images/social/delicious.png" alt="delicious" /></a>
+				<a href="http://www.reddit.com/user/h3rald/"><img src="/images/social/reddit.png" alt="reddit" /></a>
+			</section>
+			<aside id="search">
+				<section id="search_form"></section> 
+				<section id="search_results"></section> 
+			</aside>
+		</section>
+		<section class="left" id="main-content">
+			<article id="recent-1">
+				<header>
+					<h1><a href="/page.html">H3RALD.com v8.1 Released</a></h1>
+					<h2>Featuring a a brand new newspaper-like design, powered by HTML5 and CSS3</h2>
+					<p class="pubdate"><time>September 4th 2010</time></p>
+					<p class="author">By <em>Fabio Cevasco</em></p>
+				</header>
+				<section class="three-columns">
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p> 
+					<p>Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+				</section>
+			</article>
+			<section class="clear-left left">
+				<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+				<section>
+					<script id="twitter">
+						new TWTR.Widget({
+						version: 2,
+						type: 'profile',
+						rpp: 4,
+						interval: 6000,
+						width: 280,
+						height: 250,
+						theme: {
+						shell: {
+						background: '#ffffff',
+						color: '#333333'
+						},
+						tweets: {
+						background: '#ffffff',
+						color: '#333333',
+						links: '#3b6deb'
+						}
+						},
+						features: {
+						scrollbar: false,
+						loop: false,
+						live: false,
+						hashtags: true,
+						timestamp: true,
+						avatars: false,
+						behavior: 'all'
+						}
+						}).render().setUser('h3rald').start();
+					</script>
+				</section>
+				<article id="recent-4">
+					<header>
+						<h1><a href="#">Glyph 0.3.0 Released</a></h1>
+						<h2>The third release of the Glyph Authoring Framework features dramatic speed improvements, and much more</h2>
+						<p class="pubdate"><time>September 4th 2010</time></p>
+						<p class="author">By <em>Fabio Cevasco</em></p>
+					</header>
+					<section>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					</section>
+				</article>
+				<article class="feature">
+					<header>
+						<p>FEATURED CONTENT</p>
+						<h1><a href="#">Holidays in Italy?</a></h1>
+						<h2>Yes, I am really renting my house in the countryside!</h2>
+					</header>
+					<section>
+						<img src="/images/sessarego.jpg" alt="Sessarego" style="margin: 0 5px;" />
+						<p>Looking for a peaceful and relaxing holiday in the Italian Riviera? I'm renting part of my family country home in the center of the old village of Sessarego, on a peaceful hill a few minutes away from Bogliasco, a small coastal town on the Golfo Paradiso. </p>
+						<p>The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away.</p>
+					</section>
+				</article>
+
+			</section>
+			<section class="right border-left">
+				<article id="recent-2">
+					<header>
+						<h1><a href="#">Glyph 0.4.0 Released</a></h1>
+						<h2>Featuring web output, HTML5 support, stats, wkhtmltopdf, and much more</h2>
+						<p class="pubdate"><time>September 4th 2010</time></p>
+						<p class="author">By <em>Fabio Cevasco</em></p>
+					</header>
+					<section>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					</section>
+				</article>
+				<article id="recent-3">
+					<header>
+						<h1><a href="#">Book Review: Distributed Programming with Ruby</a></h1>
+						<h2>Just what you need to get started with the right tools to build large and scalable applications in Ruby</h2>
+						<p class="pubdate"><time>September 4th 2010</time></p>
+						<p class="author">By <em>Fabio Cevasco</em></p>
+					</header>
+					<section>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					</section>
+				</article>
+				<article id="recent-5">
+					<header>
+						<h1><a href="#">Glyph 0.2.0 Released</a></h1>
+						<h2>Featuring single-file compilation, programmatic usage and auto-regeneration, and more</h2>
+						<p class="pubdate"><time>September 4th 2010</time></p>
+						<p class="author">By <em>Fabio Cevasco</em></p>
+					</header>
+					<section>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+					</section>
+				</article>
+			</section>
+		</section>
+		<section class="right" id="secondary-content">
+			<article id="popular-1">
+				<header>
+					<h1><a href="#">10 programming languages worth checking out</a></h1>
+					<h2>A quick comparison of 10 non-mainstream programming languages</h2>
+					<p class="pubdate"><time>September 4th 2010</time></p>
+					<p class="author">By <em>Fabio Cevasco</em></p>
+				</header>
+				<section class="two-columns">
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				</section>
+			</article>
+			<article class="feature">
+				<header>
+					<p>FEATURED CONTENT</p>
+					<h1><a href="#">Glyph &ndash; Rapid Document Authoring Framework</a></h1>
+					<h2>A free and extensible solution for personal publishing, 100% open source!</h2>
+				</header>
+				<section>
+					<img src="/images/glyph.png" alt="Glyph Logo" class="img-right" />
+					<p>With Glyph, creating and maintaining any kind of document becomes as easy as... programming. </p>
+					<p>Glyph enables you to minimize text duplication, focus on content rather than presentation, manage references seamlessly and automate tedious tasks through a simple but effective macro language, specifically geared towards customization and extensibility.</p>
+				</section>
+			</article>
+			<section class="left border-right">
+				<article id="popular-2">
+					<header>
+						<h1><a href="#">Herald (Vim Color Scheme)</a></h1>
+						<h2>My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!</h2>
+						<p class="pubdate"><time>September 4th 2010</time></p>
+						<p class="author">By <em>Fabio Cevasco</em></p>
+					</header>
+					<section>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					</section>
+				</article>
+			</section>
+			<section class="right">
+				<article class="right popular3">
+					<header>
+						<h1><a href="#">A closer look at Komodo Edit</a></h1>
+						<h2>A comprehensive review of the free editor from ActiveState</h2>
+						<p class="pubdate"><time>September 4th 2010</time></p>
+						<p class="author">By <em>Fabio Cevasco</em></p>
+					</header>
+					<section>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+					</section>
+				</article>
+			</section>
+		</section>
+		<footer>
+			<section class="ads">
+				<script type="text/javascript"><!--
+google_ad_client = "pub-2871497824158668";
+/* 728x90, created 9/10/10 */
+google_ad_slot = "3963343166";
 google_ad_width = 728;
 google_ad_height = 90;
 //-->
-									</script>
-									<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-									</script>
-								</div>
-								<%= render 'article_buttons' if @item[:type] == 'article' %>
-							</div>
-						</div>
-						<!-- CONTENT END -->
-					</div>
-					<!-- CONTAINER END -->
-				</div>
-				<div class="ribbon"></div>
-				<!-- MAIN END -->
-				<div id="border-bottom">
-					<% if @item[:type] == 'article' then %>
-						<%= render 'comments' %>
-					<% else %>
-						<%= render 'services' %>
-					<% end %>
-				</div>
-				<div class="clearfooter"></div>
-			</div> <!-- WRAPPER END -->
-			<div id="footer">
-				<div id="footer-container">
-					<div class="footer-div">
-						H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-<%= Time.new.strftime("%Y") %> <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/validator?uri=<%= url_for @item %>" class="link">CSS 2.1</a>
-					</div>
-				</div> <!-- END FOOTER CONTAINER-->
-			</div> <!-- END FOOTER -->
-			<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>	
-				<!-- Start of StatCounter Code -->
-				<script type="text/javascript">
-					var sc_project=6193656; 
-					var sc_invisible=1; 
-					var sc_security="57f7ee2a"; 
-				</script>
-				<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
-				<!-- End of StatCounter Code -->
-				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
-				<% if @site.config[:dev] = true then %>
-					<script src="/js/jquery.js" type="text/javascript"></script>
-					<script src="/js/jquery-timeago.js" type="text/javascript"></script>
-					<script src="/js/jquery-easing.js" type="text/javascript"></script>
-					<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
-					<script src="/js/jquery-toc.js" type="text/javascript"></script>
-					<script src="/js/date.js" type="text/javascript"></script>
-					<script src="/js/feeds.js" type="text/javascript"></script>
-					<script src="/js/search.js" type="text/javascript"></script>
-					<script src="/js/init.js" type="text/javascript"></script>
-				<% else %>
-					<script src="/js/compressed.js" type="text/javascript"></script>
-				<% end %>
-				<% if @item[:type] != 'article' then %>
-					<script type="text/javascript">
-						$(document).ready(function() {
-								display_opinions(7);
-								display_tweets(7);
-								display_bookmarks(7);
-								});
 </script>
-			<% end %>
-			<% if @item[:type] == 'article' then %>
-				<script src="http://badges.del.icio.us/feeds/json/url/data?url=<%= url_for @item %>&amp;callback=delicious_counter"></script>
-			<% end %>
-			<% if @item[:github] then %>
-				<script type="text/javascript">
-					$(document).ready(function() {
-							display_commits(5, '<%= @item[:github] %>');
-							});
+<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-			<% end %>
-		</body>
-	</html>
+</section>
+<section>
+	<nav>
+		<a href="#">ABOUT</a>|<a href="#">CONTACT</a>
+	</nav>
+	<p>&copy; 2010 &mdash; <em>Fabio Cevasco</em></p>
+</section>
+		</footer>
+	</section>
+	<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script> 
+	<script src="/js/jquery.js" type="text/javascript"></script>
+	<script src="/js/jquery-timeago.js" type="text/javascript"></script>
+	<script src="/js/jquery-easing.js" type="text/javascript"></script>
+	<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
+	<script src="/js/jquery-toc.js" type="text/javascript"></script>
+	<script src="/js/date.js" type="text/javascript"></script>
+	<script src="/js/feeds.js" type="text/javascript"></script>
+	<script src="/js/search.js" type="text/javascript"></script>
+	<script src="/js/init.js" type="text/javascript"></script>
+</body>
+</html>

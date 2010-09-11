@@ -1,0 +1,188 @@
+/* Content */
+
+article > header {
+	h1 {
+		@include standard-font;
+		font-weight: bold;
+		color: #000;
+		line-height: 1.1em;
+		padding-top: 0.2em;
+		text-align:left;
+		height: 60%;
+		a {
+			color: #000;
+			text-decoration: none;
+		}
+	}
+	h2 {
+		@include standard-font;
+		font-weight: normal;
+		font-style: italic;
+		color: #000;
+		line-height: 1.1em;
+		height: 20%;
+		text-align:left;
+	}
+}
+
+@mixin toolbar {
+	border-bottom: 1px solid $light-gray;
+	width: 100%;
+	text-align: left;
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+
+article > header > p.pubdate {
+	@include toolbar;
+}
+article > header > p.toolbar {
+	@include toolbar;
+	time {
+		font-style: italic;
+	}
+	.tools {
+		float: right;
+		a {
+			margin: 0 2px;
+		}
+	}
+}
+article > header .author {
+	text-align: right;
+	font-size: 0.8em;
+	float: right;
+	margin-top: -10px;
+}
+
+article.page > section {
+	padding-top: 0.5em;
+	clear: both;
+}
+
+article > section {
+	clear: right;
+}
+
+article > header > nav.tags {
+	margin-top: -5px;
+	padding: 2px 0 3px 0;
+	text-align: left;
+	float: left;
+}
+
+article > header > nav.tags > a {
+	margin: 2px 8px 2px 0px;
+	font-style: italic;
+	background-color: #CED1EB;
+	@include border-radius(3px);
+	padding: 1px 3px;
+	@include ease-in(background-color);
+}
+article > header > nav.tags > a:hover {
+	background-color: #E0E3FF;
+}
+
+
+/* Headers */
+
+#main-content > article h1, article.page > header h1 {
+	font-size: 2.8em;
+}
+#secondary-content > article h1, #main-content > section > article h1 {
+	font-size: 2em;
+}
+#main-content > article h2, #secondary-content > section > article h1, article.page > header h2 {
+	font-size: 1.6em;
+}
+#main-content > section > article h2 {
+	font-size: 1.3em;
+}
+#secondary-content > article h2 {
+	font-size: 1.4em;
+}
+#secondary-content > section > article h2 {
+	font-size: 1.1em;
+}
+
+article {
+	p { font-size: 93%; }
+	header > p { font-size: 90%; }
+}
+
+/* Text */
+
+
+
+article p {
+	margin: 0.6em 0;
+}
+
+article.feature {
+	border: 1px solid $light-gray;
+	padding: 10px;	
+	header p {
+		margin: 0;
+		font-weight: bold;
+		text-align: right;
+		color: $light-gray;
+	}
+	h1, h2 {
+		text-align: center;
+	}
+	h2 {
+		margin-bottom:10px;
+	}
+}
+
+
+/* Classes */
+
+.clear-left {
+	clear: left;
+}
+.clear-right {
+	clear: right;
+}
+.clear {
+	clear:both;
+}
+
+.img-right {
+	float: right;
+	margin: 10px 0 10px 10px;
+}
+.img-left {
+	float: right;
+	margin: 10px 10px 10px 0;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.border-left {
+	border-left: 1px solid $light-gray;
+}
+.border-right {
+	border-right: 1px solid $light-gray;
+}
+
+/* Elements */
+
+a {
+	color: $dark-blue;
+	text-decoration: none;
+	@include ease-in(color);
+	outline: none;
+}
+
+a:hover {
+	color: $light-blue;
+}
+

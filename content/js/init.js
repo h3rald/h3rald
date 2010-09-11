@@ -15,6 +15,9 @@ function delicious_counter(data) {
 	$('#delcounter').text(text);
 }
 $(document).ready(function() {
+		$('header.home > time').text(Date.today().toString("dddd, MMMM dS yyyy"));
+		$('header.home > time').attr('datetime', Date.today().toString("yyyy-MM-dd"));
+		/////////////////////////
 		$('.timeago').timeago();
 		// TOC
 		$("#toc ol").tableOfContents("#content-body", {startLevel: 3, depth: 6, topLinks: "[top]"});

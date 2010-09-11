@@ -21,6 +21,7 @@ text_extensions:
 - textile
 - bbcode
 - glyph
+- scss
 output_dir: output
 base_url: "http://www.h3rald.com"
 author_name: "Fabio Cevasco"

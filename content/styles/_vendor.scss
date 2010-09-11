@@ -1,0 +1,82 @@
+/* Twitter */
+.twtr-tweet-text, .twtr-hd, .twtr-join-conv {
+	@include standard-font;
+}
+
+.twtr-tweet-text {
+	font-size: 1.2em;
+}
+.twtr-timestamp, .twtr-reply {
+	font-size: 1.4em;
+	font-style: italic;
+}
+
+/* Google Custom Search */
+
+#search {
+	margin: 10px;
+	padding: 10px;
+	height: 50px;
+	border: 1px solid $light-gray;
+	width: 270px;
+	float: right;
+}
+
+
+.gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark {
+  display: none;
+}
+
+#search_results {
+	width: 940px;
+  clear: both;
+	text-align: justify;
+	margin-right: 0;
+	margin-left: 0;
+}
+.gsc-result {
+  padding: 0.5em 0;
+}
+
+table.gsc-search-box {
+  margin: auto;
+}
+
+.gsc-control, .gsc-resultsRoot {
+}
+
+.gsc-search-box {
+  border: none;
+  td {
+    border: none;
+	}
+}
+
+.gsc-input {
+  width: 200px;
+}
+
+.gsc-branding {
+  color: black;
+  font-style: italic;
+  font-size: 70%;
+  border: none;
+  margin: auto;
+  padding: 0;
+}
+
+td.gsc-branding-img {
+  text-align: left;
+}
+
+.gsc-cursor-page {
+  display: inline;
+  padding-right: 7px;
+  &:hover {
+    cursor: pointer;
+	}
+}
+.gsc-cursor-current-page {
+  font-weight: bold;
+
+}
