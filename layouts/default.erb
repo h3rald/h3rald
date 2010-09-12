@@ -57,6 +57,7 @@ filter: erb
 			<% if @item[:permalink] == 'home' then %>
 				<%= render 'home_header' %>
 				<%= yield %>
+				<%= render 'buttons', :item => @item %>
 			<% else %>
 				<%= render 'page_header', :item => @item %>
 				<article class="page">
@@ -69,6 +70,7 @@ filter: erb
 							</aside>
 						<% end %>
 						<%= yield %>
+						<%= render 'buttons', :item => @item %>
 					</section>
 				</article>
 					<% if @item[:type] == 'article' %>
@@ -83,7 +85,6 @@ filter: erb
 					})();
 					</script>
 					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=h3rald">comments powered by Disqus.</a></noscript>
-					<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 					<% end %>
 				<% end %>
 			<footer>
@@ -103,7 +104,7 @@ filter: erb
 					<nav>
 						<a href="#">ABOUT</a>|<a href="#">CONTACT</a>
 					</nav>
-					<p>&copy; 2010 &mdash; <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1 &mdash; &copy; 2010 &mdash; <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

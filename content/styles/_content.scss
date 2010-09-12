@@ -39,13 +39,24 @@ article > header > p.pubdate {
 }
 article > header > p.toolbar {
 	@include toolbar;
+	margin-top: 20px;
 	time {
 		font-style: italic;
 	}
 	.tools {
 		float: right;
+		margin-top: -20px;
 		a {
+			float: left;
+			display: block;
 			margin: 0 2px;
+			img {
+				opacity: 0.6;
+				@include ease-in(opacity);
+				&:hover {
+					opacity: 1;
+				}
+			}
 		}
 	}
 }
@@ -90,10 +101,6 @@ article > header > nav.tags > a:hover {
 #main-content > article h1, 
 article.page > header h1 {
 	font-size: 2.8em;
-}
-article.page >  header h1 {
-	text-align: center;
-	margin: auto;
 }
 
 #secondary-content > article h1, 
@@ -206,7 +213,6 @@ article.feature {
 }
 
 .toc-top-link {
-	font-size: 0.5em;
 	font-weight: normal;
 }
 

@@ -3,8 +3,10 @@ filter: erb
 -----
 <%
 	author = @item[:author] || "Fabio Cevasco"
-	pdf = %{<a href="/articles/#{@item[:permalink]}.pdf">PDF</a>} if @item[:pdf]
-	tools = %{<span class="tools">#{pdf}</span>}
+	pdf = %{<a href="/articles/#{@item[:permalink]}.pdf"><img src="/images/icons/pdf.png" alt="PDF" /></a>} if @item[:pdf]
+	source_url = "http://github.com/h3rald/h3rald/raw/master/#{@item[:file].path}?iframe" 
+	source = %{<a href="#{source_url}" class="fancybox"><img src="/images/icons/ruby.png" alt="SOURCE"/></a>}
+	tools = %{<span class="tools">#{source}#{pdf}</span>}
 %><header>
 	<hgroup>
 		<h1><%= @item[:title] %></h1>
