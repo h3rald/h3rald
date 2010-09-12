@@ -209,3 +209,15 @@ article.page {
 	column-count: 2;
 	column-gap: 20px;
 }
+
+/* Archives */
+
+#taglist, #timeline {
+	margin: 2em auto;
+	text-align: center;
+	td {
+		margin: 10px;
+		text-align: left;
+		width: 180px;
+	}
+}

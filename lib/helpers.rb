@@ -30,7 +30,7 @@ module Nanoc3::Helpers::Tagging
 	end 
 
 	def sorted_site_tags
-		site_tags.sort{|a, b| a[1] <=> b[1]}.reverse
+		site_tags.sort{|a, b| a[0] <=> b[0]}
 	end
 
 	def articles_tagged_with(tag)

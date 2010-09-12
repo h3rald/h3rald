@@ -91,9 +91,14 @@ article > header > nav.tags > a:hover {
 article.page > header h1 {
 	font-size: 2.8em;
 }
+article.page >  header h1 {
+	text-align: center;
+	margin: auto;
+}
 
 #secondary-content > article h1, 
 #main-content > section > article h1,
+#body-text section header h1,
 #body-text h2 {
 	font-size: 2em;
 }
@@ -101,21 +106,25 @@ article.page > header h1 {
 #main-content > article h2, 
 #secondary-content > section > article h1, 
 article.page > header h2,
+#body-text section section header h1,
 #body-text h3 {
 	font-size: 1.6em;
 }
 
 #main-content > section > article h2,
+#body-text section section section header h1,
 #body-text h5 {
 	font-size: 1.3em;
 }
 
 #secondary-content > article h2,
+#body-text section section section section header h1,
 #body-text h4 {
 	font-size: 1.4em;
 }
 
 #secondary-content > section > article h2,
+#body-text section section section section section header h1,
 #body-text h6 {
 	font-size: 1.1em;
 }
@@ -132,7 +141,7 @@ article {
 	h1, h2, h3, h4, h5, h6 {
 		clear: both;
 		padding-top: 1.5em;
-		padding-bottom: 0.1em;
+		margin-bottom: 0.8em;
 		border-bottom: 1px solid $light-gray;  
 		width: 100%;
 	}
@@ -155,7 +164,7 @@ article p {
 	margin: 0.6em 0;
 }
 
-#body-text ul {
+#body-text ul, ol {
 	margin-left: 2em;
 }
 
@@ -185,7 +194,7 @@ article.feature {
 		font-style: italic;
 	}
 	ol {
-		padding-left: 0.5em;
+		margin-left: 0;
 		li {
 			list-style-type: none;
 		}

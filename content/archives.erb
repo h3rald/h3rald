@@ -1,0 +1,38 @@
+----- 
+permalink: archives
+filters_pre: 
+- erb
+title: Archives
+type: page
+-----
+<%
+	tags = sorted_site_tags
+%>
+<section>
+	<header>
+		<h1>Articles by Topic</h1>
+	</header>
+	<table id="taglist">
+	<% c = 0
+	tags.each do |t|
+		c = c+1 %>
+		<%= "<tr>" if c%5 == 1 %>
+			<td><%= tag_link_with_count(t[0], t[1]) %></td>
+			<%= "</tr>" if c%5 == 0 %>
+	<% end %></tr>
+	</table>
+</section>
+<section>
+	<header>
+		<h1>Articles by Month</h1>
+	</header>
+	<table id="timeline">
+		<% c = 0
+		articles_by_month.each do |m|
+			c = c+1 %>
+			<%= "<tr>" if c%5 == 1 %>
+				<td><%= month_link_with_count(m[0], m[1].length) %></td>
+				<%= "</tr>" if c%5 == 0 %>
+		<% end %></tr>
+	</table>
+</section>
