@@ -1,0 +1,202 @@
+----- 
+permalink: home
+filters_pre: 
+- erb
+title: Home
+type: page
+feed: '/'
+feed_url: "http://feeds.feedburner.com/h3rald"
+feed_title: 'Latest Articles'
+-----
+<%
+max_items = 5
+
+all_articles = latest_articles.length
+latest = latest_articles 5
+popular = popular_articles 5
+all_projects = @items.select{|a| a[:type] == 'project'}.length
+%><section id="topbar">
+	<nav id="social">
+		<ul>
+			<li><a href="http://www.h3rald.com/rss/" rel="external"><img src="/images/social/rss.png" alt="RSS" /></a></li>
+			<li><a href="http://blog.h3rald.com/" rel="external"><img src="/images/social/posterous.png" alt="posterous" /></a></li>
+			<li><a href="http://www.twitter.com/h3rald/" rel="external"><img src="/images/social/twitter.png" alt="RSS" /></a></li>
+			<li><a href="http://it.linkedin.com/in/fabiocevasco" rel="external"><img src="/images/social/linkedin.png" alt="linkedin" /></a></li>
+			<li><a href="http://www.delicious.com/h3rald/" rel="external"><img src="/images/social/delicious.png" alt="delicious" /></a></li>
+			<li><a href="http://www.reddit.com/user/h3rald/" rel="external"><img src="/images/social/reddit.png" alt="reddit" /></a></li>
+		</ul>
+	</nav>
+	<aside id="search">
+		<section id="search_form"></section> 
+	</aside>
+</section>
+<section id="search_results"></section> 
+<section class="left" id="main-content">
+	<article id="recent-1">
+		<header>
+			<h1><a href="/page.html">H3RALD.com v8.1 Released</a></h1>
+			<h2>Featuring a a brand new newspaper-like design, powered by HTML5 and CSS3</h2>
+			<p class="pubdate"><time>September 4th 2010</time></p>
+			<p class="author">By <em>Fabio Cevasco</em></p>
+		</header>
+		<section class="three-columns">
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p> 
+			<p>Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+		</section>
+	</article>
+	<section class="clear-left left">
+		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+		<section>
+			<script id="twitter">
+				new TWTR.Widget({
+				version: 2,
+				type: 'profile',
+				rpp: 4,
+				interval: 6000,
+				width: 280,
+				height: 250,
+				theme: {
+				shell: {
+				background: '#ffffff',
+				color: '#333333'
+				},
+				tweets: {
+				background: '#ffffff',
+				color: '#333333',
+				links: '#3b6deb'
+				}
+				},
+				features: {
+				scrollbar: false,
+				loop: false,
+				live: false,
+				hashtags: true,
+				timestamp: true,
+				avatars: false,
+				behavior: 'all'
+				}
+				}).render().setUser('h3rald').start();
+			</script>
+		</section>
+		<article id="recent-4">
+			<header>
+				<h1><a href="#">Glyph 0.3.0 Released</a></h1>
+				<h2>The third release of the Glyph Authoring Framework features dramatic speed improvements, and much more</h2>
+				<p class="pubdate"><time>September 4th 2010</time></p>
+				<p class="author">By <em>Fabio Cevasco</em></p>
+			</header>
+			<section>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			</section>
+		</article>
+		<article class="feature">
+			<header>
+				<p>FEATURED CONTENT</p>
+				<h1><a href="#">Holidays in Italy?</a></h1>
+				<h2>Yes, I am really renting my house in the countryside!</h2>
+			</header>
+			<section>
+				<img src="/images/sessarego.jpg" alt="Sessarego" style="margin: 0 5px;" />
+				<p>Looking for a peaceful and relaxing holiday in the Italian Riviera? I'm renting part of my family country home in the center of the old village of Sessarego, on a peaceful hill a few minutes away from Bogliasco, a small coastal town on the Golfo Paradiso. </p>
+				<p>The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away.</p>
+			</section>
+		</article>
+
+	</section>
+	<section class="right border-left">
+		<article id="recent-2">
+			<header>
+				<h1><a href="#">Glyph 0.4.0 Released</a></h1>
+				<h2>Featuring web output, HTML5 support, stats, wkhtmltopdf, and much more</h2>
+				<p class="pubdate"><time>September 4th 2010</time></p>
+				<p class="author">By <em>Fabio Cevasco</em></p>
+			</header>
+			<section>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			</section>
+		</article>
+		<article id="recent-3">
+			<header>
+				<h1><a href="#">Book Review: Distributed Programming with Ruby</a></h1>
+				<h2>Just what you need to get started with the right tools to build large and scalable applications in Ruby</h2>
+				<p class="pubdate"><time>September 4th 2010</time></p>
+				<p class="author">By <em>Fabio Cevasco</em></p>
+			</header>
+			<section>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			</section>
+		</article>
+		<article id="recent-5">
+			<header>
+				<h1><a href="#">Glyph 0.2.0 Released</a></h1>
+				<h2>Featuring single-file compilation, programmatic usage and auto-regeneration, and more</h2>
+				<p class="pubdate"><time>September 4th 2010</time></p>
+				<p class="author">By <em>Fabio Cevasco</em></p>
+			</header>
+			<section>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+			</section>
+		</article>
+	</section>
+</section>
+<section class="right" id="secondary-content">
+	<article id="popular-1">
+		<header>
+			<h1><a href="#">10 programming languages worth checking out</a></h1>
+			<h2>A quick comparison of 10 non-mainstream programming languages</h2>
+			<p class="pubdate"><time>September 4th 2010</time></p>
+			<p class="author">By <em>Fabio Cevasco</em></p>
+		</header>
+		<section class="two-columns">
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+		</section>
+	</article>
+	<article class="feature">
+		<header>
+			<p>FEATURED CONTENT</p>
+			<h1><a href="#">Glyph &ndash; Rapid Document Authoring Framework</a></h1>
+			<h2>A free and extensible solution for personal publishing, 100% open source!</h2>
+		</header>
+		<section>
+			<img src="/images/glyph.png" alt="Glyph Logo" class="img-right" />
+			<p>With Glyph, creating and maintaining any kind of document becomes as easy as... programming. </p>
+			<p>Glyph enables you to minimize text duplication, focus on content rather than presentation, manage references seamlessly and automate tedious tasks through a simple but effective macro language, specifically geared towards customization and extensibility.</p>
+		</section>
+	</article>
+	<section class="left border-right">
+		<article id="popular-2">
+			<header>
+				<h1><a href="#">Herald (Vim Color Scheme)</a></h1>
+				<h2>My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!</h2>
+				<p class="pubdate"><time>September 4th 2010</time></p>
+				<p class="author">By <em>Fabio Cevasco</em></p>
+			</header>
+			<section>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			</section>
+		</article>
+	</section>
+	<section class="right">
+		<article class="right popular3">
+			<header>
+				<h1><a href="#">A closer look at Komodo Edit</a></h1>
+				<h2>A comprehensive review of the free editor from ActiveState</h2>
+				<p class="pubdate"><time>September 4th 2010</time></p>
+				<p class="author">By <em>Fabio Cevasco</em></p>
+			</header>
+			<section>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+			</section>
+		</article>
+	</section>
+</section>

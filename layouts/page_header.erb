@@ -1,0 +1,29 @@
+-----
+filter: erb
+-----
+<% 
+link = nil
+case
+when @item[:section] then
+	section = @item[:section]
+	link = link_for_tag @item[:section].upcase, "/tags/"
+when !@item[:tags].blank? then
+	link = link_for_tag @item[:tags][0].upcase, "/tags/"
+when @item[:type] == 'project' then
+	link = %{<a href="/projects/" rel="archives">PROJECTS</a>}
+end
+%><header class="page">
+	<nav class="home-link">
+		<a href="/">
+			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
+			<![if !IE]>
+			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
+			<![endif]>
+		</a>
+	</nav>
+	<% if link then %>
+	<nav class="section">
+		/<%= link %>
+	</nav>
+	<% end %>
+</header>

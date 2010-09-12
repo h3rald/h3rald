@@ -1,0 +1,25 @@
+-----
+filter: erb
+-----
+<%
+	author = @item[:author] || "Fabio Cevasco"
+	pdf = %{<a href="/articles/#{@item[:permalink]}.pdf">PDF</a>} if @item[:pdf]
+	tools = %{<span class="tools">#{pdf}</span>}
+%><header>
+	<hgroup>
+		<h1><%= @item[:title] %></h1>
+		<% if !@item[:subtitle].blank? then %>
+			<h2><%= @item[:subtitle] %></h2>
+		<% end %>
+	</hgroup>
+	<% if @item[:type] == 'article' then %>
+	<p class="toolbar">
+		<span class="pubdate">
+			Published on <time datetime="<%= @item[:date].strftime("%Y-%d-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time>
+		</span>
+		<%= tools if pdf %>
+	</p>
+	<nav class="tags"><%= tags_for(@item) %></nav>
+	<p class="author">By <em><%= author %></em></p>
+	<% end %>
+</header>

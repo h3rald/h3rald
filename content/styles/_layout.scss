@@ -106,11 +106,12 @@ body {
 #social {
 	margin-top: 20px;
 	float: left;
+	li { float:left;}
 	a {
-		vertical-align: middle;
-		margin: 0 15px;
+		margin: 0 20px;
 		img {
 			opacity: 0.6;
+			vertical-align: middle;
 			@include ease-in(opacity);
 			&:hover {
 				opacity: 1;
