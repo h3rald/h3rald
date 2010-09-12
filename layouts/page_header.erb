@@ -11,6 +11,8 @@ when !@item[:tags].blank? then
 	link = link_for_tag @item[:tags][0].upcase, "/tags/"
 when @item[:type] == 'project' then
 	link = %{<a href="/projects/" rel="archives">PROJECTS</a>}
+else
+	link = %{<a href="/archives/" rel="archives">ARCHIVES</a>}
 end
 %><header class="page">
 	<nav class="home-link">

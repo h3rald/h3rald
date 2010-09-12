@@ -87,36 +87,76 @@ article > header > nav.tags > a:hover {
 
 /* Headers */
 
-#main-content > article h1, article.page > header h1 {
+#main-content > article h1, 
+article.page > header h1 {
 	font-size: 2.8em;
 }
-#secondary-content > article h1, #main-content > section > article h1 {
+
+#secondary-content > article h1, 
+#main-content > section > article h1,
+#body-text h2 {
 	font-size: 2em;
 }
-#main-content > article h2, #secondary-content > section > article h1, article.page > header h2 {
+
+#main-content > article h2, 
+#secondary-content > section > article h1, 
+article.page > header h2,
+#body-text h3 {
 	font-size: 1.6em;
 }
-#main-content > section > article h2 {
+
+#main-content > section > article h2,
+#body-text h5 {
 	font-size: 1.3em;
 }
-#secondary-content > article h2 {
+
+#secondary-content > article h2,
+#body-text h4 {
 	font-size: 1.4em;
 }
-#secondary-content > section > article h2 {
-	font-size: 1.1em;
-}
 
-article {
-	p { font-size: 93%; }
-	header > p { font-size: 90%; }
+#secondary-content > section > article h2,
+#body-text h6 {
+	font-size: 1.1em;
 }
 
 /* Text */
 
+article {
+	font-size: 93%;
+	header > p { font-size: 90%; }
+}
 
+#body-text {
+	margin-top: 2.5em;
+	h1, h2, h3, h4, h5, h6 {
+		clear: both;
+		padding-top: 1.5em;
+		padding-bottom: 0.1em;
+		border-bottom: 1px solid $light-gray;  
+		width: 100%;
+	}
+	img {
+		margin: 1em;
+	}
+	.right, img[style="float:right;"] {
+		margin: 1em 0 1em 1em;
+	}
+	.left, img[style="float:left;"] {
+		margin: 1em 1em 1em 0;
+	}
+	blockquote {
+		font-style: italic;
+		color: #8F6B17;
+	}
+}
 
 article p {
 	margin: 0.6em 0;
+}
+
+#body-text ul {
+	margin-left: 2em;
 }
 
 article.feature {
@@ -136,6 +176,30 @@ article.feature {
 	}
 }
 
+/* TOC */
+
+#auto-toc {
+	#toc-title {
+		border-bottom: none;
+		font-size: 1.2em;
+		font-style: italic;
+	}
+	ol {
+		padding-left: 0.5em;
+		li {
+			list-style-type: none;
+		}
+	}
+	float: right;
+	margin: 1em 0 1.5em 1.5em;
+	padding: 0.5em;
+	border: 1px solid $light-gray;
+}
+
+.toc-top-link {
+	font-size: 0.5em;
+	font-weight: normal;
+}
 
 /* Classes */
 

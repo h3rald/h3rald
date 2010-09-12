@@ -20,7 +20,7 @@ $(document).ready(function() {
 		/////////////////////////
 		$('.timeago').timeago();
 		// TOC
-		$("#toc ol").tableOfContents("#content-body", {startLevel: 3, depth: 6, topLinks: "[top]"});
+		$("#auto-toc ol").tableOfContents("#body-text", {startLevel: 1, depth: 6, topLinks: "&uarr;"});
 		// Drop Caps
 		/*
 		var first_paragraph = $('#content-body p:first');

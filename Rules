@@ -1,18 +1,18 @@
 #!/usr/bin/env ruby
 
-compile /^\/archives\// do
+compile /^\/(archives|home)\// do
 	rep.filter :erb
 	layout 'default'
 end
 
-compile /^\/(home|projects|about)/ do
+compile /^\/(projects|about)/ do
 	rep.filter :erb
 	rep.filter :redcloth
 	layout 'default'
 end
 
 compile /(rss|atom)/ do
-	rep.filter :erb unless rep.binary?
+	rep.filter :erb unless rep.binary? # e.g. rss.png image
 end
 
 compile '/styles/_*/' do 

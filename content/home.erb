@@ -15,7 +15,8 @@ all_articles = latest_articles.length
 latest = latest_articles 5
 popular = popular_articles 5
 all_projects = @items.select{|a| a[:type] == 'project'}.length
-%><section id="topbar">
+%>
+<section id="topbar">
 	<nav id="social">
 		<ul>
 			<li><a href="http://www.h3rald.com/rss/" rel="external"><img src="/images/social/rss.png" alt="RSS" /></a></li>
@@ -29,7 +30,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 	<aside id="search">
 		<section id="search_form"></section> 
 	</aside>
-</section>
+</section><!-- #topbar end -->
 <section id="search_results"></section> 
 <section class="left" id="main-content">
 	<article id="recent-1">
@@ -45,10 +46,10 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 		</section>
 	</article>
-	<section class="clear-left left">
+	<section class="clear-left left" id="#main-content-left">
 		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-		<section>
-			<script id="twitter">
+		<section id="twitter">
+			<script>
 				new TWTR.Widget({
 				version: 2,
 				type: 'profile',
@@ -78,7 +79,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 				}
 				}).render().setUser('h3rald').start();
 			</script>
-		</section>
+		</section><!-- #twitter end -->
 		<article id="recent-4">
 			<header>
 				<h1><a href="#">Glyph 0.3.0 Released</a></h1>
@@ -103,9 +104,8 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 				<p>The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away.</p>
 			</section>
 		</article>
-
-	</section>
-	<section class="right border-left">
+	</section><!-- #main-content-left end -->
+	<section class="right border-left" id="main-content-right">
 		<article id="recent-2">
 			<header>
 				<h1><a href="#">Glyph 0.4.0 Released</a></h1>
@@ -142,8 +142,8 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 			</section>
 		</article>
-	</section>
-</section>
+	</section><!-- #main-content-right end -->
+</section><!-- #main-content end -->
 <section class="right" id="secondary-content">
 	<article id="popular-1">
 		<header>
@@ -171,7 +171,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 			<p>Glyph enables you to minimize text duplication, focus on content rather than presentation, manage references seamlessly and automate tedious tasks through a simple but effective macro language, specifically geared towards customization and extensibility.</p>
 		</section>
 	</article>
-	<section class="left border-right">
+	<section class="left border-right" id="secondary-content-left">
 		<article id="popular-2">
 			<header>
 				<h1><a href="#">Herald (Vim Color Scheme)</a></h1>
@@ -184,8 +184,8 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 			</section>
 		</article>
-	</section>
-	<section class="right">
+	</section><!-- #secondary-content-left end -->
+	<section class="right" id="secondary-content-right">
 		<article class="right popular3">
 			<header>
 				<h1><a href="#">A closer look at Komodo Edit</a></h1>
@@ -198,5 +198,5 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 			</section>
 		</article>
-	</section>
-</section>
+	</section><!-- #secondary-content-right end -->
+</section><!-- #secondary-content-end -->
