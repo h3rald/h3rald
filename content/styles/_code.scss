@@ -1,0 +1,51 @@
+.code {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #222;
+  font-family: 'Courier New', 'Terminal', monospace;
+  color: #E6E0DB;
+  padding: 20px;
+  overflow: auto;
+  font-size: 12px;
+  margin: 20px 0 20px 0;
+  pre {
+		line-height: 1.2em;
+    margin: 0px;
+    padding: 0px; }
+	.no {
+		font-weight: bold;
+		color: #595959;
+	}
+  .an {
+    color: #E7BE69; }
+  .c {
+    color: #BC9358;
+    font-style: italic; }
+  .ch {
+    color: #509E4F; }
+  .cl, .co {
+    color: #FFF; }
+  .fl {
+    color: #A4C260; }
+  .fu {
+    color: #FFC56D; }
+  .gv {
+    color: #D0CFFE; }
+  .i {
+    color: #A4C260; }
+  .il {}
+  .iv {
+    color: #D0CFFE; }
+  .pp {
+    color: #E7BE69; }
+  .r {
+    color: #CB7832; }
+  .rx, .s {
+    color: #A4C260; }
+  .sy {
+    color: #6C9CBD; }
+  .ta {
+    color: #E7BE69; }
+  .pc {
+    color: #6C9CBD; } }
