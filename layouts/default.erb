@@ -35,7 +35,7 @@ filter: erb
 		end
 		%>
 		<meta name="keywords" content="<%= keywords %>" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/favicon.png" type="image/png" /> 
 		<meta content="44.388041;9.073248" name="ICBM" />
 
 
@@ -118,6 +118,13 @@ var disqus_shortname = 'h3rald';
   s.src = 'http://disqus.com/forums/h3rald/count.js';
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
+			</script>
+		<% end %>
+		<% if @item[:github] then %>
+			<script type="text/javascript">
+					$(document).ready(function() {
+							display_commits(5, '<%= @item[:github] %>');
+							});
 			</script>
 		<% end %>
 	</body>

@@ -18,9 +18,9 @@ $dark-blue: #133570;
 }
 
 @mixin border-radius($size) {
-	border-radius: $size;
-	-moz-border-radius: $size;
 	-webkit-border-radius: $size;
+	-moz-border-radius: $size;
+	border-radius: $size;
 }
 
 @mixin hover-image($width, $height) {

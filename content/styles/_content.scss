@@ -171,10 +171,6 @@ article p {
 	margin: 0.6em 0;
 }
 
-#body-text ul, ol {
-	margin-left: 2em;
-}
-
 article.feature {
 	border: 1px solid $light-gray;
 	padding: 10px;	
@@ -190,6 +186,44 @@ article.feature {
 	h2 {
 		margin-bottom:10px;
 	}
+}
+
+/* Lists */
+
+#body-text ul, ol {
+	margin-left: 2em;
+}
+
+dl {
+	margin: 2em 0;
+	dt {
+		margin: 1em 0 0.3em 0; 
+		font-size: 120%;
+	}
+	dd {
+		margin-left: 2em;
+	}
+}
+
+
+/* Tables */
+
+#body-text table {
+	border-collapse: collapse;
+	@include border-radius(5px);
+	th {
+		font-size: 110%;
+		text-align: center;
+		font-weight: bold;
+		background: #fafafa;
+	}
+	tr, th, td {
+		border: 1px solid $light-gray;
+	}
+	td {
+		padding: 5px;
+	}
+
 }
 
 /* TOC */
@@ -231,9 +265,7 @@ article.feature {
   height: auto;
 	font-weight: bold;
   border: 1px solid rgba(0,0,0,.08);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+	@include border-radius(3px);
 }
 .lc-body {
 	margin: 0 10px;
