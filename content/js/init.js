@@ -15,9 +15,12 @@ function delicious_counter(data) {
 	$('#delcounter').text(text);
 }
 $(document).ready(function() {
+	// Manage dates
 	$('header.home > time').text(Date.today().toString("dddd, MMMM dS yyyy"));
 	$('header.home > time').attr('datetime', Date.today().toString("yyyy-MM-dd"));
 	$('.timeago').timeago();
+	// Hyphenate contents 
+	Hyphenator.run();
 	// TOC
 	$("#auto-toc ol").tableOfContents("#body-text", {startLevel: 1, depth: 6, topLinks: "&uarr;"});
 });

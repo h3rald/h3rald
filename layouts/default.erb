@@ -62,7 +62,7 @@ filter: erb
 				<%= render 'page_header', :item => @item %>
 				<article class="page">
 					<%= render 'page_meta', :item => @item %>
-					<section id="body-text">
+					<section id="body-text" class="hyphenate">
 						<% if @item[:toc] then %>
 							<aside id="auto-toc">
 								<span id="toc-title">Table of Contents</span>
@@ -74,17 +74,8 @@ filter: erb
 					</section>
 				</article>
 					<% if @item[:type] == 'article' %>
-					<section id="disqus_thread"></section>
-					<script type="text/javascript">
-					var disqus_identifier = "<% @item[:permalink]%>"; 
-					var disqus_developer = true;
-					(function() {
-					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = 'http://h3rald.disqus.com/embed.js';
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
-					</script>
-					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=h3rald">comments powered by Disqus.</a></noscript>
+						<%= render 'legacy_comments', :item => @item if @item[:comments] %>
+						<%= render 'comments', :item => @item %>
 					<% end %>
 				<% end %>
 			<footer>
@@ -117,6 +108,7 @@ filter: erb
 		<script src="/js/date.js" type="text/javascript"></script>
 		<script src="/js/feeds.js" type="text/javascript"></script>
 		<script src="/js/search.js" type="text/javascript"></script>
+		<script src="/js/hyphenator.min.js" type="text/javascript"></script>
 		<script src="/js/init.js" type="text/javascript"></script>
 		<% if @item[:type] == 'article' %>
 			<script type="text/javascript">

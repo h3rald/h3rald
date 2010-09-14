@@ -78,6 +78,16 @@ td.gsc-branding-img {
 }
 
 /* Disqus */
+
 #disqus_thread {
-	margin: 0px 10px;
+	margin: 0 10px;
+	#dsq-content {
+		font-size: 0.93em;
+		.dsq-request-user-name small, .dsq-subscribe small, .dsq-sharing-options span small {
+			font-size: 0.8em;
+		}
+		.dsq-comment-message {
+			margin: 0 10px;
+		}
+	}
 }
