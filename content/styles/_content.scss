@@ -216,6 +216,30 @@ article.feature {
 	font-weight: normal;
 }
 
+/* Legacy Comments */
+
+#legacy-comments {
+	margin: 0 10px;
+}
+
+.lc-header{
+	margin: 20px 0 10px 0;
+	padding: 3px;
+  background: #F7F7F7;
+  color: #333;
+  line-height: normal;
+  height: auto;
+	font-weight: bold;
+  border: 1px solid rgba(0,0,0,.08);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.lc-body {
+	margin: 0 10px;
+	font-size: 0.93em;
+}
+
 /* Classes */
 
 .clear-left {
@@ -264,4 +288,3 @@ a {
 a:hover {
 	color: $light-blue;
 }
-
