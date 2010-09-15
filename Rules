@@ -59,14 +59,15 @@ compile '*' do
 				rep.filter :bbcode
 				layout 'default'
 			when 'glyph' then
+				require 'glyph'
+				instance_eval Glyph.file_load("#{Dir.pwd}/lib/glyph.data")
 				pdf_file = Pathname.new "#{Dir.pwd}/output#{item.identifier.gsub(/\/$/, '')}.pdf"
 				unless pdf_file.exist? then
 				# Create the PDF file
 					f = Pathname.new "#{Dir.pwd}/output#{item.identifier.gsub(/\/$/, '')}.glyph"
 					f.parent.mkpath
 					doc = %{
-					include[#{f.parent.parent.parent}/lib/data]
-					h3rald_article[
+					h3rald.article[
 						@identifier[#{item.identifier}]
 						@content[section[#{item.raw_content}]]
 					]
@@ -76,12 +77,7 @@ compile '*' do
 					# Now compile the PDF (works if Prince is installed)
 					target = Glyph['document.output']
 					Glyph['document.output'] = 'pdf'
-					Glyph['document.author'] = "Fabio Cevasco"
-					Glyph['output.pdf.generator'] = "prince"
 					Glyph['site.root'] = ".."
-					Glyph['document.date'] = item[:date].strftime "%A, %d %B %Y"
-					Glyph['document.title'] = item[:title]
-					Glyph['document.subtitle'] = ""
 					Glyph.compile f.to_s
 					begin
 						f.unlink

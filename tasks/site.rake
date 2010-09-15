@@ -99,12 +99,16 @@ namespace :site do
 		raise RuntimeError, "Article name can only contain letters, numbers and dashes" unless args[:name].match /^[a-zA-Z0-9-]+$/
 		meta = {}
 		meta[:permalink] = args[:name]
-		meta[:title] = ""
-		meta[:tags] = []
+		meta[:title] = nil
+		meta[:subtitle] = nil
+		meta[:type] = 'article'
+		meta[:intro] = nil
+		meta[:extended_intro] = nil
+		meta[:tags] = nil
 		meta[:date] = Time.now
 		meta[:toc] = true
-		meta[:type] = 'article'
-		file = Pathname.new Dir.pwd/"content/articles/#{meta[:permalink]}.textile"
+		meta[:pdf] = true
+		file = Pathname.new Dir.pwd/"content/articles/#{meta[:permalink]}.glyph"
 		raise "File '#{file}' already exists!" if file.exist?
 		write_item file, meta, ''
 	end
@@ -131,8 +135,8 @@ namespace :site do
 		meta[:status] = "Active"
 		meta[:version] = "0.1.0"
 		meta[:type] = 'project'
-		meta[:links] = [{"Documentation" => "http://#{args[:name]}.rubyforge.org"},
-										{"Download" => "http://rubyforge.org/projects/#{args[:name]}"},
+		meta[:links] = [{"Documentation" => "http://rubydoc.info/gems/#{args[:name]}/#{meta[:version]}/frames"},
+										{"Download" => "https://rubygems.org/gems/#{args[:name]}"},
 										{"Source" => "http://github.com/h3rald/#{args[:name]}/tree/master"}, 
 										{"Tracking" => "http://github.com/h3rald/#{args[:name]}/issues"}]
 		contents = %{

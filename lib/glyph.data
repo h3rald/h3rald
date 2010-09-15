@@ -1,7 +1,10 @@
-&:[G|Glyph]
-rw:[nanoc.item|%[puts Glyph\['nanoc.item'\]\["{{0}}"\]]]
-rw:[h3rald.article|
-	article[
+Glyph['document.intro'] = RedCloth.new("#{@item[:intro]}\n\n#{@item[:extended_intro]}").to_html
+Glyph['document.date'] = @item[:date].strftime "%A, %d %B %Y"
+Glyph['document.title'] = @item[:title]
+Glyph['document.subtitle'] = @item[:subtitle]
+Glyph['document.author'] = "Fabio Cevasco"
+Glyph['output.pdf.generator'] = "prince"
+Glyph.rewrite "h3rald.article", %{article[
 		@pubdate[$[document.date]]
 		@head[
 			style[default.css]
@@ -29,4 +32,4 @@ rw:[h3rald.article|
 		]
 		{{content}}
 	]
-]
+]}
