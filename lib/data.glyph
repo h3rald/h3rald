@@ -1,5 +1,4 @@
 &:[G|Glyph]
-rw:[nanoc.item|%[puts Glyph\['nanoc.item'\]\["{{0}}"\]]]
 rw:[h3rald.article|
 	article[
 		@pubdate[$[document.date]]
@@ -21,7 +20,7 @@ rw:[h3rald.article|
 			</style>
 		]
 		@pre-title[
-			=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/theme/h3rald.svg]]
+			=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/logo.svg]]
 		]
 		@post-title[
 			div[em[Originally published on =>[http://www.h3rald.com{{identifier}}|H3RALD.com]]]

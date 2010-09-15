@@ -10,14 +10,9 @@
 - website
 - webdevelopment
 :intro: |
-  Just "over a year ago":/articles/take-back-your-site-with-nanoc I released the 8th version of this web site.
-  The biggest change then was abandoning the Rails-powered "Typo":http://wiki.github.com/fdv/typo/ blogging
-  platform in favor of "nanoc":http://nanoc.stoneship.org/, arguably the most versatile static site generator out
-  there.
+  Just "over a year ago":/articles/take-back-your-site-with-nanoc I released the 8th version of this web site. The biggest change then was abandoning the Rails-powered "Typo":http://wiki.github.com/fdv/typo/ blogging platform in favor of "nanoc":http://nanoc.stoneship.org/, arguably the most versatile static site generator out there.
   
-  A year later, I am still very happy with nanoc, hence there's no need for another major release. Nonetheless, I
-  decided to improve the site's overall design and image, making it (hopefully) easier to use and more pleasant to
-  the eye. 
+  A year later, I am still very happy with nanoc, hence there's no need for another major release. Nonetheless, I decided to improve the site's overall design and image, making it (hopefully) easier to use and more pleasant to the eye. 
 :extended_intro: |
   TODO... 
 -----
