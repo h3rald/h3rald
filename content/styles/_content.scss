@@ -272,6 +272,35 @@ dl {
 	font-size: 0.93em;
 }
 
+/* Projects */
+
+#github {
+	border: 1px solid $light-gray;
+	padding: 5px;
+	margin-left: 5px;
+	float: right;
+	width: 400px;
+	.commit-date {
+		font-style: italic;
+	}
+	a {
+		font-size: 90%;
+		font-weight: bold;
+	}
+}
+
+.project-links {
+	width: 500px;
+	border: 1px solid $light-gray;
+	margin-bottom: 10px;
+	padding: 0 5px;
+	text-align: center;
+	a {
+		font-weight: bold;
+	}
+}
+
+
 /* Classes */
 
 .clear-left {
