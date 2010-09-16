@@ -6,10 +6,14 @@
 - opensource
 :permalink: glyph-020-released
 :title: "Glyph 0.2.0 Released"
-:summary: "The second release of Glyph is out! Featuring single-file compilation, programmatic usage and auto-regeneration, as well as plenty of bugfixes and stability improvements."
+:subtitle: Featuring single-file compilation, programmatic usage and auto-regeneration, and more
 :toc: true
 :pdf: true
 :date: 2010-05-09 17:00:00.099000 +02:00
+:intro: |
+  I am very pleased to announce the second release of the "Glyph Document Authoring Framework":/glyph/. For those who don't know, Glyph is a pure-Ruby, extensible solution to author documents like books or articles using a simple, fully-customizable markup language.
+
+  Since the "first release":/articles/introducing-glyph/, came out, last month, a lot happened. Plenty of bugs were fixed and new features implemented, as shown by the "changelog":http://github.com/h3rald/glyph/blob/master/CHANGELOG.textile. Here's a brief rundown of the most notable changes. 
 -----
 &:[G|Glyph]
 textile[

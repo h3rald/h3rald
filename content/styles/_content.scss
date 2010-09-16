@@ -340,12 +340,12 @@ dl {
 /* Elements */
 
 a {
-	color: $dark-blue;
+	color: $light-blue;
 	text-decoration: none;
 	@include ease-in(color);
 	outline: none;
 }
 
 a:hover {
-	color: $light-blue;
+	color: $dark-blue;
 }

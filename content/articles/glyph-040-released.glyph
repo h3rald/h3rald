@@ -6,12 +6,13 @@
 - opensource
 :permalink: glyph-040-released
 :title: "Glyph 0.4.0 Released"
-:summary: "Glyph 0.4.0 is out! Featuring web output, HTML5 support, stats, wkhtmltopdf, enhanced customization and much more."
+:subtitle: Featuring web output, HTML5 support, stats, wkhtmltopdf, and much more
 :toc: true
 :pdf: true
 :date: 2010-09-03 19:45:00.000000 +02:00
+:intro: This new release of Glyph introduces an unusually large number of features, improvements and bugfixes. Not so much in terms of new macros maybe (no index or bibliography support for now, but it will come, don't worry!), but rather... pretty much everything else!
 -----
-txt[This new release of Glyph introduces an unusually large number of features, improvements and bugfixes. Not so much in terms of new macros maybe (no index or bibliography support for now, but it will come, don't worry!), but rather... pretty much everything else!]
+$[document.intro]
 
 section[
 	@title[Web Output]

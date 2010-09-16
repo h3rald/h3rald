@@ -1,0 +1,21 @@
+-----
+filter: erb
+-----
+<%
+	author = @item[:author] || "Fabio Cevasco"
+	intro = @extended ? @item[:intro]+"\n\n"+@item[:extended_intro] : @item[:intro]
+%><article id="a_<%= @item[:permalink] %>">
+	<header>
+		<h1><a href="<%= @item.identifier %>"><%= @item[:title]%></a></h1>
+		<% unless @item[:subtitle].blank? then %>
+			<h2><%= @item[:subtitle] %></h2>
+		<% end %>
+		<p class="pubdate"><time datetime="<%= @item[:date].strftime("%Y-%d-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time></p>
+		<p class="author">By <em><%= author %></em></p>
+	</header>
+	<section class="<%= @classes %>">
+		<%= RedCloth.new(intro).to_html %>
+		<p><a class="more" href="<%= @item.identifier%>">&raquo;&nbsp;<strong>Read More</strong></a></p>
+	</section>
+</article>
+

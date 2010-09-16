@@ -33,19 +33,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 </section><!-- #topbar end -->
 <section id="search_results"></section> 
 <section class="left" id="main-content">
-	<article id="recent-1">
-		<header>
-			<h1><a href="/page.html">H3RALD.com v8.1 Released</a></h1>
-			<h2>Featuring a a brand new newspaper-like design, powered by HTML5 and CSS3</h2>
-			<p class="pubdate"><time>September 4th 2010</time></p>
-			<p class="author">By <em>Fabio Cevasco</em></p>
-		</header>
-		<section class="three-columns hyphenate">
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p> 
-			<p>Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-		</section>
-	</article>
+	<%= render 'article_intro', :item => latest[0], :classes => "three-columns hyphenate", :extended => true %>
 	<section class="clear-left left" id="#main-content-left">
 		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
 		<section id="twitter">
@@ -80,22 +68,11 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 				}).render().setUser('h3rald').start();
 			</script>
 		</section><!-- #twitter end -->
-		<article id="recent-4">
-			<header>
-				<h1><a href="#">Glyph 0.3.0 Released</a></h1>
-				<h2>The third release of the Glyph Authoring Framework features dramatic speed improvements, and much more</h2>
-				<p class="pubdate"><time>September 4th 2010</time></p>
-				<p class="author">By <em>Fabio Cevasco</em></p>
-			</header>
-			<section class="hyphenate">
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-			</section>
-		</article>
+		<%= render 'article_intro', :item => latest[3], :classes => "hyphenate", :extended => false %>
 		<article class="feature">
 			<header>
 				<p>FEATURED CONTENT</p>
-				<h1><a href="#">Holidays in Italy?</a></h1>
+				<h1><a href="/holidays/">Holidays in Italy?</a></h1>
 				<h2>Yes, I am really renting my house in the countryside!</h2>
 			</header>
 			<section class="hyphenate">
@@ -106,42 +83,9 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 		</article>
 	</section><!-- #main-content-left end -->
 	<section class="right border-left" id="main-content-right">
-		<article id="recent-2">
-			<header>
-				<h1><a href="#">Glyph 0.4.0 Released</a></h1>
-				<h2>Featuring web output, HTML5 support, stats, wkhtmltopdf, and much more</h2>
-				<p class="pubdate"><time>September 4th 2010</time></p>
-				<p class="author">By <em>Fabio Cevasco</em></p>
-			</header>
-			<section class="hyphenate">
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-			</section>
-		</article>
-		<article id="recent-3">
-			<header>
-				<h1><a href="#">Book Review: Distributed Programming with Ruby</a></h1>
-				<h2>Just what you need to get started with the right tools to build large and scalable applications in Ruby</h2>
-				<p class="pubdate"><time>September 4th 2010</time></p>
-				<p class="author">By <em>Fabio Cevasco</em></p>
-			</header>
-			<section class="hyphenate">
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-			</section>
-		</article>
-		<article id="recent-5">
-			<header>
-				<h1><a href="#">Glyph 0.2.0 Released</a></h1>
-				<h2>Featuring single-file compilation, programmatic usage and auto-regeneration, and more</h2>
-				<p class="pubdate"><time>September 4th 2010</time></p>
-				<p class="author">By <em>Fabio Cevasco</em></p>
-			</header>
-			<section class="hyphenate">
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			</section>
-		</article>
+		<%= render 'article_intro', :item => latest[1], :classes => "hyphenate", :extended => false %>
+		<%= render 'article_intro', :item => latest[2], :classes => "hyphenate", :extended => false %>
+		<%= render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false %>
 	</section><!-- #main-content-right end -->
 </section><!-- #main-content end -->
 <section class="right" id="secondary-content">
@@ -162,7 +106,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 	<article class="feature">
 		<header>
 			<p>FEATURED CONTENT</p>
-			<h1><a href="#">Glyph &ndash; Rapid Document Authoring Framework</a></h1>
+			<h1><a href="/glyph/">Glyph &ndash; Rapid Document Authoring Framework</a></h1>
 			<h2>A free and extensible solution for personal publishing, 100% open source!</h2>
 		</header>
 		<section class="hyphenate">

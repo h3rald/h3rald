@@ -4,7 +4,7 @@ filter: erb
 <nav class="home">
 <%= ['projects', 'links'].map{|l| %{<a href="/#{l}/"><strong>#{l.upcase}</strong></a>} }.join("|") + "|" + 
 ['review', 'ruby', 'opensource', 'productivity', 'writing', 'software'].map{|l| %{<a href="/tags/#{l}/" rel="tag">#{l.upcase}</a>} }.join("|") +
-%{|<a href="/archives/" rel="archives"><strong>MORE</strong>&nbsp;&raquo;</a> } %>
+%{|<a href="/archives/" rel="archives">&raquo;&nbsp;<strong>MORE</strong></a> } %>
 </nav>
 <header class="home">
 	<nav class="left">

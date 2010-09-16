@@ -14,6 +14,8 @@
   
   A year later, I am still very happy with nanoc, hence there's no need for another major release. Nonetheless, I decided to improve the site's overall design and image, making it (hopefully) easier to use and more pleasant to the eye. 
 :extended_intro: |
-  TODO... 
+  I always had a problem finding the right theme for my web site. I always wanted to find something related to the word _herald_, so in the last release I went for a herandry-oriented theme. For this release, I decided to go for a newspaper-style layout: after all, the word _herald_ is often used in newspaper titles, and I picked the name "h3rald" after the "International Herald Tribune":http://global.nytimes.com/?iht.
+
+  Also, I was desperate to try out the new features offered by HTML3 and CSS3, and a newspaper layout seemed a good excuse to use columns. 
 -----
 $[document.intro]
