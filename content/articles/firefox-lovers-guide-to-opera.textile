@@ -1,5 +1,5 @@
 ----- 
-summary: "An in-depth review of the Opera browser, with the eyes of a Firefox enthusiast. A useful comparison of the two browsers, whether you're planning to _switch_ or not."
+subtitle: "An in-depth review of the Opera browser, with the eyes of a Firefox enthusiast"
 popular: true
 permalink: firefox-lovers-guide-to-opera
 filters_pre: 
@@ -223,6 +223,10 @@ tags:
 - firefox
 type: article
 toc: true
+intro: |
+  I am a Firefox fan. I've been using Firefox since it was named "Firebird" and calling it "stable" was a big overstatement. Firefox dragged me out of Internet Explorer, and that was definitely one of its biggest achievements.
+
+  Because I'm addicted to trying out new tools, however, I always kept testing new browsers I discovered here and there. K-Meleon, Flock, Sleipnir... When Safari came out for Windows I immediately installed it and used it for about 2 hours, only to realize that it wasn't &ndash; and it still isn't &ndash; usable at all, mainly due to sporadic crashes.
 -----
 bq. *Note:* This article can be considered a sequel for "An IE Lover's Guide to Firefox":http://www.h3rald.com/articles/ie-lovers-guide-to-firefox, which described Firefox through the eyes of an Internet Explorer fan. Similarly, this article describes Opera's features from the point of view of a user &ndash; myself &ndash; who has been using Firefox for years and is now considering another browser switch.
 

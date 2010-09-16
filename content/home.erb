@@ -89,20 +89,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 	</section><!-- #main-content-right end -->
 </section><!-- #main-content end -->
 <section class="right" id="secondary-content">
-	<article id="popular-1">
-		<header>
-			<h1><a href="#">10 programming languages worth checking out</a></h1>
-			<h2>A quick comparison of 10 non-mainstream programming languages</h2>
-			<p class="pubdate"><time>September 4th 2010</time></p>
-			<p class="author">By <em>Fabio Cevasco</em></p>
-		</header>
-		<section class="two-columns hyphenate">
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		</section>
-	</article>
+	<%= render 'article_intro', :item => popular[0], :classes => "two-columns hyphenate", :extended => true %>
 	<article class="feature">
 		<header>
 			<p>FEATURED CONTENT</p>
@@ -116,31 +103,11 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 		</section>
 	</article>
 	<section class="left border-right" id="secondary-content-left">
-		<article id="popular-2">
-			<header>
-				<h1><a href="#">Herald (Vim Color Scheme)</a></h1>
-				<h2>My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!</h2>
-				<p class="pubdate"><time>September 4th 2010</time></p>
-				<p class="author">By <em>Fabio Cevasco</em></p>
-			</header>
-			<section class="hyphenate">
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-			</section>
-		</article>
+		<%= render 'article_intro', :item => popular[1], :classes => "hyphenate", :extended => false %>
+		<%= render 'article_intro', :item => popular[3], :classes => "hyphenate", :extended => false %>
 	</section><!-- #secondary-content-left end -->
 	<section class="right" id="secondary-content-right">
-		<article class="right popular3">
-			<header>
-				<h1><a href="#">A closer look at Komodo Edit</a></h1>
-				<h2>A comprehensive review of the free editor from ActiveState</h2>
-				<p class="pubdate"><time>September 4th 2010</time></p>
-				<p class="author">By <em>Fabio Cevasco</em></p>
-			</header>
-			<section class="hyphenate">
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-			</section>
-		</article>
+		<%= render 'article_intro', :item => popular[2], :classes => "hyphenate", :extended => false %>
+		<%= render 'article_intro', :item => popular[4], :classes => "hyphenate", :extended => false %>
 	</section><!-- #secondary-content-right end -->
 </section><!-- #secondary-content-end -->

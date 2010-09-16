@@ -1,5 +1,5 @@
 ----- 
-summary: "My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!"
+subtitle: "My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!"
 permalink: herald-vim-color-scheme
 filters_pre: 
 - redcloth
@@ -74,8 +74,17 @@ tags:
 type: article
 toc: true
 popular: true
+intro: |
+  I use "Vim":http://www.vim.org a lot. It's my editor of choice when I code (mainly in Ruby), and also when I write my blog post and articles (mainly in Textile).
+
+  One thing I always liked about Vim was it powerful syntax highlighting: there's probably a syntax highlighting file for every programming language ever created, even the new ones ("Nimrod":http://force7.de/nimrod/index.html? Sure, "here":http://www.vim.org/scripts/script.php?script_id=2632!).
+extended_intro: |
+  Furthermore, Vim allows you to create color schemes, and that's surprisingly easy to do. Everything you need to do is in the "docs":http://vimdoc.sourceforge.net/htmldoc/syntax.html, but that may put you off, so you can just start by editing an existing one -- that's what I did.h3. InfiniteRed Black
+
+  I've been using the "ir_black":http://blog.infinitered.com/entries/show/8 color scheme for near enough a year. It's an excellent color scheme, recommended especially for writing Ruby code:
 -----
 I use "Vim":http://www.vim.org a lot. It's my editor of choice when I code (mainly in Ruby), and also when I write my blog post and articles (mainly in Textile).
+
 One thing I always liked about Vim was it powerful syntax highlighting: there's probably a syntax highlighting file for every programming language ever created, even the new ones ("Nimrod":http://force7.de/nimrod/index.html? Sure, "here":http://www.vim.org/scripts/script.php?script_id=2632!).
 
 Furthermore, Vim allows you to create color schemes, and that's surprisingly easy to do. Everything you need to do is in the "docs":http://vimdoc.sourceforge.net/htmldoc/syntax.html, but that may put you off, so you can just start by editing an existing one -- that's what I did.h3. InfiniteRed Black
