@@ -300,6 +300,28 @@ dl {
 	}
 }
 
+/* Contact form */
+
+#body-text {
+	form.fsForm {
+		width: 400px;
+	}
+	table.fsTable, 
+	tr.fsRow, 
+	tr.fsRowTop, 
+	tr.fsSpacerRow,
+ 	td.fsRowOpen, 
+	td.fsRowClose, 
+	td.fsRowBody, 
+	td.fsCell {
+		border: none;
+		@include standard-font;
+	}
+	tr.fsRowTop, tr.fsSpacerRow {
+		display: none;
+	}
+}
+
 
 /* Classes */
 
@@ -328,6 +350,11 @@ dl {
 
 .left {
 	float: left;
+}
+
+.center {
+	margin: auto;
+	text-align: center;
 }
 
 .border-left {

@@ -78,7 +78,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 			<section class="hyphenate">
 				<img src="/images/sessarego.jpg" alt="Sessarego" style="margin: 0 5px;" />
 				<p>Looking for a peaceful and relaxing holiday in the Italian Riviera? I'm renting part of my family country home in the center of the old village of Sessarego, on a peaceful hill a few minutes away from Bogliasco, a small coastal town on the Golfo Paradiso. </p>
-				<p>The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away.</p>
+				<p>The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away. <a href="/holidays/">&raquo;&nbsp;<strong>Read&nbsp;More</strong></a></p>
 			</section>
 		</article>
 	</section><!-- #main-content-left end -->
@@ -89,7 +89,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 	</section><!-- #main-content-right end -->
 </section><!-- #main-content end -->
 <section class="right" id="secondary-content">
-	<%= render 'article_intro', :item => popular[0], :classes => "two-columns hyphenate", :extended => true %>
+	<%= render 'article_intro', :item => popular[1], :classes => "two-columns hyphenate", :extended => true %>
 	<article class="feature">
 		<header>
 			<p>FEATURED CONTENT</p>
@@ -99,11 +99,11 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 		<section class="hyphenate">
 			<img src="/images/glyph.png" alt="Glyph Logo" class="img-right" />
 			<p>With Glyph, creating and maintaining any kind of document becomes as easy as... programming. </p>
-			<p>Glyph enables you to minimize text duplication, focus on content rather than presentation, manage references seamlessly and automate tedious tasks through a simple but effective macro language, specifically geared towards customization and extensibility.</p>
+			<p>Glyph enables you to minimize text duplication, focus on content rather than presentation, manage references seamlessly and automate tedious tasks through a simple but effective macro language, specifically geared towards customization and extensibility. <a href="/glyph/">&raquo;&nbsp;<strong>Read&nbsp;More</strong></a></p>
 		</section>
 	</article>
 	<section class="left border-right" id="secondary-content-left">
-		<%= render 'article_intro', :item => popular[1], :classes => "hyphenate", :extended => false %>
+		<%= render 'article_intro', :item => popular[0], :classes => "hyphenate", :extended => false %>
 		<%= render 'article_intro', :item => popular[3], :classes => "hyphenate", :extended => false %>
 	</section><!-- #secondary-content-left end -->
 	<section class="right" id="secondary-content-right">

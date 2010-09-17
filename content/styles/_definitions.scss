@@ -6,7 +6,7 @@ $light-blue: #5D9EDB;
 $dark-blue: #275187;
 
 @mixin standard-font {
-	font-family: 'Gentium';
+	font-family: 'Gentium', 'Palatino', 'Bookman', 'Georgia', 'Times';
 	line-height: 1.3em;
 }
 

@@ -1,43 +1,40 @@
 h2. H3RALD Web Site
 
-<span class="dropcap">T</span>his is a _minimalist_ web site: I do not care about fancy graphics or nitfy effects. I do care, however, about content and I want you to read what I write comfortably. As you can see, this site has no sidebars: it only has a header, a main column and a footer, exactly where you expect them to be. The source code of this site follows W3C's XHTML 1.1 and CSS 2.1 standard.
- 
-As of version 8, h3rald.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "Nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/creating-static-web-sites-with-nanoc.
+H3RALD.com was created in 2004 by Fabio Cevasco, a technical writer, programmer and IT enthusiast. It features over a hundred "articles":/articles/ covering a wide range of topics, from programming to writing, productivity and even traveling.
+
+As of version 8, H3RALD.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/take-back-your-site-with-nanoc/.
+
+
+h3. Licensing
+
+The "articles":/archives/ and all the content published on this web site is licensed under the _Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License_. For other uses, please "contact us":/contact/.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a>
+
+The source code of this web site, such as its layout, SASS/CSS stylesheets, custom rake tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/MIT/">MIT License</a></em> and it is available on "GitHub":http://github.com/h3rald/h3rald.
+
 
 h3. Requirements
 
-The following ruby libraries (gems) have been used to create this web site:
+The following ruby libraries (gems) are used to compile this web site:
 
 * *"nanoc":http://rubygems.org/gems/nanoc*, to generate the entire web site
 * *"extlib":http://rubygems.org/gems/extlib*, in some custom Rake tasks
 * *"bb-ruby":http://rubygems.org/gems/bb-ruby*, for the BBCode filter
 * *"builder":http://rubygems.org/gems/builder/*, to create RSS and ATOM feeds
 * *"haml":http://rubygems.org/gems/haml/*, for the SASS filter
+* *"coderay":http://rubygems.org/gems/coderay/*, for syntax highlighting
 * *"glyph":http://rubygems.org/gems/glyph*, for the Glyph filter
 
 Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://www.typosphere.org:
 * *"mysql":http://rubyforge.org/projects/mysql/*
 * *"sequel":http://rubyforge.org/projects/sequel/*
 
-Besides Ruby-related dependencies, the following was also necessary:
-
-* *"pygments":http://pygments.org/*, a Python library for code highlighting.
-* *"prince":http://www.princexml.com*, a program to generate PDF files from HTML.
-* A cron job to fetch backtype comments, delicious bookmarks, tweets, and github commits in JSON format and save them to the @/output/data@ folder.
-
-h3. Licensing
-
-My "articles":/archives/ and all content published on this web site is licensed under the <em>Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License</em>. For other uses, contact me.
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a>
-
-The source code of this web site, such as its layout, SASS/CSS stylesheets, Nanoc tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/BSD/">BSD License</a></em> and it is available on "GitHub":http://github.com/h3rald/h3rald.
 
 h3. Credits
 
-I'd like to thank the following people for their work, which made this web site possible:
+Special thanks to the following people, who made this web site possible:
 
-* "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "Nanoc":http://nanoc.stoneship.org/ site publishing system.
+* "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "nanoc":http://nanoc.stoneship.org/ site publishing system.
 * "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo and the navigation buttons.
-* The staff of "Archive.org":http://www.archive.org, for scanning the first edition of "A Complete Guide to Heraldry":http://www.archive.org/details/completeguidetoh00foxduoft, and making it available to the public. All the images featuring heraldic monsters are taken from this book.
-As of version 8, h3rald.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "Nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/creating-static-web-sites-with-nanoc.
+* The creators of the free "Gentium":http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=gentium font, used throughout the web site.
