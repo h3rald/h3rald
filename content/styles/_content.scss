@@ -375,4 +375,11 @@ a {
 
 a:hover {
 	color: $dark-blue;
+	text-decoration: underline;
+}
+
+.toc-top-link {
+	font-size: 80%;
+	font-weight: bold;
+	padding: 3px;
 }

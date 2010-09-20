@@ -1,190 +1,174 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-	<head>
-		<title>Glyph - Defining Custom Commands</title>
-		<meta name="author" content="Fabio Cevasco" />
-		<meta name="copyright" content="Fabio Cevasco" />
-		<meta name="robots" content="all, follow" />
-		<meta name="Revisit-After" content="2 Days" />
-		<meta name="language" content="en" />
-		<meta name="target_country" content="en-us" />
-		<meta name="country" content="United States" />
-		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
-		<meta name="keywords" content="h3rald, fabio cevasco, glyph, technical writing, html, html5, book" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<meta content="44.388041;9.073248" name="ICBM" />
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head> 
+		<title>Glyph - Defining Custom Commands</title> 
 
-		<link href="/css/main.css" media="all" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-		<div id="wrapper">
-			<a href="http://github.com/h3rald/h3rald"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
-			<div id="header">
-				<!--[if lte IE 6]>
-				<div id="ie-warning">
-					This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More...</a>]
-				</div>
-				<![endif]-->
-				<!-- HEADER START -->
-				<div id="header-container">
-					<div id="header-left">
-						<h1><span class="logo"></span><a id="logo" href="/" title="H3RALD"></a></h1>
-					</div>
-					<div id="header-right">
-						<ul id="navigation">
-							<li><span class="preload nav-archives"></span><a id="nav-archives" href="/archives/" title="ARCHIVES"></a></li>
-							<li><span class="preload nav-projects"></span><a id="nav-projects" href="/projects/" title="PROJECTS"></a></li>
-							<li><span class="preload nav-about"></span><a id="nav-about" href="/about/" title="ABOUT"></a></li>
-							<li><span class="preload nav-other"></span><a id="nav-other" href="/other/" title="OTHER"></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- HEADER END -->
-			<div class="ribbon">
-			</div>
-			<!-- MAIN START -->
-			<div id="main">
-				<!-- CONTAINER START -->
-				<div id="container">
-					<!-- CONTENT START -->
-					<div id="content" class="clearfixstandard">
-						<div id="page-links">
-							<span><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"></script></span>
-						</div>
 
-						<h2>Defining Custom Commands</h2>
-						<hr />
-						<div id="content-body">
-							<div class="navigation"><a href="/glyph/book/extending/output_format.html">Custom Output Formats &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/troubleshooting/errors_generic.html">&rarr; Generic Errors</a></div>
+
+		<meta charset="utf-8" /> 
+		<meta name="author" content="Fabio Cevasco" /> 
+		<meta name="copyright" content="Fabio Cevasco" /> 
+		<meta name="robots" content="all, follow" /> 
+		<meta name="Revisit-After" content="2 Days" /> 
+		<meta name="language" content="en" /> 
+		<meta name="target_country" content="en-us" /> 
+		<meta name="country" content="United States" /> 
+		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" /> 
+
+		<meta name="keywords" content="h3rald, fabio cevasco, glyph" /> 
+		<link rel="shortcut icon" href="/favicon.png" type="image/png" /> 
+		<meta content="44.388041;9.073248" name="ICBM" /> 
+
+
+		<link rel="stylesheet" type="text/css" href="/styles/html5reset.css" /> 
+		<link rel="stylesheet" type="text/css" href="/styles/style.css" /> 
+
+		<!--[if lte IE 8]>
+		<script src="/js/html5.js" type="text/javascript"></script>
+		<![endif]--> 
+	</head> 
+	<body> 
+		<!--[if lte IE 6]>
+		<div id="ie-warning">
+			This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More &raquo;</a>]
+		</div>
+		<![endif]--> 
+
+		<section id="container"> 
+
+			<header class="page"> 
+				<nav class="home-link"> 
+					<a href="/"> 
+						<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/> 
+						<![if !IE]> 
+						<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/> 
+						<![endif]> 
+					</a> 
+				</nav> 
+
+				<nav class="section"> 
+					/<a href="/projects/" rel="archives">PROJECTS</a> 
+				</nav> 
+
+			</header> 
+			<article class="page"> 
+				<header> 
+					<hgroup> 
+					<h1>Defining Custom Commands</h1> 
+					</hgroup> 
+				</header> 
+				<section id="body-text" class="hyphenate"> 
+
+							<nav><a href="/glyph/book/extending/output_format.html">Custom Output Formats &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/troubleshooting/errors_generic.html">&rarr; Generic Errors</a></nav>
 							<p>Glyph relies on <a href="http://davetron5000.github.com/gli/"><span class="caps">GLI</span></a> for defining commands. This useful library provides a high-level framework for creating command-line interface similar to <a href="http://git-scm.com/">Git</a>, its <span class="caps">DSL</span> takes care of pretty much everything, from managing command line arguments and options to providing an interactive help system.</p>
-<div class="section">
-<h5 id="h_96">Creating a 'glyph generate' command</h5>
+<section class="section">
+<header><h1 id="h_96">Creating a 'glyph generate' command</h1></header>
 <p>Consider the custom task defined in <a href="/glyph/book/extending/task.html#custom_generate_task">Creating a &#8216;custom:generate&#8217; task</a>. Creating a custom command to call it is fairly straightforward.</p>
 <p>First of all, create a <code>lib/commands</code> folder in your project directory. Then, create a <code>.rb</code> file within it, e.g. <code>commands.rake</code>.</p>
 <p>Finally, here&#8217;s the source of the command:</p>
-	<pre class="lazy"><span class="line-numbers">   1 </span> <span class="Variable">GLI</span>.<span class="Entity">desc</span> <span class="String"><span class="String">'</span>Generates a specific file required for Glyph releases<span class="String">'</span></span>
-<span class="line-numbers">   2 </span> arg_name <span class="String"><span class="String">&quot;</span>file_name<span class="String">&quot;</span></span>
-<span class="line-numbers">   3 </span> command <span class="Constant"><span class="Constant">:</span>generate</span> <span class="Keyword">do </span>|<span class="Variable">c</span>|
-<span class="line-numbers">   4 </span>   c.<span class="Entity">action</span> <span class="Keyword">do </span>|<span class="Variable">global_options</span>,<span class="Variable">options</span>,<span class="Variable">args</span>|
-<span class="line-numbers">   5 </span>     <span class="Keyword">if</span> args.<span class="Entity">blank?</span> <span class="Keyword">then</span>
-<span class="line-numbers">   6 </span>       <span class="Keyword">raise</span> <span class="Variable">RuntimeError</span>, <span class="String"><span class="String">&quot;</span>You must specify a file to generate<span class="String">&quot;</span></span>
-<span class="line-numbers">   7 </span>     <span class="Keyword">else</span>
-<span class="line-numbers">   8 </span>       <span class="Support">Glyph</span>.<span class="Entity">run</span> <span class="String"><span class="String">'</span>custom:generate<span class="String">'</span></span>, args[<span class="Constant">0</span>]
-<span class="line-numbers">   9 </span>     <span class="Keyword">end</span>
-<span class="line-numbers">  10 </span>   <span class="Keyword">end</span>
-<span class="line-numbers">  11 </span> <span class="Keyword">end</span>
-</pre>
-	<p>That&#8217;s it. If you try to run <code>glyph help</code> within your project directory, notice that there&#8217;s a new entry for the generate command:</p>
-	<pre class="lazy"><span class="line-numbers">   1 </span> $ glyph help
-<span class="line-numbers">   2 </span> =====================================
-<span class="line-numbers">   3 </span> Glyph v.0.4.0
-<span class="line-numbers">   4 </span> =====================================
-<span class="line-numbers">   5 </span> usage: glyph command [options]
-<span class="line-numbers">   6 </span> 
-<span class="line-numbers">   7 </span> Options:
-<span class="line-numbers">   8 </span>     -d, --debug - Enable debugging
-<span class="line-numbers">   9 </span> 
-<span class="line-numbers">  10 </span> Commands:
-<span class="line-numbers">  11 </span>     add      - Add a new text file to the project
-<span class="line-numbers">  12 </span>     compile  - Compile the project
-<span class="line-numbers">  13 </span>     config   - Get/set configuration settings
-<span class="line-numbers">  14 </span>     generate - Generates a specific file required for Glyph releases
-<span class="line-numbers">  15 </span>     help     - Shows list of commands or help for one command
-<span class="line-numbers">  16 </span>     init     - Create a new Glyph project
-<span class="line-numbers">  17 </span>     outline  - Display the document outline
-<span class="line-numbers">  18 </span>     stats    - Display statistics
-<span class="line-numbers">  19 </span>     todo     - Display all project TODO items
-</pre>
-	<p>You can now run the Glyph command as expected:</p>
-	<pre class="lazy"><span class="line-numbers">   1 </span> $ glyph -d generate changelog
-<span class="line-numbers">   2 </span> -- Generating CHANGELOG...
-<span class="line-numbers">   3 </span> -- Done.
-</pre>
-
+	<div class="CodeRay">
+  <div class="code"><pre><span class="no"> 1</span> <span class="co">GLI</span>.desc <span class="s"><span class="dl">'</span><span class="k">Generates a specific file required for Glyph releases</span><span class="dl">'</span></span>
+<span class="no"> 2</span> arg_name <span class="s"><span class="dl">&quot;</span><span class="k">file_name</span><span class="dl">&quot;</span></span>
+<span class="no"> 3</span> command <span class="sy">:generate</span> <span class="r">do</span> |c|
+<span class="no"> 4</span>   c.action <span class="r">do</span> |global_options,options,args|
+<span class="no"> 5</span>     <span class="r">if</span> args.blank? <span class="r">then</span>
+<span class="no"> 6</span>       raise <span class="co">RuntimeError</span>, <span class="s"><span class="dl">&quot;</span><span class="k">You must specify a file to generate</span><span class="dl">&quot;</span></span>
+<span class="no"> 7</span>     <span class="r">else</span>
+<span class="no"> 8</span>       <span class="co">Glyph</span>.run <span class="s"><span class="dl">'</span><span class="k">custom:generate</span><span class="dl">'</span></span>, args[<span class="i">0</span>]
+<span class="no"> 9</span>     <span class="r">end</span>
+<span class="no"><strong>10</strong></span>   <span class="r">end</span>
+<span class="no">11</span> <span class="r">end</span></pre></div>
 </div>
-							<div class="navigation"><a href="/glyph/book/extending/output_format.html">Custom Output Formats &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/troubleshooting/errors_generic.html">&rarr; Generic Errors</a></div>
-						</div>
-						<div id="content-footer">
-							<div class="share">
-								<script type="text/javascript"><!--
-									google_ad_client = "pub-2871497824158668";
-									/* 728x90, h3rald 8.0 */
-									google_ad_slot = "0081634732";
-									google_ad_width = 728;
-									google_ad_height = 90;
-									//-->
-									</script>
-									<script type="text/javascript"
-										src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-										</script>
-									</div>
-								</div>
-							</div>
-							<!-- CONTENT END -->
-						</div>
-						<!-- CONTAINER END -->
-					</div>
-					<div class="ribbon"></div>
-					<!-- MAIN END -->
-					<div id="border-bottom">
-						<div id="services">
-							<div class ="footer-left">
-								<div id="backtype">
-									<h3><span class="s-opinions preload"></span><a id="s-opinions" href="http://www.backtype.com/h3rald" title="Opinions"></a></h3>
-								</div>
-							</div>
-							<div class ="footer-center">
-								<div id="twitter">
-									<h3><span class="s-tweets preload"></span><a id="s-tweets" href="http://www.twitter.com/h3rald" title="Tweets"></a></h3>
-								</div>
-							</div>
-							<div class ="footer-right">
-								<div id="delicious">
-									<h3><span class="s-bookmarks preload"></span><a id="s-bookmarks" href="http://www.delicious.com/h3rald" title="Bookmarks"></a></h3>
-								</div>
-							</div>
-						</div> <!-- SERVICES END -->
-					</div>
-					<div class="clearfooter"></div>
-				</div> <!-- WRAPPER END -->
-				<div id="footer">
-					<div id="footer-container">
-						<div class="footer-div">
-							H3RALD Web Site v8.0.0 <em>"xStatic"</em> &mdash; &copy; 2004-2010 <strong>Fabio Cevasco</strong> &mdash; <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/">Some rights reserved</a> | <a href="http://validator.w3.org/check?uri=referer" class="link">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/validator?uri=/custom_command.html" class="link">CSS 2.1</a>
-						</div>
-					</div> <!-- END FOOTER CONTAINER-->
-				</div> <!-- END FOOTER -->
-				<!-- Start of StatCounter Code -->
-				<script type="text/javascript">
-					var sc_project=6193656; 
-					var sc_invisible=1; 
-					var sc_security="57f7ee2a"; 
-				</script>
-				<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
-				<!-- End of StatCounter Code -->
-				<script src='http://www.google-analytics.com/ga.js' type='text/javascript'></script>	
-				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
-				<script src="http://www.google.com/jsapi?key=ABQIAAAA6h3j8Jri5D_da53UPbEbThRlq2n1sm52B5HDRR5tm6o8XM18FhTKn3v155RpPeD0kWnWG81QEhhifQ" type="text/javascript"></script>
-					<script src="/js/jquery.js" type="text/javascript"></script> 
-					<script src="/js/jquery-timeago.js" type="text/javascript"></script> 
-					<script src="/js/jquery-easing.js" type="text/javascript"></script> 
-					<script src="/js/jquery-fancybox.js" type="text/javascript"></script> 
-					<script src="/js/jquery-toc.js" type="text/javascript"></script> 
-					<script src="/js/date.js" type="text/javascript"></script> 
-					<script src="/js/feeds.js" type="text/javascript"></script> 
-					<script src="/js/search.js" type="text/javascript"></script> 
-					<script src="/js/init.js" type="text/javascript"></script> 
-				
-				
-					<script type="text/javascript"> 
-						$(document).ready(function() {
-								display_opinions(7);
-								display_tweets(7);
-								display_bookmarks(7);
-								});
+
+	<p>That&#8217;s it. If you try to run <code>glyph help</code> within your project directory, notice that there&#8217;s a new entry for the generate command:</p>
+	<div class="CodeRay">
+  <div class="code"><pre><span class="no"> 1</span> $ glyph help
+<span class="no"> 2</span> =====================================
+<span class="no"> 3</span> Glyph v.0.4.1
+<span class="no"> 4</span> =====================================
+<span class="no"> 5</span> usage: glyph command [options]
+<span class="no"> 6</span> 
+<span class="no"> 7</span> Options:
+<span class="no"> 8</span>     -d, --debug - Enable debugging
+<span class="no"> 9</span> 
+<span class="no"><strong>10</strong></span> Commands:
+<span class="no">11</span>     add      - Add a new text file to the project
+<span class="no">12</span>     compile  - Compile the project
+<span class="no">13</span>     config   - Get/set configuration settings
+<span class="no">14</span>     generate - Generates a specific file required for Glyph releases
+<span class="no">15</span>     help     - Shows list of commands or help for one command
+<span class="no">16</span>     init     - Create a new Glyph project
+<span class="no">17</span>     outline  - Display the document outline
+<span class="no">18</span>     stats    - Display statistics
+<span class="no">19</span>     todo     - Display all project TODO items</pre></div>
+</div>
+
+	<p>You can now run the Glyph command as expected:</p>
+	<div class="CodeRay">
+  <div class="code"><pre><span class="no">1</span> $ glyph -d generate changelog
+<span class="no">2</span> -- Generating CHANGELOG...
+<span class="no">3</span> -- Done.</pre></div>
+</div>
+
+</section>
+							<nav><a href="/glyph/book/extending/output_format.html">Custom Output Formats &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/troubleshooting/errors_generic.html">&rarr; Generic Errors</a></nav>
+				</section> 
+			</article> 
+
+
+			<footer> 
+				<section class="ads"> 
+					<script type="text/javascript"><!--
+						google_ad_client = "pub-2871497824158668";
+						/* 728x90, created 9/10/10 */
+						google_ad_slot = "3963343166";
+						google_ad_width = 728;
+						google_ad_height = 90;
+						//-->
 					</script> 
-			</body>
-		</html>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
+					</script> 
+				</section> 
+				<section> 
+					<nav> 
+						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a> 
+					</nav> 
+					<p>H3RALD Web Site v8.1 &mdash; &copy; 2010 &mdash; <em>Fabio Cevasco</em></p> 
+				</section> 
+			</footer> 
+		</section><!-- #container end --> 
+		<script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script> 
+		<!-- <script src="/js/jquery.js" type="text/javascript"></script> --> 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+		<script src="/js/jquery-timeago.js" type="text/javascript"></script> 
+		<script src="/js/jquery-easing.js" type="text/javascript"></script> 
+		<script src="/js/jquery-fancybox.js" type="text/javascript"></script> 
+		<script src="/js/jquery-toc.js" type="text/javascript"></script> 
+		<script src="/js/date.js" type="text/javascript"></script> 
+		<script src="/js/feeds.js" type="text/javascript"></script> 
+		<script src="/js/search.js" type="text/javascript"></script> 
+		<script src="/js/hyphenator.min.js" type="text/javascript"></script> 
+		<script src="/js/init.js" type="text/javascript"></script> 
+		<!-- Start Google Analytics --> 
+		<script type="text/javascript"> 
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-18587377-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script> 
+		<!-- End Google Analytics --> 
+		<!-- Start of StatCounter Code --> 
+		<script type="text/javascript"> 
+			var sc_project=6193656; 
+			var sc_invisible=1; 
+			var sc_security="57f7ee2a"; 
+		</script> 
+		<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> 
+		<!-- End of StatCounter Code --> 
+	</body> 
+</html>

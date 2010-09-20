@@ -1,5 +1,3 @@
------
------
 function format_date(d){
 	return $.timeago(Date.parse(d));
 }

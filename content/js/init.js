@@ -1,5 +1,3 @@
------
------
 $(function() {
 		$('#gallery a').fancybox();
 		$('.fancybox').fancybox({
