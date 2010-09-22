@@ -230,6 +230,12 @@ dl {
 
 }
 
+table#timeline, table#taglist {
+	th, tr, td {
+		border: none;
+	}
+}
+
 /* Glyph Book */
 
 section.glyph-book > nav {

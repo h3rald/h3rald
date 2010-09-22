@@ -57,7 +57,7 @@ ExpiresByType application/x-shockwave-flash A2592000
 # Rewrite rules.
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteRule ^$ /home/index.html [L]
+#RewriteRule ^$ /home/index.html [L]
 RewriteRule ^(rss|atom)/?$ /$1.xml [L]
 RewriteRule ^tags/([^/\.]+)/(rss|atom)/?$ /tags/$1/$2.xml [L]
 RewriteRule ^(articles|blog|entries|tags)/?$ /archives/ [L,R=301]
