@@ -1,6 +1,7 @@
 ----- 
 permalink: herald-vim-color-scheme
-title: "Project: herald.vim"
+title: "herald.vim"
+subtitle: "An easy to read, portable and pretty Vim Color Scheme"
 type: project
 -----
 *herald* is a dark color scheme for "Vim":http://www.vim.org which aims to be easy to read, eye-appealing, portable on multiple terminals, and suitable for source code highlighting in multiple languages.

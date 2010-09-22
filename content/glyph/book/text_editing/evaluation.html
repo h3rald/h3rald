@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>Glyph - Evaluating Ruby code and Configuration Settings</title> 
+		<title>Evaluating Ruby code and Configuration Settings &ndash; Glyph Documentation</title> 
 
 
 
@@ -47,7 +47,7 @@
 				</nav> 
 
 				<nav class="section"> 
-					/<a href="/projects/" rel="archives">PROJECTS</a> 
+					/<a href="/glyph/" rel="archives">GLYPH</a> 
 				</nav> 
 
 			</header> 
@@ -55,15 +55,16 @@
 				<header> 
 					<hgroup> 
 					<h1>Evaluating Ruby code and Configuration Settings</h1> 
+					<h2>Glyph Documentation</h2>
 					</hgroup> 
 				</header> 
-				<section id="body-text" class="hyphenate"> 
+				<section id="body-text" class="hyphenate glyph-book"> 
 
 							<nav><a href="/glyph/book/text_editing/inclusions.html">Including Files and Snippets &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/conditionals.html">&rarr; Conditional Macros</a></nav>
 								<p>Glyph Language is not a full-blown programming language and it is currently not Turing-complete (it does not provide loops). However, it is possible to evaluate simple ruby code snippets using the <code>ruby</code> macro (aliased to <code>%</code>), like this:</p>
 <ul>
 	<li><code>%[2 + 2]</code> &rarr; 4</li>
-	<li><code>%[Time.now]</code> &rarr; Wed Sep 22 11:49:09 +0200 2010</li>
+	<li><code>%[Time.now]</code> &rarr; Wed Sep 22 13:49:51 +0200 2010</li>
 	<li><code>%[Glyph::VERSION]</code> &rarr; 0.4.1</li>
 </ul>
 <p>The scope for the code evaluation is the Kernel module, (with all inclusions required by Glyph itself).</p>

@@ -3,7 +3,8 @@ permalink: rawline
 filters_pre: 
 - erb
 - redcloth
-title: "Project: RawLine"
+title: "RawLine"
+subtitle: A pure-ruby alternative to ReadLine
 type: project
 github: rawline
 links:

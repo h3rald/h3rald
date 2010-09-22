@@ -92,6 +92,10 @@ route '/glyph/book/' do
 	'/glyph/book/index.html'
 end
 
+route '/glyph/book/images/glyph/*' do
+	item.identifier.chop + ".#{item[:extension]}"
+end
+
 route '/glyph/book/*' do
 	item.identifier.chop+'.html'
 end

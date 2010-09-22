@@ -194,6 +194,10 @@ article.feature {
 	margin-left: 2em;
 }
 
+ol.toc, ol.toc ol {
+	list-style-type: none;
+}
+
 dl {
 	margin: 2em 0;
 	dt {
@@ -224,6 +228,22 @@ dl {
 		padding: 5px;
 	}
 
+}
+
+/* Glyph Book */
+
+section.glyph-book > nav {
+	text-align: center;
+	margin: 2em auto;
+	a {
+		margin: 0 1em;
+		text-size: 120%;
+		font-weight: bold;
+	}
+}
+
+section.glyph-index h1.toc-header {
+	display: none;
 }
 
 /* TOC */

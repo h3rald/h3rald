@@ -3,7 +3,8 @@ permalink: h3rald
 filters_pre: 
 - erb
 - redcloth
-title: "Project: H3RALD Web Site"
+title: "H3RALD Web Site"
+subtitle: "The site you're looking at"
 type: project
 github: h3rald
 links:
