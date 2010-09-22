@@ -57,5 +57,6 @@ Besides appearence, the new site also features some improvements in its underlyi
 * Better nanoc "Rules":http://github.com/h3rald/h3rald/blob/master/Rules
 * Improved "Glyph":/glyph/ integration, by extending nanoc "RuleContext":http://github.com/h3rald/h3rald/blob/master/lib/glyph_context.rb
 * Minor updates to the custom "Rake tasks":http://github.com/h3rald/h3rald/blob/master/tasks/site.rake
+* "Disqus":http://disqus.com/overview/ comments
 	]
 ]
