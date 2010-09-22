@@ -105,29 +105,28 @@
 <span class="no"> 8</span>       <span class="r">if</span> i.file? <span class="r">then</span>
 <span class="no"> 9</span>         <span class="r">next</span> <span class="r">if</span> 
 <span class="no"><strong>10</strong></span>           i.to_s.match(<span class="co">Regexp</span>.escape(dir/<span class="s"><span class="dl">'</span><span class="k">glyph</span><span class="dl">'</span></span>)) || 
-<span class="no">11</span>           i.to_s.match(<span class="co">Regexp</span>.escape(dir/<span class="s"><span class="dl">'</span><span class="k">images</span><span class="dl">'</span></span>)) || 
-<span class="no">12</span>           i.to_s.match(<span class="co">Regexp</span>.escape(dir/<span class="s"><span class="dl">'</span><span class="k">styles</span><span class="dl">'</span></span>))
-<span class="no">13</span>         dest = dir/<span class="s"><span class="dl">&quot;</span><span class="k">glyph/book/</span><span class="il"><span class="idl">#{</span>i.relative_path_from(<span class="co">Glyph</span>::<span class="co">PROJECT</span>/dir)<span class="idl">}</span></span><span class="dl">&quot;</span></span>
-<span class="no">14</span>         src = i.to_s
-<span class="no">15</span>         <span class="co">Pathname</span>.new(dest).parent.mkpath
-<span class="no">16</span>         file_copy src, dest
-<span class="no">17</span>       <span class="r">end</span>
-<span class="no">18</span>     <span class="r">end</span>
-<span class="no">19</span>     <span class="c"># Remove files</span>
-<span class="no"><strong>20</strong></span>     dir.children.each <span class="r">do</span> |c|
-<span class="no">21</span>       <span class="r">unless</span> [dir/<span class="s"><span class="dl">'</span><span class="k">glyph</span><span class="dl">'</span></span>, dir/<span class="s"><span class="dl">'</span><span class="k">images</span><span class="dl">'</span></span>, dir/<span class="s"><span class="dl">'</span><span class="k">styles</span><span class="dl">'</span></span>].include? c <span class="r">then</span>
-<span class="no">22</span>         c.directory? ? c.rmtree : c.unlink
-<span class="no">23</span>       <span class="r">end</span>
-<span class="no">24</span>     <span class="r">end</span>
-<span class="no">25</span>     (dir/<span class="s"><span class="dl">'</span><span class="k">images/glyph/glyph.eps</span><span class="dl">'</span></span>).unlink 
-<span class="no">26</span>     (dir/<span class="s"><span class="dl">'</span><span class="k">images/glyph/glyph.svg</span><span class="dl">'</span></span>).unlink
-<span class="no">27</span>     <span class="c"># Create project page</span>
-<span class="no">28</span>     project = <span class="co">Glyph</span>.filter <span class="s"><span class="dl">%{</span><span class="k">layout:project[
-<span class="no">29</span>         @contents[</span><span class="il"><span class="idl">#{</span>file_load(<span class="co">Glyph</span>::<span class="co">PROJECT</span>/<span class="s"><span class="dl">'</span><span class="k">text/introduction.glyph</span><span class="dl">'</span></span>)<span class="idl">}</span></span><span class="k">]
-<span class="no"><strong>30</strong></span>       ]</span><span class="dl">}</span></span>
-<span class="no">31</span>     file_write dir/<span class="s"><span class="dl">&quot;</span><span class="k">glyph.textile</span><span class="dl">&quot;</span></span>, project
-<span class="no">32</span>   <span class="r">end</span>  
-<span class="no">33</span> <span class="r">end</span></pre></div>
+<span class="no">11</span>           i.to_s.match(<span class="co">Regexp</span>.escape(dir/<span class="s"><span class="dl">'</span><span class="k">images</span><span class="dl">'</span></span>)) 
+<span class="no">12</span>         dest = dir/<span class="s"><span class="dl">&quot;</span><span class="k">glyph/book/</span><span class="il"><span class="idl">#{</span>i.relative_path_from(<span class="co">Glyph</span>::<span class="co">PROJECT</span>/dir)<span class="idl">}</span></span><span class="dl">&quot;</span></span>
+<span class="no">13</span>         src = i.to_s
+<span class="no">14</span>         <span class="co">Pathname</span>.new(dest).parent.mkpath
+<span class="no">15</span>         file_copy src, dest
+<span class="no">16</span>       <span class="r">end</span>
+<span class="no">17</span>     <span class="r">end</span>
+<span class="no">18</span>     <span class="c"># Remove files</span>
+<span class="no">19</span>     dir.children.each <span class="r">do</span> |c|
+<span class="no"><strong>20</strong></span>       <span class="r">unless</span> [dir/<span class="s"><span class="dl">'</span><span class="k">glyph</span><span class="dl">'</span></span>, dir/<span class="s"><span class="dl">'</span><span class="k">images</span><span class="dl">'</span></span>].include? c <span class="r">then</span>
+<span class="no">21</span>         c.directory? ? c.rmtree : c.unlink
+<span class="no">22</span>       <span class="r">end</span>
+<span class="no">23</span>     <span class="r">end</span>
+<span class="no">24</span>     (dir/<span class="s"><span class="dl">'</span><span class="k">images/glyph/glyph.eps</span><span class="dl">'</span></span>).unlink 
+<span class="no">25</span>     (dir/<span class="s"><span class="dl">'</span><span class="k">images/glyph/glyph.svg</span><span class="dl">'</span></span>).unlink
+<span class="no">26</span>     <span class="c"># Create project page</span>
+<span class="no">27</span>     project = <span class="co">Glyph</span>.filter <span class="s"><span class="dl">%{</span><span class="k">layout:project[
+<span class="no">28</span>         @contents[</span><span class="il"><span class="idl">#{</span>file_load(<span class="co">Glyph</span>::<span class="co">PROJECT</span>/<span class="s"><span class="dl">'</span><span class="k">text/introduction.glyph</span><span class="dl">'</span></span>)<span class="idl">}</span></span><span class="k">]
+<span class="no">29</span>       ]</span><span class="dl">}</span></span>
+<span class="no"><strong>30</strong></span>     file_write dir/<span class="s"><span class="dl">&quot;</span><span class="k">glyph.textile</span><span class="dl">&quot;</span></span>, project
+<span class="no">31</span>   <span class="r">end</span>  
+<span class="no">32</span> <span class="r">end</span></pre></div>
 </div>
 
 	<p>In this case, this task does not actually renders files in a different format, it just moves the files generated by the @generate:web5@ task in different subdirectories.</p>
