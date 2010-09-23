@@ -4,7 +4,3 @@ title: Page Not Found
 type: page
 -----
 The page you're looking for cannot be found. Try searching the "archives":/archives/, maybe you'll have better luck!
-
-<p style="margin: auto; text-align: center">
-<img src="/images/theme/heraldry/pegasus.png" />
-</p>
