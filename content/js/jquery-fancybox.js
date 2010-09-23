@@ -1,5 +1,3 @@
------
------
 /*
  * FancyBox - simple and fancy jQuery plugin
  * Examples and documentation at: http://fancy.klade.lv/

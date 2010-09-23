@@ -1,0 +1,411 @@
+/* Content */
+
+article > header {
+	h1 {
+		@include standard-font;
+		font-weight: bold;
+		color: #000;
+		line-height: 1.1em;
+		padding-top: 0.2em;
+		text-align:left;
+		height: 60%;
+		a {
+			color: #000;
+			text-decoration: none;
+		}
+	}
+	h2 {
+		@include standard-font;
+		font-weight: normal;
+		font-style: italic;
+		color: #000;
+		line-height: 1.1em;
+		height: 20%;
+		text-align:left;
+	}
+}
+
+@mixin toolbar {
+	border-bottom: 1px solid $light-gray;
+	width: 100%;
+	text-align: left;
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
+
+article > header > p.pubdate {
+	@include toolbar;
+}
+article > header > p.toolbar {
+	@include toolbar;
+	margin-top: 20px;
+	time {
+		font-style: italic;
+	}
+	.tools {
+		float: right;
+		margin-top: -20px;
+		a {
+			float: left;
+			display: block;
+			margin: 0 2px;
+			img {
+				opacity: 0.6;
+				@include ease-in(opacity);
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+article > header .author {
+	text-align: right;
+	font-size: 0.8em;
+	float: right;
+	margin-top: -10px;
+}
+
+article.page > section {
+	padding-top: 0.5em;
+	clear: both;
+}
+
+article > section {
+	clear: right;
+}
+
+article > header > nav.tags {
+	margin-top: -5px;
+	padding: 2px 0 3px 0;
+	text-align: left;
+	float: left;
+}
+
+article > header > nav.tags > a {
+	margin: 2px 8px 2px 0px;
+	font-style: italic;
+	background-color: #CED1EB;
+	@include border-radius(3px);
+	padding: 1px 3px;
+	@include ease-in(background-color);
+}
+article > header > nav.tags > a:hover {
+	background-color: #E0E3FF;
+}
+
+
+/* Headers */
+
+#main-content > article h1, 
+article.page > header h1 {
+	font-size: 2.8em;
+}
+
+#secondary-content > article h1, 
+#main-content > section > article h1,
+#body-text section header h1,
+#body-text h2 {
+	font-size: 2em;
+}
+
+#main-content > article h2, 
+#secondary-content > section > article h1, 
+article.page > header h2,
+#body-text section section header h1,
+#body-text h3 {
+	font-size: 1.6em;
+}
+
+#main-content > section > article h2,
+#body-text section section section header h1,
+#body-text h5 {
+	font-size: 1.3em;
+}
+
+#secondary-content > article h2,
+#body-text section section section section header h1,
+#body-text h4 {
+	font-size: 1.4em;
+}
+
+#secondary-content > section > article h2,
+#body-text section section section section section header h1,
+#body-text h6 {
+	font-size: 1.1em;
+}
+
+/* Text */
+
+article {
+	font-size: 93%;
+	header > p { font-size: 90%; }
+}
+
+#body-text {
+	margin-top: 2.5em;
+	h1, h2, h3, h4, h5, h6 {
+		clear: both;
+		padding-top: 1.5em;
+		margin-bottom: 0.8em;
+		border-bottom: 1px solid $light-gray;  
+		width: 100%;
+	}
+	img {
+		margin: 1em;
+	}
+	.right, img[style="float:right;"] {
+		margin: 1em 0 1em 1em;
+	}
+	.left, img[style="float:left;"] {
+		margin: 1em 1em 1em 0;
+	}
+	blockquote {
+		font-style: italic;
+		color: #8F6B17;
+	}
+}
+
+article p {
+	margin: 0.6em 0;
+}
+
+article.feature {
+	border: 1px solid $light-gray;
+	padding: 10px;	
+	header p {
+		margin: 0;
+		font-weight: bold;
+		text-align: right;
+		color: $light-gray;
+	}
+	h1, h2 {
+		text-align: center;
+	}
+	h2 {
+		margin-bottom:10px;
+	}
+}
+
+/* Lists */
+
+#body-text ul, ol {
+	margin-left: 2em;
+}
+
+ol.toc, ol.toc ol {
+	list-style-type: none;
+}
+
+dl {
+	margin: 2em 0;
+	dt {
+		margin: 1em 0 0.3em 0; 
+		font-size: 120%;
+	}
+	dd {
+		margin-left: 2em;
+	}
+}
+
+
+/* Tables */
+
+#body-text table {
+	border-collapse: collapse;
+	@include border-radius(5px);
+	th {
+		font-size: 110%;
+		text-align: center;
+		font-weight: bold;
+		background: #fafafa;
+	}
+	tr, th, td {
+		border: 1px solid $light-gray;
+	}
+	td {
+		padding: 5px;
+	}
+
+}
+
+table#timeline, table#taglist {
+	th, tr, td {
+		border: none;
+	}
+}
+
+/* Glyph Book */
+
+section.glyph-book > nav {
+	text-align: center;
+	margin: 2em auto;
+	a {
+		margin: 0 1em;
+		text-size: 120%;
+		font-weight: bold;
+	}
+}
+
+section.glyph-index h1.toc-header {
+	display: none;
+}
+
+/* TOC */
+
+#auto-toc {
+	#toc-title {
+		border-bottom: none;
+		font-size: 1.2em;
+		font-style: italic;
+	}
+	ol {
+		margin-left: 0;
+		li {
+			list-style-type: none;
+		}
+	}
+	float: right;
+	margin: 1em 0 1.5em 1.5em;
+	padding: 0.5em;
+	border: 1px solid $light-gray;
+}
+
+.toc-top-link {
+	font-weight: normal;
+}
+
+/* Legacy Comments */
+
+#legacy-comments {
+	margin: 0 10px;
+}
+
+.lc-header{
+	margin: 20px 0 10px 0;
+	padding: 3px;
+  background: #F7F7F7;
+  color: #333;
+  line-height: normal;
+  height: auto;
+	font-weight: bold;
+  border: 1px solid rgba(0,0,0,.08);
+	@include border-radius(3px);
+}
+.lc-body {
+	margin: 0 10px;
+	font-size: 0.93em;
+}
+
+/* Projects */
+
+#github {
+	border: 1px solid $light-gray;
+	padding: 5px;
+	margin-left: 5px;
+	float: right;
+	width: 400px;
+	.commit-date {
+		font-style: italic;
+	}
+	a {
+		font-size: 90%;
+		font-weight: bold;
+	}
+}
+
+.project-links {
+	width: 500px;
+	border: 1px solid $light-gray;
+	margin-bottom: 10px;
+	padding: 0 5px;
+	text-align: center;
+	a {
+		font-weight: bold;
+	}
+}
+
+/* Contact form */
+
+#body-text {
+	form.fsForm {
+		width: 400px;
+	}
+	table.fsTable, 
+	tr.fsRow, 
+	tr.fsRowTop, 
+	tr.fsSpacerRow,
+ 	td.fsRowOpen, 
+	td.fsRowClose, 
+	td.fsRowBody, 
+	td.fsCell {
+		border: none;
+		@include standard-font;
+	}
+	tr.fsRowTop, tr.fsSpacerRow {
+		display: none;
+	}
+}
+
+
+/* Classes */
+
+.clear-left {
+	clear: left;
+}
+.clear-right {
+	clear: right;
+}
+.clear {
+	clear:both;
+}
+
+.img-right {
+	float: right;
+	margin: 10px 0 10px 10px;
+}
+.img-left {
+	float: right;
+	margin: 10px 10px 10px 0;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+.border-left {
+	border-left: 1px solid $light-gray;
+}
+.border-right {
+	border-right: 1px solid $light-gray;
+}
+
+/* Elements */
+
+a {
+	color: $light-blue;
+	text-decoration: none;
+	@include ease-in(color);
+	outline: none;
+}
+
+a:hover {
+	color: $dark-blue;
+	text-decoration: underline;
+}
+
+.toc-top-link {
+	font-size: 80%;
+	font-weight: bold;
+	padding: 3px;
+}

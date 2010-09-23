@@ -3,7 +3,8 @@ permalink: rawline
 filters_pre: 
 - erb
 - redcloth
-title: "Project: RawLine"
+title: "RawLine"
+subtitle: A pure-ruby alternative to ReadLine
 type: project
 github: rawline
 links:
@@ -22,8 +23,6 @@ RawLine is a 100% Ruby alternative to the ReadLine library, providing some of it
 * Word completion
 * History Management
 * Custom key/key sequences bindings
-
-<br style="clear:both" />
 
 h3. Installation
 

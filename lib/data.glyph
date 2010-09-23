@@ -1,4 +1,5 @@
-rw:[h3rald_article|
+&:[G|Glyph]
+rw:[h3rald.article|
 	article[
 		@pubdate[$[document.date]]
 		@head[
@@ -19,7 +20,7 @@ rw:[h3rald_article|
 			</style>
 		]
 		@pre-title[
-			=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/theme/h3rald.svg]]
+			=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/logo.svg]]
 		]
 		@post-title[
 			div[em[Originally published on =>[http://www.h3rald.com{{identifier}}|H3RALD.com]]]

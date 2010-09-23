@@ -1,5 +1,5 @@
 ----- 
-summary: "A roundup of six different PHP frameworks inspired by Ruby on Rails. Each with essential details, comments, pros and cons."
+subtitle: "A roundup of six different PHP frameworks inspired by Ruby on Rails"
 popular: true
 permalink: rails-inspired-php-frameworks
 filters_pre: 
@@ -77,6 +77,7 @@ tags:
 - rails
 type: article
 toc: true
+intro: There are various articles online examining many PHP frameworks, providing short reviews or comparative charts, but I could not find yet an article  examining the so called _"Rails-inspired frameworks"_ anywhere on the web, so I decided to write my own...
 -----
 There are various articles online examining many PHP frameworks, providing short reviews or comparative charts, but I could not find yet an article  examining the so called _"Rails-inspired frameworks"_ anywhere on the web, so I decided to write my own...
 

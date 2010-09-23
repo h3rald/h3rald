@@ -6,13 +6,19 @@
 - opensource
 :permalink: glyph-030-released
 :title: "Glyph 0.3.0 Released"
-:summary: "The third release of the Glyph Authoring Framework features dramatic speed improvements, the new 'glyph outline' command, alternative XML syntax, macro attributes, and more."
+:subtitle: The third release of the Glyph Authoring Framework features dramatic speed improvements, and much more
 :toc: true
 :pdf: true
 :date: 2010-06-13 14:10:00.000000 +02:00
+:intro: |
+  The third release of "Glyph":/glyph/ is out! 
+
+  For those checking it out for the first time, Glyph is a _Rapid Document Authoring Framework_ focused on extensibility and content reuse. For an example of what Glyph can do, have a look at Glyph's "free PDF book":http://github.com/downloads/h3rald/glyph/glyph.pdf.
+
+  This release brings more stability to Glyph, more speed, and features affecting Glyph's core functionality. As a consequence, some "incompatibilities":http://github.com/h3rald/glyph/issues/closed#issue/121 had to be introduced &ndash; but after all, better now than later. 
 -----
 &:[yardoc|http://yardoc.org/docs/h3rald-glyph]
-&:[book|http://github.com/h3rald/glyph/raw/master/book/output/pdf/glyph.pdf]
+&:[book|http://github.com/downloads/h3rald/glyph/glyph.pdf]
 
 p[The third release of =>[$[site.root]/glyph/|Glyph] is out!] 
 

@@ -1,5 +1,3 @@
------
------
 /*
 	TableOfContents Plugin for jQuery (by Doug Neiner)
 	

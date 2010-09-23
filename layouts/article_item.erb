@@ -1,9 +1,0 @@
------
-filter: erb
------
-<div class="article-item"> 
-	<h4><a href="/articles/<%= @article.attributes[:permalink]%>/"><%= @article.attributes[:title]%></a></h4><% unless (@article.attributes[:tags].empty?) then %>
-		<%= render 'article_meta', :article => @article %>
-	<% end %><%	if (@article.attributes[:summary] && !@no_summary) then %><div class="article-summary"><%= @article.attributes[:summary] %>
-	</div><% end %>
-</div>

@@ -1,0 +1,62 @@
+----- 
+:title: H3RALD.com v8.1 Released
+:subtitle: Featuring a a brand new newspaper-like design, powered by HTML5 and CSS3
+:type: article
+:toc: true
+:date: 2010-09-15 14:24:25.052000 +02:00
+:permalink: h3rald-81
+:pdf: true
+:tags: 
+- website
+- webdevelopment
+:intro: |
+  Just "over a year ago":/articles/take-back-your-site-with-nanoc I released the 8th version of this web site. The biggest change then was abandoning the Rails-powered "Typo":http://wiki.github.com/fdv/typo/ blogging platform in favor of "nanoc":http://nanoc.stoneship.org/, arguably the most versatile static site generator out there.
+  
+  A year later, I am still very happy with nanoc, hence there's no need for another major release. Nonetheless, I decided to improve the site's overall design and image, making it (hopefully) easier to use and more pleasant to the eye. 
+:extended_intro: |
+  I always had a problem finding the right theme for my web site. I always wanted to find something related to the word _herald_, so in the last release I went for a herandry-oriented theme. For this release, I decided to go for a newspaper-style layout: after all, the word _herald_ is often used in newspaper titles, and I picked the name "h3rald" after the "International Herald Tribune":http://global.nytimes.com/?iht.
+
+  Also, I was desperate to try out the new features offered by HTML3 and CSS3, and a newspaper layout seemed a good excuse to use columns. 
+-----
+$[document.intro]
+section[
+	@title[Browser Compatibility]
+	txt[
+Although I shouldn't really say this, the site is meant to be viewed with a WebKit-based browser, really. It works in other (modern) browsers (read: no IE6), and it degrades more or less gracefully if a particular feature is not supported.
+
+That being said:
+* IE7 and IE8 just barely render it (Javascript is used to "patch" the DOM with the new HTML5 elements)
+* Firefox 3+ renders pretty much everything right.
+* Safari and Chrome render the site as it is actually meant to be rendered
+
+Nobody ever died from not being able to see CSS3 rounded corners anyhow. The most important thing about this site is its content, and I made sure that whatever browser you're using you can still read it.
+	]
+]
+section[
+	@title[Columns and hyphenation]
+	txt[
+As I previously stated, I couldn't wait to try out CSS3 columns so I kinda went crazy on the home page, but just there. Some may argue that they are not suitable for web use of course, but I think they contribute to give the site layout a unique feeling. 
+
+The problem with having columns is of course text alignment: justified text looks good, but unless you hyphenate text properly it shows a lot of blank space. Luckily, I discovered "hyphenator.js":http://code.google.com/p/hyphenator/, which solved the problem nicely. 
+	]
+]
+section[
+	@title[CSS and layout improvements]
+	txt[
+I made a point out of improving the old stylesheet to make the site easier to read and generally prettier. Beauty is in the eye of the beholder, but still, I think the new stylesheet brings some improvements, especially concerning text (the "Gentium":http://scripts.sil.org/gentium font is used throughout the site) and syntax highlighting.
+
+Moreover, I worked on streamlining navigations across different sections of the site, in particular on article pages:
+
+!=/img/pictures/h3rald_81_article.png!
+	]
+]
+section[
+	@title[Under the hood]
+	txt[
+Besides appearence, the new site also features some improvements in its underlying business logic. In particular:
+* Better nanoc "Rules":http://github.com/h3rald/h3rald/blob/master/Rules
+* Improved "Glyph":/glyph/ integration, by extending nanoc "RuleContext":http://github.com/h3rald/h3rald/blob/master/lib/glyph_context.rb
+* Minor updates to the custom "Rake tasks":http://github.com/h3rald/h3rald/blob/master/tasks/site.rake
+* "Disqus":http://disqus.com/overview/ comments
+	]
+]

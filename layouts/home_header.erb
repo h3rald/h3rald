@@ -1,0 +1,43 @@
+-----
+filter: erb
+-----
+<nav class="home">
+<%= ['projects', 'links'].map{|l| %{<a href="/#{l}/"><strong>#{l.upcase}</strong></a>} }.join("|") + "|" + 
+['review', 'ruby', 'opensource', 'productivity', 'writing', 'software'].map{|l| %{<a href="/tags/#{l}/" rel="tag">#{l.upcase}</a>} }.join("|") +
+%{|<a href="/archives/" rel="archives">&raquo;&nbsp;<strong>MORE</strong></a> } %>
+</nav>
+<header class="home">
+	<nav class="left">
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-2871497824158668";
+	/* 234x60, created 9/5/10 */
+	google_ad_slot = "5027018393";
+	google_ad_width = 234;
+	google_ad_height = 60;
+	//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+	</nav>
+	<h1>
+		<a href="/">
+			<img src="/images/h3rald.png" alt="H3RALD" class="default"/>
+			<![if !IE]>
+			<img src="/images/h3rald_hover.png" alt="H3RALD" class="hover"/>
+			<![endif]>
+		</a>
+	</h1>
+	<nav class="right">
+	<script type="text/javascript"><!--
+		google_ad_client = "pub-2871497824158668";
+		/* 234x60, created 9/10/10 */
+		google_ad_slot = "7316796658";
+		google_ad_width = 234;
+		google_ad_height = 60;
+		//-->
+	</script>
+	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+	</nav>
+	<time></time>
+</header>

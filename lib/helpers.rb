@@ -18,11 +18,11 @@ module Nanoc3::Helpers::Tagging
 	end
 
 	def tags_for(article)
-		article.attributes[:tags].map{|t| %{<a class="tag" href="/tags/#{t}/">#{t}</a>}}.join " &middot; "
+		article.attributes[:tags].map{|t| %{<a class="tag" href="/tags/#{t}/">#{t}</a>}}.join
 	end
 
 	def link_for_tag(tag, base_url)
-		%[<a href="#{base_url}#{tag}/" rel="tag">#{tag}</a>]
+		%[<a href="#{base_url}#{tag.downcase}/" rel="tag">#{tag}</a>]
 	end
 
 	def tag_link_with_count(tag, count)
@@ -30,7 +30,7 @@ module Nanoc3::Helpers::Tagging
 	end 
 
 	def sorted_site_tags
-		site_tags.sort{|a, b| a[1] <=> b[1]}.reverse
+		site_tags.sort{|a, b| a[0] <=> b[0]}
 	end
 
 	def articles_tagged_with(tag)
@@ -151,6 +151,10 @@ module Nanoc3::Helpers::Blogging
 		total = @site.items.select{|p| p.attributes[:date] && p.attributes[:type] == 'article' && p.attributes[:popular]}.sort{|a, b| a.attributes[:date] <=> b.attributes[:date]}.reverse
 		max ||= total.length
 		total[0..max-1]
+	end
+
+	def by_permalink(articles, permalink)
+		articles.select{|a| a[:permalink] == permalink}[0] rescue nil
 	end
 
 	def articles_by_month

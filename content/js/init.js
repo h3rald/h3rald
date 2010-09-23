@@ -1,5 +1,3 @@
------
------
 $(function() {
 		$('#gallery a').fancybox();
 		$('.fancybox').fancybox({
@@ -15,19 +13,13 @@ function delicious_counter(data) {
 	$('#delcounter').text(text);
 }
 $(document).ready(function() {
-		$('.timeago').timeago();
-		// TOC
-		$("#toc ol").tableOfContents("#content-body", {startLevel: 3, depth: 6, topLinks: "[top]"});
-		// Drop Caps
-		/*
-		var first_paragraph = $('#content-body p:first');
-		if (!first_paragraph) return false;
-		var t = first_paragraph.html();
-		var first_letter = t.substr(0,1);
-		if (first_letter.match(/[a-z]/i)){
-		first_paragraph.html(t.slice(1,t.length));
-			$('<span></span>').addClass('dropcap').html(first_letter).prependTo( first_paragraph );
-		}
-		*/
-	});
+	// Manage dates
+	$('header.home > time').text(Date.today().toString("dddd, MMMM dS yyyy"));
+	$('header.home > time').attr('datetime', Date.today().toString("yyyy-MM-dd"));
+	$('.timeago').timeago();
+	// Hyphenate contents 
+	Hyphenator.run();
+	// TOC
+	$("#auto-toc ol").tableOfContents("#body-text", {startLevel: 1, depth: 6, topLinks: "&uarr;"});
+});
 

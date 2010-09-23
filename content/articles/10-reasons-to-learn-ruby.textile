@@ -1,11 +1,11 @@
 ----- 
-summary: "Ten possible reasons to learn the Ruby Programming Language. Mostly related to the language's syntax and most useful idioms."
+subtitle: "Ten possible reasons to learn the Ruby Programming Language"
 popular: true
 permalink: 10-reasons-to-learn-ruby
 filters_pre: 
 - erb
 - redcloth
-title: 10 Reasons to Learn Ruby
+title: "10 Reasons to Learn Ruby"
 comments: 
 - :date: 2007-09-05 17:33:43 +02:00
   :author: Joel Moss
@@ -309,6 +309,10 @@ tags:
 - ruby
 type: article
 toc: true
+intro: |
+  I discovered Ruby fairly recently, through the excellent Ruby on Rails framework. Although I don't consider myself a Ruby expert by any means, I read the PickAxe[2], I've coded a few utilities for my personal use in Ruby and I'm currently developing with Rails during my free time. 
+extended_intro: |
+  Ruby is currently my programming language of choice; I started off with Turbo Pascal in high school, discovered C and C++ at university, did my thesis in Java and learned PHP from scratch because I wanted to learn how to make websites quickly and easily. I guess I feel compelled to code sometimes, more as a form of entertainment than anything else.  Rather dissatisfied with what I tried language-wise, I was determined to start learning either Python or Ruby. I chose the latter because I didn't want incorrect indentation to break my code, and here I am, heaping praise upon it.
 -----
 h3. Preamble
 

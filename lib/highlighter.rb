@@ -1,18 +1,15 @@
-
 # Monkey patch Nanoc::Helpers::Filtering
+require 'coderay'
 
 module Nanoc3::Helpers::Filtering
 
 	def highlight(syntax, &block)
-		# Seamlessly ripped off from the filter method...
-		# Capture block
 		data = capture(&block)
 		# Reconvert <% %>
 		data.gsub! /&lt;%/, '<%'
 		data.gsub! /%&gt;/, '%>'
-		# Filter captured data
-		filtered_data = "\n<notextile>"+Albino.colorize(data, syntax)+"</notextile>\n" rescue data 
-		# Append filtered data to buffer
+		filtered_data = CodeRay.scan(data.strip, syntax).div(:line_numbers => :inline, :tab_width => 2, :css =>:class)
+		filtered_data = "<notextile>\n"+filtered_data+"\n</notextile>"
 		buffer = eval('_erbout', block.binding)
 		buffer << filtered_data
 	end

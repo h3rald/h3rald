@@ -6,10 +6,16 @@ tags:
 - ruby
 permalink: distributed-programming-with-ruby-review
 title: "Book Review: Distributed Programming with Ruby"
+subtitle: Just what you need to get started with the right tools to build large and scalable applications in Ruby
 toc: true
 pdf: true
-summary: "A review of Mark Bates' Distributed Programming with Ruby. Just what you need to get started with the right tools to build large and scalable applications in Ruby."
 date: 2010-06-22 13:30:00.000000 +02:00
+intro: |
+  Back when I read <em>"Programming Ruby":http://www.pragprog.com/titles/ruby/programming-ruby</em> for the first time, I distinctly remember a short reference to "dRb":http://ruby-doc.org/stdlib/libdoc/drb/rdoc/index.html, the <strong>D</strong>istributed <strong>R</strong>u<strong>b</strong>y library included in the Standard Library. 
+
+  _"Cool!"_  -- I thought
+
+  ...and that was pretty much it. The documentation for DRb was pretty much nonexistent (at the time), I didn't need it, so I pretty much forgot about it altogether until this book came out.
 -----
 &:[book|_Distributed Programming with Ruby_]
 &:[author|Mark Bates]
@@ -18,26 +24,20 @@ date: 2010-06-22 13:30:00.000000 +02:00
 &:[image|$[site.root]/img/pictures/distributed-programming-with-ruby.jpg]
 &:[drb|=>[http://ruby-doc.org/stdlib/libdoc/drb/rdoc/index.html|DRb]]
 &:[rinda|=>[http://ruby-doc.org/stdlib/libdoc/rinda/rdoc/index.html|Rinda]]
-&:[pickaxe|=>[#unkwnown#|_Programming Ruby_]]
+&:[pickaxe|=>[http://www.pragprog.com/titles/ruby/programming-ruby|_Programming Ruby_]]
 rw:[pt|
 	section[@title[Part {{0}}: {{1}}]
 		txt[{{2}}]
 	]
 ]
 --[--------------------------------------------------]
-textile[
-Back when I read &[pickaxe] for the first time, I distinctly remember a short reference to &[drb], the strong[D]istributed strong[R]u\.strong[b]y library included in the Standard Library. 
+$[document.intro]
+txt[
+<em>"Distributed Programming with Ruby":http://www.informit.com/store/product.aspx?isbn=0321638360</em> fills a very particular niche of the Ruby programming world: _distributed_ programming. Moreover, this book is somehow _justified_ by the scarce documentation on the subject:
 
-_"Cool!"_  -- I thought
+bq. Although these libraries \[DRb and rinda\] have been included with Ruby for many years now, they have received little or no attention (or documentation). This has led to a lot of FUD (fear, uncertainty, and doubt) about what these libraries can and cannot do, and when they are appropriate to use (if at all).
 
-...and that was pretty much it. The documentation for DRb was pretty much nonexistent (at the time), I didn't need it, so I pretty much forgot about it altogether until this book came out.
-
-&[linkedbook] fills a very particular niche of the Ruby programming world: _distributed_ programming. Moreover, this book is somehow _justified_ by the scarce documentation on the subject:
-
-bq. Although these libraries \[DRb and rinda\] have been included with Ruby for many years now, they have received little or no attention (or documentation). This has led to a lot of FUD
-(fear, uncertainty, and doubt) about what these libraries can and cannot do, and when they are appropriate to use (if at all).
-
-p(((((. -- &[author], &[book]
+p((((. -- Mark Bates, <em>"Distributed Programming with Ruby":http://www.informit.com/store/product.aspx?isbn=0321638360</em> 
 
 But there's more. This book gives the reader a complete overview of what's out there, in the Ruby world, to support distributed programming. This includes quite a few gems and libraries besides the ones provided in the standard library.
 ]
