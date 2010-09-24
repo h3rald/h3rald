@@ -25,11 +25,6 @@ intro: |
 &:[drb|=>[http://ruby-doc.org/stdlib/libdoc/drb/rdoc/index.html|DRb]]
 &:[rinda|=>[http://ruby-doc.org/stdlib/libdoc/rinda/rdoc/index.html|Rinda]]
 &:[pickaxe|=>[http://www.pragprog.com/titles/ruby/programming-ruby|_Programming Ruby_]]
-rw:[pt|
-	section[@title[Part {{0}}: {{1}}]
-		txt[{{2}}]
-	]
-]
 --[--------------------------------------------------]
 $[document.intro]
 txt[

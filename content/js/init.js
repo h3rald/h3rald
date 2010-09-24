@@ -20,6 +20,6 @@ $(document).ready(function() {
 	// Hyphenate contents 
 	Hyphenator.run();
 	// TOC
-	$("#auto-toc ol").tableOfContents("#body-text", {startLevel: 1, depth: 6, topLinks: "&uarr;"});
+	$("#auto-toc ol").tableOfContents("#body-text", {startLevel: 3, depth: 5, topLinks: "&uarr;"});
 });
 

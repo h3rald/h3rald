@@ -1,4 +1,6 @@
+--[-------------------- Snippets ------------------------]
 &:[G|Glyph]
+--[-------------------- Macros --------------------------]
 rw:[h3rald.article|
 	article[
 		@pubdate[$[document.date]]
@@ -28,4 +30,15 @@ rw:[h3rald.article|
 		]
 		{{content}}
 	]
+]
+rw:[pt|
+	section[@title[Part {{0}}: {{1}}]
+		txt[{{2}}]
+	]
+]
+rw:[quote|
+	blockquote[
+		{{0}}
+	]
+	?[{{1}}|p[@style[margin-left: 4em]&ndash; {{1}}, cite[{{2}}]]]
 ]
