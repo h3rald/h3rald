@@ -40,5 +40,5 @@ rw:[quote|
 	blockquote[
 		{{0}}
 	]
-	?[{{1}}|p[@style[margin-left: 4em]&ndash; {{1}}, cite[{{2}}]]]
+	?[{{1}}|p[@style[margin-left: 4em]&ndash; {{1}}\.?[{{2}}|, cite[{{2}}]]]]
 ]

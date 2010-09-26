@@ -1,0 +1,116 @@
+----- 
+:type: article
+:date: 2010-09-25 11:21:41.985674 +02:00
+:subtitle: "A handbook for (almost) guaranteed success in IT"
+:image: /img/pictures/books/making-it-big.jpg
+:intro: |
+  When this book came out, it was immediately followed by a lot of buzz. Positive reviews started popping up almost instantly, a lot of people blogged about it, it was surrended by a lot of... what's that word again? Oh yes, _hype_. The title pissed me off really: who on Earth wants to title his book ["Making it Big in Software":http://www.informit.com/store/product.aspx?isbn=0137059671]? Steve Jobs? Bill Gates? 
+  
+  No, just a guy named "Sam Lightstone":http://lightstone.x10hosting.com/. When I was offered a review copy, I was a bit reluctant to even bother: I thought it was one of those overly-hyped titles that claim to make you famous and successful, but all they do stating the obvious: work hard, be innovative, use your money wisely, etc. Well, this book is not one of them.
+:extended_intro: |
+  When I got my copy, I immediately read the author's bio on the second-last page of the book: Sam Lightstone runs a site called "Making it Big Careers":http://makingitbigcareers.com/ (again, I got instantly worried by this), _but_ also happens to be one of the brightest minds in IBM, a "IBM Master Inventor":http://en.wikipedia.org/wiki/IBM_Master_Inventor, with 30+ patents and counting.  
+:toc: true
+:tags: ["review", "books", "software"] 
+:permalink: making-it-big-in-software
+:pdf: true
+:title: "Book Review: Making it Big in Software"
+-----
+$[document.intro]
+txt[
+_"Eeeew! Software patents!"_ Yes, I know, not the coolest thing in the world for us free software activists, but sadly, as you'll find out reading this book, they can help your career too. If you still can't get over the disgust and you're ready to dismiss the book, don't: it has exclusive interviews with Richard Stallman and Linus Torvalds -- can't be that bad.
+
+image[@class[right]/img/pictures/books/making-it-big.jpg]
+The 17 exclusive interviews with software gurus, visionaries, minor and major deities of the IT world are definitely worth the 24.99$ this book cost _on their own_. This was definitely one of the major selling points of the book itself (as the merry-looking pictures of Marissa Mayer, James Gosling, Steve Wozniak and John Schwarz on the cover suggest), but far from being the only one. The interviews are strategically placed throughout the book, as supporting material for the author's advice: if you don't believe him, you can certainly believe those who _made it_. Anyhow, let's say something about the book itself, shall we?
+
+_Making it Big with Software_ is divided into three parts:
+* *Part I: Fundamentals* -- all you need to know to get hired. Finish school, learn new things, and get a job in the Software industry.
+* *Part II: Leadership* -- tips on what to do to start climbing the corporate ladder, from junior to senior manager.
+* *Part III: Greatness* -- go beyond a successful career and become a luminary in IT, an example for future generations (and earn the big bucks).
+]
+pt[I|Fundamentals|
+After two introductory chapters, aimed at answering questions like "Why bother?" or "What do big shots in software do?", the book starts analyzing what graduates get when they get out of school. I was really taken by the following paragraph, outlining the main difference between school and work:
+
+bq. Second, although schools encourage students to do their own work, on penalty of expulsion or severe reprimand, professional work is saturated with the ubiquitous mantra of "teamwork." In school, your success depends on individual effort, whereas professional life depends frequently on your ability to work in teams.
+
+So true. Oddly enough, I never thought about it until I read it in this book. And this, believe it or not, is probably one of the most common causes of failure in the workplace: not being able to work in a team. It's understandable after all: after years of striving to be the best, to do things for yourself, you're suddenly asked to work for and with others.
+
+The author gives junior graduates some useful tips to get a job in Software Development (or whichever area of IT, for that matter), with some useful tips on how to create a proper résumé, how to survive interviews, the usual. Hell I wish I had this book four years ago when I started! 
+
+Readers like me who already have a job should not dismiss this part. Maybe skim through the first few chapters, but towards the end there are some very useful suggestions on how to build essential interpersonal skills and a nicely written chapter about _career killers_.
+]
+pt[II|Leadership|
+The second part of the book opens with *Chapter 9*, Working the Org, which I found most amusing, especially for the funny but nicely-written _Negotiating 101_ section. Again, particular ephasis is put on non-technical skills, which you'll soon discover to be essential for success. I must say I particularly enjoyed reading this part of the book, mainly because I could relate to it, being a Technical Leader myself.
+
+*Chapter 12* is a must-read, as the author himself says:
+
+bq. If you read only onr chapter in this book, this should probably be the one.
+
+If you never read anything about Time Management, you really have to read this, as it will really help you realize how much time you waste, why, and what you can do to improve the situation. I attended a course on time management at work, a while ago, and I was shocked to see most of the stuff I learned at that course so tidily organized in no-nonsense prose in this chapter. Granted, it doesn't substitute a full-blown time management course or practical experience with managing your priorities, but it's definitely a good surrogate on the subject.
+
+*Chapter 14* deals with _Zen and the critical art of balance \[between work and personal life\]_. The diagram on page 249 scared the hell out of me. Here it is, transposed in tabular form:
+
+table[
+	tr[
+		th[Desired State]
+		th[Current State]
+	]
+	tr[
+		td[Work: 9 hours]
+		td[Work: 13 hours]
+	]
+	tr[
+		td[Sleep: 8 hours]
+		td[Sleep: 6 hours]
+	]
+	tr[
+		td[Travel: 1 hour]
+		td[Travel: 2 hours]
+	]
+	tr[
+		td[Family & Leisure: 4 hours]
+		td[Family & Leisure: 1 hours]
+	]
+	tr[
+		td[Chores & Hygiene: 2 hours]
+		td[Chores & Hygiene: 2 hours]
+	]
+]
+
+_Thirtheen hours_? Really? If _you_ work 13-hour days then you have to read this chapter _and put it into practice_ instantly or you'll regret it. Luckily I manage to work most of the time for 8 hours a day (as everyone should, by law).
+
+Another chapter I particularly enjoyed (and will re-read periodically) is *Chapter16*, which contains the best definition of leadership I ever came across:
+
+quote["Leadership is communicating to people their worth and potential so clearly that they come to see it in themselves."|Stephen Covey]
+
+Again, this chapter gives you the basics on leadership and management. If you didn't take a course on the subject yet, it's definitely worth a read.
+]
+pt[III|Greatness|
+I particularly enjoyed the first two chapters of this last part: *Chapter 17* and *Chapter 18* are about _innovation_, which I personally found the fastest and best way to get noticed in a company. 
+
+These two chapters won't teach you to become a genius or an inventor of course, but they do provide some interesting insights on the subject: why innovating is important, how to innovate and what to do once your idea gets a shape. The _Patenting_, _Publishing_ and _Public Speaking_ sections in chapter 8 are the most useful and practical, and deserve a good read. Again, the book does not go too in depth, but the author provides just enough information to make you aware of certain issues and tackle your curiosity to learn more.
+
+The final chapters of the book felt a bit distant from my current work reality. Business talk, stock options, startups, acquisitions... They may interest some readers with an entepreneurial mindset, but not me, really. Nonetheless, business and politics pay a very important role in any IT job, so it's wise to be aware of these factors, too.
+]
+section[
+	@title[The Interviews]
+	txt[
+...
+	]
+]
+section[
+	@title[Structure and Writing Style]	
+	txt[
+...
+	]
+]
+section[
+	@title[Conclusion]
+	txt[
+...
+
+lack of technical methodologies
+
+Good surrogate for other books on specific subjects: resume making, time management, leadership and management, etc.
+	]
+]
+

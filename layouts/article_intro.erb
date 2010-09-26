@@ -16,6 +16,9 @@ filter: erb
 	<section class="<%= @classes %>">
 		<%= RedCloth.new(intro.to_s).to_html %>
 		<p><a class="more" href="<%= @item.identifier%>">&raquo;&nbsp;<strong>Read More</strong></a></p>
+		<% if @item[:image] then %>
+			<img src="<%=@item[:image]%>" class="right" alt="#" />
+		<% end %>
 	</section>
 </article>
 
