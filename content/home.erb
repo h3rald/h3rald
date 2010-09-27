@@ -106,7 +106,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 		<%= render 'article_intro', :item => popular[0], :classes => "hyphenate", :extended => false %>
 		<%= render 'article_intro', :item => popular[3], :classes => "hyphenate", :extended => false %>
 	</section><!-- #secondary-content-left end -->
-	<section class="right border-right" id="secondary-content-right">
+	<section class="right border-left" id="secondary-content-right">
 		<%= render 'article_intro', :item => popular[2], :classes => "hyphenate", :extended => false %>
 		<%= render 'article_intro', :item => popular[4], :classes => "hyphenate", :extended => false %>
 	</section><!-- #secondary-content-right end -->

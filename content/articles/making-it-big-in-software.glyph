@@ -65,12 +65,12 @@ table[
 		td[Travel: 2 hours]
 	]
 	tr[
-		td[Family & Leisure: 4 hours]
-		td[Family & Leisure: 1 hours]
+		td[Family &amp; Leisure: 4 hours]
+		td[Family &amp; Leisure: 1 hours]
 	]
 	tr[
-		td[Chores & Hygiene: 2 hours]
-		td[Chores & Hygiene: 2 hours]
+		td[Chores &amp; Hygiene: 2 hours]
+		td[Chores &amp; Hygiene: 2 hours]
 	]
 ]
 
