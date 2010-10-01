@@ -21,5 +21,18 @@ $(document).ready(function() {
 	Hyphenator.run();
 	// TOC
 	$("#auto-toc ol").tableOfContents("#body-text", {startLevel: 1, depth: 5, topLinks: "&uarr;"});
+	// IE6 Warning
+	var sevenup_options = {
+  enableClosing: false,
+  enableQuitBuggingMe: false,
+  overlayColor: "#000000",  
+  lightboxColor: "#ffffff",
+  borderColor: "#6699ff",
+  downloadLink: "http://www.google.com/chrome",
+  overrideLightbox: false,
+  lightboxHTML: null,
+  showToAllBrowsers: false
+	};
+	sevenUp.plugin.black.test(sevenup_options, false);
 });
 
