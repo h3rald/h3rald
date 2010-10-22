@@ -62,7 +62,7 @@
 
 							<nav><a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/section_aliases.html">&rarr; Section Aliases</a></nav>
 							
-	<p>Glyph documents are normally organized as a hierarchical tree of nested chapters, appendixes, sections, etc. To define a section, use the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro, like so:</p>
+	<p>Glyph documents are normally organized as a hierarchical tree of nested chapters, appendixes, sections, etc. To define a section, use the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro (aliased by <code>§</code>), like so:</p>
 
 	<div class="CodeRay">
   <div class="code"><pre><span class="no">1</span> section[
@@ -92,6 +92,33 @@
 
 
 	<p>By default, in Glyph the first header level is <em>2</em>, so the two headers are rendered as <code>h2</code> and <code>h3</code>, respectively (<code>--[...]</code> macros are <em>comments</em>, therefore they are not included in the final output).</p>
+  <section class="section">
+<header><h1 id="h_24">Markup-aware sections</h1></header>
+<p>Although Glyph can be used on its own to produce valid <span class="caps">HTML</span> or <span class="caps">XML</span> code, you may often want to use Textile or Markdown to save some typing. Typically, you&#8217;ll end up writing a lot of code like this:</p>
+	
+		<div class="CodeRay">
+  <div class="code"><pre><span class="no">1</span> section[
+<span class="no">2</span>   @title[My Textile section]
+<span class="no">3</span>   textile[
+<span class="no">4</span> Textile markup can be used _here_.
+<span class="no">5</span>   ]
+<span class="no">6</span> ]</pre></div>
+</div>
+
+		<p>To save you even more typing, you can use the <a href="/glyph/book/macros/macros_filters.html#m_textile_section"><code>textile_section</code></a> macro (aliased by <code>txt_section</code> and <code>§txt</code>) and the <a href="/glyph/book/macros/macros_filters.html#m_markdown_section"><code>markdown_section</code></a> macro (aliased by <code>md_section</code> and <code>§md</code>). By doing so, the previous code snippet can be written like this:</p>
+		<div class="CodeRay">
+  <div class="code"><pre><span class="no">1</span> §txt[
+<span class="no">2</span>   @title[My Textile section]
+<span class="no">3</span> Textile markup can be used _here_.
+<span class="no">4</span> ]</pre></div>
+</div>
+
+		<aside class="tip">
+<span class="note-title">Tip</span><p>On an Italian keyboard, you can type a <code>§</code> character by pressing <strong><span class="caps">SHIFT</span> + &ugrave;</strong>. Unfortunately, that&#8217;s about the only useful thing an Italian keyboard does. If you use Vim, you can map it to some key sequence like <code>''s</code>, like this: <code>map! ''s &lt;C-V&gt;u00A7</code>.</p>
+
+</aside>
+
+</section>
 							<nav><a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/section_aliases.html">&rarr; Section Aliases</a></nav>
 				</section> 
 			</article> 
@@ -128,7 +155,7 @@
 		<script src="/js/date.js" type="text/javascript"></script> 
 		<script src="/js/feeds.js" type="text/javascript"></script> 
 		<script src="/js/search.js" type="text/javascript"></script> 
-		<script src="/js/hyphenator.min.js" type="text/javascript"></script> 
+		<script src="/js/hyphenator.js" type="text/javascript"></script> 
 		<script src="/js/init.js" type="text/javascript"></script> 
 		<!-- Start Google Analytics --> 
 		<script type="text/javascript"> 

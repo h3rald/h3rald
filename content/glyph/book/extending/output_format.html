@@ -65,7 +65,7 @@
 <p>More specifically, when a <code>--format</code> option is specified, the command looks for a task with the same name within the <code>generate:</code> namespace. This makes adding new output formats to Glyph a fairly easy task, without the need to specify custom commands or similar.</p>
 <p>The following sections explain how the <code>h3rald</code> output format was created to integrate this book into the <a href="http://www.h3rald.com">H3RALD.com</a> website.</p>
 <section class="section">
-<header><h1 id="h_93">Output Configuration</h1></header>
+<header><h1 id="h_94">Output Configuration</h1></header>
 <p>The first step required to add a new output format to Glyph is extending Glyph&#8217;s configuration by adding the appropriate output hash, as follows:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="no"> 1</span> <span class="sy">:output</span>: 
@@ -93,7 +93,7 @@
 
 </section>
 <section class="section">
-<header><h1 id="h_94">Creating a 'generate:h3rald' task</h1></header>
+<header><h1 id="h_95">Creating a 'generate:h3rald' task</h1></header>
 <p>The next (and final) step involves creating a custom <code>h3rald</code> task within the <code>generate:</code> namespace. This task can be placed in any <code>.rake</code> file within the <code>lib/tasks</code> directory:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="no"> 1</span> namespace <span class="sy">:generate</span> <span class="r">do</span>
@@ -168,7 +168,7 @@
 		<script src="/js/date.js" type="text/javascript"></script> 
 		<script src="/js/feeds.js" type="text/javascript"></script> 
 		<script src="/js/search.js" type="text/javascript"></script> 
-		<script src="/js/hyphenator.min.js" type="text/javascript"></script> 
+		<script src="/js/hyphenator.js" type="text/javascript"></script> 
 		<script src="/js/init.js" type="text/javascript"></script> 
 		<!-- Start Google Analytics --> 
 		<script type="text/javascript"> 

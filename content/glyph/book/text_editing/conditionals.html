@@ -73,18 +73,18 @@
 <p>Consider the following code:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="no">1</span> ?[$[document.draft]|
-<span class="no">2</span> This is a first draft of the Glyph Book]
-<span class="no">3</span> ?[not[$[document.draft]]|
-<span class="no">4</span> This is the official version of the Glyph Book]</pre></div>
+<span class="no">2</span> This is a first draft of the Glyph Book|
+<span class="no">3</span> This is the official version of the Glyph Book]</pre></div>
 </div>
 
 	<p>In this case, if <code>document.draft</code> is set to <code>true</code>, &#8220;This is a first draft of the Glyph Book&#8221; will be displayed; if not, &#8220;This is the official version of the Glyph Book&#8221; will be displayed instead.</p>
-<p>The <a href="/glyph/book/macros/macros_core.html#m_condition"><code>condition</code></a> macro takes two parameters:</p>
-<ul>
-	<li>the first one is the condition to evaluate</li>
-	<li>the second one is the text to include in the document only if the condition is satisfied.</li>
-</ul>
-<p>Note that <em>both</em> parameters can contain macros, of course, so you can write things like:</p>
+<p>The <a href="/glyph/book/macros/macros_core.html#m_condition"><code>condition</code></a> macro takes up to three parameters:</p>
+<ol>
+	<li>the condition to evaluate</li>
+	<li>the text to include in the document only if the condition is satisfied.</li>
+	<li><em>(Optional)</em> the text to include in the document if the condition is <em>not</em> satisfied.</li>
+</ol>
+<p>Note that <em>all</em> parameters can contain macros, of course, so you can write things like:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="no">1</span> ?[and[
 <span class="no">2</span>     eq[$[document.output]|pdf]
@@ -97,7 +97,7 @@
 
 	<p>In this case, the <code>pagination.css</code> stylesheet is included only when you're generating a PDF document using Prince XML.</p>
   <section class="section">
-<header><h1 id="h_38">Results of conditional expressions</h1></header>
+<header><h1 id="h_39">Results of conditional expressions</h1></header>
 <p>The <a href="/glyph/book/macros/macros_core.html#m_condition"><code>condition</code></a> macro in Glyph works in a similar way as conditionals in programming languages: if the conditional expression (supplied as first parameter) is satisfied then the second parameter is executed or displayed. But when is a conditional expression satisfied? Glyph is a simple mini-language to perform text manipulation, and has no types, it can only understand text, therefore:</p>
 <ul>
 	<li>A conditional expression is satisfied if it evaluates to a non-empty string except &#8220;false&#8221;.</li>
@@ -141,7 +141,7 @@
 		<script src="/js/date.js" type="text/javascript"></script> 
 		<script src="/js/feeds.js" type="text/javascript"></script> 
 		<script src="/js/search.js" type="text/javascript"></script> 
-		<script src="/js/hyphenator.min.js" type="text/javascript"></script> 
+		<script src="/js/hyphenator.js" type="text/javascript"></script> 
 		<script src="/js/init.js" type="text/javascript"></script> 
 		<!-- Start Google Analytics --> 
 		<script type="text/javascript"> 

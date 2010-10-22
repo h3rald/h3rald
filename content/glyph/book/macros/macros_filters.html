@@ -61,7 +61,8 @@
 				<section id="body-text" class="hyphenate glyph-book"> 
 
 							<nav><a href="/glyph/book/macros/macros_inline.html">Inline Macros &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/macros/macros_structure.html">&rarr; Structure Macros</a></nav>
-								
+							
+	
 	<section class="section">
 <header><h1 id="m_markdown">markdown</h1></header>
 <p>Uses a Markdown converter (BlueCloth, RDiscount, Maruku or Kramdown) to transform the value into <span class="caps">HTML</span> if the <a href="/glyph/book/config/output.html#cfg_output"><code>output.*.filter_target</code></a> setting is set to <code>html</code>.</p>
@@ -72,7 +73,7 @@
 
 
 		<section class="section">
-<header><h1 id="h_198">Parameters</h1></header>
+<header><h1 id="h_201">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -81,6 +82,73 @@
 <tr>
 			<td>0</td>
 			<td>The Markdown text to filter.</td>
+		</tr>
+		</table>
+
+</section>
+
+</section>
+	
+
+	
+	
+	<section class="section">
+<header><h1 id="m_markdown_section">markdown_section</h1></header>
+<p>Creates a section (see <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro) whose content can be formatted with markdown markup.</p>
+<strong>Aliases:</strong> <code>§md, md_section</code>
+
+
+		<div class="example"><p>
+<strong>Example</strong>
+</p>
+			<div class="CodeRay">
+  <div class="code"><pre><span class="no">1</span> markdown_section[
+<span class="no">2</span>   @title[Test Section]
+<span class="no">3</span>   @id[test]
+<span class="no">4</span> Some *markdown* text.
+<span class="no">5</span> ]</pre></div>
+</div></div>
+	
+
+
+		<section class="section">
+<header><h1 id="h_203">Parameters</h1></header>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The text of the section</td>
+		</tr>
+		</table>
+
+</section>
+	
+
+		<section class="section">
+<header><h1 id="h_204">Attributes</h1></header>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Attribute</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>title</td>
+			<td>The title of the section <em>(optional)</em></td>
+		</tr>
+	
+			
+		<tr>
+			<td>id</td>
+			<td>The ID of the section <em>(optional)</em></td>
+		</tr>
+	
+			
+		<tr>
+			<td>notoc</td>
+			<td>If not blank, the header will not appear in the Table of Contents. <em>(optional)</em></td>
 		</tr>
 		</table>
 
@@ -100,7 +168,7 @@
 
 
 		<section class="section">
-<header><h1 id="h_200">Parameters</h1></header>
+<header><h1 id="h_206">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -118,9 +186,76 @@
 	
 
 	
+	
+	<section class="section">
+<header><h1 id="m_textile_section">textile_section</h1></header>
+<p>Creates a section (see <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro) whose content can be formatted with textile markup.</p>
+<strong>Aliases:</strong> <code>§txt, txt_section</code>
+
+
+		<div class="example"><p>
+<strong>Example</strong>
+</p>
+			<div class="CodeRay">
+  <div class="code"><pre><span class="no">1</span> textile_section[
+<span class="no">2</span>   @title[Test Section]
+<span class="no">3</span>   @id[test]
+<span class="no">4</span> Some *textile* text.
+<span class="no">5</span> ]</pre></div>
+</div></div>
+	
+
+
+		<section class="section">
+<header><h1 id="h_208">Parameters</h1></header>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>The text of the section</td>
+		</tr>
+		</table>
+
+</section>
+	
+
+		<section class="section">
+<header><h1 id="h_209">Attributes</h1></header>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Attribute</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>title</td>
+			<td>The title of the section <em>(optional)</em></td>
+		</tr>
+	
+			
+		<tr>
+			<td>id</td>
+			<td>The ID of the section <em>(optional)</em></td>
+		</tr>
+	
+			
+		<tr>
+			<td>notoc</td>
+			<td>If not blank, the header will not appear in the Table of Contents. <em>(optional)</em></td>
+		</tr>
+		</table>
+
+</section>
+
+</section>
+	
+
+	
 	<section class="section">
 <header><h1 id="m_highlight">highlight</h1></header>
-<p>Highlights a piece of source code (second parameter) according to the specified language (first parameter). <span class="fmi">for more information on <mark>code highligting</mark>, see <a href="/glyph/book/text_editing/code.html#source_code">Source Code</a></span>.</p>
+<p>Highlights a piece of source code according to the specified language. <span class="fmi">for more information on <mark>code highligting</mark>, see <a href="/glyph/book/text_editing/code.html#source_code">Source Code</a></span>.</p>
 
 
 
@@ -134,6 +269,29 @@
 <span class="no">4</span>   end
 <span class="no">5</span> ]</pre></div>
 </div></div>
+	
+
+
+		<section class="section">
+<header><h1 id="h_211">Parameters</h1></header>
+<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Parameter</th>
+				<th>Description</th>
+			</tr>
+<tr>
+			<td>0</td>
+			<td>A programming language supported by the underlying highlighter.</td>
+		</tr>
+	
+			
+		<tr>
+			<td>1</td>
+			<td>The code to highlight.</td>
+		</tr>
+		</table>
+
+</section>
 
 </section>
 	
@@ -173,7 +331,7 @@
 		<script src="/js/date.js" type="text/javascript"></script> 
 		<script src="/js/feeds.js" type="text/javascript"></script> 
 		<script src="/js/search.js" type="text/javascript"></script> 
-		<script src="/js/hyphenator.min.js" type="text/javascript"></script> 
+		<script src="/js/hyphenator.js" type="text/javascript"></script> 
 		<script src="/js/init.js" type="text/javascript"></script> 
 		<!-- Start Google Analytics --> 
 		<script type="text/javascript"> 

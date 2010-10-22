@@ -63,7 +63,7 @@
 							<nav><a href="/glyph/book/extending/output_format.html">Custom Output Formats &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/troubleshooting/errors_generic.html">&rarr; Generic Errors</a></nav>
 							<p>Glyph relies on <a href="http://davetron5000.github.com/gli/"><span class="caps">GLI</span></a> for defining commands. This useful library provides a high-level framework for creating command-line interface similar to <a href="http://git-scm.com/">Git</a>, its <span class="caps">DSL</span> takes care of pretty much everything, from managing command line arguments and options to providing an interactive help system.</p>
 <section class="section">
-<header><h1 id="h_96">Creating a 'glyph generate' command</h1></header>
+<header><h1 id="h_97">Creating a 'glyph generate' command</h1></header>
 <p>Consider the custom task defined in <a href="/glyph/book/extending/task.html#custom_generate_task">Creating a &#8216;custom:generate&#8217; task</a>. Creating a custom command to call it is fairly straightforward.</p>
 <p>First of all, create a <code>lib/commands</code> folder in your project directory. Then, create a <code>.rb</code> file within it, e.g. <code>commands.rake</code>.</p>
 <p>Finally, here&#8217;s the source of the command:</p>
@@ -85,7 +85,7 @@
 	<div class="CodeRay">
   <div class="code"><pre><span class="no"> 1</span> $ glyph help
 <span class="no"> 2</span> =====================================
-<span class="no"> 3</span> Glyph v.0.4.1
+<span class="no"> 3</span> Glyph v.0.4.2
 <span class="no"> 4</span> =====================================
 <span class="no"> 5</span> usage: glyph command [options]
 <span class="no"> 6</span> 
@@ -148,7 +148,7 @@
 		<script src="/js/date.js" type="text/javascript"></script> 
 		<script src="/js/feeds.js" type="text/javascript"></script> 
 		<script src="/js/search.js" type="text/javascript"></script> 
-		<script src="/js/hyphenator.min.js" type="text/javascript"></script> 
+		<script src="/js/hyphenator.js" type="text/javascript"></script> 
 		<script src="/js/init.js" type="text/javascript"></script> 
 		<!-- Start Google Analytics --> 
 		<script type="text/javascript"> 
