@@ -92,9 +92,6 @@ h3. Details & Price
 | *Internet* | Yes (broadband) |
 | *TV* | Yes (with DVD player) |
 | *Appliances* | Gas cooker, electrical oven, fridge, freezer, dish washer |
-|_\2. Price |
-| *October &ndash; May* | *June &ndash; September* |
-| 500€/week | 700€/week | 
 
 <div style="padding: 10px;"></div>
 
