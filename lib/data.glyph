@@ -10,14 +10,25 @@ rw:[h3rald.article|
 			<style>
 				h1 { 
 					font-size: 24px; 
-					margin: 0.5em auto;
-					padding: 0.5em auto;
+				}
+				h2{
+					margin-top: 0.2em;
+					padding-top: 0;
+				}
+				q, blockquote {
+					font-style: italic; 
+					color: #8F6B17;
 				}
 				.contents {
 					text-align:justify;
 					margin-bottom: 2em;
 					padding-bottom: 2em;
 					border-bottom: 1px solid #000;
+				}
+        @page {
+  				@top {
+    				content: string(book-title);
+					}
 				}
 			</style>
 		]

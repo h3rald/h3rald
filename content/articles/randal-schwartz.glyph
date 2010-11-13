@@ -1,0 +1,137 @@
+----- 
+:type: article
+:date: 2010-11-14 13:35:29.046412 +01:00
+:title: A pizza with Randal Schwartz
+:subtitle: Talking about open source, programming, emacs and technical writing
+:intro: |
+  I am an avid "FLOSS Weekly":http://twit.tv/FLOSS listener. Sometimes I may fall behind by a few episodes, but I normally manage to catch up: Randal Schwartz' show is by far my favorite podcast. 
+  
+  You can imagine my reaction when I discovered that Randal was in Genoa, my city, ready to leave for yet another "InsightCruise":http://www.insightcruises.com/: I had to meet the guy, at all costs! 
+
+  It turned out to be easier than I thought: I simply "asked him":http://twitter.com/#!/h3rald/status/28962418438 if he fancied a pizza out on the way back from his cruise, and he said yes. 
+  
+  I also decided to invite "Claudio Perrone":http://www.agilesensei.com/ as well, seeing that he's back in Genoa on one of his Agile/Lean gigs. He said he didn't know much about Perl, but he'd have liked to come as well. So there I was lining up a dinner out with two IT gurus at the same time.
+:extended_intro: |
+  Randal was staying at the "Bristol Palace Hotel":http://www.hotelbristolpalace.it/, and we met him at the lobby bar. In the end I persuaded my wife to come along as well, although she doesn't know much about Perl either.
+  We shook shaking hands with Capt. Neil [Bauman, of InsightCruises.com] and a few others of the cruise gang, then we were off to the restaurant.
+
+  It only took five minutes to realize that Randal was exactly like he sounds on his show: cheerful and chatty, eager to talk about technology and science. When you meet famous people face-to-face, there's always a chance that they are not nice at all, but luckily this wasn't the case: within minutes Randal was telling us all about "MotionX-GPS":http://news.motionx.com/category/motionx-gps/ (a very neat iPhone app that I highly recommend) like we had been buddies for ages. 
+:toc: true
+:tags: 
+- opensource
+- programming
+- italy
+:permalink: randal-schwartz
+:image: /img/pictures/rls/rls3_mini.png
+:pdf: true
+-----
+?[output?[html|html5]|
+	rw:[q|<q>"{{0}}"</q>]
+]
+rw:[blockquote|<blockquote>"{{0}}"</blockquote>]
+
+$[document.intro]
+
+After a rather bumpy bus ride (Italian evening drivers are well known for this), we got to =>[http://www.ristorantepiedigrotta.it|Piedigrotta], ordered some pizzas, and started talking. Little did we know that Randal loves talking and sharing stories about almost anything: we were chatting non stop for hours, and after dinner my wife and I invited everyone up to our place, to continue talking happily in front of a glass of our wine and... freshly-microwaved popcorn.
+
+Here's what we talked about, organized by topic for your convenience. I didn't record the conversation even if it would have made a hell of a show, but I'll do my best to quote him as faithfully as I can remember or paraphrase him without changing the meaning of his words. 
+
+important[Randal, if you're reading this and you come across any misquotation, please let me know so I can amend them!]
+
+
+§txt[
+	@title[Something more about Randal]
+=>[http://www.stonehenge.com/merlyn/|Randal Schwartz] is a world-famous Perl guru, author of the =>[http://www.oreillynet.com/pub/au/335|best Perl programming] on the market, and a very prolific =>[http://www.stonehenge.com/merlyn/columns.html|column writer].
+
+Randal is not a full-time writer though (\.q[writing books doesn't pay]). His day job consists in being a "guru on-demand": you can hire him to fix your code, refractor complex enterprise applications, or simply provide useful advice to IT managers. 
+Being the host of FLOSS Weekly is not a job, and Randal doesn't do it for the money of course, but for passion: q[I'm trying my best to do one show per week, even when I am away], he said, and he does go off traveling around the world a lot! 
+
+q[Once I was at home for 8 weeks and it felt really strange. I kept thinking I had to pack to go somewhere else]. He's been on nearly every Geek/Insight Cruises (51, if I remember correctly) and his =>[http://www.stonehenge.com/merlyn/dot-plan.txt|travel plan] is always very busy. 
+
+I was extremely lucky to catch him on the way back from one of the few cruises in the Mediterranean! It must be a sign of some sort.
+]
+
+§txt[
+	@title[Open Source]
+I have always tried to raise awareness about Open Source and Free Software among my friends, co-workers, and even managers. Sometimes it's easy to make people realize that Free, Libre, Open Source Software matters, other times is much harder.
+ 
+When Randal got half way through his pizza, I asked him if he had any tips on open source advocacy and on overcoming corporate resistance. I explained that the main concerns I get when I talk about open source in an enterprise environment are:
+* the cost or support/training
+* the immaturity of the product and fear of it being abandoned at some point
+* overall, a high Total Cost of Ownership
+
+Randal was almost laughing at one point: q[why are people concerned about paying for support for open source software? Don't they pay it already for proprietary applications?], also q[the chances for open source software being discontinued are the same, if not lower, than proprietary software. Plus, proprietary software often forces compulsory upgrades, and similar things that can eventually damage your business]. Additionally, if I may add, in the unfortunate case that an open source project is abandoned or turns nasty, it is often forked, so at worst you always have the source code anyway.
+
+Randal also pointed out that what really matters about an open source project is the community built around it. He mentioned that the =>[http://www.mongodb.org/|MongoDb] guys that came on =>[http://twit.tv/floss105|FLOSS Weekly #105] were really enthusiastic of having embraced open source. Unfortunately, some projects just don't seem to get the whole idea behind open source at all: _community_ vs. _enterprise_ editions always makes me suspicious, and Randal agreed to an extent.
+
+*In a nutshell, Open Source is not about the company or the license, it's about the people and the community behind a project.*
+
+q[You should \[re-\]listen to one of my very first podcasts, the one with =>[http://www.webmink.net/|Simon Phipps], the former Chief Open Source Officer at Sun], Randal told me in the end, and he's right: =>[http://twit.tv/floss39|FLOSS #39] is a must for anyone truly interested in the subject.
+
+Seeing that Randal seemed to be perfectly happy to play with his iPhone, I went for the obvious question and asked him what he thought about Apple, and at the same time Claudio asked him what was his operating system of choice.
+
+q[OS X], admitted Randal, q[I use what gets the job done]. In all things, there's no point in being an extremist for the sake of argument, and being an open source advocate does not mean that you have to condemn every piece of proprietary software (at this point, Richard Stallman would have thrown up his pizza, had he been there --but he wasn't).
+
+q[From a GUI point of view, Apple is still ahead of the competition: if others want to win, they have to come up with something better, and different. \[...\]Ubuntu is getting there, but not quite yet.]
+
+Randal also pointed out the importance of contributing to open source projects: q[you don't have to code, you can just provide feedback, submit bug reports, write documentation, or test... I am the one who checks if git builds on a Mac, for example].
+]
+
+§txt[
+	@title[Programming]
+Programming was another major topic of our discussion. Randal, after all, is a living Perl legend having written 6 Perl books and over 250 magazine columns. Unfortunately I don't know much about Perl, and neither does Claudio. I am quite open-minded about languages--although I am slightly favorable towards Ruby--so I enjoyed every little bit of the discussion anyway.
+
+Most of the discussion was about Perl 6, which was recently featured on =>[http://twit.tv/floss140|FLOSS Weekly #140]. After listening to what Randal had to say about it, I am definitely going to try it out at some point (hopefully skipping Perl 5 altogether). 
+q[We \[Perl programmers\] say that Ruby is an alpha version of Perl 6] said Randal, joking about the similarities between the two languages and the amount of time it took to come up with a working Perl 6 (which to date is still unfinished). He reckons Perl 6 will be used in production for small and medium projects within a few months, and he's going to write a book about it.
+
+He then briefly described what makes Perl 6 so special. The top feature we were talking about was grammars: the language offers the possibility to create grammars to parse other languages and even Perl 6 itself. Moreover, the Rakudo implementation running on the Parrot VM aims to implement the full Perl 6 specification in Perl 6 itself q[\[...\] therefore, at run time, a program is able to access the its syntax tree itself...], he said, while playing with an imaginary Perl 6 parse tree in the air.
+
+We then moved on to Smalltalk, and both Claudio and I asked him a few questions about it, in particular about the whole concept of _image_, particularly in reference to the Squeak implementation. We observed how many programmers of other languages (Ruby included) end up going back to the origins (Smalltalk) and how Smalltalk is far from dead. q[It's only a matter of getting used to it], said Randal when I asked him how to work with a Smalltalk image and how to distribute it, q[you program as you would in any other language, you can communicate with the rest of the world just fine. What you get in Smalltalk that you don't get in most other languages, is the ability to inspect and work with the underlying source code of the objects at run time, thanks to the amazing reflection features the language offers].
+
+At one point I had to asked Randal what he though about Haskell, having tried to learn it three times without succeeding: q[I have tried _ten_ times to learn it myself, with no luck], he said. At least I'm not alone!
+
+The discussion then shifted towards tools, and then of course text editors. I just had to remind him that I am a Vim guy. Randal looked at me smiling, and said: q[That's fine. You WILL join us. Sooner or later you will join us... join us...].
+
+Randal's involvement in Emacs dates way back to the end of the 80s, and he has been using it ever since. He even contributed to it, back then, by writing pp.el, the pretty printer module.
+q[I posted my code to the emacs mailing list, and Richard Stallman himself replied asking if he could include my code in Emacs. If you read Emacs acknowledgements, I'm there as well], said Randal, proudly. 
+
+I confess I almost felt the urge to give Emacs another try. I often get hyped up about things like this. If I had received such a reply from Richard Stallman, I would have probably sworn not to touch the Editor of the Beast ever again. 
+
+q[Just try out Org mode. I didn't know it very well myself until I had a show about it, but now  realize why people should always load up an Emacs instance just to run Org mode.], said Randal again, talking about yet another =>[http://twit.tv/floss136|recent show].
+]
+
+§txt[
+	@title[Technical Writing]
+After our pizza, we all went back to my place, which is literally around the corner for the restaurant. It was only when we were happily starting the second glass of my family's very own home-made wine that Randal looks at me and says: q[You know that I started off as a Technical Writer myself, don't you?]
+
+I was baffled. I did brush up on Randal's life on his web site, Wikipedia and similar, like any good fan meeting his hero, but I never came across this tiny detail. This triggered yet another round of questions on my part, as I have been working full time as a technical writer for years now. Randal shared a couple of anecdotes about his early technical writing career.
+
+q[When I joined, I had a boss called Lyle. He used to say that a product is not complete without a manual. The manual itself is a product.] A statement that can come handy as as a reminder for Product Managers, Project Leaders and similar when they try to belittle documentation, and for writers themselves, when they feel that they can be sloppy because no one cares.
+
+I really enjoyed when Randal told us about his first encounter with his editor, Jack: 
+
+blockquote[
+He was a big guy. 6 ft tall, with huge hands. He used to hold his pencil like this... \[shows a fist grabbing a pencil\] ...he starts reading my first draft and crosses a word, then a paragraph, and another, and so on. Then he looks at me and says: 'OK, what did you _really_ want to say here?'
+
+I said 'Well, that you set option -s to enable XYZ', and he starts writing down on my document ‘Set option -s to enable XYZ...', and so on.
+]
+
+When you start as a Technical Writer, you often end up writing a lot trying to be thorough, making even really simple things complicated. Jack reminded me of a great editor that was hired at my company for a summer, and revolutionized the whole department by applying some principles and vocabulary of =>[http://en.wikipedia.org/wiki/Simplified_English|Simplified English]. As it turns out, instructions written in a plain and simple language are far easier to understand than anything else.
+]
+
+§txt[
+	@title[Wrapping it up]
+We spent the whole evening talking non-stop. We met at his hotel at 7:30 PM and I drove him back around 11 PM. The guy does talk a lot. Luckily, I got a chance to take a couple of pictures and get a funny autographed note, as long as I promised not to use it for cheques, that reads: "To Fabio, without whom this note will make no sense". 
+
+image[@style[float:right;]?[output?[pdf]|$[site.root]]/img/pictures/rls/rls1_small.png]
+
+There's obviously a lot of stuff we talked about that I didn't write about, mainly because I was trying to keep this article focused on IT-related topics. Before his cruise, Randal visited the CERN in Geneva, so for a good half hour we  talked about the LHC, experiments, neutrinos being shot from Geneva and collected in Rome, things like that.
+
+We also talked a lot about Randal's day job, then about his company =>[http://www.stonehenge.com|Stonehenge.com], then his trip to England (and to the real Stonehenge); and we talked about Italy, both about good things (food?) and bad things (bureaucracy, backwards mentality mainly in relation to IT, lack of English speakers, etc.).
+
+The evening couldn't have gone better. Especially considering Randal and I don't agree on some EXTREMELY important matters (programming languages and text editors). It was a great chance to learn from each other. I doubt he will be ditching Perl in favor of Ruby, but at least I hope to have made it very clear to him that Ruby is much more than Rails, at least for some of us.
+
+@sudo apt-get install emacs@
+
+Damn! Wrong terminal. Sorry about that...
+]

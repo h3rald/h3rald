@@ -162,7 +162,7 @@ article {
 	.left, img[style="float:left;"] {
 		margin: 1em 1em 1em 0;
 	}
-	blockquote {
+	blockquote, q {
 		font-style: italic;
 		color: #8F6B17;
 	}
@@ -418,3 +418,25 @@ a:hover {
 	font-weight: bold;
 	padding: 3px;
 }
+
+.note, .important, .tip, .caution, .box {
+  border: 1px solid #e6e6e6;
+  display: block;
+  margin: 0.5em auto;
+  padding: 0 0.5em;
+  width: 600px;
+  background: #EEE;
+  color: #1F1F1F; }
+ 
+.note > p, .important > p, .tip > p, .caution > p {
+  margin: 0;
+  padding: 0; }
+ 
+.note-title {
+  font-weight: bold;
+  margin-right: 1em; }
+ 
+.box-title {
+  display: block;
+  text-align: center;
+  font-weight: bold; }
