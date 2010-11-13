@@ -85,7 +85,9 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 	<section class="right border-left" id="main-content-right">
 		<%= render 'article_intro', :item => latest[1], :classes => "hyphenate", :extended => false %>
 		<%= render 'article_intro', :item => latest[2], :classes => "hyphenate", :extended => false %>
-		<%= render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false %>
+		<% 
+			#render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false 
+		%>
 	</section><!-- #main-content-right end -->
 </section><!-- #main-content end -->
 <section class="right" id="secondary-content">
