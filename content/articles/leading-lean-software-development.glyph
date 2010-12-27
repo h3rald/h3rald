@@ -56,7 +56,7 @@ The _Race to the Sky_ section at the beginning of Chapter 3 is by far the most f
 
 There are "plenty":http://en.wikipedia.org/wiki/Empire_State_Building#Further_reading of books on the subject, but Tom and Mary Poppendieck well summarize the key points of this modern-day epic achievement: how to build the tallest skyscraper in the world in a single year. This story teaches us how to work under very tight deadlines, by designing a system to fit constraints, rather than estimating up-front.
 
-This story was perfect to introduce, in the same chapter, concepts like =>[看板 (\.Kanban\.)|http://en.wikipedia.org/wiki/Kanban], _pull scheduling_ and _adaptive control_, which only recently have been seriously considered in the world of Software Development but they are becoming more and more relevant.
+This story was perfect to introduce, in the same chapter, concepts like =>[http://en.wikipedia.org/wiki/Kanban|看板 (\.Kanban\.)], _pull scheduling_ and _adaptive control_, which only recently have been seriously considered in the world of Software Development but they are becoming more and more relevant.
 ]
 §txt[
   @title[Chapter 4: Relentless Improvement]
