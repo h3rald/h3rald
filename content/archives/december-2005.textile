@@ -1,8 +1,8 @@
 ----- 
-:type: page
-:permalink: december-2005
 :filters_pre: 
 - erb
+:type: page
+:permalink: december-2005
 :title: "Archive: December 2005"
 -----
 

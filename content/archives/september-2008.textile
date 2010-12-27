@@ -1,8 +1,8 @@
 ----- 
-:type: page
-:permalink: september-2008
 :filters_pre: 
 - erb
+:type: page
+:permalink: september-2008
 :title: "Archive: September 2008"
 -----
 

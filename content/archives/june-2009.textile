@@ -1,8 +1,8 @@
 ----- 
-:type: page
-:permalink: june-2009
 :filters_pre: 
 - erb
+:type: page
+:permalink: june-2009
 :title: "Archive: June 2009"
 -----
 
