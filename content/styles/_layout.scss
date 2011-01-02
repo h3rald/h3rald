@@ -33,9 +33,8 @@ body {
 	margin: auto;
 	width: 940px;
 	text-align: center;
+	height: 60px;
 	&.home {
-		height: 60px;
-		border-bottom: 2px solid $dark-blue;
 		nav.left { 
 			width: 234px;
 			height: 60px;
@@ -48,9 +47,7 @@ body {
 		}
 		h1 {
 			float: left;
-			margin-left: 110px;
-			height: 56px;
-			@include hover-image(251px, 56px);
+			margin-left: 80px;
 		}
 		time {
 			clear: both;
@@ -108,7 +105,7 @@ body {
 	float: left;
 	li { float:left;}
 	a {
-		margin: 0 20px;
+		margin: 0 27px;
 		img {
 			opacity: 0.6;
 			vertical-align: middle;

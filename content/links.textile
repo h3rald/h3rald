@@ -9,13 +9,10 @@ This pages is a collection of useful links. It's not exactly a blogroll because 
 You can't really ask or pay to be on this page, what you _can_ do is make your site interesting enough that I'll feel obliged to list it here. I don't really visit any of these web sites often, I normally read their feeds regularly in "Google Reader":http://www.google.com/reader, so they are categorized according to the Google Reader folders I use.
 
 <script type="text/javascript" src="http://www.google.com/reader/ui/publisher-en.js"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Blogs?callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22Blogs%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/News?callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22News%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Comics?callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22Comics%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Programming?callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22Programming%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Ruby?callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22Ruby%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
-<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Software?callback=GRC_p(%7Bc%3A%22blue%22%2Ct%3A%22Software%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
-
-
-
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Blogs?callback=GRC_p(%7Bc%3A%22-%22%2Ct%3A%22Blogs%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Comics?callback=GRC_p(%7Bc%3A%22-%22%2Ct%3A%22Comics%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/News?callback=GRC_p(%7Bc%3A%22-%22%2Ct%3A%22News%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Programming?callback=GRC_p(%7Bc%3A%22-%22%2Ct%3A%22Programming%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Ruby?callback=GRC_p(%7Bc%3A%22-%22%2Ct%3A%22Ruby%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
+<script type="text/javascript" src="http://www.google.com/reader/public/javascript-sub/user/17885544216336877607/label/Software?callback=GRC_p(%7Bc%3A%22-%22%2Ct%3A%22Software%22%2Cb%3A%22true%22%7D)%3Bnew%20GRC"></script>
 

@@ -14,8 +14,8 @@ function delicious_counter(data) {
 }
 $(document).ready(function() {
 	// Manage dates
-	$('header.home > time').text(Date.today().toString("dddd, MMMM dS yyyy"));
-	$('header.home > time').attr('datetime', Date.today().toString("yyyy-MM-dd"));
+	//$('header.home > time').text(Date.today().toString("dddd, MMMM dS yyyy"));
+	//$('header.home > time').attr('datetime', Date.today().toString("yyyy-MM-dd"));
 	$('.timeago').timeago();
 	// Hyphenate contents 
 	Hyphenator.run();
