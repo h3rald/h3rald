@@ -3,7 +3,7 @@ require 'extlib'
 require 'pathname'
 require 'fileutils'
 require 'nanoc3'
-require 'lib/utils.rb'
+require "#{Dir.pwd}/lib/utils.rb"
 
 include SiteUtils
 
