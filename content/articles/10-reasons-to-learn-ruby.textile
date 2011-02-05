@@ -47,18 +47,18 @@ comments:
   :author: Masklinn
   :url: ""
   :id: 54
-  :body: "> Interactive Shell: the Interactive Ruby Shell can be used to test Ruby code instantly, similar to the Python console.\n\n\
-    Similar, but much much worse. The Python consoles (both CLI launched by typing \"python\" and the IDLE environment) are more flexible, more practical and much less annoying than IRB (I suppose that's what you were talking about)\n\n\
-    > Unfortunately this means that you won\xE2\x80\x99t be able to write your whole program in a single line of code, like the C++ folks\xE2\x80\xA6that\xE2\x80\x99s too bad, isn\xE2\x80\x99t it?\n\n\
-    In reality, you can. The statement terminator (in both Ruby and Python) is either a newline or \";\".\n\n\
-    So you can write your whole Ruby program on a single line, I think (you'd need to use parens to define functions, but it can be done.\n\n\
-    > Everything is an object, as it should be\n\n\
-    I think you should use examples with things that aren't objects in \"popular\" languages, such as integers or booleans, or even `nil`. Strings aren't object in PHP because PHP barely has objects, so it's not really fair.\n\n\
-    > Everything has a value\n\n\
-    You should emphasize that point by showing that e.g. if/else blocks return a value.\n\n\
-    > the value of the last assignment will always be returned.\n\n\
-    Didn't you mean \"the last value evaluated\" or \"the value of the last expression\"? Because you definitely aren't limited to assignments.\n\n\
-    > You can do the same thing in PHP as well, but most people don\xE2\x80\x99t really use the function.\n\n\
+  :body: "> Interactive Shell: the Interactive Ruby Shell can be used to test Ruby code instantly, similar to the Python console.
+    Similar, but much much worse. The Python consoles (both CLI launched by typing \"python\" and the IDLE environment) are more flexible, more practical and much less annoying than IRB (I suppose that's what you were talking about)
+    > Unfortunately this means that you won't be able to write your whole program in a single line of code, like the C++ folks - that'ss too bad, isn't it?
+    In reality, you can. The statement terminator (in both Ruby and Python) is either a newline or \";\".
+    So you can write your whole Ruby program on a single line, I think (you'd need to use parens to define functions, but it can be done.
+    > Everything is an object, as it should be
+    I think you should use examples with things that aren't objects in \"popular\" languages, such as integers or booleans, or even 'nil'. Strings aren't object in PHP because PHP barely has objects, so it's not really fair.
+    > Everything has a value
+    You should emphasize that point by showing that e.g. if/else blocks return a value.
+    > the value of the last assignment will always be returned.
+    Didn't you mean \"the last value evaluated\" or \"the value of the last expression\"? Because you definitely aren't limited to assignments.
+    > You can do the same thing in PHP as well, but most people don't really use the function.
     Because it's ugly, hackish, and since you create functions by providing strings there is no syntax checking before runtime itself."
 - :date: 2007-09-07 05:44:24 +02:00
   :author: Fabio Cevasco

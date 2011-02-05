@@ -17,7 +17,7 @@
 -----
 $[document.intro]
 
-§txt[
+textile_section[
   @title[Structure and Organization]
 This book is extremely well-structured. Its Table of Contents follows some very rigid rules which make this book one of the most organized texts I've ever come across. It is divided into six chapters, each organized as follows:
 * A _snapshot_ or an introductory story for the chapter's main topic
@@ -31,7 +31,7 @@ In total, the book contains 24 frames constituting the "Big Picture", which is a
 
 When I started my career as a technical writer I used to love carefully-structured, simmetrical manuals. After a while, however, I understood that such rigorous structuring can even be dangerous if it becomes an obsession: you end up adding extra "padding writing" to make sections roughly match in length, or you start cutting down some other parts, for the same reason. Writing well-balanced books is hard, but I must say that the authors do a very good job with this book: it flows very naturally while keeping to its rigorous structure.
 ]
-§txt[
+textile_section[
   @title[Chapter 1: Systems Thinking]
 The first chapter is about customers, what they want and the goals of your system. It describes some interesting high level concepts like _failure demand_ and _policy-driven waste_, and how to spot opportunities to improve the process. 
 
@@ -44,29 +44,29 @@ More generally speaking, this chapter provides a recipe/checklist outlining the 
 # _Evaluate_
 # _Implement_
 ]
-§txt[
+textile_section[
   @title[Chapter 2: Technical Excellence]
 This is the only chapter focusing primarily on technical topics and knowledge. It starts with a very lengthy digression on the history of programming methodologies, aimed at understanding _what works and what doesn't_. Some examples of IT stuff that worked include the Internet, PCs and ...Open Source Software.
 
 This chapter provides a general overview on Software Development as a whole. It contains some interesting information on software complexity and dealing with architectural dependencies, comprehensive sections on testing and continuous integration, and just a half page on refactoring (understandable, seeing that there are already plenty of excellent books on the subject).
 ]
-§txt[
+textile_section[
   @title[Chapter 3: Reliable Delivery]
 The _Race to the Sky_ section at the beginning of Chapter 3 is by far the most fascinating of the non-IT stories included in this book. It describes the construction of the Empire State Building in 1930, how it was planned out, what strategies were followed, and why it succeeded (why _the construction_ succeeded: the building itself remained totally unprofitable for quite some time).
 
 There are "plenty":http://en.wikipedia.org/wiki/Empire_State_Building#Further_reading of books on the subject, but Tom and Mary Poppendieck well summarize the key points of this modern-day epic achievement: how to build the tallest skyscraper in the world in a single year. This story teaches us how to work under very tight deadlines, by designing a system to fit constraints, rather than estimating up-front.
 
-This story was perfect to introduce, in the same chapter, concepts like =>[http://en.wikipedia.org/wiki/Kanban|看板 (\.Kanban\.)], _pull scheduling_ and _adaptive control_, which only recently have been seriously considered in the world of Software Development but they are becoming more and more relevant.
+This story was perfect to introduce, in the same chapter, concepts like =>[http://en.wikipedia.org/wiki/Kanban|Kanban], _pull scheduling_ and _adaptive control_, which only recently have been seriously considered in the world of Software Development but they are becoming more and more relevant.
 ]
-§txt[
+textile_section[
   @title[Chapter 4: Relentless Improvement]
 Chapter 4 starts with a brief history of the checklist, which was invented in 1935, to be used by airplane pilots. It then moves on to its usage in hospitals, describing how checklists helped dropping infections caused by inserting central venous catheters incorrectly. Why all this? To focus on the concept of _process standards_, or better, how _we_ can improve processes to accomplish our goals.
 
-Basically, this us what Toyota does: regulations should not be written on stone, but they should reviewed and updated frequently for continuous improvement or =>[http://en.wikipedia.org/wiki/Kaizen|改善 (\.Kaizen\.)].
+Basically, this us what Toyota does: regulations should not be written on stone, but they should reviewed and updated frequently for continuous improvement or =>[http://en.wikipedia.org/wiki/Kaizen|Kaizen].
 
 Finally, this chapter also briefly introduces a few different ways to perform root-cause analysis, such as using =>[http://en.wikipedia.org/wiki/Ishikawa_diagram|fishbone diagrams].
 ]
-§txt[
+textile_section[
   @title[Chapter 5: Great People]
 This chapter and the last one are actually focused on people and management. In this chapter, an unusual (for this kind of books, that is) but intriguing analysis on different countries using the following dimensions:
 * power distance
@@ -81,7 +81,7 @@ On page 198, the meaning of the subtitle of the book (Results Are not the Point)
 
 But what about leaders? This is an aspect of the whole Agile philosophy that I keep stumbling upon: if you want _The Team_ to be in charge, what happens to leadership? As I found out myself working in and with Agile Teams, often there's a serious lack of strong leaders. q[Leadership needs to be gently refactored into Agile], that's what Mary and Tom recommend. How? It depends on each specific case, but it must always be done _gently_.
 ]
-§txt[
+textile_section[
   @title[Chapter 6: Aligned Leaders]
 The final chapter begins with the history of _Agile@IBM_, or how to turn the biggest software company in the world into a massive agile machine. It wasn't a top-down decision, the CEO didn't just wake up one morning and decided that everyone should go Agile. Quite the opposite: it was something that was _pulled_ by developers rather than _pushed_ at them.
 
@@ -89,7 +89,7 @@ In cases like this, companies should be focusing on developing people, including
 
 The final portrait, _Leaders at all Levels_, well summarizes the key to successful leadership: q[leadership is about example, coaching and helping others to achieve their goals]. 
 ]
-§txt[
+textile_section[
   @title[Final Thoughts]
 If you're looking for a manual on implementing Lean Software Development in detail, this is probably not the best book on the subject. If you're a developer at the start of your career, with no management responsibilities, you'd want more technical juice, so probably you should read the other two books by the Poppendiecks on the subject first.
 
