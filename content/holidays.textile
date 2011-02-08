@@ -80,7 +80,7 @@ h3. Distances by Car
 | St. Margherita Ligure | 20.5 | 33 mins |
 | Portofino | 27.7 | 39 mins |
 
-h3. Details & Price
+h3. Details
 
 <div style="padding: 10px;"></div>
 
@@ -91,13 +91,13 @@ h3. Details & Price
 | *Telephone* | Yes |
 | *Internet* | Yes (broadband) |
 | *TV* | Yes (with DVD player) |
-| *Appliances* | Gas cooker, electrical oven, fridge, freezer, dish washer |
+| *Appliances* | Gas cooker, electric oven, fridge, freezer, dish washer |
 
 <div style="padding: 10px;"></div>
 
 h3. Contact
 
-If you are interested in booking your stay or if you have any question, "contact us":/contact/.
+If you are interested in booking your stay or if you have any question, "contact me":/contact/.
 
 
 

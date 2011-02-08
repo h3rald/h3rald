@@ -9,7 +9,7 @@ rescue Exception => e
 end
 require 'yaml'
 require 'iconv'
-require 'lib/utils.rb'
+require "#{Dir.pwd}/lib/utils.rb"
 
 include TypoUtils
 
