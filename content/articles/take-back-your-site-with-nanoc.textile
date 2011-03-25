@@ -12,6 +12,7 @@ filters_pre:
 - erb
 - redcloth
 toc: true
+popular:true
 summary: "A quick overview on the nanoc site compiler, and how I turned my Typo-powered dynamic site into a static one, discovering the pleasures of blogging 'like a hacker'."
 -----
 
