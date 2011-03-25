@@ -7,9 +7,9 @@ As of version 8, H3RALD.com is a completely static web site, except for a few AJ
 
 h3. Licensing
 
-The "articles":/archives/ and all the content published on this web site is licensed under the _Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 United States License_. For other uses, please "contact us":/contact/.
+The "articles":/archives/ and all the content published on this web site is licensed under the _Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License_. For other uses, please contact us.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/us/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/us/88x31.png" /></a>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
 
 The source code of this web site, such as its layout, SASS/CSS stylesheets, custom rake tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/MIT/">MIT License</a></em> and it is available on "GitHub":http://github.com/h3rald/h3rald.
 

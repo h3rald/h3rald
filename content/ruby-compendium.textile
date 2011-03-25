@@ -1,0 +1,29 @@
+----- 
+permalink: ruby-compendium
+filters_pre: 
+- erb
+- redcloth
+title: "Project: Ruby Compendium"
+type: project
+github: ruby-compendium
+links:
+- "Download": https://github.com/h3rald/ruby-compendium/downloads
+- "Source": https://github.com/h3rald/ruby-compendium
+- "Tracking": http://github.com/h3rald/ruby-compendium/issues
+status: Active
+version: 0.1.1
+-----
+
+<%= render 'project_data', :tag => 'ruby-compendium' %>
+
+The _Ruby Compendium_ is a free book aiming to help beginners learn about Ruby. It doesn't focus on learning the language, but rather on its vast ecosystem and freely available resources.
+
+h3. License
+
+This book was written by Fabio Cevasco and it is licensed under a "Creative Commons Attribution-ShareAlike 3.0 Unported License":http://creativecommons.org/licenses/by-sa/3.0/.
+
+h3. Contributing
+
+This book was authored using "Glyph":http://www.h3rald.com/glyph and its source code is hosted on "Github":http://github.com/h3rald/ruby-compendium. Contributions are very welcome! Feel free to contact the author and/or fork the repository. 
+
+<%= render 'project_updates', :tag => 'ruby-compendium' %>
