@@ -1,0 +1,15 @@
+----- 
+:type: page
+:title: "Archive: March 2011"
+:permalink: march-2011
+:filters_pre: 
+- erb
+-----
+
+<p>1 item was written in <em>March 2011</em>:</p>
+<ul>
+	<% articles_by_month.select{|i| i[0] == "March 2011"}[0][1].each do |a|%>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
+</ul>
+		
