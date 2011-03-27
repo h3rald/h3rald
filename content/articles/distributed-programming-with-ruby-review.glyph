@@ -50,7 +50,7 @@ Additionally, the libraries described in the book are ordered by "reverse prefer
 
 
 	pt[I|Standard Library|
-This part is the most important of all: it gives you the very basics about Distributed Programming and it describes the "building blocks" (\.&[drb] and &[rinda]) used in nearly all the other libraries described in the book. If you want you can skip some chapters in the other parts of the book, but make sure this part is crystal clear in your head before proceeding any further.
+This part is the most important of all: it gives you the very basics about Distributed Programming and it describes the "building blocks" (\/&[drb] and &[rinda]) used in nearly all the other libraries described in the book. If you want you can skip some chapters in the other parts of the book, but make sure this part is crystal clear in your head before proceeding any further.
 	]	
 	pt[II|Third-Party Frameworks and Libraries|
 If you read part I, you're probably a bit disappointed by DRb and Rinda and the amount of code you have to write to make simple things work in a distributed environment. The good news is that there are some Ruby gems out there that can make life simpler:
@@ -108,7 +108,7 @@ Although this is not something you'd see in a professional book everyday, it def
 section[
 	@title[Final Thoughts]
 	txt[
-This is one of those books I'd like to see a second edition of. Partly because there are some relatively new gems which have been left out (\.=>[http://github.com/kwi/BrB|BrB], for example), partly because this is a rather hot topic at the moment, and different solutions are popping out at a rather extreme rate. 
+This is one of those books I'd like to see a second edition of. Partly because there are some relatively new gems which have been left out (\/=>[http://github.com/kwi/BrB|BrB], for example), partly because this is a rather hot topic at the moment, and different solutions are popping out at a rather extreme rate. 
 
 The decision to write about mainly about gems was bold but necessary, and I'd really like to see more authors doing that, but with extra care. From reading this book, you understand that there's no _silver bullet_ when it comes to Distributed Programming, but rather different tools to do different jobs. 
 

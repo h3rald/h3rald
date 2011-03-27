@@ -25,13 +25,13 @@ Generally, I don't bother writing anything about the authors in my reviews: you 
 
 =>[http://www.sei.cmu.edu/watts/index.cfm?WT.ac=watts|&[author]] was a true legend in Software Engineering, he's often referred to as _The Father of Software Quality_. He worked at IBM for 27 years and eventually became Vice President of Technical Development. In the 80s, he arrived at the =>[http://www.sei.cmu.edu/|Software Engineering Institute (SEI)] where he developed some key development processes of our time: the Software Capability Maturity Model (CMM), the Personal Software Process (PSP), and the Team Software Process (TSP). He received many awards, culminating with the _National Medal of Technology_ in 2005. 
 
-He wrote several books focusing mainly on software development and managing software projects through his PSP and TSP methodologies. _\.&[title] &mdash; How to Manage Your Software Projects, Your Teams, Your Boss, and Yourself_ was the last book published while he was alive. =>[http://www.informit.com/title/0321624505|Leadership, Teamwork, and Trust: Building a Competitive Software Capability], co-authored with James W. Over, was published posthumously.
+He wrote several books focusing mainly on software development and managing software projects through his PSP and TSP methodologies. _\/&[title] &mdash; How to Manage Your Software Projects, Your Teams, Your Boss, and Yourself_ was the last book published while he was alive. =>[http://www.informit.com/title/0321624505|Leadership, Teamwork, and Trust: Building a Competitive Software Capability], co-authored with James W. Over, was published posthumously.
 
 &[author] =>[http://www.sei.cmu.edu/newsitems/Humphrey_obituary.cfm|died] on October 28, 2010.
 ]
 textile_section[
   @title[Structure and Organization]
-In many ways, _\.&[title]_ can be seen as the _summa_ of Humphrey's work on PSP, TSP and management of software projects, condensed in a very readable 288-page-book, co-written with =>[http://www.sei.cmu.edu/about/people/wrt.cfm|William R. Thomas], Senior Technical Writer and manager of SEI's Technical Publications Team.
+In many ways, _\/&[title]_ can be seen as the _summa_ of Humphrey's work on PSP, TSP and management of software projects, condensed in a very readable 288-page-book, co-written with =>[http://www.sei.cmu.edu/about/people/wrt.cfm|William R. Thomas], Senior Technical Writer and manager of SEI's Technical Publications Team.
 
 image[@style[float:right]?[output?[pdf]|$[site.root]]/img/pictures/books/reflmgmt.jpg]
 

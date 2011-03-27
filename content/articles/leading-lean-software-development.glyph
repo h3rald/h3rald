@@ -27,7 +27,7 @@ This book is extremely well-structured. Its Table of Contents follows some very 
 
 image[@style[float:right]?[output?[pdf]|$[site.root]]/img/pictures/books/leadingleanswdev.jpg]
 
-In total, the book contains 24 frames constituting the "Big Picture", which is actually a very powerful framework for lean software leadership. You can read the book's TOC =>[http://www.poppendieck.com/llsd.htm|online] on the Poppendieck website and read the book's Introduction (\.=>[http://www.poppendieck.com/pdfs/LLSD_intro.pdf|PDF link]) on the whole concept of _framing_ (yes, both the authors do love photography!).
+In total, the book contains 24 frames constituting the "Big Picture", which is actually a very powerful framework for lean software leadership. You can read the book's TOC =>[http://www.poppendieck.com/llsd.htm|online] on the Poppendieck website and read the book's Introduction (\/=>[http://www.poppendieck.com/pdfs/LLSD_intro.pdf|PDF link]) on the whole concept of _framing_ (yes, both the authors do love photography!).
 
 When I started my career as a technical writer I used to love carefully-structured, simmetrical manuals. After a while, however, I understood that such rigorous structuring can even be dangerous if it becomes an obsession: you end up adding extra "padding writing" to make sections roughly match in length, or you start cutting down some other parts, for the same reason. Writing well-balanced books is hard, but I must say that the authors do a very good job with this book: it flows very naturally while keeping to its rigorous structure.
 ]

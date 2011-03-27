@@ -1,7 +1,7 @@
 --[-------------------- Snippets ------------------------]
 &:[G|Glyph]
 --[-------------------- Macros --------------------------]
-rw:[h3rald.article|
+def:[h3rald.article|
 	article[
 		@pubdate[$[document.date]]
 		@head[
@@ -25,6 +25,29 @@ rw:[h3rald.article|
 					padding-bottom: 2em;
 					border-bottom: 1px solid #000;
 				}
+				div.caption {
+					color: #8F6B17;
+					font-style: italic;
+					padding: 0;
+					margin: 0 0.6em;
+				}
+
+				.figure {
+					padding: 0;
+					border: 1px solid #ccc;
+					display: block;
+				}
+				.figure img {
+					margin-bottom: 0;
+				}
+				.left { float: left; }
+				.right { float: right; }
+				.right, img\[style="float:right;"\], .figure\[style="float:right;"\] {
+					margin: 1em 0 1em 1em;
+				}
+				.left, img\[style="float:left;"\], .figure\[style="float:left;"\] {
+					margin: 1em 1em 1em 0;
+				}
         @page {
   				@top {
     				content: string(book-title);
@@ -42,14 +65,38 @@ rw:[h3rald.article|
 		{{content}}
 	]
 ]
-rw:[pt|
+def:[pt|
 	section[@title[Part {{0}}: {{1}}]
 		txt[{{2}}]
 	]
 ]
-rw:[quote|
+def:[quote|
 	blockquote[
 		{{0}}
 	]
-	?[{{1}}|p[@style[margin-left: 4em]&ndash; {{1}}\.?[{{2}}|, cite[{{2}}]]]]
+	?[{{1}}|p[@style[margin-left: 4em]&ndash; {{1}}\/?[{{2}}|, cite[{{2}}]]]]
+]
+def:[float-img|
+	image[@class[{{1}}]$[site.root]{{0}}]
+]
+def:[float-fig|
+	figure[@style[float:{{2}};]$[site.root]{{0}}|{{1}}]
+]
+def:[left-img|
+	float-img[{{0}}|left]
+]
+def:[right-img|
+	float-img[{{0}}|right]
+]
+def:[center-img|
+	float-img[{{0}}|center]
+]
+def:[left-fig|
+	float-fig[{{0}}|{{1}}|left]
+]
+def:[right-fig|
+	float-fig[{{0}}|{{1}}|right]
+]
+def:[center-fig|
+	float-fig[{{0}}|{{1}}|center]
 ]

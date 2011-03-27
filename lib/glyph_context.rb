@@ -8,13 +8,12 @@ class Nanoc3::RuleContext
 		Glyph['document.title'] = item[:title]
 		Glyph['document.subtitle'] = item[:subtitle]
 		Glyph['document.author'] = "Fabio Cevasco"
-		Glyph['site.root'] = ""
 		Glyph.filter Glyph.file_load("#{Dir.pwd}/lib/data.glyph")
 	end
 
 	def glyph_pdf_for(item)
-		Glyph['output.pdf.generator'] = "prince"
 		Glyph['document.output'] = 'pdf'
+		Glyph['output.pdf.generator'] = "prince"
 		Glyph['site.root'] = ".."
 		f = Pathname.new "#{Dir.pwd}/output#{item.identifier.gsub(/\/$/, '')}.glyph"
 		f.parent.mkpath
@@ -37,9 +36,9 @@ class Nanoc3::RuleContext
 
 	def glyph_article_for(item)
 		Glyph['document.output'] = 'html5'
+		Glyph['site.root'] = ""
 		filter :glyph
 		layout 'default'
-		Glyph.reset
 	end
 
 end

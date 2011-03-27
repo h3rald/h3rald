@@ -43,7 +43,7 @@ section[
 	
 	p[Attributes look like macros, but they all start with a code[@] character. For example, see the the following image, showing this very section:]
 	
-	image[\.$[site.root]/img/pictures/updated_glyph_syntax.png]
+	image[\/$[site.root]/img/pictures/updated_glyph_syntax.png]
 ]
 
 section[

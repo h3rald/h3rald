@@ -8,17 +8,19 @@ tags:
 date: 2009-09-15 13:32:51.049000 +02:00
 permalink: take-back-your-site-with-nanoc
 title: "Take back your site, with nanoc!"
+subtitle: How I turned H3RALD.com into a 100% static, hassle-free web site
 filters_pre:
 - erb
 - redcloth
 toc: true
-popular:true
-summary: "A quick overview on the nanoc site compiler, and how I turned my Typo-powered dynamic site into a static one, discovering the pleasures of blogging 'like a hacker'."
+popular: true
+intro: |
+  Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change in all the pages of the site &ndash; the whole eight of them.
+extended_intro: |
+  Five years later, after rebuilding this web site "seven times":/h3rald/ using different backends (PHP + CakePHP, Ruby + Rails + Typo, etc.), I decided to make it static again, this time with a twist. It all started when I read a "post":http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html by Tom Preston-Warner ("GitHub":http://www.github.com co-founder) that I finally decided to give it a try. Today, the 8th release of this web site is 100% static: if you load any page, there's no server-side interpretation going on, you're just browsing a plain HTML page, at most with a few AJAX calls. But let's start from the beginning...
 -----
 
-Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change in all the pages of the site &ndash; the whole eight of them.
 
-Five years later, after rebuilding this web site "seven times":/h3rald/ using different backends (PHP + CakePHP, Ruby + Rails + Typo, etc.), I decided to make it static again, this time with a twist. It all started when I read a "post":http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html by Tom Preston-Warner ("GitHub":http://www.github.com co-founder) that I finally decided to give it a try. Today, the 8th release of this web site is 100% static: if you load any page, there's no server-side interpretation going on, you're just browsing a plain HTML page, at most with a few AJAX calls. But let's start from the beginning...
 
 h3. Why I don't need a blog platform
 

@@ -31,7 +31,7 @@ section[
 ]
 	=]
 	txt[
-Note the code[@src] attribute? It basically includes the specified topic file. So by creating a @document.glyph@ file like =>[http://github.com/h3rald/glyph/blob/master/book/document.glyph|this], you can create a tidy table of contents (not a single @include@ macro) _and_ get a website for free. Glyph, as usual, takes care of anything for you, especially links between topics. Just link away like you did so far, nothing changes from previous versions, it will just work as expected (\.=>[/glyph/book/compiling/compiling.html#web_output|read more]).
+Note the code[@src] attribute? It basically includes the specified topic file. So by creating a @document.glyph@ file like =>[http://github.com/h3rald/glyph/blob/master/book/document.glyph|this], you can create a tidy table of contents (not a single @include@ macro) _and_ get a website for free. Glyph, as usual, takes care of anything for you, especially links between topics. Just link away like you did so far, nothing changes from previous versions, it will just work as expected (\/=>[/glyph/book/compiling/compiling.html#web_output|read more]).
 	] 
 ]
 section[

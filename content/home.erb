@@ -91,7 +91,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 	</section><!-- #main-content-right end -->
 </section><!-- #main-content end -->
 <section class="right" id="secondary-content">
-	<%= render 'article_intro', :item => popular[1], :classes => "two-columns hyphenate", :extended => true %>
+	<%= render 'article_intro', :item => popular[0], :classes => "two-columns hyphenate", :extended => true %>
 	<article class="feature">
 		<header>
 			<p>FEATURED CONTENT</p>
@@ -105,7 +105,7 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 		</section>
 	</article>
 	<section class="left" id="secondary-content-left">
-		<%= render 'article_intro', :item => popular[0], :classes => "hyphenate", :extended => false %>
+		<%= render 'article_intro', :item => popular[1], :classes => "hyphenate", :extended => false %>
 		<%= render 'article_intro', :item => popular[3], :classes => "hyphenate", :extended => false %>
 	</section><!-- #secondary-content-left end -->
 	<section class="right border-left" id="secondary-content-right">

@@ -63,6 +63,7 @@ compile '*' do
 				glyph_config @item
 				glyph_pdf_for @item unless pdf_file.exist?
 				glyph_article_for @item
+				Glyph.reset
 			end
 		end
 	end

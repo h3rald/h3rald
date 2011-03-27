@@ -24,7 +24,7 @@ Since the =>[$[site.root]/articles/introducing-glyph/|first release], came out, 
 	section[@title[What &[G] code looks like]
 Earlier this week I =>[http://blog.h3rald.com/making-a-custom-vim-syntax-file|blogged] about my new =>[http://github.com/h3rald/stash/blob/master/.vim/syntax/glyph.vim|&[G] vim syntax file]. I've been using it for a while, and all I can say is that it really helps! Here's what it looks like:
 
-image[\.$[site.root]/img/pictures/glyph_syntax.png]
+image[\/$[site.root]/img/pictures/glyph_syntax.png]
 
 I'm sorry for the Emacs and TextMate folks, but I only use Vim, so I only made a Vim syntax file. Anyhow, &[G] grammar is very simple, so rolling out your own syntax file for your favorite editor shouldn't be too hard.
 	]
@@ -43,7 +43,7 @@ The second most notable feature is the possibility to use &[G] as a Ruby library
 For those of you using the awesome =>[http://nanoc.stoneship.org|nanoc] static site generator, here's a few source files you may want to take a look at:
 * =>[http://github.com/h3rald/h3rald/blob/master/lib/glyph-data.rb|lib/glyph-data.rb] -- How to update configuration settings.
 * =>[http://github.com/h3rald/h3rald/blob/master/lib/glyph-filter.rb|lib/glyph-data.rb] --  a simple &[G] filter.
-* =>[http://github.com/h3rald/h3rald/blob/master/Rules|Rules] -- a rule using the @\.&[G]#compile@ method to generate PDF files. 
+* =>[http://github.com/h3rald/h3rald/blob/master/Rules|Rules] -- a rule using the @\/&[G]#compile@ method to generate PDF files. 
 		]
 
 		section[@title[Auto-regeneration]

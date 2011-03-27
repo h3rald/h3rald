@@ -3,16 +3,15 @@
 :date: 2010-11-14 13:35:29.046412 +01:00
 :title: A pizza with Randal Schwartz
 :subtitle: Talking about open source, programming, emacs and technical writing
-:popular: true
 :intro: |
   I am an avid "FLOSS Weekly":http://twit.tv/FLOSS listener. Sometimes I may fall behind by a few episodes, but I normally manage to catch up: Randal Schwartz' show is by far my favorite podcast. 
   
   You can imagine my reaction when I discovered that Randal was in Genoa, my city, ready to leave for yet another "InsightCruise":http://www.insightcruises.com/: I had to meet the guy, at all costs! 
 
   It turned out to be easier than I thought: I simply "asked him":http://twitter.com/#!/h3rald/status/28962418438 if he fancied a pizza out on the way back from his cruise, and he said yes. 
-  
-  I also decided to invite "Claudio Perrone":http://www.agilesensei.com/ as well, seeing that he's back in Genoa on one of his Agile/Lean gigs. He said he didn't know much about Perl, but he'd have liked to come as well. So there I was lining up a dinner out with two IT gurus at the same time.
 :extended_intro: |
+  I also decided to invite "Claudio Perrone":http://www.agilesensei.com/ as well, seeing that he's back in Genoa on one of his Agile/Lean gigs. He said he didn't know much about Perl, but he'd have liked to come as well. So there I was lining up a dinner out with two IT gurus at the same time.
+
   Randal was staying at the "Bristol Palace Hotel":http://www.hotelbristolpalace.it/, and we met him at the lobby bar. In the end I persuaded my wife to come along as well, although she doesn't know much about Perl either.
   We shook hands with Capt. Neil [Bauman, of InsightCruises.com] and a few others of the cruise gang, then we were off to the restaurant.
 
@@ -27,9 +26,9 @@
 :pdf: true
 -----
 ?[output?[html|html5]|
-	rw:[q|<q>"{{0}}"</q>]
+	def:[q|<q>"{{0}}"</q>]
 ]
-rw:[blockquote|<blockquote>"{{0}}"</blockquote>]
+def:[blockquote|<blockquote>"{{0}}"</blockquote>]
 
 $[document.intro]
 
@@ -44,7 +43,7 @@ textile_section[
 	@title[Something more about Randal]
 =>[http://www.stonehenge.com/merlyn/|Randal Schwartz] is a world-famous Perl guru, author of the =>[http://www.oreillynet.com/pub/au/335|best Perl programming] on the market, and a very prolific =>[http://www.stonehenge.com/merlyn/columns.html|column writer].
 
-Randal is not a full-time writer though (\.q[writing books doesn't pay]). His day job consists in being a "guru on-demand": you can hire him to fix your code, refractor complex enterprise applications, or simply provide useful advice to IT managers. 
+Randal is not a full-time writer though (\/q[writing books doesn't pay]). His day job consists in being a "guru on-demand": you can hire him to fix your code, refractor complex enterprise applications, or simply provide useful advice to IT managers. 
 Being the host of FLOSS Weekly is not a job, and Randal doesn't do it for the money of course, but for passion: q[I'm trying my best to do one show per week, even when I am away], he said, and he does go off traveling around the world a lot! 
 
 q[Once I was at home for 8 weeks and it felt really strange. I kept thinking I had to pack to go somewhere else]. He's been on nearly every Geek/Insight Cruises (51, if I remember correctly) and his =>[http://www.stonehenge.com/merlyn/dot-plan.txt|travel plan] is always very busy. 
