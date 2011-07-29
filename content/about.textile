@@ -25,7 +25,7 @@ The following ruby libraries (gems) are used to compile this web site:
 * *"Extlib":http://rubygems.org/gems/extlib*, in some custom Rake tasks
 * *"BB-Ruby":http://rubygems.org/gems/bb-ruby*, for the BBCode filter
 * *"Builder":http://rubygems.org/gems/builder/*, to create RSS and ATOM feeds
-* *"Haml":http://rubygems.org/gems/haml/*, for the SASS filter
+* *"Sass":http://sass-lang.com/*, for the SASS filter
 * *"CodeRay":http://rubygems.org/gems/coderay/*, for syntax highlighting
 * *"RedCloth":http://rubygems.org/gems/redcloth/*, for Textile support
 * *"BlueCloth":http://rubygems.org/gems/bluecloth/*, for Markdown support

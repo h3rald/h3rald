@@ -41,25 +41,29 @@ end
 
 module Nanoc3::Helpers::Blogging
 
-	def prepare_feed(params)
-		# Extract parameters
-		@item[:limit] ||= 10
-		@item[:articles] = params[:articles] || latest_articles(10) || []
-		@item[:content_proc] = params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:pre)}
-		@item[:excerpt_proc] = params[:excerpt_proc] || lambda { |a| a[:excerpt] }
-		@item[:author_uri] ||= @site.config[:base_url]
-		@item[:author_name] ||= @site.config[:author_name]
+	def check_data(params)
 		raise RuntimeError.new('Cannot build feed: site configuration has no base_url') 	if @site.config[:base_url].nil?
 		raise RuntimeError.new('Cannot build feed: feed item has no title') if @item[:title].nil?
-		raise RuntimeError.new('Cannot build feed: no articles') if @item[:articles].empty?
-		raise RuntimeError.new('Cannot build feed: one or more articles doesn\'t have a date') if @item[:articles].any? { |a| a[:date].nil? }
-		@item[:last] = @item[:articles].first
+		raise RuntimeError.new('Cannot build feed: no articles') if feed_articles(params).empty?
+		raise RuntimeError.new('Cannot build feed: one or more articles doesn\'t have a date') if feed_articles(params).any? { |a| a[:date].nil? }
+	end
+
+	def feed_articles(params) 
+		params[:articles] || latest_articles(10)
+	end
+
+	def feed_content_proc(params)
+		params[:content_proc] || lambda { |a| a.reps[0].content_at_snapshot(:pre)}
+	end
+
+	def feed_excerpt_proc(params)
+		params[:excerpt_proc] || lambda { |a| a[:excerpt] }
 	end
 
 	def rss_feed(params={})
 		require 'builder'
 		require 'time'
-		prepare_feed params
+		check_data params
 		# Create builder
 		buffer = ''
 		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
@@ -69,14 +73,14 @@ module Nanoc3::Helpers::Blogging
 			xml.channel do
 				xml.title @item[:title]
 				xml.language 'en-us'
-				xml.lastBuildDate @item[:last][:date].rfc822
+				xml.lastBuildDate feed_articles(params).first[:date].rfc822
 				xml.ttl '40'
 				xml.link @site.config[:base_url]
 				xml.description
-				@item[:articles].each do |a|
+				feed_articles(params).each do |a|
 					xml.item do
 						xml.title a[:title]
-						xml.description @item[:content_proc].call(a)
+						xml.description feed_content_proc(params).call(a)
 						xml.pubDate a[:date].rfc822
 						xml.guid url_for(a)
 						xml.link url_for(a)
@@ -96,22 +100,22 @@ module Nanoc3::Helpers::Blogging
 	def atom_feed(params={})
 		require 'builder'
 		require 'time'
-		prepare_feed params
+		check_data params
 		buffer = ''
 		xml = Builder::XmlMarkup.new(:target => buffer, :indent => 2)
 		xml.instruct!
 		xml.feed(:xmlns => 'http://www.w3.org/2005/Atom') do
 			xml.id      @site.config[:base_url] + '/'
 			xml.title   @item[:title]
-			xml.updated @item[:last][:date].to_iso8601_time
+			xml.updated feed_articles(params).first[:date].to_iso8601_time
 			xml.link(:rel => 'alternate', :href => @site.config[:base_url])
 			xml.link(:rel => 'self', :href => @site.config[:base_url]+"/#{@item[:permalink]}/")
 			xml.author do
-				xml.name  @item[:author_name]
-				xml.uri   @item[:author_uri]
+				xml.name(@item[:author_name] || @site.config[:author_name])
+				xml.uri(@item[:author_uri] || @site.config[:base_url])
 			end
 			count = 0
-			@item[:articles].each do |a|
+			feed_articles(params).each do |a|
 				xml.entry do
 					xml.id        atom_tag_for(a)
 					xml.title     a[:title]
@@ -123,10 +127,10 @@ module Nanoc3::Helpers::Blogging
 					a[:tags].each do |t|
 						xml.category(:term => t, :scheme => "#{@site.config[:base_url]}/tags/#{t}/")
 					end
-					summary = @item[:excerpt_proc].call(a)
+					summary = feed_excerpt_proc(params).call(a)
 					xml.summary   summary, :type => 'html' unless summary.nil?
 					xml.content(:type => 'html') do |c|
-						c << %{<![CDATA[\n#{@item[:content_proc].call(a)}]]>\n}
+						c << %{<![CDATA[\n#{feed_content_proc(params).call(a)}]]>\n}
 					end
 				end
 			end
