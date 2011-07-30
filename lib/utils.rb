@@ -39,7 +39,7 @@ module SiteUtils
 		meta[:permalink] = name.downcase.gsub /\s/, '-'
 		pl = (count == 1) ? ' was' : 's were'
 		contents = %{
-<p>#{count} item#{pl} written in <em>#{name}</em>:</p>
+<p>#{count} article#{pl} written in <em>#{name}</em>:</p>
 <ul>
 	<% articles_by_month.select{|i| i[0] == "#{name}"}[0][1].each do |a|%>
 		<%= render 'dated_article', :article => a %>

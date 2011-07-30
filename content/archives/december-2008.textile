@@ -1,12 +1,12 @@
 ----- 
 :type: page
-:title: "Archive: December 2008"
 :permalink: december-2008
 :filters_pre: 
 - erb
+:title: "Archive: December 2008"
 -----
 
-<p>1 item was written in <em>December 2008</em>:</p>
+<p>1 article was written in <em>December 2008</em>:</p>
 <ul>
 	<% articles_by_month.select{|i| i[0] == "December 2008"}[0][1].each do |a|%>
 		<%= render 'dated_article', :article => a %>
