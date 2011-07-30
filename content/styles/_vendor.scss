@@ -3,10 +3,18 @@
 	@include standard-font;
 }
 
-.twtr-tweet-text {
-	font-size: 1.2em;
+.twtr-hd h3 {
+	height: 20px;
 }
-.twtr-timestamp, .twtr-reply {
+
+.twitter-follow-button {
+  margin-left: 10px;
+}
+
+.twtr-tweet-text {
+	font-size: 1.3em;
+}
+.twtr-timestamp, .twtr-reply, .twtr-fav, .twtr-rt {
 	font-size: 1.4em;
 	font-style: italic;
 }

@@ -5,7 +5,7 @@ article > header {
 		@include standard-font;
 		font-weight: bold;
 		color: #000;
-		line-height: 1.1em;
+		line-height: 0.9em;
 		padding-top: 0.2em;
 		text-align:left;
 		height: 60%;
@@ -16,7 +16,7 @@ article > header {
 	}
 	h2 {
 		@include standard-font;
-		font-weight: normal;
+		font-weight: 600;
 		font-style: italic;
 		color: #000;
 		line-height: 1.1em;
@@ -84,17 +84,11 @@ article > header > nav.tags {
 }
 
 article > header > nav.tags > a {
-	margin: 2px 8px 2px 0px;
+	margin: 1px 6px 1px 0px;
 	font-style: italic;
-	background-color: #CED1EB;
-	@include border-radius(3px);
-	padding: 1px 3px;
-	@include ease-in(background-color);
+	font-weight: 600;
+	padding: 1px 4px;
 }
-article > header > nav.tags > a:hover {
-	background-color: #E0E3FF;
-}
-
 
 /* Headers */
 
@@ -139,8 +133,8 @@ article.page > header h2,
 /* Text */
 
 article {
-	font-size: 93%;
-	header > p { font-size: 90%; }
+	font-size: 100;
+	header > p { font-size: 95%; }
 }
 
 #body-text {
@@ -148,8 +142,7 @@ article {
 	h1, h2, h3, h4, h5, h6 {
 		clear: both;
 		padding-top: 1.5em;
-		margin-bottom: 0.5em;
-		padding-bottom: 0.2em;
+		margin-bottom: 0.1em;
 		border-bottom: 1px solid $light-gray;  
 		width: 100%;
 	}
@@ -278,32 +271,6 @@ section.glyph-index h1.toc-header {
 	display: none;
 }
 
-/* TOC */
-
-#auto-toc {
-	#toc-title {
-		border-bottom: none;
-		font-size: 1.2em;
-		font-style: italic;
-	}
-	ol {
-		margin-left: 0;
-		li {
-			list-style-type: none;
-		}
-	}
-	float: right;
-	margin: 1em 0 1.5em 1.5em;
-	padding: 0.5em;
-	border: 1px solid $light-gray;
-}
-
-.toc-top-link {
-	font-weight: bold;
-	vertical-align: text-top;
-	font-size: 80%;
-}
-
 /* Legacy Comments */
 
 #legacy-comments {
@@ -421,15 +388,20 @@ section.glyph-index h1.toc-header {
 /* Elements */
 
 a {
-	color: $light-blue;
-	text-decoration: none;
+	color: $dark-blue;
 	@include ease-in(color);
+	text-decoration: none;
 	outline: none;
 }
 
 a:hover {
-	color: $dark-blue;
+	color: $light-blue;
 	text-decoration: underline;
+}
+
+sup {
+	vertical-align: super;
+	font-size: 80%;
 }
 
 .toc-top-link {

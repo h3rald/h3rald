@@ -5,6 +5,7 @@ filter: erb
 <html lang="en">
 	<head>
 		<title><%= @item[:title] %> - H3RALD</title>
+		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 		<% if @item[:feed_url] then %>
 		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed_url]%>" />
 		<% else %>
@@ -38,7 +39,6 @@ filter: erb
 		<link rel="shortcut icon" href="/favicon.png" type="image/png" /> 
 		<meta content="44.388041;9.073248" name="ICBM" />
 
-
 		<link rel="stylesheet" type="text/css" href="/styles/html5reset.css" />
 		<link rel="stylesheet" type="text/css" href="/styles/style.css" />
 
@@ -47,11 +47,10 @@ filter: erb
 		<script type="text/javascript">
 			head.js("/js/sevenup.js", 
 					"/js/sevenup_black.js", 
-					"http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js",
+					"http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js",
 					"/js/jquery-timeago.js",
 					"/js/jquery-easing.js",
 					"/js/jquery-fancybox.js",
-					"/js/jquery-toc.js", 
 					"/js/date.js",
 					"/js/feeds.js",
 					"/js/hyphenator.js",
@@ -70,12 +69,6 @@ filter: erb
 				<article class="page">
 					<%= render 'page_meta', :item => @item %>
 					<section id="body-text" class="hyphenate">
-						<% if @item[:toc] then %>
-							<aside id="auto-toc">
-								<span id="toc-title">Table of Contents</span>
-								<ol></ol>
-							</aside>
-						<% end %>
 						<%= yield %>
 						<%= render 'buttons', :item => @item %>
 					</section>

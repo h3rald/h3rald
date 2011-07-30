@@ -6,14 +6,14 @@ $light-blue: #007BC4;
 $dark-blue: #005B91;
 
 @mixin standard-font {
-	font-family: 'Gentium', 'Palatino', 'Bookman', 'Georgia', 'Times';
+	font-family: 'Crimson Text', 'Palatino', 'Bookman', 'Georgia', 'Times';
 	line-height: 1.3em;
 }
 
 @mixin ease-in($property) {
-	-webkit-transition: $property 0.25s ease-in;  
-  -moz-transition: $property 0.25s ease-in;  
-  -o-transition: $property 0.25s ease-in;  
+	-webkit-transition: $property 0.15s ease-in;  
+  -moz-transition: $property 0.15s ease-in;  
+  -o-transition: $property 0.15s ease-in;  
   transition: $property 0.25s ease-in;
 }
 
@@ -37,9 +37,9 @@ $dark-blue: #005B91;
 		left: 0px;
 		top: 0px;
 		position: absolute;
-		-webkit-transition: opacity 0.25s linear;
-		-moz-transition: opacity 0.25s linear;
-		-o-transition: opacity 0.25s linear;
-		transition: opacity 0.25s linear;
+		-webkit-transition: opacity 0.15s linear;
+		-moz-transition: opacity 0.15s linear;
+		-o-transition: opacity 0.15s linear;
+		transition: opacity 0.15s linear;
 	}
 }

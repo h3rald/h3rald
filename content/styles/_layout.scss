@@ -64,8 +64,8 @@ body {
 		}
 	}
 	&.page {
-		height: 42px;
-		border-bottom: 1px solid $dark-blue;
+		height: 45px;
+		border-bottom: 1px solid $light-gray;
 		nav.section {
 			float: right;
 			margin-top: 10px;
@@ -73,7 +73,7 @@ body {
 		}
 		nav.home-link {
 			float: left;
-			@include hover-image(179px, 40px);
+			@include hover-image(193px, 43px);
 		}
 	}
 }
