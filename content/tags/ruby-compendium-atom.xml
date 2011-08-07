@@ -1,0 +1,6 @@
+----- 
+:type: feed
+:permalink: tags/ruby-compendium/atom
+:title: H3RALD - Tag 'ruby-compendium' (Atom Feed)
+-----
+<%= atom_feed(:articles => articles_tagged_with('ruby-compendium'))%>
