@@ -1,19 +1,11 @@
------
-filter: erb
------
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title><%= @item[:title] %> - H3RALD</title>
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head> 
+		<title>Podcasts and Screencasts &ndash; Ruby Compendium</title> 
 		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		<% if @item[:feed_url] then %>
-		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed_url]%>" />
-		<% else %>
-		<% if @item[:feed] then %>
-		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>rss/" />
-		<link rel="alternate" type="application/atom+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed]%>atom/" />
-		<% end %>
-		<% end %>
+		
+		
+		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
 		<meta name="copyright" content="Fabio Cevasco" />
@@ -24,27 +16,15 @@ filter: erb
 		<meta name="country" content="United States" />
                 <meta name="readability-verification" content="XmaVzRjmcFL5Bb2Fu9TZVdDKzhA3apQdxexTB2rK"/>
 		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
-		<% 	
-		min_keywords = "h3rald, fabio cevasco, "
-		default = "ruby, rails technical writing, reviews, software, browsers, articles, traveling, books, genova"
-		case @item[:type] 
-		when 'article' then
-		keywords = min_keywords+@item[:tags].join(', ')
-		when 'project' then
-		keywords = @item[:permalink] == 'h3rald' ? "fabio cevasco, "+@item[:permalink] : min_keywords+@item[:permalink]
-		else
-		keywords = min_keywords+default
-		end
-		%>
-		<meta name="keywords" content="<%= keywords %>" />
+		
+		<meta name="keywords" content="h3rald, fabio cevasco, ruby-compendium" />
 		<link rel="shortcut icon" href="/favicon.png" type="image/png" /> 
 		<meta content="44.388041;9.073248" name="ICBM" />
 
 		<link rel="stylesheet" type="text/css" href="/styles/html5reset.css" />
 		<link rel="stylesheet" type="text/css" href="/styles/style.css" />
 
-		<script src="/js/head.js" type="text/javascript"></script>
-		<script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
+    <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -59,24 +39,61 @@ filter: erb
 	</head>
 	<body>
 		<section id="container">
-			<% if @item[:permalink] == 'home' then %>
-				<%= render 'home_header' %>
-				<%= yield %>
-				<%= render 'buttons', :item => @item %>
-			<% else %>
-				<%= render 'page_header', :item => @item %>
-				<article class="page">
-					<%= render 'page_meta', :item => @item %>
-					<section id="body-text" class="hyphenate">
-						<%= yield %>
-						<%= render 'buttons', :item => @item %>
+			
+				<header class="page">
+	<nav class="home-link">
+		<a href="/">
+			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
+			<![if !IE]>
+			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
+			<![endif]>
+		</a>
+	</nav>
+	
+	<nav class="section">
+		/<a href="/ruby-compendium/" rel="ruby-compendium">RUBY-COMPENDIUM</a>
+	</nav>
+	
+</header>
+				<article class="page glyph-book">
+					<header>
+	<hgroup>
+		<h1>Podcasts and Screencasts</h1> 
+		<h2>Ruby Compendium</h2>
+	</hgroup>
+  </header>
+					<section id="body-text" class="hyphenate glyph-book">
+
+							<nav class="navigation"><a href="/ruby-compendium/book/books.html">Books</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/rubyists.html">Notable Rubyists</a></nav>
+							
+	<p><strong><a href="http://5by5.tv/rubyshow">The Ruby Show</a></strong> &ndash; <em>The</em> Ruby podcast, with <a href="/ruby-compendium/book/rubyists.html#danbenjamin">Dan Benjamin</a> and <a href="/ruby-compendium/book/rubyists.html#jseifer">Jason Seifer</a>.</p>
+
+	<p><strong><a href="http://ruby5.envylabs.com/">Ruby5</a></strong> &ndash; Frequently-released short podcasts on what&#8217;s new in the Ruby and Rails community. By <a href="/ruby-compendium/book/rubyists.html#greggpollack">Gregg Pollack</a>.</p>
+
+	<p><strong><a href="http://rubyonrails.org/screencasts">Ruby On Rails Screencasts</a></strong> &ndash; Free Ruby on Rails screencasts</p>
+
+	<p><strong><a href="http://sdruby.org/podcast">SD Ruby Podcast</a></strong> &ndash; Ruby podcasts by the San Diego Ruby community.</p>
+
+	<p><strong><a href="http://www.rubypulse.com/">Ruby Pulse</a></strong> &ndash; Free Ruby-related podcasts.</p>
+
+	<p><strong><a href="http://ruby-kickstart.com/">Ruby Kickstart</a></strong> &ndash; Hours of free screencast to teach you how to program in Ruby, with loads of free material, quizzes, and goodies.</p>
+							<nav class="navigation"><a href="/ruby-compendium/book/books.html">Books</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/rubyists.html">Notable Rubyists</a></nav>
+										<nav id="sharing-buttons">
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<g:plusone size="medium"></g:plusone>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</nav>
 					</section>
 				</article>
-					<% if @item[:type] == 'article' %>
-						<%= render 'legacy_comments', :item => @item if @item[:comments] %>
-						<%= render 'comments', :item => @item %>
-					<% end %>
-			<% end %>
+					
+			
 			<footer>
 				<section class="ads">
 					<script type="text/javascript"><!--
@@ -98,23 +115,8 @@ filter: erb
 				</section>
 			</footer>
 		</section><!-- #container end -->
-		<% if @item[:type] == 'article' %>
-			<script type="text/javascript">
-var disqus_shortname = 'h3rald';
-(function () {
-  var s = document.createElement('script'); s.async = true;
-  s.src = 'http://disqus.com/forums/h3rald/count.js';
-  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-			</script>
-		<% end %>
-		<% if @item[:github] then %>
-			<script type="text/javascript">
-					$(document).ready(function() {
-							display_commits(5, '<%= @item[:github] %>');
-							});
-			</script>
-		<% end %>
+		
+		
  <!-- Start Google Analytics --> 
  <script type="text/javascript">
   var _gaq = _gaq || [];

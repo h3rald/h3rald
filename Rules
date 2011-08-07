@@ -39,6 +39,9 @@ end
 compile '/glyph/book/*' do
 	# do nothing
 end
+compile '/ruby-compendium/book/*' do
+	# do nothing
+end
 
 compile '*' do
 	if item[:filters_pre] && !item[:filters_pre].empty? then
@@ -93,11 +96,18 @@ route '/glyph/book/' do
 	'/glyph/book/index.html'
 end
 
+route '/ruby-compendium/book/' do
+	'/ruby-compendium/book/index.html'
+end
+
 route '/glyph/book/images/glyph/*' do
 	item.identifier.chop + ".#{item[:extension]}"
 end
 
 route '/glyph/book/*' do
+	item.identifier.chop+'.html'
+end
+route '/ruby-compendium/book/*' do
 	item.identifier.chop+'.html'
 end
 
