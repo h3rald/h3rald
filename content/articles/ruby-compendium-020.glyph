@@ -1,0 +1,21 @@
+----- 
+:title: "Ruby Compendium v0.2.0 released"
+:subtitle: "With up-to-date ruby implementations, more resources, and online version"
+:image: /img/pictures/ruby.png
+:type: article
+:date: 2011-08-07 18:01:52.573674 +02:00
+:tags: ["ruby-compendium", "books", "ruby"] 
+:permalink: ruby-compendium-020
+:intro: |
+  The Ruby Compendium has been updated, and it now lists the most up-to-date versions of various Ruby implementatios, even more web sites, books, podcasts, and Rubyists. In addition to the PDF version, the book can now be read online "here on H3RALD.com":/ruby-compendium/book/.
+:extended_intro: |
+  Overall, this is a relatively minor update; however, I felt it was a good time to release it to keep the book up-to-date.
+-----
+
+$[document.intro]
+
+textile[
+The _Ruby Compendium_ is available free of charge, under the terms of the "Creative Commons Attribution-ShareAlike 3.0 Unported License":http://creativecommons.org/licenses/by-sa/3.0/, and you can help improving it! It was written using my very own "Glyph Framework":http://www.h3rald.com/glyph, and the entire source code is available on "GitHub":https://github.com/h3rald/ruby-compendium, for anyone to fork.
+
+div{text-align:center;margin:20px; auto;font-size: 18px; font-weight:bold;}. =>[https://github.com/downloads/h3rald/ruby-compendium/ruby-compendium.pdf|Download PDF] \| =>[http://www.h3rald.com/ruby-compendium/book|Read Online]
+]
