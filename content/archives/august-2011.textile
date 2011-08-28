@@ -6,7 +6,7 @@
 :title: "Archive: August 2011"
 -----
 
-<p>1 article was written in <em>August 2011</em>:</p>
+<p>2 articles were written in <em>August 2011</em>:</p>
 <ul>
 	<% articles_by_month.select{|i| i[0] == "August 2011"}[0][1].each do |a|%>
 		<%= render 'dated_article', :article => a %>

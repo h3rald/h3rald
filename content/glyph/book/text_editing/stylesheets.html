@@ -1,106 +1,136 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>Adding Stylesheets &ndash; Glyph Documentation</title> 
-
-
-
-		<meta charset="utf-8" /> 
-		<meta name="author" content="Fabio Cevasco" /> 
-		<meta name="copyright" content="Fabio Cevasco" /> 
-		<meta name="robots" content="all, follow" /> 
-		<meta name="Revisit-After" content="2 Days" /> 
-		<meta name="language" content="en" /> 
-		<meta name="target_country" content="en-us" /> 
-		<meta name="country" content="United States" /> 
-		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" /> 
-
-		<meta name="keywords" content="h3rald, fabio cevasco, glyph" /> 
+    <title>Adding Stylesheets - Glyph</title> 
+		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+		
+		
+		
+		<meta charset="utf-8" />
+		<meta name="author" content="Fabio Cevasco" />
+		<meta name="copyright" content="Fabio Cevasco" />
+		<meta name="robots" content="all, follow" />
+		<meta name="Revisit-After" content="2 Days" />
+		<meta name="language" content="en" />
+		<meta name="target_country" content="en-us" />
+		<meta name="country" content="United States" />
+                <meta name="readability-verification" content="XmaVzRjmcFL5Bb2Fu9TZVdDKzhA3apQdxexTB2rK"/>
+		<meta name="description" content="H3RALD - Fabio Cevasco's Web Site" />
+		
+		<meta name="keywords" content="h3rald, fabio cevasco, glyph" />
 		<link rel="shortcut icon" href="/favicon.png" type="image/png" /> 
-		<meta content="44.388041;9.073248" name="ICBM" /> 
+		<meta content="44.388041;9.073248" name="ICBM" />
 
+		<link rel="stylesheet" type="text/css" href="/styles/html5reset.css" />
+		<link rel="stylesheet" type="text/css" href="/styles/style.css" />
 
-		<link rel="stylesheet" type="text/css" href="/styles/html5reset.css" /> 
-		<link rel="stylesheet" type="text/css" href="/styles/style.css" /> 
+    <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
+		<script src="/js/sevenup.js" type="text/javascript"></script>
+		<script src="/js/sevenup_black.js" type="text/javascript"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
+		<script src="/js/jquery-easing.js" type="text/javascript"></script>
+		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
+		<script src="/js/date.js" type="text/javascript"></script>
+		<script src="/js/feeds.js" type="text/javascript"></script>
+		<script src="/js/hyphenator.js" type="text/javascript"></script>
+		<script src="/js/init.js" type="text/javascript"></script>
+		<script src="/js/search.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<section id="container">
+			
+				<header class="page">
+	<nav class="home-link">
+		<a href="/">
+			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
+			<![if !IE]>
+			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
+			<![endif]>
+		</a>
+	</nav>
+	
+	<nav class="section">
+		/<a href="/glyph/" rel="glyph">GLYPH</a>
+	</nav>
+	
+</header>
+				<article class="page glyph-book">
+					<header>
+	<hgroup>
+		<h1>Adding Stylesheets</h1> 
+		<h2>Glyph</h2>
+	</hgroup>
+  </header>
+					<section id="body-text" class="hyphenate glyph-book">
 
-		<!--[if lte IE 8]>
-		<script src="/js/html5.js" type="text/javascript"></script>
-		<![endif]--> 
-	</head> 
-	<body> 
-		<!--[if lte IE 6]>
-		<div id="ie-warning">
-			This site is not compatible with Internet Explorer 6 or lower. You should consider using a more modern browser for a better &ndash; and <em>safer</em> &ndash; web experience. [<a href="http://browsehappy.com/browsers/">Read More &raquo;</a>]
-		</div>
-		<![endif]--> 
-
-		<section id="container"> 
-
-			<header class="page"> 
-				<nav class="home-link"> 
-					<a href="/"> 
-						<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/> 
-						<![if !IE]> 
-						<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/> 
-						<![endif]> 
-					</a> 
-				</nav> 
-
-				<nav class="section"> 
-					/<a href="/glyph/" rel="archives">GLYPH</a> 
-				</nav> 
-
-			</header> 
-			<article class="page"> 
-				<header> 
-					<hgroup> 
-					<h1>Adding Stylesheets</h1> 
-					<h2>Glyph Documentation</h2>
-					</hgroup> 
-				</header> 
-				<section id="body-text" class="hyphenate glyph-book"> 
-
-							<nav><a href="/glyph/book/text_editing/xml_fallback.html">XML Fallback &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/inclusions.html">&rarr; Including Files and Snippets</a></nav>
-								<p>Currently, Glyph does not provide any native way to format text and pages. The reason is that there's absolutely no need for that: CSS does the job just fine. In particular, CSS3 offers specific attributes and elements that can be used specifically for paginated documents. That's no replacement for LaTeX by any means, but it is enough if you're not looking for advanced typographical features.</p>
-	<p>You can embed CSS files using the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro, like this:</p>
-	<p>
-<code>style[default.css]</code>
+							<nav class="navigation"><a href="/glyph/book/text_editing/xml_fallback.html">XML Fallback</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/inclusions.html">Content Reuse</a></nav>
+							  <p>Currently, Glyph does not provide any native way to format text and pages. The reason is that there's absolutely no need for that: CSS does the job just fine. In particular, CSS3 offers specific attributes and elements that can be used specifically for paginated documents. That's no replacement for LaTeX by any means, but it is enough if you're not looking for advanced typographical features.</p>
+  <p>You can embed CSS files using the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro, like this:</p>
+  <p>
+<code> style[default.css] </code>
 </p>
-	<p>In this case, the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro looks for a <code>default.css</code> file in the <code>/styles</code> folder of your Glyph project <em>and</em> among the default Glyph stylesheets, and embeds it within a <code>&lt;style&gt;</code> tag. If you supply a file with a <code>.sass</code> or <code>.scss</code> extension, it will interpret it as a Sass file and convert it to <span class="caps">CSS</span> automatically (if the <em>Haml</em> gem is installed).</p>
-	<aside class="tip">
+  <p>In this case, the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro looks for a <code>default.css</code> file in the <code>/styles</code> folder of your Glyph project <em>and</em> among the default Glyph stylesheets, and embeds it within a <code>&lt;style&gt;</code> tag. If you supply a file with a <code>.sass</code> or <code>.scss</code> extension, it will interpret it as a Sass file and convert it to <span class="caps">CSS</span> automatically (if the <em>Haml</em> gem is installed).</p>
+  <aside class="tip">
 <span class="note-title">Tip</span>By default, stylesheets are embedded within text files. If necessary, you can choose to link them or import them by changing the values of the <a href="/glyph/book/config/document.html#s_document_styles"><code>document.styles</code></a> setting.
 
 </aside>
-	<section class="section">
+  <section class="section">
 <header><h1 id="default_stylesheets">Default Stylesheets</h1></header>
 <p>Glyph provides the following default stylesheets, that can be referenced directly using the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro:</p>
-		<table><tr><th>File name</th>
-				<th>Notes</th></tr>
-			<tr><td>
+    <table>
+      <tr>
+        <th>File name</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>
 <code>default.css</code>
 </td>
-				<td>The stylesheet used for this book.</td></tr>
-			<tr><td>
+        <td>The stylesheet used for this book.</td>
+      </tr>
+      <tr>
+        <td>
 <code>pagination.css</code>
 </td>
-				<td>A CSS3-compliant stylesheet used for pagination, suitable for PDF generation using <a href="http://www.princexml.com/">Prince</a>.</td></tr>
-			<tr><td>
+        <td>A CSS3-compliant stylesheet used for pagination, suitable for PDF generation using <a href="http://www.princexml.com/">Prince</a>.</td>
+      </tr>
+      <tr>
+        <td>
 <code>coderay.css</code>
 </td>
-				<td>The default <a href="http://coderay.rubychan.de/">Coderay</a> stylesheet, used for syntax highlighting.</td></tr>
-			<tr><td>
+        <td>The default <a href="http://coderay.rubychan.de/">Coderay</a> stylesheet, used for syntax highlighting.</td>
+      </tr>
+      <tr>
+        <td>
 <code>ultraviolet/*</code>
 </td>
-				<td>This folder contains the following <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> stylesheets, used for syntax highlighting: <code>active4d.css, all_hallows_eve.css, amy.css, blackboard.css, brilliance_black.css, brilliance_dull.css, cobalt.css, dawn.css, eiffel.css, espresso_libre.css, idle.css, iplastic.css, lazy.css, mac_classic.css, magicwb_amiga.css, pastels_on_dark.css, slush_poppies.css, spacecadet.css, sunburst.css, twilight.css, zenburnesque.css</code></td></tr></table>
+        <td>This folder contains the following <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> stylesheets, used for syntax highlighting: <code>
+active4d.css, all_hallows_eve.css, amy.css, blackboard.css, brilliance_black.css, brilliance_dull.css, cobalt.css, dawn.css, eiffel.css, espresso_libre.css, idle.css, iplastic.css, lazy.css, mac_classic.css, magicwb_amiga.css, pastels_on_dark.css, slush_poppies.css, spacecadet.css, sunburst.css, twilight.css, zenburnesque.css
+</code></td>
+      </tr>
+    </table>
 
 </section>
-							<nav><a href="/glyph/book/text_editing/xml_fallback.html">XML Fallback &larr;</a><a href="/glyph/book/index.html">Contents</a><a href="/glyph/book/text_editing/inclusions.html">&rarr; Including Files and Snippets</a></nav>
-				</section> 
-			</article> 
-
-
-			<footer> 
-				<section class="ads"> 
+							<nav class="navigation"><a href="/glyph/book/text_editing/xml_fallback.html">XML Fallback</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/inclusions.html">Content Reuse</a></nav>
+										<nav id="sharing-buttons">
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<g:plusone size="medium"></g:plusone>
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</nav>
+					</section>
+				</article>
+					
+			
+			<footer>
+				<section class="ads">
 					<script type="text/javascript"><!--
 						google_ad_client = "pub-2871497824158668";
 						/* 728x90, created 9/10/10 */
@@ -108,50 +138,40 @@
 						google_ad_width = 728;
 						google_ad_height = 90;
 						//-->
-					</script> 
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
-					</script> 
-				</section> 
-				<section> 
-					<nav> 
-						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a> 
-					</nav> 
-					<p>H3RALD Web Site v8.1 &mdash; &copy; 2010 &mdash; <em>Fabio Cevasco</em></p> 
-				</section> 
-			</footer> 
-		</section><!-- #container end --> 
-		<script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script> 
-		<!-- <script src="/js/jquery.js" type="text/javascript"></script> --> 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
-		<script src="/js/jquery-timeago.js" type="text/javascript"></script> 
-		<script src="/js/jquery-easing.js" type="text/javascript"></script> 
-		<script src="/js/jquery-fancybox.js" type="text/javascript"></script> 
-		<script src="/js/jquery-toc.js" type="text/javascript"></script> 
-		<script src="/js/date.js" type="text/javascript"></script> 
-		<script src="/js/feeds.js" type="text/javascript"></script> 
-		<script src="/js/search.js" type="text/javascript"></script> 
-		<script src="/js/hyphenator.js" type="text/javascript"></script> 
-		<script src="/js/init.js" type="text/javascript"></script> 
-		<!-- Start Google Analytics --> 
-		<script type="text/javascript"> 
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-18587377-1']);
-			_gaq.push(['_trackPageview']);
+					</script>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+				</section>
+				<section>
+					<nav>
+						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
+					</nav>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+				</section>
+			</footer>
+		</section><!-- #container end -->
+		
+		
+ <!-- Start Google Analytics --> 
+ <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18587377-1']);
+  _gaq.push(['_trackPageview']);
 
-			(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script> 
-		<!-- End Google Analytics --> 
-		<!-- Start of StatCounter Code --> 
-		<script type="text/javascript"> 
-			var sc_project=6193656; 
-			var sc_invisible=1; 
-			var sc_security="57f7ee2a"; 
-		</script> 
-		<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> 
-		<!-- End of StatCounter Code --> 
-	</body> 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ </script> 
+ <!-- End Google Analytics --> 
+ <!-- Start of StatCounter Code --> 
+  <script type="text/javascript"> 
+	var sc_project=6193656; 
+	var sc_invisible=1; 
+	var sc_security="57f7ee2a"; 
+	</script> 
+	<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> 
+	<!-- End of StatCounter Code --> 
+	</body>
 </html>
