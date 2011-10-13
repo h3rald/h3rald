@@ -109,7 +109,7 @@ To sum up:
 * If you want to render raw XML tags, use @xml/tag_name@ instead of @=tag_name@.
 * No more @match@ macro, use @s/match@ instead.
 
-For the full list of the issues fixed in this release, see the =>[http://localhost:8080/glyph/book/changelog.html|Changelog].
+For the full list of the issues fixed in this release, see the =>[http://www.h3rald.com/glyph/book/changelog.html|Changelog].
 
 Hope you'll enjoy this new release of Glyph. If you want to contribute, go ahead and =>[https://github.com/h3rald/glyph|fork the repo]!
 ]
