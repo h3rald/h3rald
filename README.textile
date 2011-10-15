@@ -22,11 +22,11 @@ The following ruby libraries (gems) are used to compile this web site:
 * *"extlib":http://rubygems.org/gems/extlib*, in some custom Rake tasks
 * *"bb-ruby":http://rubygems.org/gems/bb-ruby*, for the BBCode filter
 * *"builder":http://rubygems.org/gems/builder/*, to create RSS and ATOM feeds
-* *"haml":http://rubygems.org/gems/haml/*, for the SASS filter
+* *"sass":http://rubygems.org/gems/sass/*, for the SASS filter
 * *"coderay":http://rubygems.org/gems/coderay/*, for syntax highlighting
 * *"glyph":http://rubygems.org/gems/glyph*, for the Glyph filter
 
-Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://www.typosphere.org:
+Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by the Typo blogging engine:
 * *"mysql":http://rubyforge.org/projects/mysql/*
 * *"sequel":http://rubyforge.org/projects/sequel/*
 
@@ -37,4 +37,4 @@ Special thanks to the following people, who made this web site possible:
 
 * "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "nanoc":http://nanoc.stoneship.org/ site publishing system.
 * "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo and the navigation buttons.
-* The creators of the free "Gentium":http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=gentium font, used throughout the web site.
+* The creators of the free "Crimson Text":http://aldusleaf.org/crimson/ font, used throughout the web site.
