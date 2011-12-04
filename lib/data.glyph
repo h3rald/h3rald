@@ -3,7 +3,6 @@
 --[-------------------- Macros --------------------------]
 def:[h3rald.article|
 	article[
-		@pubdate[$[document.date]]
 		@head[
 			style[default.css]
 			style[pagination.css]

@@ -23,15 +23,15 @@ The following ruby libraries (gems) are used to compile this web site:
 
 * *"nanoc":http://rubygems.org/gems/nanoc*, to generate the entire web site
 * *"Extlib":http://rubygems.org/gems/extlib*, in some custom Rake tasks
-* *"BB-Ruby":http://rubygems.org/gems/bb-ruby*, for the BBCode filter
+* *"BB-Ruby":http://rubygems.org/gems/bb-ruby*, for BBCode support
 * *"Builder":http://rubygems.org/gems/builder/*, to create RSS and ATOM feeds
 * *"Sass":http://sass-lang.com/*, for the SASS filter
 * *"CodeRay":http://rubygems.org/gems/coderay/*, for syntax highlighting
 * *"RedCloth":http://rubygems.org/gems/redcloth/*, for Textile support
 * *"BlueCloth":http://rubygems.org/gems/bluecloth/*, for Markdown support
-* *"Glyph":http://rubygems.org/gems/glyph*, for the Glyph filter
+* *"Glyph":http://rubygems.org/gems/glyph*, for the Glyph support
 
-Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://www.typosphere.org:
+Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://blog.typosphere.org:
 * *"MySQL":http://rubyforge.org/projects/mysql/*
 * *"Sequel":http://rubyforge.org/projects/sequel/*
 
@@ -41,5 +41,5 @@ h3. Credits
 Special thanks to the following people, who made this web site possible:
 
 * "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "nanoc":http://nanoc.stoneship.org/ site publishing system.
-* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo and the navigation buttons.
-* The creators of the free "Gentium":http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=gentium font, used throughout the web site.
+* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo.
+* Sebastian Kosch, creator of the "Crimson Text":http://aldusleaf.org/ font, used throughout the web site.

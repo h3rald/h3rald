@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -81,27 +81,30 @@
 The following Glyph code:
 </p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> This is a link to link[#test].
-<span class="no">2</span> ...
-<span class="no">3</span> This is link[#wrong].
-<span class="no">4</span> This is a #[test|test anchor].</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>This is a link to link[#test].
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>...
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>This is link[#wrong].
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>This is a #[test|test anchor].
+</pre></div>
 </div>
 
 		<p>
 Is translated into the following HTML code:
 </p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> <span class="ta">&lt;p&gt;</span>This is a link to <span class="ta">&lt;a</span> <span class="an">href</span>=<span class="s"><span class="dl">&quot;</span><span class="k">#test</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>test anchor<span class="ta">&lt;/a&gt;</span>.<span class="ta">&lt;/p&gt;</span>
-<span class="no">2</span> <span class="ta">&lt;p&gt;</span>...<span class="ta">&lt;/p&gt;</span>
-<span class="no">3</span> <span class="ta">&lt;p&gt;</span>This is <span class="ta">&lt;a</span> <span class="an">href</span>=<span class="s"><span class="dl">&quot;</span><span class="k">#wrong</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>#wrong<span class="ta">&lt;/a&gt;</span>.<span class="ta">&lt;/p&gt;</span>
-<span class="no">4</span> <span class="ta">&lt;p&gt;</span>This is a <span class="ta">&lt;a</span> <span class="an">id</span>=<span class="s"><span class="dl">&quot;</span><span class="k">test</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>test anchor<span class="ta">&lt;/a&gt;</span>.<span class="ta">&lt;/p&gt;</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;p&gt;</span>This is a link to <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>test anchor<span class="tag">&lt;/a&gt;</span>.<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;p&gt;</span>...<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span class="tag">&lt;p&gt;</span>This is <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#wrong</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>#wrong<span class="tag">&lt;/a&gt;</span>.<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="tag">&lt;p&gt;</span>This is a <span class="tag">&lt;a</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>test anchor<span class="tag">&lt;/a&gt;</span>.<span class="tag">&lt;/p&gt;</span>
+</pre></div>
 </div>
 
 		<p>Additionally, the following warning message is displayed when <a href="/glyph/book/compiling/compiling.html#compile">compiling</a>:</p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> warning: Bookmark 'wrong' does not exist
-<span class="no">2</span>  -<span class="er">&gt;</span> source: @: authoring.textile
-<span class="no">3</span>  -<span class="er">&gt;</span> path: document/body/bodymatter/chapter/@/textile/section/section/box/link</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>warning: Bookmark 'wrong' does not exist
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span> -<span class="error">&gt;</span> source: @: authoring.textile
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span> -<span class="error">&gt;</span> path: document/body/bodymatter/chapter/@/textile/section/section/box/link
+</pre></div>
 </div>
 
 </aside>
@@ -113,11 +116,12 @@ Is translated into the following HTML code:
 </ul>
 <p>Besides using the <a href="/glyph/book/macros/macros_inline.html#m_anchor"><code>anchor</code></a> macro, you can also create an anchor for a header by passing an <code>@id</code> attribute the the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro, like this:</p>
 	<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> section[
-<span class="no">2</span>   @title[My Section]
-<span class="no">3</span>   @id[my_section]
-<span class="no">4</span> ...
-<span class="no">5</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>section[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[My Section]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @id[my_section]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>...
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]
+</pre></div>
 </div>
 
 	<p>By default, validation is only enabled for internal links (i.e. the check occurs if the first parameter of the <a href="/glyph/book/macros/macros_inline.html#m_link"><code>link</code></a> macro starts with a <code>#</code>). You can enable it for external links as well by setting the <a href="/glyph/book/config/options.html#s_options_url_validation"><code>options.url_validation</code></a> setting to <code>true</code>. If URL validation is enabled, an error is returned if a link returns an HTTP status greater than 302.</p>

@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -107,11 +107,12 @@
 <strong>Example</strong>
 </p>
 			<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> markdown_section[
-<span class="no">2</span>   @title[Test Section]
-<span class="no">3</span>   @id[test]
-<span class="no">4</span> Some *markdown* text.
-<span class="no">5</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>markdown_section[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[Test Section]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @id[test]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>Some *markdown* text.
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]
+</pre></div>
 </div>
 
 		</div>
@@ -205,11 +206,12 @@
 <strong>Example</strong>
 </p>
 			<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> textile_section[
-<span class="no">2</span>   @title[Test Section]
-<span class="no">3</span>   @id[test]
-<span class="no">4</span> Some *textile* text.
-<span class="no">5</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>textile_section[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[Test Section]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @id[test]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>Some *textile* text.
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]
+</pre></div>
 </div>
 
 		</div>
@@ -274,11 +276,12 @@
 <strong>Example</strong>
 </p>
 			<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> highlight[ruby|
-<span class="no">2</span>   def hello
-<span class="no">3</span>     puts &quot;Hello World&quot;
-<span class="no">4</span>   end
-<span class="no">5</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>highlight[ruby|
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  def hello
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    puts &quot;Hello World&quot;
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  end
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]
+</pre></div>
 </div>
 
 		</div>

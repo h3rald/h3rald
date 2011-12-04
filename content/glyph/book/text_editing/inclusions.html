@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -91,27 +91,20 @@
 <p>While including the context of an entire file is definitely a useful feature for content reuse, sometimes it can be an overkill. What if, for example, you just want to reuse a short procedure or even a sentence or a single word? In this case, you may want to consider using a <em>snippet</em> instead.</p>
 <p>Snippets can be defined using the <a href="/glyph/book/macros/macros_core.html#m_snippet_"><code>snippet:</code></a> macro (aliased by <code>&amp;:</code>) and called by using the <a href="/glyph/book/macros/macros_core.html#m_snippet"><code>snippet</code></a> macro (aliased by <code>&amp;</code>). Consider the following simple example:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> <span class="er">&amp;</span>:[markups|Textile or Markdown]
-<span class="no">2</span> 
-<span class="no">3</span> Glyph supports <span class="er">&amp;</span>[markups].</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="error">&amp;</span>:[markups|Textile or Markdown]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>Glyph supports <span class="error">&amp;</span>[markups].
+</pre></div>
 </div>
 
     <p>You can use <code>&amp;[markups]</code> anywhere in your document instead of having to type "Textile or Markdown" every time. Additionally, later on you can change the value of the  <code>markups</code> to change it everywhere else in the document.</p>
+
+</section> 
     <aside class="tip">
 <span class="note-title">Tip</span>Snippets (or any other macro) can be nested within other snippets. Glyph takes care of checking if you nested snippets or macros mutually and warns you as necessary.
 
 </aside>
-
-</section>
-  <section class="section">
-<header><h1 id="fragments">Fragments</h1></header>
-<p>As an even simpler alternative to snippets, consider using <em>fragments</em>. The <a href="/glyph/book/macros/macros_core.html#m_fragment"><code>fragment</code></a> macro (aliased by <code>##</code>) can be used to mark a section of Glyph code as a fragment that can then be <em>embedded</em> using the <a href="/glyph/book/macros/macros_core.html#m_embed"><code>embed</code></a> macro (aliased by <code>&lt;=</code>), like this:</p>
-    
-    <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> Snippets and fragments ##[good_way|are a good way to reuse] small chunks of content, while the include and load macros <span class="er">&lt;</span>=[good_way] entire files.</pre></div>
-</div>
-
-</section>
+  
 							<nav class="navigation"><a href="/glyph/book/text_editing/stylesheets.html">Adding Stylesheets</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/conditionals.html">Conditional Macros</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>

@@ -32,7 +32,6 @@ namespace :site do
 
 	task :tags do
 		site = Nanoc3::Site.new('.')
-		site.load_data
 		dir = Pathname(Dir.pwd)/'content/tags'
 		tags = {}
 		# Collect tag and page data
@@ -67,7 +66,6 @@ namespace :site do
 
 	task :archives do
 		site = Nanoc3::Site.new('.')
-		site.load_data
 		dir = Pathname(Dir.pwd)/'content/archives'
 		dir.rmtree if dir.exist?
 		dir.mkpath

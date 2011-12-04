@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -67,46 +67,47 @@
 							<nav class="navigation"><a href="/glyph/book/stats/stats.html">Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics</a></nav>
 							
   <section class="section">
-<header><h1 id="h_63">Displaying stats about all macros</h1></header>
+<header><h1 id="h_62">Displaying stats about all macros</h1></header>
 <p>To display statistics about all macros, execute <code>glyph stats --macros</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> ===== Macros
-<span class="no"> 2</span> -- Total Macro Instances: 2497
-<span class="no"> 3</span> -- Total Macro Definitions: 65
-<span class="no"> 4</span> -- Total Macro Aliases: 57
-<span class="no"> 5</span> -- Total Used Macro Definitions: 56
-<span class="no"> 6</span> -- Macro Definitions:
-<span class="no"> 7</span>      #<span class="er">&gt;</span>            $<span class="er">&gt;</span>            %<span class="er">&gt;</span>            alias:        aliases       
-<span class="no"> 8</span>      anchor        and           article       author        block_example 
-<span class="no"> 9</span>      book          box           class         codeblock     comment       
-<span class="no"><strong>10</strong></span>      condition     config        config:       config_table  default       
-<span class="no">11</span>      document      draftcomment  eq            error_table   escape        
-<span class="no">12</span>      example       examples      features      figure        fmi           
-<span class="no">13</span>      head          highlight     image         include       issue         
-<span class="no">14</span>      link          macro:        markdown      match         navigation    
-<span class="no">15</span>      not           note          option        or            parameters    
-<span class="no">16</span>      pubdate       ref_config    ref_error     ref_macro     release       
-<span class="no">17</span>      revision      rewrite:      ruby          section       snippet       
-<span class="no">18</span>      snippet:      stats_for     style         subtitle      textile       
-<span class="no">19</span>      title         toc           todo          values        |xml|         
-<span class="no"><strong>20</strong></span> 
-<span class="no">21</span> -- Used Macro Definitions:
-<span class="no">22</span>      #<span class="er">&gt;</span>            $<span class="er">&gt;</span>            %<span class="er">&gt;</span>            aliases       anchor        
-<span class="no">23</span>      and           author        block_example book          box           
-<span class="no">24</span>      class         codeblock     comment       condition     config        
-<span class="no">25</span>      config_table  default       document      eq            error_table   
-<span class="no">26</span>      escape        example       examples      features      figure        
-<span class="no">27</span>      fmi           head          highlight     image         include       
-<span class="no">28</span>      issue         link          note          option        or            
-<span class="no">29</span>      parameters    pubdate       ref_config    ref_error     ref_macro     
-<span class="no"><strong>30</strong></span>      release       revision      rewrite:      ruby          section       
-<span class="no">31</span>      snippet       snippet:      stats_for     style         subtitle      
-<span class="no">32</span>      textile       title         toc           todo          values        
-<span class="no">33</span>      |xml|</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macros
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Macro Instances: 2497
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Total Macro Definitions: 65
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>-- Total Macro Aliases: 57
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>-- Total Used Macro Definitions: 56
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>-- Macro Definitions:
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>     #<span class="error">&gt;</span>            $<span class="error">&gt;</span>            %<span class="error">&gt;</span>            alias:        aliases       
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>     anchor        and           article       author        block_example 
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>     book          box           class         codeblock     comment       
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>     condition     config        config:       config_table  default       
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>     document      draftcomment  eq            error_table   escape        
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>     example       examples      features      figure        fmi           
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>     head          highlight     image         include       issue         
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>     link          macro:        markdown      match         navigation    
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>     not           note          option        or            parameters    
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>     pubdate       ref_config    ref_error     ref_macro     release       
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>     revision      rewrite:      ruby          section       snippet       
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>     snippet:      stats_for     style         subtitle      textile       
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>     title         toc           todo          values        |xml|         
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>-- Used Macro Definitions:
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>     #<span class="error">&gt;</span>            $<span class="error">&gt;</span>            %<span class="error">&gt;</span>            aliases       anchor        
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>     and           author        block_example book          box           
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>     class         codeblock     comment       condition     config        
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>     config_table  default       document      eq            error_table   
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>     escape        example       examples      features      figure        
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>     fmi           head          highlight     image         include       
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>     issue         link          note          option        or            
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>     parameters    pubdate       ref_config    ref_error     ref_macro     
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>     release       revision      rewrite:      ruby          section       
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>     snippet       snippet:      stats_for     style         subtitle      
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>     textile       title         toc           todo          values        
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>     |xml|
+</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_64">Remarks</h1></header>
+<header><h1 id="h_63">Remarks</h1></header>
 <ul>
 	<li>Only macro <em>definitions</em> (not their <em>aliases</em>) are displayed, both default and user-defined.</li>
 	<li>The <code>|xml|</code> macro is a special macro used if the <a href="/glyph/book/config/options.html#s_options_xml_fallback"><code>options.xml_fallback</code></a> setting is enabled.</li>
@@ -118,29 +119,30 @@
 </section>
 
   <section class="section">
-<header><h1 id="h_65">Displaying stats about a single macro</h1></header>
+<header><h1 id="h_64">Displaying stats about a single macro</h1></header>
 <p>To display statistics about a single macro (e.g. <code>note</code>), execute <code>glyph stats --macro=note</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> ===== Macro 'note' 
-<span class="no"> 2</span> -- Total Instances: 18
-<span class="no"> 3</span> -- Occurrences:
-<span class="no"> 4</span>    - text/compiling/compiling.glyph (2)
-<span class="no"> 5</span>    - text/compiling/programmatic_usage.glyph (1)
-<span class="no"> 6</span>    - text/extending/params_attrs.glyph (1)
-<span class="no"> 7</span>    - text/getting_started/configuration.glyph (1)
-<span class="no"> 8</span>    - text/stats/macros.glyph (2)
-<span class="no"> 9</span>    - text/text_editing/attribute_intro.glyph (1)
-<span class="no"><strong>10</strong></span>    - text/text_editing/esc_quot.glyph (1)
-<span class="no">11</span>    - text/text_editing/images.glyph (1)
-<span class="no">12</span>    - text/text_editing/inclusions.glyph (3)
-<span class="no">13</span>    - text/text_editing/links.glyph (1)
-<span class="no">14</span>    - text/text_editing/raw_html.glyph (1)
-<span class="no">15</span>    - text/text_editing/section_aliases.glyph (1)
-<span class="no">16</span>    - text/text_editing/xml_fallback.glyph (2)</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macro 'note' 
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Instances: 18
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Occurrences:
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>   - text/compiling/compiling.glyph (2)
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>   - text/compiling/programmatic_usage.glyph (1)
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>   - text/extending/params_attrs.glyph (1)
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>   - text/getting_started/configuration.glyph (1)
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>   - text/stats/macros.glyph (2)
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>   - text/text_editing/attribute_intro.glyph (1)
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>   - text/text_editing/esc_quot.glyph (1)
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>   - text/text_editing/images.glyph (1)
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>   - text/text_editing/inclusions.glyph (3)
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>   - text/text_editing/links.glyph (1)
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>   - text/text_editing/raw_html.glyph (1)
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>   - text/text_editing/section_aliases.glyph (1)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - text/text_editing/xml_fallback.glyph (2)
+</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_66">Remarks</h1></header>
+<header><h1 id="h_65">Remarks</h1></header>
 <ul>
 	<li>All the instances of the specified macro definition <em>and all its aliases</em> are collected, regardless whether a definition or an alias is specified.</li>
 	<li>If you use custom macros, make sure they call the <a href="http://rubydoc.info/gems/glyph/Glyph/Macro:update_source">Macro#update_source</a> appropriately method if necessary.</li>

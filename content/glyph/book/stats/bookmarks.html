@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -67,36 +67,37 @@
 							<nav class="navigation"><a href="/glyph/book/stats/snippets.html">Snippet Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/links.html">Link Statistics</a></nav>
 							
   <section class="section">
-<header><h1 id="h_73">Displaying stats about all bookmarks</h1></header>
+<header><h1 id="h_72">Displaying stats about all bookmarks</h1></header>
 <p>To display statistics about all bookmarks, execute <code>glyph stats --bookmarks</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> ===== Bookmarks
-<span class="no"> 2</span> -- Total Bookmarks: 241
-<span class="no"> 3</span> -- Total Referenced Bookmarks: 89
-<span class="no"> 4</span> -- Total Unreferenced Bookmarks: 155
-<span class="no"> 5</span> -- Bookmarks:
-<span class="no"> 6</span>      attribute_intro  auto_regeneration   c_add      c_compile  c_config                           
-<span class="no"> 7</span>      c_help           c_init              c_outline  c_todo     cfg                                
-<span class="no"> 8</span>      cfg_document     cfg_filters         cfg_ref    cmd_ref    compile  
-<span class="no"> 9</span> [...]
-<span class="no"><strong>10</strong></span> -- Referenced Bookmarks:
-<span class="no">11</span>    - attribute_intro (1)
-<span class="no">12</span>    - auto_regeneration (2)
-<span class="no">13</span>    - c_add (2)
-<span class="no">14</span>    - c_compile (10)
-<span class="no">15</span>    - c_config (6)
-<span class="no">16</span>    - c_init (1)
-<span class="no">17</span>    - c_outline (1)
-<span class="no">18</span> [...]
-<span class="no">19</span> -- Unreferenced Bookmarks:
-<span class="no"><strong>20</strong></span>      c_help     cmd_ref    expanded_values        extending     h_1                                
-<span class="no">21</span>      h_10       h_102      h_105                  h_107         h_109                              
-<span class="no">22</span>      h_111      h_112      h_114                  h_115         h_117    
-<span class="no">23</span> [...]</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Bookmarks
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Bookmarks: 241
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Total Referenced Bookmarks: 89
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>-- Total Unreferenced Bookmarks: 155
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>-- Bookmarks:
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>     attribute_intro  auto_regeneration   c_add      c_compile  c_config                           
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>     c_help           c_init              c_outline  c_todo     cfg                                
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>     cfg_document     cfg_filters         cfg_ref    cmd_ref    compile  
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>[...]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>-- Referenced Bookmarks:
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>   - attribute_intro (1)
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>   - auto_regeneration (2)
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>   - c_add (2)
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>   - c_compile (10)
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>   - c_config (6)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - c_init (1)
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>   - c_outline (1)
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>[...]
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>-- Unreferenced Bookmarks:
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>     c_help     cmd_ref    expanded_values        extending     h_1                                
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>     h_10       h_102      h_105                  h_107         h_109                              
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>     h_111      h_112      h_114                  h_115         h_117    
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>[...]
+</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_74">Remarks</h1></header>
+<header><h1 id="h_73">Remarks</h1></header>
 <ul>
 	<li>All the automatically-generated bookmarks (like headers, starting with <code>h_</code>) are included as well.</li>
 </ul>
@@ -106,19 +107,20 @@
 </section>
 
   <section class="section">
-<header><h1 id="h_75">Displaying stats about a single bookmark</h1></header>
+<header><h1 id="h_74">Displaying stats about a single bookmark</h1></header>
 <p>To display statistics about a single bookmark (e.g. <code>rubydoc</code>), execute <code>glyph stats --bookmark=c_config</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> ===== Bookmark 'c_config' (header)
-<span class="no">2</span> -- Defined in: text/ref_commands.glyph
-<span class="no">3</span> -- Referenced in:
-<span class="no">4</span>    - text/changelog.glyph (2)
-<span class="no">5</span>    - text/getting_started/configuration.glyph (1)
-<span class="no">6</span>    - text/troubleshooting/errors_command.glyph (3)</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>===== Bookmark 'c_config' (header)
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>-- Defined in: text/ref_commands.glyph
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>-- Referenced in:
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>   - text/changelog.glyph (2)
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>   - text/getting_started/configuration.glyph (1)
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>   - text/troubleshooting/errors_command.glyph (3)
+</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_76">Remarks</h1></header>
+<header><h1 id="h_75">Remarks</h1></header>
 <ul>
 	<li>Do not prepend the bookmark ID with <code>#</code>.</li>
 </ul>

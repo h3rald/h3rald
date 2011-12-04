@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -72,24 +72,25 @@
 </ul>
 <p>Layouts are nothing more than &#8220;fancy&#8221; Glyph macros defined using the Glyph language (i.e. by using <a href="/glyph/book/extending/interpreting.html#rewriting">macro rewriting</a>) within a single <code>.glyph</code> file.</p>
 <section class="section">
-<header><h1 id="h_97">Topic Layout</h1></header>
+<header><h1 id="h_96">Topic Layout</h1></header>
 <p>The default layout used to render all web topics (the layout used for web5 topics is very similar) is defined as follows:</p>
 	<div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> document[
-<span class="no"> 2</span>   head[
-<span class="no"> 3</span>     style[default.css]
-<span class="no"> 4</span>   ]
-<span class="no"> 5</span>   body[
-<span class="no"> 6</span>     @class[topic]
-<span class="no"> 7</span>     section[
-<span class="no"> 8</span>       @title[{{title}}]
-<span class="no"> 9</span>       @id[{{id}}]
-<span class="no"><strong>10</strong></span>       navigation[{{id}}]
-<span class="no">11</span> {{contents}}
-<span class="no">12</span>       navigation[{{id}}]
-<span class="no">13</span>     ]
-<span class="no">14</span>   ]
-<span class="no">15</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>document[
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  head[
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    style[default.css]
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  ]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  body[
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    @class[topic]
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    section[
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      @title[{{title}}]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>      @id[{{id}}]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      navigation[{{id}}]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>{{contents}}
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>      navigation[{{id}}]
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    ]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  ]
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>]
+</pre></div>
 </div>
 
 	<p>Note that it takes the following attributes, passed automatically by Glyph when processing each topic:</p>
@@ -104,29 +105,30 @@
 <header><h1 id="index_layout">Index Layout</h1></header>
 <p>The default layout used to render the web index page (the layout used for the web5 index is very similar) is defined as follows:</p>
 	<div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> document[
-<span class="no"> 2</span>   head[
-<span class="no"> 3</span>     style[default.css]
-<span class="no"> 4</span>   ]
-<span class="no"> 5</span>   body[
-<span class="no"> 6</span>     @class[topic]
-<span class="no"> 7</span>     halftitlepage[
-<span class="no"> 8</span>       title[]
-<span class="no"> 9</span>       subtitle[]
-<span class="no"><strong>10</strong></span>       author[]
-<span class="no">11</span>     ]
-<span class="no">12</span>     frontmatter[
-<span class="no">13</span>       toc[]
-<span class="no">14</span>     ]
-<span class="no">15</span>   ]
-<span class="no">16</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>document[
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  head[
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    style[default.css]
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>  ]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>  body[
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    @class[topic]
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    halftitlepage[
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      title[]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>      subtitle[]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      author[]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    ]
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    frontmatter[
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>      toc[]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    ]
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  ]
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>]
+</pre></div>
 </div>
 
 	<p>Index layouts do not take any attribute or parameter (basically because they are used to produce only one page).</p>
 
 </section>
 <section class="section">
-<header><h1 id="h_99">Creating a Custom Layout</h1></header>
+<header><h1 id="h_98">Creating a Custom Layout</h1></header>
 <p>To create a custom layout, proceed as follows:</p>
 <ul>
 	<li>Create a <code>.glyph</code> file in the <code>lib/layouts</code> directory, within your project, e.g. <code>mytopic.glyph</code></li>

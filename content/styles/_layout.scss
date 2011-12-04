@@ -3,6 +3,7 @@
 body {
 	@include standard-font;
 	background: #000;
+  background-image: url("../images/textures/dark_leather.png");
 }
 
 #container {
@@ -11,6 +12,7 @@ body {
 	padding: 5px;
 	color: $dark-gray;
 	background: #fff;
+  background-image: url("../images/textures/handmadepaper.png");
 	@include border-radius(10px);
 }
 

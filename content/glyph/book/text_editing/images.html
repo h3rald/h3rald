@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -73,24 +73,26 @@
 The following Glyph code:
 </p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> image[glyph.svg
-<span class="no">2</span>   @with[20%]
-<span class="no">3</span>   @height[20%]
-<span class="no">4</span> ]
-<span class="no">5</span> figure[example.png|An example figure.
-<span class="no">6</span>   @alt[Example Figure]
-<span class="no">7</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>image[glyph.svg
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @with[20%]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @height[20%]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>figure[example.png|An example figure.
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  @alt[Example Figure]
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]
+</pre></div>
 </div>
 
 		<p>
 Is translated into the following HTML code:
 </p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> <span class="ta">&lt;img</span> <span class="an">src</span>=<span class="s"><span class="dl">&quot;</span><span class="k">images/glyph.svg</span><span class="dl">&quot;</span></span> <span class="an">width</span>=<span class="s"><span class="dl">&quot;</span><span class="k">20%</span><span class="dl">&quot;</span></span> <span class="an">height</span>=<span class="s"><span class="dl">&quot;</span><span class="k">20%</span><span class="dl">&quot;</span></span> <span class="ta">/&gt;</span>
-<span class="no">2</span> <span class="ta">&lt;div</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">figure</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>
-<span class="no">3</span>   <span class="ta">&lt;img</span> <span class="an">src</span>=<span class="s"><span class="dl">&quot;</span><span class="k">images/example.png</span><span class="dl">&quot;</span></span> <span class="an">alt</span>=<span class="s"><span class="dl">&quot;</span><span class="k">Example Figure</span><span class="dl">&quot;</span></span><span class="ta">/&gt;</span>
-<span class="no">4</span>   <span class="ta">&lt;div</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">caption</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>An example figure.<span class="ta">&lt;/div&gt;</span>
-<span class="no">5</span> <span class="ta">&lt;/div&gt;</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">images/glyph.svg</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">width</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20%</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20%</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">figure</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">images/example.png</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">alt</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Example Figure</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">caption</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>An example figure.<span class="tag">&lt;/div&gt;</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;/div&gt;</span>
+</pre></div>
 </div>
 
 		<p>Any attribute passed to the <a href="/glyph/book/macros/macros_block.html#m_image"><code>image</code></a> macro or the <a href="/glyph/book/macros/macros_block.html#m_figure"><code>figure</code></a> macro is automatically passed to the underlying <code>&lt;img&gt;</code> tag.</p>

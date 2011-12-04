@@ -1,6 +1,6 @@
 class Nanoc3::RuleContext
 
-	require 'glyph'
+  require 'glyph'
 
 	def glyph_config(item)
 		Glyph['document.intro'] = RedCloth.new("#{item[:intro]}\n\n#{item[:extended_intro]}").to_html
@@ -26,7 +26,8 @@ class Nanoc3::RuleContext
 		# Write the new raw file using Glyph's file_write method
 		Glyph.file_write f, doc
 		# Now compile the PDF (works if Prince is installed)
-		Glyph.compile f.to_s
+      Glyph.debug_mode = true
+      Glyph.compile f.to_s
 		begin
 			f.unlink
 			Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink

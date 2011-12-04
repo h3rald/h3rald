@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -69,22 +69,23 @@
 <p>Glyph includes a <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command that can be used to display useful statistics about your Glyph project. If you try running Glyph's command help, you'll see that this command can take quite a few options:
 </p>
 <div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> $ glyph help stats
-<span class="no"> 2</span> Glyph v0.5.0
-<span class="no"> 3</span> 
-<span class="no"> 4</span> stats [options] 
-<span class="no"> 5</span>     Display statistics
-<span class="no"> 6</span> 
-<span class="no"> 7</span> Options:
-<span class="no"> 8</span>     -b, --bookmarks - Display stats about bookmarks
-<span class="no"> 9</span>     --bookmark=arg  - Display stats about a single bookmark
-<span class="no"><strong>10</strong></span>     -f, --files     - Display stats about project files
-<span class="no">11</span>     -l, --links     - Display stats about links
-<span class="no">12</span>     --link=arg      - Display stats about links matching a regular expression
-<span class="no">13</span>     -m, --macros    - Display stats about macros
-<span class="no">14</span>     --macro=arg     - Display stats about a single macro
-<span class="no">15</span>     -s, --snippets  - Display stats about snippets
-<span class="no">16</span>     --snippet=arg   - Display stats about a single snippet</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>$ glyph help stats
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>Glyph v0.5.0
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>stats [options] 
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    Display statistics
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>Options:
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    -b, --bookmarks - Display stats about bookmarks
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    --bookmark=arg  - Display stats about a single bookmark
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    -f, --files     - Display stats about project files
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>    -l, --links     - Display stats about links
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>    --link=arg      - Display stats about links matching a regular expression
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    -m, --macros    - Display stats about macros
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    --macro=arg     - Display stats about a single macro
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    -s, --snippets  - Display stats about snippets
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    --snippet=arg   - Display stats about a single snippet
+</pre></div>
 </div>
 
 <p>If no options are specified, the command returns a summary containing different element totals, i.e.:</p>
@@ -97,37 +98,38 @@
 </ul>
 <p>Example:</p>
 <div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> =====================================
-<span class="no"> 2</span> Glyph - Statistics
-<span class="no"> 3</span> =====================================
-<span class="no"> 4</span> 
-<span class="no"> 5</span> ===== Files
-<span class="no"> 6</span> -- Total Files: 50
-<span class="no"> 7</span> -- /text    -- 46
-<span class="no"> 8</span> -- /images  -- 3
-<span class="no"> 9</span> -- /styles  -- 0
-<span class="no"><strong>10</strong></span> -- /layouts -- 0
-<span class="no">11</span> -- /lib     -- 1
-<span class="no">12</span> 
-<span class="no">13</span> ===== Macros
-<span class="no">14</span> -- Total Macro Instances: 2950
-<span class="no">15</span> -- Total Macro Definitions: 22
-<span class="no">16</span> -- Total Macro Aliases: 57
-<span class="no">17</span> -- Total Used Macro Definitions: 60
-<span class="no">18</span> 
-<span class="no">19</span> ===== Snippets
-<span class="no"><strong>20</strong></span> -- Total Snippets: 21
-<span class="no">21</span> -- Total Used Snippets: 21
-<span class="no">22</span> -- Total Unused Snippets: 0
-<span class="no">23</span> 
-<span class="no">24</span> ===== Bookmarks
-<span class="no">25</span> -- Total Bookmarks: 221
-<span class="no">26</span> -- Total Referenced Bookmarks: 87
-<span class="no">27</span> -- Total Unreferenced Bookmarks: 135
-<span class="no">28</span> 
-<span class="no">29</span> ===== Links
-<span class="no"><strong>30</strong></span> -- Total Internal Links: 87
-<span class="no">31</span> -- Total External Links: 97</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>=====================================
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>Glyph - Statistics
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>=====================================
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>===== Files
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>-- Total Files: 50
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>-- /text    -- 46
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>-- /images  -- 3
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>-- /styles  -- 0
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>-- /layouts -- 0
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>-- /lib     -- 1
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>===== Macros
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>-- Total Macro Instances: 2950
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>-- Total Macro Definitions: 22
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>-- Total Macro Aliases: 57
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>-- Total Used Macro Definitions: 60
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>===== Snippets
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>-- Total Snippets: 21
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>-- Total Used Snippets: 21
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>-- Total Unused Snippets: 0
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>===== Bookmarks
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>-- Total Bookmarks: 221
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>-- Total Referenced Bookmarks: 87
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>-- Total Unreferenced Bookmarks: 135
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>===== Links
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>-- Total Internal Links: 87
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>-- Total External Links: 97
+</pre></div>
 </div>
 
 							<nav class="navigation"><a href="/glyph/book/compiling/programmatic_usage.html">Using Glyph programmatically</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/macros.html">Macro Statistics</a></nav>

@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -75,58 +75,61 @@
 	<li>The <em>Finalization Phase</em> (Post-Processing) starts when the interpreter calls the <code>finalyze</code> method, causing the <code>Glyph::Document</code> object to perform a series of finalizations on the string obtained after analysis, i.e. it replaces escape sequences and placeholders.</li>
 </ul>
   <section class="section">
-<header><h1 id="h_84">Example: A short note</h1></header>
+<header><h1 id="h_83">Example: A short note</h1></header>
 <p>As an example, consider the following Glyph code:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> fmi[something|#test]
-<span class="no">2</span> ...
-<span class="no">3</span> section[
-<span class="no">4</span>   @title[Test Section]
-<span class="no">5</span>   @id[test]
-<span class="no">6</span> ...
-<span class="no">7</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>fmi[something|#test]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>...
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>section[
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  @title[Test Section]
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  @id[test]
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>...
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]
+</pre></div>
 </div>
 
     <p>This simple snippet uses the <a href="/glyph/book/macros/macros_inline.html#m_fmi"><code>fmi</code></a> macro to link to a section later on in the document. When parsed, the produced AST is the following:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> {<span class="sy">:name</span>=&gt;<span class="sy"><span class="sy">:</span><span class="dl">&quot;</span><span class="k">--</span><span class="dl">&quot;</span></span>}
-<span class="no"> 2</span>   {<span class="sy">:name</span>=&gt;<span class="sy">:fmi</span>, <span class="sy">:escape</span>=&gt;<span class="pc">false</span>}
-<span class="no"> 3</span>     {<span class="sy">:name</span>=&gt;<span class="sy"><span class="sy">:</span><span class="dl">&quot;</span><span class="k">0</span><span class="dl">&quot;</span></span>}
-<span class="no"> 4</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="k">something</span><span class="dl">&quot;</span></span>}
-<span class="no"> 5</span>     {<span class="sy">:name</span>=&gt;<span class="sy"><span class="sy">:</span><span class="dl">&quot;</span><span class="k">1</span><span class="dl">&quot;</span></span>}
-<span class="no"> 6</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="k">#test</span><span class="dl">&quot;</span></span>}
-<span class="no"> 7</span>   {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\n</span><span class="dl">&quot;</span></span>}
-<span class="no"> 8</span>   {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\</span><span class="k">[</span><span class="dl">&quot;</span></span>, <span class="sy">:escaped</span>=&gt;<span class="pc">true</span>}
-<span class="no"> 9</span>   {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="k">...</span><span class="dl">&quot;</span></span>}
-<span class="no"><strong>10</strong></span>   {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\</span><span class="k">]</span><span class="dl">&quot;</span></span>, <span class="sy">:escaped</span>=&gt;<span class="pc">true</span>}
-<span class="no">11</span>   {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\n</span><span class="dl">&quot;</span></span>}
-<span class="no">12</span>   {<span class="sy">:name</span>=&gt;<span class="sy">:section</span>, <span class="sy">:escape</span>=&gt;<span class="pc">false</span>}
-<span class="no">13</span>     {<span class="sy">:name</span>=&gt;<span class="sy"><span class="sy">:</span><span class="dl">&quot;</span><span class="k">0</span><span class="dl">&quot;</span></span>}
-<span class="no">14</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\n</span><span class="ch">\t</span><span class="dl">&quot;</span></span>}
-<span class="no">15</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\n</span><span class="ch">\t</span><span class="dl">&quot;</span></span>}
-<span class="no">16</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\n</span><span class="dl">&quot;</span></span>}
-<span class="no">17</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\</span><span class="k">[</span><span class="dl">&quot;</span></span>, <span class="sy">:escaped</span>=&gt;<span class="pc">true</span>}
-<span class="no">18</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="k">...</span><span class="dl">&quot;</span></span>}
-<span class="no">19</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\</span><span class="k">]</span><span class="dl">&quot;</span></span>, <span class="sy">:escaped</span>=&gt;<span class="pc">true</span>}
-<span class="no"><strong>20</strong></span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="ch">\n</span><span class="dl">&quot;</span></span>}
-<span class="no">21</span>     {<span class="sy">:name</span>=&gt;<span class="sy">:title</span>, <span class="sy">:escape</span>=&gt;<span class="pc">false</span>}
-<span class="no">22</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="k">Test Section</span><span class="dl">&quot;</span></span>}
-<span class="no">23</span>     {<span class="sy">:name</span>=&gt;<span class="sy">:id</span>, <span class="sy">:escape</span>=&gt;<span class="pc">false</span>}
-<span class="no">24</span>       {<span class="sy">:value</span>=&gt;<span class="s"><span class="dl">&quot;</span><span class="k">test</span><span class="dl">&quot;</span></span>}</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>{<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">--</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  {<span class="symbol">:name</span>=&gt;<span class="symbol">:fmi</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">something</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">1</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">#test</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>  {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\</span><span class="content">[</span><span class="delimiter">&quot;</span></span>, <span class="symbol">:escaped</span>=&gt;<span class="predefined-constant">true</span>}
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">...</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\</span><span class="content">]</span><span class="delimiter">&quot;</span></span>, <span class="symbol">:escaped</span>=&gt;<span class="predefined-constant">true</span>}
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  {<span class="symbol">:name</span>=&gt;<span class="symbol">:section</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="char">\t</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="char">\t</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\</span><span class="content">[</span><span class="delimiter">&quot;</span></span>, <span class="symbol">:escaped</span>=&gt;<span class="predefined-constant">true</span>}
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">...</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\</span><span class="content">]</span><span class="delimiter">&quot;</span></span>, <span class="symbol">:escaped</span>=&gt;<span class="predefined-constant">true</span>}
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol">:title</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">Test Section</span><span class="delimiter">&quot;</span></span>}
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol">:id</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>}
+</pre></div>
 </div>
 
     <p>This output is produced by calling the <code>inspect</code> method on the AST. Each <a href="http://rubydoc.info/gems/glyph/Glyph/SyntaxNode"><code>Glyph::SyntaxNode</code></a> object in the tree is basically an ordinary Glyph Hash with a parent and 0 or more chidren, so the code snippets above shows how the syntax nodes are nested.</p>
     <p>The AST contains information about macro, parameter and attribute names, and escaping, and raw text values (the nodes without a <code>:name</code> key), but nothing more.</p>
     <p>When the AST is analyzed, the resulting textual output is the following:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> <span class="ta">&lt;span</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">fmi</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>for more information on something, see ‡‡‡‡‡PLACEHOLDER ¤ 1‡‡‡‡‡
-<span class="no">2</span> <span class="ta">&lt;/span&gt;</span>
-<span class="no">3</span> \/[...\/]
-<span class="no">4</span> <span class="ta">&lt;div</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">section</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>
-<span class="no">5</span> <span class="ta">&lt;h2</span> <span class="an">id</span>=<span class="s"><span class="dl">&quot;</span><span class="k">test</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>Test Section<span class="ta">&lt;/h2&gt;</span>
-<span class="no">6</span> \/[...\/]
-<span class="no">7</span> 
-<span class="no">8</span> <span class="ta">&lt;/div&gt;</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fmi</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>for more information on something, see ‡‡‡‡‡PLACEHOLDER ¤ 1‡‡‡‡‡
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;/span&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>\/[...\/]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/h2&gt;</span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>\/[...\/]
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span>
+</pre></div>
 </div>
 
     <p>This looks almost perfect, except that:</p>
@@ -136,14 +139,15 @@
     </ul>
     <p>Finally, when the document is finalized, placeholders and escape sequences are removed and the final result is the following:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> <span class="ta">&lt;span</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">fmi</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>for more information on something, 
-<span class="no">2</span>   see <span class="ta">&lt;a</span> <span class="an">href</span>=<span class="s"><span class="dl">&quot;</span><span class="k">#test</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>Test Section<span class="ta">&lt;/a&gt;</span><span class="ta">&lt;/span&gt;</span>
-<span class="no">3</span> [...]
-<span class="no">4</span> <span class="ta">&lt;div</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">section</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>
-<span class="no">5</span> <span class="ta">&lt;h2</span> <span class="an">id</span>=<span class="s"><span class="dl">&quot;</span><span class="k">test</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>Test Section<span class="ta">&lt;/h2&gt;</span>
-<span class="no">6</span> [...]
-<span class="no">7</span> 
-<span class="no">8</span> <span class="ta">&lt;/div&gt;</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fmi</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>for more information on something, 
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  see <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/span&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>[...]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/h2&gt;</span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>[...]
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span>
+</pre></div>
 </div>
 
 </section>

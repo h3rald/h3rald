@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -74,60 +74,62 @@
 The following Glyph code:
 </p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> table[@class[features]
-<span class="no"> 2</span>   tr[
-<span class="no"> 3</span>     th[ID]
-<span class="no"> 4</span>     th[Priority]
-<span class="no"> 5</span>     th[Description]
-<span class="no"> 6</span>   ]
-<span class="no"> 7</span>   tr[
-<span class="no"> 8</span>     td[27]
-<span class="no"> 9</span>     td[span[@style[color:red;font-weight:bold;] HIGH]]
-<span class="no"><strong>10</strong></span>     td[HTML output]
-<span class="no">11</span>   ]
-<span class="no">12</span>   tr[
-<span class="no">13</span>     td[42]
-<span class="no">14</span>     td[span[@style[color:green;font-weight:bols;] LOW]]
-<span class="no">15</span>     td[
-<span class="no">16</span>       p[Support for less-used tags:]
-<span class="no">17</span>       ul[
-<span class="no">18</span>         li[cite]
-<span class="no">19</span>         li[sup]
-<span class="no"><strong>20</strong></span>         li[...]
-<span class="no">21</span>       ]
-<span class="no">22</span>     ]
-<span class="no">23</span>   ]
-<span class="no">24</span> ]</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>table[@class[features]
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  tr[
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    th[ID]
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    th[Priority]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    th[Description]
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  ]
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  tr[
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    td[27]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    td[span[@style[color:red;font-weight:bold;] HIGH]]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    td[HTML output]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  ]
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  tr[
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    td[42]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    td[span[@style[color:green;font-weight:bols;] LOW]]
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    td[
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>      p[Support for less-used tags:]
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      ul[
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        li[cite]
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        li[sup]
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>        li[...]
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>      ]
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    ]
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  ]
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>]
+</pre></div>
 </div>
 
 		<p>
 Is translated into the following HTML code:
 </p>
 		<div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> <span class="ta">&lt;table</span> <span class="an">class</span>=<span class="s"><span class="dl">&quot;</span><span class="k">features</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>
-<span class="no"> 2</span>   <span class="ta">&lt;tr&gt;</span>
-<span class="no"> 3</span>     <span class="ta">&lt;th&gt;</span>ID<span class="ta">&lt;/th&gt;</span>
-<span class="no"> 4</span>     <span class="ta">&lt;th&gt;</span>Priority<span class="ta">&lt;/th&gt;</span>
-<span class="no"> 5</span>     <span class="ta">&lt;th&gt;</span>Description<span class="ta">&lt;/th&gt;</span>
-<span class="no"> 6</span>   <span class="ta">&lt;/tr&gt;</span>
-<span class="no"> 7</span>   <span class="ta">&lt;tr&gt;</span>
-<span class="no"> 8</span>     <span class="ta">&lt;td&gt;</span>27<span class="ta">&lt;/td&gt;</span>
-<span class="no"> 9</span>     <span class="ta">&lt;td&gt;</span><span class="ta">&lt;span</span> <span class="an">style</span>=<span class="s"><span class="dl">&quot;</span><span class="k">color:red;font-weight:bold;</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>HIGH<span class="ta">&lt;/span&gt;</span><span class="ta">&lt;/td&gt;</span>
-<span class="no"><strong>10</strong></span>     <span class="ta">&lt;td&gt;</span>HTML output<span class="ta">&lt;/td&gt;</span>
-<span class="no">11</span>   <span class="ta">&lt;/tr&gt;</span>
-<span class="no">12</span>   <span class="ta">&lt;tr&gt;</span>
-<span class="no">13</span>     <span class="ta">&lt;td&gt;</span>42<span class="ta">&lt;/td&gt;</span>
-<span class="no">14</span>     <span class="ta">&lt;td&gt;</span><span class="ta">&lt;span</span> <span class="an">style</span>=<span class="s"><span class="dl">&quot;</span><span class="k">color:green;font-weight:bold;</span><span class="dl">&quot;</span></span><span class="ta">&gt;</span>LOW<span class="ta">&lt;/span&gt;</span><span class="ta">&lt;/td&gt;</span>
-<span class="no">15</span>     <span class="ta">&lt;td&gt;</span>
-<span class="no">16</span>       <span class="ta">&lt;p&gt;</span>Support for less-used tags:<span class="ta">&lt;/p&gt;</span>
-<span class="no">17</span>       <span class="ta">&lt;ul&gt;</span>
-<span class="no">18</span>         <span class="ta">&lt;li&gt;</span>cite<span class="ta">&lt;/li&gt;</span>
-<span class="no">19</span>         <span class="ta">&lt;li&gt;</span>sup<span class="ta">&lt;/li&gt;</span>
-<span class="no"><strong>20</strong></span>         <span class="ta">&lt;li&gt;</span>...<span class="ta">&lt;/li&gt;</span>
-<span class="no">21</span>       <span class="ta">&lt;/ul&gt;</span>
-<span class="no">22</span>     <span class="ta">&lt;/td&gt;</span>
-<span class="no">23</span>   <span class="ta">&lt;/tr&gt;</span>
-<span class="no">24</span> <span class="ta">&lt;/table&gt;</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="tag">&lt;table</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span class="tag">&lt;tr&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span class="tag">&lt;th&gt;</span>ID<span class="tag">&lt;/th&gt;</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span class="tag">&lt;th&gt;</span>Priority<span class="tag">&lt;/th&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span class="tag">&lt;th&gt;</span>Description<span class="tag">&lt;/th&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span class="tag">&lt;/tr&gt;</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span class="tag">&lt;tr&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span class="tag">&lt;td&gt;</span>27<span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span class="tag">&lt;td&gt;</span><span class="tag">&lt;span</span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">color:red;font-weight:bold;</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>HIGH<span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span class="tag">&lt;td&gt;</span>HTML output<span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span class="tag">&lt;/tr&gt;</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span class="tag">&lt;tr&gt;</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span class="tag">&lt;td&gt;</span>42<span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span class="tag">&lt;td&gt;</span><span class="tag">&lt;span</span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">color:green;font-weight:bold;</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>LOW<span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span class="tag">&lt;td&gt;</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>      <span class="tag">&lt;p&gt;</span>Support for less-used tags:<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      <span class="tag">&lt;ul&gt;</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        <span class="tag">&lt;li&gt;</span>cite<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        <span class="tag">&lt;li&gt;</span>sup<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>        <span class="tag">&lt;li&gt;</span>...<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>      <span class="tag">&lt;/ul&gt;</span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  <span class="tag">&lt;/tr&gt;</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span class="tag">&lt;/table&gt;</span>
+</pre></div>
 </div>
 
 </aside>

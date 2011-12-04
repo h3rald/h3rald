@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -70,17 +70,18 @@
 <p>You can use the quoting delimiters with <em>any</em> macro identifier. Obviously, using them as delimiters for things like <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macros may not be a good idea, but they should be more or less mandatory with the <a href="/glyph/book/macros/macros_block.html#m_codeblock"><code>codeblock</code></a> macro or the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro, especially when it contains square brackets or even Glyph code, like this:</p>
 
 	<div class="CodeRay">
-  <div class="code"><pre><span class="no"> 1</span> codeblock[=
-<span class="no"> 2</span>   section[
-<span class="no"> 3</span>     @title[A section]
-<span class="no"> 4</span>     @id[test]
-<span class="no"> 5</span> This is a section.
-<span class="no"> 6</span>     section[
-<span class="no"> 7</span>     @title[A nested section]
-<span class="no"> 8</span> This is another section.
-<span class="no"> 9</span>     ]
-<span class="no"><strong>10</strong></span>   ]
-<span class="no">11</span> =]</pre></div>
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>codeblock[=
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  section[
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    @title[A section]
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    @id[test]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>This is a section.
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>    section[
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    @title[A nested section]
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>This is another section.
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    ]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  ]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>=]
+</pre></div>
 </div>
 
 

@@ -132,7 +132,7 @@ route '/js/*' do
 end
 
 route '/fonts/*' do
-	item.identifier.chop + '.ttf'
+	item.identifier.chop + '.otf'
 end
 
 route '*' do

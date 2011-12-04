@@ -27,7 +27,7 @@
     <script src="http://www.google.com/jsapi?key=ABQIAAAAr6RY1Z6dchG_sX9WDLSy3xRlq2n1sm52B5HDRR5tm6o8XM18FhR56xHNNH6CsX86uN5VoTrglpyOyQ" type="text/javascript"></script>
 		<script src="/js/sevenup.js" type="text/javascript"></script>
 		<script src="/js/sevenup_black.js" type="text/javascript"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript">google.load("jquery", "1");</script>
 		<script src="/js/jquery-timeago.js" type="text/javascript"></script>
 		<script src="/js/jquery-easing.js" type="text/javascript"></script>
 		<script src="/js/jquery-fancybox.js" type="text/javascript"></script>
@@ -76,12 +76,13 @@
 </aside>
 <p>This is the source code of a fairly simple macro used to format a note:</p>
   <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> macro <span class="sy">:note</span> <span class="r">do</span>
-<span class="no">2</span>   <span class="s"><span class="dl">%{</span><span class="k">&lt;div class=&quot;</span><span class="il"><span class="idl">#{</span><span class="iv">@name</span><span class="idl">}</span></span><span class="k">&quot;&gt;&lt;span class=&quot;note-title&quot;&gt;</span><span class="il"><span class="idl">#{</span><span class="iv">@name</span>.to_s.capitalize<span class="idl">}</span></span><span class="k">&lt;/span&gt;
-<span class="no">3</span>     </span><span class="il"><span class="idl">#{</span><span class="iv">@value</span><span class="idl">}</span></span><span class="k">
-<span class="no">4</span> 
-<span class="no">5</span>     &lt;/div&gt;</span><span class="dl">}</span></span>
-<span class="no">6</span> <span class="r">end</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:note</span> <span class="keyword">do</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span class="string"><span class="delimiter">%{</span><span class="content">&lt;div class=&quot;</span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@name</span><span class="inline-delimiter">}</span></span><span class="content">&quot;&gt;&lt;span class=&quot;note-title&quot;&gt;</span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@name</span>.to_s.capitalize<span class="inline-delimiter">}</span></span><span class="content">&lt;/span&gt;</span></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span class="string"><span class="content">    </span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@value</span><span class="inline-delimiter">}</span></span><span class="content"></span></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="string"><span class="content"></span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="string"><span class="content">    &lt;/div&gt;</span><span class="delimiter">}</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="keyword">end</span>
+</pre></div>
 </div>
 
   <p>The <code>macro</code> method takes a single <code>Symbol</code> or <code>String</code> parameter, corresponding to the name of the macro. In this case, the entire block (or <em>body</em> of the macro) is a <code>String</code> corresponding to what we want the macro to evaluate to: a <code>&lt;div&gt;</code> tag containing a note.</p>
@@ -138,37 +139,40 @@
     </tr>
   </table>
   <section class="section">
-<header><h1 id="h_86">Representations</h1></header>
+<header><h1 id="h_85">Representations</h1></header>
 <p>There&#8217;s a small problem with the code used to define the <code>note</code> macro in the previous section: what if I want to format notes using HTML5 instead of <span class="caps">HTML</span>, or another output format?</p>
 <p>Glyph supports different output formats, therefore macros must be format-independent! In fact, this is the actual source of the <code>note</code> macro:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> macro <span class="sy">:note</span> <span class="r">do</span>
-<span class="no">2</span>   <span class="iv">@data</span>[<span class="sy">:name</span>] = <span class="iv">@name</span>
-<span class="no">3</span>   <span class="iv">@data</span>[<span class="sy">:text</span>] = value
-<span class="no">4</span>   render
-<span class="no">5</span> <span class="r">end</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:note</span> <span class="keyword">do</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span class="instance-variable">@data</span>[<span class="symbol">:name</span>] = <span class="instance-variable">@name</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="instance-variable">@data</span>[<span class="symbol">:text</span>] = value
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  render
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="keyword">end</span>
+</pre></div>
 </div>
 
     <p>The <span class="caps">HTML</span> representation of the note macro is defined in the <code>macros/reps/html.rb</code> file as follows:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> rep <span class="sy">:note</span> <span class="r">do</span> |data|
-<span class="no">2</span>   css_class = data[<span class="sy">:name</span>].to_s.match(<span class="rx"><span class="dl">/</span><span class="k">[a-z0-9_-]</span><span class="dl">/</span><span class="mod">i</span></span>) ? data[<span class="sy">:name</span>] : <span class="s"><span class="dl">&quot;</span><span class="k">note</span><span class="dl">&quot;</span></span>
-<span class="no">3</span>   <span class="s"><span class="dl">%{</span><span class="k">&lt;div class=&quot;</span><span class="il"><span class="idl">#{</span>css_class<span class="idl">}</span></span><span class="k">&quot;&gt;
-<span class="no">4</span> &lt;span class=&quot;note-title&quot;&gt;</span><span class="il"><span class="idl">#{</span>data[<span class="sy">:name</span>].to_s.capitalize<span class="idl">}</span></span><span class="k">&lt;/span&gt;</span><span class="il"><span class="idl">#{</span>data[<span class="sy">:text</span>]<span class="idl">}</span></span><span class="k">
-<span class="no">5</span> 
-<span class="no">6</span> &lt;/div&gt;</span><span class="dl">}</span></span>
-<span class="no">7</span> <span class="r">end</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>rep <span class="symbol">:note</span> <span class="keyword">do</span> |data|
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  css_class = data[<span class="symbol">:name</span>].to_s.match(<span class="regexp"><span class="delimiter">/</span><span class="content">[a-z0-9_-]</span><span class="delimiter">/</span><span class="modifier">i</span></span>) ? data[<span class="symbol">:name</span>] : <span class="string"><span class="delimiter">&quot;</span><span class="content">note</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="string"><span class="delimiter">%{</span><span class="content">&lt;div class=&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>css_class<span class="inline-delimiter">}</span></span><span class="content">&quot;&gt;</span></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="string"><span class="content">&lt;span class=&quot;note-title&quot;&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:name</span>].to_s.capitalize<span class="inline-delimiter">}</span></span><span class="content">&lt;/span&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:text</span>]<span class="inline-delimiter">}</span></span><span class="content"></span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="string"><span class="content"></span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="string"><span class="content">&lt;/div&gt;</span><span class="delimiter">}</span></span>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="keyword">end</span>
+</pre></div>
 </div>
 
     <p>The HTML5 representation of the note macro, on the other hand, is defined in the <code>macros/reps/html5.rb</code> file as follows:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="no">1</span> rep <span class="sy">:note</span> <span class="r">do</span> |data|
-<span class="no">2</span>   css_class = data[<span class="sy">:name</span>].to_s.match(<span class="rx"><span class="dl">/</span><span class="k">[a-z0-9_-]</span><span class="dl">/</span><span class="mod">i</span></span>) ? data[<span class="sy">:name</span>] : <span class="s"><span class="dl">&quot;</span><span class="k">note</span><span class="dl">&quot;</span></span>
-<span class="no">3</span>   <span class="s"><span class="dl">%{</span><span class="k">&lt;aside class=&quot;</span><span class="il"><span class="idl">#{</span>css_class<span class="idl">}</span></span><span class="k">&quot;&gt;
-<span class="no">4</span> &lt;span class=&quot;note-title&quot;&gt;</span><span class="il"><span class="idl">#{</span>data[<span class="sy">:name</span>].to_s.capitalize<span class="idl">}</span></span><span class="k">&lt;/span&gt;</span><span class="il"><span class="idl">#{</span>data[<span class="sy">:text</span>]<span class="idl">}</span></span><span class="k">
-<span class="no">5</span> 
-<span class="no">6</span> &lt;/aside&gt;</span><span class="dl">}</span></span>
-<span class="no">7</span> <span class="r">end</span></pre></div>
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>rep <span class="symbol">:note</span> <span class="keyword">do</span> |data|
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  css_class = data[<span class="symbol">:name</span>].to_s.match(<span class="regexp"><span class="delimiter">/</span><span class="content">[a-z0-9_-]</span><span class="delimiter">/</span><span class="modifier">i</span></span>) ? data[<span class="symbol">:name</span>] : <span class="string"><span class="delimiter">&quot;</span><span class="content">note</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="string"><span class="delimiter">%{</span><span class="content">&lt;aside class=&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>css_class<span class="inline-delimiter">}</span></span><span class="content">&quot;&gt;</span></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="string"><span class="content">&lt;span class=&quot;note-title&quot;&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:name</span>].to_s.capitalize<span class="inline-delimiter">}</span></span><span class="content">&lt;/span&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:text</span>]<span class="inline-delimiter">}</span></span><span class="content"></span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="string"><span class="content"></span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="string"><span class="content">&lt;/aside&gt;</span><span class="delimiter">}</span></span>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="keyword">end</span>
+</pre></div>
 </div>
 
 Note the different tags used to render the note.
