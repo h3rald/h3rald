@@ -12,7 +12,7 @@ feed_title: 'Latest Articles'
 max_items = 5
 
 all_articles = latest_articles.length
-latest = latest_articles 5
+latest = latest_articles 6
 popular = popular_articles 5
 all_projects = @items.select{|a| a[:type] == 'project'}.length
 %>
@@ -72,24 +72,13 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
 			</script>
 		</section><!-- #twitter end -->
 		<%= render 'article_intro', :item => latest[3], :classes => "hyphenate", :extended => false %>
-		<article class="feature">
-			<header>
-				<p>FEATURED CONTENT</p>
-				<h1><a href="/holidays/">Holidays in Italy?</a></h1>
-				<h2>Yes, I am really renting my house in the countryside!</h2>
-			</header>
-			<section class="hyphenate">
-				<img src="/images/sessarego.jpg" alt="Sessarego" style="margin: 0 5px;" />
-				<p>Looking for a peaceful and relaxing holiday in the Italian Riviera? I'm renting part of my family country home in the center of the old village of Sessarego, on a peaceful hill a few minutes away from Bogliasco, a small coastal town on the Golfo Paradiso. </p>
-				<p>The center of Genoa can be reached by car, bus or train in about 30 minutes and a lot of tourist locations like Camogli, Rapallo, Santa Margherita and Portofino are just a few train stops away. <a href="/holidays/">&raquo;&nbsp;<strong>Read&nbsp;More</strong></a></p>
-			</section>
-		</article>
-	</section><!-- #main-content-left end -->
+		<%= render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false %>
+		</section><!-- #main-content-left end -->
 	<section class="right border-left" id="main-content-right">
 		<%= render 'article_intro', :item => latest[1], :classes => "hyphenate", :extended => false %>
 		<%= render 'article_intro', :item => latest[2], :classes => "hyphenate", :extended => false %>
 		<%= 
-			render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false 
+			render 'article_intro', :item => latest[5], :classes => "hyphenate", :extended => false 
 		%>
 	</section><!-- #main-content-right end -->
 </section><!-- #main-content end -->
