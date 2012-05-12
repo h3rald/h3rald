@@ -5,7 +5,7 @@ article > header {
 		@include standard-font;
 		font-weight: bold;
 		color: #000;
-		line-height: 0.9em;
+		line-height: 1.2em;
 		padding-top: 0.2em;
 		text-align:left;
 		height: 60%;
@@ -26,13 +26,22 @@ article > header {
 }
 
 @mixin toolbar {
-	border-bottom: 1px solid $light-gray;
+	border-bottom: 1px solid $dark-gray;
 	width: 100%;
 	text-align: left;
 	font-size: 0.8em;
-	line-height: 1.2em;
+	line-height: 1.4em;
 }
 
+.code {
+  border: 1px solid $light-gray;
+  padding: 0.3em;
+}
+
+.CodeRay .code {
+  border: none;
+  padding: 0;
+}
 
 article > header > p.pubdate {
 	@include toolbar;
@@ -101,7 +110,7 @@ article.page > header h1 {
 #main-content > section > article h1,
 #body-text section header h1,
 #body-text h2 {
-	font-size: 2em;
+	font-size: 2.2em;
 }
 
 #main-content > article h2, 
@@ -109,13 +118,9 @@ article.page > header h1 {
 article.page > header h2,
 #body-text section section header h1,
 #body-text h3 {
-	font-size: 1.6em;
-}
-
-#main-content > section > article h2,
-#body-text section section section header h1,
-#body-text h5 {
-	font-size: 1.3em;
+	font-size: 1.8em;
+  font-style: italic;
+  font-weight: 600;
 }
 
 #secondary-content > article h2,
@@ -124,10 +129,22 @@ article.page > header h2,
 	font-size: 1.4em;
 }
 
+#main-content > section > article h2,
+#body-text section section section header h1,
+#body-text h5 {
+	font-size: 1.2em;
+  font-style: italic;
+  font-weight: 600;
+}
+
 #secondary-content > section > article h2,
 #body-text section section section section section header h1,
 #body-text h6 {
-	font-size: 1.1em;
+	font-size: 1em;
+}
+
+#main-content h1, #secondary-content h1{
+  line-height: 1em;
 }
 
 /* Text */
@@ -141,19 +158,23 @@ article {
 	margin-top: 2.5em;
 	h1, h2, h3, h4, h5, h6 {
 		clear: both;
-		padding-top: 1.5em;
-		margin-bottom: 0.1em;
-		border-bottom: 1px solid $light-gray;  
+		padding-top: 1.7em;
+		margin-bottom: 0.2em;
+    line-height: 1.2em;
 		width: 100%;
 	}
 	img {
-		margin: 0.6em;
+    margin: 0 0.6em;
 	}
 	.right, img[style="float:right;"], figure[style="float:right;"] {
-		margin: 1em 0 1em 1em;
+		margin: 0 0 0em 1em;
+    padding: 0.1em;
+    border: 1px solid $dark-gray;
 	}
 	.left, img[style="float:left;"], figure[style="float:left;"] {
-		margin: 1em 1em 1em 0;
+		margin: 0 1em 0 0;
+    padding: 0.1em;
+    border: 1px solid $dark-gray;
 	}
 	blockquote, q {
 		font-style: italic;
@@ -166,13 +187,13 @@ article p {
 }
 
 article.feature {
-	border: 1px solid $light-gray;
+	border: 1px solid $dark-gray;
 	padding: 10px;	
 	header p {
 		margin: 0;
 		font-weight: bold;
 		text-align: right;
-		color: $light-gray;
+		color: $dark-gray;
 	}
 	h1, h2 {
 		text-align: center;
@@ -192,11 +213,12 @@ figcaption {
 }
 
 figure {
-	padding: 0;
+	padding: 0.1em;
 	display: auto;
-	border: 1px solid #ccc;
+	border: 1px solid $dark-gray;
 	img {
 		margin-bottom: 0;
+    border: none;
 	}
 }
 
@@ -232,6 +254,7 @@ dl {
 /* Tables */
 
 #body-text table {
+  margin: 1em 0;
 	border-collapse: collapse;
 	@include border-radius(5px);
 	th {
@@ -358,11 +381,23 @@ section.glyph-index h1.toc-header {
 
 .img-right {
 	float: right;
-	margin: 10px 0 10px 10px;
+	margin: 0 0 0 1em;
+  border: 1px solid $dark-gray;
+  padding: 0.2em;
 }
+
+.feature {
+  .img-right, .img-left {
+    border: none;
+  }
+}
+
+
 .img-left {
 	float: right;
-	margin: 10px 10px 10px 0;
+	margin: 0 1em 0 0;
+  border: 1px solid $dark-gray;
+  padding: 0.2em;
 }
 
 .right {
@@ -378,12 +413,14 @@ section.glyph-index h1.toc-header {
 	text-align: center;
 }
 
+/*
 .border-left {
-	border-left: 1px solid $light-gray;
+	border-left: 1px solid $dark-gray;
 }
 .border-right {
-	border-right: 1px solid $light-gray;
+	border-right: 1px solid $dark-gray;
 }
+*/
 
 /* Elements */
 
@@ -411,23 +448,30 @@ sup {
 }
 
 .note, .important, .tip, .caution, .box {
-  border: 1px solid #e6e6e6;
+  border: 1px solid $dark-gray;
   display: block;
-  margin: 0.5em auto;
-  padding: 0 0.5em;
+  margin: 0.7em auto;
+  padding: 0.5em 0.5em;
   width: 600px;
   background: #EEE;
   color: #1F1F1F; }
- 
+
 .note > p, .important > p, .tip > p, .caution > p {
+  line-height: 1em;
   margin: 0;
   padding: 0; }
  
 .note-title {
+  display: block;
+  padding-bottom: 0.2em;
+  font-size: 110%;
   font-weight: bold;
-  margin-right: 1em; }
- 
+  font-variant: small-caps;
+  margin-right: 1em; 
+}
+
 .box-title {
   display: block;
+  font-size: 110%;
   text-align: center;
   font-weight: bold; }
