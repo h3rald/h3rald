@@ -18,7 +18,7 @@
 -----
 $[document.intro]
 
-§[
+section[
 	@title[Calibre Integration]
 	txt[
 =>[https://github.com/tammycravit|Tammy Cravit] proposed (and more or less implemented) an interesting new feature: integrate =>[http://calibre-ebook.com/|Calibre] to generate ebooks in EPUB and MOBI format from Glyph's native standalone HTML output format.
@@ -26,7 +26,7 @@ $[document.intro]
 Although the support is still somewhat rough, you can, as a matter of fact, generate ebooks with Glyph, using Calibre.
   ]
 ]
-§[
+section[
 	@title[Macro Composition]
 	txt[
 This release features an update at syntax-level: the possibility of "composing" macros, thereby eliminating nesting provided that containers take only one parameter and no attributes. What? This:
@@ -53,7 +53,7 @@ In this case, the @not@ macro was composed with the @output?@ macro, thus removi
 Additionally, I used this features to create an @xml@ macro dispatcher that can be used to render raw XML tags, and an @s@ macro dispatcher that basically is able to call nearly all the instance methods of the Ruby String class. So you can write things like code[=s/sub[This feature makes my life easier\|/my/\|your]=] and similar.
   ]
 ]
-§[
+section[
 	@title[Turing-Completeness]
 	txt[
 As of this version, Glyph can be considered _Turing-complete_, as it satisfies the following =>[http://c2.com/cgi/wiki?LanguageRequirementsForTuringCompleteness|requirements for Turing-completeness]:
@@ -89,7 +89,7 @@ Attributes are like lexically scoped variables. You can use them to store @[a] a
   =]
   p[Handy enough.]
 ]
-§[
+section[
   @title[Embeddable fragments]
   txt[
 Too lazy to create snippets? Feel the urge to re-use something you already wrote somewhere? Use a _fragment_ and embed it, as follows:

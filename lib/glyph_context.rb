@@ -30,7 +30,7 @@ class Nanoc3::RuleContext
       Glyph.compile f.to_s
 		begin
 			f.unlink
-			Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
+			#Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
 		rescue
 		end
 	end

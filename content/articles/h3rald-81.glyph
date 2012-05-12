@@ -47,7 +47,7 @@ I made a point out of improving the old stylesheet to make the site easier to re
 
 Moreover, I worked on streamlining navigations across different sections of the site, in particular on article pages:
 
-!=/img/pictures/h3rald_81_article.png!
+!=\/$[site.root]/img/pictures/h3rald_81_article.png!
 	]
 ]
 section[

@@ -16,8 +16,9 @@
 :title: "Book Review: Making it Big in Software"
 -----
 $[document.intro]
+&:[img-path|$[site.root]/img/pictures/books]
 txt[
-image[@class[right]/img/pictures/books/making-it-big.jpg]
+image[@class[right]&[img-path]/making-it-big.jpg]
 The 17 exclusive interviews with software gurus, visionaries, minor and major deities of the IT world are definitely worth the 24.99$ this book costs _on their own_. This was one of the major selling points of the book itself (as the merry-looking pictures of Marissa Mayer, James Gosling, Steve Wozniak and John Schwarz on the cover suggest), but far from being the only one. The interviews are strategically placed throughout the book, as supporting material for the author's advice: if you don't believe him, you will believe those who _made it_. Anyhow, let's say something about the book itself, shall we?
 
 _Making it Big with Software_ is divided into three parts:

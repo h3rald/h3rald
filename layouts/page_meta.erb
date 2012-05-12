@@ -4,9 +4,9 @@ filter: erb
 <%
 	author = @item[:author] || "Fabio Cevasco"
 	pdf = %{<a href="/articles/#{@item[:permalink]}.pdf"><img src="/images/icons/pdf.png" alt="PDF" /></a>} if @item[:pdf]
-	source_url = "http://github.com/h3rald/h3rald/raw/master/#{@item[:file].path}?iframe" 
+	source_url = "https://raw.github.com/h3rald/h3rald/master/#{@item[:filename]}?iframe" # Not allowed anymore
 	source = %{<a href="#{source_url}" class="fancybox"><img src="/images/icons/ruby.png" alt="SOURCE"/></a>}
-	tools = %{<span class="tools">#{source}#{pdf}</span>}
+  tools = %{<span class="tools">#{pdf}</span>}
 %><header>
 	<hgroup>
 		<h1><%= @item[:title] %></h1>
