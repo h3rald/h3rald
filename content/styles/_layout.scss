@@ -59,10 +59,6 @@ body {
 			text-align: center;
 			padding-top: 0.5em;
 		}
-		form {
-			float: right;
-			margin-top: -50px;
-		}
 	}
 	&.page {
 		height: 45px;
@@ -94,19 +90,20 @@ body {
 
 #topbar {
 	margin: auto;
+  text-align: center;
+  display: block;
 	margin-top: 20px;
 	height: 60px;
 	border-top: 1px solid $light-gray;
-	text-align: right;
 	width: 940px;
 }
 
 #social {
-	margin-top: 10px;
-	float: left;
+	margin: 20px auto;
+  height: 50px;
 	li { float:left;}
 	a {
-		margin: 0 27px;
+		margin: 0 28px;
 		img {
 			opacity: 0.6;
 			vertical-align: middle;

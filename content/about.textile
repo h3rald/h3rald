@@ -40,6 +40,7 @@ h3. Credits
 
 Special thanks to the following people, who made this web site possible:
 
-* "Denis Defreyne":http://www.stoneship.org/, for creating the wonderful "nanoc":http://nanoc.stoneship.org/ site publishing system.
-* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo font":http://scholarsfonts.net/cardofnt.html I used for the H3RALD logo.
+* "Denis Defreyne":http://www.stoneship.org/, creator of the exceptional "nanoc":http://nanoc.stoneship.org/ site publishing system.
+* "David J.Perry":http://scholarsfonts.net/, who designed the "Cardo":http://scholarsfonts.net/cardofnt.html font I used for the H3RALD logo.
 * Sebastian Kosch, creator of the "Crimson Text":http://aldusleaf.org/ font, used throughout the web site.
+* "Paul Robert Lloyd":http://paulrobertlloyd.com/, creator of the "Social Media Icos":http://paulrobertlloyd.com/2009/06/social_media_icons/ set, used on the home page of this site.

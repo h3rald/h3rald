@@ -22,13 +22,12 @@
 /* Google Custom Search */
 
 #search {
-	margin-top: 10px;
+	margin: 15px auto;
 	width: 270px;
-	float: right;
 }
 
 
-.gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark {
+.gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark, .gsc-thumbnail-inside {
   display: none;
 }
 
@@ -37,6 +36,7 @@
   clear: both;
 	text-align: justify;
 	padding: 10px;
+  margin-top: 40px;
 }
 .gsc-result {
   padding: 0.5em 0;
