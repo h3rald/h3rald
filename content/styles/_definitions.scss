@@ -1,9 +1,13 @@
 /* Definitions */
 
-$light-gray: #cacaca;
-$dark-gray: #333;
-$light-blue: #007BC4;
-$dark-blue: #005B91;
+$background-color: #fcfcfc;
+$alt-background-color: #efefef;
+$border-color: #ccc;
+$separator-color: #555;
+$link-color: #802B00;
+$link-hover-color: #BD3F00;
+$text-color: #333;
+$emphasis-color: #222;
 
 @mixin standard-font {
 	font-family: 'Crimson Text', 'Palatino', 'Bookman', 'Georgia', 'Times';
@@ -43,3 +47,14 @@ $dark-blue: #005B91;
 		transition: opacity 0.15s linear;
 	}
 }
+
+@mixin toolbar {
+	border-bottom: 1px solid $border-color;
+  color: $text-color;
+  font-style: italic;
+	width: 100%;
+	text-align: left;
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+

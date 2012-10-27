@@ -3,38 +3,45 @@
 article > header {
 	h1 {
 		@include standard-font;
-		font-weight: bold;
-		color: #000;
+		font-weight: normal;
+		color: $text-color;
 		line-height: 1.2em;
 		padding-top: 0.2em;
 		text-align:left;
 		height: 60%;
 		a {
-			color: #000;
 			text-decoration: none;
 		}
 	}
 	h2 {
 		@include standard-font;
-		font-weight: 600;
+		padding-top: 0.2em;
 		font-style: italic;
-		color: #000;
+		font-weight: normal;
+		color: $emphasis-color;
 		line-height: 1.1em;
 		height: 20%;
 		text-align:left;
 	}
 }
 
-@mixin toolbar {
-	border-bottom: 1px solid $dark-gray;
-	width: 100%;
-	text-align: left;
-	font-size: 0.8em;
-	line-height: 1.4em;
+#secondary-content article:after, #main-content article:after {
+  text-align: center;
+  display: block;
+  content: "* * *";
+  font-weight: normal;
+  font-size: 80%;
+  color: $separator-color;
+  margin: 2em;
 }
 
+#secondary-content article:last-child:after, #main-content article:last-child:after {
+  content: "";
+}
+
+
 .code {
-  border: 1px solid $light-gray;
+  border: 1px solid $border-color;
   padding: 0.3em;
 }
 
@@ -46,6 +53,7 @@ article > header {
 article > header > p.pubdate {
 	@include toolbar;
 }
+
 article > header > p.toolbar {
 	@include toolbar;
 	margin-top: 20px;
@@ -68,12 +76,6 @@ article > header > p.toolbar {
 			}
 		}
 	}
-}
-article > header .author {
-	text-align: right;
-	font-size: 0.8em;
-	float: right;
-	margin-top: -10px;
 }
 
 article.page > section {
@@ -103,41 +105,41 @@ article > header > nav.tags > a {
 
 #main-content > article h1, 
 article.page > header h1 {
-	font-size: 2.8em;
-}
-
-#secondary-content > article h1, 
-#main-content > section > article h1,
-#body-text section header h1,
-#body-text h2 {
 	font-size: 2.2em;
 }
 
+#secondary-content > article h1{
+  font-size: 1.3em;
+}
+
+#secondary-content > article h2{
+  font-size: 1.0em;
+}
+
+#body-text section header h1,
+#body-text h2 {
+	font-size: 2em;
+}
+
 #main-content > article h2, 
-#secondary-content > section > article h1, 
 article.page > header h2,
 #body-text section section header h1,
 #body-text h3 {
-	font-size: 1.8em;
+	font-size: 1.5em;
   font-style: italic;
-  font-weight: 600;
 }
 
-#secondary-content > article h2,
 #body-text section section section section header h1,
 #body-text h4 {
 	font-size: 1.4em;
 }
 
-#main-content > section > article h2,
 #body-text section section section header h1,
 #body-text h5 {
 	font-size: 1.2em;
   font-style: italic;
-  font-weight: 600;
 }
 
-#secondary-content > section > article h2,
 #body-text section section section section section header h1,
 #body-text h6 {
 	font-size: 1em;
@@ -149,6 +151,15 @@ article.page > header h2,
 
 /* Text */
 
+.featured {
+  font-style: italic;
+  font-size: 1em;
+  color: #555;
+  font-weight: normal;
+  text-align: left;
+  display: block;
+}
+
 article {
 	font-size: 100;
 	header > p { font-size: 95%; }
@@ -157,6 +168,7 @@ article {
 #body-text {
 	margin-top: 2.5em;
 	h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
 		clear: both;
 		padding-top: 1.7em;
 		margin-bottom: 0.2em;
@@ -169,12 +181,10 @@ article {
 	.right, img[style="float:right;"], figure[style="float:right;"] {
 		margin: 0 0 0em 1em;
     padding: 0.1em;
-    border: 1px solid $dark-gray;
 	}
 	.left, img[style="float:left;"], figure[style="float:left;"] {
 		margin: 0 1em 0 0;
     padding: 0.1em;
-    border: 1px solid $dark-gray;
 	}
 	blockquote, q {
 		font-style: italic;
@@ -187,13 +197,12 @@ article p {
 }
 
 article.feature {
-	border: 1px solid $dark-gray;
 	padding: 10px;	
 	header p {
 		margin: 0;
 		font-weight: bold;
 		text-align: right;
-		color: $dark-gray;
+		color: $text-color;
 	}
 	h1, h2 {
 		text-align: center;
@@ -215,7 +224,6 @@ figcaption {
 figure {
 	padding: 0.1em;
 	display: auto;
-	border: 1px solid $dark-gray;
 	img {
 		margin-bottom: 0;
     border: none;
@@ -264,7 +272,7 @@ dl {
 		background: #fafafa;
 	}
 	tr, th, td {
-		border: 1px solid $light-gray;
+		border: 1px solid $border-color;
 	}
 	td {
 		padding: 5px;
@@ -319,7 +327,7 @@ section.glyph-index h1.toc-header {
 /* Projects */
 
 #github {
-	border: 1px solid $light-gray;
+	border: 1px solid $border-color;
 	padding: 5px;
 	margin-left: 5px;
 	float: right;
@@ -335,13 +343,10 @@ section.glyph-index h1.toc-header {
 
 .project-links {
 	width: 500px;
-	border: 1px solid $light-gray;
+	border: 1px solid $border-color;
 	margin-bottom: 10px;
 	padding: 0 5px;
 	text-align: center;
-	a {
-		font-weight: bold;
-	}
 }
 
 /* Contact form */
@@ -382,7 +387,7 @@ section.glyph-index h1.toc-header {
 .img-right {
 	float: right;
 	margin: 0 0 0 1em;
-  border: 1px solid $dark-gray;
+  border: 1px solid $text-color;
   padding: 0.2em;
 }
 
@@ -396,7 +401,7 @@ section.glyph-index h1.toc-header {
 .img-left {
 	float: right;
 	margin: 0 1em 0 0;
-  border: 1px solid $dark-gray;
+  border: 1px solid $text-color;
   padding: 0.2em;
 }
 
@@ -413,27 +418,28 @@ section.glyph-index h1.toc-header {
 	text-align: center;
 }
 
-/*
-.border-left {
-	border-left: 1px solid $dark-gray;
-}
-.border-right {
-	border-right: 1px solid $dark-gray;
-}
-*/
 
 /* Elements */
 
 a {
-	color: $dark-blue;
-	@include ease-in(color);
+  color: $link-color;
 	text-decoration: none;
 	outline: none;
 }
 
 a:hover {
-	color: $light-blue;
-	text-decoration: underline;
+	color: $link-hover-color;
+}
+
+a[href^="http"]:after {
+  content: " ➚";
+}
+
+a.read:after {
+  content: "";
+}
+.social a[href^="http"]:after{
+  content: "";
 }
 
 sup {
@@ -448,7 +454,7 @@ sup {
 }
 
 .note, .important, .tip, .caution, .box {
-  border: 1px solid $dark-gray;
+  border: 1px solid $text-color;
   display: block;
   margin: 0.7em auto;
   padding: 0.5em 0.5em;

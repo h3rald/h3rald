@@ -1,8 +1,10 @@
 ----- 
 permalink: incomplete-guide-to-london
+popular: true
 filters_pre: 
 - redcloth
 title: Fabio's (In)complete Guide to London
+subtitle: Some (non-)essential tips on getting around, eating, and enjouing yourself 
 comments: []
 
 date: 2006-08-23 06:23:24 +02:00

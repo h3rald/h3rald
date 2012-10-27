@@ -2,18 +2,108 @@
 
 body {
 	@include standard-font;
-	background: #000;
-  background-image: url("../images/textures/dark_leather.png");
+	background: $background-color;
+  /*background-image: url("../images/textures/dark_leather.png");*/
 }
 
 #container {
 	width: 960px;
-	margin: 20px auto;
+	margin: auto;
 	padding: 5px;
-	color: $dark-gray;
-	background: #fff;
-	@include border-radius(10px);
+	color: $text-color;
+	background: $background-color;
+	/* @include border-radius(10px); */
 }
+
+/* Logos */
+
+
+.logo {
+  font-weight: normal;
+  font-family: "Cardo", "Georgia", serif;
+}
+
+.hrald {
+  display: block;
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+.h, .rald {
+  font-size: 50px;
+}
+.three {
+  display: block;
+  margin-top: -15px;
+  margin-left: -105px;
+  font-size: 60px;
+}
+
+h1 {
+
+  .logo {
+    display: block;
+    margin-top: 20px;
+    color: $text-color;
+  }
+
+  .hrald {
+    display: block;
+    margin-top: 10px;
+    font-size: 75px;
+  }
+
+  .h, .rald {
+    font-size: 75px;
+  }
+  .three {
+    display: block;
+    margin-top: -12px;
+    margin-left: -155px;
+    font-size: 90px;
+  }
+
+  .h_line {
+    display: block;
+    border: 1px solid $text-color;
+    margin-top: 3px;
+    margin-left: -6px;
+    width: 50px;
+  }
+
+  .rald_line {
+    float: left;
+    display: block;
+    border: 1px solid $text-color;
+    margin-top: -2px;
+    margin-left: 87px;
+    width: 209px;
+  }
+
+  .established {
+    display: block;
+    font-weight: bold;
+    margin:auto;
+    text-align: center;
+    font-size: 85%;
+    .d {
+      vertical-align: super;
+      font-size: 72%;
+      text-decoration: underline;
+    }
+    .year {
+      font-size: 110%;
+    }
+    &:before, &:after {
+      content: "~";
+      vertical-align: middle;
+      font-size: 120%;
+    }
+  }
+
+}
+
+
 
 /* Navigation */
 
@@ -37,18 +127,18 @@ body {
 	height: 60px;
 	&.home {
 		nav.left { 
-			width: 234px;
+			width: 270px;
 			height: 60px;
 			margin-top: -6px;
 		}
 		nav.right { 
-		width: 234px;
+		width: 270px;
 		height: 60px;
 		margin-top: -6px;
 		}
 		h1 {
 			float: left;
-			margin-left: 80px;
+			margin-left: 45px;
 		}
 		time {
 			clear: both;
@@ -62,7 +152,7 @@ body {
 	}
 	&.page {
 		height: 45px;
-		border-bottom: 1px solid $dark-gray;
+		border-bottom: 1px solid $border-color;
 		nav.section {
 			float: right;
 			margin-top: 10px;
@@ -70,10 +160,10 @@ body {
 		}
 		nav.home-link {
 			float: left;
-			@include hover-image(193px, 43px);
 		}
 	}
 }
+
 
 #container > footer { 
 	clear: both;
@@ -93,17 +183,17 @@ body {
   text-align: center;
   display: block;
 	margin-top: 20px;
-	height: 60px;
-	border-top: 1px solid $light-gray;
+	border-top: 1px solid $border-color;
 	width: 940px;
 }
 
-#social {
-	margin: 20px auto;
+.social {
+	padding-top: 10px;
   height: 50px;
 	li { float:left;}
 	a {
-		margin: 0 28px;
+    border: none;
+		margin: 0 20px;
 		img {
 			opacity: 0.6;
 			vertical-align: middle;
@@ -131,8 +221,8 @@ body {
 
 #main-content {
 	margin: 0.5em 0;
-	margin-top: 0;
-	width: 555px;
+  margin-top: 20px;
+	width: 655px;
 	text-align: justify;
 }
 
@@ -163,9 +253,13 @@ body {
 /* Secondary */
 
 #secondary-content {
-	padding: 0 5px;
-	width:380px;
+  background-color: $background-color;
+  margin-top: 15px;
+	/*@include border-radius(5px);*/
+	padding: 5px;
+	width:280px;
 	text-align: justify;
+  border-left: 1px solid $border-color;
 }
 
 #secondary-content > article {

@@ -9,101 +9,38 @@ feed_url: "http://feeds.feedburner.com/h3rald"
 feed_title: 'Latest Articles'
 -----
 <%
-max_items = 5
+max_items = 15
 
 all_articles = latest_articles.length
 latest = latest_articles 6
-popular = popular_articles 5
+popular = popular_articles 10
 all_projects = @items.select{|a| a[:type] == 'project'}.length
 %>
 <section id="topbar">
-	<nav id="social">
-		<ul>
-			<li><a href="http://www.h3rald.com/rss" rel="external"><img src="/images/social/feed.png" alt="Feed" /></a></li>
-			<li><a href="http://foursquare.com/h3rald" rel="external"><img src="/images/social/foursquare.png" alt="FourSquare" /></a></li>
-			<li><a href="http://www.twitter.com/h3rald" rel="external"><img src="/images/social/twitter.png" alt="RSS" /></a></li>
-			<li><a href="skype:fabio.cevasco?call" rel="external"><img src="/images/social/skype.png" alt="Skype" /></a></li>
-			<li><a href="http://it.linkedin.com/in/fabiocevasco" rel="external"><img src="/images/social/linkedin.png" alt="LinkedIn" /></a></li>
-			<li><a href="https://github.com/h3rald" rel="external"><img src="/images/social/github.png" alt="GitHub" /></a></li>
-			<li><a href="http://reddit.com/user/h3rald" rel="external"><img src="/images/social/reddit.png" alt="Reddit" /></a></li>
-			<li><a href="http://pinboard.in/u:h3rald/" rel="external"><img src="/images/social/pinboard.png" alt="Pinboard" /></a></li>
-			<li><a href="http://web.stagram.com/n/h3rald/?vm=grid" rel="external"><img src="/images/social/instagram.png" alt="Instagram" /></a></li>
-		</ul>
-	</nav>
-	<aside id="search">
-		<section id="search_form"></section> 
-	</aside>
 </section><!-- #topbar end -->
-<section id="search_results"></section> 
 <section class="left" id="main-content">
-	<%= render 'article_intro', :item => latest[0], :classes => "three-columns hyphenate", :extended => true %>
-	<section class="clear-left left" id="#main-content-left">
-		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-		<section id="twitter">
-			<a href="http://twitter.com/h3rald" class="twitter-follow-button">Follow @h3rald</a>
-			<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
-			<script>
-				new TWTR.Widget({
-				version: 2,
-				type: 'profile',
-				rpp: 4,
-				interval: 6000,
-				width: 280,
-				height: 250,
-				theme: {
-				shell: {
-				background: '#ffffff',
-				color: '#333333'
-				},
-				tweets: {
-				background: '#ffffff',
-				color: '#333333',
-				links: '#005B91'
-				}
-				},
-				features: {
-				scrollbar: false,
-				loop: false,
-				live: false,
-				hashtags: true,
-				timestamp: true,
-				avatars: false,
-				behavior: 'all'
-				}
-				}).render().setUser('h3rald').start();
-			</script>
-		</section><!-- #twitter end -->
-		<%= render 'article_intro', :item => latest[3], :classes => "hyphenate", :extended => false %>
-		<%= render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false %>
-		</section><!-- #main-content-left end -->
-	<section class="right border-left" id="main-content-right">
-		<%= render 'article_intro', :item => latest[1], :classes => "hyphenate", :extended => false %>
-		<%= render 'article_intro', :item => latest[2], :classes => "hyphenate", :extended => false %>
-		<%= 
-			render 'article_intro', :item => latest[5], :classes => "hyphenate", :extended => false 
-		%>
-	</section><!-- #main-content-right end -->
+<span class="featured">latest</span>
+	<%= render 'article_intro', :item => latest[0], :classes => "hyphenate", :extended => true %>
+  <%= render 'article_intro', :item => latest[3], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_intro', :item => latest[1], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_intro', :item => latest[2], :classes => "hyphenate", :extended => false %>
+  <%= 
+    render 'article_intro', :item => latest[5], :classes => "hyphenate", :extended => false 
+  %>
 </section><!-- #main-content end -->
 <section class="right" id="secondary-content">
-	<%= render 'article_intro', :item => popular[0], :classes => "two-columns hyphenate", :extended => true %>
-	<article class="feature">
-		<header>
-			<p>FEATURED CONTENT</p>
-			<h1><a href="/glyph/">Glyph &ndash; Rapid Document Authoring Framework</a></h1>
-			<h2>A free and extensible solution for personal publishing, 100% open source!</h2>
-		</header>
-		<section class="hyphenate">
-			<img src="/images/glyph.png" alt="Glyph Logo" class="img-right" />
-			<p>With Glyph, creating and maintaining any kind of document becomes as easy as... programming. </p>
-			<p>Glyph enables you to minimize text duplication, focus on content rather than presentation, manage references seamlessly and automate tedious tasks through a simple but effective macro language, specifically geared towards customization and extensibility. <a href="/glyph/">&raquo;&nbsp;<strong>Read&nbsp;More</strong></a></p>
-		</section>
-	</article>
-	<section class="left" id="secondary-content-left">
-		<%= render 'article_intro', :item => popular[1], :classes => "hyphenate", :extended => false %>
-		<%= render 'article_intro', :item => popular[3], :classes => "hyphenate", :extended => false %>
-	</section><!-- #secondary-content-left end -->
-	<section class="right border-left" id="secondary-content-right">
-		<%= render 'article_intro', :item => popular[2], :classes => "hyphenate", :extended => false %>
-		<%= render 'article_intro', :item => popular[4], :classes => "hyphenate", :extended => false %>
-	</section><!-- #secondary-content-right end -->
+  <span class="featured">popular</span>
+	<%= render 'article_box', :item => popular[0], :classes => "hyphenate", :extended => true %>
+  <%= render 'article_box', :item => popular[1], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_box', :item => popular[3], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_box', :item => popular[2], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_box', :item => popular[4], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_box', :item => popular[5], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_box', :item => popular[6], :classes => "hyphenate", :extended => false %>
+  <%= render 'article_box', :item => popular[7], :classes => "hyphenate", :extended => false %>
 </section><!-- #secondary-content-end -->
+<aside id="search">
+<section id="search_form"></section> 
+</aside>
+<section id="search_results"></section> 

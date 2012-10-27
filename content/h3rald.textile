@@ -11,7 +11,7 @@ links:
 - "Source": http://github.com/h3rald/h3rald/tree/master 
 - "Tracking": http://github.com/h3rald/h3rald/issues
 status: Active
-version: 8.0.0
+version: 8.2.0
 -----
 
 <%= render 'project_data', :tag => 'website' %>

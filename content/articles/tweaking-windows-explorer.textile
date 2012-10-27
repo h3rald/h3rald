@@ -1,8 +1,10 @@
 ----- 
 permalink: tweaking-windows-explorer
+popular: true
 filters_pre: 
 - redcloth
 title: Tweaking Windows Explorer
+subtitle: How to make the default Windows file manager suck less
 comments: 
 - :date: 
   :author: John

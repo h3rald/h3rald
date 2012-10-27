@@ -1,0 +1,12 @@
+-----
+filter: erb
+-----
+<article id="a_<%= @item[:permalink] %>">
+	<header>
+		<h1><a href="<%= @item.identifier %>"><%= @item[:title]%></a></h1>
+		<% unless @item[:subtitle].blank? then %>
+			<h2><%= @item[:subtitle] %></h2>
+		<% end %>
+	</header>
+</article>
+
