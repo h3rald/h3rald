@@ -9,9 +9,9 @@
 
 @font-face {
   font-family: 'Cardo';
-  src: url('../fonts/Cardo-Roman.otf') format('opentype');
-	font-weight: normal;
-	font-style: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Cardo.woff'), local('Cardo-Regular') format('woff');
 }
 
 @font-face {
