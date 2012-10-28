@@ -132,7 +132,7 @@ route '/js/*' do
 end
 
 route '/fonts/*' do
-	item.identifier.chop + '.otf'
+	item.identifier.chop + ".#{item[:extension]}"
 end
 
 route '*' do
