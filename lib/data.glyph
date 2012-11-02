@@ -4,55 +4,49 @@
 def:[h3rald.article|
 	article[
 		@head[
-			style[default.css]
 			style[pagination.css]
-			<style>
-				h1 { 
-					font-size: 24px; 
-				}
-				h2{
-					margin-top: 0.2em;
-					padding-top: 0;
-				}
-				q, blockquote {
-					font-style: italic; 
-					color: #8F6B17;
-				}
-				.contents {
-					text-align:justify;
-					margin-bottom: 2em;
-					padding-bottom: 2em;
-					border-bottom: 1px solid #000;
-				}
-				div.caption {
-					color: #8F6B17;
-					font-style: italic;
-					padding: 0;
-					margin: 0 0.6em;
-				}
+			style[../styles/style.css]
+      <style>
+.halftitlepage {
+  margin: auto;
+  text-align: center; }
 
-				.figure {
-					padding: 0;
-					border: 1px solid #ccc;
-					display: block;
-				}
-				.figure img {
-					margin-bottom: 0;
-				}
-				.left { float: left; }
-				.right { float: right; }
-				.right, img\[style="float:right;"\], .figure\[style="float:right;"\] {
-					margin: 1em 0 1em 1em;
-				}
-				.left, img\[style="float:left;"\], .figure\[style="float:left;"\] {
-					margin: 1em 1em 1em 0;
-				}
-        @page {
-  				@top {
-    				content: string(book-title);
-					}
-				}
-			</style>
+
+.halftitlepage h1 {
+  padding-top: 0;
+  font-size: 2em;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin-bottom: 0.2em; }
+.halftitlepage h2 {
+  padding-top: 0;
+  font-style: italic;
+  font-size: 1.1em;
+  font-weight: normal;
+  line-height: 1.2em;
+  prince-bookmark-level: none; }
+
+#toc {
+  display: none;
+}
+
+.author {
+  font-size: 1em; }
+
+.pubdate {
+  font-size: 0.8em; }
+
+.contents {
+  page-break-after: always;
+  }
+
+h3.toc, h4.toc, h5.toc {
+  font-weight: normal;
+  font-size: 150%;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+}
+      </style>
 		]
 		@pre-title[
 			=>[http://www.h3rald.com/archives/|image[@width[25%]@height[25%]$[site.root]/images/logo.svg]]

@@ -142,11 +142,11 @@ article.page > header h2,
 
 #body-text section section section section section header h1,
 #body-text h6 {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 
 #main-content h1, #secondary-content h1{
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 /* Text */
@@ -431,17 +431,6 @@ a:hover {
 	color: $link-hover-color;
 }
 
-a[href^="http"]:after {
-  content: " ➚";
-}
-
-a.read:after {
-  content: "";
-}
-.social a[href^="http"]:after{
-  content: "";
-}
-
 sup {
 	vertical-align: super;
 	font-size: 80%;
@@ -481,3 +470,4 @@ sup {
   font-size: 110%;
   text-align: center;
   font-weight: bold; }
+

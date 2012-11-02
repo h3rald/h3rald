@@ -17,93 +17,24 @@ body {
 
 /* Logos */
 
+.logo { font-weight: normal; font-family: "Cardo", "Georgia", serif; margin-bottom: 2px;}
+.hrald { display: block; margin-top: 10px; font-size: 50px; }
+.h, .rald { font-size: 50px; }
+.three { display: block; margin-top: -15px; margin-left: -105px; font-size: 60px; }
 
-.logo {
-  font-weight: normal;
-  font-family: "Cardo", "Georgia", serif;
-}
-
-.hrald {
-  display: block;
-  margin-top: 10px;
-  font-size: 50px;
-}
-
-.h, .rald {
-  font-size: 50px;
-}
-.three {
-  display: block;
-  margin-top: -15px;
-  margin-left: -105px;
-  font-size: 60px;
-}
-
-h1 {
-
-  .logo {
-    display: block;
-    margin-top: 20px;
-    color: $text-color;
-  }
-
-  .hrald {
-    display: block;
-    margin-top: 10px;
-    font-size: 75px;
-  }
-
-  .h, .rald {
-    font-size: 75px;
-  }
-  .three {
-    display: block;
-    margin-top: -12px;
-    margin-left: -155px;
-    font-size: 90px;
-  }
-
-  .h_line {
-    display: block;
-    border: 1px solid $text-color;
-    margin-top: 8px;
-    margin-left: -4px;
-    width: 52px;
-  }
-
-  .rald_line {
-    float: left;
-    display: block;
-    border: 1px solid $text-color;
-    margin-top: -1px;
-    margin-left: 87px;
-    width: 209px;
-  }
-
-  .established {
-    display: block;
-    font-weight: bold;
-    margin:auto;
-    text-align: center;
-    font-size: 85%;
-    .d {
-      vertical-align: super;
-      font-size: 72%;
-      text-decoration: underline;
-    }
-    .year {
-      font-size: 110%;
-    }
-    &:before, &:after {
-      content: "~";
-      vertical-align: middle;
-      font-size: 120%;
-    }
-  }
-
-}
+h1 .logo { display: block; margin-top: 20px; color: #333333; }
+h1 .hrald { display: block; margin-top: 10px; font-size: 75px; }
+h1 .h, h1 .rald { font-size: 75px; }
+h1 .three { display: block; margin-top: -12px; margin-left: -155px; font-size: 90px; }
 
 
+h1 .h_line { border-bottom: 2px solid #333333; margin-top: 3px; margin-left: -4px; width: 52px; display: block;}
+h1 .rald_line {border-bottom: 2px solid #333333; margin-top: -2px; margin-left: 87px; width: 209px; display: block;}
+
+h1 .established { display: block; font-weight: bold; margin: auto; text-align: center; margin-top: -4px; font-size: 85%; }
+h1 .established .d { vertical-align: super; font-size: 72%; text-decoration: underline; }
+h1 .established .year { font-size: 110%; }
+h1 .established:before, h1 .established:after { content: "~"; vertical-align: middle; font-size: 120%; }
 
 /* Navigation */
 

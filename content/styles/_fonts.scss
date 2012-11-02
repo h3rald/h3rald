@@ -1,34 +1,4 @@
 /* Fonts */
 
-@font-face {
-  font-family: 'Crimson Text';
-  src: url('../fonts/CrimsonText-Roman.otf') format('opentype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-  font-family: 'Cardo';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/Cardo.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Crimson Text';
-  src: url('../fonts/CrimsonText-Italic.otf') format('opentype');
-	font-weight: normal;
-	font-style: italic;
-}
-@font-face {
-  font-family: 'Crimson Text';
-  src: url('../fonts/CrimsonText-Bold.otf') format('opentype');
-	font-weight: bold;
-	font-style: normal;
-}
-@font-face {
-  font-family: 'Crimson Text';
-  src: url('../fonts/CrimsonText-BoldItalic.otf') format('opentype');
-	font-weight: bold;
-	font-style: italic;
-}
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Cardo);

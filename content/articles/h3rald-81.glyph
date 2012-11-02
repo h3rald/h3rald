@@ -5,7 +5,6 @@
 :toc: true
 :date: 2010-09-23 14:04:25.052000 +02:00
 :permalink: h3rald-81
-:pdf: true
 :tags: 
 - website
 - webdevelopment
@@ -47,7 +46,7 @@ I made a point out of improving the old stylesheet to make the site easier to re
 
 Moreover, I worked on streamlining navigations across different sections of the site, in particular on article pages:
 
-!=\/$[site.root]/img/pictures/h3rald_81_article.png!
+image[\/$[site.root]/img/pictures/h3rald_81_article.png]
 	]
 ]
 section[
