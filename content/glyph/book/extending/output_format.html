@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Custom Output Formats - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,12 +61,12 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/extending/task.html">Defining Custom Tasks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom Commands</a></nav>
+							<nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom Commands →</a></nav>
 							<p>As shown in <a href="/glyph/book/extending/commands_tasks.html#cmd_tasks_arch">How Commands and Tasks work</a>, the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command command calls specific tasks defined in the <code>generate:</code> Rake namespace to generate output files in a particular format.</p>
 <p>More specifically, when a <code>--format</code> option is specified, the command looks for a task with the same name within the <code>generate:</code> namespace. This makes adding new output formats to Glyph a fairly easy task, without the need to specify custom commands or similar.</p>
 <p>The following sections explain how the <code>h3rald</code> output format was created to integrate this book into the <a href="http://www.h3rald.com">H3RALD.com</a> website.</p>
 <section class="section">
-<header><h1 id="h_105">Output Configuration</h1></header>
+<header><h1 id="h_105" class="toc">Output Configuration</h1></header>
 <p>The first step required to add a new output format to Glyph is extending Glyph&#8217;s configuration by adding the appropriate output hash, as follows:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="symbol">:output</span>: 
@@ -82,8 +79,7 @@
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span class="symbol">:layout_dirs</span>: [<span class="error">'web5']</span>
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span class="symbol">:layouts</span>: 
 <span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      <span class="symbol">:topic</span>: <span class="error">bookpage</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span class="symbol">:index</span>: <span class="error">bookindex</span>
-</pre></div>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span class="symbol">:index</span>: <span class="error">bookindex</span></pre></div>
 </div>
 
 	<p>In particular, the following keys are mandatory:</p>
@@ -98,7 +94,7 @@
 
 </section>
 <section class="section">
-<header><h1 id="h_106">Creating a 'generate:h3rald' task</h1></header>
+<header><h1 id="h_106" class="toc">Creating a 'generate:h3rald' task</h1></header>
 <p>The next (and final) step involves creating a custom <code>h3rald</code> task within the <code>generate:</code> namespace. This task can be placed in any <code>.rake</code> file within the <code>lib/tasks</code> directory:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>namespace <span class="symbol">:generate</span> <span class="keyword">do</span>
@@ -130,49 +126,28 @@
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span><span class="string"><span class="content">      ]</span><span class="delimiter">}</span></span>
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span>    file_write dir/<span class="string"><span class="delimiter">&quot;</span><span class="content">glyph.textile</span><span class="delimiter">&quot;</span></span>, project
 <span class="line-numbers"><a href="#n29" name="n29">29</a></span>  <span class="keyword">end</span>  
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span class="keyword">end</span>
-</pre></div>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span class="keyword">end</span></pre></div>
 </div>
 
 	<p>In this case, this task does not actually renders files in a different format, it just moves the files generated by the @generate:web5@ task in different subdirectories.</p>
 	<p>Additionally, it also generates the <a href="http://www.h3rald.com/glyph/">Glyph project page</a> from the book's introduction (note the usage of a raw custom layout macro).</p>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/extending/task.html">Defining Custom Tasks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom Commands</a></nav>
+							<nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom Commands →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

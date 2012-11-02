@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Content Reuse - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,9 +61,9 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/text_editing/stylesheets.html">Adding Stylesheets</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/conditionals.html">Conditional Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/stylesheets.html">← Adding Stylesheets</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/conditionals.html">Conditional Macros →</a></nav>
 							  <section class="section">
-<header><h1 id="file-inclusions">File inclusions</h1></header>
+<header><h1 id="file-inclusions" class="toc">File inclusions</h1></header>
 <p>If you&#8217;re authoring a user manual, a long article, or a book, writing everything inside a single <code>document.glyph</code> file may not be optimal. For this reason, Glyph provides an <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro that can be used to include the contents of any file within the <code>text/</code> directory:</p>
 <p><code>include[general/introduction.textile]</code></p>
 <p>The macro call above loads the contents of the <code>introduction.textile</code> file, within the <code>text/general</code> directory.</p>
@@ -77,7 +74,7 @@
 </ul>
 <p>You can override this behavior by setting the <code>filters.by_file_extensions</code> configuration setting to <code>false</code>. If no extension is specified, <code>.glyph</code> is assumed.</p>
     <section class="section">
-<header><h1 id="h_39">Remarks</h1></header>
+<header><h1 id="h_39" class="toc">Remarks</h1></header>
 <ul>
 	<li>The <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro can also be used to include (and evaluate) ruby files (with a <code>.rb</code> extension). In this case, the ruby file must be placed within the <code>lib/</code> directory of the current project.</li>
 	<li>The <a href="/glyph/book/macros/macros_core.html#m_load"><code>load</code></a> macro macro can be used to include the content of any file <em>without</em> performing any evaluation.</li>
@@ -87,14 +84,13 @@
 
 </section>
   <section class="section">
-<header><h1 id="snippets">Snippets</h1></header>
+<header><h1 id="snippets" class="toc">Snippets</h1></header>
 <p>While including the context of an entire file is definitely a useful feature for content reuse, sometimes it can be an overkill. What if, for example, you just want to reuse a short procedure or even a sentence or a single word? In this case, you may want to consider using a <em>snippet</em> instead.</p>
 <p>Snippets can be defined using the <a href="/glyph/book/macros/macros_core.html#m_snippet_"><code>snippet:</code></a> macro (aliased by <code>&amp;:</code>) and called by using the <a href="/glyph/book/macros/macros_core.html#m_snippet"><code>snippet</code></a> macro (aliased by <code>&amp;</code>). Consider the following simple example:</p>
     <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="error">&amp;</span>:[markups|Textile or Markdown]
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>&amp;:[markups|Textile or Markdown]
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>Glyph supports <span class="error">&amp;</span>[markups].
-</pre></div>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>Glyph supports &amp;[markups].</pre></div>
 </div>
 
     <p>You can use <code>&amp;[markups]</code> anywhere in your document instead of having to type "Textile or Markdown" every time. Additionally, later on you can change the value of the  <code>markups</code> to change it everywhere else in the document.</p>
@@ -105,41 +101,21 @@
 
 </aside>
   
-							<nav class="navigation"><a href="/glyph/book/text_editing/stylesheets.html">Adding Stylesheets</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/conditionals.html">Conditional Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/stylesheets.html">← Adding Stylesheets</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/conditionals.html">Conditional Macros →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

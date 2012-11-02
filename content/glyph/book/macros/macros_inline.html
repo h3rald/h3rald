@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Inline Macros - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,10 +61,10 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/macros/macros_block.html">Block Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_filters.html">Filter Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/macros/macros_block.html">← Block Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_filters.html">Filter Macros →</a></nav>
 								
 	<section class="section">
-<header><h1 id="m_anchor">anchor</h1></header>
+<header><h1 id="m_anchor" class="toc"><code>anchor</code></h1></header>
 <p>Creates a named anchor (or bookmark).</p>
 <strong>Aliases:</strong> <code>bookmark, #</code>
 <p><strong>Example:</strong> <code>#[test|Test Bookmark]</code></p>
@@ -75,7 +72,7 @@
 
 
 		<section class="section">
-<header><h1 id="h_234">Parameters</h1></header>
+<header><h1 id="h_242" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -100,7 +97,7 @@
 
 	
 	<section class="section">
-<header><h1 id="m_draftcomment">draftcomment</h1></header>
+<header><h1 id="m_draftcomment" class="toc"><code>draftcomment</code></h1></header>
 <p>If the <a href="/glyph/book/config/document.html#s_document_draft"><code>document.draft</code></a> setting is set to <code>true</code>, displays a draft comment within the document.</p>
 <strong>Aliases:</strong> <code>dc</code>
 <p><strong>Example:</strong> <code>dc[This is printed only in draft documents.]</code></p>
@@ -108,7 +105,7 @@
 
 
 		<section class="section">
-<header><h1 id="h_236">Parameters</h1></header>
+<header><h1 id="h_244" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -127,7 +124,7 @@
 
 	
 	<section class="section">
-<header><h1 id="m_fmi">fmi</h1></header>
+<header><h1 id="m_fmi" class="toc"><code>fmi</code></h1></header>
 <p>Creates a <em>For More Information</em> link (for an example usage, see the <a href="#m_link"><code>link</code></a> macro).</p>
 
 <p><strong>Example:</strong> <code>fmi[creating links|#links]</code></p>
@@ -135,7 +132,7 @@
 
 
 		<section class="section">
-<header><h1 id="h_238">Parameters</h1></header>
+<header><h1 id="h_246" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -160,7 +157,7 @@
 
 	
 	<section class="section">
-<header><h1 id="m_link">link</h1></header>
+<header><h1 id="m_link" class="toc"><code>link</code></h1></header>
 <p>Creates an hyperlink (<span class="fmi">for more information on <mark>creating links</mark>, see <a href="/glyph/book/text_editing/links.html#links">Links and Bookmarks</a></span>).</p>
 <strong>Aliases:</strong> <code>=></code>
 <p><strong>Example:</strong> <code>=>[http://www.h3rald.com|H3RALD.com]</code></p>
@@ -168,7 +165,7 @@
 
 
 		<section class="section">
-<header><h1 id="h_240">Parameters</h1></header>
+<header><h1 id="h_248" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -193,48 +190,28 @@
 
 	
 	<section class="section">
-<header><h1 id="m_todo">todo</h1></header>
+<header><h1 id="m_todo" class="toc"><code>todo</code></h1></header>
 <p>Saves the value as a <span class="caps">TODO</span> item, which can be printed using the <a href="/glyph/book/ref_commands.html#c_todo"><code>todo</code></a> command and included in the document if the <a href="/glyph/book/config/document.html#s_document_draft"><code>document.draft</code></a> setting is set to <code>true</code>.</p>
 <strong>Aliases:</strong> <code>!</code>
 <p><strong>Example:</strong> <code>todo[Remember to do this.]</code></p>
 
 </section>
 	
-							<nav class="navigation"><a href="/glyph/book/macros/macros_block.html">Block Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_filters.html">Filter Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/macros/macros_block.html">← Block Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_filters.html">Filter Macros →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

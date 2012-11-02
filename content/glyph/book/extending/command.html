@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Defining Custom Commands - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,10 +61,10 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/extending/output_format.html">Custom Output Formats</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_generic.html">Generic Errors</a></nav>
+							<nav class="navigation"><a href="/glyph/book/extending/output_format.html">← Custom Output Formats</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_generic.html">Generic Errors →</a></nav>
 							<p>Glyph relies on <a href="http://davetron5000.github.com/gli/"><span class="caps">GLI</span></a> for defining commands. This useful library provides a high-level framework for creating command-line interface similar to <a href="http://git-scm.com/">Git</a>, its <span class="caps">DSL</span> takes care of pretty much everything, from managing command line arguments and options to providing an interactive help system.</p>
 <section class="section">
-<header><h1 id="h_108">Creating a 'glyph generate' command</h1></header>
+<header><h1 id="h_108" class="toc">Creating a 'glyph generate' command</h1></header>
 <p>Consider the custom task defined in <a href="/glyph/book/extending/task.html#custom_generate_task">Creating a &#8216;custom:generate&#8217; task</a>. Creating a custom command to call it is fairly straightforward.</p>
 <p>First of all, create a <code>lib/commands</code> folder in your project directory. Then, create a <code>.rb</code> file within it, e.g. <code>commands.rake</code>.</p>
 <p>Finally, here&#8217;s the source of the command:</p>
@@ -82,15 +79,14 @@
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>      <span class="constant">Glyph</span>.run <span class="string"><span class="delimiter">'</span><span class="content">custom:generate</span><span class="delimiter">'</span></span>, args[<span class="integer">0</span>]
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span class="keyword">end</span>
 <span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>  <span class="keyword">end</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span class="keyword">end</span>
-</pre></div>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span><span class="keyword">end</span></pre></div>
 </div>
 
 	<p>That&#8217;s it. If you try to run <code>glyph help</code> within your project directory, notice that there&#8217;s a new entry for the generate command:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>$ glyph help
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>=====================================
-<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>Glyph v/0.5.1
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>Glyph v/0.6.0
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>=====================================
 <span class="line-numbers"> <a href="#n5" name="n5">5</a></span>usage: glyph command [options]
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>
@@ -106,54 +102,32 @@
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>    init     - Create a new Glyph project
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>    outline  - Display the document outline
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>    stats    - Display statistics
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>    todo     - Display all project TODO items
-</pre></div>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>    todo     - Display all project TODO items</pre></div>
 </div>
 
 	<p>You can now run the Glyph command as expected:</p>
 	<div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>$ glyph -d generate changelog
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>-- Generating CHANGELOG...
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>-- Done.
-</pre></div>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>-- Done.</pre></div>
 </div>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/extending/output_format.html">Custom Output Formats</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_generic.html">Generic Errors</a></nav>
+							<nav class="navigation"><a href="/glyph/book/extending/output_format.html">← Custom Output Formats</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_generic.html">Generic Errors →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

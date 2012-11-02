@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Sections and Headers - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,7 +61,7 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">← Escaping and Quoting</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases →</a></nav>
 							
   <p>Glyph documents are normally organized as a hierarchical tree of nested chapters, appendixes, sections, etc. To define a section, use the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro (aliased by <code>§</code>), like so:</p>
 
@@ -76,8 +73,7 @@
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    @title[Section #2]
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>This section is nested into the previous one.
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  ] --[End of Section #2]
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>] --[End of Section #1]
-</pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>] --[End of Section #1]</pre></div>
 </div>
 
 
@@ -92,14 +88,13 @@
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    <span class="tag">&lt;h3&gt;</span>Section #2<span class="tag">&lt;/h3&gt;</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>    <span class="tag">&lt;p&gt;</span>This section is nested in the previous one<span class="tag">&lt;/p&gt;</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span class="tag">&lt;/div&gt;</span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span>
-</pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
 </div>
 
 
   <p>By default, in Glyph the first header level is <em>2</em>, so the two headers are rendered as <code>h2</code> and <code>h3</code>, respectively (<code>--[...]</code> macros are <em>comments</em>, therefore they are not included in the final output).</p>
   <section class="section">
-<header><h1 id="h_25">Markup-aware sections</h1></header>
+<header><h1 id="h_25" class="toc">Markup-aware sections</h1></header>
 <p>Although Glyph can be used on its own to produce valid <span class="caps">HTML</span> or <span class="caps">XML</span> code, you may often want to use Textile or Markdown to save some typing. Typically, you&#8217;ll end up writing a lot of code like this:</p>
   
     <div class="CodeRay">
@@ -108,8 +103,7 @@
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  textile[
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>Textile markup can be used _here_.
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  ]
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]
-</pre></div>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]</pre></div>
 </div>
 
     <p>To save you even more typing, you can use the <a href="/glyph/book/macros/macros_filters.html#m_textile_section"><code>textile_section</code></a> macro (aliased by <code>txt_section</code> and <code>§txt</code>) and the <a href="/glyph/book/macros/macros_filters.html#m_markdown_section"><code>markdown_section</code></a> macro (aliased by <code>md_section</code> and <code>§md</code>). By doing so, the previous code snippet can be written like this:</p>
@@ -117,8 +111,7 @@
   <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>§txt[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[My Textile section]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>Textile markup can be used _here_.
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]
-</pre></div>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
 </div>
 
     <aside class="tip">
@@ -127,41 +120,21 @@
 </aside>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">← Escaping and Quoting</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

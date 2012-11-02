@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Command Reference - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,7 +61,7 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">Macro Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">← Macro Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros →</a></nav>
 							<p>Glyph&#8217;s command-line interface has been built using the <a href="http://github.com/davetron5000/gli">gli</a> (Git-like interface) gem. Therefore, Glyph commands are all written like this:</p>
 <p><strong>glyph</strong> <em>global_options</em> <strong>command</strong> <em>options</em> <em>parameters</em></p>
 <p>Where:</p>
@@ -73,26 +70,26 @@
 	<li><em>parameters</em> are separated by whitespaces, and can be wrapped in quotes.</li>
 </ul>
 <section class="section">
-<header><h1 id="h_115">Global Options</h1></header>
+<header><h1 id="h_115" class="toc">Global Options</h1></header>
 <section class="section">
-<header><h1 id="debug_switch"><code>-d</code>, <code>--debug</code></h1></header>
+<header><h1 id="debug_switch" class="toc"><code>-d</code>, <code>--debug</code></h1></header>
 <p>If specified, the command is executed in debug mode and additional diagnostic information is printed on the screen.</p>
 
 </section>
   <section class="section">
-<header><h1 id="version_switch"><code>-v</code>, <code>--version</code></h1></header>
-<p>Prints the current version of Glyph, ignoring any other command or switches.</p>
+<header><h1 id="help_switch" class="toc"><code>-h</code>, <code>--help</code></h1></header>
+<p>Displays help on the program.</p>
 
 </section>
 
 </section>
 <section class="section">
-<header><h1 id="c_add">add</h1></header>
+<header><h1 id="c_add" class="toc"><code>add</code></h1></header>
 <p>Creates a new text file in the <code>text/</code> folder.</p>
   <p><strong>Example:</strong> <code>glyph add introduction.textile</code></p>
   
 		<section class="section">
-<header><h1 id="h_119">Parameters</h1></header>
+<header><h1 id="h_119" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -108,12 +105,12 @@
 
 </section>
 <section class="section">
-<header><h1 id="c_compile">compile</h1></header>
+<header><h1 id="c_compile" class="toc"><code>compile</code></h1></header>
 <p>Compiles a Glyph document into an output file. If no options are specified, the <code>document.glyph</code> file is used as source to produce a standalone HTML file.</p>
   <p><strong>Example:</strong> <code>glyph compile -f pdf</code></p>
   
 		<section class="section">
-<header><h1 id="h_121">Parameters</h1></header>
+<header><h1 id="h_121" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -135,7 +132,7 @@
 	
   
 		<section class="section">
-<header><h1 id="h_122">Options</h1></header>
+<header><h1 id="h_122" class="notoc">Options</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
@@ -172,17 +169,21 @@ If specified, enable <a href="/glyph/book/compiling/compiling.html#auto_regenera
 
 </section>
 <section class="section">
-<header><h1 id="c_config">config</h1></header>
+<header><h1 id="c_config" class="toc"><code>config</code></h1></header>
 Gets or sets a configuration setting in the project or global configuration file (<span class="fmi">for more information on <mark>configuration files</mark>, see <a href="/glyph/book/getting_started/configuration.html#cfg">Project Configuration</a></span>).
-  
-<div class="examples">
-<p><strong>Examples:</strong></p> 
-["<code>glyph config document.filename</code><br />", "<code>glyph config -g document.author \"Fabio Cevasco\"</code><br />"]
-</div>
-	
+  <section class="section">
+<header><h1 id="h_124" class="notoc">Examples</h1></header>
+<p>
+<code>glyph config document.filename</code>
+</p>
+    <p>
+<code>glyph config -g document.author "Fabio Cevasco"</code>
+</p>
+
+</section>
   
 		<section class="section">
-<header><h1 id="h_124">Options</h1></header>
+<header><h1 id="h_125" class="notoc">Options</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
@@ -201,7 +202,7 @@ If specified, the global configuration file is processed instead of the project 
 	
   
 		<section class="section">
-<header><h1 id="h_125">Parameters</h1></header>
+<header><h1 id="h_126" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -223,17 +224,21 @@ If specified, the global configuration file is processed instead of the project 
 
 </section>
 <section class="section">
-<header><h1 id="c_help">help</h1></header>
+<header><h1 id="c_help" class="toc"><code>help</code></h1></header>
 Prints information about all Glyph commands or about one specific command.
-  
-<div class="examples">
-<p><strong>Examples:</strong></p> 
-["<code>glyph help</code><br />", "<code>glyph help compile</code><br />"]
-</div>
-	
+  <section class="section">
+<header><h1 id="h_128" class="notoc">Examples</h1></header>
+<p>
+<code>glyph help</code>
+</p>
+    <p>
+<code>glyph help compile</code>
+</p>
+
+</section>
   
 		<section class="section">
-<header><h1 id="h_127">Parameters</h1></header>
+<header><h1 id="h_129" class="notoc">Parameters</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
@@ -249,17 +254,17 @@ Prints information about all Glyph commands or about one specific command.
 
 </section>
 <section class="section">
-<header><h1 id="c_init">init</h1></header>
+<header><h1 id="c_init" class="toc"><code>init</code></h1></header>
 Creates a new Glyph project in the current directory (if empty).
   <p><strong>Example:</strong> <code>glyph init</code></p>
 
 </section>
 <section class="section">
-<header><h1 id="c_outline">outline</h1></header>
+<header><h1 id="c_outline" class="toc"><code>outline</code></h1></header>
 Display an outline of the current document.
   
 		<section class="section">
-<header><h1 id="h_130">Options</h1></header>
+<header><h1 id="h_132" class="notoc">Options</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
@@ -299,25 +304,37 @@ Display section titles.
 
 </section>
 	
-  
-<div class="examples">
-<p><strong>Examples:</strong></p> 
-["<code>glyph outline -it -l 1</code><br />", "<code>glyph outline -l 2</code><br />", "<code>glyph outline -f</code><br />"]
-</div>
+  <section class="section">
+<header><h1 id="h_133" class="notoc">Examples</h1></header>
+<p>
+<code>glyph outline -it -l 1</code>
+</p>
+    <p>
+<code>glyph outline -l 2</code>
+</p>
+    <p>
+<code>glyph outline -f</code>
+</p>
+
+</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_stats">stats</h1></header>
+<header><h1 id="c_stats" class="toc"><code>stats</code></h1></header>
 <p>Displays project statistics (<span class="fmi">for more information on <mark>this command</mark>, see <a href="/glyph/book/document.html#stats">Document Statistics</a></span>).</p>
-  
-<div class="examples">
-<p><strong>Examples:</strong></p> 
-["<code>glyph stats -m </code><br />", "<code>glyph stats --link=h3rald.com</code><br />"]
-</div>
-	
+  <section class="section">
+<header><h1 id="h_135" class="notoc">Examples</h1></header>
+<p>
+<code>glyph stats -m</code>
+</p>
+    <p>
+<code>glyph stats --link=h3rald.com</code>
+</p>
+
+</section>
   
 		<section class="section">
-<header><h1 id="h_132">Options</h1></header>
+<header><h1 id="h_136" class="notoc">Options</h1></header>
 <table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
@@ -399,46 +416,26 @@ Display detailed statistics about the specified snippet.
 
 </section>
 <section class="section">
-<header><h1 id="c_todo">todo</h1></header>
+<header><h1 id="c_todo" class="toc"><code>todo</code></h1></header>
 Prints all the todo items saved using the <a href="/glyph/book/macros/macros_inline.html#m_todo"><code>todo</code></a> macro.
   <p><strong>Example:</strong> <code>glyph todo</code></p>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">Macro Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">← Macro Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

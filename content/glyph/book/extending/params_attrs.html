@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Parameters and Attributes - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,10 +61,10 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">Defining Custom Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks and Headers</a></nav>
+							<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">← Defining Custom Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks and Headers →</a></nav>
 								<p>Perhaps the most common things to do in a macro definition is accessing parameters and attributes. When doing so, it is important to consider whether we want to retrieve the <em>raw value</em> of and attribute or parameter or its <em>expanded value</em>. The difference between the two will become clearer in the following sections and also in the <a href="/glyph/book/extending/interpreting.html#interpreting">Interpreting Glyph Code</a> section.</p>
 	<section class="section">
-<header><h1 id="expanded_values">Accessing Expanded Values</h1></header>
+<header><h1 id="expanded_values" class="toc">Accessing Expanded Values</h1></header>
 <p>Normally, you just want to get the value of an attribute or parameter and use it in the macro. This means, in other words, its <em>expanded</em> value, i.e. the value resulting from the expansion of the macros (if any) within the attribute or parameter.</p>
 		<p>To access expanded values, use the following methods:</p>
 <ul>
@@ -80,7 +77,7 @@
 
 </section>
 	<section class="section">
-<header><h1 id="h_88">Accessing Raw Values</h1></header>
+<header><h1 id="h_88" class="toc">Accessing Raw Values</h1></header>
 <p>While accessing expanded values is simple and immediate, in some cases it may not produce the desired results. Consider the following macro definition:</p>
 		<div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>macro <span class="symbol">:nest_section</span> <span class="keyword">do</span>
@@ -91,8 +88,7 @@
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span class="string"><span class="content">      </span><span class="inline"><span class="inline-delimiter">#{</span>value<span class="inline-delimiter">}</span></span><span class="content"></span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span class="string"><span class="content">    ]</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span class="string"><span class="content">  ]</span><span class="delimiter">}</span></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span class="keyword">end</span>
-</pre></div>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span class="keyword">end</span></pre></div>
 </div>
 
 		<p>And suppose to use it as follows:</p>
@@ -102,8 +98,7 @@
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span class="instance-variable">@title</span>[<span class="constant">Inner</span> <span class="constant">Section</span>]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>    ...
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  ]
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]
-</pre></div>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]</pre></div>
 </div>
 
 		<p>It produces the following HTML code:</p>
@@ -117,8 +112,7 @@
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>...
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span class="tag">&lt;/div&gt;</span>
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span class="tag">&lt;/div&gt;</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span class="tag">&lt;/div&gt;</span>
-</pre></div>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span class="tag">&lt;/div&gt;</span></pre></div>
 </div>
 
 		<p>Everything is fine <em>except</em> for the header level: the heading "Inner Section" is of level 2, but it should be level 4!</p>
@@ -136,41 +130,21 @@
 </ul>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">Defining Custom Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks and Headers</a></nav>
+							<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">← Defining Custom Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks and Headers →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

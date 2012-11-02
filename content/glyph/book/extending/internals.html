@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>A quick look at Glyph's internals - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,7 +61,7 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/stats/links.html">Link Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/stats/links.html">← Link Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros →</a></nav>
 							  <p>If you plan on extending Glyph, knowing how it works inside helps. It is not mandatory by any means, but it definitely helps, especially when creating complex macros.</p>
   <p>What happens behind the scenes when you call <code>glyph compile</code>? Glyph's code is parsed, analyzed and then translated into text, and here's how:</p>
   <figure><img src="/glyph/book/images/glyph/document_generation.png" /><figcaption>A sequence diagram for document generation</figcaption></figure>
@@ -75,7 +72,7 @@
 	<li>The <em>Finalization Phase</em> (Post-Processing) starts when the interpreter calls the <code>finalyze</code> method, causing the <code>Glyph::Document</code> object to perform a series of finalizations on the string obtained after analysis, i.e. it replaces escape sequences and placeholders.</li>
 </ul>
   <section class="section">
-<header><h1 id="h_83">Example: A short note</h1></header>
+<header><h1 id="h_83" class="toc">Example: A short note</h1></header>
 <p>As an example, consider the following Glyph code:</p>
     <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>fmi[something|#test]
@@ -84,8 +81,7 @@
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  @title[Test Section]
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  @id[test]
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>...
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]
-</pre></div>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]</pre></div>
 </div>
 
     <p>This simple snippet uses the <a href="/glyph/book/macros/macros_inline.html#m_fmi"><code>fmi</code></a> macro to link to a section later on in the document. When parsed, the produced AST is the following:</p>
@@ -113,8 +109,7 @@
 <span class="line-numbers"><a href="#n21" name="n21">21</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol">:title</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">Test Section</span><span class="delimiter">&quot;</span></span>}
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol">:id</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>}
-</pre></div>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>}</pre></div>
 </div>
 
     <p>This output is produced by calling the <code>inspect</code> method on the AST. Each <a href="http://rubydoc.info/gems/glyph/Glyph/SyntaxNode"><code>Glyph::SyntaxNode</code></a> object in the tree is basically an ordinary Glyph Hash with a parent and 0 or more chidren, so the code snippets above shows how the syntax nodes are nested.</p>
@@ -128,8 +123,7 @@
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/h2&gt;</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>\/[...\/]
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span>
-</pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
 </div>
 
     <p>This looks almost perfect, except that:</p>
@@ -146,46 +140,25 @@
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/h2&gt;</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>[...]
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span>
-</pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
 </div>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/stats/links.html">Link Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros</a></nav>
+							<nav class="navigation"><a href="/glyph/book/stats/links.html">← Link Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

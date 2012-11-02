@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Link Statistics - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,10 +61,10 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/stats/bookmarks.html">Bookmark Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/internals.html">A quick look at Glyph's internals</a></nav>
+							<nav class="navigation"><a href="/glyph/book/stats/bookmarks.html">← Bookmark Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/internals.html">A quick look at Glyph's internals →</a></nav>
 							
   <section class="section">
-<header><h1 id="h_77">Displaying stats about all links</h1></header>
+<header><h1 id="h_77" class="toc">Displaying stats about all links</h1></header>
 <p>To display statistics about all links, execute <code>glyph stats --links</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Links
@@ -88,25 +85,24 @@
 <span class="line-numbers"><a href="#n16" name="n16">16</a></span>[...]
 <span class="line-numbers"><a href="#n17" name="n17">17</a></span>-- Total External Links: 95
 <span class="line-numbers"><a href="#n18" name="n18">18</a></span>-- External Links
-<span class="line-numbers"><a href="#n19" name="n19">19</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph 
-<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/Document 
-<span class="line-numbers"><a href="#n21" name="n21">21</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/Interpreter 
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/Macro 
-<span class="line-numbers"><a href="#n23" name="n23">23</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/Macro/Validators 
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/Macro:update_source 
-<span class="line-numbers"><a href="#n25" name="n25">25</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/MacroNode 
-<span class="line-numbers"><a href="#n26" name="n26">26</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/Parser 
-<span class="line-numbers"><a href="#n27" name="n27">27</a></span>   - <span class="error">&amp;</span>[rubydoc]/Glyph/SyntaxNode 
-<span class="line-numbers"><a href="#n28" name="n28">28</a></span>   - <span class="error">&amp;</span>[rubydoc]/Macro 
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>   - &amp;[rubydoc]/Glyph 
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>   - &amp;[rubydoc]/Glyph/Document 
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>   - &amp;[rubydoc]/Glyph/Interpreter 
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>   - &amp;[rubydoc]/Glyph/Macro 
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>   - &amp;[rubydoc]/Glyph/Macro/Validators 
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>   - &amp;[rubydoc]/Glyph/Macro:update_source 
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>   - &amp;[rubydoc]/Glyph/MacroNode 
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>   - &amp;[rubydoc]/Glyph/Parser 
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>   - &amp;[rubydoc]/Glyph/SyntaxNode 
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>   - &amp;[rubydoc]/Macro 
 <span class="line-numbers"><a href="#n29" name="n29">29</a></span>   - http://code.google.com/p/wkhtmltopdf/ 
 <span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>   - http://coderay.rubychan.de/ 
 <span class="line-numbers"><a href="#n31" name="n31">31</a></span>   - http://coderay.rubychan.de/doc/classes/CodeRay/Encoders/HTML.html 
-<span class="line-numbers"><a href="#n32" name="n32">32</a></span>[...]
-</pre></div>
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>[...]</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_78">Remarks</h1></header>
+<header><h1 id="h_78" class="toc">Remarks</h1></header>
 <ul>
 	<li>The only criteria used to determine if a link is internal is whether it starts with a <code>#</code> or not.</li>
 </ul>
@@ -116,7 +112,7 @@
 </section>
 
   <section class="section">
-<header><h1 id="h_79">Displaying stats about links matching a regular expression</h1></header>
+<header><h1 id="h_79" class="toc">Displaying stats about links matching a regular expression</h1></header>
 <p>To display statistics about links matching a regular expression (e.g. <code>/c_/</code>), execute <code>glyph stats --link=c_</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Links matching /c_/
@@ -156,12 +152,11 @@
 <span class="line-numbers"><a href="#n35" name="n35">35</a></span>     - text/macros/macros_inline.glyph (1)
 <span class="line-numbers"><a href="#n36" name="n36">36</a></span>   - #esc_quot (2)
 <span class="line-numbers"><a href="#n37" name="n37">37</a></span>     - text/extending/macro_def.glyph (1)
-<span class="line-numbers"><a href="#n38" name="n38">38</a></span>     - text/text_editing/macro_intro.glyph (1)
-</pre></div>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>     - text/text_editing/macro_intro.glyph (1)</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_80">Remarks</h1></header>
+<header><h1 id="h_80" class="toc">Remarks</h1></header>
 <ul>
 	<li>No distinction between external and internal targets is made.</li>
 </ul>
@@ -169,41 +164,21 @@
 </section>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/stats/bookmarks.html">Bookmark Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/internals.html">A quick look at Glyph's internals</a></nav>
+							<nav class="navigation"><a href="/glyph/book/stats/bookmarks.html">← Bookmark Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/internals.html">A quick look at Glyph's internals →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

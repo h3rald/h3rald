@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Macro Statistics - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,10 +61,10 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/stats/stats.html">Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics</a></nav>
+							<nav class="navigation"><a href="/glyph/book/stats/stats.html">← Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics →</a></nav>
 							
   <section class="section">
-<header><h1 id="h_62">Displaying stats about all macros</h1></header>
+<header><h1 id="h_62" class="toc">Displaying stats about all macros</h1></header>
 <p>To display statistics about all macros, execute <code>glyph stats --macros</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macros
@@ -76,7 +73,7 @@
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>-- Total Macro Aliases: 57
 <span class="line-numbers"> <a href="#n5" name="n5">5</a></span>-- Total Used Macro Definitions: 56
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span>-- Macro Definitions:
-<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>     #<span class="error">&gt;</span>            $<span class="error">&gt;</span>            %<span class="error">&gt;</span>            alias:        aliases       
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>     #&gt;            $&gt;            %&gt;            alias:        aliases       
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>     anchor        and           article       author        block_example 
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>     book          box           class         codeblock     comment       
 <span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>     condition     config        config:       config_table  default       
@@ -91,7 +88,7 @@
 <span class="line-numbers"><a href="#n19" name="n19">19</a></span>     title         toc           todo          values        |xml|         
 <span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>
 <span class="line-numbers"><a href="#n21" name="n21">21</a></span>-- Used Macro Definitions:
-<span class="line-numbers"><a href="#n22" name="n22">22</a></span>     #<span class="error">&gt;</span>            $<span class="error">&gt;</span>            %<span class="error">&gt;</span>            aliases       anchor        
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>     #&gt;            $&gt;            %&gt;            aliases       anchor        
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>     and           author        block_example book          box           
 <span class="line-numbers"><a href="#n24" name="n24">24</a></span>     class         codeblock     comment       condition     config        
 <span class="line-numbers"><a href="#n25" name="n25">25</a></span>     config_table  default       document      eq            error_table   
@@ -102,12 +99,11 @@
 <span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>     release       revision      rewrite:      ruby          section       
 <span class="line-numbers"><a href="#n31" name="n31">31</a></span>     snippet       snippet:      stats_for     style         subtitle      
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span>     textile       title         toc           todo          values        
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span>     |xml|
-</pre></div>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>     |xml|</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_63">Remarks</h1></header>
+<header><h1 id="h_63" class="toc">Remarks</h1></header>
 <ul>
 	<li>Only macro <em>definitions</em> (not their <em>aliases</em>) are displayed, both default and user-defined.</li>
 	<li>The <code>|xml|</code> macro is a special macro used if the <a href="/glyph/book/config/options.html#s_options_xml_fallback"><code>options.xml_fallback</code></a> setting is enabled.</li>
@@ -119,7 +115,7 @@
 </section>
 
   <section class="section">
-<header><h1 id="h_64">Displaying stats about a single macro</h1></header>
+<header><h1 id="h_64" class="toc">Displaying stats about a single macro</h1></header>
 <p>To display statistics about a single macro (e.g. <code>note</code>), execute <code>glyph stats --macro=note</code>. Glyph displays something like this:</p>
     <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macro 'note' 
@@ -137,12 +133,11 @@
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>   - text/text_editing/links.glyph (1)
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>   - text/text_editing/raw_html.glyph (1)
 <span class="line-numbers"><a href="#n15" name="n15">15</a></span>   - text/text_editing/section_aliases.glyph (1)
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - text/text_editing/xml_fallback.glyph (2)
-</pre></div>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - text/text_editing/xml_fallback.glyph (2)</pre></div>
 </div>
 
     <section class="section">
-<header><h1 id="h_65">Remarks</h1></header>
+<header><h1 id="h_65" class="toc">Remarks</h1></header>
 <ul>
 	<li>All the instances of the specified macro definition <em>and all its aliases</em> are collected, regardless whether a definition or an alias is specified.</li>
 	<li>If you use custom macros, make sure they call the <a href="http://rubydoc.info/gems/glyph/Glyph/Macro:update_source">Macro#update_source</a> appropriately method if necessary.</li>
@@ -152,41 +147,21 @@
 </section>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/stats/stats.html">Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics</a></nav>
+							<nav class="navigation"><a href="/glyph/book/stats/stats.html">← Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

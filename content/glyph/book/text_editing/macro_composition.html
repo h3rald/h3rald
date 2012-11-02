@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Macro Composition - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,15 +61,14 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/text_editing/attribute_intro.html">Macro attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/attribute_intro.html">← Macro attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting →</a></nav>
 							<p>Glyph macros can be <em>composed</em> with other using the <code>/</code> character. Macro composition can be used instead of nesting, provided that macro containers (also called <em>dispatchers</em> in certain situations) take only one parameter and no attributes.</p>
 <p>For example, the following code:</p>
 <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  not[output?[pdf]]|
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  ...
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]
-</pre></div>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
 </div>
 
 
@@ -82,8 +78,7 @@
   <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  not/output?[pdf]|
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  ...
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]
-</pre></div>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
 </div>
 
 
@@ -93,41 +88,21 @@
 	<li>The <a href="/glyph/book/macros/macros_core.html#m_s"><code>s</code></a> macro, used to call almost any method of the Ruby String class.</li>
 	<li>The <a href="/glyph/book/macros/macros_core.html#m_xml"><code>xml</code></a> macro, used to render raw <span class="caps">XML</span> tags.</li>
 </ul>
-							<nav class="navigation"><a href="/glyph/book/text_editing/attribute_intro.html">Macro attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/attribute_intro.html">← Macro attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->

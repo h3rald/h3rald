@@ -2,9 +2,6 @@
 <html lang="en"> 
 	<head> 
     <title>Conditional Macros - Glyph</title> 
-		<link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-		
-		
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -43,10 +40,10 @@
 				<header class="page">
 	<nav class="home-link">
 		<a href="/">
-			<img src="/images/h3rald_small.png" alt="H3RALD" class="default"/>
-			<![if !IE]>
-			<img src="/images/h3rald_hover_small.png" alt="H3RALD" class="hover"/>
-			<![endif]>
+      <span class="logo">
+        <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+        <span class="three">3</span>
+      </span>
 		</a>
 	</nav>
 	
@@ -64,7 +61,7 @@
   </header>
 					<section id="body-text" class="hyphenate glyph-book">
 
-							<nav class="navigation"><a href="/glyph/book/text_editing/inclusions.html">Content Reuse</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/evaluation.html">Simple Programming and Code Evaluation</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/inclusions.html">← Content Reuse</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/evaluation.html">Simple Programming and Code Evaluation →</a></nav>
 							  <p>Sometimes you may want text to be included in a document only if certain conditions are satisfied. For example, you may want to display a disclaimer section only if the document is a draft (see the <a href="/glyph/book/config/document.html#s_document_draft"><code>document.draft</code></a> setting), or use a particular stylesheet only if when you generate a <span class="caps">PDF</span> document.</p>
 <p>To do so, you can use the <a href="/glyph/book/macros/macros_core.html#m_condition"><code>condition</code></a> macro (aliased by <code>?</code>), and a set of additional macros that can be used as conditional operators i.e.:</p>
 <ul>
@@ -77,8 +74,7 @@
   <div class="CodeRay">
   <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[$[document.draft]|
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>This is a first draft of the Glyph Book|
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>This is the official version of the Glyph Book]
-</pre></div>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>This is the official version of the Glyph Book]</pre></div>
 </div>
 
   <p>In this case, if <code>document.draft</code> is set to <code>true</code>, &#8220;This is a first draft of the Glyph Book&#8221; will be displayed; if not, &#8220;This is the official version of the Glyph Book&#8221; will be displayed instead.</p>
@@ -96,13 +92,12 @@
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>    eq[$[tools.pdf_generator]|prince]
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    ]
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  |
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  style[pagination.css]]
-</pre></div>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  style[pagination.css]]</pre></div>
 </div>
 
   <p>In this case, the <code>pagination.css</code> stylesheet is included only when you're generating a PDF document using Prince XML.</p>
   <section class="section">
-<header><h1 id="h_42">Results of conditional expressions</h1></header>
+<header><h1 id="h_42" class="toc">Results of conditional expressions</h1></header>
 <p>The <a href="/glyph/book/macros/macros_core.html#m_condition"><code>condition</code></a> macro in Glyph works in a similar way as conditionals in programming languages: if the conditional expression (supplied as first parameter) is satisfied then the second parameter is executed or displayed. But when is a conditional expression satisfied? Glyph is a simple mini-language to perform text manipulation, and has no types, it can only understand text, therefore:</p>
 <ul>
 	<li>A conditional expression is satisfied if it evaluates to a non-empty string except &#8220;false&#8221;.</li>
@@ -110,41 +105,21 @@
 </ul>
 
 </section>
-							<nav class="navigation"><a href="/glyph/book/text_editing/inclusions.html">Content Reuse</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/evaluation.html">Simple Programming and Code Evaluation</a></nav>
+							<nav class="navigation"><a href="/glyph/book/text_editing/inclusions.html">← Content Reuse</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/evaluation.html">Simple Programming and Code Evaluation →</a></nav>
 										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-<g:plusone size="medium"></g:plusone>
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </nav>
 					</section>
 				</article>
 					
 			
 			<footer>
-				<section class="ads">
-					<script type="text/javascript"><!--
-						google_ad_client = "pub-2871497824158668";
-						/* 728x90, created 9/10/10 */
-						google_ad_slot = "3963343166";
-						google_ad_width = 728;
-						google_ad_height = 90;
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-					</script>
-				</section>
 				<section>
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->
