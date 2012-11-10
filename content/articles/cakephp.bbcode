@@ -108,7 +108,7 @@ So what is Cake?  In the previous sections, I introduced some general concepts a
 
 The first thing to understand about Cake (and Rails as well) is that one of their aims was to avoid editing long and complex configuration files in order to run the environment.  The approach in this sense is to use [i]conventions[/i] over [i]configuration[/i]. This may sound terribly restrictive, but in reality it proved  to make things much simpler. After all, I said I wanted to use a framework because I needed a solid structure to base my applications on, not that I needed to be able to create and personalize my own structure and system. Cake uses some simple rules in order to run properly, and the easiest way to explain them is through Cake's directory structure, which represents the skeleton of every CakePHP application.
 
-[b][i]/
+/
 ---app/
 ------config/
 ------controllers/
@@ -126,7 +126,7 @@ The first thing to understand about Cake (and Rails as well) is that one of thei
 ---------files/
 ---------img/
 ---------js/
-[/b]---cake/
+---cake/
 ------config/
 ---------inflections/
 ------docs/
@@ -141,7 +141,7 @@ The first thing to understand about Cake (and Rails as well) is that one of thei
 ------distro/
 ------logs/
 ------tests/
----vendors/[/i]
+---vendors/
 
 I expanded only the first three levels of the tree, although there are more levels in the [i]/cake/[/i] directory.  They won't be considered here simply because the [i]/cake/[/i] directory contains CakePHP's internal libraries, which normally will not be modified when developing an application.  The [i]/tmp/[/i] directory also will not be elaborated upon either, because it is only used to store temporary files. However, the [i]/vendor/[/i] directory should contain third party scripts and libraries that you may want to use in your application, but they are not normally integrated with Cake's framework.  95% of your application will reside within the [i]/app/[/i] directory, which we therefore need to examine in greater detail.
 
@@ -404,7 +404,7 @@ After learning all this about Cake and after trying it out myself, I really thin
 
 Special thanks to:
 [list]
-[*][b]Larry E. Masters aka [i]PhpNut[/i][/b] and  Garrett J. Woodworth [b]gwoo[/b] for providing all the answers to my questions and contributing to create such a wonderful tool for the PHP community.
+[*][b]Larry E. Masters aka PhpNut[/b] and  Garrett J. Woodworth [b]gwoo[/b] for providing all the answers to my questions and contributing to create such a wonderful tool for the PHP community.
 [*][b]Marc Abramowitz[/b] for sharing his experiences with the CakePHP framework and providing the content for the '...let's eat' section.
 [/list]
 
