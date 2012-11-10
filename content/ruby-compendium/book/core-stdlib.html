@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Glyph - Document Authoring Framework</title>
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head> 
+    <title>The Core and the Standard Library - Glyph</title> 
 		
 		<meta charset="utf-8" />
 		<meta name="author" content="Fabio Cevasco" />
@@ -52,27 +52,43 @@
 	</nav>
 	
 </header>
-				<article class="page">
+				<article class="page glyph-book">
 					<header>
 	<hgroup>
-		<h1>Glyph - Document Authoring Framework</h1>
-		<h2>Documentation</h2>
-		
+		<h1>The Core and the Standard Library</h1> 
+		<h2>Glyph</h2>
 	</hgroup>
-	
-</header>
-					<section id="body-text" class="hyphenate glyph-index">
-					<nav class="contents">
-<h1 class="toc-header" id="toc">Table of Contents</h1>
-<ol class="toc">
-						<li class="frontmatter introduction"><a href="/ruby-compendium/book/intro.html#h_1">So you want to learn Ruby...</a></li><li><ol><li class="frontmatter section"><a href="/ruby-compendium/book/notes.html#h_2">About this Book</a></li></ol></li>
-<li class="bodymatter chapter"><a href="/ruby-compendium/book/language.html#h_3">Quick Tour</a></li><li><ol><li class="bodymatter section"><a href="/ruby-compendium/book/ten-good-things.html#ten-good-things">10 Good Things about Ruby</a></li><li class="bodymatter section"><a href="/ruby-compendium/book/implementations.html#implementations">Versions and Implementations</a></li><li class="bodymatter section"><a href="/ruby-compendium/book/syntax.html#syntax">Syntax</a></li><li class="bodymatter section"><a href="/ruby-compendium/book/core-stdlib.html#core-stdlib">The Core and the Standard Library</a></li><li class="bodymatter section"><a href="/ruby-compendium/book/features.html#features">Advanced Language Features</a></li></ol></li>
-<li class="bodymatter chapter"><a href="/ruby-compendium/book/gems.html#gems">Ruby Gems</a></li><li><ol><li class="bodymatter section"><a href="/ruby-compendium/book/gem-tips.html#h_17">What you can use for...</a></li></ol></li>
-<li class="bodymatter chapter"><a href="/ruby-compendium/book/resources.html#resources">Resources</a></li><li><ol><li class="bodymatter section"><a href="/ruby-compendium/book/web-sites.html#websites">Web Sites</a></li><li class="bodymatter section"><a href="/ruby-compendium/book/books.html#books">Books</a></li><li class="bodymatter section"><a href="/ruby-compendium/book/podcasts.html#podcasts">Podcasts and Screencasts</a></li></ol></li>
-<li class="backmatter appendix"><a href="/ruby-compendium/book/rubyists.html#h_32">Notable Rubyists</a></li>
-</ol>
-</nav>
-          <nav id="sharing-buttons">
+  </header>
+					<section id="body-text" class="hyphenate glyph-book">
+
+							<nav class="navigation"><a href="/ruby-compendium/book/syntax.html">← Syntax</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/features.html">Advanced Language Features →</a></nav>
+							<p>By default, Ruby always loads its core classes and modules when a script is executed. This means that in all Ruby programs you can always instantiate core objects like:</p>
+<ul>
+	<li>Numbers (integers, floats)</li>
+	<li>Strings</li>
+	<li>Arrays</li>
+	<li>Hashes</li>
+	<li>Files</li>
+	<li>Regular expressions</li>
+	<li>Symbols</li>
+	<li>Threads</li>
+	<li>Times and dates</li>
+	<li>&#8230;and many more.</li>
+</ul>
+<p>Most likely, this is not going to be enough. That&#8217;s when the Standard Library comes into play: it&#8217;s a large collection of internal libraries that ships with every Ruby implementations. There are libraries to connect to the Internet, to read/write to various file formats such as <span class="caps">CSV</span> or <span class="caps">YAML</span>, to work with files and paths, access system features, and so on.</p>
+<p>Unlike core classes, standard libraries must be required specifically if needed, before they can be used.</p>
+<aside class="box">
+<div class="box-title">If you want to know more...</div>
+<p>On core libraries and the Standard Library, checkout the official documentation:</p>
+<ul>
+	<li><a href="http://www.ruby-doc.org/core/">Core Reference</a></li>
+	<li><a href="http://www.ruby-doc.org/stdlib/">Standard Library Reference</a></li>
+</ul>
+<p>Overwhelmed? Don&#8217;t know where to start? Familiarize yourself with the <a href="http://www.ruby-doc.org/core/classes/Enumerable.html">Enumerable</a> module; you won&#8217;t regret it!</p>
+
+</aside>
+							<nav class="navigation"><a href="/ruby-compendium/book/syntax.html">← Syntax</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/features.html">Advanced Language Features →</a></nav>
+										<nav id="sharing-buttons">
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="h3rald">Tweet</a>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 </nav>
@@ -85,10 +101,11 @@
 					<nav>
 						<a href="/about/">ABOUT</a>|<a href="/contact/">CONTACT</a>
 					</nav>
-					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2011 <em>Fabio Cevasco</em></p>
+					<p>H3RALD Web Site v8.1.2 &copy; 2004 &mdash; 2012 <em>Fabio Cevasco</em></p>
 				</section>
 			</footer>
 		</section><!-- #container end -->
+		
 		
  <!-- Start Google Analytics --> 
  <script type="text/javascript">
