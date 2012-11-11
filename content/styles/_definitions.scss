@@ -6,8 +6,8 @@ $border-color: #ccc;
 $separator-color: #555;
 $link-color: #802B00;
 $link-hover-color: #BD3F00;
-$text-color: #333;
-$emphasis-color: #222;
+$text-color: #000;
+$emphasis-color: #000;
 
 @mixin standard-font {
 	font-family: 'Crimson Text', 'Palatino', 'Bookman', 'Georgia', 'Times';

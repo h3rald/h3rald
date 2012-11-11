@@ -105,7 +105,7 @@ article > header > nav.tags > a {
 
 #main-content > article h1, 
 article.page > header h1 {
-	font-size: 2.2em;
+	font-size: 2em;
 }
 
 #secondary-content > article h1{
@@ -118,7 +118,7 @@ article.page > header h1 {
 
 #body-text section header h1,
 #body-text h2 {
-	font-size: 2em;
+	font-size: 1.8em;
 }
 
 #main-content > article h2, 
@@ -161,7 +161,8 @@ article.page > header h2,
 }
 
 article {
-	font-size: 100;
+	font-size: 1.1em;
+  line-height: 1.4em;
 	header > p { font-size: 95%; }
 }
 
