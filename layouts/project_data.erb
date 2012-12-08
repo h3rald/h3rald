@@ -1,7 +1,6 @@
 -----
 filter: erb
 -----
-<div id="github"><strong>Recent Activity</strong></div>	
 <nav class="project-links">
 	<%= @item.attributes[:links].map{ |l| 
 		res=nil; l.each_pair{ |label, value| res = %{<a href="#{value}">#{label.to_s.upcase}</a>}}; res 
