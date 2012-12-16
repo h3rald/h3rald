@@ -477,7 +477,7 @@ h3. Notes
 
 fn1. "Ruby on Rails":http://www.rubyonrails.org, MVC Web Development Framework.
 
-fn2. "Programming Ruby (2nd Ed.)":http://www.pragmaticprogrammer.com/title/ruby/index.html, by Dave Thomas & others, Pragmatic Programmers, 2004
+fn2. "Programming Ruby (2nd Ed.)":http://pragprog.com/book/ruby/programming-ruby/, by Dave Thomas & others, Pragmatic Programmers, 2004
 
 fn3. Not entirely correct, but sort of. For more information on Python's indentation rules and myths, read "Python: Myths about Indentation":http://www.secnetix.de/~olli/Python/block_indentation.hawk.
 
