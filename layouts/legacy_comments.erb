@@ -8,7 +8,7 @@ filters:
 	<em>These comments were imported automatically from an old version of this web site. Scroll <a href="#dsq-content">down</a> for the newest stuff.</em>
 	</p>
 	<% @item[:comments].each do |c| %>
-	<div id="comment-<%=c[:id]%>" class="legacy-comment ">
+	<div id="comment-<%=c[:id]%>" class="legacy-comment well">
 		<div class="lc-header"><%= (c[:url].empty?) ? c[:author] : %{<a href="#{c[:url]}">#{c[:author]}</a>} %></div>
 		<div class="lc-body">
 			<%= RedCloth.new(c[:body]).to_html %>

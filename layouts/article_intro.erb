@@ -10,14 +10,15 @@ filter: erb
 		<% unless @item[:subtitle].blank? then %>
 			<h2><%= @item[:subtitle] %></h2>
 		<% end %>
-		<p class="pubdate"><time datetime="<%= @item[:date].strftime("%Y-%m-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time></p>
+		<p class="pubdate pull-right"><time datetime="<%= @item[:date].strftime("%Y-%m-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time></p>
+    <div class="clearfix"></div>
 	</header>
 	<section class="<%= @classes %>">
 		<% if @item[:image] && @extended then %>
 			<img src="<%=@item[:image]%>" style="float:left; margin: 0 10px 10px 0;" alt="#" />
 		<% end %>
     <%= RedCloth.new(intro.to_s).to_html %> 
-    <a class="read" href="<%=@item.identifier%>">Read More</a>
 	</section>
+  <hr />
 </article>
 

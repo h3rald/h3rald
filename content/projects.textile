@@ -3,12 +3,6 @@ permalink: projects
 title: Projects
 type: page
 -----
-This page lists all my _projects_. Except for a few cases, they normally are:
-* open source
-* programming-related
-* developed using the "Ruby programming language":http://www.ruby-lang.org
-* hosted on "GitHub":http://www.github.com/h3rald
-
 - "H3RALD Web Site":/h3rald/ := This very web site, in its 8th incarnation. H3RALD.com has been operative since 2004 and through the years its backend changed from being pure vanilla HTML, to server-side PHP (Prado and CakePHP) to Ruby (Rails, Nanoc).
 - "Glyph":/glyph/ := A _Rapid Document Authoring Framework_ written in Ruby that can be used to create and manage books and articles.
 - "Ruby Compendium":/ruby-compendium/ := A free book aiming to help beginners learn about Ruby. It doesn't focus on learning the language, but rather on its vast ecosystem and freely available resources.

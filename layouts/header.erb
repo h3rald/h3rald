@@ -1,0 +1,59 @@
+-----
+filter: erb
+-----
+<%
+  def active_if(ident) 
+    if @item[:permalink] == ident then
+      %{ class="active"}
+    else
+      ""
+    end
+  end
+%><div class="container">
+  <div class="row" id="header-row">
+    <div class="span6 main-title">
+      <h1>
+        <span class="logo">
+          <span class="hrald"><span class="h">H</span>&nbsp;<span class="rald">RALD</span></span>
+          <span class="three">3</span>
+        </span>
+      </h1>
+      <h2>by <em>Fabio Cevasco</em></h2>
+    </div>
+    <div class="span4 offset2">
+      <div class="gcse-searchbox" data-enableAutoComplete="true"></div>
+    </div>
+    <!--
+    <div class="span1"><a href="http://foursquare.com/h3rald" rel="external"><img src="/images/social/foursquare.png" alt="FourSquare" /></a></div>
+    <div class="span1"><a href="http://www.twitter.com/h3rald" rel="external"><img src="/images/social/twitter.png" alt="RSS" /></a></div>
+    <div class="span1"><a href="http://it.linkedin.com/in/fabiocevasco" rel="external"><img src="/images/social/linkedin.png" alt="LinkedIn" /></a></div>
+    -->
+    <!--
+    <div class="span1"><a href="https://github.com/h3rald" rel="external"><img src="/images/social/github.png" alt="GitHub" /></a></div>
+    <div class="span1"><a href="http://reddit.com/user/h3rald" rel="external"><img src="/images/social/reddit.png" alt="Reddit" /></a></div>
+    <div class="span1"><a href="http://web.stagram.com/n/h3rald/?vm=grid" rel="external"><img src="/images/social/instagram.png" alt="Instagram" /></a></div>
+    -->
+  </div>
+  <div id="search_results">
+    <div class="gcse-searchresults" data-linkTarget="_top"></div>
+  </div> 
+  <div id=main-navbar class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li<%=active_if("home")%>><a href="/">HOME</a></li>
+          <li<%=active_if("projects")%>><a href="/projects/">PROJECTS</a></li>
+          <li<%=active_if("tags")%>><a href="/tags/">TAGS</a></li>
+          <li<%=active_if("archives")%>><a href="/archives/">ARCHIVES</a></li>
+          <li<%=active_if("about")%>><a href="/about/">ABOUT</a></li>
+          <li<%=active_if("contact")%>><a href="/contact/">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

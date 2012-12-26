@@ -1,10 +1,3 @@
-$(function() {
-		$('#gallery a').fancybox();
-		$('.fancybox').fancybox({
-			frameWidth: 850,
-			frameHeight: 450
-		});
-		});
 $(document).ready(function() {
 	// Manage dates
 	$('.timeago').timeago();

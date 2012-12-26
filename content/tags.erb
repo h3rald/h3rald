@@ -1,14 +1,17 @@
 ----- 
-permalink: archives
+permalink: tags
 filters_pre: 
 - erb
-title: Archives
+title: Tags
 type: page
 -----
+<%
+  tags = sorted_site_tags
+%>
 <% c = 0
-articles_by_month.each do |m|
+tags.each do |t|
   c = c+1 %>
   <%= %{<div class="row">} if c%6 == 1 %>
-    <div class="span2"><%= month_link_with_count(m[0], m[1].length) %></div>
+    <div class="span2"><%= tag_link_with_count(t[0], t[1]) %></div>
     <%= "</div>" if c%6 == 0 %>
 <% end %></div>

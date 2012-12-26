@@ -18,7 +18,7 @@ module Nanoc3::Helpers::Tagging
 	end
 
 	def tags_for(article)
-		article.attributes[:tags].map{|t| %{<a class="tag" href="/tags/#{t}/">#{t}</a>}}.join
+		article.attributes[:tags].map{|t| %{<a class="tag" href="/tags/#{t}/">#{t}</a>}}.join(", ")
 	end
 
 	def link_for_tag(tag, base_url)

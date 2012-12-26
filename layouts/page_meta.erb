@@ -3,25 +3,21 @@ filter: erb
 -----
 <%
 	author = @item[:author] || "Fabio Cevasco"
-	pdf = %{<a href="/articles/#{@item[:permalink]}.pdf"><img src="/images/icons/pdf.png" alt="PDF" /></a>} if @item[:pdf]
-	source_url = "https://raw.github.com/h3rald/h3rald/master/#{@item[:filename]}?iframe" # Not allowed anymore
-	source = %{<a href="#{source_url}" class="fancybox"><img src="/images/icons/ruby.png" alt="SOURCE"/></a>}
-  tools = %{<span class="tools">#{pdf}</span>}
-%><header>
-	<hgroup>
+  pdf = %{<a href="/articles/#{@item[:permalink]}.pdf"><i class="icon-download-alt"> </i>Download as PDF</a>} if @item[:pdf]
+%><header class="row">
+	<hgroup class="span9">
 		<h1><%= @item[:title] %></h1>
 		<% if !@item[:subtitle].blank? then %>
 			<h2><%= @item[:subtitle] %></h2>
 		<% end %>
 	</hgroup>
 	<% if @item[:type] == 'article' then %>
-	<p class="toolbar">
-		<span class="pubdate">
-			Published on <time datetime="<%= @item[:date].strftime("%Y-%d-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time>
-		</span>
-		<%= tools if pdf %>
+	<ul class="unstyled article-info span3">
+    <li>
+    <i class="icon-calendar"></i> <time datetime="<%= @item[:date].strftime("%Y-%d-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time>
+    <li><i class="icon-tags"></i> <%= tags_for(@item) %></li>
+    </li>
+    <%= "<li>#{pdf}</li>" if pdf %>
 	</p>
-	<nav class="tags"><%= tags_for(@item) %></nav>
-	<div class="rdbWrapper" data-show-read="1" data-show-send-to-kindle="1" data-show-print="1" data-show-email="1" data-orientation="0" data-version="1" data-bg-color="#ffffff"></div><script type="text/javascript">(function() {var s = document.getElementsByTagName("script")[0],rdb = document.createElement("script"); rdb.type = "text/javascript"; rdb.async = true; rdb.src = document.location.protocol + "//www.readability.com/embed.js"; s.parentNode.insertBefore(rdb, s); })();</script>
 	<% end %>
 </header>

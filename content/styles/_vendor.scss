@@ -1,59 +1,73 @@
-/* Twitter */
-.twtr-tweet-text, .twtr-hd, .twtr-join-conv {
-	@include standard-font;
-}
-
-.twtr-hd h3 {
-	height: 20px;
-}
-
-.twitter-follow-button {
-  margin-left: 10px;
-}
-
-.twtr-tweet-text {
-	font-size: 1.3em;
-}
-.twtr-timestamp, .twtr-reply, .twtr-fav, .twtr-rt {
-	font-size: 1.4em;
-	font-style: italic;
-}
-
 /* Google Custom Search */
 
-#search {
-	margin: 15px auto;
-	width: 270px;
-}
 
+$font-family: 'Crimson Text', Palatino, Bookman, Georgia, Times;
+$font-size: 17px;
+$link-color: #BD3F00;
+$link-hover-color: #712600;
 
-.gsc-resultsHeader, .gs-visibleUrl, .gsc-trailing-more-results, .gs-watermark, .gsc-thumbnail-inside {
+.gsc-resultsHeader, .gsc-trailing-more-results, 
+#search_results .gsc-url-top,
+.gs-watermark {
   display: none;
 }
 
+div.gsc-thumbnail-inside {
+  padding-left: 0;
+}
+
+.gsc-control-cse, .gsc-control-cse .gsc-table-result, .gsc-branding-text {
+  font-family: $font-family;
+    font-size: $font-size;
+
+}
+
+.gsc-control-cse .gs-result a.gs-title,
+.gsc-control-cse .gs-result a.gs-title * {
+  font-size: $font-size;
+}
+
+div.gsc-result-info {
+  font-family: $font-family;
+}
+
+
 #search_results {
-	width: 940px;
+  font-family: $font-family;
   clear: both;
 	text-align: justify;
-	padding: 10px;
 }
 .gsc-result {
   padding: 0.5em 0;
+  * {
+    font-family: $font-family;
+    font-size: $font-size;
+  }
+  .gs-snippet {
+  }
+  a.gs-title {
+    color: $link-color;
+
+    * {
+      color: $link-color;
+    }
+  }
 }
 
 table.gsc-search-box {
   margin: auto;
 }
 
-.gsc-search-box {
+.gsc-searchbox {
   border: none;
   td {
     border: none;
 	}
 }
 
-.gsc-input {
-  width: 200px;
+.cse div.gsc-control-cse,
+div.gsc-control-cse { 
+  padding: 0;
 }
 
 .gsc-branding {
@@ -72,13 +86,50 @@ td.gsc-branding-img {
 .gsc-cursor-page {
   display: inline;
   padding-right: 7px;
+  font-family: $font-family;
   &:hover {
     cursor: pointer;
 	}
 }
 .gsc-cursor-current-page {
   font-weight: bold;
+}
 
+td.gsc-search-button > input.gsc-search-button-v2 { 
+  border-color: $link-color;
+  background-color: $link-color;
+  background-image: -webkit-linear-gradient(top, $link-color, darken($link-color, 10%));
+  background-image: -moz-linear-gradient(top, $link-color, darken($link-color, 10%));
+  background-image: -ms-linear-gradient(top, $link-color, darken($link-color, 10%));
+  background-image: -o-linear-gradient(top, $link-color, darken($link-color, 10%));
+  background-image: linear-gradient(top, $link-color, darken($link-color, 10%));
+}
+
+td.gsc-search-button > input.gsc-search-button-v2:hover { 
+  border-color: $link-hover-color;
+  background-color: $link-hover-color;
+  background-image: -webkit-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
+  background-image: -moz-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
+  background-image: -ms-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
+  background-image: -o-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
+  background-image: linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
+}
+
+td.gsib_a {
+  padding-bottom: 5px;
+  padding-top: 0;
+}
+
+.gsc-input-box input.gsc-input, .gsc-input-box-focus, .gsc-input-box-hover {
+  margin-top: 0;
+  border: none;
+  -webkit-box-shadow:none ;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
 }
 
 /* Disqus */
@@ -94,4 +145,11 @@ td.gsc-branding-img {
 			margin: 0 10px;
 		}
 	}
+}
+
+/* Kontactr */
+
+#kform label{
+  font-family: $font-family;
+  font-size: $font-size;
 }

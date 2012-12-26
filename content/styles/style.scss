@@ -1,6 +1,136 @@
-@import "_fonts.scss";
-@import "_definitions.scss";
-@import "_layout.scss";
-@import "_content.scss";
+/* Fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Cardo);
+
+
+article, #legacy-comments, #disqus_thread {
+  font-size: 17px;
+  line-height: 1.5em;
+
+  li, dt, dd {
+    line-height: 1.5em
+  }
+
+  dt {
+    margin-top: 1.5em;
+  }
+
+}
+
+/* Other Elements */
+
+.pubdate, .read {
+  font-style: italic;
+}
+
+.read {
+  margin-bottom: 20px;
+}
+
+.featured {
+  font-variant: small-caps;
+  font-size: 130%;
+}
+
+footer {
+  margin: auto;
+  text-align: center;
+}
+
+#header-row {
+  margin-top: 15px;
+}
+
+.article-info {
+  font-style: italic;
+}
+
+.hyphenate {
+  text-align: justify;
+}
+
+/* Headings */
+
+#main-content > article h1 {
+  line-height: 1em;
+  font-size: 1.6em;
+}
+#main-content > article h2 {
+  line-height: 1em;
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+article.page > header h1 {
+	font-size: 2em;
+  margin-top: -10px;
+}
+
+#secondary-content > article h1{
+  line-height: 1em;
+  font-size: 1.3em;
+}
+
+#secondary-content > article h2{
+  line-height: 1em;
+  font-size: 1em;
+  font-style: italic;
+}
+
+#body-text section header h1,
+#body-text h2 {
+	font-size: 1.8em;
+}
+
+article.page > header h2,
+#body-text section section header h1,
+#body-text h3 {
+  margin-top: 1.2em;
+	font-size: 1.5em;
+  font-style: italic;
+}
+
+article.page > header h2 {
+  margin-top: 0;
+  line-height: 1.1em;
+}
+
+#body-text section section section section header h1,
+#body-text h4 {
+  margin-top: 1.2em;
+	font-size: 1.3em;
+}
+
+#body-text section section section header h1,
+#body-text h5 {
+  margin-top: 1em;
+	font-size: 1em;
+  font-style: italic;
+}
+
+#body-text section section section section section header h1,
+#body-text h6 {
+  margin-top: 1em;
+	font-size: 1em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.2em;
+}
+
+/* Logos */
+
+.main-title { 
+  display: block; 
+  color: #333333;
+  font-family: "Cardo", "Times New Roman", serif; margin-bottom: 2px;
+
+  .h, h1 .rald { font-size: 60px; }
+  .three { display: block; margin-top: -38px; margin-left: 36px; font-size: 76px; }
+  .hrald { display: block; margin-top: 10px; font-size: 60px; }
+  h2 { font-size: 18px; font-weight: normal; margin-top: -22px; margin-left: 73px; margin-bottom: 0; }
+}
+
 @import "_vendor.scss";
 @import "_code.scss";
