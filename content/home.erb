@@ -23,9 +23,8 @@ all_projects = @items.select{|a| a[:type] == 'project'}.length
   <%= render 'article_intro', :item => latest[4], :classes => "hyphenate", :extended => false %>
   <%= render 'article_intro', :item => latest[1], :classes => "hyphenate", :extended => false %>
   <%= render 'article_intro', :item => latest[2], :classes => "hyphenate", :extended => false %>
-  <%= 
-    render 'article_intro', :item => latest[5], :classes => "hyphenate", :extended => false 
-  %>
+  <%= render 'article_intro', :item => latest[5], :classes => "hyphenate", :extended => false %>
+  <p><a href="/archives/">&larr; Older Articles</a></p>
   </section><!-- #main-content end -->
   <section class="span4" id="secondary-content">
   <span class="featured">Popular Content</span>

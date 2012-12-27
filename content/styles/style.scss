@@ -5,8 +5,9 @@
 
 
 article, #legacy-comments, #disqus_thread {
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.5em;
+  color: #000;
 
   li, dt, dd {
     line-height: 1.5em
@@ -48,6 +49,14 @@ footer {
 
 .hyphenate {
   text-align: justify;
+}
+
+article p[style*="right"] {
+  margin: 0.5em 0 0.5em 1em;
+}
+
+article p[style*="left"] {
+  margin: 0.5em 1em 0.5em 0;
 }
 
 /* Headings */
@@ -123,7 +132,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .main-title { 
   display: block; 
-  color: #333333;
+  color: #000;
   font-family: "Cardo", "Times New Roman", serif; margin-bottom: 2px;
 
   .h, h1 .rald { font-size: 60px; }
@@ -134,3 +143,4 @@ h1,h2,h3,h4,h5,h6 {
 
 @import "_vendor.scss";
 @import "_code.scss";
+@import "_zocial.scss";
