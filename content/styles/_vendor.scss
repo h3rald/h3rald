@@ -56,6 +56,15 @@ div.gsc-result-info {
 
 table.gsc-search-box {
   margin: auto;
+  border:none;
+  background: none;
+  padding: 0;
+
+  tr, td {
+    border:none;
+    background: none;
+    padding: 0;
+  }
 }
 
 .gsc-searchbox {
@@ -120,7 +129,7 @@ td.gsib_a {
   padding-top: 0;
 }
 
-.gsc-input-box input.gsc-input, .gsc-input-box-focus, .gsc-input-box-hover {
+div.gsc-input-box input.gsc-input, .gsc-input-box-focus, .gsc-input-box-hover {
   margin-top: 0;
   border: none;
   -webkit-box-shadow:none ;

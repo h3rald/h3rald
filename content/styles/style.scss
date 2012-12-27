@@ -3,6 +3,12 @@
 @import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Cardo);
 
+@import "_bootstrap.scss";
+@import "_vendor.scss";
+@import "_code.scss";
+@import "_zocial.scss";
+
+/* Bootstrap Overrides */
 
 article, #legacy-comments, #disqus_thread {
   font-size: 19px;
@@ -12,11 +18,15 @@ article, #legacy-comments, #disqus_thread {
   li, dt, dd {
     line-height: 1.5em
   }
-
   dt {
     margin-top: 1.5em;
   }
+}
 
+table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
 }
 
 /* Other Elements */
@@ -103,7 +113,6 @@ h1 > code {
   background:none;
 }
 
-
 article.page > header h2,
 #body-text section section header h1,
 #body-text h3 {
@@ -139,20 +148,3 @@ article.page > header h2 {
 h1,h2,h3,h4,h5,h6 {
   line-height: 1.2em;
 }
-
-/* Logos */
-
-.main-title { 
-  display: block; 
-  color: #000;
-  font-family: "Cardo", "Times New Roman", serif; margin-bottom: 2px;
-
-  .h, h1 .rald { font-size: 60px; }
-  .three { display: block; margin-top: -38px; margin-left: 36px; font-size: 76px; }
-  .hrald { display: block; margin-top: 10px; font-size: 60px; }
-  h2 { font-size: 18px; font-weight: normal; margin-top: -22px; margin-left: 73px; margin-bottom: 0; }
-}
-
-@import "_vendor.scss";
-@import "_code.scss";
-@import "_zocial.scss";
