@@ -59,6 +59,11 @@ article p[style*="left"] {
   margin: 0.5em 1em 0.5em 0;
 }
 
+#body-text .navigation {
+  margin: auto;
+  text-align: center;
+}
+
 /* Headings */
 
 #main-content > article h1 {
@@ -91,6 +96,13 @@ article.page > header h1 {
 #body-text h2 {
 	font-size: 1.8em;
 }
+h1 > code {
+	font-size: 0.9em;
+  border:none;
+  color: #000;
+  background:none;
+}
+
 
 article.page > header h2,
 #body-text section section header h1,
@@ -105,13 +117,13 @@ article.page > header h2 {
   line-height: 1.1em;
 }
 
-#body-text section section section section header h1,
+#body-text section section section header h1,
 #body-text h4 {
   margin-top: 1.2em;
 	font-size: 1.3em;
 }
 
-#body-text section section section header h1,
+#body-text section section section section header h1,
 #body-text h5 {
   margin-top: 1em;
 	font-size: 1em;
