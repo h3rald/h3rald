@@ -1,7 +1,7 @@
------ 
-:title: "Archive: June 2010"
+-----
+:title: ! 'Archive: June 2010'
 :type: page
-:filters_pre: 
+:filters_pre:
 - erb
 :permalink: june-2010
 -----

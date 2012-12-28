@@ -11,9 +11,13 @@
 /* Bootstrap Overrides */
 
 article, #legacy-comments, #disqus_thread {
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.5em;
   color: #000;
+
+  p {
+    margin: 5px 0;
+  }
 
   li, dt, dd {
     line-height: 1.5em
@@ -89,6 +93,7 @@ article p[style*="left"] {
 article.page > header h1 {
 	font-size: 2em;
   margin-top: -10px;
+  margin-bottom: 0;
 }
 
 #secondary-content > article h1{
@@ -122,8 +127,8 @@ article.page > header h2,
 }
 
 article.page > header h2 {
-  margin-top: 0;
-  line-height: 1.1em;
+  margin: 0 0 1em 0;
+  line-height: 1em;
 }
 
 #body-text section section section header h1,

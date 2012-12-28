@@ -1,7 +1,7 @@
------ 
-:title: "Archive: December 2007"
+-----
+:title: ! 'Archive: December 2007'
 :type: page
-:filters_pre: 
+:filters_pre:
 - erb
 :permalink: december-2007
 -----

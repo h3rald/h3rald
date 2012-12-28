@@ -26,12 +26,15 @@ class Nanoc3::RuleContext
 		# Write the new raw file using Glyph's file_write method
 		Glyph.file_write f, doc
 		# Now compile the PDF (works if Prince is installed)
-      Glyph.debug_mode = true
-      Glyph.compile f.to_s
+    # Glyph.debug_mode = true
 		begin
+      puts "Generating PDF for '#{f}'..."
+      Glyph.compile f.to_s
 			f.unlink
-			#Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
-		rescue
+			Pathname.new(f.to_s.gsub(/\.glyph$/, '.html')).unlink
+      puts "Done."
+		rescue Exception => e
+      puts "Glyph Error: #{e.message}"
 		end
 	end
 

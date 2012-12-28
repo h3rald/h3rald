@@ -5,7 +5,7 @@ def:[h3rald.article|
 	article[
 		@head[
 			style[pagination.css]
-			style[../styles/style.css]
+			style[default.css]
       <style>
 .halftitlepage {
   margin: auto;

@@ -3,7 +3,7 @@ permalink: about
 title: About
 type: page
 -----
-H3RALD.com was created in 2004 by Fabio Cevasco, a technical writer, programmer and IT enthusiast. It features over a hundred "articles":/articles/ covering a wide range of topics, from programming to writing, productivity and even traveling.
+H3RALD.com was created in 2004 by Fabio Cevasco, a technical writer, programmer and IT enthusiast. It features over a hundred "articles":/archives/ covering a wide range of topics, from programming to writing, productivity and traveling.
 
 As of version 8, H3RALD.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/take-back-your-site-with-nanoc/.
 
@@ -14,7 +14,7 @@ The "articles":/archives/ and all the content published on this web site is lice
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
 
-The source code of this web site, such as its layout, SASS/CSS stylesheets, custom rake tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/MIT/">MIT License</a></em> and it is available on "GitHub":http://github.com/h3rald/h3rald.
+The source code of this web site, such as its layout, SASS/CSS stylesheets, custom rake tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/MIT/">MIT License</a></em> and it is available on "GitHub":https://github.com/h3rald/h3rald.
 
 
 h3. Requirements

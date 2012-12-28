@@ -2,9 +2,12 @@
 
 
 $font-family: 'Crimson Text', Palatino, Bookman, Georgia, Times;
-$font-size: 19px;
+$font-size: 17px;
 $link-color: #BD3F00;
 $link-hover-color: #712600;
+
+
+/* Google Custom Search Engine */
 
 .gsc-resultsHeader, .gsc-trailing-more-results, 
 #search_results .gsc-url-top,
@@ -154,11 +157,4 @@ div.gsc-input-box input.gsc-input, .gsc-input-box-focus, .gsc-input-box-hover {
 			margin: 0 10px;
 		}
 	}
-}
-
-/* Kontactr */
-
-#kform label{
-  font-family: $font-family;
-  font-size: $font-size;
 }
