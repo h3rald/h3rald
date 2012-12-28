@@ -46,7 +46,10 @@ div.gsc-result-info {
     font-family: $font-family;
     font-size: $font-size;
   }
-  .gs-snippet {
+  table, td, tr, th {
+    border: none;
+    padding: 0;
+    background: none;
   }
   a.gs-title {
     color: $link-color;
