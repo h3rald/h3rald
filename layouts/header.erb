@@ -13,7 +13,11 @@ filter: erb
   <div class="row" id="header-row">
     <div class="span6 main-title">
       <h1>
+        <% if @item[:permalink] != 'home' then %>
+        <a href="/"><img src="/img/h3rald.png" alt="H3RALD" /></a>
+      <% else %>
         <img src="/img/h3rald.png" alt="H3RALD" />
+      <% end %>
       </h1>
     </div>
     <div class="span4 offset2">

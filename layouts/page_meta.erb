@@ -14,7 +14,7 @@ filter: erb
 	<% if @item[:type] == 'article' then %>
 	<ul class="unstyled article-info span3">
     <li>
-    <i class="icon-calendar"></i> <time datetime="<%= @item[:date].strftime("%Y-%d-%d") %>" pubdate="pubdate"><%= @item[:date].strftime("%A, %B %d %Y") %></time>
+    <i class="icon-calendar"></i> <time datetime="<%= @item[:date].strftime("%FT%T%:z") %>"><%= @item[:date].strftime("%A, %B %d %Y") %></time>
     <li><i class="icon-tags"></i> <%= tags_for(@item) %></li>
     </li>
     <%= "<li>#{pdf}</li>" if pdf %>
