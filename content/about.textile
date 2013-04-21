@@ -28,7 +28,7 @@ The following ruby libraries (gems) are used to compile this web site:
 * *"Sass":http://sass-lang.com/*, for the SASS filter
 * *"CodeRay":http://rubygems.org/gems/coderay/*, for syntax highlighting
 * *"RedCloth":http://rubygems.org/gems/redcloth/*, for Textile support
-* *"BlueCloth":http://rubygems.org/gems/bluecloth/*, for Markdown support
+* *"RedCarpet":https://github.com/vmg/redcarpet*, for Markdown support
 * *"Glyph":http://rubygems.org/gems/glyph*, for the Glyph support
 
 Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://blog.typosphere.org:
