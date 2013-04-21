@@ -1,0 +1,17 @@
+-----
+:title: 'Tag: techcomm'
+:type: page
+:filters_pre:
+- erb
+:feed: /tags/techcomm/
+:feed_title: Tag 'techcomm'
+:permalink: techcomm
+-----
+
+<p>1 item is tagged with <em>techcomm</em>:</p>
+<ul>
+	<% articles_tagged_with('techcomm').each do |a| %>
+		<%= render 'dated_article', :article => a %>
+	<% end %>
+</ul>
+		

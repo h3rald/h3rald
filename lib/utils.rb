@@ -74,7 +74,7 @@ module TypoUtils extend SiteUtils
 		when 'textile' then
 			return ['redcloth'], 'textile'
 		when 'markdown' then
-			return ['bluecloth'], 'markdown'
+			return ['redcarpet'], 'markdown'
 		when 'bbcode' then
 			return ['bbcode'], 'bbcode'
 		else

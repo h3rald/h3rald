@@ -1,7 +1,7 @@
 ----- 
 permalink: the-rails-way-review
 filters_pre: 
-- bluecloth
+- redcarpet
 title: "Book Review: The Rails Way"
 comments: 
 - :date: 

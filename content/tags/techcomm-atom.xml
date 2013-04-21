@@ -1,0 +1,6 @@
+-----
+:title: H3RALD - Tag 'techcomm' (Atom Feed)
+:type: feed
+:permalink: tags/techcomm/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('techcomm'))%>

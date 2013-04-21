@@ -1,5 +1,5 @@
 -----
-:title: ! 'Archive: August 2006'
+:title: 'Archive: August 2006'
 :type: page
 :filters_pre:
 - erb
