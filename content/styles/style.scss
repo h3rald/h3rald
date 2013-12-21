@@ -1,14 +1,17 @@
 /* Fonts */
 
-@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/css?family=Cardo);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
 
 @import "_bootstrap.scss";
 @import "_vendor.scss";
 @import "_code.scss";
-@import "_zocial.scss";
+@import "_font-awesome.scss";
 
 /* Bootstrap Overrides */
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
+}
 
 article, #legacy-comments, #disqus_thread {
   font-size: 17px;
@@ -34,6 +37,19 @@ article table {
 }
 
 /* Other Elements */
+
+.contact-list ul{
+  list-style-type: none;
+  margin: 20px 0;
+}
+
+.contact-list ul li {
+  margin: 10px 0;
+}
+
+.article-aggregation {
+  margin: 20px 0;
+}
 
 .pubdate, .read {
   font-style: italic;

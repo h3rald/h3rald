@@ -5,10 +5,12 @@ filters_pre:
 title: Archives
 type: page
 -----
+<div class="container article-aggregation">
 <% c = 0
 articles_by_month.each do |m|
   c = c+1 %>
   <%= %{<div class="row">} if c%6 == 1 %>
-    <div class="span2"><%= month_link_with_count(m[0], m[1].length) %></div>
+    <div class="col-md-2"><%= month_link_with_count(m[0], m[1].length) %></div>
     <%= "</div>" if c%6 == 0 %>
 <% end %></div>
+</div>

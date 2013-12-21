@@ -8,10 +8,12 @@ type: page
 <%
   tags = sorted_site_tags
 %>
+<div class="container article-aggregation">
 <% c = 0
 tags.each do |t|
   c = c+1 %>
   <%= %{<div class="row">} if c%6 == 1 %>
-    <div class="span2"><%= tag_link_with_count(t[0], t[1]) %></div>
+    <div class="col-md-2"><%= tag_link_with_count(t[0], t[1]) %></div>
     <%= "</div>" if c%6 == 0 %>
 <% end %></div>
+</div>

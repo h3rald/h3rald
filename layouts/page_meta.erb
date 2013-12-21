@@ -4,7 +4,7 @@ filter: erb
 <%
 	author = @item[:author] || "Fabio Cevasco"
   pdf = %{<a href="/articles/#{@item[:permalink]}.pdf"><i class="icon-download-alt"> </i>Download as PDF</a>} if @item[:pdf]
-%><header class="row">
+%><header>
 	<hgroup class="span9">
 		<h1><%= @item[:title] %></h1>
 		<% if !@item[:subtitle].blank? then %>
