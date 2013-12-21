@@ -27,7 +27,7 @@ article, #legacy-comments, #disqus_thread {
   }
 }
 
-table {
+article table {
   @extend .table;
   @extend .table-striped;
   @extend .table-bordered;
@@ -76,6 +76,10 @@ article p[style*="left"] {
 #body-text .navigation {
   margin: auto;
   text-align: center;
+}
+
+.main-title h1 {
+  margin-top: 0;
 }
 
 /* Headings */

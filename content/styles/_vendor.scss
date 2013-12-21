@@ -9,142 +9,33 @@ $link-hover-color: #712600;
 
 /* Google Custom Search Engine */
 
-.gsc-resultsHeader, .gsc-trailing-more-results, 
-#search_results .gsc-url-top,
-.gs-watermark {
-  display: none;
+.gsc-search-button input.gsc-search-button-v2  {
+  height: 29px;
+  width: 71px;
+  margin-top: 4px;
 }
 
-div.gsc-thumbnail-inside {
-  padding-left: 0;
-}
-
-.gsc-control-cse, .gsc-control-cse .gsc-table-result, .gsc-branding-text {
-  font-family: $font-family;
-    font-size: $font-size;
-
-}
-
-.gsc-control-cse .gs-result a.gs-title,
-.gsc-control-cse .gs-result a.gs-title * {
-  font-size: $font-size;
-}
-
-div.gsc-result-info {
-  font-family: $font-family;
-}
-
-
-#search_results {
-  font-family: $font-family;
-  clear: both;
-	text-align: justify;
-}
-.gsc-result {
-  padding: 0.5em 0;
-  * {
-    font-family: $font-family;
-    font-size: $font-size;
-  }
-  table, td, tr, th {
-    border: none;
-    padding: 0;
-    background: none;
-  }
-  a.gs-title {
-    color: $link-color;
-
-    * {
-      color: $link-color;
-    }
-  }
-}
-
-table.gsc-search-box {
-  margin: auto;
-  border:none;
-  background: none;
-  padding: 0;
-
-  tr, td {
-    border:none;
-    background: none;
-    padding: 0;
-  }
-}
-
-.gsc-searchbox {
-  border: none;
-  td {
-    border: none;
-	}
-}
-
-.cse div.gsc-control-cse,
-div.gsc-control-cse { 
+.gsc-input {
   padding: 0;
 }
 
-.gsc-branding {
-  color: black;
-  font-style: italic;
-  font-size: 70%;
-  border: none;
-  margin: auto;
+.gsc-input .gsc-input-box {
+  height: 29px;
+}
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  padding-right: 5px !important;
+}
+
+.gsc-search-box tr,  {
   padding: 0;
 }
 
-td.gsc-branding-img {
-  text-align: left;
+#___gcse_1 .gsc-control-cse {
+  padding: 0;
 }
 
-.gsc-cursor-page {
-  display: inline;
-  padding-right: 7px;
-  font-family: $font-family;
-  &:hover {
-    cursor: pointer;
-	}
-}
-.gsc-cursor-current-page {
-  font-weight: bold;
-}
-
-td.gsc-search-button > input.gsc-search-button-v2 { 
-  border-color: $link-color;
-  background-color: $link-color;
-  background-image: -webkit-linear-gradient(top, $link-color, darken($link-color, 10%));
-  background-image: -moz-linear-gradient(top, $link-color, darken($link-color, 10%));
-  background-image: -ms-linear-gradient(top, $link-color, darken($link-color, 10%));
-  background-image: -o-linear-gradient(top, $link-color, darken($link-color, 10%));
-  background-image: linear-gradient(top, $link-color, darken($link-color, 10%));
-}
-
-td.gsc-search-button > input.gsc-search-button-v2:hover { 
-  border-color: $link-hover-color;
-  background-color: $link-hover-color;
-  background-image: -webkit-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
-  background-image: -moz-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
-  background-image: -ms-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
-  background-image: -o-linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
-  background-image: linear-gradient(top, $link-hover-color, darken($link-hover-color, 10%));
-}
-
-td.gsib_a {
-  padding-bottom: 5px;
-  padding-top: 0;
-}
-
-div.gsc-input-box input.gsc-input, .gsc-input-box-focus, .gsc-input-box-hover {
-  margin-top: 0;
-  border: none;
-  -webkit-box-shadow:none ;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
+#___gcse_0 {
+  margin-top: 15px;
 }
 
 /* Disqus */
