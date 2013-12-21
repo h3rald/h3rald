@@ -11,7 +11,7 @@ filter: erb
   end
 %><div class="container">
   <div class="row" id="header-row">
-    <div class="span6 main-title">
+    <div class="col-md-6 main-title">
       <h1>
         <% if @item[:permalink] != 'home' then %>
         <a href="/"><img src="/img/h3rald.png" alt="H3RALD" /></a>
@@ -20,30 +20,31 @@ filter: erb
       <% end %>
       </h1>
     </div>
-    <div class="span4 offset2">
+    <div class="col-md-4 col-md-offset-2">
       <div class="gcse-searchbox" data-enableAutoComplete="true"></div>
     </div>
   </div>
   <div id="search_results">
     <div class="gcse-searchresults" data-linkTarget="_top"></div>
   </div> 
-  <div id=main-navbar class="navbar navbar-inverse">
-    <div class="navbar-inner">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <div id="main-navbar" class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li<%=active_if("home")%>><a href="/">HOME</a></li>
-          <li<%=active_if("projects")%>><a href="/projects/">PROJECTS</a></li>
-          <li<%=active_if("tags")%>><a href="/tags/">TAGS</a></li>
-          <li<%=active_if("archives")%>><a href="/archives/">ARCHIVES</a></li>
-          <li<%=active_if("about")%>><a href="/about/">ABOUT</a></li>
-          <li<%=active_if("contact")%>><a href="/contact/">CONTACT</a></li>
-        </ul>
-      </div>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li<%=active_if("home")%>><a href="/">HOME</a></li>
+        <li<%=active_if("projects")%>><a href="/projects/">PROJECTS</a></li>
+        <li<%=active_if("tags")%>><a href="/tags/">TAGS</a></li>
+        <li<%=active_if("archives")%>><a href="/archives/">ARCHIVES</a></li>
+        <li<%=active_if("about")%>><a href="/about/">ABOUT</a></li>
+        <li<%=active_if("contact")%>><a href="/contact/">CONTACT</a></li>
+      </ul>
     </div>
   </div>
 </div>
