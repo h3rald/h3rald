@@ -63,9 +63,9 @@ Briefly, Rails uses Ruby's object oriented programming, in conjunction with the 
 MVC stands for [b]M[/b]odel [b]V[/b]iew [b]C[/b]ontroller: these three words enclose - and this is just a personal opinion - all the wisdom and philosophy of web development, describing - once again, in my opinion - the three most logical parts a web application [i]should[/i] be divided into to achieve code robustness, order and power, all at the same time.  Let's look at what each of the component parts mean in detail:
 
 [list]
-[*][b]Model[/b]: The model represents the very essence of the [i]information[/i] and [i]content[/i] of a web application. Imagine this as an object able to gather the information and content of your webpages from a particular resource, such as a database. The model is the only entity able to access resources.
-[*][b]View[/b]: The view is an attempt to separate the most unstable part of an application: the user front-end. A view is only responsible for presenting the information that the Model gathered. A view does nothing but format the output, and can be compared to a template or report. In all MVC frameworks for web applications, only view files contain (X)HTML code, and mostly only that. They can therefore be changed [i]at any time[/i] without having to touch a single line of the business logic of your application.
-[*][b]Controller[/b]: The controller is the 'brain' of the application. Consider it to be the only part of your program that can 'think' and manage the other parts. Controller files are the only ones able to [i]order[/i] the Model to gather information and then pass the information obtained to the view for display.  
+[*]Model: The model represents the very essence of the [i]information[/i] and [i]content[/i] of a web application. Imagine this as an object able to gather the information and content of your webpages from a particular resource, such as a database. The model is the only entity able to access resources.
+[*]View: The view is an attempt to separate the most unstable part of an application: the user front-end. A view is only responsible for presenting the information that the Model gathered. A view does nothing but format the output, and can be compared to a template or report. In all MVC frameworks for web applications, only view files contain (X)HTML code, and mostly only that. They can therefore be changed [i]at any time[/i] without having to touch a single line of the business logic of your application.
+[*]Controller: The controller is the 'brain' of the application. Consider it to be the only part of your program that can 'think' and manage the other parts. Controller files are the only ones able to [i]order[/i] the Model to gather information and then pass the information obtained to the view for display.  
 [/list] 
 
 Although the MVC seems to make things more complicated, that is part of the objective.  Since one of the advantages (and weaknesses) of PHP was its simplicity, the MVC adds complexity to bring more order and logic to the design process. The three entities are separated for just that reason, and trying to put them together can result in potential disasters, since it causes the whole  pattern to fail.
@@ -73,6 +73,7 @@ Although the MVC seems to make things more complicated, that is part of the obje
 Coming back to Rails, I was quite impressed by the features it offered, but there was a small problem: the Ruby programming language itself. I experienced some difficulties in setting up the environment properly, and I also discovered that most standard hosting companies do not offer Ruby hosting plans as standard. Hosting issues aside, I would have had to learn Ruby in order to master Rails, and I really did not have the time for that: I had to develop a website quickly and easily, preferably with languages I already knew.
 
 After deciding to abandon Rails (for the moment, anyway), I was amazed by the number of projects in other programming languages that try to emulate the famous Ruby framework, to the point of being considered [i]clones[/i] or ports of it to another language.  To my knowledge, the [i]Rails disease[/i] contaminated the following programming languages:
+
 [list]
 [*]PHP[12]
 [*]Python[13]
@@ -149,11 +150,11 @@ I expanded only the first three levels of the tree, although there are more leve
 When I said that Cake strives to use conventions over configuration, I really meant it.  This directory does not contain thousands of configuration files, only five very small ones. They represent the only items which [i]might[/i] need to be configured. 
 
 [list]
-[*][b]acl.ini.php[/b]: This file must be edited only if you plan to use Cake's default ACL (access control list) system for your application. It sets permissions for the application, so it should be used to list every group, user, and their respective rights. This can be useful for small sites with a few well known users, but for anything else, you should develop your own ACL or authentication system that relies on a database.   
-[*][b]core.php[/b]: This file can be edited to change some default options, such as the level of the error messages and notices that the application will output. This comes in very handy while developing an application.
-[*][b]database.php.default[/b]: This should be renamed to database.php and edited if you plan to use any databases with Cake. The settings are fairly straightforward, and include the type of database used (mysql, postrgres, sqlite, or any other supported by the AdoDB library[18]), username, password and database name.
-[*][b]paths.php[/b]: Unless you are very particular, you should leave this file alone. It tells Cake where to look for CSS files, images, controllers, etc. If you are planning to adopt Cake's directory structure - which is the most logical option - you can ignore this.
-[*][b]routes.php[/b]: Following Rails' example, CakePHP features a "routing system" for user-friendly URLs. By default, your URLs will look like this: [i]http://sitename/controller-name/action-name/eventual/action/parameters[/i], which is a really nice way to organize a site, but you may want to change something if you have particular requirements. 
+[*]acl.ini.php: This file must be edited only if you plan to use Cake's default ACL (access control list) system for your application. It sets permissions for the application, so it should be used to list every group, user, and their respective rights. This can be useful for small sites with a few well known users, but for anything else, you should develop your own ACL or authentication system that relies on a database.   
+[*]core.php: This file can be edited to change some default options, such as the level of the error messages and notices that the application will output. This comes in very handy while developing an application.
+[*]database.php.default: This should be renamed to database.php and edited if you plan to use any databases with Cake. The settings are fairly straightforward, and include the type of database used (mysql, postrgres, sqlite, or any other supported by the AdoDB library[18]), username, password and database name.
+[*]paths.php: Unless you are very particular, you should leave this file alone. It tells Cake where to look for CSS files, images, controllers, etc. If you are planning to adopt Cake's directory structure - which is the most logical option - you can ignore this.
+[*]routes.php: Following Rails' example, CakePHP features a "routing system" for user-friendly URLs. By default, your URLs will look like this: [i]http://sitename/controller-name/action-name/eventual/action/parameters[/i], which is a really nice way to organize a site, but you may want to change something if you have particular requirements. 
 [/list]
 
 
@@ -220,10 +221,10 @@ If you read carefully what I wrote above about routes, you might be wondering if
 Cake offers even more than this; the latest releases have introduced a few more Rails-inspired features:
 
 [list]
-[*][b]Scaffolding[/b]: Do you want to test your application without spending time writing all the CRUD (Create, Read, Update, Delete) code? That's where the concept of scaffolding comes in:  by setting a few variables in the right places[22], Cake will generate basic mechanisms to add, edit, list, and delete records in your database, along with all the associated view files. You won't have to code a single form, as everything will be generated automatically by the framework according to SQL field types.
-[*][b]Bake[/b]: Another Rails-inspired feature revisited in PHP. Rails uses a set of scripts and in particular the [i]rake[/i] utility to instantaneously create the foundation for a Rails application with scaffolds already in place.  CakePHP offers the same functionality through the [i]bake[/i] utility, which is currently available as either a batch file or a PHP script.
-[*][b]ACL[/b]: As previously mentioned, Cake comes with a ready-made Access Control List (ACL) system, which can be extended and used to restrict particular areas of a Cake application to certain users or user groups.
-[*][b]Compatibility[/b]: CakePHP is fully compatible with both PHP and PHP5.
+[*]Scaffolding: Do you want to test your application without spending time writing all the CRUD (Create, Read, Update, Delete) code? That's where the concept of scaffolding comes in:  by setting a few variables in the right places[22], Cake will generate basic mechanisms to add, edit, list, and delete records in your database, along with all the associated view files. You won't have to code a single form, as everything will be generated automatically by the framework according to SQL field types.
+[*]Bake: Another Rails-inspired feature revisited in PHP. Rails uses a set of scripts and in particular the [i]rake[/i] utility to instantaneously create the foundation for a Rails application with scaffolds already in place.  CakePHP offers the same functionality through the [i]bake[/i] utility, which is currently available as either a batch file or a PHP script.
+[*]ACL: As previously mentioned, Cake comes with a ready-made Access Control List (ACL) system, which can be extended and used to restrict particular areas of a Cake application to certain users or user groups.
+[*]Compatibility: CakePHP is fully compatible with both PHP and PHP5.
 [/list]
 
 
@@ -393,8 +394,8 @@ So that's what CakePHP is about. The project may only have just entered alpha st
 [list]
 [*]Cake's built-in [b]data-validation[/b] capabilities will be extended. A validator class - which already exists, by the way - will be extended to include more data types and expressions to be validated before being stored in a database. 
 [*]A new default [b]ACL system[/b] will be included and will support database access and .ini files as well. 
-[*] The [b]AJAX[/b] helper class and AJAX support will be enhanced, featuring unobtrusive JavaScript and ALA behavior[28].
-[*] [b]Multiple applications[/b] with the same core files. In the future developers will be able to create their own Cake application which could be placed in the app/plugins directory and be seamlessly integrated and auto-linked to other Cake applications.
+[*]The [b]AJAX[/b] helper class and AJAX support will be enhanced, featuring unobtrusive JavaScript and ALA behavior[28].
+[*]Multiple applications with the same core files. In the future developers will be able to create their own Cake application which could be placed in the app/plugins directory and be seamlessly integrated and auto-linked to other Cake applications.
 [/list]   
 
 After learning all this about Cake and after trying it out myself, I really think that I have found the solution to all of my PHP web development problems. CakePHP can really help PHP developers a lot if properly used and understood.  Still not convinced? Just try it out then, will you?[17]
@@ -403,9 +404,10 @@ After learning all this about Cake and after trying it out myself, I really thin
 [b]Notes and Related Resources[/b]
 
 Special thanks to:
+
 [list]
-[*][b]Larry E. Masters aka PhpNut[/b] and  Garrett J. Woodworth [b]gwoo[/b] for providing all the answers to my questions and contributing to create such a wonderful tool for the PHP community.
-[*][b]Marc Abramowitz[/b] for sharing his experiences with the CakePHP framework and providing the content for the '...let's eat' section.
+[*]Larry E. Masters aka PhpNut and  Garrett J. Woodworth [b]gwoo[/b] for providing all the answers to my questions and contributing to create such a wonderful tool for the PHP community.
+[*]Marc Abramowitz for sharing his experiences with the CakePHP framework and providing the content for the '...let's eat' section.
 [/list]
 
 [small]

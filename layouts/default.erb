@@ -90,7 +90,10 @@ var disqus_shortname = 'h3rald';
 }());
 			</script>
 		<% end %>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.tabReplace = '  ';
+      hljs.initHighlightingOnLoad();
+    </script>
  <!-- Start Google Analytics --> 
  <script type="text/javascript">
   var _gaq = _gaq || [];

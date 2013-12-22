@@ -26,7 +26,6 @@ The following ruby libraries (gems) are used to compile this web site:
 * "BB-Ruby":http://rubygems.org/gems/bb-ruby, for BBCode support
 * "Builder":http://rubygems.org/gems/builder/, to create RSS and ATOM feeds
 * "Sass":http://sass-lang.com/, for the SASS filter
-* "CodeRay":http://rubygems.org/gems/coderay/, for syntax highlighting
 * "RedCloth":http://rubygems.org/gems/redcloth/, for Textile support
 * "RedCarpet":http://rubygems.org/gems/redcarpet, for Markdown support
 * "Glyph":http://rubygems.org/gems/glyph, for Glyph support
