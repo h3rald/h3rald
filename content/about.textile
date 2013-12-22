@@ -21,19 +21,19 @@ h3. Requirements
 
 The following ruby libraries (gems) are used to compile this web site:
 
-* *"nanoc":http://rubygems.org/gems/nanoc*, to generate the entire web site
-* *"Extlib":http://rubygems.org/gems/extlib*, in some custom Rake tasks
-* *"BB-Ruby":http://rubygems.org/gems/bb-ruby*, for BBCode support
-* *"Builder":http://rubygems.org/gems/builder/*, to create RSS and ATOM feeds
-* *"Sass":http://sass-lang.com/*, for the SASS filter
-* *"CodeRay":http://rubygems.org/gems/coderay/*, for syntax highlighting
-* *"RedCloth":http://rubygems.org/gems/redcloth/*, for Textile support
-* *"RedCarpet":http://rubygems.org/gems/redcarpet*, for Markdown support
-* *"Glyph":http://rubygems.org/gems/glyph*, for the Glyph support
+* "nanoc":http://rubygems.org/gems/nanoc, to generate the entire web site
+* "Extlib":http://rubygems.org/gems/extlib, in some custom Rake tasks
+* "BB-Ruby":http://rubygems.org/gems/bb-ruby, for BBCode support
+* "Builder":http://rubygems.org/gems/builder/, to create RSS and ATOM feeds
+* "Sass":http://sass-lang.com/, for the SASS filter
+* "CodeRay":http://rubygems.org/gems/coderay/, for syntax highlighting
+* "RedCloth":http://rubygems.org/gems/redcloth/, for Textile support
+* "RedCarpet":http://rubygems.org/gems/redcarpet, for Markdown support
+* "Glyph":http://rubygems.org/gems/glyph, for Glyph support
 
 Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://blog.typosphere.org:
-* *"MySQL":http://rubyforge.org/projects/mysql/*
-* *"Sequel":http://rubyforge.org/projects/sequel/*
+* "MySQL":http://rubyforge.org/projects/mysql/
+* "Sequel":http://rubyforge.org/projects/sequel/
 
 
 h3. Credits

@@ -1,16 +1,25 @@
 /* Fonts */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic);
-
 @import "_bootstrap.scss";
 @import "_vendor.scss";
 @import "_code.scss";
 @import "_font-awesome.scss";
+@import "_lato.scss";
 
 /* Bootstrap Overrides */
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", sans-serif;
+  color: #222;
+}
+
+pre {
+  padding: 0;
+}
+
+pre code {
+  padding: 4px;
+  margin: 0;
 }
 
 article, #legacy-comments, #disqus_thread {

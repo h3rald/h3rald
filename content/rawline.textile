@@ -13,7 +13,7 @@ links:
 - "Source": http://github.com/h3rald/rawline/tree/master 
 - "Tracking": http://h3rald.lighthouseapp.com/projects/26374-rawline/overview 
 status: On Hold
-version: 0.3.1
+version: 0.3.2
 -----
 
 <%= render 'project_data', :tag => 'rawline' %>
