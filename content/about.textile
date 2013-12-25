@@ -41,6 +41,6 @@ Special thanks to the following people, who made this web site possible:
 
 * "Denis Defreyne":http://www.stoneship.org/, creator of the exceptional "nanoc":http://nanoc.stoneship.org/ site publishing system.
 * "David J. Perry":http://scholarsfonts.net/, who designed the "Cardo":http://scholarsfonts.net/cardofnt.html font I used for the H3RALD logo.
-* Łukasz Dziedzic, creator of the "Lato":http://www.latofonts.com font, used throughout the web site.
+* The creators of the "Ubuntu":http://font.ubuntu.com/ font, used throughout the web site.
 * "Mark Otto":https://twitter.com/mdo and "fat-kun":https://twitter.com/fat, creators of the awesome "Bootstrap":http://getbootstrap.com framework.
 * "Dave Gandy":http://twitter.com/davegandy, designer of the "FontAwesome":http://fontawesome.io/ icon set.
