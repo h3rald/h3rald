@@ -5,7 +5,7 @@ filter: erb
 <html lang="en">
 	<head>
 		<title><%= @item[:title] %> - H3RALD</title>
-		<link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:300,300,400,300italic,400italic' rel='stylesheet' type='text/css'>
 		<% if @item[:feed_url] then %>
 		<link rel="alternate" type="application/rss+xml" title="H3RALD - <%= @item[:feed_title]%>" href="<%= @item[:feed_url]%>" />
 		<% else %>
