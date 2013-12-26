@@ -36,11 +36,20 @@ compile /^\/(js\/.+?)/ do
 	# do nothing
 end
 
-compile '/glyph/book/*' do
+compile '/glyph/book/images/*' do
 	# do nothing
 end
-compile '/ruby-compendium/book/*' do
+
+compile '/glyph/book/*' do
+	layout 'default'
+end
+
+compile '/ruby-compendium/book/images/*' do
 	# do nothing
+end
+
+compile '/ruby-compendium/book/*' do
+	layout 'default'
 end
 
 compile '*' do

@@ -11,8 +11,8 @@ links:
 - "Download": http://www.rubygems.org/gems/glyph
 - "Documentation": /glyph/book/
 - "User Group": http://groups.google.com/group/glyph-framework
-status: Active
-version: 0.5.2
+status: On Hold
+version: 0.5.3
 -----
 
 <%= render 'project_data', :tag => 'glyph' %>

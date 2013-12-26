@@ -171,7 +171,8 @@ h1 > code {
 
 article.page > header h2,
 #body-text section section header h1,
-#body-text h3 {
+#body-text h3,
+h1.toc-header {
   margin-top: 1.2em;
 	font-size: 1.5em;
   font-style: italic;
