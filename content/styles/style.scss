@@ -3,12 +3,46 @@
 @import "_bootstrap.scss";
 @import "_vendor.scss";
 @import "_coderay.scss";
+@import "_github.scss";
 @import "_font-awesome.scss";
-//@import "_lato.scss";
-
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:300,300,400,300italic,400italic);
 
 /* Bootstrap Overrides */
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+@media ( max-width : 767px) {
+  .nav-container {
+    padding: 0;
+  }
+  .navbar-fixed-top {
+    position: relative;
+  }
+}
+
+.navbar {
+  background: #2b3033;
+  .nav {
+    background: #2b3033;
+  }
+  .nav a:hover {
+    background: #2b3033;
+  }
+  .navbar-toggle {
+    border-color: #555;
+  }
+  .icon-bar {
+    background: #555;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+}
 
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Ubuntu", sans-serif;
