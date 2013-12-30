@@ -5,12 +5,23 @@
 @import "_coderay.scss";
 @import "_github.scss";
 @import "_font-awesome.scss";
+@import "_h3rald.scss";
 
 /* Bootstrap Overrides */
 
 @media (min-width: 768px) {
   body {
     padding-top: 60px;
+  }
+  .navbar-form .input-group {
+    float: right;
+    width: 350px;
+  }
+}
+@media (max-width: 991px)  {
+  .navbar-form .input-group {
+    float: right;
+    width: 180px;
   }
 }
 
@@ -23,12 +34,63 @@
   }
 }
 
-.navbar {
+a, a:link, a:visited, a:active {
+  -webkit-transition-property: color, border-bottom-color;
+  -moz-transition-property: color, border-bottom-color;
+  -o-transition-property: color, border-bottom-color;
+  transition-property: color, border-bottom-color;
+  -webkit-transition-duration: 1s; 
+  -moz-transition-duration: 1s; 
+  -o-transition-duration: 1s; 
+  transition-duration: 1s; 
+  -webkit-transition-timing-function: ease-out; 
+  -moz-transition-timing-function: ease-out; 
+  -o-transition-timing-function: ease-out; 
+  transition-timing-function: ease-out; 
+} 
+
+dt {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+footer, .navbar {
+  color: #fff;
   background: #2b3033;
-  .nav {
-    background: #2b3033;
+  a, a:link, a:visited, a:active {
+    margin: inherit 1px;
+    color: #dbe7ee;
+  }
+  .nav a {
+    border-bottom: 2px solid #2b3033;
+    padding-bottom: 5px;
+  }
+  .nav li.active a {
+    border-bottom: 2px solid #dbe7ee;
+    padding-bottom: 5px;
   }
   .nav a:hover {
+    background: #2b3033;
+    color: #8fc8ea;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #8fc8ea;
+  }
+  a.h3 {
+    padding: 0;
+    border-bottom: none;
+  }
+  a.h3:hover {
+    text-decoration: none;
+    border-bottom: none;
+  }
+}
+
+.navbar {
+  height: 60px;
+  .container {
+    padding-top: 5px;
+  }
+  .nav {
     background: #2b3033;
   }
   .navbar-toggle {
@@ -90,16 +152,47 @@ article table {
   @extend .table-bordered;
 }
 
-/* Other Elements */
-
-.contact-list ul{
-  list-style-type: none;
-  margin: 20px 0;
+html, body {
+  height: 100%;
 }
 
-.contact-list ul li {
-  margin: 10px 0;
+
+footer {
+  .container {
+    -webkit-opacity: 0.6;
+    opacity: 0.4;
+  }
+  font-size: 12px;
+
+  .copyright {
+    text-align: center;
+    margin: auto;
+  }
+
+  h1 {
+    color: #fff;
+  }
+
+  .contact-list ul {
+    list-style-type: none;
+  }
+  .license-logo {
+    text-align: center;
+    margin: 15px auto;
+  }
+} 
+
+footer .container:hover {
+  -webkit-opacity: 0.8;
+  opacity: 0.8;
 }
+
+footer .container {
+  -webkit-transition: -webkit-opacity 0.3s ease-out; 
+  -moz-transition: opacity 0.3s ease-out; 
+  -o-transition: opacity 0.3s ease-out; 
+  transition: opacity 0.3s ease-out; 
+} 
 
 .article-aggregation {
   margin: 20px 0;
@@ -119,11 +212,6 @@ article table {
   text-align: right;
   font-size: 130%;
   color: #555;
-}
-
-footer {
-  margin: auto;
-  text-align: center;
 }
 
 #header-row {
@@ -160,7 +248,7 @@ article p[style*="left"] {
 #main-content > article h1 {
   line-height: 1em;
   font-size: 1.6em;
-  font-weight: 400;
+  font-weight: 300;
 }
 #main-content > article h2 {
   margin-top: 0;
@@ -174,13 +262,13 @@ article.page > header h1 {
 	font-size: 2em;
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #secondary-content > article h1{
   line-height: 1.2em;
   font-size: 1.3em;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #secondary-content > article h2{
@@ -192,6 +280,7 @@ article.page > header h1 {
 }
 
 #body-text section header h1,
+footer h1,
 #body-text h2 {
 	font-size: 1.8em;
 }

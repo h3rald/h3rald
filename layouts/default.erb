@@ -54,6 +54,7 @@ filter: erb
 		<script src="/js/bootstrap.js" type="text/javascript"></script>
 	</head>
 	<body>
+    <div id="wrap">
 			<% if @item[:permalink] == 'home' then %>
 				<%= render 'header' %>
         <div class="container">
@@ -61,7 +62,7 @@ filter: erb
         </div>
 			<% else %>
 				<%= render 'header', :item => @item %>
-        <div class="container">
+        <div id="main" class="container clear-top">
 				<article class="page">
 					<%= render 'page_meta', :item => @item %>
 					<section id="body-text" class="hyphenate">
@@ -74,11 +75,7 @@ filter: erb
           <% end %>
         </div>
 			<% end %>
-			<footer>
-				<section>
-          <p>H3RALD Web Site v8.4 &copy; 2004 &mdash; 2014 <em>Fabio Cevasco</em></p>
-				</section>
-			</footer>
+      <%= render 'footer' %>
 		<% if @item[:type] == 'article' then %>
     <script type="text/javascript">
         var disqus_shortname = 'h3rald'; 
@@ -110,5 +107,6 @@ filter: erb
   })();
  </script> 
  <!-- End Google Analytics --> 
+    </div> <!-- End #wrap -->
 	</body>
 </html>

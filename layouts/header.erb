@@ -9,7 +9,7 @@ filter: erb
       ""
     end
   end
-%><div class="container nav-container">
+  %><header class="container nav-container">
   <div id="main-navbar" class="navbar navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -21,32 +21,31 @@ filter: erb
         </button>
         <h1 class="navbar-brand">
           <% if @item[:permalink] != 'home' then %>
-          <a href="/"><img src="/images/h3rald.png" alt="H3RALD" /></a>
+          <a href="/" class="h3 h3-header"></a>
         <% else %>
-          <img src="/images/h3rald.png" alt="H3RALD" />
+          <span class="h3 h3-header"></span>
         <% end %>
         </h1>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li<%=active_if("home")%>><a href="/"><i class="fa fa-home"></i> HOME</a></li>
-          <li<%=active_if("projects")%>><a href="/projects/"><i class="fa fa-briefcase"></i> PROJECTS</a></li>
-          <li<%=active_if("tags")%>><a href="/tags/"><i class="fa fa-tags"></i> TAGS</a></li>
-          <li<%=active_if("archives")%>><a href="/archives/"><i class="fa fa-archive"></i> ARCHIVES</a></li>
-          <li<%=active_if("about")%>><a href="/about/"><i class="fa fa-question-circle"></i> ABOUT</a></li>
-          <!-- <li<%=active_if("contact")%>><a href="/contact/"><i class="fa fa-envelope"></i> CONTACT</a></li> -->
+          <li<%=active_if("projects")%>><a href="/projects/">PROJECTS</a></li>
+          <li<%=active_if("tags")%>><a href="/tags/">TAGS</a></li>
+          <li<%=active_if("archives")%>><a href="/archives/">ARCHIVES</a></li>
+          <li<%=active_if("about")%>><a href="/about/">ABOUT</a></li>
         </ul>
-        <!--
-        <div class="navbar-form navbar-nav navbar-right">
-          <div class="gcse-searchbox" data-enableAutoComplete="true"></div>
-        </div>
-        -->
+        <form class="navbar-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" id="searchbox">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  <div class="row" id="header-row">
-  </div>
-  <div id="search_results">
-    <div class="gcse-searchresults" data-linkTarget="_top"></div>
-  </div> 
-</div>
+</header>
+<div id="search_results">
+  <div class="gcse-searchresults" data-linkTarget="_top"></div>
+</div> 

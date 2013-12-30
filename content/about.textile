@@ -7,16 +7,6 @@ H3RALD.com was created in 2004 by Fabio Cevasco, a technical writer, programmer 
 
 As of version 8, H3RALD.com is a completely static web site, except for a few AJAX calls. All the files are generated automatically thanks to the "nanoc":http://nanoc.stoneship.org/ publishing system, an ingenious creation of "Denis Defreyne":http://www.stoneship.org/. Nanoc can be used to easily create static web sites using Ruby, as explained in "this article":http://www.h3rald.com/articles/take-back-your-site-with-nanoc/.
 
-
-h3. Licensing
-
-The "articles":/archives/ and all the content published on this web site is licensed under the _Creative Commons Attribution-Noncommercial-No Derivative Works 3.0 Unported License_. For other uses, please "contact us":/contact/.
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
-
-The source code of this web site, such as its layout, SASS/CSS stylesheets, custom rake tasks and code is licensed under the terms of the <em><a href="http://creativecommons.org/licenses/MIT/">MIT License</a></em> and it is available on "GitHub":https://github.com/h3rald/h3rald.
-
-
 h3. Requirements
 
 The following ruby libraries (gems) are used to compile this web site:
@@ -33,14 +23,3 @@ The following ruby libraries (gems) are used to compile this web site:
 Additionally, the following gems were necessary to migrate from the previous version of this web site, powered by "Typo":http://blog.typosphere.org:
 * "MySQL":http://rubyforge.org/projects/mysql/
 * "Sequel":http://rubyforge.org/projects/sequel/
-
-
-h3. Credits
-
-Special thanks to the following people, who made this web site possible:
-
-* "Denis Defreyne":http://www.stoneship.org/, creator of the exceptional "nanoc":http://nanoc.stoneship.org/ site publishing system.
-* "David J. Perry":http://scholarsfonts.net/, who designed the "Cardo":http://scholarsfonts.net/cardofnt.html font I used for the H3RALD logo.
-* The creators of the "Ubuntu":http://font.ubuntu.com/ font, used throughout the web site.
-* "Mark Otto":https://twitter.com/mdo and "fat-kun":https://twitter.com/fat, creators of the awesome "Bootstrap":http://getbootstrap.com framework.
-* "Dave Gandy":http://twitter.com/davegandy, designer of the "FontAwesome":http://fontawesome.io/ icon set.
