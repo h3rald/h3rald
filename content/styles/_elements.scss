@@ -56,6 +56,23 @@ dt {
   font-size: 20px;
 }
 
+figure {
+  margin: 2px;
+  border: 1px solid #999;
+  padding: 2px;
+  color: #999;
+  font-size: 80%;
+  text-align: center;
+}
+
+figure[style="float: right;"], img[style^="float:right"]{
+  margin-left: 10px;
+}
+
+figure[style="float: left;"], img[style^="float:left"]{
+  margin-right: 10px;
+}
+
 footer, .navbar {
   color: #fff;
   background: #2b3033;
