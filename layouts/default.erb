@@ -62,7 +62,7 @@ filter: erb
         </div>
 			<% else %>
 				<%= render 'header', :item => @item %>
-        <div id="main" class="container clear-top">
+        <main class="container clear-top">
 				<article class="page">
 					<%= render 'page_meta', :item => @item %>
 					<section id="body-text" class="hyphenate">
@@ -73,7 +73,7 @@ filter: erb
 						<%= render 'legacy_comments', :item => @item if @item[:comments] %>
 						<%= render 'comments', :item => @item %>
           <% end %>
-        </div>
+        </main>
 			<% end %>
       <%= render 'footer' %>
 		<% if @item[:type] == 'article' then %>
