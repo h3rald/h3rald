@@ -55,14 +55,12 @@ filter: erb
 	</head>
 	<body>
     <div id="wrap">
+      <%= render 'header' %>
+      <div class="hidden container" id="h3rald-search-results"></div>
+      <main id="main" class="container">
 			<% if @item[:permalink] == 'home' then %>
-				<%= render 'header' %>
-        <div class="container">
           <%= yield %>
-        </div>
 			<% else %>
-				<%= render 'header', :item => @item %>
-        <main class="container clear-top">
 				<article class="page">
 					<%= render 'page_meta', :item => @item %>
 					<section id="body-text" class="hyphenate">
@@ -73,8 +71,8 @@ filter: erb
 						<%= render 'legacy_comments', :item => @item if @item[:comments] %>
 						<%= render 'comments', :item => @item %>
           <% end %>
-        </main>
 			<% end %>
+      </main>
       <%= render 'footer' %>
 		<% if @item[:type] == 'article' then %>
     <script type="text/javascript">

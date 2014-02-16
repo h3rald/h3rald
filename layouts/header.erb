@@ -34,18 +34,15 @@ filter: erb
           <li<%=active_if("archives")%>><a href="/archives/">ARCHIVES</a></li>
           <li<%=active_if("about")%>><a href="/about/">ABOUT</a></li>
         </ul>
-        <form class="navbar-form">
+        <div class="navbar-form">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" id="searchbox">
+            <input type="text" class="form-control" name="q" placeholder="Search" id="h3rald-search-box">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+              <button class="btn btn-default" id="h3rald-search-btn" type="button"><i class="fa fa-search"></i></button>
             </span>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </header>
-<div id="search_results">
-  <div class="gcse-searchresults" data-linkTarget="_top"></div>
-</div> 
