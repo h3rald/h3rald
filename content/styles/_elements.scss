@@ -1,3 +1,4 @@
+
 @media (min-width: 768px) {
   body {
     padding-top: 80px;
@@ -28,17 +29,8 @@ html, body {
 }
 
 a, a:link, a:visited, a:active {
-  -webkit-transition-property: color, border-bottom-color;
-  -moz-transition-property: color, border-bottom-color;
-  -o-transition-property: color, border-bottom-color;
   transition-property: color, border-bottom-color;
-  -webkit-transition-duration: 1s; 
-  -moz-transition-duration: 1s; 
-  -o-transition-duration: 1s; 
-  transition-duration: 1s; 
-  -webkit-transition-timing-function: ease-out; 
-  -moz-transition-timing-function: ease-out; 
-  -o-transition-timing-function: ease-out; 
+  transition-duration: 500ms; 
   transition-timing-function: ease-out; 
 } 
 
@@ -75,21 +67,21 @@ figure[style="float: left;"], img[style^="float:left"]{
 
 footer, .navbar {
   color: #fff;
-  background: #2b3033;
+  background: $navbar-bkg;
   a, a:link, a:visited, a:active {
     margin: inherit 1px;
-    color: #dbe7ee;
+    color: $navbar-link;
   }
   .nav a {
-    border-bottom: 2px solid #2b3033;
+    border-bottom: 2px solid $navbar-bkg;
     padding-bottom: 5px;
   }
   .nav li.active a {
-    border-bottom: 2px solid #dbe7ee;
+    border-bottom: 2px solid $navbar-link;
     padding-bottom: 5px;
   }
   .nav a:hover {
-    background: #2b3033;
+    background: $navbar-bkg;
     color: #8fc8ea;
     padding-bottom: 5px;
     border-bottom: 2px solid #8fc8ea;
@@ -99,7 +91,7 @@ footer, .navbar {
     border-bottom: none;
   }
   a.h3:hover {
-    color: #8fc8ea;
+    color: #CBDCE6;
     text-decoration: none;
     border-bottom: none;
   }
@@ -111,7 +103,7 @@ footer, .navbar {
     padding-top: 5px;
   }
   .nav {
-    background: #2b3033;
+    background: $navbar-bkg;
   }
   .navbar-toggle {
     border-color: #555;
@@ -121,7 +113,8 @@ footer, .navbar {
   }
 
   h1 {
-    margin: 0;
+    position: relative;
+    margin: 0 0 0 15px;
     padding: 0;
   }
 }

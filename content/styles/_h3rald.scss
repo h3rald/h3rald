@@ -31,7 +31,8 @@
 
 .h3-header {
   font-size: 50px;
-  color: #fff;
+  color: $navbar-link;
+  text-shadow: 0 1px 1px #111; 
 }
 
 .h3-footer {
