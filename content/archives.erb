@@ -9,8 +9,8 @@ type: page
 <% c = 0
 articles_by_month.each do |m|
   c = c+1 %>
-  <%= %{<div class="row">} if c%6 == 1 %>
-    <div class="col-md-2"><%= month_link_with_count(m[0], m[1].length) %></div>
-    <%= "</div>" if c%6 == 0 %>
+  <%= %{<div class="row">} if c%4 == 1 %>
+    <div class="col-md-3"><%= month_link_with_count(m[0], m[1].length) %></div>
+    <%= "</div>" if c%4 == 0 %>
 <% end %></div>
 </div>

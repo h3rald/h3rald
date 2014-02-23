@@ -12,8 +12,8 @@ type: page
 <% c = 0
 tags.each do |t|
   c = c+1 %>
-  <%= %{<div class="row">} if c%6 == 1 %>
-    <div class="col-md-2"><%= tag_link_with_count(t[0], t[1]) %></div>
-    <%= "</div>" if c%6 == 0 %>
+  <%= %{<div class="row">} if c%4 == 1 %>
+    <div class="col-md-3"><%= tag_link_with_count(t[0], t[1]) %></div>
+    <%= "</div>" if c%4 == 0 %>
 <% end %></div>
 </div>
