@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-.h3 {
+.h3rald {
   font-family: "H3RALD";
 	speak: none;
 	font-style: normal;
@@ -25,17 +25,20 @@
   display: inline;
 }
 
-.h3:before {
+.h3rald:before {
 	content: "\e7c4";
 }
 
-.h3-header {
+.h3rald-header, .navbar a.h3rald.h3rald-header {
   font-size: 50px;
-  color: $navbar-link;
+  color: $light-text;
   text-shadow: 0 1px 1px #111; 
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.h3-footer {
+.h3rald-footer {
   position: relative;
   top: 3px;
   font-size: 15px;

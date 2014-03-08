@@ -1,8 +1,4 @@
-
 @media (min-width: 768px) {
-  body {
-    padding-top: 80px;
-  }
   .navbar-form .input-group {
     float: right;
     width: 350px;
@@ -19,17 +15,24 @@
   .nav-container {
     padding: 0;
   }
+  .navbar-form .input-group {
+    float:none;
+    width: 100%;
+  }
   .navbar-fixed-top {
-    position: relative;
+    position: absolute;
   }
 }
 
 html, body {
   height: 100%;
 }
+body {
+  padding-top: 70px;
+}
 
 a, a:link, a:visited, a:active {
-  transition-property: color, border-bottom-color;
+  transition-property: color;
   transition-duration: 500ms; 
   transition-timing-function: ease-out; 
 } 
@@ -65,35 +68,16 @@ figure[style="float: left;"], img[style^="float:left"]{
   margin-right: 10px;
 }
 
-footer, .navbar {
+#site-footer, .navbar, .navbar-collapse {
   color: #fff;
   background: $navbar-bkg;
   a, a:link, a:visited, a:active {
     margin: inherit 1px;
     color: $navbar-link;
   }
-  .nav a {
-    border-bottom: 2px solid $navbar-bkg;
-    padding-bottom: 5px;
-  }
-  .nav li.active a {
-    border-bottom: 2px solid $navbar-link;
-    padding-bottom: 5px;
-  }
   .nav a:hover {
     background: $navbar-bkg;
     color: #8fc8ea;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #8fc8ea;
-  }
-  a.h3 {
-    padding: 0;
-    border-bottom: none;
-  }
-  a.h3:hover {
-    color: #CBDCE6;
-    text-decoration: none;
-    border-bottom: none;
   }
 }
 
@@ -129,20 +113,20 @@ main {
   padding-bottom: 50px;
 }
 
-footer {
-  .container {
-    -webkit-opacity: 0.6;
-    opacity: 0.4;
-  }
-  font-size: 12px;
+#main-navbar, #site-footer {
+  box-shadow: 0px 0px 20px 2px $navbar-bkg;
+}
 
+#site-footer {
+  padding-top: 5px;
+  font-size: 12px;
+  color: $light-text;
+  h1 {
+    color: $light-text;
+  }
   .copyright {
     text-align: center;
     margin: auto;
-  }
-
-  h1 {
-    color: #fff;
   }
 
   .contact-list ul {
@@ -152,18 +136,6 @@ footer {
     text-align: center;
     margin: 15px auto;
   }
-} 
-
-footer .container:hover {
-  -webkit-opacity: 0.8;
-  opacity: 0.8;
-}
-
-footer .container {
-  -webkit-transition: -webkit-opacity 0.3s ease-out; 
-  -moz-transition: opacity 0.3s ease-out; 
-  -o-transition: opacity 0.3s ease-out; 
-  transition: opacity 0.3s ease-out; 
 } 
 
 .article-aggregation {

@@ -8,9 +8,9 @@ filter: erb
     else
       ""
     end
-  end
-  %><header class="container nav-container">
-  <div id="main-navbar" class="navbar navbar-fixed-top" role="navigation">
+end
+%><header class="container" id="site-header">
+  <nav id="main-navbar" class="navbar navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,10 +21,10 @@ filter: erb
         </button>
         <h1 class="navbar-brand">
           <% if @item[:permalink] != 'home' then %>
-          <a href="/" class="h3 h3-header"></a>
-        <% else %>
-          <span class="h3 h3-header"></span>
-        <% end %>
+            <a href="/" class="h3rald h3rald-header"></a>
+          <% else %>
+            <span class="h3rald h3rald-header"></span>
+          <% end %>
         </h1>
       </div>
       <div class="navbar-collapse collapse">
@@ -33,16 +33,18 @@ filter: erb
           <li<%=active_if("tags")%>><a href="/tags/">TAGS</a></li>
           <li<%=active_if("archives")%>><a href="/archives/">ARCHIVES</a></li>
           <li<%=active_if("about")%>><a href="/about/">ABOUT</a></li>
+          <li>
+          </li>
         </ul>
-        <div class="navbar-form">
+        <form class="navbar-form navbar-right" role="search">
           <div class="input-group">
             <input type="text" class="form-control" name="q" placeholder="Search" id="h3rald-search-box">
             <span class="input-group-btn">
               <button class="btn btn-default" id="h3rald-search-btn" type="button"><i class="fa fa-search"></i></button>
             </span>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-  </div>
+  </nav>
 </header>
