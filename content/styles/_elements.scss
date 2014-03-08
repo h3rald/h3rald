@@ -32,6 +32,7 @@ body {
 }
 
 a, a:link, a:visited, a:active {
+  word-break: break-word;
   transition-property: color;
   transition-duration: 500ms; 
   transition-timing-function: ease-out; 
@@ -69,6 +70,7 @@ figure[style="float: left;"], img[style^="float:left"]{
 }
 
 #site-footer, .navbar, .navbar-collapse {
+  box-shadow: 0px 0px 20px 2px $navbar-bkg;
   text-shadow: 0 1px 1px #111; 
   color: $light-text;
   background: $navbar-bkg;
@@ -118,10 +120,6 @@ article table {
 
 main {
   padding-bottom: 50px;
-}
-
-#main-navbar, #site-footer {
-  box-shadow: 0px 0px 20px 2px $navbar-bkg;
 }
 
 #site-footer {
