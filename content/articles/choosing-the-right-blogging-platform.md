@@ -11,7 +11,7 @@
 - writing
 - internet
 - webdevelopment
-:date: 2014-04-26 13:03:46.000000000 +01:00
+:date: 2014-04-27 15:03:46.000000000 +01:00
 -----
   Every so often I wonder whether I should ditch my current blogging platform and try something new and shiny that just came out. Luckily, normally I come back to the same conclusion: I don't need to change anything, I just need to find the time and the will to write about something.
   
