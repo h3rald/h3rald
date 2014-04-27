@@ -17,7 +17,8 @@ filter: erb
 		<% if @item[:image] && @extended then %>
 			<img src="<%=@item[:image]%>" style="float:left; margin: 0 10px 10px 0;" alt="#" />
 		<% end %>
-    <%= RedCloth.new(intro.to_s).to_html %> 
+    <%= RedCloth.new(intro.to_s).to_html %>
+    <p><a href="<%= @item.identifier %>">Continue reading &rarr;</a></p>
 	</section>
   <hr />
 </article>

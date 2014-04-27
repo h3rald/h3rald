@@ -9,7 +9,7 @@ date: 2006-06-10 11:26:00 +02:00
 tags: 
 - frameworks
 - php
-- web-development
+- webdevelopment
 - review
 type: article
 toc: true
