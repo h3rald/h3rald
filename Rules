@@ -36,6 +36,10 @@ compile /^\/(js\/.+?)/ do
 	# do nothing
 end
 
+compile '/hastyscribe/HastyScribe_UserGuide/' do
+	# do nothing
+end
+
 compile '/glyph/book/images/*' do
 	# do nothing
 end
@@ -101,6 +105,10 @@ end
 
 route '/styles/*' do
 	item.identifier.chop + '.css' 
+end
+
+route '/hastyscribe/HastyScribe_UserGuide' do
+  '/hastyscribe/HastyScribe_UserGuide.htm'
 end
 
 route '/glyph/book/' do

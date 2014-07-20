@@ -3,7 +3,7 @@ permalink: concatenative
 filters_pre: 
 - erb
 - redcloth
-title: "Project: Concatenative"
+title: "Concatenative"
 type: project
 github: concatenative
 links:
