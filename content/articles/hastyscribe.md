@@ -86,7 +86,7 @@ The first thing to do was to make Discount work with Nimrod. It turned out to be
 
 So, compiling Discount (with all the options I needed to handle all the extra Markdown extensions) consists in running configure & make:
 
-`./configure.sh &ndash;with-tabstops=2 &ndash;with-dl=both &ndash;with-id-anchor &ndash;with-github-tags &ndash;with-fenced-code &ndash;enable-all-features`
+`./configure.sh --with-tabstops=2 --with-dl=both --with-id-anchor --with-github-tags --with-fenced-code --enable-all-features`
 
 `make`
 
