@@ -65,7 +65,7 @@ compile '*' do
 				filter :redcloth
 				layout 'default'
 			when 'md','markdown' then
-				filter :redcarpet
+				filter :rdiscount
 				layout 'default'
 			when 'bbcode' then
 				filter :bbcode
