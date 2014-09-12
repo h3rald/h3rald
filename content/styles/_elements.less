@@ -70,17 +70,17 @@ figure[style="float: left;"], img[style^="float:left"]{
 }
 
 #site-footer, .navbar, .navbar-collapse {
-  box-shadow: 0px 0px 20px 2px $navbar-bkg;
+  box-shadow: 0px 0px 20px 2px @navbar-bkg;
   text-shadow: 0 1px 1px #111; 
-  color: $light-text;
-  background: $navbar-bkg;
+  color: @light-text;
+  background: @navbar-bkg;
   a, a:link, a:visited, a:active {
     margin: inherit 1px;
-    color: $navbar-link;
+    color: @navbar-link;
   }
   .nav a:hover {
     text-decoration: underline;
-    background: $navbar-bkg;
+    background: @navbar-bkg;
     color: #8fc8ea;
   }
 }
@@ -91,7 +91,7 @@ figure[style="float: left;"], img[style^="float:left"]{
     padding-top: 5px;
   }
   .nav {
-    background: $navbar-bkg;
+    background: @navbar-bkg;
   }
   .navbar-toggle {
     border-color: #555;
@@ -113,9 +113,9 @@ figure[style="float: left;"], img[style^="float:left"]{
 }
 
 article table {
-  @extend .table;
-  @extend .table-striped;
-  @extend .table-bordered;
+  &:extend(.table);
+  &:extend(.table-striped);
+  &:extend(.table-bordered);
 }
 
 main {
@@ -125,9 +125,9 @@ main {
 #site-footer {
   padding-top: 5px;
   font-size: 12px;
-  color: $light-text;
+  color: @light-text;
   h1 {
-    color: $light-text;
+    color: @light-text;
   }
   .copyright {
     text-align: center;
