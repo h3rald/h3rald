@@ -9,11 +9,12 @@ As of version 8, H3RALD.com is a completely static web site, except for a few AJ
 
 The following ruby libraries (gems) are used to compile this web site:
 
-* "nanoc":http://rubygems.org/gems/nanoc, to generate the entire web site
-* "Extlib":http://rubygems.org/gems/extlib, in some custom Rake tasks
-* "BB-Ruby":http://rubygems.org/gems/bb-ruby, for BBCode support
-* "Builder":http://rubygems.org/gems/builder/, to create RSS and ATOM feeds
-* "Sass":http://sass-lang.com/, for the SASS filter
-* "RedCloth":http://rubygems.org/gems/redcloth/, for Textile support
-* "RedCarpet":http://rubygems.org/gems/redcarpet, for Markdown support
-* "Glyph":http://rubygems.org/gems/glyph, for Glyph support
+* "nanoc":https://rubygems.org/gems/nanoc, to generate the entire web site
+* "Extlib":https://rubygems.org/gems/extlib, in some custom Rake tasks
+* "BB-Ruby":https://rubygems.org/gems/bb-ruby, for BBCode support
+* "Builder":https://rubygems.org/gems/builder/, to create RSS and ATOM feeds
+* "Less":https://rubygems.org/gems/less/, for the SASS filter
+* "The Ruby Racer":https://rubygems.org/gems/therubyracer, to execute Javascript code (needed by Less)
+* "RedCloth":https://rubygems.org/gems/redcloth/, for Textile support
+* "RDiscount":https://rubygems.org/gems/rdiscount, for Markdown support
+* "Glyph":https://rubygems.org/gems/glyph, for Glyph support
