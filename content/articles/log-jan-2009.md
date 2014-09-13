@@ -1,7 +1,5 @@
 ----- 
 permalink: log-jan-2009
-filters_pre: 
-- redcarpet
 title: Personal Log - January 2009
 comments: []
 

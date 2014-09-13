@@ -1,33 +1,11 @@
-
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: "Ubuntu", sans-serif;
-  color: #444;
-  font-weight: 300;
-}
-
-pre, code, samp {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 14px;
-}
-
-b, strong {
-  font-weight: 400;
-}
-
-pre {
-  padding: 0;
-  margin: 20px 0;
-}
-
-pre code {
-  padding: 4px;
-  margin: 0;
-  background: #efefef;
+body {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 article, #legacy-comments, #disqus_thread {
-  font-size: 17px;
-  line-height: 1.8em;
+  line-height: 1.4em;
+  font-weight: 300;
+  font-size: 16px;
   color: #444;
 
   p {
@@ -47,43 +25,37 @@ article, #legacy-comments, #disqus_thread {
 #main-content > article h1 {
   line-height: 1em;
   font-size: 1.6em;
-  font-weight: 300;
 }
 #main-content > article h2 {
   margin-top: 0;
   line-height: 1em;
   font-size: 1.3em;
   font-style: italic;
-  font-weight: 300;
 }
 
 article.page > header h1 {
 	font-size: 2em;
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 300;
 }
 
-#secondary-content > article h1{
+#secondary-content > article h1 {
   line-height: 1.2em;
   font-size: 1.3em;
-  font-weight: 300;
 }
 
-#secondary-content > article h2{
+#secondary-content > article h2 {
   margin-top: 0;
   line-height: 1em;
   font-size: 1em;
   font-style: italic;
-  font-weight: 300;
-}
+ }
 
 #body-text section header h1,
 footer h1,
 #body-text h2 {
 	font-size: 1.8em;
 }
-
 h1 > code {
 	font-size: 0.9em;
   border:none;
@@ -98,14 +70,12 @@ h1.toc-header {
   margin-top: 1.2em;
 	font-size: 1.5em;
   font-style: italic;
-  font-weight: 300;
 }
 
 article.page > header h2 {
   margin: 0 0 1em 0;
   font-size: 1.3em;
   line-height: 1.2em;
-  font-weight: 300;
   color: #999;
 }
 
@@ -113,7 +83,6 @@ article.page > header h2 {
 #body-text h4 {
   margin-top: 1.2em;
 	font-size: 1.3em;
-  font-weight: 300;
 }
 
 #body-text section section section section header h1,
@@ -121,16 +90,72 @@ article.page > header h2 {
   margin-top: 1em;
 	font-size: 1em;
   font-style: italic;
-  font-weight: 300;
 }
 
 #body-text section section section section section header h1,
 #body-text h6 {
   margin-top: 1em;
 	font-size: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+  text-align: left;
+  border-bottom: none;
   font-weight: 300;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  line-height: 1.2em;
+/* HastyStyles Overrides */
+
+article #body-text {
+  h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.article-info .tag,
+code .tag,
+footer a[href] {
+  &:before {
+    content: "";
+  }
+}
+
+code, pre code {
+  font-size: 13px;
+}
+
+code {
+  line-height: 1.2;
+}
+
+.navbar .input-group {
+  box-shadow: none;
+}
+
+.hastyscribe {
+  margin-right: 1%;
+}
+
+dl {
+  clear: both;
+
+  dt {
+    float: none;
+    clear: none;
+    width: 20%;
+    text-align: right;
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0 0 0 22%;
+    padding: 0 0 0.5em 0;
+  }
+}
+
+.note, .tip, .warning, 
+.sidebar, .terminal, .terminal-su, 
+pre, blockquote {
+  max-width: 850px;
 }

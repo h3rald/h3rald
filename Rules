@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+ignore /^\/hastystyles\/(styles|fonts|images|README)/
+
+ignore '/styles/_*'
+
 compile /^\/(archives|home)\// do
 	filter :erb
 	layout 'default'
@@ -16,6 +20,9 @@ compile /(rss|atom)/ do
 end
 
 compile '/styles/_*/' do 
+end 
+
+compile '/hastystyles/styles/_*/' do 
 end 
 
 compile '/styles/*' do
@@ -95,10 +102,6 @@ route '/css/*' do
 	item.identifier.chop + '.css'
 end
 
-route '/styles/_*/' do 
-   nil 
-end 
-
 route '/styles/*' do
 	item.identifier.chop + '.css' 
 end
@@ -147,6 +150,10 @@ route '/js/*' do
 end
 
 route '/fonts/*' do
+	item.identifier.chop + ".#{item[:extension]}"
+end
+
+route '/hastystyles/fonts/*' do
 	item.identifier.chop + ".#{item[:extension]}"
 end
 

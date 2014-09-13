@@ -86,17 +86,17 @@ The first thing to do was to make Discount work with Nimrod. It turned out to be
 
 So, compiling Discount (with all the options I needed to handle all the extra Markdown extensions) consists in running configure & make:
 
-`./configure.sh --with-tabstops=2 --with-dl=both --with-id-anchor --with-github-tags --with-fenced-code --enable-all-features`
-
-`make`
+> %terminal%
+> ./configure.sh --with-tabstops=2 --with-dl=both --with-id-anchor --with-github-tags --with-fenced-code --enable-all-features
+> 
+> make
 
 Easy peasy on my Mac (and I suspect on Linux too), on Windows as usual I ran into a couple of issues, but nothing huge. First of all you need [MinGW](http://www.mingw.org/), and in particular gcc and make. You can probably compile Discount with something else, but I felt more comfortable with MinGW anyway.
 
 The one thing I had to fix after running configure was on line 8 of mkdio.h &ndash; I had to change the following line:
 
-<pre><code class="c">typedef @DWORD@ mkd_flag_t;</code></pre>
-
-<pre><code class="c">typedef unsigned long DWORD;
+<pre><code class="c">typedef @DWORD@ mkd_flag_t;
+typedef unsigned long DWORD;
 typedef DWORD mkd_flag_t;</code></pre>
 
 There's probably a better way to go about this, but it did the trick and I got my **libmarkdown.a** both on Windows and then on Mac. I do have a Ubuntu machine at home but I hardly use it nowadays (I am normally happy with just my [Raspberry Pi](http://www.raspberrypi.org/) running Arch Linux ARM &ndash; but Nimrod doesn't run on ARM as far as I know).

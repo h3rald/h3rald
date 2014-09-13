@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mv content/hastystyles/images/hastyscribe.svg content/hastystyles/images/hastyscribe-logo.svg 
+mv content/hastystyles/styles/hastyscribe.css content/hastystyles/styles/hastyscribe-styles.css 
+nanoc co
+mv content/hastystyles/images/hastyscribe-logo.svg content/hastystyles/images/hastyscribe.svg 
+mv content/hastystyles/styles/hastyscribe-styles.css content/hastystyles/styles/hastyscribe.css 
