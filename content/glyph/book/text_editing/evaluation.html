@@ -61,8 +61,8 @@ type: page
 <p>For anything more complex than what described in the previous sections you can also evaluate simple ruby code snippets using the <code>ruby</code> macro (aliased to <code>%</code>), like this:</p>
 <ul>
 	<li><code>%[2 + 2]</code> &rarr; 4</li>
-	<li><code>%[Time.now]</code> &rarr; 2013-12-26 22:50:28 +0100</li>
-	<li><code>%[Glyph::VERSION]</code> &rarr; 0.5.2</li>
+	<li><code>%[Time.now]</code> &rarr; 2014-10-04 21:34:10 +0200</li>
+	<li><code>%[Glyph::VERSION]</code> &rarr; 0.5.3.1</li>
 </ul>
 <p>The scope for the code evaluation is the Kernel module, (with all inclusions required by Glyph itself).</p>
 <p>Although it is possible to retrieve Glyph configuration settings in this way (e.g. <code>%[cfg('document.author')]</code>), the <a href="/glyph/book/macros/macros_core.html#m_config"><code>config</code></a> macro (aliased to <code>$</code>) makes things slightly simpler (e.g. <code>$[document.author]</code>).</p>
