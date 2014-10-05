@@ -10,7 +10,10 @@ This very web site, in its 8th incarnation. H3RALD.com has been operative since 
 h3. "HastyScribe":/hastyscribe/ 
 
 A self-contained Markdown compiler that can generate self-contained HTML files, useful for writing essays, reports, meeting notes, etc.
-- "Glyph":/glyph/ := A _Rapid Document Authoring Framework_ written in Ruby that can be used to create and manage books and articles.
+
+h3. "Glyph":/glyph/
+
+A _Rapid Document Authoring Framework_ written in Ruby that can be used to create and manage books and articles.
 
 h3. "Ruby Compendium":/ruby-compendium/
 
@@ -19,7 +22,6 @@ A free book aiming to help beginners learn about Ruby. It doesn't focus on learn
 h3. "RawLine":/rawline/
 
 Rawline is a Ruby library which provides a subset of the functionality of the C Readline library. Being implemented in pure Ruby, it gives Ruby developers much more control over key bindings and word completion.
-
 
 h3. "Concatenative":/concatenative/
 
