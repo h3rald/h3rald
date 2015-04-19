@@ -24,18 +24,18 @@ Did you ever have to write a document, but didn't want to (or couldn't) use MS W
 
 Luckily, there are a lot of editors that support Markdown out there (I just installed [MacDown](http://macdown.uranusjr.com/) myself), and they work great, most of the time. Unfortunately though, they often:
 
-  * Generate HTML _fragments_ instead of full documents
+  * Generate [HTML](class:caps) _fragments_ instead of full documents
   * Don't include a proper stylesheet
   * Generate more than one file
 
-The last one on the list in particular, is true for all of them: the stylesheet may be embedded in the document, but if you want to use images, they are managed as separate files; and the same thing happens if you want to use custom fonts. That's how HTML works, after all... right? Nope.
+The last one on the list in particular, is true for all of them: the stylesheet may be embedded in the document, but if you want to use images, they are managed as separate files; and the same thing happens if you want to use custom fonts. That's how [HTML](class:caps) works, after all... right? Nope.
 
-The [Data URI Scheme](http://en.wikipedia.org/wiki/Data_URI_scheme) can be used to include data inline inside web pages. This means that the **src** attribute of an **img** can be set to a data URI containing _the full image_ encoded in base64 instead of a traditional URL. It turns out that you can actually use data URIs even in CSS files, for example to embed web fonts instead of linking to the usual .woff, .ttf, .otf etc. &ndash; The only downside is that Internet Explorer 8 only supports data URIs for images, and only up to 32,768 characters. But luckily these limitations are no longer present in IE9+.
+The [Data [URI](class:caps) Scheme](http://en.wikipedia.org/wiki/Data_[URI](class:caps)_scheme) can be used to include data inline inside web pages. This means that the **src** attribute of an **img** can be set to a data [URI](class:caps) containing _the full image_ encoded in base64 instead of a traditional [URL](class:caps). It turns out that you can actually use data [URI](class:caps)s even in [CSS](class:caps) files, for example to embed web fonts instead of linking to the usual .woff, .ttf, .otf etc. &ndash; The only downside is that Internet Explorer 8 only supports data [URI](class:caps)s for images, and only up to 32,768 characters. But luckily these limitations are no longer present in IE9+.
 
-Anyhow, back to writing documents. Having read a bit about data URIs and after doing a few tests with all major browsers I thought of creating a program that would:
+Anyhow, back to writing documents. Having read a bit about data [URI](class:caps)s and after doing a few tests with all major browsers I thought of creating a program that would:
 
-  * parse markdown and generate HTML code
-  * automatically embed all images in the HTML files
+  * parse markdown and generate [HTML](class:caps) code
+  * automatically embed all images in the [HTML](class:caps) files
   * include a _gorgeous_ stylesheet, with beautiful fonts and awesome icons.
 
 That's how the concept behind [HastyScribe](/hastyscribe/) was born!
@@ -105,7 +105,7 @@ There's probably a better way to go about this, but it did the trick and I got m
 
 Next, I needed to be able to access Discount API to:
 
- * compile Markdown code into an HTML fragment
+ * compile Markdown code into an [HTML](class:caps) fragment
  * generate a Table of Contents automatically
  * parse the Pandoc-style document headers (title, author, date) supported by Discount
 
@@ -113,7 +113,7 @@ Next, I needed to be able to access Discount API to:
 
  Didn't work in a totally automatic way, but it got me far enough that I could handle fixing the remaining bits, mostly consisting in name clashes due to Nim's rather unusual case-and-underscore-unsensitiveness and in a few pragmas to add here and there (`{.push importc, cdecl.}` at the start, for example).
 
-I also added two high level `md` functions that basically can generate an HTML document with or without document headers. Here's one of them:
+I also added two high level `md` functions that basically can generate an [HTML](class:caps) document with or without document headers. Here's one of them:
 
     proc md*(s: string, f = 0, data: var TMDMetadata): string =
       var flags = uint32(f)
@@ -157,9 +157,9 @@ Writing the code for HastyScribe itself wasn't too hard (Discount does all the h
 
 At the beginning of [hastyscribe.nim](https://github.com/h3rald/hastyscribe/blob/master/hastyscribe.nim) you'll find a few `slurp`s &ndash; that yummy Nim proc is what's needed to physically embed all the assets in the executable, and that's why HastyScribe does not need any stylesheets or fonts lying around.
 
-For the implementation of the snippet functionality and for converting fonts and images into base64 to create the data URIs I used Nim's [pegs](http://nim-lang.org/pegs.html) module. I chose this module simply because the [regular expression](http://nim-lang.org/re.html) module is an _impure_ (as in "not completely Nim code") module and requires PCRE as a dynamic library and... well, yes, it's the same self-contained obsession thing again, you guessed right.
+For the implementation of the snippet functionality and for converting fonts and images into base64 to create the data [URI](class:caps)s I used Nim's [pegs](http://nim-lang.org/pegs.html) module. I chose this module simply because the [regular expression](http://nim-lang.org/re.html) module is an _impure_ (as in "not completely Nim code") module and requires PCRE as a dynamic library and... well, yes, it's the same self-contained obsession thing again, you guessed right.
 
-Anyhow, the pegs module did a great job with the snippet and image tag parsing. I didn't really even try to integrate this extra parsing within the Markdown code parsing done by Discount, and... well OK, I currently do two separate parsing passes: one before parsing Markdown, to parse snippets, which can therefore contain Markdown code, and another one after the Markdown code has been converted to HTML, to replace standard image (relative) URLs with data URIs (no, I don't auto-download and convert remotely-hosted images... not yet anyway, so patches are welcome!).
+Anyhow, the pegs module did a great job with the snippet and image tag parsing. I didn't really even try to integrate this extra parsing within the Markdown code parsing done by Discount, and... well OK, I currently do two separate parsing passes: one before parsing Markdown, to parse snippets, which can therefore contain Markdown code, and another one after the Markdown code has been converted to [HTML](class:caps), to replace standard image (relative) URLs with data [URI](class:caps)s (no, I don't auto-download and convert remotely-hosted images... not yet anyway, so patches are welcome!).
 
 #### The stylesheet!
 
@@ -167,13 +167,13 @@ Honestly, the Nim coding part wasn't the longest part of the development phase. 
 
   * Shell: 0.2%
   * Nim: 17.1%
-  * CSS: 82.7%
+  * [CSS](class:caps): 82.7%
 
-Yep. Most of the code is CSS ([LESS](http://lesscss.org/) actually), and it did take a while to get it right. I used [normalize.css](http://necolas.github.io/normalize.css/) to start with, and I used part of the [FontAwesome][fa] LESS sources as well for the icon classes. The rest is all mine &ndash; but I did look for inspiration in GitHub's own stylesheet for the layout of notes and sidebars.
+Yep. Most of the code is [CSS](class:caps) ([LESS](http://lesscss.org/) actually), and it did take a while to get it right. I used [normalize.css](http://necolas.github.io/normalize.css/) to start with, and I used part of the [FontAwesome][fa] LESS sources as well for the icon classes. The rest is all mine &ndash; but I did look for inspiration in GitHub's own stylesheet for the layout of notes and sidebars.
 
 I am happy enough with the result, but of course patches are more than welcome. 
 
-Oh yes, and if you are looking for a cross-platform app to compile your LESS stylesheet and merge them automatically, try [Koala](http://koala-app.com/), it's a nice application that can combine and minify both CSS and Javascript, it's cross-platform (written in Ruby I believe), open source, fun and easy to use, and works very well.
+Oh yes, and if you are looking for a cross-platform app to compile your LESS stylesheet and merge them automatically, try [Koala](http://koala-app.com/), it's a nice application that can combine and minify both [CSS](class:caps) and Javascript, it's cross-platform (written in Ruby I believe), open source, fun and easy to use, and works very well.
 
 ### Conclusion 
 

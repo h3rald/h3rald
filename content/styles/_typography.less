@@ -1,12 +1,42 @@
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: @font-family-text;
+  .normal-ligatures;
+  .hyphens;
+}
+
+.container h1, 
+.container h2, 
+.container h3, 
+.container h4, 
+.container h5, 
+.container h6, 
+.container h1 > a, 
+.container h2 > a {
+  .fancy-ligatures;
+  color: @dark-text;
+  text-decoration: none;
+}
+
+a {
+  .fancy-ligatures;
+}
+
+code, pre {
+  .no-hyphens;
+}
+
+sup {
+  .sups;
+}
+
+sub {
+  .subs;
 }
 
 article, #legacy-comments, #disqus_thread {
   line-height: 1.4em;
-  font-weight: 300;
   font-size: 16px;
-  color: #444;
+  color: @normal-text;
 
   p {
     margin: 1em 0;
@@ -30,6 +60,7 @@ article, #legacy-comments, #disqus_thread {
   margin-top: 0;
   line-height: 1em;
   font-size: 1.3em;
+  color: lighten(@text-color, 20%);
   font-style: italic;
 }
 
@@ -47,6 +78,7 @@ article.page > header h1 {
 #secondary-content > article h2 {
   margin-top: 0;
   line-height: 1em;
+  color: lighten(@text-color, 20%);
   font-size: 1em;
   font-style: italic;
  }
@@ -102,14 +134,38 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em;
   text-align: left;
   border-bottom: none;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* HastyStyles Overrides */
 
 article #body-text {
   h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid #ccc;
+    &:before {
+      content: "\00A7\00A0";
+      color: lighten(@dark-text, 70%);
+      font-style: normal !important;
+    }
+  }
+  p:before {
+    content: "\00B6\00A0";
+    color: lighten(@dark-text, 70%);
+    font-style: normal !important;
+  }
+  blockquote p:before, 
+  .jumbotron p:before,
+  .panel p:before, 
+  .donthyphenate p:before {
+    content: "";
+  }
+}
+
+a[href^="http://"], 
+a[href^="https://"],
+a[href^="ftp://"],
+a[href^="sftp://"]{ 
+  &:before {
+    content: none;
   }
 }
 
@@ -126,9 +182,9 @@ footer a[href] {
 a.btn { color: #fff; }
 a.btn-default { color: #333; }
 
-code, .code, pre {
-  font-size: 13px;
-  line-height: 1.2;
+code, .code, pre, pre code {
+  font-size: @code-size;
+  line-height: 1.4em;
   .tag {
     &:before {
       content: none;
@@ -165,4 +221,16 @@ dl {
 .sidebar, .terminal, .terminal-su, 
 pre, blockquote {
   max-width: 850px;
+}
+
+hr {
+  border: 0;
+  height: 1em;
+  background-image: none;
+  position: relative;
+  &:before {
+    content: "\2749\00a0\00a0\2749\00a0\00a0\2749";
+    font-size: 0.6em;
+    padding-left: 48%;
+  }
 }

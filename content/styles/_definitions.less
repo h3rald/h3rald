@@ -1,4 +1,68 @@
-@navbar-bkg: #2b3033;
-@navbar-link-hover: #456a7f;
-@navbar-link: #acc0cc;
-@light-text: #e3e3e3;
+@font-family-text: 'Calendas Plus', serif;
+@text-size: 1em;
+@dark-text: #000;
+@normal-text: #111;
+@light-text: #444;
+@light-text-alt: #f3f3f3;
+
+@font-family-code: 'Inconsolata', monospace;
+@code-size: 13px;
+
+@link-color: #b5190c;
+@link-hover-color: darken(@link-color, 10%);
+
+@navbar-bkg: darken(#3a3a3a, 10%);
+@navbar-link-color: lighten(@link-color, 25%);
+@navbar-link-hover-color: lighten(@link-hover-color, 25%);
+
+.hyphens, .hyphenate {
+  -moz-hyphens: auto; 
+  -webkit-hyphens: auto; 
+  -ms-hyphens: auto; 
+  hyphens: auto; 
+}
+
+.no-hyphens, .donthyphenate {
+  -moz-hyphens: none; 
+  -webkit-hyphens: none; 
+  -ms-hyphens: none; 
+  hyphens: none; 
+}
+
+.normal-ligatures {
+  -moz-font-feature-settings: "liga","pnum", "frac", "zero";
+  -webkit-font-feature-settings: "liga", "pnum", "frac", "zero";
+  -ms-font-feature-settings: "liga", "pnum", "frac", "zero";
+  font-feature-settings: "liga", "pnum", "frac", "zero";
+}
+.fancy-ligatures {
+  -moz-font-feature-settings:"liga", "dlig", "hlig", "clig", "calt", "swsh", "onum", "pnum", "frac", "zero", "hist", "salt";
+  -webkit-font-feature-settings:"liga", "dlig", "hlig", "clig", "calt", "swsh", "onum", "pnum", "frac", "zero", "hist", "salt";
+  -ms-font-feature-settings:"liga", "dlig", "hlig", "clig", "calt", "swsh", "onum", "pnum", "frac", "zero", "hist", "salt";
+  font-feature-settings:"liga", "dlig", "hlig", "clig", "calt", "swsh", "onum", "pnum", "frac", "zero", "hist", "salt";
+}
+
+.ordn {
+  -moz-font-feature-settings: "ordn";
+  -ms-font-feature-settings: "ordn";
+  -webkit-font-feature-settings: "ordn";
+  font-feature-settings: "ordn";
+}
+.smcp, .caps {
+  -moz-font-feature-settings: "smcp";
+  -ms-font-feature-settings: "smcp";
+  -webkit-font-feature-settings: "smcp";
+  font-feature-settings: "smcp";
+}
+.subs {
+  -moz-font-feature-settings: "subs";
+  -ms-font-feature-settings: "subs";
+  -webkit-font-feature-settings: "subs";
+  font-feature-settings: "subs";
+}
+.sups {
+  -moz-font-feature-settings: "sups";
+  -ms-font-feature-settings: "sups";
+  -webkit-font-feature-settings: "sups";
+  font-feature-settings: "sups";
+}

@@ -32,11 +32,15 @@ body {
 }
 
 a, a:link, a:visited, a:active {
+  color: @link-color;
   word-break: break-word;
-  transition-property: color;
-  transition-duration: 500ms; 
-  transition-timing-function: ease-out; 
+  text-decoration: none;
 } 
+
+a:hover {
+  color: @link-hover-color;
+  text-decoration: none;
+}
 
 q:before, q:after {
   content: "";
@@ -72,16 +76,16 @@ figure[style="float: left;"], img[style^="float:left"]{
 #site-footer, .navbar, .navbar-collapse {
   box-shadow: 0px 0px 20px 2px @navbar-bkg;
   text-shadow: 0 1px 1px #111; 
-  color: @light-text;
+  color: @light-text-alt;
   background: @navbar-bkg;
   a, a:link, a:visited, a:active {
     margin: inherit 1px;
-    color: @navbar-link;
+    color: @navbar-link-color;
   }
   .nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     background: @navbar-bkg;
-    color: #8fc8ea;
+    color: @navbar-link-hover-color;
   }
 }
 
@@ -124,10 +128,10 @@ main {
 
 #site-footer {
   padding-top: 5px;
-  font-size: 12px;
-  color: @light-text;
+  font-size: 13px;
+  color: @light-text-alt;
   h1 {
-    color: @light-text;
+    color: @light-text-alt;
   }
   .copyright {
     text-align: center;
