@@ -1,0 +1,6 @@
+-----
+:title: H3RALD - Tag 'hastyscribe' (Atom Feed)
+:type: feed
+:permalink: tags/hastyscribe/atom
+-----
+<%= atom_feed(:articles => articles_tagged_with('hastyscribe'))%>
