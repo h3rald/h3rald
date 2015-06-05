@@ -1,8 +1,6 @@
 $(document).ready(function() {
 	// Manage dates
 	$('.timeago').timeago();
-	// Hyphenate contents 
-	Hyphenator.run();
   // Search
   $("#h3rald-search-btn").click(function(){
     h3rald_search();
