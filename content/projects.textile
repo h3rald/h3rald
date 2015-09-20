@@ -11,6 +11,10 @@ h3. "HastyScribe":/hastyscribe/
 
 A self-contained Markdown compiler that can generate self-contained HTML files, useful for writing essays, reports, meeting notes, etc.
 
+h3. "LiteStore":/litestore/ 
+
+A lightweight, self-contained, RESTful, multi-format NoSQL document store server written in Nim and powered by a SQLite backend for storage. 
+
 h3. "Glyph":/glyph/
 
 A _Rapid Document Authoring Framework_ written in Ruby that can be used to create and manage books and articles.

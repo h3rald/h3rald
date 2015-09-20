@@ -43,6 +43,10 @@ compile '/hastyscribe/HastyScribe_UserGuide/' do
 	# do nothing
 end
 
+compile '/litestore/LiteStore_UserGuide/' do
+	# do nothing
+end
+
 compile '/glyph/book/images/*' do
 	# do nothing
 end
@@ -108,6 +112,10 @@ end
 
 route '/hastyscribe/HastyScribe_UserGuide' do
   '/hastyscribe/HastyScribe_UserGuide.htm'
+end
+
+route '/litestore/LiteStore_UserGuide' do
+  '/litestore/LiteStore_UserGuide.htm'
 end
 
 route '/glyph/book/' do
