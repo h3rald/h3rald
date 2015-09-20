@@ -1,0 +1,6 @@
+-----
+:title: H3RALD - Tag 'litestore' (RSS Feed)
+:type: feed
+:permalink: tags/litestore/rss
+-----
+<%= rss_feed(:articles => articles_tagged_with('litestore'))%>
