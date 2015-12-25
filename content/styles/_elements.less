@@ -1,13 +1,23 @@
 @media (min-width: 768px) {
+  .navbar .container {
+    width: 98%;
+  }
+  .navbar-form.navbar-right {
+    width: 147px;
+    margin-right: -48px;
+  }
   .navbar-form .input-group {
     float: right;
-    width: 350px;
+    width: 320px;
   }
 }
-@media (max-width: 991px)  {
+@media (max-width: 930px)  {
+  .navbar-form.navbar-right {
+    margin-right: -26px;
+  }
   .navbar-form .input-group {
     float: right;
-    width: 180px;
+    width: 140px;
   }
 }
 
@@ -83,6 +93,11 @@ figure[style="float: left;"], img[style^="float:left"]{
   a, a:link, a:visited, a:active {
     margin: inherit 1px;
     color: @navbar-link-color;
+    i {
+      font-size: 20px;
+      vertical-align: text-top;
+      color: @light-text-alt;
+    }
   }
   .nav a:hover {
     text-decoration: none;
@@ -116,6 +131,10 @@ figure[style="float: left;"], img[style^="float:left"]{
   .btn, input[type=text] {
     border-radius: 0;
   }
+}
+
+.jumbotron {
+  background-color: #fff;
 }
 
 article table {

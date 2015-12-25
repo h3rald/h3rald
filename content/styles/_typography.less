@@ -45,6 +45,21 @@ article, #legacy-comments, #disqus_thread {
   li, dt, dd {
     line-height: 1.8em
   }
+  ul {
+    list-style-type: none;
+    li {
+      .h3-diamonds;
+      &:before {
+        font-size: 12px;
+        .h3raldicon;
+      }
+    }
+  }
+  .article-info li, .dropdown-menu li {
+    &:before {
+      content: none;  
+    }
+  }
   dt {
     margin-top: 1.8em;
   }
@@ -137,12 +152,29 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+#body-text .projects-page h2 {
+  .h3-vial;
+  margin-top: 1.2em;
+  font-size: 1.5em;
+  color: @link-color;
+  &:hover {
+    color: @link-hover-color;
+  }
+}
+
+.article-aggregation i {
+  &:before {
+    color: @light-text;
+  }
+}
+
 /* HastyStyles Overrides */
 
 article #body-text {
   h2, h3, h4, h5, h6 {
+    .h3-hc-book-02;
     &:before {
-      content: "\00A7\00A0";
+      .h3raldicon;
       color: lighten(@dark-text, 70%);
       font-style: normal !important;
     }

@@ -6,7 +6,7 @@
 :permalink: july-2014
 -----
 
-<p>2 articles were written in <em>July 2014</em>:</p>
+<p>1 article was written in <em>July 2014</em>:</p>
 <ul>
 	<% articles_by_month.select{|i| i[0] == "July 2014"}[0][1].each do |a|%>
 		<%= render 'dated_article', :article => a %>

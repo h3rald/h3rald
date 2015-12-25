@@ -13,7 +13,7 @@ type: page
 tags.each do |t|
   c = c+1 %>
   <%= %{<div class="row">} if c%4 == 1 %>
-    <div class="col-md-3"><%= tag_link_with_count(t[0], t[1]) %></div>
+    <div class="col-md-3"><i class="h3-tag"></i> <%= tag_link_with_count(t[0], t[1]) %></div>
     <%= "</div>" if c%4 == 0 %>
 <% end %></div>
 </div>

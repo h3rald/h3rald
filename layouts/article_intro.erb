@@ -10,7 +10,7 @@ filter: erb
 		<% unless @item[:subtitle].blank? then %>
 			<h2><%= @item[:subtitle] %></h2>
 		<% end %>
-    <p class="pubdate pull-right"><i class="fa fa-calendar"></i> <time datetime="<%= @item[:date].to_iso8601_time %>"><%= @item[:date].strftime("%A, %B %d %Y") %></time></p>
+    <p class="pubdate pull-right"><i class="h3-quill-ink"></i> <time datetime="<%= @item[:date].to_iso8601_time %>"><%= @item[:date].strftime("%A, %B %d %Y") %></time></p>
     <div class="clearfix"></div>
 	</header>
 	<section class="<%= @classes %>">

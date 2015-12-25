@@ -1,7 +1,7 @@
 # ./Gemfile
 source 'https://rubygems.org'
 
-gem "nanoc"
+gem "nanoc", "< 4"
 gem "extlib"
 gem "bb-ruby"
 gem "builder"
