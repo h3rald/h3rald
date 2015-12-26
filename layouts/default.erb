@@ -56,9 +56,9 @@ filter: erb
 			<% else %>
 				<article class="page">
 					<%= render 'page_meta', :item => @item %>
-					<section id="body-text" class="hyphenate">
+					<div id="body-text" class="hyphenate">
 						<%= yield %>
-					</section>
+					</div>
 				</article>
 					<% if @item[:type] == 'article' then %>
 						<%= render 'legacy_comments', :item => @item if @item[:comments] %>
@@ -67,20 +67,6 @@ filter: erb
 			<% end %>
       </main>
       <%= render 'footer' %>
-		<% if @item[:type] == 'article' then %>
-    <script type="text/javascript">
-        var disqus_shortname = 'h3rald'; 
-
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
-		<% end %>
     <script>
       hljs.tabReplace = '  ';
       hljs.initHighlightingOnLoad();

@@ -45,16 +45,6 @@ article, #legacy-comments, #disqus_thread {
   li, dt, dd {
     line-height: 1.8em
   }
-  ul {
-    list-style-type: none;
-    li {
-      .h3-diamonds;
-      &:before {
-        font-size: 12px;
-        .h3raldicon;
-      }
-    }
-  }
   .article-info li, .dropdown-menu li {
     &:before {
       content: none;  
@@ -67,11 +57,11 @@ article, #legacy-comments, #disqus_thread {
 
 /* Headings */
 
-#main-content > article h1 {
+#main-content > article h2 {
   line-height: 1em;
   font-size: 1.6em;
 }
-#main-content > article h2 {
+#main-content > article h3 {
   margin-top: 0;
   line-height: 1em;
   font-size: 1.3em;
@@ -85,12 +75,12 @@ article.page > header h1 {
   margin-bottom: 0;
 }
 
-#secondary-content > article h1 {
+#secondary-content > article h2 {
   line-height: 1.2em;
   font-size: 1.3em;
 }
 
-#secondary-content > article h2 {
+#secondary-content > article h3 {
   margin-top: 0;
   line-height: 1em;
   color: lighten(@text-color, 20%);
@@ -99,7 +89,7 @@ article.page > header h1 {
  }
 
 #body-text section header h1,
-footer h1,
+footer h2,
 #body-text h2 {
 	font-size: 1.8em;
 }
@@ -152,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-#body-text .projects-page h2 {
+#body-text .projects-page h3 {
   .h3-vial;
   margin-top: 1.2em;
   font-size: 1.5em;
@@ -164,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .article-aggregation i {
   &:before {
-    color: @light-text;
+    color: #b3b3b3;
   }
 }
 

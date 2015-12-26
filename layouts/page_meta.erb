@@ -4,20 +4,18 @@ filter: erb
 <%
 	author = @item[:author] || "Fabio Cevasco"
   pdf = false#%{<a href="/articles/#{@item[:permalink]}.pdf"><i class="fa fa-download"> </i>Download as PDF</a>} if @item[:pdf]
-%><header class="row">
-	<hgroup class="col-md-9">
-		<h1><%= @item[:title] %></h1>
+%><div class="row">
+	<header class="col-md-9">
+		<h2><%= @item[:title] %></h2>
 		<% if !@item[:subtitle].blank? then %>
-			<h2><%= @item[:subtitle] %></h2>
+			<h3><%= @item[:subtitle] %></h3>
 		<% end %>
-	</hgroup>
+	</header>
 	<% if @item[:type] == 'article' then %>
 	<ul class="list-unstyled article-info col-md-3">
-    <li>
-    <i class="h3-quill-ink"></i> <time datetime="<%= @item[:date].to_iso8601_time %>"><%= @item[:date].strftime("%A, %B %d %Y") %></time>
+    <li><i class="h3-quill-ink"></i> <time datetime="<%= @item[:date].to_iso8601_time %>"><%= @item[:date].strftime("%A, %B %d %Y") %></time></li>
     <li><i class="h3-tags"></i> <%= tags_for(@item) %></li>
-    </li>
     <%= "<li>#{pdf}</li>" if pdf %>
-	</p>
-	<% end %>
-</header>
+  </ul>
+  <% end %>
+</div>

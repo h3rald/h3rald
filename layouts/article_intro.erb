@@ -6,20 +6,20 @@ filter: erb
 	intro = @extended ? @item[:intro].to_s+"\n\n"+@item[:extended_intro].to_s : @item[:intro]
 %><article id="a_<%= @item[:permalink] %>">
 	<header>
-		<h1><a href="<%= @item.identifier %>"><%= @item[:title]%></a></h1>
+		<h2><a href="<%= @item.identifier %>"><%= @item[:title]%></a></h2>
 		<% unless @item[:subtitle].blank? then %>
-			<h2><%= @item[:subtitle] %></h2>
+			<h3><%= @item[:subtitle] %></h3>
 		<% end %>
     <p class="pubdate pull-right"><i class="h3-quill-ink"></i> <time datetime="<%= @item[:date].to_iso8601_time %>"><%= @item[:date].strftime("%A, %B %d %Y") %></time></p>
     <div class="clearfix"></div>
 	</header>
-	<section class="<%= @classes %>">
+	<div class="<%= @classes %>">
 		<% if @item[:image] && @extended then %>
 			<img src="<%=@item[:image]%>" style="float:left; margin: 0 10px 10px 0;" alt="#" />
 		<% end %>
     <%= RedCloth.new(intro.to_s).to_html %>
     <p><a href="<%= @item.identifier %>">Continue reading &rarr;</a></p>
-	</section>
+	</div>
   <hr />
 </article>
 
