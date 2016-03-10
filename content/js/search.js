@@ -6,7 +6,7 @@ function h3rald_search(){
     var info = data.searchInformation;
     $("main").hide();
     rs.removeClass("hidden");
-    rs.append("<h2>Search results for <em>"+data.queries.request[0].searchTerms+"</em></h2>");
+    rs.append("<h2>Search results:</h2>");
     $.each(data.items, function(i, e){
       var res = $("<section class=\"search-result\"></section>");
       var rel_url = e.link.replace(/^https?:\/\/h3rald.com/, '');
