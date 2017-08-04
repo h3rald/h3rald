@@ -1,3 +1,5 @@
 output/*
 temp/*
+_tmp/*
+_bkp/*
 _old/*
