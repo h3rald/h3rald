@@ -1,6 +1,0 @@
------
-:title: H3RALD - Tag 'techcomm' (RSS Feed)
-:type: feed
-:permalink: tags/techcomm/rss
------
-<%= rss_feed(:articles => articles_tagged_with('techcomm'))%>

@@ -1,6 +1,0 @@
------ 
-permalink: "404"
-title: Page Not Found
-type: page
------
-The page you're looking for cannot be found. Try searching the "archives":/archives/, maybe you'll have better luck!

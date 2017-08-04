@@ -1,6 +1,0 @@
----
-permalink: 'atom'
-type: 'feed'
-title: 'H3RALD - Articles (Atom Feed)'
----
-<%= atom_feed %>

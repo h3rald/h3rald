@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/ruby/atom
-:title: H3RALD - Tag 'ruby' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('ruby'))%>

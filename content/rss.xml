@@ -1,6 +1,0 @@
----
-permalink: 'rss'
-type: 'feed'
-title: 'H3RALD - Articles (RSS Feed)'
----
-<%= rss_feed %>

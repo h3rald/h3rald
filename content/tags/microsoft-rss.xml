@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/microsoft/rss
-:title: H3RALD - Tag 'microsoft' (RSS Feed)
------
-<%= rss_feed(:articles => articles_tagged_with('microsoft'))%>

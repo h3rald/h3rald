@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/rawline/atom
-:title: H3RALD - Tag 'rawline' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('rawline'))%>

@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/wedding/atom
-:title: H3RALD - Tag 'wedding' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('wedding'))%>

@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/ie/atom
-:title: H3RALD - Tag 'ie' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('ie'))%>

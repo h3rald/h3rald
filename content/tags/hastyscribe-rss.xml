@@ -1,6 +1,0 @@
------
-:title: H3RALD - Tag 'hastyscribe' (RSS Feed)
-:type: feed
-:permalink: tags/hastyscribe/rss
------
-<%= rss_feed(:articles => articles_tagged_with('hastyscribe'))%>

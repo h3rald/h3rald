@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/italy/atom
-:title: H3RALD - Tag 'italy' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('italy'))%>

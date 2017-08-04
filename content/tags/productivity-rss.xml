@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/productivity/rss
-:title: H3RALD - Tag 'productivity' (RSS Feed)
------
-<%= rss_feed(:articles => articles_tagged_with('productivity'))%>
