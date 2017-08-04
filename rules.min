@@ -1,0 +1,21 @@
+'hastysite import
+
+(
+  (dict) expect -> =asset
+  asset /id :id
+  id "^pdf\/(.+)$" search 1 get :name
+  "output/articles/$1" (name) => % :dir
+  asset "assets/$1" ((asset /path)) => % :src
+  asset "output/articles/$1/$1.pdf" (name) => % :dest
+  " - Copying: $1 -> $2" (src dest) => % notice
+  src dest cp
+) :copy-pdf-article-asset
+
+assets (
+  dup
+  (
+    ((/id "^pdf\/" match) (copy-pdf-article-asset))
+    ;((/ext ".css" match) (process-css-asset))
+    ((true) (copy2output))
+  ) case
+) foreach
