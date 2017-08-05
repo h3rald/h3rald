@@ -1,0 +1,118 @@
+-----
+title: RedBook - A simple Ruby program for your daily logging needs
+content-type: article
+timestamp: 1191067500
+tags: ruby|productivity|software|tools|redbook
+-----
+<p>Logging your daily activities is important. If you don&#8217;t believe me you&#8217;d better check at least these three posts on LifeHacker, which feature different scripts and applications:</p>
+<ul>
+	<li><a href="http://lifehacker.com/software/top/geek-to-live--quick+log-your-work-day-189772.php">QuickLogger</a></li>
+	<li><a href="http://lifehacker.com/software/windows/log-your-workday-from-the-system-tray-with-life-logger-285602.php">Life Logger</a></li>
+	<li><a href="http://lifehacker.com/software/featured-windows-download/log-your-workday-with-quicklogger-2-302932.php">QuickLogger 2</a></li>
+</ul>
+<p>I had a look at each one of them, and I believe they are quite useful, although I didn&#8217;t really find what I was looking for. Why? Well, for example:</p>
+<ul>
+	<li>I don&#8217;t believe a <span class="caps">GUI</span> is necessary &#8212; you&#8217;d better off with just a shortcut key or command to run from Launchy or QuickSilver, that&#8217;s much faster.</li>
+	<li>They just log timestamped messages on a file, there&#8217;s no real way to search through them and display them except by using a test editor</li>
+	<li>They are Windows only &#8212; not that it matters for me, but others may not be happy about it.</li>
+</ul>
+<p>That&#8217;s why I thought I&#8217;d roll out my own: meet <a href="http://www.assembla.com/space/redbook">RedBook</a>.<br />
+Let me say it&#8217;s nothing fancy: I&#8217;m not a full-time programmer but I do like playing with Ruby during my lunch breaks at work, so that&#8217;s why RedBook is just a humble, tiny Ruby script. This automatically makes it cross-platform: you can install Ruby very easily on Linux &amp; alikes, Mac OS X and Windows. Furthermore, if you are on Windows and for some weird reason you don&#8217;t want to install Ruby, you can just try out the packed <span class="caps">EXE</span> file (made with RubyScript2Exe) &#8212; it&#8217;s about 2MB, but you won&#8217;t need anything else.</p>
+<h3>How It Works</h3>
+<p>The program uses two <span class="caps">YAML</span> files, one for configuration, which must reside in the same directory as redbook.rb (or redboo.exe) and one for the log itself, which you can place anywhere, provided that you edit the configuration file accordingly. For information on how to install RedBook and how to configure it, you can check the manual.html (powered by <a href="http://www.tiddlywiki.com">TiddlyWiki</a>) file provided with the program or <a href="http://redbook.h3rald.com">browse it online</a>.</p>
+<p>When started, RedBook will load both the configuration file (config.yml) and <em>the whole log file</em> into memory &#8212; it&#8217;s not a big deal, considering that they are only text files after all. I did a test with a log of quite a few MBs, and it was fine.</p>
+<p>You can then start input commands right away, following a few sample rules. RedBook has a (very) rudimentary parser which is able to detect keywords, i.e. alphabetic strings prepended with a colon. RedBook commands look like this:</p>
+<ul>
+	<li><strong>&#58;log</strong> This message will be logger <strong>&#58;tags</strong> tag1 tag2</li>
+	<li><strong>&#58;select</strong> <strong>&#58;last</strong> 15 <strong>&#58;since</strong> January</li>
+	<li><strong>&#58;save</strong> /home/h3rald/backup.yml</li>
+</ul>
+<p>If everything goes OK, RedBook will reply with some sort of response, an acknowledgement, a list of messages, etc.</p>
+<p>Simple.</p>
+<p>Here&#8217;s basically what the program can do:</p>
+<ul>
+	<li>Log any message to the main log file. Messages can be tagged with one or more tags and will be automatically timestamped.</li>
+	<li>Load/display a list of logged messages on the screen. It is possible to filter messages by specifying a time span, a string to search in the message text, or a list of tags.</li>
+	<li>Dump loaded messages to a <span class="caps">TXT</span>, <span class="caps">CSV</span> or <span class="caps">YAML</span> file (you can even backup your log saving it to another <span class="caps">YAML</span> file in this way).</li>
+	<li>Calculate the time elapsed between two or more tasks. Time will be displayed in years, months, weeks, days, hours, minutes and/or seconds as necessary.</li>
+</ul>
+<p>How? Here&#8217;s a short tutorial&#8230;</p>
+<h3>A Quick RedBook Tutorial</h3>
+<p>Let&#8217;s assume you are able to run RedBook on your system by now (if you can&#8217;t find some of the gems which are required for it, you can download them packed in a <span class="caps">ZIP</span> file from <a href="http://www.assembla.com/spaces/files/redbook">here</a>).</p>
+<p>Here&#8217;s what happens when you start the program:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<del>-</del><br />
+RedBook v0.1 &#8211; Copyright &#169; 2007, Fabio Cevasco<br />
+<del>-</del><br />
+   <span style="color:blue">&gt;&gt;</span> Loading config file&#8230;<br />
+   <span style="color:green">&gt;&gt;</span> Config file loaded.<br />
+   <span style="color:blue">&gt;&gt;</span> Loading log file&#8230;<br />
+   <span style="color:green">&gt;&gt;</span> Log file loaded.<br />
+   <span style="color:blue">&gt;&gt;</span> Ready.<br />
+<span style="color:red">Red</span>Book &gt;&gt;<br />
+</code><br />
+</span></p>
+<p>Good. Let&#8217;s start logging something then. Just use the <strong>&#58;log</strong> keyword, followed by a message, and then you can also add the <strong>&#58;tags</strong> keyword followed by space-separated tags, like this:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;log My first message &#58;tags test<br />
+   <span style="color:green">&gt;&gt;</span> Logged.<br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;log This is another message<br />
+   <span style="color:green">&gt;&gt;</span> Logged.<br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;log This is another message &#58;tags test another_test<br />
+   <span style="color:green">&gt;&gt;</span> Logged.<br />
+</span></p>
+<p>Try waiting a few seconds between each message. These three messages will be appended to the log file. You could open it in an editor, but it&#8217;s normally easier to display them directly inside RedBook, like this:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;select<br />
+ <span style="color:yellow">1</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:09:32 PM</span> My first message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><br />
+ <span style="color:yellow">2</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:10:51 PM</span> This is another message<br />
+ <span style="color:yellow">3</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:11:45 PM</span> This is another message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><span style="color:cyan">[</span><span style="color:yellow">another_test</span><span style="color:cyan">]</span><br />
+   <span style="color:green">&gt;&gt;</span> 3 messages loaded.<br />
+</span></p>
+<p>Easy. What if you have hundreds of messages? Well, the &#58;select operation can take an optional search string, or you can tell RedBook to load only those messages tagged with one or more specific tags, like this:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;select &#58;tags test<br />
+ <span style="color:yellow">1</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:09:32 PM</span> My first message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><br />
+  <span style="color:yellow">3</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:11:45 PM</span> This is another message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><span style="color:cyan">[</span><span style="color:yellow">another_test</span><span style="color:cyan">]</span><br />
+    <span style="color:green">&gt;&gt;</span> 2 messages loaded.<br />
+</span></p>
+<p>Or you can use the &#58;from and/or &#58;to keywords to specify a certain time frame, like this:</p>
+<p>&#58;select &#58;tags test <strong>&#58;from ten minutes ago</strong></p>
+<p>&#58;select <strong>&#58;from last week &#58;to 2 days ago</strong></p>
+<p>RedBook includes a very nice &#8220;natural language date/time parser&#8221;, <a href="http://chronic.rubyforge.org/">Chronic</a> which is able to convert sentences like the following into Ruby Time objects:</p>
+<ul>
+	<li>6 in the morning</li>
+	<li>friday 1pm</li>
+	<li>sat 7 in the evening</li>
+	<li>today</li>
+	<li>yesterday at 4:00</li>
+</ul>
+<p>It&#8217;s not perfect (and it&#8217;s in pre-alpha as well), but it does the job, for what I can see, and it makes it very easy and fast to specify timeframes.</p>
+<p>After executing a &#58;select command, two other operations can be performed on the loaded messages: <strong>&#58;calc</strong> and <strong>&#58;save</strong>.</p>
+<p>&#58;calc calculates the exact amount of time elapsed between two or more tasks. Do you remember the numbers on the far left of each message? Think them as temporary IDs for the actual messages, and you can use them to select specific tasks when executing the &#58;calc operation:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;calc 1 3<br />
+ <span style="color:yellow">1</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:09:32 PM</span> My first message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><br />
+      <del>-</del> 2 minutes and 13 seconds.<br />
+       <span style="color:yellow">3</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:11:45 PM</span> This is another message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><span style="color:cyan">[</span><span style="color:yellow">another_test</span><span style="color:cyan">]</span><br />
+</span></p>
+<p>Similarly, if no IDs are specified, &#58;calc calculates the time difference between each message and the previous:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;calc<br />
+ <span style="color:yellow">1</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:09:32 PM</span> My first message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><br /> <br />
+      <del>-</del> 1 minute and 19 seconds.<br />      <br />
+ <span style="color:yellow">2</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:10:51 PM</span> This is another message<br /> <br />
+      <del>-</del> 54 seconds.<br />      <br />
+ <span style="color:yellow">3</span> <span style="color:blue">Sat Sep 29 2007 &#8211; 09:11:45 PM</span> This is another message <span style="color:cyan">[</span><span style="color:yellow">test</span><span style="color:cyan">]</span><span style="color:cyan">[</span><span style="color:yellow">another_test</span><span style="color:cyan">]</span><br />
+ </span></p>
+<p>Finally, you can save loaded messages to a <span class="caps">TXT</span>, <span class="caps">YAML</span> or <span class="caps">CSV</span> file, as follows:</p>
+<p><span style="font-family: 'Bitstream Vera Sans Mono', Monaco, 'Courier New'; font-size: 10px"><br />
+<span style="color:red">Red</span>Book &gt;&gt; &#58;save log.txt<br />
+   <span style="color:blue">&gt;&gt;</span> Saving&#8230;<br />
+   <span style="color:green">&gt;&gt;</span> Saved dataset to &#8220;log.txt&#8221;<br />
+</span><br />
+h<br />
+If you want to backup your log, you can load all messages and then save them to a <span class="caps">YAML</span> file. Maybe in this case you want to append the <strong>&#58;silent</strong> keyword to the &#58;select command, so that messages won&#8217;t be displayed on the screen.</p>
+<h3>Conclusion</h3>
+<p>RedBook is just a simple program: it suits my needs for now, but of course there&#8217;s roo for improvement. If you have some useful suggestions, or you want to contribute in some way, feel free to contact me!</p>
+<p style="text-align:center;"><a href="http://redbook.h3rald.com">Home Page</a> | <a href="http://code.google.com/p/redbook/">Development</a> | <a href="http://code.google.com/p/redbook/downloads/list">Download</a></p>

@@ -1,0 +1,72 @@
+-----
+title: Where does your Ruby code live?
+content-type: article
+timestamp: 1226147640
+tags: ruby|programming
+-----
+<p>Back when I wrote my <a href="/articles/10-reasons-to-learn-ruby">10 reasons to learn Ruby</a> article, I mentioned <a href="http://www.rubygems.org/">RubyGems</a> in <em>Reason #1</em> as one of they key features of the Ruby programming languages.<br />
+Indeed, gems make getting Ruby programs as easy as typing <code>gem install &lt;something&gt;</code> from the command line. When you want to distribute something new in Ruby, there&#8217;s no need to give people download links, zip files or setup programs, just <a href="http://adam.blog.heroku.com/past/2008/11/2/pony_the_express_way_to_send_email_from_ruby/">tell them to get the gem</a>. That&#8217;s perfectly normal, and extremely cool.</p>
+<p>Gems are normally stored on <a href="http://rubyforge.org">RubyForge</a>, so all you have to do is uploading your gem there, and it will be available to the rest of the universe. It&#8217;s a nice feeling. I remember when I first uploaded <a href="http://rubyforge.org/projects/rawline/">RawLine</a> and then tried <code>gem install rawline</code> just for the hell of it: it downloaded and installed the gem, as expected.</p>
+<p>Back in the day, if you wanted to find something written in Ruby, all you had to do is search through RubyForge, and you&#8217;d eventually find it, with a bit of luck.</p>
+<h3>Can we just have git, please?</h3>
+<p>RubyForge had, until recently, one major problem: it only allowed <span class="caps">CVS</span> and <span class="caps">SVN</span> repositories, and you had to make your choice when creating the project, once and for all. So when the cool guys at <a href="http://github.com/">GitHub</a> rolled out their <em>social code hosting</em> web site, most of the <em>créme de la créme</em> of RubyForge flocked there in mass migration: <a href="http://github.com/rails/rails/tree/master">Rails</a>, <a href="http://github.com/wycats/merb-core/tree/master">Merb</a>, <a href="http://github.com/dchelimsky/rspec/tree/master">RSpec</a>&#8230; you name it.<br />
+Once the big guys made the switch, a lot jumped on the GitHub bandwagon of course. Result: we have a lot of projects still on RubyForge, but quite a few (and important ones) on GitHub.</p>
+<p>Why did people move there? Well, at first it was because they wanted a sleek-looking git host, and RubyForge didn&#8217;t offer git at the time. But <a href="http://drnicwilliams.com/2008/04/08/git-for-rubyforge-accounts/">git is now available on RubyForge</a>, so why don&#8217;t people use it? <br />
+I&#8217;d like to know how many people use git on RubyForge. Apparently you can have your old <span class="caps">SVN</span> repository manually migrated to git, if you ask nicely (and RubyForge people are very helpful always, anyway). Still, I don&#8217;t think many people use git there, and hardly anyone (if any) moved back from GitHub.</p>
+<p>What&#8217;s so special about this new &#8220;social code hosting&#8221; site then? I guess just a few key features:</p>
+<ul>
+	<li>Fast and reliable git hosting</li>
+	<li>The ability to &#8220;watch&#8221; other people&#8217;s repositories and interact with them &#8220;the git way&#8221;, also by forking.</li>
+	<li>There&#8217;s a whole new and fresh community feeling to it: you can follow people, message them, etc.</li>
+	<li>The interface is much more neat than RubyForge&#8217;s (OK, granted, it doesn&#8217;t take much)</li>
+	<li>Really cool stats and graphs</li>
+	<li>A basic, but functional, wiki</li>
+</ul>
+<h3>&#8230;oh, and bug tracking, too!</h3>
+<p>GitHub has no bug tracking features. It tracks an awful lot of stuff about your repositories and people working on them, but &#8220;batteries are sold separately&#8221;. You can get batteries <a href="http://lighthouseapp.com/">here</a>, for example. Apparently, GitHub and LightHouse are seamlessly <a href="http://github.com/blog/41-service-integration">integrated</a>.</p>
+<p>So now you can sign up to two cool brand new web applications with neat interfaces instead of sticking with the old-looking RubyForge (which comes with &#8220;batteries included&#8221;, after all). <br />
+Personally <strong>I&#8217;m very confused now</strong>. Fortunately I don&#8217;t have any extremely cool projects used by thousands of people, so jumping from one source code hosting solution from another is not really an issue for me, but I imagine it would be for others! Correct?</p>
+<p>So, as far as I know, if you are a Rubyist, here&#8217;s what you can do:</p>
+<ol>
+	<li>Stick with RubyForge: it&#8217;s not so bad after all.</li>
+	<li>Embrace GitHub (and Lighthouse): it&#8217;s extremely nice to use. Some people are not <a href="http://groovie.org/2008/05/06/most-bizarre-git-service-and-other-stupid-rails-powered-businesses">too convinced</a> that this is the best choice though.</li>
+	<li>Go for something in between, like <a href="http://www.assembla.com/">Assembla</a>, which actually has an <em>impressive</em> list of features and is powered by Rails too, so you&#8217;ll feel at home. <a href="http://code.google.com/hosting/">Google Code</a> used to be another common choice, but sadly they don&#8217;t offer git yet.</li>
+	<li>Do-it-yourself, maybe using something like <a href="http://gitorious.org/">Gitorius</a> and some open source bug tracking/project management solution.</li>
+</ol>
+<p>So&#8230; what choice did <em>you</em> make or are you planning to make?</p>
+<h3>Moving houses</h3>
+<p>There&#8217;s one simple issue to consider when moving your code to a new place: what happens to your <em>old</em> place. If have a relatively popular project, a lot of people may have bookmarked your project page on RubyForge, or the RubyForge subdomain which you may have used as the &#8220;home page&#8221; for your project (in truth, most of the ones who moved away still use it).</p>
+<p>You may setup a redirection to the new home page or put a notice saying that the project moved somewhere else and point visitors to GitHub and LightHouse, or to another web site, if you wish. When <a href="http://weblog.rubyonrails.org/2008/4/11/rails-premieres-on-github">Rails moved to GitHub</a>, that wasn&#8217;t much of a problem as Rails has its own web site.</p>
+<p>What may become a problem is your old repository. In Rails&#8217; case, they left the old <span class="caps">SVN</span> repository available on sourceforge for a while and then removed it altogether. Other project owners have just abandoned their old repositories, occasionally resulting in <a href="http://webby.rubyforge.org/">someone else</a> deciding to leave a note as their <a href="http://webby.rubyforge.org/svn/trunk/">last <span class="caps">SVN</span> commit</a>.</p>
+<p>These solutions all work (you eventually drive people to the new home of your project), but it&#8217;s not very nice, that&#8217;s all. What happens if someone comes up with something cooler than GitHub? In all honesty, you may end up moving house over and over again.</p>
+<h3>Don&#8217;t forget the gems!</h3>
+<p>One thing I liked about RubyForge, as I wrote at the beginning, was that if you uploaded a gem there, it was immediately available to everyone typing <code>gem install &lt;something&gt;</code>.  <br />
+Luckily, <a href="http://gems.github.com/list.html">GitHub supports gems, too</a>! We&#8217;re saved. The page they put up is <a href="http://gems.github.com/">utterly awful</a>, but it does the job: you can have your gems hosted on GitHub.</p>
+<p>Good! So surely I can get Rails now, right? Yup: <code>gem install rails</code> will get the latest version of Rails for you, straight from GitHub.</p>
+<p>Actually, no. It doesn&#8217;t seem to work that way: sure you can get the latest rails in that way, but it will actually be downloaded from <em>RubyForge</em> (go check the <a href="http://rubyforge.org/frs/?group_id=307&amp;release_id=27493">downloads</a>, you&#8217;ll see it there). <br />
+So even if technically you got Rails, you got it from RubyForge. If you want to get gem from GitHub, you have to add it as gem source first (that&#8217;s an <em>una tantum</em> operation, luckily): <code>gem sources -a http://gems.github.com</code>.</p>
+<p>So, yes, you can move to GitHub and you&#8217;ll also get gem support: but please <em>remind the users</em> that they have to add GitHub as gem source. Or, better, you should always remember to upload your latest gems to GitHub <em>and to RubyForge as well</em>.</p>
+<h3>The present</h3>
+<p>To sum up:</p>
+<ul>
+	<li>If you want, you can stay on RubyForge. It has git, it has gems, it&#8217;s probably not nearly as prettier than competitors and is not as social, but it works.</li>
+	<li>You can opt for GitHub+LightHouse, have a slick interface, plenty of features and your project will be scattered in 2 different places + your home page, and you&#8217;ll also have to keep uploading your gems to RubyForge.</li>
+	<li>At this point, you may even go for something completely different, like Assembla or your own setup, but still upload your gems to RubyForge.</li>
+</ul>
+<p>The obvious solutions at this point would be that the folks who craft rubygems (the gem which makes the gems, to be clear) add GitHub as default source. Sure as hell when that happens other people will want that too (hey, I&#8217;ll have gems.h3rald.com setup by then!). Is this the future? I hope not.</p>
+<h3>The future?</h3>
+<p>You know there&#8217;s a domain called <a href="http://www.rubygems.org/">www.rubygems.org</a>? It&#8217;s where the gem <em>manuals</em> are! <br />
+As much as I love documentation, there&#8217;s nothing wrong in moving all those documents and books to something like <em>docs.rubygems.org</em>, right? <br />
+Then they could make RubyGems.org the <em>only</em> official gem server and tell people they should upload their gems there if they want to distribute them efficiently (after manual approval, if necessary, like there is on RubyForge).</p>
+<p>In this way:</p>
+<ul>
+	<li>You wouldn&#8217;t have to upload stuff to RubyForge anymore</li>
+	<li>You could have the clever folks at GitHub to create a simple script to automate the upload</li>
+	<li>You&#8217;d have virtually <em>all</em> the gems in one place</li>
+	<li>You&#8217;d put a good domain name (currently almost forgotten) to good use</li>
+</ul>
+<p>While they are at it, <strong>the clever folks at RubyGems.org could also setup a <em>proper</em> gem directory with a <em>proper</em> search</strong>. I&#8217;m sure there would be plenty of people who could help, too!</p>
+<p>It&#8217;s not impossible, right? They said that making Rails/Ruby/RSpec documentation more accurate and accessible was impossible, but now there&#8217;s <a href="http://apidock.com/">APIdock</a>, correct?</p>
+<p>Personally I&#8217;d like it to be a collaborative effort of the Ruby community (like ruby-lang.org), rather than one private company showing off, but I think everyone will be happy as long as it works.<br />
+I&#8217;m sure people will contribute, I would try at least (after finishing the Italian translation of ruby-lang.org, that is&#8230; erhm, well, that&#8217;s another story&#8230;).</p>
+<p>Thoughts?</p>

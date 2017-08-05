@@ -1,0 +1,38 @@
+-----
+title: To REST or not to REST?
+content-type: article
+timestamp: 1190605680
+tags: rails
+-----
+<p>Lately I&#8217;ve been reading quite a bit about Rails&#8217; <span class="caps">REST</span> approach, and to be totally honest I&#8217;m not 100% convinced it can always be a good idea. The purpose of this post is to re-evaluate the situation, and ask other people their opinion on the matter.</p>
+<p>Let&#8217;s see&#8230;</p>
+<h3>Key Benefits</h3>
+<p>To cut a long story short, from my understanding <span class="caps">REST</span> can be a good thing because:</p>
+<ul>
+	<li>It introduces the powerful concept of &#8220;resources&#8221;, which is independent from the presentation. This basically means that you can have your &#8220;resources&#8221; represented in <span class="caps">HTML</span>. <span class="caps">XML</span> etc. etc. &#8220;for free&#8221;. If you are making an extensive use of web services, this is truly a bless.</li>
+	<li>Each <span class="caps">CRUD</span> action is carried out using a different <span class="caps">HTTP</span> command (get, post, put and delete). At present, because most browsers don&#8217;t understand <span class="caps">PUT</span> or <span class="caps">DELETE</span> requested, this is somehow simulated by Rails.</li>
+	<li>By thinking and modeling your application in terms of resources, everything should always be &#8220;in the right place&#8221;.</li>
+</ul>
+<h3>Downsides?</h3>
+<p>Let&#8217;s now try to summarize what made me think more carefully this approach&#8230;</p>
+<ul>
+	<li>While I really like Rails&#8217; convention over configuration philosophy, this sounds a tiny bit too extreme for me. In the end it could be good, but it requires developers to completely re-think the way they develop their application in order to be 100% RESTful.</li>
+	<li>URLs aren&#8217;t that pretty anymore. While <a href="http://themysteriouswaysofruby.blogspot.com/2007/04/pretty-restful-urls-in-rails.html">someone</a> suggested a way to improve the way RESTful URLs look, that sounds like extra hassle to me. It&#8217;s subjective, I know, but I really don&#8217;t like using IDs in the url&#8230; I&#8217;d rather go for an univocal code any day (check out this site&#8230; I don&#8217;t even like dates in my blog).</li>
+	<li>Sometimes, it may take quite a bit to figure out how to model some functionality using resources. While it is straightforward when you want to perform <span class="caps">CRUD</span> operations, modeling a search action or authentication may be a bit tricky and may also feel a bit forced. Again, maybe it&#8217;s just me.</li>
+	<li>It may be a bit too early to take full advantage of this approach. <span class="caps">PUT</span> and <span class="caps">DELETE</span> are simulated, and this doesn&#8217;t sound right &#8212; agreed, that&#8217;s the only way for now, but it still sounds like a forceful workaround. Browsers are not RESTful (yet)!</li>
+	<li>All resources are virtually accessible by a <span class="caps">URL</span>. I&#8217;m not a security expert, but this scares me a bit.</li>
+</ul>
+<p>Here are some posts which made me think a bit:</p>
+<ul>
+	<li><a href="http://gilesbowkett.blogspot.com/2007/04/looking-for-good-argument-against-rest.html">Looking for a good argument against <span class="caps">REST</span></a></li>
+</ul>
+<ul>
+	<li><a href="http://www.ipbabble.com/2007/07/restful_myths.html">RESTful Myths: Unraveling the Confusion</a></li>
+</ul>
+<ul>
+	<li><a href="http://blog.livollmers.net/index.php/2007/06/26/why-cant-web-apps-be-rest-ful/">Why Can’t Web Apps Be <span class="caps">REST</span>-ful?</a></li>
+</ul>
+<p>The bottom line is: is <span class="caps">REST</span> really worth the hassle? Especially for small and simple applications like a blog, is it really worthwhile to coerce myself to adopt a RESTful approach when I could accomplish exactly the same things with much less hassle?</p>
+<p>In other words, is <span class="caps">REST</span> really the answer to everything or in <em>some cases</em> it is just <em>not necessary</em>?</p>
+<p>And also (OK, this may sound harsh and impolite): does it really make sense to push people to adopt a RESTful approach no matter what? Sometimes someone may get the feeling that Rails is all about <span class="caps">REST</span> now. Is that true, or is there still room for <del>freedom</del> other views?</p>
+<p>Looking forward to hear your comments, but please be nice and civilized!</p>

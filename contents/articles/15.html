@@ -1,0 +1,66 @@
+-----
+title: I18n
+content-type: article
+timestamp: 1145106900
+tags: cakephp|webdevelopment
+-----
+<p><em>&#8220;CakePHP will officially support Internationalization (i18n) from version 2.0&#8221;</em>. That is to say: not right now. That doesn&#8217;t mean we have to wait, no chance! I&#8217;m Italian and there are plenty of bakers speaking a language other than English who might want to develop a multi-lingual website.</p>
+<p>I did, <a href="http://v60.h3rald.com/">once</a>, and the final result wasn&#8217;t too bad in the end: every page of the site (except the articles) could be translated into Italian. Before examining my solution (which is far from optimal) I&#8217;d like to mention an excellent CakePHP package which allows basic (mostly statuc) i18n.<br />
+It looks like I missed an important baker in my recent <a href="/blog/view/11">blog post</a>: <a href="http://www.noswad.me.uk/">Andy Dawson</a>, creator &#8211; among other things &#8211; of the <a href="http://cakeforge.org/snippet/detail.php?type=package&amp;id=2">Locale Package</a>, available at CakeForge. His solution actually came out after H3RALD.com v60 was already developed so I didn&#8217;t use it for my own site.<br />
+At a first glance Andy&#8217;s solution truly solves basic l18n problems in an elegant way: the most important code snippet is the <a href="http://cakeforge.org/snippet/download.php?type=snippet&amp;id=74">Locale Component</a> which provides the following functionalities:</p>
+<ul>
+	<li>automatic language detection based on browser&#8217;s UserAgent string</li>
+	<li>loading of locale files</li>
+	<li>setting of customizeable (translated) messages</li>
+</ul>
+<p>The getString() method provided in the locale component is actually used through the double underscore function, which is already defined (but not yet implemented) in the standard CakePHP file <code>cake/basics.php</code> (yes, this is a small core hack). Andy&#8217;s double underscore function can take five parameters:</p>
+<pre><code>function __($msgId, $MessageArgs=NULL, $capitalize=1, $punctuate=0,$Code=NULL)
+{
+    require_once(COMPONENTS.'locale.php');
+    $Locale = LocaleComponent::getInstance();
+    return $Locale-&gt;getString( $msgId, $MessageArgs, $capitalize, $punctuate, $Code );
+}</code></pre>
+<p>These parameters are:</p>
+<ul>
+	<li>a &#8220;message id&#8221; or the message itself</li>
+	<li>some parameters which can be passed to the message</li>
+	<li>the message&#8217;s capitalization:
+	<ul>
+		<li>0 = no change</li>
+		<li>1 = first letter of first word</li>
+		<li>2 = fist character of all words</li>
+	</ul></li>
+	<li>the message&#8217;s punctuation:
+	<ul>
+		<li>0 = &quot;&quot;</li>
+		<li>1 = .</li>
+		<li>2 = !</li>
+		<li>3 = ?</li>
+	</ul></li>
+	<li>the language code, if you need to override your page&#8217;s language</li>
+</ul>
+<p>This is a convenient method which can be used everywhere, both in your controllers and in your views, to translate simple pre-stored messages. Where are those messages stored? In various locale files which must be placed in <code>app/controllers/components/messages/</code> and look like this:</p>
+<pre><code>   $messages = Array (
+    'LocaleSetTo'=&gt;"Site locale set to UK English",
+    'LocaleChangeTo'=&gt;"Change site locale to UK English",
+    // Time related messages
+    'ago' =&gt; "%s ago",
+    'ages' =&gt; "a long time ago (%s)",
+)</code></pre>
+<p>The locale package also comes with a <em>Language Controller</em> you can use to handle language changes, and a useful rewrite of the <em>Time Helper_. Andy recently updated his <a href="http://wiki.cakephp.org/tutorials:i18n">i18n tutorial</a> available on CakePHP Wiki, a very interesting read on how to quickly add i18n support to yout first Cake blog (yes, the one described in the <a href="http://wiki.cakephp.org/tutorials:blog_tutorial">Blog Tutorial</a>_-</em>1).</p>
+<p>So far so good. The Locale Package provide some basic multi-lingual support in an efficient way, and I&#8217;d certainly use it if I decide to (re-)develop a multi-lingual site, but unfortunately this does not fully solve the problem.<br />
+If you want <strong>full</strong> i18n, for sure you&#8217;d like to have all the contents of your website translated, which is &#8211; normally &#8211; dynamic and maybe stored in a database. That was the case of my old website: all the pages are dynamic, not static, so I had to think about something else. <br />
+Since I only had plans to develop a <em>dual</em> language site, I opted for a very lazy (but yet effective) solution: each table &#8211; more or less &#8211; had &#8220;duplicate&#8221; fields, something like this:</p>
+<ul>
+	<li>id</li>
+	<li>title_en</li>
+	<li>title_it</li>
+	<li>text_en</li>
+	<li>text_it</li>
+	<li>created</li>
+	<li>modified</li>
+</ul>
+<p>I basically defined a global $lang variable set to &#8220;en&#8221; by default and then I accessed the record&#8217;s fields (for example in views) like this:</p>
+<p><code>echo $data['Project']['text_'.$lang]</code></p>
+<p>Ugly, perhaps, but did the job. The good (or bad) thing about this technique was that I could modify the contents of a project, for example, regardless of the current language: in my add/edit view, I chose to generate <em>all</em> the fields of a table and therefore modify all the fields of a project without switching to the other language.</p>
+<p>How will Cake support locales? Will we have &#8220;localized&#8221; database tables (and models?) Only time will tell&#8230;</p>

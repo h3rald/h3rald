@@ -1,0 +1,83 @@
+-----
+title: Watch out: CakePHP screencasts
+content-type: article
+timestamp: 1148132820
+tags: cakephp|tutorial
+-----
+<p>Tutorials are great, articles are helpful, manuals are essential and the <span class="caps">API</span> is your best friend, but there&#8217;s still something missing there&#8230; Unfortunately podcasts are not yet available, but the CakePHP team is proud to announce the creation of two <a href="http://cakephp.org/pages/screencasts">screencasts</a> in an effort to help new bakers familiarizing with CakePHP&#8217;s concepts. <br />
+This is old news now, the screencasts section came together with the <a href="/blog/view/24">site overhaul</a> but I only got a chance to take a look at them (one of them only, to be totally honest) recently, and so here&#8217;s a spoil&#8230; erhm, a <em>detailed</em> description of John Anderson&#8217;s screencast about the <a href="http://manual.cakephp.org/chapter/18">Blog Tutorial</a>.</p>
+<p style="float:left;"><img src="/img/pictures/CakePHP_1.0.png" alt="" /></p>
+<p>There&#8217;s something I&#8217;ll never do: a screencast. Recording every mouse movement, every word or piece of code typed in half an hour? No way! And what happens if I mistype something? People will keep pointing out the fact that I was starting to type <code>&lt;/h2&gt;</code> to close a <code>&lt;/h1&gt;</code> tag, or that I waited an eternity like five full seconds before deciding what to do. I guess I&#8217;m quite paranoid&#8230; John did it, and he did it well. Using just bash, vim and Safari he was able to record an excellent 30-minutes screencast featuring the blog tutorial. <br />
+Before people start complaining that the blog tutorial should be completed in fifteen minutes, keep in mind that John&#8217;s screencast is meant to show everything clearly to new users, via a trial and error approach if necessary.</p>
+<p>Here&#8217;s what happens in the screencast, nothing new if your read the blog tutorial, but still interesting, especially if you&#8217;re new to Cake. Unfortunately there&#8217;s no audio, but the video talks by itself and John will occasionally write some comments here and there.</p>
+<p><em><strong>0:01 &#8211; 5:00</strong></em></p>
+<ul>
+	<li><span class="caps">SVN</span> checkout to get the latest CakePHP version</li>
+	<li>make app/tmp writeable</li>
+	<li>execute queries (table posts)</li>
+	<li>insert some test posts</li>
+	<li>create database config file: modify 3 lines of database.php</li>
+	<li>CakePHP is now able to connect to database</li>
+	<li>create app/models/post.php model</li>
+	<li>create posts_controller.php [John uses Vim as preferred <span class="caps">PHP</span> editor]</li>
+	<li>try to access /posts/, error: missing method index()</li>
+	<li>create function index() in postscontroller.php able to fetch posts</li>
+	<li>refresh, missing index view</li>
+	<li>create index.thtml displaying the raw posts array</li>
+</ul>
+<p><em><strong>5:01 &#8211; 10:00</strong></em></p>
+<ul>
+	<li>index.thtml: display posts with table and foreach iteration</li>
+	<li>add hyperlink in index.thtml to view posts</li>
+	<li>access /posts/view/1 &#8594; missing method view()</li>
+	<li>add view() method in postscontroller.php</li>
+	<li>create view.thtml to display</li>
+	<li>Raw view post with pre tags and print_r()</li>
+</ul>
+<p><em><strong>10:01 &#8211; 15:00</strong></em></p>
+<ul>
+	<li>display post properly with <code>&lt;p&gt;</code> tags</li>
+	<li>add link in index.thtml to add a post</li>
+	<li>missing method &#8594; add()</li>
+	<li>add add() in controller</li>
+	<li>missing view [trial and error, trial and error&#8230;]</li>
+	<li>create add.thtml, using the Html Helper to create input tags easily</li>
+</ul>
+<p><em><strong>15:01 &#8211; 20:00</strong></em></p>
+<ul>
+	<li>add.thtml (continued)</li>
+	<li>testing add form</li>
+	<li>view added post</li>
+	<li>start adding another (for validation purposes) [stop before submitting]</li>
+	<li>modify post.php model, valid_not_empty for title and body</li>
+	<li>modify view to trigger validation <code>$html-&gt;tagErrorMsg()</code></li>
+	<li>test: no body, message displayed</li>
+	<li>test: no title, message displayed</li>
+	<li>add another post, everything works</li>
+	<li>[pause: five seconds]</li>
+	<li>back to the controller, create delete() function</li>
+</ul>
+<p><em><strong>20:01 &#8211; 25:00</strong></em></p>
+<ul>
+	<li>delete function (continued)</li>
+	<li>add &#8220;Actions&#8221; table column in index.thtml, with link delete post</li>
+	<li>delete two posts</li>
+	<li>take a breath</li>
+	<li>add link in index.thtml to edit post</li>
+	<li>refresh page, mouse over edit links&#8230;</li>
+	<li>back to controller, add edit function [we learnt abour CakePHP errors alright]</li>
+</ul>
+<p><em><strong>25:01 &#8211; 27:38</strong></em></p>
+<ul>
+	<li>pause, 5 sec [should I write edit.thtml from scratch]</li>
+	<li>copy add.thtml as edit.thtml</li>
+	<li>change just the title and form action</li>
+	<li>[pause: 3 sec]</li>
+	<li>test edit link</li>
+	<li>edit a post</li>
+	<li>move around, switch views</li>
+	<li>edit config/routes.php</li>
+	<li>set default route to posts/index</li>
+	<li>refresh &#8211;  all done!</li>
+</ul>
+<p>That&#8217;s it. All in a 40MB .mov file. Download it from <a href="http://www.archive.org/download/CakePHP_BlogTutorialJohn/BlogTutorial.mov">here</a>.</p>

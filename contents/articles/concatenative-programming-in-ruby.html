@@ -1,0 +1,116 @@
+-----
+title: Concatenative programming in Ruby
+content-type: article
+timestamp: 1238221440
+tags: ruby|concatenative|programming
+-----
+<p>A while ago, I sat down examining a few <a href="http://www.h3rald.com/articles/10-programming-languages">alternative programming languages</a> I might decide to learn someday. Each of those languages has its own peculiarities, and I didn&#8217;t choose them randomly, I chose them based on their popularity, power, paradigm and how actively they are developed.</p>
+<p>I included <a href="http://factorcode.org/">Factor</a> as the only representative for <em>concatenative programming</em>, an interesting way to write programs, but seldom used in &#8220;recent&#8221; languages (except for Factor and a few others).</p>
+<h3>The Joy of concatenative programming</h3>
+<p>If you have absolutely no clue on what I&#8217;m talking about, you should consider looking at the home page for the <a href="http://www.latrobe.edu.au/philosophy/phimvt/joy.html">Joy Programming Language</a>, or maybe just the <a href="http://www.latrobe.edu.au/philosophy/phimvt/joy/j00ovr.html">overview</a>: it should be enough to tikle your curiosity.</p>
+<p>Joy is often considered the <em>canonical</em> concatenative programming language: a basic &mdash;but working&mdash; implementation of a simple programming language to illustrate the fundamentals of concatenative programming. Joy looks like this:</p>
+<p><code>2  3  +  dup  *</code></p>
+<p>This simple programs computes the sum of 2 and 3, pushes it on the stack, duplicates it (using the <code>dup</code> combinator) and then multiplies the two values, obtaining 25 as a result.</p>
+<p>Let&#8217;s slow down a second. Here&#8217;s what happens, exactly:</p>
+<table>
+	<tr>
+		<th>Element entered </th>
+		<th>Stack contents</th>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> <sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup> </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> [2 3] </td>
+	</tr>
+	<tr>
+		<td> + </td>
+		<td> <sup class="footnote" id="fnr5"><a href="#fn5">5</a></sup> </td>
+	</tr>
+	<tr>
+		<td> dup </td>
+		<td> [5 5] </td>
+	</tr>
+	<tr>
+		<td> * </td>
+		<td> <sup class="footnote" id="fnr25"><a href="#fn25">25</a></sup> </td>
+	</tr>
+</table>
+<p>Got it? Let&#8217;s take it one step further. When you enter <code>dup</code> and then <code>*</code>, you are effectively computing the square of a number, so we can define the function <code>square</code> simply as:</p>
+<p><code>square == dup *</code></p>
+<p>In Ruby, this would be:</p>
+<div class='ruby'><pre><code>def square(x)
+  x*x
+end</code></pre></div><p>What&#8217;s unusual here? &mdash; Simple, there are no <em>variables</em> involved. Joy doesn&#8217;t need any explicit variable or <em>formal parameters</em> of any sort.</p>
+<p>There&#8217;s more. Take the following code:</p>
+<p><code>[1 2 3 4]  [dup *]  map</code></p>
+<p>The <code>map</code> combinator expects a list and a <em>quoted program</em> (the same one used to compute the square) and produces a new list containing the result of that program applied to each element of the original list. Basically the equivalent of:</p>
+<div class='ruby'><pre><code>[1,2,3,4].map { |e| e*e }</code></pre></div><p>Do you notice anything different? &mdash; Yes, Joy doesn&#8217;t need blocks or lambdas either, it uses <em>quoted programs</em> instead, which are nothing but slightly fancier lists (or arrays, as you like).</p>
+<p>Let&#8217;s recap then, Joy doesn&#8217;t need of:</p>
+<ul>
+	<li>lambda functions or blocks (quotation does the trick)</li>
+	<li>explicit parameters (everything you need is on the stack)</li>
+	<li>variable assignments (same as above)</li>
+	<li>explicit recursion (provided you can use combinators like linrec, primrec, binrec, etc.)</li>
+</ul>
+<p>I would consider this one of the best examples of <em>programming minimalism</em>: an incredibly simple syntax, a very small set of rules, but a good deal of power.</p>
+<h3>Ruby objects on the stack</h3>
+<p>After reading about Joy, I realized that implementing something similar in Ruby would be an interesting mini-project (let&#8217;s say a week of lunch breaks) to understand more about concatenative programming. It would also be pointless, too: a stack-based programming language implemented on top of one of the most high-level programming languages you can find isn&#8217;t going to be fast, is it? Nevertheless, it would still be interesting.</p>
+<p>Ruby offers everything you need to build a Joy-like <span class="caps">DSL</span>:</p>
+<ul>
+	<li>You can use arrays as &#8230;arrays, but also as quoted programs, and to model the stack itself.</li>
+	<li>You can use integers, strings, etc. as themselves</li>
+	<li>You can use Symbols as functions (we&#8217;ll get to this in a minute)</li>
+</ul>
+<p>If you think about the following expression in postfix notation:</p>
+<p><code>2 2 +</code></p>
+<p>We <em>could</em> translate it into infix notation (<code>2 + 2</code>), because Ruby supports it, but it&#8217;s not general enough. What you could do is this though:</p>
+<div class='ruby'><pre><code>2.send(:+, 2)</code></pre></div><p>Message sending. I can see all the SmallTalk sympathizers drooling already. Well yes, In Ruby, <em>everything</em> is an object, so <em>everything</em> has a receiver and maybe some parameters. In other words, every method call can be reduced to the following syntax:</p>
+<div class='ruby'><pre><code>receiver.send(method, *params)</code></pre></div><p>In this way, it is safe to assume that everything has a receiver, which could be understood as a function parameter, and may have 0 or more parameters. Take the following then:</p>
+<div class='ruby'><pre><code>[2, 2, :+]</code></pre></div><p>It&#8217;s not too different from Joy, and it&#8217;s still Ruby code. All you have to do is use something to do the following:</p>
+<ul>
+	<li>Take an array, and examine each item:
+	<ul>
+		<li>If it&#8217;s an object (non-Symbol), then push it on top of the stack.</li>
+		<li>If it&#8217;s a Symbol, then do something different, i.e.:
+		<ul>
+			<li>Find its receiver and its parameters and call a method.</li>
+			<li>Manipulate something on the stack.</li>
+		</ul></li>
+	</ul></li>
+</ul>
+<p>In this case, we have to find :+&#8217;s receiver and its parameter and we&#8217;re sorted.</p>
+<p>Unfortunately Ruby&#8217;s <code>arity</code> method isn&#8217;t that reliable. For example: <code>"test".instance_method(:sub).arity</code> returns -1, while it should return &#8220;2&#8221; to be useful. So we have no choice but find a way to pass the method&#8217;s arity explicitly, in some cases.</p>
+<p>For example like this:</p>
+<div class='ruby'><pre><code>["Ciao, Fabio", /Ciao/, "Hello", :sub|2]</code></pre></div><p>If we define a | operator for the Symbol class, it&#8217;s not too bad after all. It&#8217;s heavy, but in this way we can use <em>any</em> Ruby method in postfix notation.</p>
+<h3>Introducing the Concatenative Ruby <span class="caps">DSL</span></h3>
+<p><a href="/concatenative">Concatenative</a> is a simple Ruby <span class="caps">DSL</span> for concatenative programming. You can write concatenative programs inside ordinary Ruby arrays and execute them by calling either <code>Array#execute</code> or <code>Kernel#concatenate</code>, like this:</p>
+<div class='ruby'><pre><code>require 'concatenative'
+
+concatenate(
+  10,
+  [0, :==],
+  [1, :+],
+  [:dup, 1, :-],
+  [:*],
+  :linrec
+ )</code></pre></div><p>This simple program calculates the factorial of 10. As you can see, no matter how unusual it may look, it is perfectly valid Ruby code and it is equivalent to the following Joy code:</p>
+<p><code>
+10 [0 =] [1 +] [dup 1 -] [*] linrec
+</code></p>
+<p>Granted, Joy looks better, but that&#8217;s the tradeoff for not writing a parser for Joy syntax, after all. <br />
+Looking at the code above, there are a few things to keep in mind when programming with Concatenative:</p>
+<ul>
+	<li>You are using Ruby arrays, so you have to use commas, at least</li>
+	<li>functions, operators and combinators (let&#8217;s just call them <em>words</em>) are available as Ruby symbols</li>
+	<li>The arity of all Ruby infix operators has been already set to &#8220;1&#8221; by concatenative using the <code>set_arity</code> method (which simply stores the arity of a particular symbol in a constant hash)</li>
+	<li>You can specify explicit arities using the | operator (<code>:gsub|2</code>, or <code>:join|1</code>)</li>
+	<li>Unless the arity has been specified, an arity of 0 is assumed.</li>
+	<li>You can define your own concatenative functions using the <code>Symbol#&lt;=</code> method, which expects a quoted concatenative program.</li>
+</ul>
+<h3>Performance issues</h3>
+<p>In its current form, Concatenative can be very slow, as show the &#8220;benchmarks&#8221; provided in the /examples folder, especially if you use recursive combinators. This is understandable because everything is implemented in pure Ruby, which is totally unsuitable for low level stuff.</p>
+<p>If you are interested, you are more than welcome to submit patches and suggestions to improve Concatenative&#8217;s performance, or, if you feel brave enough, you could help me create a C extension instead: things would become much faster then.</p>
+<p>At any rate, feel free to play with it. You can get the source from <a href="http://github.com/h3rald/concatenative/tree/master">GitHub</a>, you can get the gem from <a href="http://rubyforge.org/projects/concatenative/">RubyForge</a> and you can submit ticket through <a href="http://github.com/h3rald/concatenative/issues">GitHub</a> as well.</p>

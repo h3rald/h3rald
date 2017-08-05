@@ -1,0 +1,212 @@
+-----
+title: Rails-inspired PHP frameworks
+content-type: article
+subtitle: A roundup of six different PHP frameworks inspired by Ruby on Rails
+popular: true
+timestamp: 1146661020
+tags: frameworks|review|cakephp|rails
+-----
+<p>There are various articles online examining many <span class="caps">PHP</span> frameworks, providing short reviews or comparative charts, but I could not find yet an article  examining the so called <em>&#8220;Rails-inspired frameworks&#8221;</em> anywhere on the web, so I decided to write my own&#8230;</p>
+<blockquote>
+<p><strong><span class="caps">IMPORTANT</span> <span class="caps">UPDATE</span>:</strong> I do no longer recommend the CakePHP framework anymore due to the <a href="http://www.h3rald.com/blog/42">unprofessionalism of some member of its development team</a>. My site is now powered by Ruby on Rails and I totally lost interest in <span class="caps">PHP</span> and any <span class="caps">PHP</span> framework. If you are looking for a decent web framework, try <a href="http://www.rubyonrails.org">Ruby on Rails</a> (for Ruby), <a href="http://www.djangoproject.com/">Django</a> (for Python) or <a href="http://catalyst.perl.org/">Catalyst</a> (for Perl).<br />
+I&#8217;m talking about those <span class="caps">PHP</span> frameworks who give at least part of their success to Ruby on Rails<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup>, but don&#8217;t call them <em>clones</em> or <em>ports</em> as some of their creators may get offended.</p>
+</blockquote>
+<p style="float:left;"><img src="/img/pictures/rails.gif" alt="" /></p>
+<p>Since Rails shocked the world with an easy-to-use, powerful and semi-sentient web development framework, web development is not the same anymore: everything must be done efficiently, quickly and you <em>have</em> to produce a Web 2.0 compliant public beta after X days/weeks/months or your work is simply not useful to anybody. Try doing that with the traditional <span class="caps">PHP</span> spaghetti code: you can&#8217;t, it&#8217;s too much, it will be too tangled up and in the end you&#8217;ll lose your mind trying to find that <em>small insignificant bug</em> which makes your web application completely useless.</p>
+<p>Yes, you could use Rails, but maybe you don&#8217;t know or don&#8217;t want to learn Ruby, your host doesn&#8217;t support it, your boss loves <span class="caps">PHP</span> etc. etc. If you&#8217;re in this situation or you simply would like to know what&#8217;s going on at the <span class="caps">PHP</span> front of the Rails Clone War, you should keep reading this article.</p>
+<p>I&#8217;d like to introduce &#8211; briefly &#8211; six Rails-inspired <span class="caps">PHP</span> frameworks and compare them with each other, to point out their features, their pros and cons.</p>
+<blockquote>
+<p><em><strong>Disclaimer:</strong> I&#8217;m a CakePHP<sup class="footnote" id="fnr3"><a href="#fn3">3</a></sup> fan, this site has been built with CakePHP and I even wrote something<sup class="footnote" id="fnr4"><a href="#fn4">4</a></sup> about it in the past. This makes me inevitably partial and more familiar with this particular framework, but I&#8217;ll try my very best to provide a relatively objective analysis. Obviously frameworks which are not based on the <span class="caps">MVC</span> architechture and that weren&#8217;t inspired by Ruby on Rails have not been included, so forget things like <span class="caps">PRADO</span>, Qcodo, eZComponents, or even Mojavi: it&#8217;s not that they are &#8220;bad&#8221;, they&#8217;ve just been left out because they are not pertinent to this article</em></p>
+</blockquote>
+<h3>CakePHP</h3>
+<p style="float:right;"><img src="/img/pictures/CakePHP_1.0.png" alt="" /></p>
+<p><strong>Website:</strong> <a href="http://www.cakephp.org/">www.cakephp.org</a><br />
+<strong><span class="caps">PHP</span> version:</strong> PHP4 and PHP5<br />
+<strong>License:</strong> <span class="caps">MIT</span><sup class="footnote" id="fnr5"><a href="#fn5">5</a></sup><br />
+<strong>Download size (.tar.gz):</strong> 184KB<br />
+<strong>Supported Databases:</strong> MySQL, PostgreSQL, SQlite, MS <span class="caps">SQL</span> + any other supported by ADOdb or <span class="caps">PEAR</span>::DB database abstraction layers<br />
+<strong>Beginner&#8217;s Tutorial</strong>: <a href="http://wiki.cakephp.org/tutorials:blog_tutorial_-_1">Blog Tutorial</a></p>
+<p><strong>Official Description:</strong><br />
+<em>&#8220;Cake is a rapid development framework for <span class="caps">PHP</span> which uses commonly known design patterns like ActiveRecord, Association Data Mapping, Front Controller and <span class="caps">MVC</span>. Our primary goal is to provide a structured framework that enables <span class="caps">PHP</span> users at all levels to rapidly develop robust web applications, without any loss to flexibility.&#8221;</em></p>
+<p><strong>PROs:</strong></p>
+<ul>
+	<li>Lightweight, not bloated, containing only essential code</li>
+	<li>Runs both on PHP4 and PHP5</li>
+	<li>No configuration needed &#8211; except for a stupidly short database configuration file and a few constants which <em>can</em> be modified. You can literally start baking in less than five minutes</li>
+	<li>Extended table association support, allowing the creation of complex database architechtures</li>
+	<li>Extremely logical and functional directory structure: better than Rails, if you ask me.</li>
+	<li>Enhanced <span class="caps">AJAX</span> support through the <span class="caps">AJAX</span> and Javascript view helpers</li>
+	<li>useful &#8220;bake&#8221; command line script to generate parts of the  code automatically</li>
+	<li>Very active community and plenty of <em>satellite sites</em></li>
+	<li>Suitable for every kind of website, from the small personal site to the advanced e-business application.</li>
+</ul>
+<p><strong>CONs:</strong></p>
+<ul>
+	<li>No &#8220;official&#8221; internationalization support for now, but it will be included in the next milestone.</li>
+	<li>It does not take fully advantage of PHP5 features</li>
+	<li>Official documentation still needs some some improvement, although now it seems pretty complete and exhaustive.</li>
+</ul>
+<p><strong>Comments:</strong><br />
+CakePHP is my personal favorite: easy to learn, easy to use,multi-purpose and not bloated. Cake&#8217;s philosophy is not to include unnecessary code in the framework unless it&#8217;s absolutely necessary for the framework itself, as a result, 3rd-party libraries are not included in the official releases, but may be seamlessly integrated with the framework <em>if developers need them</em>. <br />
+Cake&#8217;s success is partly determined &#8211; at least initially &#8211; by the fact that it can run fine with no limitations on PHP4, while other similar frameworks don&#8217;t. Although this may still be one of its most obvious strengths, it must be said that Cake seems to go in the right direction, taking only the best from Rails, without forcing developers into complex and pointless adaptations, and evolving into a great framework created <em>in <span class="caps">PHP</span>, for <span class="caps">PHP</span></em>.</p>
+<h3>Symfony</h3>
+<p style="float:right;"><img src="/img/pictures/symfony.gif" alt="" /></p>
+<p><strong>Website:</strong> <a href="http://www.symfony-project.com/">www.synfony.project.com</a><br />
+<strong><span class="caps">PHP</span> version:</strong> PHP5<br />
+<strong>License:</strong> Symfony<sup class="footnote" id="fnr6"><a href="#fn6">6</a></sup><br />
+<strong>Download size (.tgz):</strong> 1255KB<br />
+<strong>Supported Databases:</strong> MySQL, PostgreSQL, SQLite, Oracle, MS <span class="caps">SQL</span> + any other supported by Creole database abstraction layer<br />
+<strong>Beginner&#8217;s Tutorial</strong>: <a href="http://www.symfony-project.com/tutorial/my_first_project.html">My first project</a></p>
+<p><strong>Official Description:</strong><br />
+<em>&#8220;Based on the best practices of web development, thoroughly tried on several active websites, symfony aims to speed up the creation and maintenance of web applications, and to replace the repetitive coding tasks by power, control and pleasure. [&#8230;]</em><br />
+<em>Symfony is an object-oriented PHP5 framework based on the <span class="caps">MVC</span> model. Symfony allows for the separation of business rules, server logic and presentation views of a web application. It also contains numerous tools and classes aimed at shortening the development time of a complex web application.&quot;</em></p>
+<p><strong>PROs:</strong></p>
+<ul>
+	<li>Fully featured framework, includes everything you might ever need (see CONs, below)</li>
+	<li>Full native internationalization support</li>
+	<li>Truly excellent documentation, tutorials, wiki, book, screencasts, <span class="caps">API</span>, real-world examples, etc. etc.</li>
+	<li>Code generators</li>
+	<li>Various &#8220;pre-built&#8221; modules/libraries for the most common tasks</li>
+	<li>It was not inspired only by Rails, but borrows concepts and practices from various other frameworks</li>
+	<li>Good community support</li>
+</ul>
+<p><strong>CONs:</strong></p>
+<ul>
+	<li>Seems too big compared to the others, too many &#8220;extras&#8221; which may not be useful to <em>all</em> developers</li>
+	<li>PHP5 only</li>
+	<li>Confusing and disorganized directory structure</li>
+	<li>Uses too many configuration files, not suitable for <em>simple</em> projects</li>
+	<li>Steep learning curve</li>
+</ul>
+<p><strong>Comments:</strong><br />
+Symfony is really an interesting framework: it&#8217;s perhaps the most <em>complete</em> in terms for features and documentation. The only problem I have with it is that it just seems too complex and rather difficult to learn if compared to the others, which can do <em>almost</em> the same things (or will soon be able to) in a <em><span class="caps">MUCH</span></em> simpler way. A nice blend of <span class="caps">MVC</span>, pre-built components, command line generators and <span class="caps">YAML</span>/Propel configuration files, but perhaps a bit <em>disorganized</em> in its internal structure, unlike its wonderful documentation and support section.</p>
+<h3><span class="caps">PHP</span> on Trax</h3>
+<p style="float:right;"><img src="/img/pictures/phpontrax.jpg" alt="" /></p>
+<p><strong>Website:</strong> <a href="http://www.phpontrax.com/">www.phpontrax.com</a><br />
+<strong><span class="caps">PHP</span> version:</strong> PHP5<br />
+<strong>License:</strong> <span class="caps">MIT</span><br />
+<strong>Download size (.tgz):</strong> 843KB<br />
+<strong>Supported Databases:</strong> Any database supported by <span class="caps">PEAR</span>::DB<br />
+<strong>Beginner&#8217;s Tutorial</strong>: <a href="http://svn.phpontrax.com/wiki/HowToCreateATraxApplication">How to create a Trax application</a></p>
+<p><strong>Official Description:</strong><br />
+<em>&#8220;Php On Trax (formerly Php On Rails) is a web-application and persistance framework that is based on Ruby on Rails and includes everything needed to create database-backed web-applications according to the Model-View-Control pattern of separation.&#8221;</em></p>
+<p><strong>PROs:</strong></p>
+<ul>
+	<li>Simple, logical, essential: a true RoR port to PHP5</li>
+	<li>Code generators, like Rails</li>
+	<li>Zero configuration (like Rails and Cake</li>
+	<li>Easy and logical directory structure (the same as Rails)</li>
+	<li>Supports table associations, but more in a way which is more similar to Ruby on Rails than Cake.</li>
+</ul>
+<p><strong>CONs:</strong></p>
+<ul>
+	<li>Lack of documentation compared to the others</li>
+	<li>Trying to port Ruby on Rails to <span class="caps">PHP</span>, ignoring why RoR was not built in <span class="caps">PHP</span> in the first place<sup class="footnote" id="fnr7"><a href="#fn7">7</a></sup></li>
+	<li>No internationalization or other advanced functionalities</li>
+	<li>PHP5 only</li>
+	<li>Small community</li>
+	<li><span class="caps">DBO</span> class based only on <span class="caps">PEAR</span>::DB</li>
+</ul>
+<p><strong>Comments:</strong><br />
+In my opinion this project aims too much to be a Rails-clone to acquire a proper consensus. Trying to port something to another language is not good, especially in the case of Rails and Ruby. This framework looks somehow like an old version of CakePHP, which evolved slightly but always remained anchored to its beliefs of building a Rails port for <span class="caps">PHP</span> (even in the name!). Some may say that this is a lost battle since the beginning &#8211; or better, since before it started &#8211; but others found that <span class="caps">PHP</span> on Trax can be the easiest way to switch from Ruby on Rails to a <span class="caps">PHP</span> equivalent. Who is going to do that? Well, Ruby programmers <em>forced</em> to develop in <span class="caps">PHP</span>, maybe. Not too good, but not too bad either.</p>
+<h3>Code Igniter</h3>
+<p style="float:right;"><img src="/img/pictures/codeigniter.jpg" alt="" /></p>
+<p><strong>Website:</strong> <a href="http://www.codeigniter.com/">www.codeigniter.org</a><br />
+<strong><span class="caps">PHP</span> version:</strong> PHP4 and PHP5<br />
+<strong>License:</strong> CodeIgniter<sup class="footnote" id="fnr8"><a href="#fn8">8</a></sup><br />
+<strong>Download size (.zip):</strong> 609KB<br />
+<strong>Supported Databases:</strong> MySQL, PostgreSQL, SQLite, MySQLi, MS <span class="caps">SQL</span> + <span class="caps">ODBC</span><br />
+<strong>Beginner&#8217;s Tutorial</strong>: <a href="http://www.codeigniter.com/videos/ci_intro.mov">Hello World! Introduction to Code Igniter</a> [video]</p>
+<p><strong>Official Description:</strong><br />
+<em>&#8220;Code Igniter is an Open Source Web Application Framework that makes writing kick-ass <span class="caps">PHP</span> programs simple as apple pie. [&#8230;] Designed to enable, not overwhelm, Code Igniter is a powerful <span class="caps">PHP</span> framework with a very small footprint, built for <span class="caps">PHP</span> coders who need a simple and elegant toolkit to create full-featured web applications.</em><br />
+<em>If you&#8217;re a developer who lives in the real world of shared hosting accounts and clients with deadlines, and if you&#8217;re tired of ponderously large and thoroughly undocumented frameworks that require rocket science to understand, Code Igniter might just be the right tool for you.&quot;</em></p>
+<p><strong>PROs:</strong></p>
+<ul>
+	<li>Good and organized documentation</li>
+	<li>Zero configuration (like Rails and Cake)</li>
+	<li>Includes various classes and libraries for common tasks</li>
+	<li>Compatible with PHP4 and PHP5</li>
+	<li>Medium-sized community</li>
+	<li>Intuitive directory structure</li>
+	<li>Ships with the full user guide included in separate <span class="caps">HTML</span> files</li>
+</ul>
+<p><strong>CONs:</strong></p>
+<ul>
+	<li>No full (&#8220;written&#8221;) tutorials except the videos!</li>
+	<li>Relatively new to the scene, but growing</li>
+	<li>Does not seem to support table associations.</li>
+</ul>
+<p><strong>Comments:</strong><br />
+People on the Net seem to be rather enthusiastic about this framework: where there&#8217;s a thread about the <em>big ones</em> (Cake and Symfony), there&#8217;s always, someone who pops in suggesting to try out Code Igniter. I personally think this can be a true bless for small/medium sized projects, however, I&#8217;d opt for CakePHP or Symfony for a large scale application: something is missing, e.g., most notably, table associations.</p>
+<h3>Biscuit</h3>
+<p style="float:right;"><img src="/img/pictures/biscuit.gif" alt="" /></p>
+<p><strong>Website:</strong> <a href="http://biscuitproject.tigris.org/">biscuitproject.tigris.org</a><br />
+<strong><span class="caps">PHP</span> version:</strong> PHP4 and PHP5<br />
+<strong>License:</strong> <span class="caps">MIT</span><sup class="footnote" id="fnr5"><a href="#fn5">5</a></sup>  <br />
+<strong>Download size (.zip):</strong> 240KB<br />
+<strong>Supported Databases:</strong> Any database supported by <span class="caps">PEAR</span>::DB<br />
+<strong>Beginner&#8217;s Tutorial</strong>: <a href="http://bennolan.com/biscuit/tutorial.html">Creating a simple application using the Biscuit <span class="caps">MVC</span> framework</a></p>
+<p><strong>Official Description:</strong><br />
+<em>&#8220;The mission of this project is to port Ruby on Rails to PHP5 (minus the Ruby part ;-)&#8221;</em></p>
+<p><strong>PROs:</strong></p>
+<ul>
+	<li>Zero configuration, easy to deploy</li>
+	<li>Runs both on PHP4 and PHP5</li>
+	<li>Simple to learn</li>
+</ul>
+<p><strong>CONs:</strong></p>
+<ul>
+	<li>Still under development and incomplete</li>
+	<li>Offers a limited subset of the features and functionalities offered by competitors: no internationalization, no table associations, no scaffolding&#8230;</li>
+	<li><em>&#8220;Documentation coming soon&#8221;</em></li>
+	<li>Almost non-existent community</li>
+</ul>
+<p><strong>Comments:</strong><br />
+This project started as an attempt to create something simpler than CakePHP and more similar to Rails. I&#8217;m not sure whether the project is still active or not, since the last &#8220;release&#8221; on the former&#8217;s developer site is dated August 2005. Still in early stage &#8211; or dead.</p>
+<h3>Pipeline</h3>
+<p style="float:right;"><img src="/img/pictures/livepipe.jpg" alt="" /></p>
+<p><strong>Website:</strong> <a href="http://livepipe.net/pipeline/">livepipe.net/pipeline/</a><br />
+<strong><span class="caps">PHP</span> version:</strong> PHP5<br />
+<strong>License:</strong> Pipeline<sup class="footnote" id="fnr9"><a href="#fn9">9</a></sup><br />
+<strong>Download size (.zip):</strong> 288KB<br />
+<strong>Supported Databases:</strong> SQLite<br />
+<strong>Beginner&#8217;s Tutorial</strong>: none</p>
+<p><strong>PROs:</strong></p>
+<ul>
+	<li>Simple directory structure</li>
+	<li>Suitable for small projects</li>
+	<li>Comes with various ready-made components</li>
+	<li>Supports table relationships</li>
+</ul>
+<p><strong>CONs:</strong></p>
+<ul>
+	<li>PHP5-only</li>
+	<li>Too restrictive: only SQLite supported, <em>kindly suggests</em> developers to use its built-in features only</li>
+	<li>No documentation or tutorials, just the <span class="caps">API</span></li>
+	<li>Not suitable for large projects</li>
+	<li>Almost non-existent community</li>
+</ul>
+<p><strong>Comments:</strong><br />
+This project mainly borrowed the <span class="caps">MVC</span> architecture and some basic concepts from Rails, creating a simple PHP5 framework with personal/small websites in mind: it offers various built-in components which can be handy to most of us, supports <em>only</em> SQLite, and basically tells developers what to do. In my opinion it&#8217;s not flexible enough to be compared to the others, and it&#8217;s simply not suitable for anything other than small websites.</p>
+<h3>Conclusions</h3>
+<p>My favorite framework still remains CakePHP, it&#8217;s simple and yet powerful, easy to learn and use, mature, well supported and continuously improving. Symfony &#8211; at the moment &#8211; seems to be the one with most features and the best documentation, and it is an excellent and well supported project. The only problem I have with it is the scary amount of configuration files necessary to create an application: CakePHP doesn&#8217;t need any and can be used for (almost?) equally complex projects.<br />
+Although I didn&#8217;t have a chance to try them out, <span class="caps">PHP</span> on Trax is certainly the most faithful port of Ruby on Rails to <span class="caps">PHP</span>, but it lacks some of the features CakePHP and Symfony offer. Code Igniter may not be as advanced as the others, but its community seems to grow and its simplicity may appeal more users in the future&#8230;</p>
+<p>At any rate, developers should <em>always</em> choose the best framework for their needs: I tried to write a quick comparative analysis of these six Rails&#8217; &#8220;<span class="caps">PHP</span> children&#8221;, now it&#8217;s <em>your</em> turn, try out some of them, if you choose wisely you won&#8217;t be disappointed.</p>
+<h3>Notes</h3>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> They are all distributed according to various Open Source licenses.</p>
+<p class="footnote" id="fn2"><a href="#fnr2"><sup>2</sup></a> <a href="http://www.rubyonrails.org">Ruby on Rails</a> &#8211; Ruby framework for web development</p>
+<p class="footnote" id="fn3"><a href="#fnr3"><sup>3</sup></a> <a href="http://www.cakephp.org">CakePHP</a> &#8211; Rapid [<span class="caps">PHP</span>] Development Framework</p>
+<p class="footnote" id="fn4"><a href="#fnr4"><sup>4</sup></a> <a href="/articles/view/cakephp">CakePHP &#8211; A &#8216;tasty&#8217; solution for <span class="caps">PHP</span> programming</a>, originally published on <a href="http://www.zzine.org/articles/cakephp">zZine Magazine</a></p>
+<p class="footnote" id="fn5"><a href="#fnr5"><sup>5</sup></a> Open Source <a href="http://www.opensource.org/licenses/mit-license.php"><span class="caps">MIT</span> License</a>.</p>
+<p class="footnote" id="fn6"><a href="#fnr6"><sup>6</sup></a> Symfony License:<br />
+<small><br />
+<blockquote><br />
+Copyright &#169; 2004-2006 Fabien Potencier<br />
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &#8220;Software&#8221;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p><span class="caps">THE</span> <span class="caps">SOFTWARE</span> IS <span class="caps">PROVIDED</span> &#8220;AS IS&#8221;, <span class="caps">WITHOUT</span> <span class="caps">WARRANTY</span> OF <span class="caps">ANY</span> <span class="caps">KIND</span>, <span class="caps">EXPRESS</span> OR <span class="caps">IMPLIED</span>, <span class="caps">INCLUDING</span> <span class="caps">BUT</span> <span class="caps">NOT</span> <span class="caps">LIMITED</span> TO <span class="caps">THE</span> <span class="caps">WARRANTIES</span> OF <span class="caps">MERCHANTABILITY</span>, <span class="caps">FITNESS</span> <span class="caps">FOR</span> A <span class="caps">PARTICULAR</span> <span class="caps">PURPOSE</span> <span class="caps">AND</span> <span class="caps">NONINFRINGEMENT</span>. IN NO <span class="caps">EVENT</span> <span class="caps">SHALL</span> <span class="caps">THE</span> <span class="caps">AUTHORS</span> OR <span class="caps">COPYRIGHT</span> <span class="caps">HOLDERS</span> BE <span class="caps">LIABLE</span> <span class="caps">FOR</span> <span class="caps">ANY</span> <span class="caps">CLAIM</span>, <span class="caps">DAMAGES</span> OR <span class="caps">OTHER</span> <span class="caps">LIABILITY</span>, <span class="caps">WHETHER</span> IN AN <span class="caps">ACTION</span> OF <span class="caps">CONTRACT</span>, <span class="caps">TORT</span> OR <span class="caps">OTHERWISE</span>, <span class="caps">ARISING</span> <span class="caps">FROM</span>, <span class="caps">OUT</span> OF OR IN <span class="caps">CONNECTION</span> <span class="caps">WITH</span> <span class="caps">THE</span> <span class="caps">SOFTWARE</span> OR <span class="caps">THE</span> <span class="caps">USE</span> OR <span class="caps">OTHER</span> <span class="caps">DEALINGS</span> IN <span class="caps">THE</span> <span class="caps">SOFTWARE</span>.</p>
+</blockquote>
+<p></small></p>
+<p class="footnote" id="fn7"><a href="#fnr7"><sup>7</sup></a> Read the comments by David Heinemeier Hansson on <a href="http://www.37signals.com/svn/archives/000606.php">Ruby on Rails to Basecamp</a></p>
+<p class="footnote" id="fn8"><a href="#fnr8"><sup>8</sup></a> CodeIgniter <a href="http://www.codeigniter.com/user_guide/license.html">License Agreement</a></p>
+<p class="footnote" id="fn9"><a href="#fnr9"><sup>9</sup></a> Pipeline is licensed under the same terms as the Symfony framework [Copyright &#169; 2006 Picora Pipeworks <span class="caps">LLC</span>].</p>

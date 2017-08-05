@@ -1,0 +1,139 @@
+-----
+title: Tweaking Windows Explorer
+content-type: article
+subtitle: How to make the default Windows file manager suck less
+popular: true
+timestamp: 1183109280
+tags: review|software
+-----
+<p>If you asked me what file manager I used on Windows, up to a month ago I&#8217;d have answered something like: <a href="http://www.primitus.us/a43/">A43</a> or <a href="http://www.cubicreality.com/">CubicExplorer</a>, for sure <em>anything but Windows Explorer</em>.<br />
+Well, it turns out that I had to change my mind after all&#8230;</p>
+<p>There&#8217;s a multitude of &#8220;Explorer Replacements&#8221; which aim to be more feature-rich, more user-friendly, less bloated than Bill&#8217;s favorite, and I indeed tried quite a few of them, mostly the free ones of course.</p>
+<p>The only problem is that whenever I got close to choose &#8220;the one&#8221;, I noticed that there always was one or two features missing somewhere, which were present in another and vice versa. Additionally, to be totally honest, the level of integration with Windows and other applications was never <em>complete</em>.</p>
+<p>These are a few stupid, silly things which tend to be lacking or at least are not 100% functioning &#8212; not in all the file managers I tried, but at least in some:</p>
+<ul>
+	<li>Environment variables integration &#8212; Alternative file managers normally are not able to parse Windows environment variables.</li>
+	<li>Icon overlays &#8212; Some file managers can&#8217;t render Subversion&#8217;s icon overlays.</li>
+	<li>Strange context menus &#8212; Sometimes right-clicking on a file or a directory may not open the standard Explorer context menu</li>
+	<li>Open Folder &#8212; Third-party application allowing you to open a folder, will always open it through Windows Explorer</li>
+	<li>auto complete address bar&#8230;.</li>
+	<li>Special Folders &#8212; Some special folders (e.g. Control Panel) are now accessible using alternative file manager, but others may not (e.g. Network Connections). At any rate, typing &#8220;Control Panel&#8221; will <em>not</em> open the Control Panel in an alternative file manager.</li>
+</ul>
+<p><em>What about trying to &#8220;patch&#8221; Windows Explorer instead of using another program altogether?</em></p>
+<p>I never really thought of that until <a href="http://lifehacker.com/software/featured-windows-download/add-tabs-to-windows-explorer-with-qt-tabbar-260926.php">LifeHacker</a> featured the QT TabBar shell extension by <a href="http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html">Quizo</a>. That was my epiphany: I immediately thought I was going to &#8220;patch&#8221; Windows Explorer using a few really useful (and free, of course) Windows Shell Extensions.</p>
+<p>Here&#8217;s <em>my</em> file manager now:</p>
+<p><img src="/files/tweaked_explorer.jpg" alt="" /></p>
+<p>Yes, it is Windows Explorer, with just a few addons:</p>
+<ul>
+	<li><a href="http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html#qttab">QT TabBar</a> (Requires .<span class="caps">NET</span> framework 2.0)</li>
+	<li><a href="http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html#qtadr">QT Address Bar</a> (Requires .<span class="caps">NET</span> framework 2.0)</li>
+	<li><a href="http://members.at.infoseek.co.jp/Quizo/freeware/indexEn.html#qtt2">QU ToolBar 2</a> (Requires .<span class="caps">NET</span> framework 2.0)</li>
+	<li><a href="http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html"><span class="caps">NTFS</span> Link Shell Extension</a></li>
+	<li><a href="http://www.lopesoft.com/en/fmtools/info.html">FileMenu Tools</a></li>
+</ul>
+<h3>Explorer Tabs</h3>
+<p>For an instant gratification, download and install QT TabBar first, logoff and logon again for the changes to take effect (or install all the other extensions first, otherwise you&#8217;ll have to re-logon after installing nearly each one). As the name implies, this will add tabs to Windows Explorer, just the way you expect them to be: clean, stable and really smart.</p>
+<p><img src="/files/tabs.gif" alt="" /></p>
+<p>After the installation, right-click anywhere in an existing window toolbar and enable the <strong>QT Tab Standard Buttons</strong> and voil&aacute;, a the tab bar will appear. You can click CTRL+N a few times to open new tabs. Take your time to position QT TabBar wherever is more convenient for you.</p>
+<p>Whenever you&#8217;re ready, take your time to configure QT TabBar (right-click on it and choose &#8220;Options&#8221;) General options:</p>
+<p><img src="/files/tabbar_general.gif" alt="" /></p>
+<p>&#8230;and at least the Window options:</p>
+<p><img src="/files/tabbar_window.gif" alt="" /></p>
+<p><strong>How do you create tabs?</strong> There are many different ways to do it, choose whatever is best for you:</p>
+<ul>
+	<li>CTRL+N keyboard shortcut</li>
+	<li>Drag and drop a folder or a shortcut on QT TabBar &#8211; Even from other applications!</li>
+	<li>Right click on an tab and choose &#8220;Clone this&#8221;</li>
+</ul>
+<p>Other features? Sure, there&#8217;s plenty more, e.g.:</p>
+<ul>
+	<li><strong>Single Instance</strong> &#8212; By enabling the appropriate option, you&#8217;ll only have a single instance of Windows explorer, everything will be opened in new tabs.  A must.</li>
+	<li><strong>Rearrange tabs</strong> &#8212; Tabs can be rearranged by dragging and dropping.</li>
+	<li><strong>Lock/Unlock</strong> &#8212; Lock a tab (right-click &gt; Lock) to avoid closing it accidentally.</li>
+	<li><strong>Folder Memo</strong> &#8212; It is possible to set a &#8220;folder memo&#8221; for a specific folder, which can be visualized and edited afterwards (right-click &gt; Memo for this folder).</li>
+	<li><strong>Folder Password</strong> &#8212; Password-protect a particular tab (right-click &gt; Set Password&#8230;).</li>
+	<li><strong>Picture Preview</strong> &#8212; Preview image files simply by hovering on them with the mouse.</li>
+	<li><strong>Groups</strong> &#8212; It is possible to group more tabs together by adding them to groups (right-click &gt; Add to Group &gt; [Group Name]) which can be configured via the QT TabBar option dialog.</li>
+	<li><strong>Keyboard Shortcuts</strong> &#8212; Open the folder in which you unzipped QT TabBar and run QTShortcutKeyEditor.exe and enable as many as you like (they are too many to list hered), the possibilities are endless.</li>
+</ul>
+<h3>Customizing Toolbars</h3>
+<p>Windows Explorer allows users to choose the buttons which will be displayed in the <strong>Standar Buttons</strong> toolbar. To do so, proceed as follows:</p>
+<ol>
+	<li>If necessary, enable the Standard Buttons toolbar by selecting <em>View &gt; Toolbars &gt; Standard Buttons</em> from the Explorer menu.</li>
+	<li>Select <em>View &gt; Toolbars &gt; Customize</em> from the Explorer menu.</li>
+	<li>Choose the buttons you want to display.</li>
+</ol>
+<p>I picked the following:</p>
+<p><img src="/files/standard_explorer_buttons.gif" alt="" /></p>
+<p>i.e.: Up , Refresh, Search, Folders, History, Favorites, Undo, Delete, Cut, Copy, Paste, Properties, View, Map Drive and Disconnect. It&#8217;s really up to you what you choose really.<br />
+I placed this toolbar right under the menu, on the top-left side.</p>
+<p style="float:right;"><img src="/files/tabbar_buttons.gif" alt="" /></p>
+<p>Right next to it I placed some of the buttons available for <strong>QT TabBar</strong>:</p>
+<ul>
+	<li>Groups &#8212; Load an existing tab group (configurable in the options)</li>
+	<li>Recently Closed &#8212; open recently-closed tabs</li>
+	<li>Applications &#8212; run custom applications (configurable in the options)</li>
+	<li>Close &#8212; Close current tab</li>
+	<li>Lock &#8212; Lock current tab</li>
+	<li>Topmost &#8212; Force explorer to stay on top of other windows</li>
+</ul>
+<p>Then I decided to enable the <strong>Links</strong> Explorer toolbar, which can be configured to display bookarks and shortcuts placed in the Favorites &gt; Links folder. As shortcuts, I dragged each drive available on my system and voilà: poor man&#8217;s Drive Toolbar! Unfortunately, unlike in the <em>proper</em> drive toolbars offered by alternative file managers, all drive shortcuts will remain there (with a red question mark) even when the drive is not connected to the system. I can live with that.</p>
+<p style="float:right;"><img src="/files/toolbar2.gif" alt="" /></p>
+<p>Right to the address bar (we&#8217;re going to substitute it in the next section though), I decided to place <strong>QT ToolBar 2</strong>, which is available &#8211; hear, hear &#8211; after installing the QT ToolVar 2 extension.<br />
+At first it looks like a search filter toolbar, and yes, it can be used for this <em>as well</em>. Just type .jpg in the search box and it will show only the <span class="caps">JPG</span> files in the current folder. Easy enough.</p>
+<p>Of course there&#8217;s (much) more to it. A <em>search helper</em> is provided (click the little arrow pointing downwards at the end of the toolbar and select Search Helper) to perform more complex searches:</p>
+<p><img src="/files/toolbar2_search.gif" alt="" /></p>
+<p>Additionally, ToolBar allows you to display a handy copy file name/path button and up to two buttons to access two applications you use frequently. To configure them select <em>Option</em> from the dropdown menu accessible at the end of the toolbar, and configure your applications like this:</p>
+<p><img src="/files/toolbar2_apps.gif" alt="" /></p>
+<p>I choose the Command Prompt and the A43 file manager. The cool thing is that you can enable the &#8220;arguments for user application&#8221; and the the file path (if a file is selected) or the folder path will be passed automatically to the application, so my A43 file manage will open in the current folder. If you want to have more than two custom applications at your fingertips, all you have to do is to configure as many as you like in the Options tab of QT TabBar, and they&#8217;ll become available via the Applications button.</p>
+<p>Two little utilities can also be used through QT TabBar 2, <em>MD5</em>, which instantly calculates the MD5 checksum of the selected file:</p>
+<p><img src="/files/toolbar2_md5.gif" alt="" /></p>
+<p>and <em>Folder Analyze</em>, which finds out the size of the current folder and how it is distributed across folders and files. A bit like a little <a href="windirstat.info">WinDirStat</a> but for the current folder only. It looks like this:</p>
+<p><img src="/files/toolbar2_folder.gif" alt="" /></p>
+<h3>Navigation Improvements</h3>
+<p>Is there any way to make navigation through folder easier in Windows Explorer? Yep, more than one:</p>
+<h4>Breadcrumbs</h4>
+<p>Vista offers a <a href="http://www.zdnet.com.au/insight/software/soa/Investigating-Windows-Vista-s-breadcrumb-bar-/0,139023769,139218189,00.htm">Breadcrumb Bar</a>, and XP doesn&#8217;t. Quizo fixed it of course, with his <strong>QT Address Bar</strong>, which brings breadcrumbs navigation to Windows XP. Use it as an Explorer address bar replacement. By default breadcrumbs are displayed:</p>
+<p><img src="/files/address-bar1.gif" alt="" /></p>
+<p>&#8230;allowing you to navigate through your folder three within submenus without changing the current directory. Clicking it toggles the standard path:</p>
+<p><img src="/files/address-bar2.gif" alt="" /></p>
+<p>A nice thing to have.</p>
+<h4>Take back your Favorites!</h4>
+<p>I don&#8217;t use IE, I use Firefox, Opera, even Safari sometimes, but not IE unless I&#8217;m forced to do so. Hence I <em>hardly ever</em> used Internet Explorer&#8217;s Favorites, an I almost forgot about it, until I decided to begin tweaking Windows Explorer, and I (re-)discovered that Favorites are shared between the two&#8230; What&#8217;s that got to do with anything? Well, you can simply put Favorites to good use and use them to store <em>only</em> Windows Explorer folders.</p>
+<p>Simple and effective: click the Favorites button in the toolbar, they&#8217;ll be loaded in a sidebar on the left, then simply drag a folder to QT TabBar and you&#8217;ll get there.</p>
+<h4>Wormholes, anyone?</h4>
+<p>Finally, <strong><span class="caps">NTFS</span> Link Shell Extension</strong> does something totally different altogether: it can be used to create hardlinks (a bit like Unix symlinks, but for <span class="caps">NTFS</span> drives only) junctions and symbolic links (Vista only). For an explanation of what each object is, refer to the explanations provided on the <a href="http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html#hardlinks">shell extension homepage</a>. For our purposes, we&#8217;ll just use junctions now:</p>
+<p>bq.&#8220;[&#8230;] Junctions  are wormholes in the tree structure of a directed graph. By browsing a Junction a maybe far distant location in the file system is made available. Modifying, Creating, Renaming and Deleting files within a junction tree structure operates at the junction target, i.e. if you delete a file in a Junction it is deleted at the original location. [&#8230;]&#8221;</p>
+<p>Consider the following example.</p>
+<p style="float:right;"><img src="/files/junction.gif" alt="" /></p>
+<p>1) Create a directory called &#8220;Gateway&#8221; in C:\. <br />
+2) With <span class="caps">NTFS</span> Link Shell Extension installed, right-click a directory &#8220;far, far away&#8221;, on any of your <span class="caps">NTFS</span> drives, for example D:\My\Very\Long\Path\MyDirectory, and select &#8220;Pick Link Source&#8221;.<br />
+3) Go back in your Gateway folder, right-click and select &#8220;Drop As &gt; Junction&#8221;. A folder with a small chain overlay will be created.<br />
+4) You will now be able to access all the contents in D:\My\Very\Long\Path\MyDirectory directly from C:\Gateway.</p>
+<p><strong>Important</strong> &#8211; No, creating a shortcut is <em>not</em> the same thing. the path C:\Gateway\MyDirectory is an actual <em>valid path</em>, i.e. you can use it to attach files to emails, and going up one level in C:\Gateway\MyDirectory will take you simply to C:\Gateway\, <em>not</em> to D:\My\Very\Long\Path\.</p>
+<p>Both at home and at work, I use a &#8220;Gateway&#8221; folder containing junctions leading to commonly-accessed directories, and this speeds up navigations a lot. Just remember to delete junctions &#8220;properly&#8221; (right-click &gt; Delete Junction), not like an ordinary directory&#8230; ;-)</p>
+<h3>De-cluttering the Context Menus</h3>
+<p>Right now our Windows Explorer interface has been streamlined, folder navigation is easier, but there&#8217;s still room for improvement. Where? Well, in the contex menus of course. <br />
+I spent ages trying to figure out an easy way to remove unnecessary or unwanted entries from the menus which appears on a right-click. Yes, they can be removed by fiddling with the Windows Registry, but that&#8217;s not exactly user-friendly, is it? Now there&#8217;s an easy alternative: <strong>FileMenu Tools</strong>.</p>
+<p>This nifty little utility allows you to remove rubbish from your context menus and add new entries as well. Entries are grouped by file type and can be enabled or disabled with a single click. Unfortunately I was not able to disabe some of them, probably due to restriction on my computer at work.</p>
+<p style="float:right;"><img src="/files/filemenu_tools.gif" alt="" /></p>
+<p>Once the rubbish is gone, perhaps you can even evaluate the possibility to add some more. I chose to enable just <em>Attributes</em> and <em>Advanced Renamer</em>, but there are many more predefined commands (each with its own pretty icon) you can choose from:</p>
+<ul>
+	<li>Synchronize Folders</li>
+	<li>Extended Delete</li>
+	<li>Find And Replace</li>
+	<li>Delete Locked File</li>
+	<li>Delete and no move to Recycle Bin</li>
+	<li>Change Icon</li>
+	<li>Run with Arguments</li>
+	<li>Command Line From Here</li>
+	<li>Split/Join File</li>
+	<li>Copy/Move to&#8230;</li>
+	<li>Copy Name/PAth/Content</li>
+	<li>Change Time</li>
+	<li>Register/Unregister <span class="caps">DLL</span></li>
+	<li>Create new folder</li>
+</ul>
+<p>Something missing? Well, you can always create your own entry, if you like!</p>
+<h3>Conclusion</h3>
+<p>I think that&#8217;s enough for you to give Windows Explorer another shot &#8212; or at least it was enough for me anyway. Be aware that there are and hopefully there will be more Windows shell extensions able to do neat things: <a href="http://www.7-zip.org/">7-Zip</a>, <a href="http://notepad-plus.sourceforge.net/uk/site.htm">Notepad++</a> and <a href="http://cream.sourceforge.net/">Cream</a> all add very useful context menus, and don&#8217;t forget <a href="http://tortoisesvn.tigris.org/">TortoiseSVN</a>, if you are a Windows-based developers (yes, they do exist).</p>

@@ -1,0 +1,107 @@
+-----
+title: Glyph 0.5.0 Released
+content-type: article
+subtitle: Featuring Calibre integration, macro composition, Turing-completeness, and more
+timestamp: 1314559080
+tags: glyph|ruby|opensource
+-----
+
+		<section class="section">
+<p>Too much time passed since the last Glyph release. Way too much. Finally I found the time and will to tidy up the last few remaining bugs, update the docs, and release it!</p>
+<p>This new release was mainly focused on extending the features of Glyph as a <em>language</em>. Besides a few improvements that make writing Glyph code easier and more readable (e.g. macro composition), Glyph is now Turing-complete. It supports iterations, recursion, variable assignments, basic arithmetics&#8230; you can even write a program to compute the factorial of an integer, if you wanted to.</p>
+<p>Additionally, it also features enhanced content reuse through fragments and output-independent macros, and a few bugfixes.</p>
+
+<section class="section">
+<header><h1 id="h_1" class="toc">Calibre Integration</h1></header>
+<p><a href="https://github.com/tammycravit">Tammy Cravit</a> proposed (and more or less implemented) an interesting new feature: integrate <a href="http://calibre-ebook.com/">Calibre</a> to generate ebooks in <span class="caps">EPUB</span> and <span class="caps">MOBI</span> format from Glyph&#8217;s native standalone <span class="caps">HTML</span> output format.</p>
+<p>Although the support is still somewhat rough, you can, as a matter of fact, generate ebooks with Glyph, using Calibre.</p>
+
+</section>
+<section class="section">
+<header><h1 id="h_2" class="toc">Macro Composition</h1></header>
+<p>This release features an update at syntax-level: the possibility of &#8220;composing&#8221; macros, thereby eliminating nesting provided that containers take only one parameter and no attributes. What? This:</p>
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  not[output?[pdf]]|
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  ...
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
+</div>
+
+
+<p>Can be written like this:</p>
+
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  not/output?[pdf]|
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  ...
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
+</div>
+
+
+<p>In this case, the <code>not</code> macro was composed with the <code>output?</code> macro, thus removing one level of nesting.</p>
+<p>Additionally, I used this features to create an <code>xml</code> macro dispatcher that can be used to render raw <span class="caps">XML</span> tags, and an <code>s</code> macro dispatcher that basically is able to call nearly all the instance methods of the Ruby String class. So you can write things like <code>s/sub[This feature makes my life easier|/my/|your]</code> and similar.</p>
+
+</section>
+<section class="section">
+<header><h1 id="h_3" class="toc">Turing-Completeness</h1></header>
+<p>As of this version, Glyph can be considered <em>Turing-complete</em>, as it satisfies the following <a href="http://c2.com/cgi/wiki?LanguageRequirementsForTuringCompleteness">requirements for Turing-completeness</a>:</p>
+<ul>
+	<li>A conditional construct, implemented via the <code>condition</code> macro.</li>
+	<li>Variable assignment, by setting the value of snippets using the <code>snippet:</code> macro and of attributes using the <code>attribute:</code> macro.</li>
+	<li>(infinite) iteration implemented through the new <code>while</code> macro or recursion, which is possible thanks to the new <code>define:</code> macro.</li>
+	<li>A memory model which emulates an infinite store: there are no enforced limits on attribute/snippets allocations and number of algorithms or parameters.</li>
+</ul>
+<p>Plus, Glyph now understand basic integer arithmetic:</p>
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>def:[factorial|
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  ?[
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>    eq[{{0}}|0]|1|
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>    multiply[
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>      {{0}} | factorial[subtract[{{0}}|1]]
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>    ]
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  ]
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>]</pre></div>
+</div>
+
+  <p>Not that you <em>need</em> to be able to calculate factorials in your documents, but know that now you <em>can</em>. An you can also define lexically scoped variables, err&#8230; <em>attributes</em>, like this:</p>
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @:[a|bits]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @:[b|bobs]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  section[
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>    @title[Something more about attributes]
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>Attributes are like lexically scoped variables. You can use them to store @[a] and @[b].
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>  ]
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>]</pre></div>
+</div>
+
+  <p>Handy enough.</p>
+
+</section>
+<section class="section">
+<header><h1 id="h_4" class="toc">Embeddable fragments</h1></header>
+<p>Too lazy to create snippets? Feel the urge to re-use something you already wrote somewhere? Use a <em>fragment</em> and embed it, as follows:</p>
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Snippets and fragments ##[good_way|are a good way to reuse] small chunks of content, 
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>while the include and load macros <span class="error">&lt;</span>=[good_way] entire files.</pre></div>
+</div>
+
+  <p>&#8230;And you can also use a new <code>load</code> macro, to embed entire files without performing any evaluation (like <code>include</code> does).</p>
+
+</section>
+<section class="section">
+<header><h1 id="h_5" class="toc">Incompatibilities with previous versions</h1></header>
+<p>To sum up:</p>
+<ul>
+	<li><code>snippets.yml</code> is no more, define all your snippets inside your document instead.</li>
+	<li>New &#8220;invisible space separator&#8221;: <code>\/</code> instead of <code>\.</code>. Because it&#8217;s slightly prettier, nothing else.</li>
+	<li>The <code>rewrite:</code> macro has been replaced by the <code>define:</code> macro, which also allows recursion, so be careful!</li>
+	<li>If you want to render raw <span class="caps">XML</span> tags, use <code>xml/tag_name</code> instead of <code>=tag_name</code>.</li>
+	<li>No more <code>match</code> macro, use <code>s/match</code> instead.</li>
+</ul>
+<p>For the full list of the issues fixed in this release, see the <a href="http://www.h3rald.com/glyph/book/changelog.html">Changelog</a>.</p>
+<p>Hope you&#8217;ll enjoy this new release of Glyph. If you want to contribute, go ahead and <a href="https://github.com/h3rald/glyph">fork the repo</a>!</p>
+
+</section>
+
+</section>

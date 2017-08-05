@@ -1,21 +1,40 @@
 'hastysite import
 
+; Copy PDF files saved in asset folder
+; to the corresponding article output folder.
 (
   (dict) expect -> =asset
   asset /id :id
   id "^pdf\/(.+)$" search 1 get :name
-  "output/articles/$1" (name) => % :dir
-  asset "assets/$1" ((asset /path)) => % :src
-  asset "output/articles/$1/$1.pdf" (name) => % :dest
-  " - Copying: $1 -> $2" (src dest) => % notice
-  src dest cp
+  asset "output/articles/$1/$1" (name) => % %id #asset
+  asset output-cp
 ) :copy-pdf-article-asset
 
+(
+  (dict) expect -> =content
+) :process-md-content
+
+
+(
+  (dict) expect -> =content
+) :process-html-content
+
+;;;; MAIN ;;;;
+
+contents (
+  dup
+  (
+    ((/ext ".md" ==) (process-md-content))
+    ((/ext ".html" ==) (process-html-content))
+  ) case
+) foreach
+
+; Process all assets.
 assets (
   dup
   (
     ((/id "^pdf\/" match) (copy-pdf-article-asset))
     ;((/ext ".css" match) (process-css-asset))
-    ((true) (copy2output))
+    ((true) (output-cp))
   ) case
 ) foreach

@@ -1,0 +1,300 @@
+-----
+title: Take back your site, with nanoc!
+content-type: article
+subtitle: How I turned H3RALD.com into a 100% static, hassle-free web site
+popular: true
+timestamp: 1253014371
+tags: website|ruby|programming|writing
+-----
+<h3>Why I don&#8217;t need a blog platform</h3>
+<p>There&#8217;s nothing inherently wrong with blog platforms like Wordpress: they allow <em>anyone</em> to publish content on the web using a user-friendly administration area. They were built with one thing in mind: make publishing content on the web something as simple as possible, even for people who don&#8217;t know anything about <span class="caps">HTML</span>, let alone server-side scripting.</p>
+<p>What about people who <em>do</em> know about web development though? Do they still need a blog platform? Depends. If you are comfortable with editing files using a text editor, if you enjoy using the command-line on a daily basis, if you like programming and <em>hacking</em> a little bit, if you don&#8217;t really care about fancy and user-friendly administration backends&#8230; <em>then you probably don&#8217;t</em>.</p>
+<p>All you need is a system to transform a bunch of source files into a web site. The good news is that such system exists &ndash; and you&#8217;re also spoiled for choices!</p>
+<h3>Introducing site compilers</h3>
+<p>The first <em>site compiler</em> I discovered was <a href="http://webby.rubyforge.org/">Webby</a>:</p>
+<blockquote>
+<p>[&#8230;] Webby works by combining the contents of a page with a layout to produce <span class="caps">HTML</span>. The layout contains everything common to all the pages &mdash; <span class="caps">HTML</span> headers, navigation menu, footer, etc. &mdash; and the page contains just the information for that page. You can use your favorite markup language to write your pages; Webby supports quite a few.</p>
+</blockquote>
+<p>There are quite a few applications like Webby, such as:</p>
+<ul>
+	<li><a href="http://nanoc.stoneship.org/">nanoc</a></li>
+	<li><a href="http://snk.tuxfamily.org/lib/rassmalog/doc/guide.html">Rassmalog</a></li>
+	<li><a href="http://www.jekyllrb.com/">Jeckyll</a></li>
+	<li><a href="http://webgen.rubyforge.org/">WebGen</a></li>
+	<li><a href="http://rog.rubyforge.org/">Rog</a></li>
+	<li><a href="http://rote.rubyforge.org/">Rote</a></li>
+	<li><a href="http://hobix.com/">Hobix</a></li>
+	<li><a href="http://rakeweb.rubyforge.org/wiki/wiki.pl">RakeWeb</a></li>
+	<li><a href="http://www.apeth.com/RubyFrontierDocs/default.html">RubyFrontier</a></li>
+	<li><a href="http://staticmatic.rubyforge.org/">StaticMatic</a></li>
+	<li><a href="http://staticweb.rubyforge.org/">StaticWeb</a></li>
+	<li><a href="http://www.zenspider.com/ZSS/Products/ZenWeb/">ZenWeb</a></li>
+	<li><a href="http://yurtcms.roberthahn.ca/">YurtCMS</a></li>
+	<li><a href="http://nanoblogger.sourceforge.net/">NanoBlogger</a></li>
+</ul>
+<p>There are probably even more, with different features, but they all try to solve the same problem: provide a way to generate static web sites in an automated way.</p>
+<p>I spent some time reading about each one of them, <a href="http://github.com/h3rald/h3rald/issues/closed#issue/1">evaluating the pros and cons</a> and in the end I decided to go for <a href="http://nanoc.stoneship.org/">nanoc</a>, simply because it was the only one that seemed to fit all my needs.</p>
+<h3>A quick overview of nanoc</h3>
+<p>nanoc is a nifty tool written in Ruby suitable for <em>[&#8230;] building small to medium-sized websites</em>. In other words, anything which doesn&#8217;t involve some fancy user interaction. For what concerns blogs, the only user interaction is <em>comments</em> &ndash; but that&#8217;s fine, because there&#8217;s more than one web service for that, such as <a href="http://disqus.com/">Disqus</a> or <a href="http://intensedebate.com/">IntenseDebate</a>.</p>
+<h4>Some details on the project</h4>
+<p>Compared to the alternatives, nanoc is one of the most mature and most maintained, having hit just a few weeks ago its 3.0 release. Its creator, Denis Defreyne, uses it for his own <a href="http://stoneship.org/">web site</a> and is involved with the project on a daily basis, both coding and offering support to nanoc users like myself who regularly ask questions on the <a href="http://groups.google.com/group/nanoc">nanoc user group</a>.</p>
+<p>Denis also seems very concerned about keeping documentation up-to-date &ndash; something that really impressed me from a technical writer&#8217;s point of view. The <a href="http://nanoc.stoneship.org/tutorial/">tutorial</a> he put together will get you started in no time, and the <a href="http://nanoc.stoneship.org/manual/">manual</a> will explain everything else you may possibly want to know. When release 3.0 came out he even put together a <a href="http://nanoc.stoneship.org/migrating/">migration guide</a>. If this is still not enough and you don&#8217;t mind spending some time extending the system, nanoc&#8217;s <a href="http://nanoc.stoneship.org/doc/3.0.0/">RDoc documentation</a> is very comprehensive compared to other Ruby projects.</p>
+<h4>Sites, Items and data sources</h4>
+<p style="float:right;"><img src="/img/pictures/nanoc-structure.png" alt="" /></p>
+<p>nanoc ships with a really neat command line tool that can do most of the work for you. <code>Nanoc3 create_site h3rald</code> will create a new web site in a folder called h3rald. The contents of this folder are laid out according to a particular logic (<em>convention over configuration</em>, remember?) So:</p>
+<ul>
+	<li><strong>content</strong> &ndash; your articles, pages, stylesheets, images, &#8230;all the site content and assets.</li>
+	<li><strong>layouts</strong> &ndash; the site layouts (and partial layouts)</li>
+	<li><strong>lib</strong> &ndash; place your custom ruby code and vendor libraries here</li>
+	<li><strong>output</strong> &ndash; your &#8220;compiled&#8221; site, ready to be deployed</li>
+	<li><strong>config.yaml</strong> &ndash; your site&#8217;s configuration file. The only one (and it&#8217;s just a few lines)</li>
+	<li><strong>Rakefile</strong> &ndash; place any custom Rake task here</li>
+	<li><strong>Rules</strong> &ndash; defines the rules for compilation, layout and routing</li>
+</ul>
+<p>Here&#8217;s the default <code>config.yaml</code> file:</p>
+<div class='yaml'><pre><code>--- 
+data_sources: 
+- items_root: /
+  layouts_root: /
+  type: filesystem_compact
+  output_dir: output</code></pre></div><p>A <em>data source</em> in nanoc defines where data is retrieved from to create the web site. By default, the <a href="http://nanoc.stoneship.org/doc/3.0.0/Nanoc3/DataSources/FilesystemCompact.html">filesystem_compact</a> data source requires that you create two files in the /content folder for each article or page of your web page:</p>
+<ul>
+	<li>One containing the actual content of the page</li>
+	<li>Another for the page&#8217;s arbitrary metadata</li>
+</ul>
+<p>By personal preference, I chose the <a href="http://nanoc.stoneship.org/doc/3.0/Nanoc3/DataSources/FilesystemCombined.html">filesystem_combined</a> data source, which allows you to combine the content and the metadata of a page in a single file.</p>
+<p>The source code for this very article, for example, starts like this:</p>
+<div class='text'><pre><code>-----
+type: article
+tags:
+- website
+- ruby
+- programming
+- writing
+date: 2009-09-15 13:32:51.049000 +02:00
+permalink: take-back-your-site-with-nanoc
+title: "Take back your site, with nanoc!"
+toc: true
+-----
+Back in 2004, when I bought the h3rald.com domain, this site was static. At the time I hardly 
+knew HTML and CSS, nevermind server-side languages, so I remember creating a _pseudo-template_ for
+ the web site layout and using it whenever I wanted to create a new page, to preserve the overall look-and-feel. 
+This was a crude and inefficient strategy, of course: whenever I changed the layout I had to replicate the change
+ in all the pages of the site &ndash; the whole eight of them.</code></pre></div><p>At run time, the content goes through a Textile filter and the metadata is used in layouts, to generate tag links automatically, for example.</p>
+<h4>Layouts, filters, and helpers</h4>
+<p>Layouts in nanoc are similar to layouts and views in Rails, but much simpler. The same applies to helpers. Here&#8217;s a snippet from my <a href="http://github.com/h3rald/h3rald/tree/master/layouts/default.erb">default layout</a>:</p>
+<div class='text'><pre><code>&lt;div id="container"&gt;
+          &lt;!-- CONTENT START --&gt;
+          &lt;div id="content" class="clearfix<%= (@item[:permalink] == 'home') ? ' home' : ' standard' %>"&gt;
+            &lt;h2&gt;<%= @item[:title] %>&lt;/h2&gt;
+            <%   case @item[:type]
+                when 'article' then%>
+                &lt;div id="content-header"&gt;
+                  <%= render 'article_meta', :article =&gt; @item %>
+                &lt;/div&gt;
+              <% end %>
+              &lt;hr /&gt;
+              &lt;div id="content-body"&gt;
+                <%= yield %>
+              &lt;/div&gt;
+              &lt;div id="content-footer"&gt;
+                &lt;div class="share"&gt;
+                  &lt;script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=6e34d60c-b14e-4c19-9b2f-7c35a9f0ab09&amp;type=website&amp;linkfg=%23a4282d"&gt;&lt;/script&gt;
+                  <% if @item[:feed] then %>
+                  &lt;a href="<% @item[:feed_url] || @item[:feed]+"rss/" %>" type="application/rss+xml" rel="alternate"&gt;&lt;img src="/images/theme/feed-icon-14x14.png" alt="#"/&gt;H3RALD - <%= @item[:feed_title]%>&lt;/a&gt;
+                  <% end %>
+                &lt;/div&gt;
+                <%= render 'article_buttons' if @item[:type] == 'article' %>
+              &lt;/div&gt;
+            &lt;/div&gt;</code></pre></div><p>This source code snippet shows quite a few features of nanoc&#8217;s layouts:</p>
+<ul>
+	<li>You can access the metadata of the page which is being rendered using the <code>@item</code>, so <code>@item[:title]</code> returns the page&#8217;s title, for example.</li>
+	<li>Layouts can be nested, and behave like Rails&#8217;s partials. The <code>render</code> takes a string parameter (the name of the layout to render) and an optional hash parameter to pass variables to the layout.</li>
+	<li>The <code>yield</code> method is used to include the content of a page.</li>
+	<li>Layouts support any kind of filter, like <span class="caps">ERB</span> for example. Go crazy.</li>
+</ul>
+<p>Helpers can be used in layouts to perform common tasks, like creating links, feeds, navigation elements and so on. Check the <a href="http://nanoc.stoneship.org/doc/3.0.0/">source code docs</a> for more info, and of course feel free to create your own as you see fit.</p>
+<p>Finally, filters are used to filter content markup. nanoc ships with <a href="http://nanoc.stoneship.org/manual/#list-of-built-in-filters">almost everything you need</a>, from Textile to Haml to RDoc, but nobody forbids you to create your own, and it&#8217;s dead easy.</p>
+<h4>Rules and tasks</h4>
+<p>While tasks (as in Rake tasks) do not constitute a huge part of nanoc (but as usual, you may need to create your own to perform custom operations), Rules became, as of version 3, one of the key concepts to grasp in order to make everything work. Rules are stored in the <code>Rules</code> file of your nanoc site, they can be used to:</p>
+<ul>
+	<li>Define routes, i.e. where pages are deployed in the output folder.</li>
+	<li>Define how pages are compiled, which filters to apply to a particular set of pages, which layouts to use, etc.</li>
+	<li>Define how layout are handled, which filters to apply to a particular layout, etc.</li>
+</ul>
+<p>You can find more information in the <a href="http://nanoc.stoneship.org/manual/#rules">manual</a>, along with other important information, but for now, let&#8217;s say you should be familiar with <em>most</em> of nanoc&#8217;s jargon and how it works. Let&#8217;s see what you can do with it, in practice.</p>
+<h3>Migrating from your blog platform</h3>
+<p>As of version 7, h3rald.com has been powered by the <a href="http://www.typosphere.org">Typo</a> blog platform. If you are not familiar with it, let&#8217;s just say it&#8217;s a sort of Wordpress built on top of Rails: database backend, pretty admin front-end, tags, comments, and all sort of things a blog may need. While Typo is pleasant enough to use, it has all the inherent disadvantages of any other similar platform:</p>
+<ul>
+	<li>It relies on a database</li>
+	<li>It relies on server-side scripting to render pages</li>
+	<li>It uses a complex caching mechanism to produce, ultimately, semi-static pages</li>
+	<li>It may be subject to exploits, attacks, high server loads, and similar</li>
+	<li>You can&#8217;t really customize it beyond a certain point</li>
+	<li>You have to upgrade your backend frequently, and often is not as painless as you may expect</li>
+	<li>You can&#8217;t use versioning tools like git for your content, as it&#8217;s stored in a database</li>
+</ul>
+<p>I&#8217;m not claiming that nanoc is blogging&#8217;s silver bullet (it was not created for that), but for sure:</p>
+<ul>
+	<li>It <em>does not</em> rely on a database</li>
+	<li>It <em>does not</em> rely on server-side scripting to render pages (not in real-time, anyway)</li>
+	<li>It <em>does not</em> need a complex caching mechanism simply because it produces static pages</li>
+	<li>It is definitely less prone to nasty things</li>
+	<li>It&#8217;s extremely flexible and hackable with very little effort</li>
+	<li>You don&#8217;t have to upgrade all the time, but it is <em>really</em> painless if you decide to</li>
+	<li>You can use git and similar: your content is in plain old text files</li>
+</ul>
+<p>Rants are beside the point, suffice to say I recently convinced myself that switching from Typo to nanoc was a <em>good thing</em>, so let&#8217;s see how it worked out.</p>
+<h4>Posts, pages and comments</h4>
+<p>Out of Typo&#8217;s MySQL database, I just wanted to get the following data:</p>
+<ul>
+	<li>Pages and posts</li>
+	<li>Tags</li>
+	<li>Comments</li>
+</ul>
+<p>Following the approach used by <a href="http://github.com/mojombo/jekyll">Jekyll</a>, I decided to use the simple and powerful <a href="http://sequel.rubyforge.org/">Sequel</a> gem. I&#8217;m sorry to disappoint you, but the whole migration process can be summarize with the following Rake task:</p>
+<div class='ruby'><pre><code>task :migrate, :db, :usr, :pwd, :host do |t, args|
+    raise RuntimeError, "Please provide :db, :usr, :pass" unless args[:db] && args[:usr] && args[:pwd]
+    db = Sequel.mysql args[:db], :user =&gt; args[:usr], :password =&gt; args[:pwd], :host =&gt; args[:host] || 'localhost'
+    # Remove all existing pages!
+    dir = Pathname.new(Dir.pwd/'content')
+    dir.rmtree if dir.exist?
+    dir.mkpath
+    # Prepare page data
+    dataset = db[:contents].where("state = 'published' || type = 'Page'")
+    total = dataset.count 
+    c = 1
+    total_tags = []
+    dataset.each do |a|
+      puts "Migrating [#{c}/#{total}]: '#{a[:title]}'..."
+      meta = {}
+      meta['tags'] = get_tags a[:keywords]
+      meta['comments'] = get_comments db, a[:id]
+      meta['permalink'] = a[:permalink] || a[:name]
+      meta['title'] = a[:title]
+      meta['type'] = a[:type].downcase
+      meta['date'] = a[:published_at]
+      meta['toc'] = true
+      meta['filters_pre'], extension = get_filter db, a[:text_filter_id]
+      contents = convert_code_blocks meta, a[:body]+a[:extended].to_s
+      write_page meta, contents, extension
+      c = c+1
+    end
+  end</code></pre></div><p>That&#8217;s it. Well, almost: you can find the <code>get_comments</code>, <code>get_tags</code> and <code>get_filter</code> methods in a separate <a href="http://github.com/h3rald/h3rald/tree/master/lib/utils.rb">utility file</a>. Nothing special really, just a few convenience methods wrapping queries or simply processing data. Note how all information, including tags and legacy comments, is saved in each page&#8217;s metadata. The <code>write_page</code> method simply creates a file in the <code>/contents</code> folder.</p>
+<h4>Filters and highlighters</h4>
+<p>On my old site, I used mainly Textile and Markdown to write posts. However, some of my really old articles used BBCode, whose corresponding filter is not available in nanoc. No worries, I soon found out that creating a new nanoc filter came down to this:</p>
+<div class='ruby'><pre><code>require 'rubygems'
+require 'bb-ruby'
+
+class BbcodeFilter &lt; Nanoc3::Filter
+  identifier :bbcode
+
+  def run(content, args)
+    content.bbcode_to_html
+  end
+
+end</code></pre></div><p>Yes, that&#8217;s it. Granted, the <code>bb-ruby</code> gem does all the work, but notice how easy it is to just plug in new Ruby code into nanoc&#8217;s architecture!</p>
+<p>The next big challange was code highlighting. After a quick research, I found at least a half dozen of possible solutions to highlight source code. Some were javascript based, others were based on a server-side language like <span class="caps">PHP</span>, Ruby or Python. Again, I looked at Jekyll for inspiration and discovered they integrated the <a href="http://www.pygments.org">Pygments</a> <em>Python</em> library. Why use a Python library for code highlighting in a Ruby-based project? Because there&#8217;s nothing to stop you (if you can run Python on your server, that is), because it looks very neat and because it supports a lot of different programming languages.</p>
+<p>Lazy as I am, I more or less dropped <a href="http://github.com/h3rald/h3rald/blob/master/lib/albino.rb">Chris Wanstrath&#8217;s Ruby wrapper</a> into my <code>/lib</code> folder (I just used Open3 instead of Open4 for Windows compatibility), and monkey-patched nanoc&#8217;s filtering helper as follows:</p>
+<div class='ruby'><pre><code>module Nanoc3::Helpers::Filtering
+
+  def highlight(syntax, &block)
+    # Seamlessly ripped off from the filter method...
+    # Capture block
+    data = capture(&block)
+    # Reconvert 
+    data.gsub! /<%/, ''
+    # Filter captured data
+    filtered_data = "\n&lt;notextile&gt;"+Albino.colorize(data, syntax)+"&lt;/notextile&gt;\n" rescue data 
+    # Append filtered data to buffer
+    buffer = eval('_erbout', block.binding)
+    buffer &lt;&lt; filtered_data
+  end
+
+end
+
+include Nanoc3::Helpers::Filtering</code></pre></div><p>There you go, another thing sorted.</p>
+<h4>Tags and Feeds</h4>
+<p>Adding tagging support was a tiny bit more tricky. nanoc supports content tagging out-of-the-box though metadata and a simple helper, but I wanted to create tag pages (with feeds). Nothing too difficult though, it all came down to a simple Rake task:</p>
+<div class='ruby'><pre><code>task :tags do
+    site = Nanoc3::Site.new('.')
+    site.load_data
+    dir = Pathname(Dir.pwd)/'content/tags'
+    dir.rmtree if dir.exist?
+    dir.mkpath
+    tags = {}
+    # Collect tag and page data
+    site.items.each do |p|
+      next unless p.attributes[:tags]
+      p.attributes[:tags].each do |t|
+        if tags[t]
+          tags[t] = tags[t]+1
+        else
+          tags[t] = 1 
+        end
+      end
+    end
+    # Write pages
+    tags.each_pair do |k, v|
+      write_tag_page dir, k, v
+      write_tag_feed_page dir, k, 'RSS'
+      write_tag_feed_page dir, k, 'Atom'
+    end
+  end</code></pre></div><p>Again, you can find all the other simple utility methods in my <a href="http://github.com/h3rald/h3rald/tree/master/lib/utils.rb">utility file</a>.</p>
+<p>When it came to feeds, I decided to create a new method for the Blogging helper to create <span class="caps">RSS</span> feeds, although nanoc does come with an Atom feed generator:</p>
+<div class='ruby'><pre><code>def rss_feed(params={})
+    require 'builder'
+    require 'time'
+    prepare_feed params
+    # Create builder
+    buffer = ''
+    xml = Builder::XmlMarkup.new(:target =&gt; buffer, :indent =&gt; 2)
+    # Build feed
+    xml.instruct!
+    xml.rss(:version =&gt; '2.0') do
+      xml.channel do
+        xml.title @item[:title]
+        xml.language 'en-us'
+        xml.lastBuildDate @item[:last][:date].rfc822
+        xml.ttl '40'
+        xml.link @site.config[:base_url]
+        xml.description
+        @item[:articles].each do |a|
+          xml.item do
+            xml.title a[:title]
+            xml.description @item[:content_proc].call(a)
+            xml.pubDate a[:date].rfc822
+            xml.guid url_for(a)
+            xml.link url_for(a)
+            xml.author @site.config[:author_email]
+            xml.comments url_for(a)+'#comments'
+            a[:tags].each do |t|
+              xml.category t
+            end
+          end
+        end
+      end
+      buffer
+    end
+  end</code></pre></div><p>Nothing too daunting, once you get used to Ruby&#8217;s <span class="caps">XML</span> builder. I followed a similar approach for my <a href="/archives">monthly archives</a></p>
+<h4>3rd-party services</h4>
+<p>Finally, the interactive bits. I basically turned to third-party services and a bit of jQuery for everything which required user-interaction or pulling data from other web sites. Here&#8217;s a list of services and APIs I currently use:</p>
+<ul>
+	<li><a href="http://intensedebate.com/">IntenseDebate</a>, for comments.</li>
+	<li><a href="http://code.google.com/apis/ajaxsearch/web.html">Google <span class="caps">AJAX</span> Search <span class="caps">API</span></a> for internal site-wide search.</li>
+	<li><a href="http://apiwiki.twitter.com/">Twitter <span class="caps">JSON</span> <span class="caps">API</span></a> to fetch tweets.</li>
+	<li><a href="http://delicious.com/help/json">Delicious <span class="caps">JSON</span> <span class="caps">API</span></a> to fetch delicious bookmarks.</li>
+	<li><a href="http://www.backtype.com/developers">BackType <span class="caps">JSON</span> <span class="caps">API</span></a> to fetch comments from other sites.</li>
+	<li><a href="http://develop.github.com/">GitHub <span class="caps">JSON</span> <span class="caps">API</span></a> to fetch GitHub commits for most of my <a href="/projects">projects</a></li>
+</ul>
+<p>If you want to know how I integrated them, check out my <a href="http://github.com/h3rald/h3rald/tree/master/content/js">/js folder</a>, it was very simple, really.</p>
+<h3>Conclusion</h3>
+<p>I was very happy of switching to nanoc. It didn&#8217;t take me long, and I spent most of the time with non-nanoc issues (brushing up jQuery, <span class="caps">CSS</span>, graphics, etc.). Of course knowing the Ruby programming language helps, and if you&#8217;re not comfortable with hacking your way a little bit, then maybe it&#8217;s not for you.</p>
+<p style="float:left;"><img src="/img/pictures/nanoc-compile.png" alt="" /></p>
+<p>Personally, I&#8217;ve been waiting for something like nanoc for a long time: its simple and yet powerful architecture makes you able to do virtually anything with it. For the first time in a long time, I feel like I&#8217;m in complete control of my web site, I know every bits of it and if I want to change the way it works or looks I only have to touch a few files.</p>
+<p>nanoc&#8217;s metadata is mindblowing for its simplicity and power: although you&#8217;re not dealing with a database, you can query your content in the easiest ways possible. Whenever I needed a way to easily access pages, filter them, add extra logic to them, I just added metadata. If you forget something, you don&#8217;t have to change your database tables, create new relationships or anything of the sort, you simply add metadata to pages.</p>
+<p>Be warned that tweaking nanoc gets addictive very quickly: you soon end up creating silly little tasks for making things just the way you want. For me, adding a new article to my blog now just means this:</p>
+<div class='text'><pre><code>$ rake site:article name=take-back-your-site-with-nanoc
+$ vim content/articles/take-back-your-site-with-nanoc
+... write & close the file ...
+$ Nanoc3 compile</code></pre></div><p>&#8230;Exactly what I need. Nothing more, nothing less.</p>

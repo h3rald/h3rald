@@ -1,0 +1,46 @@
+-----
+title: Announcement - RedBook v0.5.0 released
+content-type: article
+timestamp: 1197788820
+tags: opensource|productivity|redbook|ruby
+-----
+<p>This new beta release of RedBook introduces quite a few changes when it comes to configuration and setup. Here&#8217;s some highlights&#8230;h3. Regexp changes</p>
+<p>It is now necessary to enter &#8220;proper&#8221; regular expressions for <code>:select</code>. Proper means between slashes, like the following:</p>
+<ul>
+	<li>/Work Day/</li>
+	<li>/mail/i</li>
+</ul>
+<p>I changed this in order to support case-insensitive searches using the <code>i</code> switch. This makes queries much more powerful.</p>
+<h3>Variables</h3>
+<p>A new, interesting feature I decided to introduce in this release is <em>variables</em>. For now you define them inside your rbconfig.yml file, like this:</p>
+<div class='text'><pre><code>:var_monday_morning: "monday at 8 am"
+
+:var_friday_evening: "friday at 8 pm"
+
+:var_week_report: ":select :duration :from :%monday_morning :to :%friday_evening"</code></pre></div><p>In this way, every time you type in :%week_report in RedBook, it will expand to: <code>:select :duration :from monday at 8 am :to friday at 8 pm</code>. By the way, completion is supported, so you&#8217;ll only have to type in something like <code>:%we</code> and hit <tab>.</p>
+<p>It is possible to define variables as <code>:var_&lt;something&gt;</code> in the rbconfig.yml file and then used them inside RedBook as <code>:%&lt;something&gt;</code>.</p>
+<h3>New Operations</h3>
+<p>Five new operations have been added:</p>
+<h4>:blank</h4>
+<p>This will blank your current log after asking you if you really want to do so.</p>
+<h4>:restore</h4>
+<p>This operation will overwrite your current log with the last saved backup. Like with the <code>:blank</code> operation, you&#8217;re asked if you really want to proceed or not.</p>
+<h4>:archive</h4>
+<p>By typing <code>:archive</code>, the current log file will be archived to your <code>:archives_folder:</code> directory specified in the rbconfig.yml file (similarly, it is now possible to specify a :backups_folder: for your logs&#8217; backup files).</p>
+<h4>:dataset</h4>
+<p>A simple operation to display the messages inthe current dataset.</p>
+<h4>:dump</h4>
+<p>This operation will dump the output of the last <code>:select</code> operation to a text file. Useful for saving the average, total time and duration of a set of activities.</p>
+<h3>Portable edition</h3>
+<p>Some Windows users will definitely love this. I finally found an easy way to run RedBook confined within the current directory, by using a simple <code>start.bat</code> batch file to set the <span><span class="caps">INPUTRC</span></span> and <span><span class="caps">HOME</span></span> variables temporarily to the path to the .inputrc file and the directory of RedBook executable. This makes RedBook 100% portable and suitable to be used on <span class="caps">USB</span> sticks &amp;similar.</p>
+<p style="text-align:center;"><strong><a href="http://redbook.googlecode.com/files/RedBook-0.5_Win32-portable.zip">Get RedBook Portable</a></strong></p>
+<h3>New Development Page</h3>
+<p>I decided to move the primary RedBook repository from <a href="http://www.assembla.org">Assembla</a> to Google Code. Why? Well, nothing wrong with Assembla per se, I still think it&#8217;s an excellent free service to host your public <em>and private</em> projects, but Google Code is faster and offers only the features I need:</p>
+<ul>
+	<li>Public <span class="caps">SVN</span> repository access</li>
+	<li>Simple-to-use issue tracker</li>
+	<li>Very nicely developed downloads section, with download counts, and &#8220;normal&#8221; filenames.</li>
+</ul>
+<p>So here&#8217;s the new RedBook Development Home:</p>
+<p style="text-align:center;"><strong><a href="http://code.google.com/p/redbook/">http://code.google.com/p/redbook/</a></strong></p>
+<p>Additionally I also setup a <a href="http://groups.google.com/group/redbook-support/">RedBook Support Google Group</a>, so if you have any question concerning the program, you know where to go!</p>

@@ -1,0 +1,81 @@
+-----
+title: Real-world Rawline usage
+content-type: article
+timestamp: 1236398040
+tags: ruby|rawline
+-----
+<p>So I finally decided to update <a href="/rawline">RawLine</a> last week, and I added a more Readline-like <span class="caps">API</span>. When I first started the project, I was determined <em>not</em> to do that, because the current Readline wrapper shipped with Ruby is not very Ruby-ish: it&#8217;s a wrapper, after all!</p>
+<p>The good thing of having a new <span class="caps">API</span> compatible with Readline is that now people can use RawLine in their Readline-powered scripts, with very minor modifications.</p>
+<p>Let&#8217;s have a look at some examples (they are also shipped with <a href="http://rubyforge.org/projects/rawline">Rawline v0.3.1</a>):<br />
+h3. Rush</p>
+<p><a href="http://rush.heroku.com">Rush</a> is an excellent gem which provides a cross-platform shell environment, entirely written in Ruby.<br />
+Being a shell, it obviously uses Readline for tab completion, and that does the job on Linux. On Windows though, things aren&#8217;t that easy:</p>
+<ul>
+	<li>text gets garbled if you write long lines</li>
+	<li>you can&#8217;t type certain characters if they use some key modifiers like <RIGHT-ALT>, etc.</li>
+</ul>
+<p>RawLine doesn&#8217;t have these problems (that&#8217;s the very reason why I created it), so here&#8217;s a simple script which launches a Rawline-enabled Rush shell:</p>
+<div class='ruby'><pre><code>require 'rubygems'
+require 'rush'
+require 'rawline'
+
+class RawlineRush &lt; Rush::Shell
+
+	def initialize
+		Rawline.basic_word_break_characters = "" 
+		Rawline.completion_proc = completion_proc
+		super
+	end
+
+	def run
+		loop do
+			cmd = Rawline.readline('rawline_rush&gt; ')
+			finish if cmd.nil? or cmd == 'exit'
+			next if cmd == ""
+			Rawline::HISTORY.push(cmd)
+			execute(cmd)
+		end
+	end
+end
+
+shell = RawlineRush.new.run</code></pre></div><p>What happens here? Nothing much really, all I had to do was:</p>
+<ol>
+	<li>Derive a new class from Rush::Shell</li>
+	<li>Set <code>Rawline.basic_word_break_characters</code> to the same value used in the original Rush code</li>
+	<li>Set <code>Rawline.completion_proc</code> to <em>the same</em> completion Proc used in the original Rush code</li>
+	<li>Rewrite the original <code>run</code> replacing <code>Readline</code> with <code>Rawline</code></li>
+</ol>
+<p>And it works as it was intended to, i.e. typing <code>root['b&lt;TAB&gt;</code> will expand to <code>root['bin/</code>, etc.<br />
+Note that I didn&#8217;t write the completion Proc from scratch: it was already there.</p>
+<h3><span class="caps">IRB</span></h3>
+<p>After trying out Rush, the next logical step was trying <span class="caps">IRB</span> itself: I could never use it properly on Windows, and that was really frustrating.<br />
+After a few minutes trying to figure out how to start <span class="caps">IRB</span> programmatically, I quickly came up with a similar example:</p>
+<div class='ruby'><pre><code>require 'irb'
+require 'irb/completion'
+require 'rubygems'
+require 'rawline'
+
+Rawline.basic_word_break_characters= " \t\n\"\\'`&gt;&lt;;|&{(" 
+Rawline.completion_append_character = nil
+Rawline.completion_proc = IRB::InputCompletor::CompletionProc
+
+class RawlineInputMethod &lt; IRB::ReadlineInputMethod
+	include Rawline
+	def gets
+		if l = readline(@prompt, false)
+			HISTORY.push(l) if !l.empty?
+			@line[@line_no += 1] = l + "\n"
+		else
+			@eof = true
+			l
+		end
+	end
+end
+
+module IRB
+	@CONF[:SCRIPT] = RawlineInputMethod.new
+end
+IRB.start</code></pre></div><p>In this case, Rawline is included in the <code>RawlineInputMethod</code> class, derived from the original <code>ReadlineInputMethod</code> class, i.e. the class <span class="caps">IRB</span> uses to define (guess&#8230;) how to input characters.<br />
+Again, all I had to do was set a few Rawline variables to match the ones used in Readline, and then redefine the function used to get characters. All done.</p>
+<p>It works as expected (only with inline completion, of course): typing <code>"test".ma&lt;TAB&gt;</code> will give you <code>"test".map</code>, <code>"test".match</code>, etc.</p>
+<p>You also get all Rawline key mappings for free (<span class="caps">CTRL</span>-K to clear the line, <span class="caps">CTRL</span>-U and <span class="caps">CTRL</span>-R to undo and redo, etc.), and you can define your own.</p>

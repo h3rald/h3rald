@@ -1,0 +1,49 @@
+-----
+title: rdBaker - Bake your CakePHP application online
+content-type: article
+timestamp: 1147081800
+tags: cakephp
+-----
+<p>Right after my <a href="/blog/view/26">last blog post</a> I decided to log on #cakephp on irc.freenode.org as usual, and gwoo pops in and says &#8220;h3raLd, you didn&#8217;t review rdBaker yet!&#8221;<br />
+That&#8217;s right, I didn&#8217;t yet, so I may as well do it today.</p>
+<p>I remember hearing about rdBaker months ago, waaay before CakePHP 1.0, way before the RCs, I remember someone mentioning it on CakePHP user group in right after the bake.php script was created. <em>&#8220;How about having an online baking utility?&#8221;</em> &#8211; and that&#8217;s precisely what rdBaker is, a more <span class="caps">PHP</span>-ish version of bake.php, which runs like any other <span class="caps">PHP</span> scripts: in your browser.</p>
+<p>This cute little thing is obviously available for free on <a href="http://cakeforge.org/frs/?group_id=13&amp;release_id=74">CakeForge</a> and is part of <a href="http://www.rd11.com">gwoo</a> &#8217;s <a href="http://cakeforge.org/projects/rdos/">rdOpenSource</a> project which includes various other Cake-powered applications.<br />
+I personally recommend new (and old) bakers to download them and play with them, try to understand how they were coded, because they can really teach you <em>a lot</em> on how to code a CakePHP application or website properly.</p>
+<p>So anyway, get your copy of rdBaker, unzip it and have a look at the <code>README.txt</code> file for the installation instructions:</p>
+<quote>
+<p>1. Place rdBaker in the root along side /cake_install/app.<br />
+2. chmod /cake_install/rdBaker/tmp to 0777<br />
+3. launch http://localhost/cake_install/rdBaker/</p>
+</quote>
+<p>Not too hard, innit?</p>
+<p><img src="/img/pictures/rdbaker.jpg" alt="" /></p>
+<p>Good. So you try accessing something like <code>http://localhost/php/test/cakephp/cake_test/rdBaker/</code> (that&#8217;s on my own local <span class="caps">WAMP</span> server) and you&#8217;ll get a nice page asking you to &#8220;supply your ingredients&#8221; via a simple form. <br />
+Unlike its command line cousin, rdBaker doesn&#8217;t require you to fill in <em>all</em> the fields, but just the full path to the save directory (which is normally already filled in) and of course the name of the model (Post, User, Comment).<br />
+Then you can select the type of output and choose whether you want to generate an empty controller, a scaffolded one or the <em>full</em> option including all the most common <acronym title="Create, Retrieve, Update, Delete"><span class="caps">CRUD</span></acronym> methods.<br />
+Finally &#8211; if you like &#8211; you can enter any association or valitation rules for your model, then press the <em>Bake it!</em> button and voil&aacute;, in you&#8217;ll find three directories (controllers, models and views) in your save directory containing all the <acronym title="Model View Controller"><span class="caps">MVC</span></acronym> entities you need regarding a particular model:</p>
+<pre><code>
+		rdBaker Result Array
+(
+    [0] =&gt; notes_controller.php created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpcontrollers
+    [1] =&gt; note.php created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpmodels
+    [2] =&gt; index.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+    [3] =&gt; add.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+    [4] =&gt; edit.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+    [5] =&gt; view.thtml created and written. Look in D:SERVERwwwphptestcakephpcake_testtmpviews/notes
+)
+</code></pre>
+<p>But there&#8217;s more! By checking the appropriate checkbox, you can get all the stuff packed in a zip file!</p>
+<p>Not bad at all, and fast as well.</p>
+<p>Now the bad things&#8230;<br />
+The script works fine, but there&#8217;s something which could be improved, perhaps:</p>
+<ul>
+	<li>If you choose to put everything in a zip file, the file will be named &#8220;baked_by_rdBaker.zip&#8221; &#8211; not a big deal, but maybe it could be personalized according to the model name entered.</li>
+	<li>Regardless you want to add validation rules to your model or not, you&#8217;ll <em>always</em> find some validation rules for a <em>title</em> and <em>body</em> field. I checked and they are hardcoded in the template file (rdBaker/views/helpers/templates/full/model.txt):<br />
+<pre><code>
+  var $validate = array(
+		'title'=&gt;VALID_NOT_EMPTY,
+		'body'=&gt;VALID_NOT_EMPTY);
+</code></pre></li>
+	<li>In the baked index.thtml view, there will always be a column named &#8220;Title&#8221;. This, again, is hardcoded in the template.</li>
+</ul>
+<p>Other than these things, everything seems to work fine. A really nice script!</p>

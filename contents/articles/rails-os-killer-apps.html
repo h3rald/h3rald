@@ -1,0 +1,97 @@
+-----
+title: Rails-powered Open Source Killer Apps, Anyone?
+content-type: article
+timestamp: 1225618860
+tags: rails|ruby|writing|rant
+-----
+<p>Lately I&#8217;ve been meandering around the web to find a good <span class="caps">CMS</span> for a family site I&#8217;d like to set up. <br />
+Why a <span class="caps">CMS</span>? Well, for a few simple reasons:</p>
+<ol>
+	<li>I don&#8217;t have enough free time to fiddle with Rails and make my own (I&#8217;m an <em>Hobbyist Programmer&#8482;</em>: I code for fun and enlightment, not for money)</li>
+	<li>Even if I had the time, I&#8217;m <em>sure</em> there are plenty of CMSes out there which suits my needs.</li>
+</ol>
+<p>It turns out that reason #2 is not really applicable in this case, especially if we restrict the field to Ruby + Rails/Merb/&lt;insert cool <span class="caps">DRY</span> framework here&gt;.h3. Rails-powered CMSes</p>
+<p><em>Name a Rails-powered <span class="caps">CMS</span>, quick!</em></p>
+<p>Easy: <a href="http://radiantcms.org/">Radiant</a>.</p>
+<p>Hmm, no. As much as I do like Radiant, it really cannot be considered a general-purpose <span class="caps">CMS</span>, can it? When it comes to build nearly-static sites in a clean and neat way I&#8217;d pick it any day, but it lacks quite a lot of community features like comments, ability to create forums, etc. etc. It does, however, support multilingual content in a rudimentary, yet effective way: create each translated page manually and use consistent <span class="caps">URL</span> conventions (/en/about, /it/about, etc.).</p>
+<p>I&#8217;m not saying that there aren&#8217;t enough CMSes built on Rails, just that there&#8217;s no &#8220;killer app&#8221; in the pack. A &#8220;killer&#8221; <span class="caps">CMS</span> would be something as powerful as Drupal, but easier to use and more modular.</p>
+<p>Here&#8217;s an incomplete list of the Rails CMSes I&#8217;m currently aware of:</p>
+<table>
+	<tr>
+		<th>Name </th>
+		<th>First Impressions/Comments </th>
+	</tr>
+	<tr>
+		<td> <a href="http://radiantcms.org/">Radiant</a> </td>
+		<td> Mature, suitable for administering static sites </td>
+	</tr>
+	<tr>
+		<td> <a href="http://www.typosphere.org/">Typo</a> </td>
+		<td> Mature, one of the best blogging engines out there (my opinion is slightly biased though) </td>
+	</tr>
+	<tr>
+		<td> <a href="http://mephistoblog.com/">Mephisto</a> </td>
+		<td> Mature, blogging engine </td>
+	</tr>
+	<tr>
+		<td> <a href="http://rubricks.org/index_en.html">Rubricks</a> </td>
+		<td> Under development, basic features if compared to other non-Rails solutions </td>
+	</tr>
+	<tr>
+		<td> <a href="http://slateinfo.blogs.wvu.edu/">Slate</a> </td>
+		<td> Missing a lot of features if compared to competitors </td>
+	</tr>
+	<tr>
+		<td> <a href="http://beast.caboo.se">Beast</a> </td>
+		<td> Forum engine, extremely ligtweight </td>
+	</tr>
+	<tr>
+		<td> <a href="http://www.railfrog.com/">RailFrog</a> </td>
+		<td> Not sure if it&#8217;s still being updated, not so many features </td>
+	</tr>
+	<tr>
+		<td> <a href="http://zenadmin.org/en">Zena</a> </td>
+		<td> Alpha, looks promising although it doesn&#8217;t offer many features </td>
+	</tr>
+	<tr>
+		<td> <a href="http://simplelog.net/">simplelog</a> </td>
+		<td> Yet another blogging engine. Simple and easy to use </td>
+	</tr>
+	<tr>
+		<td> <a href="http://rcms.oopen.de/">oooopen rcms</a> </td>
+		<td> Early development stage (dead?), minimal feature set </td>
+	</tr>
+	<tr>
+		<td> <a href="http://www.geegocms.com/">Geego</a> </td>
+		<td> Multilingual, not so many out-of-the-box features </td>
+</table>
+<p><em>[Psst, if you know any other Rails <span class="caps">CMS</span> I missed out, mention it in a comment and I&#8217;ll update this table!]</em></p>
+<h3>Developing Proprietary Web Applications with Rails</h3>
+<p>What&#8217;s wrong with all of these? Normally one of three things: either they are mature, production-ready but focused on only one particular function (blog, forum, etc.), or they are still too new to be used seriously or they are slowly heading towards oblivion.</p>
+<p>What&#8217;s going on here? Rails is a damn fine framework which offers all the modularity and power you need to build sites! Why isn&#8217;t there a fully fledged <span class="caps">CMS</span> to rival Drupal? <br />
+I think that part of the problem is that Rails is <em>too</em> good. <strong>Why build a <span class="caps">CMS</span> from scratch when you can develop a web site from scratch much more easily, tailored to your customer?</strong></p>
+<p>Rails has been used to build a few &#8220;mainstream&#8221; sites like Twitter (no bashing please!), Basecamp, GitHub and many more. What do these sites have in common? <em>They are not open source</em>. You cannot deploy your own Twitter on your server (You can with <a href="http://laconi.ca/trac/">Laconica</a>, though), you cannot deploy your own Basecamp to your server (you can with <a href="http://www.projectpier.org/">ProjectPier</a>, an open source fork of <a href="http://www.activecollab.com/">ActiveCollab</a>).</p>
+<p>It feels like that even though Rails itself is open source, <strong>there aren&#8217;t that many open source Rails-powered projects after all</strong>. Maybe there are, but they do not really compare with similar alternatives offered in other languages. This is the reason why, despite its utter ugliness, <span class="caps">PHP</span> is still the <em>Open Source King of the Web</em>, and that&#8217;s very, very sad in my opinion.</p>
+<h3>Dreams on Rails</h3>
+<p>The annoying thing is that Rails <em>is suitable</em> to build CMSes, and good ones, too! Take Radiant and Typo, for example: they both excel in their own ways, <em>in their own worlds</em>.<br />
+Theorethically speaking, <strong>there&#8217;s no reason why someone couldn&#8217;t develop a modular system to glue different components together</strong>: you&#8217;d need common user administration and common workflow, a few hooks, and a solid set of conventions on how to build third-party components.<br />
+Hell guys, the folks at Drupal developed a huge (and successful) product with a million different ways to extend it <em>in <span class="caps">PHP</span></em>. Even without using <span class="caps">OOP</span>! Every damn hook in the core is a <em>function</em>.</p>
+<p>What does it take to do something like this using Rails, o Merb, or whatever else you like? You already have a very solid and consistent framework to build on (Rails), a way to automate tasks (Rake) and a language which lets you do everything you want, in a very elegant and organized way.</p>
+<p><strong>Rails lacks successful open source projects, in particular CMSes</strong>. I wish someone could fix this: not by coding the <em>n^th^</em> <span class="caps">CMS</span> with the only two or three features you need, but by developing an <em>high level application framework</em> to build complex, dynamic and interactive web sites. Don&#8217;t even develop the whole damn thing: just come up with a set of conventions on how to extend a very basic core, and tell people how they can contribute, or even integrate existing applications into it.</p>
+<p>The community will do the rest, hopefully&#8230; Or maybe are you too busy trying to roll out your newest, closed source startup?</p>
+<p><strong>If someone decides to develop such a powerful, high-level framework and is determined to keep it user-friendly and open source, I hereby promise to write the documentation for it</strong>, articles, and books. And I&#8217;m not kidding.</p>
+<h3>[<span class="caps">UPDATED</span>] A Glimpse of Hope</h3>
+<p>A few of the commenters of this article brought up a few interesting points and actually gave me a little bit of hope. <a href="http://salesforceonrails.com/">Luigi Montanez</a> pointed out that Rails was built to help developers build web sites. For now, Rails deployment isn&#8217;t as seamless as end users would like it, so there&#8217;s no point creating a killer app for such users if they can&#8217;t even get it to run on their $2/month shared hosting environment.<br />
+Nevertheless, there seems to be at least <em>three</em> different open source &#8220;social network engines&#8221; powered by Rails:</p>
+<ul>
+	<li><a href="http://portal.insoshi.com/">Insoshi</a></li>
+	<li><a href="http://www.communityengine.org/">Community Engine</a></li>
+	<li><a href="http://lovdbyless.com/">Lovd By Less</a></li>
+</ul>
+<p>These are not CMSes <em>in the early 2000&#8217;s sense</em>, obviously, but they do provide the basis to effectively build a late Web 2.0-ish community web site. Each one of these project seems stable and mature enough to be used in production, but surely not as well-known as many other <span class="caps">PHP</span>-based solutions.</p>
+<p>On the other hand, <a href="http://priit.mx.ee/">Priit Tamboom</a> mentioned <a href="http://adva-cms.org/">adva cms</a>, a project still in alpha stage which aims to be more traditional and site-agnostic:</p>
+<blockquote>
+<p>&#8220;[&#8230;] Different from other Rails applications the all-engines approach of adva cms allows you to build your own applications on top of it. It also makes it very flexible and extensible: our plan is to make it possible to only pick those engines/features that you really need for your application and omit the rest. As they are still all designed to work together seemlessly and reuse each others functionality the whole plattform feels much more consistent to a collection of similar but separate Rails applications. [&#8230;]&#8221;</p>
+</blockquote>
+<p>This sounds <em>exactly</em> like what I was hoping would come out from the Rails community: something in between a web development framework and an high-level <span class="caps">CMS</span>. <br />
+I&#8217;m definitely going to try it out (it&#8217;s an ideal weekend project) and I&#8217;ll report back once I know more about it.</p>

@@ -1,0 +1,165 @@
+-----
+title: Chrome - Google did it again!
+content-type: article
+timestamp: 1220401860
+tags: browsers|review|google
+-----
+<p style="float:left;"><img src="/files/google-chrome/chrome-logo.jpg" alt="" /></p>
+<p>It looks like there&#8217;s a <a href="http://www.google.com/chrome">new open source browser</a> in town. As usual, nearly everything about it <a href="http://blogoscoped.com/archive/2008-09-01-n47.html">leaked</a> <a href="http://www.techcrunch.com/2008/09/01/first-public-screen-captures-of-google-chrome/">before</a> its <a href="http://www.google.com/chrome">release</a>. Every blog that matters is talking about it, so if you didn&#8217;t hear anything about it, you&#8217;d better take a look yourself. Don&#8217;t be fooled by the usual <a href="http://www.techcrunch.com/2008/09/01/meet-chrome-googles-windows-killer/">senseless ravings</a> of some weird, overly-hyped blogger though: a <em>browser</em> just came out, nothing more and nothing less. It&#8217;s not the end of Windows, it&#8217;s not the end of the Internet, it&#8217;s not the end of the world as we know it. It&#8217;s just a new player in the Browser Wars.</p>
+<p>I particularly recommend reading the official <a href="http://books.google.com/books?id=8UsqHohwwVYC&amp;printsec=frontcover#PPP1,M1">Google Comic Book</a> about Chrome, however I included some of the most interesting parts of it in this article. It&#8217;s a nice 40-page comic booklet explaining how the browser works in a friendly way&#8230; I found it quite amusing and an interesting way to <del>leak</del> distribute info on a new project.</p>
+<h3>Getting the damn thing</h3>
+<p>You can freely download Google Chromm from <a href="http://www.google.com/chrome">here</a>. You&#8217;ll get a tiny 474KB setup file which installs the browser automatically. When I say automatically I mean automatically: you double click it, and it won&#8217;t ask <em>anything</em>: it will just install it in Program Files by itself. Idiot proof. Clever. Some people may like it, I damn hated it.</p>
+<p>I downloaded it and installed it fine from home, on Vista, and it was blazing fast (on <em>Vista_, imagine!). I tried to do the same thing from work and I couldn&#8217;t. The damn installer is supposed to pick up the proxy settings from your default browser, but if the proxy uses authentication (like 99% of corporate proxies) it simply won&#8217;t work. As far as I know, there&#8217;s <a href="http://groups.google.com/group/google-chrome-help-troubleshooting/browse">no way around this</a></em>thread/thread/4c07ec5124f2eebc.</p>
+<p>This is the reason why this article won&#8217;t have any chrome screenshots&#8230; to protest against Google&#8217;s stupid way of doing things &#8220;too user-friendly&#8221;.</p>
+<p><strong>Update 1:</strong> Actually, it is now possible to download the full Chrome setup from <a href="http://cache.pack.google.com/chrome/install/149.27/chrome_installer.exe">here</a> (Thanks <a href="http://www.thecrazyaustralian.com/installing-google-chrome-behind-a-proxy/">Crazy Australian</a>).</p>
+<p><strong>Update 2:</strong> After installing Chrome, if your company uses an automatic proxy script you won&#8217;t be able to browser web sites using Chrome. If that&#8217;s your case, make sure you change IE&#8217;s proxy settings by specifying your proxy address and port explicitly.</p>
+<h3>How Google &#8220;re-invented&#8221; the browser</h3>
+<p>Why did Google bother? Officially because&#8230;</p>
+<p><em>&#8220;[&#8230;] we believe we can add value for users and, at the same time, help drive innovation on the web.&#8221;</em><br />
+(from <a href="http://googleblog.blogspot.com/2008/09/fresh-take-on-browser.html">Google Blog</a>)</p>
+<p>In practice, a Google-branded browser makes sense especially because of the services offered by the search giant right now: nearly <em>every kind</em> of web application, from mail clients to <span class="caps">RSS</span> readers.</p>
+<p>The philosophy of Google Chrome is fairly simple: the Web has changed since the nineties, we now have full-fledged applications instead of crappy hypertexts with animated GIFs, therefore browsers must change, too.</p>
+<p>Every major browser has a fairly long development history. Think of Firefox: version 3? Not really: try adding up at least 7 versions of Netscape before that. Internet Explorer <strong>8</strong>, Opera <strong>9.5</strong>, &#8230;<br />
+Safari is probably the newest of the lot, but still not quite right.</p>
+<p>All major browsers <em>evolved</em> through the years, but they never really changed: so why not to start from scratch?</p>
+<p>Starting from scratch has a lot of advantages:</p>
+<ul>
+	<li>You can learn from other people&#8217;s mistakes, and try to fix them</li>
+	<li>You can <em>get things right</em> from the very start</li>
+	<li>You do not have to worry about breaking compatibility with previous versions</li>
+	<li>People won&#8217;t have extremely high expectations, and they&#8217;ll be prepared for a relatively unstable product</li>
+</ul>
+<p>Obviously building a browser from the ground up is not a weekend project, but things changed since the nineties and starting fresh does not necessarily means re-inventing the wheel!</p>
+<h3>An &#8220;old&#8221; Rendering Engine</h3>
+<p>Let&#8217;s just say that the main work was already done for Google by the <a href="http://webkit.org">WebKit</a> guys. The rendering engine which now powers Safari, the Nokia Series 60 browser, Gnome&#8217;s Epiphany, Adobe <span class="caps">AIR</span> has been picked by the Google guys for Chrome.</p>
+<p style="float:right;"><img src="/files/google-chrome/chrome-javascript.gif" alt="" /></p>
+<p>This is a fairly obvious choice, if you ask me. Why?</p>
+<ul>
+	<li>Presto (Opera&#8217;s engine) is proprietary</li>
+	<li>Trident (IE&#8217;s engine) is proprietary, and it sucks</li>
+	<li>Gecko (Mozilla&#8217;s engine) is open source, but a bit bulky</li>
+	<li>WebKit is open source, and arguably the fastest rendering engine to date</li>
+</ul>
+<p>The rendering engine, after all, may be considered one of the most important parts of the browser: it&#8217;s responsible of what users see, after all. <br />
+Google made the right choice, in my opinion: WebKit is also the most &#8220;embeddable&#8221; and lightweight engine available, and it is also used on the Android platform for this very reason.</p>
+<h3>A &#8220;new&#8221; Javascript</h3>
+<p>Mozilla has a <a href="http:http://www.mozilla.org/js/spidermonkey/Javascript">fast</a> engine, which will soon become <a href="http://ejohn.org/blog/tracemonkey/">much faster</a>. WebKit has a <a href="http://webkit.org/projects/javascript/">blazing fast</a> Javascript engine too, don&#8217;t forget. So why Google didn&#8217;t just use that?</p>
+<p>&#8230;Because they wanted something <em>much</em> faster than that, in their own way (as someone already <a href="http://null-logic.net/blog/2008/09/02/javascript-performance-comparison-with-chrome/">pointed out</a>).</p>
+<p>Meet <strong>V8</strong>, Chrome&#8217;s very own Javascript Virtual Machine. When reading the Chrome Comic, I was particularly impressed of two improvements introduced by this new javascript VM:</p>
+<p style="float:right;"><img src="/files/google-chrome/chrome-javascript-gc.gif" alt="" /></p>
+<ul>
+	<li>It actually compiles Javascript to machine code via a Just-In-Time compiler (<span class="caps">JIT</span>). This means that whenever you refresh a page containing Javascript the browser won&#8217;t re-interpret the whole script, but it will simply run the compiled version of it which was generated the first time the page was loaded. New concept? Not really, Mozilla is going <em>exactly</em> in the same direction with their own engine, and <span class="caps">JIT</span> compilation will be added as of Firefox 3.1.</li>
+	<li>V8&#8217;s incremental garbage collection looks like a much better alternative to the current conservative garbage collection methods used for Javascript. Because of V8&#8217;s new concept of Hidden Class Transitions, V8 knows <em>exactly</em> when something is no longer needed and thus it is able to garbace-collect it more effectively.</li>
+</ul>
+<p>While there has been some initial <a href="http://nexus.zteo.com/2008/09/01/google-chrome-an-index-of-what-developers-need-to-know-good-and-bad/">skepticism</a> on this new Javascript implementation, it looks like Google did it right. If you don&#8217;t believe it you can <a href="http://code.google.com/apis/v8/intro.html">download</a> V8&#8217;s C++ code and try it out yourself.</p>
+<h3>One Process per Tab</h3>
+<p>Google Chrome is the first multi-process browser. The idea is that <em>each tab</em> (because you can&#8217;t do browsers without tabs, these days, right?) has its own phisical process and it is therefore independent from each other.</p>
+<p style="float:right;"><img src="/files/google-chrome/chrome-processes.gif" alt="" /></p>
+<p>Hang on, isn&#8217;t that what IE 5 did? A new instance of the browser for each window? No, not quite: there&#8217;s a single instance of the browser and <em>multiple</em> tab instances. Each tab is independent in the sense that it has its own address bar, but it&#8217;s just a tab, at the end of the day.</p>
+<p>This is what Internet Explorer could have done, <em>before</em> Internet Explorer 7, as an answer to the traditional concept of tabs promoted by Mozilla and Opera.</p>
+<p>Actually, it turns out that <a href="http://blogs.msdn.com/ie/archive/2008/03/11/ie8-and-loosely-coupled-ie-lcie.aspx">this is <em>exactly</em> what&#8217;s planned for Internet Explorer 8</a>, as <a href="http://www.sriramkrishnan.com/blog/2008/09/thoughts-on-new-browser-wars.html">someone</a> already pointed out!</p>
+<p>Additionally, Google thought of building in a mini task manager to let users monitor the <span class="caps">CPU</span> and memory usage of each tab. This is interesting, but it has a few implications discussed later on in this article.</p>
+<p>What&#8217;s truly remarkable about this is that each tab seems to have an initial overhead of 1-2KB, which of course grows according to the site it loads. You can see all this in the task manager, which also picks up similar stats for any other browser running at the same time on your machine. <br />
+This was another clever move by Google: by looking at their own task manager, and running more than one browser together, you have everything you need to instantly compare browser performance (thus discovering that Chrome does an outstanding job, it seems).</p>
+<p>What&#8217;s also remarkable about Chrome&#8217;s tabs is the way you can interact with them:</p>
+<ul>
+	<li>You can move them around smoohtly, exactly like with Safari</li>
+	<li>You can detach them by drag and drop</li>
+	<li>You can re-attach them by drag and drop (which is truly awesome!)</li>
+</ul>
+<h3><del>AwesomeBar</del> <em>OmniBox</em> and <del>Speed Dial</del> <em>New Tab Page</em></h3>
+<p>Did you like Mozilla&#8217;s AwesomeBar? Well, I personally did, others didn&#8217;t so much. Meet OmniBox&#8482; Google&#8217;s very own, semi-sentient address bar which really understands you.</p>
+<p>Here&#8217;s what you can do with it:</p>
+<ul>
+	<li>Type in URLs and view web sites (it would be damn funny if it couldn&#8217;t do that)</li>
+	<li>Get <del>extra Google crap</del> useful suggestions while typing. This includes, but it is not limited to:
+	<ul>
+		<li>Pages you visited</li>
+		<li>Bookmarks</li>
+		<li>Popular pages (guess who decides that&#8230;)</li>
+	</ul></li>
+	<li>Custom searches: search <span class="caps">IMDB</span>, Wikipedia, Amazon and google itself with a few clicks</li>
+</ul>
+<p><img src="/files/google-chrome/chrome-bar.gif" alt="" /></p>
+<p>Unlike Firefox&#8217;s AwesomeBar, Google&#8217;s OmniBox seems more &#8220;evolved&#8221;: it doesn&#8217;t get too much in your way, it lets you go where you want to go, and it&#8217;s smart about searching. Apparently Mozilla is already planning to remove the search bar completely and incorporate it in the AwesomeBar&#8230; but Google released it first, sorry guys.</p>
+<p>The other handy thing they <del>stole</del> kindly borrowed from Opera is the <em>New Tab Page</em>, basically like Opera&#8217;s Speed Dial, but with two interesting things:</p>
+<ul>
+	<li>It displays the nine <em>most visited</em> pages: you don&#8217;t have to configure it!</li>
+	<li>It displays search boxes for the most visited sites where you searched something on.</li>
+</ul>
+<p>While I really like how this works (it requires no configuration whatsoever), I kinda miss dragging my favorite pages in the New Tab Page. If you come from Opera, you&#8217;ll miss this too: the pages I have in my speed dial are <span class="caps">NOT</span> necessarily the pages I visited the most!</p>
+<p>I guess I&#8217;ll get used to it, though&#8230;</p>
+<h3>Relax, it&#8217;s Google!</h3>
+<p>Google is not Evil&#8482;. Google is good to everyone, from their own employees to developers and end users: and the funniest part of this whole thing is that everything they make <em>looks</em> good for you. You have absolutely no reason to fear Google.</p>
+<p>They did it again: they apparently released a new browser which definitely looks inherently more secure than competitors. <br />
+Here&#8217;s why:</p>
+<ul>
+	<li>It has an <em>Incognito</em> mode, which lets you browse everything you want without logging anything anywhere.</li>
+	<li>It confines popups to the tab they belong, minimized. You can then seletively decide to drag them out and promote them to their own window.</li>
+	<li>Each tab is sandboxed: i.e., it has no rights to write anything to your PC. Absolutely no chance. When plugins for Java and Flash are used, however, this doesn&#8217;t apply.</li>
+	<li>Chrome continuously downloads lists of malicious sites, so that you&#8217;re protected against phishing in real time.</li>
+</ul>
+<p style="float:left;"><img src="/files/google-chrome/chrome-blame.gif" alt="" /></p>
+<p>Now, if everything goes wrong, you know it&#8217;s definitely <em>someone else who did it</em>. If you read the comic book between the lines, you&#8217;ll notice a not-so-subtle message to the end users:</p>
+<ul>
+	<li>The browser is sandboxed, so if anything goes wrong, blame others (Adobe for Flash, Sun for Java, Microsoft for some other crap)</li>
+	<li>You can monitor the resource consumption of each tab, <em>ergo</em> what <em>each website</em> uses. This means that if a site is slow is definitely the web developer&#8217;s fault.</li>
+</ul>
+<p>This is basically what <a href="http://ejohn.org/blog/google-chrome-process-manager/">John Resig</a> immediately pointed out when the comic came out.</p>
+<h3>How it feels</h3>
+<p>Google Chrome is clearly a very nice product to use. It&#8217;s as intuitive as IE for the average Windows user, it has the best of Firefox and Opera features and it&#8217;s even more sleek than Safari. The UI, in my opinion, is a true masterpiece and feels well though out.</p>
+<p>Everything is aimed to be intuitive and does not get in your way: it just works. You want to download a file? You can just do it, without worrying about where to save it: it will appear in a &#8220;download bucket&#8221; at the bottom of your tabs, and you can just drag and drop what you downloaded anywhere you like, if you need to.<br />
+Why nobody thought of this before?</p>
+<p>Even the program settings are simple to understand. The Options dialog is divided in &#8220;Basics&#8221;, &#8220;Minor Tweaks&#8221; and &#8220;Under the Hood&#8221;. The idea is that anyone can understand the Basics, some people may tweak a bit more, and only geeks may want to go beyond that. This is particularly evident in the Italian translation (it comes bundled with 40 localizations, by the way), where they translated &#8220;Under the Hood&#8221; with &#8220;Roba da smanettoni&#8221; which means something like &#8220;Stuff for people who fiddle with PCs&#8221;. I personally found this translation a bit irritating, but anyway&#8230;</p>
+<h3>Media Coverage and Target Audience</h3>
+<p>The overall impression is that Google wanted to target end users with this browser, but also appeal geeks, too. This makes sense from a marketing point of view. While 90% of geeks switched from IE to another browser, ordinary people are still stuck with IE. Why? Because alternative browsers have gained a reputation of being geek-friendly (which, by popular belief, does not mean user-friendly).</p>
+<p>Google&#8217;s marketing strategy is quite clear, and it doesn&#8217;t seem to be failing on any point:</p>
+<ul>
+	<li>They targeted Windows first, because that&#8217;s what the bulk of IE aficionados uses.</li>
+	<li>They did their best to make it as user-friendly as possible: the sleek <span class="caps">GUI</span>, the comic book, etc.</li>
+	<li>They spread the world like crazy: every blog is talking about it, but also major news sites like <span class="caps">BBC</span> and <span class="caps">CNN</span>. When I got to work, a collegue of mine asked me if I tried the new Google browser and if I read the comic. She heard it at the radio. Here <em>in Italy</em>!</li>
+	<li>At the same time, they made the whole thing open source, released APIs and emphasized this, so that &#8220;computer fiddlers&#8221; couldn&#8217;t resist.</li>
+</ul>
+<p>To me, it looks like Google Chrome stands a good chance to succeed where others have failed: drive most of the Internet population away from Internet Explorer.</p>
+<h3>Open Source, testing and quality</h3>
+<p>Google is well known for its massive infrastructure. Moreover, Google is the only &#8220;entity&#8221; (let&#8217;s call it that way, shall we) who <em>knows</em> and <em>visited</em> almost every web page on the Internet. If something is not &#8220;on Google&#8221;, it may well not exist at all: this is not strictly true, but it&#8217;s the user perspective and ad the end of the day that&#8217;s all that matters.<br />
+Google, as a consequence, has virtually unlimited resources (compared to any other possible competitor) and virtually unlimited knowledge of the Internet, which makes automated testing no more than a joke.</p>
+<p>From the Google Chrome Comic:</p>
+<p><em>&#8220;Within 20-30 minutres of each new browser build, we can teswt it on tens of thousands of different web pages&#8221;</em></p>
+<p>&#8230;and that&#8217;s certainly not an understatemend: you can believe that.</p>
+<p><img src="/files/google-chrome/chrome-tests.gif" alt="" /></p>
+<p>Google seems very concerned of building a &#8220;rock-solid&#8221; browser rather than being the coolest guy in town, and that&#8217;s a good sign. Google is <em>smart</em>, remember?</p>
+<p>As if it weren&#8217;t enough, the entire thing (the rendering engine, the javascript implementation and the whole code of the broswer) is 100% open source which means, in a nutshell:</p>
+<ul>
+	<li>Free testers</li>
+	<li>Free developers</li>
+	<li>Good publicity</li>
+</ul>
+<p><img src="/files/google-chrome/chrome-os.gif" alt="" /></p>
+<p>If things go as planned, Chrome may become the most widely tested piece of software in the world. Let&#8217;s just see how the community takes this.</p>
+<h3>Why it matters</h3>
+<p>Everyone seems to have gone crazy about Chrome, even long before it was made available. Why does it matter, anyway? Isn&#8217;t it just a browser, at the end of the day? Well, yes, but:</p>
+<ul>
+	<li>It&#8217;s 100% open source. If you like something of it, you can get it, modify it, bundle it in another project and redistribute it. Give it a few weeks and extensions which use some of Google&#8217;s new <span class="caps">API</span> will flock to the &#8217;fox like crazy.</li>
+	<li>It&#8217;s small, fast and very promising. Sure, it&#8217;s not perfect, but <span class="caps">YOU</span> can help improving it. Get it?</li>
+	<li>It&#8217;s on Windows, so it will reach the majority of Internet users&#8230; in theory.</li>
+</ul>
+<p>Last but not least, it comes bundled with <a href="http://gears.google.com/">Gears</a>, i.e. what Google would like you to use for RIAs. That&#8217;s perhaps the only &#8220;subliminal&#8221; message they are trying to send to their users (for now, at least).<br />
+As a matter of fact, nothing prevents them from using Chrome as a way to promote their technology and products. But at the same time nothing prevents a random developer to just fork the project and distribute a <em>neutral</em> and unbranded version of Chrome.</p>
+<p>See? Google is not evil at all, it&#8217;s just smarter than others.</p>
+<h3>The Bottom Line</h3>
+<p>Google showed us once more that their &#8220;innovation&#8221; can be summarized with the following:</p>
+<p><em><strong>&#8220;Do not invent new things, just make them better&#8221;</strong></em></p>
+<p>They didn&#8217;t invent Internet search: they just made it better and smarted. The same philosophy applies to Chrome, too. Some examples? Sure:</p>
+<ul>
+	<li>They didn&#8217;t create a new rendering engine, they used an existing one</li>
+	<li>They analyzed Safari&#8217;s neat <span class="caps">GUI</span> tricks and implemented something even better.</li>
+	<li>They added an IE8-like domain highlight in the <span class="caps">URL</span>.</li>
+	<li>They got the Firefox&#8217;s AwesomeBar and improved it.</li>
+	<li>They got Opera&#8217;s Speed Dial and improved it.</li>
+	<li>They got IE8&#8217;s one-process-per-tab architecture and improved it.</li>
+	<li>They didn&#8217;t think of a Javascript <span class="caps">JIT</span> first, they just made it widely-available first.</li>
+	<li>They didn&#8217;t think about merging the address bar with the search bar, Mozilla announced it first, but Google released it before they did.</li>
+	<li>Safari 4 allows users to create shortcuts for their favorite web apps, but unfortunately it&#8217;s only out for developers&#8230;</li>
+</ul>
+<p>Google did it, again. Exactly as planned.</p>

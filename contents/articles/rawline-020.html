@@ -1,0 +1,27 @@
+-----
+title: New Release: RawLine 0.2.0
+content-type: article
+timestamp: 1207107180
+tags: ruby|programming|opensource|rawline
+-----
+<p><del>InLine</del> RawLine 0.2.0 is out!</p>
+<p>*Raw*Line is the new name for InLine, in case you didn&#8217;t guess. The name was changed to avoid name collision problems with the RubyInline project.</p>
+<p>Here&#8217;s what&#8217;s new:</p>
+<ul>
+	<li>Added /examples and /test directory to gem.</li>
+	<li>Escape codes can now be used in prompt.</li>
+	<li>It is now possible to use bind(key, &amp;block) with a String as key, even if the corresponding escape sequence is not defined.</li>
+	<li>Added Editor#write_line(string) to print a any string (and &#8220;hit return&#8221;).</li>
+	<li>Library name changed to &#8220;RawLine&#8221; to avoid name collision issues (Bug <a href="http://rubyforge.org/tracker/?func=detail&amp;aid=18879&amp;group_id=5622&amp;atid=21788">18879</a>).</li>
+	<li>Provided alternative implementation for left and right arrows if terminal<br />
+supports escape sequences (on Windows, it requires the Win32Console gem).</li>
+</ul>
+<p>In particular, I decided to provide an &#8220;optimized implementation&#8221; for the left and right arrows using escape sequences rather than shameful hacks. This is now possible because the Win32Console gem now enables <span class="caps">ANSI</span> escape sequences on Windows as well (weehee!).</p>
+<p>So:</p>
+<ul>
+	<li>If you&#8217;re on *nix all good, your terminal is smart and can understand escape sequences =&gt; the new implementation will be used.</li>
+	<li>If you&#8217;re on Windows and you installed Win32Console, your termnal is smart and can understand escape sequences =&gt; the new implementation will be used.</li>
+	<li>If you&#8217;re on Windows and you didn&#8217;t install Win32Console, then your terminal is stupid and it doesn&#8217;t understand escape sequences, so the old implementation will be used.</li>
+</ul>
+<p>The new implementation is significantly faster than the old one, on Windows at least, and the cursor now blinks properly when left or right arrows are pressed.</p>
+<p>I re-emplemented only cursor movement because I&#8217;m still having some problems in getting the delete/insert escapes to work properly (or better: how I want them to work!).</p>

@@ -1,0 +1,107 @@
+-----
+title: bake.php - Easy baking for lazy folks
+content-type: article
+timestamp: 1146922980
+tags: cakephp|frameworks
+-----
+<p>When I first tried Ruby on Rails I was literally amazed by the <em>generator</em> script. Yes, I was young and inexperienced then (six/seven months ago), but you must admit that getting a controller, a model, all the basic views generated automatically by</p>
+<p><code>rails script/generator scaffold Posts</code></p>
+<p>is not a bad thing. Especially if the same script allows you to create model, views and controller separately and other things. <a href="http://www.symfony-project.com/">Symfony</a> and <span class="caps">PHP</span> on Trax already tried to port this functionalities, with mixed results. What about Cake? Oh well, yes, we do have something like that&#8230; something rather different, but still something: the <code>bake.php</code> script.<br />
+This cute little thing is located in the <code>cake/scripts/</code> folder and can be used &#8211; hear, hear &#8211; from command line. You can run Ruby and Perl scripts, so yes, you can actually run <span class="caps">PHP</span> from command line, although it&#8217;s not its primary purpose.</p>
+<p><img src="/img/pictures/bake.jpg" alt="" /></p>
+<p>Cool then, let&#8217;s open a *nix shell, Windows command prompt, etc. etc., go into the <code>cake/scripts/</code> folder and run:</p>
+<p><code>php bake.php</code></p>
+<p>Assuming that the php executable is in your <em><span class="caps">PATH</span></em> environment variable &#8211; if not, either you add it or you&#8217;ll have to type something like:</p>
+<p><code>D:SERVERphpphp.exe bake.php</code></p>
+<p>depending on where your php executable is. You&#8217;ll be be greeted by a &#8220;<span class="caps">CAKEPHP</span> <span class="caps">BAKE</span>&#8221; text, and then you&#8217;ll be asked a few questions. One thing to realize before proceeding any further: bake.php is <em>not</em> a generator, not in the traditional &#8220;Rails&#8221; sense, anyway. It&#8217;s rather a handy but more verbose dialogue-based configuration script &#8211; which will also generate <em>something</em> eventually if you provide all the necessary details.<br />
+A different approach, which may be good or bad according to your taste: personally I think we should also have something faster to use, like a Rails generator, and I opened a <a href="https://trac.cakephp.org/ticket/768">ticket</a> about it, but let&#8217;s see what bake.php can do, for now.</p>
+<p>The answer is&#8230; nearly anything. It annoying enough to please, but if you follow its directions it can do a prettu decent job in the end, it&#8217;s far from being sentient, but let&#8217;s say it&#8217;s smart enough for a script. First of all if you try it out on a fresh Cake install it will notice that you haven&#8217;t configured your database yet, so it will ask for a hostname, username, password, database name etc. etc. and generate your <code>app/config/database.php</code> for you, not a bad start.</p>
+<p>Once that&#8217;s done &#8211; and it won&#8217;t go on unless you configure a (MySQL only?) database &#8211; you can proceed with the rest. You can start creating either a controller, model or view; I tried a <code>Posts</code> controller, for example. The script then asks quite a few questions:</p>
+<ul>
+	<li>The controller&#8217;s name</li>
+	<li>Whether it will use other models besides posts</li>
+	<li>Whether you want to include any helper</li>
+	<li>Whether you want to include any component</li>
+	<li>Whether you want to generate the base <span class="caps">CRUD</span> methods</li>
+</ul>
+<p>Then finally it generates the damn thing. The result is good enough:</p>
+<p><small><br />
+<pre><code>
+&lt;?php
+class PostsController extends AppController
+{
+	//var $scaffold;
+	var $name       = 'Posts';</p>
+<p>function index()<br />
+	{<br />
+		$this&#8594;set(&#8216;data&#8217;, $this&#8594;Post&#8594;findAll());<br />
+	}</p>
+<p>function add()<br />
+	{<br />
+		if(empty($this&#8594;params[&#8216;data&#8217;]))<br />
+		{<br />
+			$this&#8594;render();<br />
+		}<br />
+		else<br />
+		{<br />
+			if($this&#8594;Post&#8594;save($this&#8594;params[&#8216;data&#8217;]))<br />
+			{<br />
+				$this&#8594;flash(&#8216;Post saved.&#8217;, &#8216;/posts/index&#8217;);<br />
+			}<br />
+			else<br />
+			{<br />
+				$this&#8594;render();<br />
+			}<br />
+		}<br />
+	}</p>
+<p>function edit($id)<br />
+	{<br />
+		if(empty($this&#8594;params[&#8216;data&#8217;]))<br />
+		{<br />
+			$this&#8594;set(&#8216;data&#8217;, $this&#8594;Post&#8594;find(&#8216;Post.id = &#8217; . $id));<br />
+		}<br />
+		else<br />
+		{<br />
+			if($this&#8594;Post&#8594;save($this&#8594;params[&#8217;data&#8217;]))<br />
+			{<br />
+				$this&#8594;flash(&#8216;Post saved.&#8217;, &#8216;/posts/index&#8217;);<br />
+			}<br />
+			else<br />
+			{<br />
+				$this&#8594;set(&#8216;data&#8217;, $this&#8594;params[&#8216;data&#8217;]);<br />
+				$this&#8594;validateErrors($this&#8594;Post);<br />
+				$this&#8594;render();<br />
+			}<br />
+		}<br />
+	}</p>
+<p>function view($id)<br />
+	{<br />
+		$this&#8594;set(&#8216;data&#8217;, $this&#8594;Post&#8594;find(&#8217;Post.id = &#8217; . $id));<br />
+	}</p>
+<p>function delete($id)<br />
+	{<br />
+		$this&#8594;Post&#8594;del($id);<br />
+		$this&#8594;redirect(&#8216;/posts/index&#8217;);<br />
+	}</p>
+<p>function postList()<br />
+	{<br />
+		$vars = $this&#8594;Post&#8594;findAll();<br />
+		foreach($vars as $var)<br />
+		{<br />
+			$list[$var[&#8216;Post&#8217;][&#8216;id&#8217;]] = $var[&#8216;Post&#8217;][&#8216;name&#8217;];<br />
+		}</p>
+<p>return $list;<br />
+	}<br />
+}<br />
+?&gt;<br />
+</code></pre><br />
+</small></p>
+<p>It&#8217;s more or less the same with models and views: it will still ask a lot of questions and in the end generate the thing. <br />
+This behaviour is more advanced than a standard generator, you can include helpers and components already, if you want, but do you <em>really</em> want that? For models it even asks if you want to include particular associations and validation rules! Personally, I&#8217;d rather a generator script which generates something <em>immediately</em> and accepts maybe some parameters to further customization, like:</p>
+<p><code>php bake.php scaffold Posts</code><br />
+<code>php bake.php controller Posts</code><br />
+<code>php bake.php model Posts</code><br />
+<code>php bake.php model Posts</code><br />
+<code>php bake.php controller Posts helper +Html -Time,Javascript</code><br />
+<code>php bake.php model Posts assoc +hasMany comments,tags</code></p>
+<p>Bah&#8230; just some random thoughts. How about custom-made generators (<a href="http://wiki.rubyonrails.org/rails/pages/AvailableGenerators">Rails-inspired</a>)?</p>
