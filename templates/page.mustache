@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> _head}}
+	<body>
+    <div id="wrap">
+      {{> _header}}
+      <main id="main" class="container">
+        <article class="{{content-type}}">
+          <div class="row">
+            {{> _page_header}}
+          </div>
+          <div id="body-text" class="hyphenate">
+            {{{contents}}}
+					</div>
+				</article>
+      </main>
+      {{> _footer}}
+    </div> 
+	</body>
+</html>

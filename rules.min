@@ -10,24 +10,31 @@
   asset output-cp
 ) :copy-pdf-article-asset
 
+
+; Process a content file applying the appropriate template
+; and compiling markdown to HTML if necessary.
 (
   (dict) expect -> =content
-) :process-md-content
-
-
-(
-  (dict) expect -> =content
-) :process-html-content
+  content /content-type :ct
+  content /id :id
+  "page" :tpl
+  (ct "article" ==) ("article" @tpl) when
+  (id "index" ==) ("home" @tpl) when
+  "" :page
+  "" :contents
+  content (
+    (input-fread @contents content)
+    ((/ext ".md" ==) (=temp contents temp markdown @contents temp) when)
+    (contents %contents)
+    (=temp tpl temp mustache @page temp)
+    (page %contents)
+    ((id "index" !=)("$1/index" (id) => % %id ".html" %ext) when)
+  ) tap
+) :process-content
 
 ;;;; MAIN ;;;;
 
-contents (
-  dup
-  (
-    ((/ext ".md" ==) (process-md-content))
-    ((/ext ".html" ==) (process-html-content))
-  ) case
-) foreach
+contents (process-content output-fwrite) foreach
 
 ; Process all assets.
 assets (

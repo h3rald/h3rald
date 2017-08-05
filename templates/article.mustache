@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> _head}}
+	<body>
+    <div id="wrap">
+      {{> _header}}
+      <main id="main" class="container">
+        <article class="{{content-type}}">
+          <div class="row">
+            {{> _page_header}}
+            <ul class="list-unstyled article-info col-md-3">
+              <li><i class="h3-quill-ink"></i> <time datetime="{{date-iso8601}}">{{date}}</time></li>
+              <li><i class="h3-tags"></i> {{tag-links}}</li>
+              {{#pdf}}
+              <li><a href="/articles/{{id}}/{{id}}.pdf"><i class="fa fa-download"> </i>Download as PDF</a></li>
+              {{/pdf}}
+            </ul>
+          </div>
+          <div id="body-text" class="hyphenate">
+            {{{contents}}}
+					</div>
+				</article>
+      </main>
+      {{> _footer}}
+    </div> 
+	</body>
+</html>
