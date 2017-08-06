@@ -38,6 +38,7 @@
   ) foreach
 ) :prepare-archive-data
 
+
 ; Populates the TAG-COLUMNS array containing tags in groups
 ; of four, suitable for the creation of the tags page.
 (
@@ -66,6 +67,7 @@
     ) when
   ) foreach
 ) :prepare-tag-data
+
 
 ; Utility operator to format a timestamp into a date
 (
@@ -96,11 +98,43 @@
   ".html"       %ext
   "Tags"        %title
   "page"        %content-type
-  TAG-COLUMNS    %tag-columns
+  TAG-COLUMNS   %tag-columns
   dup "_tags" swap mustache %contents
   dup "page" swap mustache %contents
   output-fwrite
 ) :create-tags-page
+
+
+; Create a page for a specific archive
+(
+  (quot) expect -> =archive
+  archive last =archdata
+  archdata /month     :month
+  archdata /articles  =articles
+  archdata /id        :id
+  articles 
+  articles (
+    ((/timestamp swap /timestamp >) sort)
+    ((dup /timestamp to-date %date) map)
+  ) tap #articles
+  articles size :count
+  (count 1 ==)
+  ("1 article was written") 
+  ("$1 articles were written" (count) => %) 
+  if :articles-written
+  ()
+  "archives/$1/index" (id) => %   %id
+  "archives/$1.html"  (id) => %   %path 
+  ".html"                         %ext
+  "page"                          %content-type
+  "Archive: $1" (month) => %      %title
+  month                           %month
+  articles-written                %articles-written
+  articles                        %articles
+  dup "_archive" swap mustache    %contents
+  dup "page" swap mustache        %contents
+  output-fwrite
+) :create-archive-page
 
 
 ; Create a page for a specific tag
@@ -113,6 +147,11 @@
     ((/timestamp swap /timestamp >) sort)
     ((dup /timestamp to-date %date) map)
   ) tap #articles
+  articles size :count
+  (count 1 ==)
+  ("1 article is tagged") 
+  ("$1 articles are tagged" (count) => %) 
+  if :articles-tagged
   ()
   "tags/$1/index" (tag) => %  %id
   "tags/$1.html"  (tag) => %  %path 
@@ -120,13 +159,12 @@
   ".html"                     %ext
   "page"                      %content-type
   "Tag: $1" (tag) => %        %title
+  articles-tagged             %articles-tagged
   articles                    %articles
-  articles size               %count
   dup "_tag" swap mustache    %contents
   dup "page" swap mustache    %contents
   output-fwrite
 ) :create-tag-page
-
 
 
 ; Group articles by month
@@ -190,6 +228,7 @@
   content
 ) :process-tags
 
+
 ; Copy PDF files saved in asset folder
 ; to the corresponding article output folder.
 (
@@ -222,8 +261,10 @@
   ) tap
 ) :process-content
 
-;;;; MAIN ;;;;
 
+;;;;; MAIN ;;;;;
+
+; Process all contents
 contents (
   process-tags 
   process-timestamp 
@@ -231,12 +272,15 @@ contents (
   output-fwrite
 ) foreach
 
+; Generate tag pages
 prepare-tag-data
 create-tags-page
 TAGS 'create-tag-page foreach
 
+; Generate archive pages
 prepare-archive-data
 create-archives-page
+ARCHIVES 'create-archive-page foreach
 
 
 ; Process all assets.
