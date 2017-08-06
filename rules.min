@@ -2,6 +2,7 @@
 
 () =TAGS
 () =TAGCOLUMNS
+() =ARCHIVES
 
 
 ; Populates the TAGCOLUMNS array containing tags in groups
@@ -34,12 +35,17 @@
   ) foreach
 ) :prepare-tag-data
 
+; Utility operator to format a timestamp into a date
+(
+  int "dddd, d MMMM yyyy" tformat
+) :to-date
+
 
 ; Create the Tags page.
 (
   ()
   "tags/index"  %id
-  "tags"        %path
+  "tags.html"   %path
   ".html"       %ext
   "Tags"        %title
   "page"        %content-type
@@ -48,6 +54,49 @@
   dup "page" swap mustache %contents
   output-fwrite
 ) :create-tags-page
+
+
+; Create a page for a specific tag
+(
+  (quot) expect -> =tagdata
+  tagdata first :tag
+  tagdata last  =articles
+  articles 
+  articles (
+    ((/timestamp swap /timestamp >) sort)
+    ((dup /timestamp to-date %date) map)
+  ) tap #articles
+  ()
+  "tags/$1/index" (tag) => %  %id
+  "tags/$1.html"  (tag) => %  %path 
+  tag                         %tag
+  ".html"                     %ext
+  "page"                      %content-type
+  "Tag: $1" (tag) => %        %title
+  articles                    %articles
+  articles size               %count
+  dup "_tag" swap mustache    %contents
+  dup "page" swap mustache    %contents
+  output-fwrite
+) :create-tag-page
+
+
+
+; Group articles by month
+;(
+;  (dict) expect -> =article
+;  article /timestamp :ts
+;  ts "dddd, d MMMM yyyy" tformat :date 
+;  ts "yyyyMM" tformat :archive
+;  ts "MMMM yyyy" tformat :month
+;  (ARCHIVES archive dhas?)
+;  (
+;
+;  )
+;  (
+;
+;  ) if
+;) :process-timestamp
 
 
 ; Group articles by tags
@@ -113,6 +162,7 @@
 contents (process-tags process-content output-fwrite) foreach
 prepare-tag-data
 create-tags-page
+TAGS 'create-tag-page foreach
 
 
 ; Process all assets.
