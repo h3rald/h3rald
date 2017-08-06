@@ -1,9 +1,9 @@
 -----
-title: Choosing the Right Blogging Platform
+title: "Choosing the Right Blogging Platform"
 content-type: article
-subtitle: Or why I am still going to use Nanoc for the foreseeable future
+subtitle: "Or why I am still going to use Nanoc for the foreseeable future"
 timestamp: 1398607426
-tags: writing|internet|webdevelopment
+tags: "writing|internet|webdevelopment"
 -----
   Every so often I wonder whether I should ditch my current blogging platform and try something new and shiny that just came out. Luckily, normally I come back to the same conclusion: I don't need to change anything, I just need to find the time and the will to write about something.
   

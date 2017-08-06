@@ -1,9 +1,9 @@
 -----
-title: Introducing HastyScribe
+title: "Introducing HastyScribe"
 content-type: article
-subtitle: A simple command-line application to generate self-contained HTML documents
+subtitle: "A simple command-line application to generate self-contained HTML documents"
 timestamp: 1405881092
-tags: writing|hastyscribe|opensource
+tags: "writing|hastyscribe|opensource"
 -----
 
 Did you ever have to write a document, but didn't want to (or couldn't) use MS Word or another WYSIWYG word processor? Yep, I agree: that's what [Markdown](https://daringfireball.net/projects/markdown/) is for. 

@@ -1,5 +1,81 @@
 'hastysite import
 
+() =TAGS
+() =TAGCOLUMNS
+
+
+; Populates the TAGCOLUMNS array containing tags in groups
+; of four, suitable for the creation of the tags page.
+(
+  TAGS dsort =TAGS
+  0 :count
+  () =tagcolumn
+  TAGS size :tcount
+  TAGS (
+    =tag
+    tcount pred @tcount
+    tag first :tagname
+    tag last size :tagcount
+    () =tagdata
+    tagdata (
+      tagname %tag
+      tagcount %count 
+    ) tap #tagdata
+    count succ @count
+    tagdata tagcolumn append #tagcolumn
+    (count 4 == tcount 0 == or) 
+    (
+      ()
+      tagcolumn %tags
+      TAGCOLUMNS append #TAGCOLUMNS
+      0 @count
+      () #tagcolumn
+    ) when
+  ) foreach
+) :prepare-tag-data
+
+
+; Create the Tags page.
+(
+  ()
+  "tags/index"  %id
+  "tags"        %path
+  ".html"       %ext
+  "Tags"        %title
+  "page"        %content-type
+  TAGCOLUMNS    %tagcolumns
+  dup "_tags" swap mustache %contents
+  dup "page" swap mustache %contents
+  output-fwrite
+) :create-tags-page
+
+
+; Group articles by tags
+(
+  (dict) expect -> =content
+  (content ?tags)
+  (
+    content /tags "|" split =tags
+    tags (
+      :tag
+      (TAGS tag dhas?)
+      (
+        ; Add article to existing tag
+        content ("id" "title" "timestamp") dpick =article
+        TAGS tag dget =tagdata
+        article tagdata append #tagdata
+        TAGS tagdata tag dset #TAGS
+      )
+      (
+        ; Create new tag
+        content ("id" "title" "timestamp") dpick ' =article
+        TAGS article tag dset #TAGS
+      ) if
+    ) foreach
+  ) when
+  content
+) :process-tags
+
 ; Copy PDF files saved in asset folder
 ; to the corresponding article output folder.
 (
@@ -15,8 +91,8 @@
 ; and compiling markdown to HTML if necessary.
 (
   (dict) expect -> =content
-  content /content-type :ct
   content /id :id
+  content /content-type :ct
   "page" :tpl
   (ct "article" ==) ("article" @tpl) when
   (id "index" ==) ("home" @tpl) when
@@ -34,7 +110,10 @@
 
 ;;;; MAIN ;;;;
 
-contents (process-content output-fwrite) foreach
+contents (process-tags process-content output-fwrite) foreach
+prepare-tag-data
+create-tags-page
+
 
 ; Process all assets.
 assets (

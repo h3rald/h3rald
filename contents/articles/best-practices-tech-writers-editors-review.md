@@ -1,9 +1,9 @@
 -----
-title: Book Review: Best Practices for Technical Writers and Editors
+title: "Book Review: Best Practices for Technical Writers and Editors"
 content-type: article
-subtitle: Simply all the books your Documentation Team needs
+subtitle: "Simply all the books your Documentation Team needs"
 timestamp: 1366519425
-tags: books|review|techcomm
+tags: "books|review|techcomm"
 -----
 
 I've been working in Technical Communications for nearly seven years now, first and foremost Technical Writer and more recently as Documentation Manager. In other words, my work revolves around manuals and online helps, authoring tools and guidelines, documentation standards and… you get the picture. 

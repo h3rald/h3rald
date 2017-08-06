@@ -1,9 +1,9 @@
 -----
-title: Introducing LiteStore
+title: "Introducing LiteStore"
 content-type: article
-subtitle: A tiny, lightweight, self-contained, RESTful document store
+subtitle: "A tiny, lightweight, self-contained, RESTful document store"
 timestamp: 1442779305
-tags: webdevelopment|databases|litestore|opensource
+tags: "webdevelopment|databases|litestore|opensource"
 -----
 Lately I have become more and more interested in client-side single-page applications. Nowadays you can write your web apps in Javascript using your favorite framework, without any server-side logic, but you obviously still need:
    

@@ -1,8 +1,8 @@
 -----
-title: Personal Log - January 2009
+title: "Personal Log - January 2009"
 content-type: article
 timestamp: 1232880660
-tags: personal_log|wedding
+tags: "personal_log|wedding"
 -----
 Those who read my blog regularly may have noticed how I normally refrain from posting articles concerning my own life. I used to have a more blog-like web site, but things changed: _"Who would want to read about my life, anyway?"_ &mdash; That's what I always thought. Hence, I focused on writing general-interest, computer-related articles about programming in Ruby, about some IT book which came out, or about the latest chapter in the Browser Wars. You'll find all this in the [archives](/archives/). 
 

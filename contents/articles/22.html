@@ -1,13 +1,13 @@
 -----
-title: Ten minutes on Rails (while eating Cake)
+title: "Ten minutes on Rails (while eating Cake)"
 content-type: article
 timestamp: 1146317340
-tags: cakephp|rails|webdevelopment
+tags: "cakephp|rails|webdevelopment"
 -----
 <p>Today I decided to do something different, something I&#8217;ve been dying to do since before coming across CakePHP: give Rails a <em>proper</em> try. Like many other <span class="caps">PHP</span> developers out there, when <a href="http://www.rubyonrails.org">Ruby on Rails</a> came out I felt damn jealous and terribly tempted to learn Ruby <em>only</em> to start using such an amazing web development framework. At the time I actually even started reading various tutorials about it, and I was literally amazed at how RoR revolutioned the way of developing web applications.</p>
-<p style="float:left;"><img src="/img/pictures/rails.gif" alt="" /></p>
+<p style="float:left;"><img src="http://base--/img/pictures/rails.gif" alt="" /></p>
 <p>One of the main problems which made me &#8211; sadly &#8211; abandon Rails was Ruby itself: personally I&#8217;ve never seen a programming language with a cleaner and more elegant syntax, but also &#8211; at least at the time &#8211; there weren&#8217;t many hosts supporting it. LuckilyI found CakePHP quickly after that&#8230;<br />
-Now however, more and more hosting companies boast full Rails support, and so when recently I <a href="/blog/view/21/">had to move</a> to a new host, I made sure it was Rails-friendly, <em>just in case I wanted to give Rails another try, someday</em>.<br />
+Now however, more and more hosting companies boast full Rails support, and so when recently I <a href="http://base--/blog/view/21/">had to move</a> to a new host, I made sure it was Rails-friendly, <em>just in case I wanted to give Rails another try, someday</em>.<br />
 Oh well, the temptation was so strong that today, only a two days after switching to my new host, I felt I <em>had</em> to try it, I <em>had</em> to taste something different than the usual Cake.</p>
 <p>I decided to (re-)read and follow the <a href="http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html">OnLamp tutorial</a> about RoR, step by step, once again. I quickly typed <code>rails cookbook</code> from my shell and voil&aacute;, rails silently creates the skeleton of my application:</p>
 <p><span class="caps">README</span><br />
@@ -48,7 +48,7 @@ vendor/</p>
 	</ul></li>
 	<li>vendors/</li>
 </ul>
-<p style="float:right;"><img src="/img/pictures/cakephp.png" alt="" /></p>
+<p style="float:right;"><img src="http://base--/img/pictures/cakephp.png" alt="" /></p>
 <p>Cake felt the necessity to divide what you can mess with (<code>app/</code>, <code>vendors/</code>) from what you&#8217;d better not touch (<code>cake/</code>). Rails just left everything on the same level.</p>
 <p>After creating my database and the necessary tables I have to edit <code>config/database.yml</code>, which corresponds to Cake&#8217;s <code>app/config/database.php</code>. Then things start to become a bit different from Cake, as Rails offers some very handy built in scripts which can be used to automatically create your application&#8217;s files, i.e. executing <code>ruby script/generate controller Recipe</code> creates the controller and other bits:</p>
 <pre><code>exists  app/controllers/
@@ -105,4 +105,4 @@ The error occured while evaluating nil.name</p>
 20:   </tr><br />
 21:  &lt;</span> end <span>&gt;<br />
 &lt;</span> end %&gt;</p>
-<p>I took a screenshot of the page, because it was too nice: <a href="/img/pictures/rails_error.jpg">check it out</a>. This error page really tells you what&#8217;s wrong, and even prints the lines of code around the error! It also lets the developer check the full backtrace and every sort of information&#8230; Can we have this in CakePHP please? I actually started to develop something like this, but seemed quite hard to do in <span class="caps">PHP</span>.</p>
+<p>I took a screenshot of the page, because it was too nice: <a href="http://base--/img/pictures/rails_error.jpg">check it out</a>. This error page really tells you what&#8217;s wrong, and even prints the lines of code around the error! It also lets the developer check the full backtrace and every sort of information&#8230; Can we have this in CakePHP please? I actually started to develop something like this, but seemed quite hard to do in <span class="caps">PHP</span>.</p>

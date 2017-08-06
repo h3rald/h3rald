@@ -1,8 +1,8 @@
 -----
-title: Book Review: The Rails Way
+title: "Book Review: The Rails Way"
 content-type: article
 timestamp: 1231056180
-tags: rails|books|review
+tags: "rails|books|review"
 -----
 > "Programming books are pointless: you buy them, you read them and you chuck them because they're already out-of-date!"
 
