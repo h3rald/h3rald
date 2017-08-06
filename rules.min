@@ -1,14 +1,47 @@
 'hastysite import
 
 () =TAGS
-() =TAGCOLUMNS
+() =TAG-COLUMNS
 () =ARCHIVES
+() =ARCHIVE-COLUMNS
 
 
-; Populates the TAGCOLUMNS array containing tags in groups
+; Populates the ARCHIVE-COLUMNS array containing tags in groups
+; of four, suitable for the creation of the archives page.
+(
+  ARCHIVES dsort reverse #ARCHIVES
+  0 :count
+  () =archcolumn
+  ARCHIVES size :acount
+  ARCHIVES (
+    =archive
+    acount pred @acount
+    archive last =arch
+    arch /id            :archid
+    arch /articles size :archcount
+    arch /month         :month
+    ()
+    archcount %count 
+    archid    %id
+    month     %month
+    =archdata
+    count succ @count
+    archdata archcolumn append #archcolumn
+    (count 4 == acount 0 == or) 
+    (
+      ()
+      archcolumn %archives
+      ARCHIVE-COLUMNS append #ARCHIVE-COLUMNS
+      0 @count
+      () #archcolumn
+    ) when
+  ) foreach
+) :prepare-archive-data
+
+; Populates the TAG-COLUMNS array containing tags in groups
 ; of four, suitable for the creation of the tags page.
 (
-  TAGS dsort =TAGS
+  TAGS dsort #TAGS
   0 :count
   () =tagcolumn
   TAGS size :tcount
@@ -17,18 +50,17 @@
     tcount pred @tcount
     tag first :tagname
     tag last size :tagcount
-    () =tagdata
-    tagdata (
-      tagname %tag
-      tagcount %count 
-    ) tap #tagdata
+    ()
+    tagname %tag
+    tagcount %count 
+    =tagdata
     count succ @count
     tagdata tagcolumn append #tagcolumn
     (count 4 == tcount 0 == or) 
     (
       ()
       tagcolumn %tags
-      TAGCOLUMNS append #TAGCOLUMNS
+      TAG-COLUMNS append #TAG-COLUMNS
       0 @count
       () #tagcolumn
     ) when
@@ -41,6 +73,21 @@
 ) :to-date
 
 
+; Create the Archives page.
+(
+  ()
+  "archives/index"  %id
+  "archives.html"   %path
+  ".html"           %ext
+  "Archives"        %title
+  "page"            %content-type
+  ARCHIVE-COLUMNS   %archive-columns
+  dup "_archives" swap mustache %contents
+  dup "page" swap mustache %contents
+  output-fwrite
+) :create-archives-page
+
+
 ; Create the Tags page.
 (
   ()
@@ -49,7 +96,7 @@
   ".html"       %ext
   "Tags"        %title
   "page"        %content-type
-  TAGCOLUMNS    %tagcolumns
+  TAG-COLUMNS    %tag-columns
   dup "_tags" swap mustache %contents
   dup "page" swap mustache %contents
   output-fwrite
@@ -83,20 +130,38 @@
 
 
 ; Group articles by month
-;(
-;  (dict) expect -> =article
-;  article /timestamp :ts
-;  ts "dddd, d MMMM yyyy" tformat :date 
-;  ts "yyyyMM" tformat :archive
-;  ts "MMMM yyyy" tformat :month
-;  (ARCHIVES archive dhas?)
-;  (
-;
-;  )
-;  (
-;
-;  ) if
-;) :process-timestamp
+(
+  (dict) expect -> =content
+  (content ?timestamp)
+  (
+    content /timestamp :ts
+    ts to-date :date 
+    ts int "yyyyMM" tformat :code
+    ts int "MMMM yyyy" tformat :month
+    ts int "MMMM-yyyy" tformat lowercase :id
+    (ARCHIVES code dhas?)
+    (
+      ; Add article to existing archive
+      content ("id" "title" "timestamp") dpick =article
+      ARCHIVES code dget =archivedata
+      archivedata /articles =articles
+      article articles append #articles
+      archivedata articles %articles #archivedata
+      ARCHIVES archivedata code dset #ARCHIVES
+    )
+    (
+      ; Create new monthly archive
+      content ("id" "title" "timestamp") dpick ' =article
+      ()
+      month   %month
+      article %articles
+      id      %id
+      =archive
+      ARCHIVES archive code dset #ARCHIVES
+    ) if
+  ) when
+  content
+) :process-timestamp
 
 
 ; Group articles by tags
@@ -159,10 +224,19 @@
 
 ;;;; MAIN ;;;;
 
-contents (process-tags process-content output-fwrite) foreach
+contents (
+  process-tags 
+  process-timestamp 
+  process-content
+  output-fwrite
+) foreach
+
 prepare-tag-data
 create-tags-page
 TAGS 'create-tag-page foreach
+
+prepare-archive-data
+create-archives-page
 
 
 ; Process all assets.
