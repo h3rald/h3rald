@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Bunday Sans Light';
+    src: url('../fonts/bundaysans-light-webfont.woff2') format('woff2'),
+         url('../fonts/bundaysans-light-webfont.woff') format('woff'),
+         url('../fonts/bundaysans-light-webfont.ttf') format('truetype'),
+         url('../fonts/bundaysans-light-webfont.svg#Bunday Sanslight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Bunday Sans Light';
+    src: url('../fonts/bundaysans-lightit-webfont.woff2') format('woff2'),
+         url('../fonts/bundaysans-lightit-webfont.woff') format('woff'),
+         url('../fonts/bundaysans-lightit-webfont.ttf') format('truetype'),
+         url('../fonts/bundaysans-lightit-webfont.svg#Bunday Sanslight_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Bunday Sans Regular';
+    src: url('../fonts/bundaysans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/bundaysans-regular-webfont.woff') format('woff'),
+         url('../fonts/bundaysans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/bundaysans-regular-webfont.svg#Bunday Sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Bunday Sans Regular';
+    src: url('../fonts/bundaysans-regularit-webfont.woff2') format('woff2'),
+         url('../fonts/bundaysans-regularit-webfont.woff') format('woff'),
+         url('../fonts/bundaysans-regularit-webfont.ttf') format('truetype'),
+         url('../fonts/bundaysans-regularit-webfont.svg#Bunday Sansregular_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack-regular-latin-webfont.eot?v=2.020');
+    src: url('../fonts/hack-regular-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'), url('../fonts/hack-regular-latin-webfont.woff2?v=2.020') format('woff2'), url('../fonts/hack-regular-latin-webfont.woff?v=2.020') format('woff'), url('../fonts/hack-regular-latin-webfont.ttf?v=2.020') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack-bold-latin-webfont.eot?v=2.020');
+    src: url('../fonts/hack-bold-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'), url('../fonts/hack-bold-latin-webfont.woff2?v=2.020') format('woff2'), url('../fonts/hack-bold-latin-webfont.woff?v=2.020') format('woff'), url('../fonts/hack-bold-latin-webfont.ttf?v=2.020') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack-italic-latin-webfont.eot?v=2.020');
+    src: url('../fonts/hack-italic-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'), url('../fonts/hack-italic-latin-webfont.woff2?v=2.020') format('woff2'), url('../fonts/hack-italic-latin-webfont.woff?v=2.020') format('woff'), url('../fonts/hack-italic-latin-webfont.ttf?v=2.020') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Hack';
+    src: url('../fonts/hack-bolditalic-latin-webfont.eot?v=2.020');
+    src: url('../fonts/hack-bolditalic-latin-webfont.eot?#iefix&v=2.020') format('embedded-opentype'), url('../fonts/hack-bolditalic-latin-webfont.woff2?v=2.020') format('woff2'), url('../fonts/hack-bolditalic-latin-webfont.woff?v=2.020') format('woff'), url('../fonts/hack-bolditalic-latin-webfont.ttf?v=2.020') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'H3RALD';
+    src: url('../fonts/h3rald-eot.eot');
+    src: url('../fonts/h3rald-eot.eot?#iefix') format('embedded-opentype'), url('../fonts/h3rald-ttf.ttf') format('truetype'), url('../fonts/h3rald-woff.woff') format('woff'), url('../fonts/h3rald-svg.svg#h3rald') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .h3rald {
+    font-family: "H3RALD";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e7c4";
+    display: inline;
+  }
+  .h3rald:before {
+    content: "\e7c4";
+  }
+  .h3rald-header,
+  .navbar a.h3rald.h3rald-header {
+    margin-left: 1rem;
+    color: #000000;
+    font-size: 35px;
+    text-shadow: 0 1px 1px #111;
+  }
+  .h3rald-header:hover,
+  .navbar a.h3rald.h3rald-header:hover {
+    text-decoration: none;
+  }
+  .h3rald-footer {
+    position: relative;
+    top: 3px;
+    font-size: 15px;
+  }
+  
+  @font-face {
+    font-family: 'HastyScribe';
+    src: url('../fonts/hastyscribe-eot.eot');
+    src: url('../fonts/hastyscribe-eot.eot?#iefix') format('embedded-opentype'), url('../fonts/hastyscribe-ttf.ttf') format('truetype'), url('../fonts/hastyscribe-woff.woff') format('woff'), url('../fonts/hastyscribe-svg.svg#hastyscribe') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .hastyscribe:before {
+    font-family: "HastyScribe";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 150%;
+    vertical-align: bottom;
+    line-height: 0.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline;
+    content: "H";
+  }
+  
