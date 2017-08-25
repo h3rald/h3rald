@@ -95,6 +95,8 @@ footer {
   text-align: right;
   font-style: italic;
   padding: 0.2rem;
+  padding-right: 0.5rem;
+  color: #f0f1f4;
 }
 
 .v-spacer {
