@@ -1,13 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> _head}}
-	<body>
+  <body>
     <div id="wrap">
       {{> _header}}
       <main id="main" class="container">
-        {{{contents}}}
+      <div class="columns">
+        <div class="column col-xs-12 col-md-6">
+          <article>
+            <h2><a href="/{{latest.id}}">{{latest.title}}</a></h2>
+            <p class="subtitle">
+              {{latest.subtitle}}
+            </p>
+            <p class="date"><i class="ent ent-calendar"></i> <time>{{latest.date}}</time></p>
+            <section>
+              {{{latest.summary}}}
+              <p><a href="/articles/litestore/">Continue reading →</a></p>
+            </section>
+          </article>
+          <div class="divider text-center" data-content="more recent articles"></div>
+          {{#recents}}
+            <article>
+              <h4><a href="/{{id}}">{{title}}</a></h4>
+              <p>
+                {{subtitle}}
+              </p>
+            </article>
+          {{/recents}}
+          <div class="panel contact-list">
+            <div class="panel-header">
+              <div class="panel-title">Contact</div>
+            </div>
+            <div class="panel-body">
+              <p>This site was made by Fabio Cevasco. For more information, see the <a href="/about/">About</a> page.</p>
+              <p>To contact me, use the links below.</p>
+              <ul>
+                <li><i class="ent ent-mail"></i>&nbsp;<a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#51;&#114;&#97;&#108;&#100;&#64;&#104;&#51;&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;'>E-mail</a></li>
+                <li><i class="ent ent-linkedin"></i>&nbsp;<a href="https://www.linkedin.com/in/fabiocevasco" rel="me">LinkedIn</a></li>
+                <li><i class="ent ent-twitter"></i>&nbsp;<a href="http://twitter.com/h3rald" rel="me">Twitter</a></li>
+                <li><i class="ent ent-pin"></i>&nbsp;<a href="http://pinboard.in/u:h3rald/" rel="me">Pinboard</a></li>
+                <li><i class="ent ent-instagram"></i>&nbsp;<a href="http://instagram.com/h3rald/" rel="me">Instagram</a></li>
+                <li><i class="ent ent-github"></i>&nbsp;<a href="https://github.com/h3rald" rel="me">Github</a></li>
+                <li><i class="ent ent-flickr"></i>&nbsp;<a href="https://www.flickr.com/photos/h3rald/" rel="me">Flickr</a></li>
+                <li><i class="ent ent-foursquare"></i>&nbsp;<a href="http://foursquare.com/h3rald" rel="me">Foursquare</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="column col-xs-12 col-md-6">
+          <div class="panel featured">
+            <div class="panel-header">
+              featured articles
+            </div>
+            <div class="panel-body">
+              <article id="a_randal-schwartz">
+              <header>
+              <h3><a href="/articles/randal-schwartz/">A pizza with Randal Schwartz</a></h3>
+              <p>Talking about open source, programming, emacs and technical writing</p>
+              </header>
+              </article>
+              <article id="a_herald-vim-color-scheme">
+              <header>
+              <h3><a href="/articles/herald-vim-color-scheme/">Herald (Vim Color Scheme)</a></h3>
+              <p>My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!</p>
+              </header>
+              </article>
+              <article id="a_10-programming-languages">
+              <header>
+              <h3><a href="/articles/10-programming-languages/">10 programming languages worth checking out</a></h3>
+              <p>A quick comparison of 10 non-mainstream programming languages</p>
+              </header>
+              </article>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div class="panel featured">
+            <div class="panel-header">
+              top tags
+            </div>
+            <div class="panel-body chips">
+              {{#tags}}
+              <label class="chip">
+                <figure class="avatar avatar-xs" data-initial="{{total}}"></figure>
+                <a href="/tags/{{tag}}/">{{tag}}</a>
+              </label>
+              {{/tags}}
+            </div>
+            <div class="panel-footer">
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div class="panel featured">
+            <div class="panel-header">
+              featured projects
+            </div>
+            <div class="panel-body">
+              <div class="columns">
+                <div class="column col-xs-12 col-md-6">
+                  <h3><a href="https://min-lang.org/">min</a></h3>
+                  <p>A tiny concatenative programming language and system shell, providing a small standard library with regular expression support, cryptography, file management, and more.</p>
+                </div>
+                <div class="column col-xs-12 col-md-6">
+                  <h3><a href="/hastyscribe/">HastyScribe</a></h3>
+                  <p>A self-contained Markdown to HTML compiler based on discount but including additional features such as support for snippets, custom fields, simple macros and more.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="v-spacer"></div>
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">Credits</div>
+            </div>
+            <div class="panel-body">
+              <p>Special thanks to the following people, who made this web site possible:</p>
+              <ul>
+                <li>
+                <a href="http://scholarsfonts.net/">David J. Perry</a>, who designed the <a href="http://scholarsfonts.net/cardofnt.html">Cardo</a> font used for the H3RALD logo.
+                </li>
+                <li>
+                <a href="http://atipo.es/en/">atipo</a>, who designed the <a href="http://calendasplus.com">Calendas Plus</a> font, used throughout this web site.
+                </li>
+                <li>
+                <a href="https://twitter.com/picturepan2">Yan Zhu</a>, the creator of the <a href="https://picturepan2.github.io/spectre/">Spectre</a> CSS framework.
+                </li>
+                <li>
+                <a href="http://www.danielbruce.se/">Daniel Bruce</a>, designer of the <a href="http://www.entypo.com/">Entypo</a> font, used for the icons on this web site.
+                </li>
+                <li>
+                <a href="https://github.com/nagoshiashumari">Daniela Howe</a> and <a href="https://github.com/idmontie">Ivan Montiel</a>, designers of the <a href="http://nagoshiashumari.github.io/Rpg-Awesome/">RPG Awesome</a> font, used for some of the icons on this web site.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column col-xs-12 col-md-6">
+        </div>
+        <div class="column col-xs-12 col-md-6">
+        </div>
+      </div>
+
       </main>
       {{> _footer}}
     </div>
-	</body>
+  </body>
 </html>

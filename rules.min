@@ -4,6 +4,8 @@
 () =TAG-COLUMNS
 () =ARCHIVES
 () =ARCHIVE-COLUMNS
+() =ARTICLES
+() =HOME
 
 
 ; Populates the ARCHIVE-COLUMNS array containing tags in groups
@@ -166,7 +168,6 @@
   output-fwrite
 ) :create-tag-page
 
-
 ; Group articles by month
 (
   (dict) expect -> =content
@@ -177,6 +178,9 @@
     ts int "yyyyMM" tformat :code
     ts int "MMMM yyyy" tformat :month
     ts int "MMMM-yyyy" tformat lowercase :id
+    ; Add to articles
+    content date %date
+    content ARTICLES  append #ARTICLES
     (ARCHIVES code dhas?)
     (
       ; Add article to existing archive
@@ -248,7 +252,7 @@
   content /content-type :ct
   "page" :tpl
   (ct "article" ==) ("article" @tpl) when
-  (id "index" ==) ("home" @tpl) when
+  (id "index" ==) (content #HOME "home" @tpl) when
   "" :page
   "" :contents
   content (
@@ -262,14 +266,51 @@
 ) :process-content
 
 
+; Process and generate home page
+(
+  ; Sort articles by timestamp
+  ARTICLES (/timestamp swap /timestamp >) sort #ARTICLES
+  ARTICLES first        =latest
+  ARTICLES 1 4 slice    =recents
+  ; Process summary
+  latest input-fread "/(.+)?<hr/ms" regex 1 get latest markdown :summary
+  latest summary %summary #latest
+  latest dup /timestamp to-date %date #latest
+  ; Process top tags
+  TAGS (
+    dup first :tag
+    last size :total
+    (tag total) => 
+  ) map
+  (last swap last >) sort 
+  0 9 slice
+  (
+    =data
+    ()
+    data first %tag
+    data last  %total
+  ) map
+  =tags
+  HOME (
+    (latest   %latest)
+    (recents  %recents)
+    (tags     %tags)
+    (=temp temp "home" temp mustache %contents)
+    (output-fwrite)
+  ) tap!
+) :generate-home
+
 ;;;;; MAIN ;;;;;
 
 ; Process all contents
 contents (
+  =content
+  content /id :id
+  content
   process-tags 
   process-timestamp 
   process-content
-  output-fwrite
+  (id "index" !=) 'output-fwrite when
 ) foreach
 
 ; Generate tag pages
@@ -281,6 +322,10 @@ TAGS 'create-tag-page foreach
 prepare-archive-data
 create-archives-page
 ARCHIVES 'create-archive-page foreach
+
+; Generate home page
+generate-home
+
 
 
 ; Process all assets.

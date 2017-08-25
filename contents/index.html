@@ -3,29 +3,70 @@ title: "Home"
 content-type: page
 -----
 <div class="columns">
-  <article class="column col-xs-12 col-md-6 latest-article">
-  <h2><a href="/articles/litestore/">Introducing LiteStore</a></h2>
-  <p class="subtitle">
-  A tiny, lightweight, self-contained, RESTful document store
-  </p>
-  <section>
-  <p>Lately I have become more and more interested in client-side single-page applications. Nowadays you can write your web apps in Javascript using your favorite framework, without any server-side logic, but you obviously still need:</p>
-  <ul>
-    <li>some web service to retrieve and persist your application data.</li>
-    <li>a web server to serve the source code and the static assets of your web application.</li>
-  </ul>
-  <p>NodeJS is probably one of the easiest backend to setup for prototyping SPAs. It is very easy to create a simple web server in Node and to implement a simple <span class="caps">REST</span> <span class="caps">API</span> using Express or a similar framework, but you still need to install node and write some code to wire up your backend.</p>
-  <p>I wanted something even more lazy then that. I wanted a fully <em>self-contained</em> program able to:</p>
-  <ul>
-    <li>Serve static files</li>
-    <li>Act as a simple <span class="caps">JSON</span> document store</li>
-    <li>Provide a simple <span class="caps">REST</span> <span class="caps">API</span> to work with</li>
-    <li>(bonus!) provide a way to pack web apps for easy distribution</li>
-  </ul>
-  <p>…and that’s how I ended up developing <em>LiteStore</em>.</p>
-  <p><a href="/articles/litestore/">Continue reading →</a></p>
-  </section>
-  </article>
+  <div class="column col-xs-12 col-md-6">
+    <article>
+    <h2><a href="/articles/litestore/">Introducing LiteStore</a></h2>
+    <p class="subtitle">
+    A tiny, lightweight, self-contained, RESTful document store
+    </p>
+    <p class="date"><i class="ent ent-calendar"></i> <time>Monday, August 14<sup>th</sup> 2017</time></p>
+    <section>
+    <p>Lately I have become more and more interested in client-side single-page applications. Nowadays you can write your web apps in Javascript using your favorite framework, without any server-side logic, but you obviously still need:</p>
+    <ul>
+      <li>some web service to retrieve and persist your application data.</li>
+      <li>a web server to serve the source code and the static assets of your web application.</li>
+    </ul>
+    <p>NodeJS is probably one of the easiest backend to setup for prototyping SPAs. It is very easy to create a simple web server in Node and to implement a simple <span class="caps">REST</span> <span class="caps">API</span> using Express or a similar framework, but you still need to install node and write some code to wire up your backend.</p>
+    <p>I wanted something even more lazy then that. I wanted a fully <em>self-contained</em> program able to:</p>
+    <ul>
+      <li>Serve static files</li>
+      <li>Act as a simple <span class="caps">JSON</span> document store</li>
+      <li>Provide a simple <span class="caps">REST</span> <span class="caps">API</span> to work with</li>
+      <li>(bonus!) provide a way to pack web apps for easy distribution</li>
+    </ul>
+    <p>…and that’s how I ended up developing <em>LiteStore</em>.</p>
+    <p><a href="/articles/litestore/">Continue reading →</a></p>
+    </section>
+    </article>
+    <div class="divider text-center" data-content="more recent articles"></div>
+    <article>
+    <h4><a href="/articles/litestore/">Introducing LiteStore</a></h4>
+    <p>
+    A tiny, lightweight, self-contained, RESTful document store
+    </p>
+    </article>
+    <article>
+    <h4><a href="/articles/litestore/">Introducing LiteStore</a></h4>
+    <p>
+    A tiny, lightweight, self-contained, RESTful document store
+    </p>
+    </article>
+    <article>
+    <h4><a href="/articles/litestore/">Introducing LiteStore</a></h4>
+    <p>
+    A tiny, lightweight, self-contained, RESTful document store
+    </p>
+    </article>
+    <div class="panel contact-list">
+      <div class="panel-header">
+        <div class="panel-title">Contact</div>
+      </div>
+      <div class="panel-body">
+        <p>This site was made by Fabio Cevasco. For more information, see the <a href="/about/">About</a> page.</p>
+        <p>To contact me, use the links below.</p>
+        <ul>
+          <li><i class="ent ent-mail"></i>&nbsp;<a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#51;&#114;&#97;&#108;&#100;&#64;&#104;&#51;&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;'>E-mail</a></li>
+          <li><i class="ent ent-linkedin"></i>&nbsp;<a href="https://www.linkedin.com/in/fabiocevasco" rel="me">LinkedIn</a></li>
+          <li><i class="ent ent-twitter"></i>&nbsp;<a href="http://twitter.com/h3rald" rel="me">Twitter</a></li>
+          <li><i class="ent ent-pin"></i>&nbsp;<a href="http://pinboard.in/u:h3rald/" rel="me">Pinboard</a></li>
+          <li><i class="ent ent-instagram"></i>&nbsp;<a href="http://instagram.com/h3rald/" rel="me">Instagram</a></li>
+          <li><i class="ent ent-github"></i>&nbsp;<a href="https://github.com/h3rald" rel="me">Github</a></li>
+          <li><i class="ent ent-flickr"></i>&nbsp;<a href="https://www.flickr.com/photos/h3rald/" rel="me">Flickr</a></li>
+          <li><i class="ent ent-foursquare"></i>&nbsp;<a href="http://foursquare.com/h3rald" rel="me">Foursquare</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="column col-xs-12 col-md-6">
     <div class="panel featured">
       <div class="panel-header">
@@ -102,31 +143,25 @@ content-type: page
       <div class="panel-footer">
       </div>
     </div>
-  </div>
-</div>
-<div class="columns">
-  <div class="column col-xs-12 col-md-6">
-    <div class="panel contact-list">
+    <div class="v-spacer"></div>
+    <div class="panel featured">
       <div class="panel-header">
-        <div class="panel-title">Contact</div>
+        featured projects
       </div>
       <div class="panel-body">
-        <p>This site was made by Fabio Cevasco. For more information, see the <a href="/about/">About</a> page.</p>
-        <p>To contact me, use the links below.</p>
-        <ul>
-          <li><i class="ent ent-mail"></i> <a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#51;&#114;&#97;&#108;&#100;&#64;&#104;&#51;&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;'>&#104;&#51;&#114;&#97;&#108;&#100;&#64;&#104;&#51;&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;</a></li>
-          <li><i class="ent ent-linkedin"></i> <a href="https://www.linkedin.com/in/fabiocevasco" title="LinkedIn">fabiocevasco</a></li>
-          <li><i class="ent ent-twitter"></i> <a href="http://twitter.com/h3rald" title="Twitter">@h3rald</a></li>
-          <li><i class="ent ent-pin"></i> <a href="http://pinboard.in/u:h3rald/" title="Pinboard">h3rald</a></li>
-          <li><i class="ent ent-instagram"></i> <a href="http://instagram.com/h3rald/" title="Instagram">h3rald</a></li>
-          <li><i class="ent ent-github"></i> <a href="https://github.com/h3rald" title="Github">h3rald</a></li>
-          <li><i class="ent ent-flickr"></i> <a href="https://www.flickr.com/photos/h3rald/" title="Flickr">h3rald</a></li>
-          <li><i class="ent ent-foursquare"></i> <a href="http://foursquare.com/h3rald" title="Foursquare">h3rald</a></li>
-        </ul>
+        <div class="columns">
+          <div class="column col-xs-12 col-md-6">
+            <h3><a href="https://min-lang.org/">min</a></h3>
+            <p>A tiny concatenative programming language and system shell, providing a small standard library with regular expression support, cryptography, file management, and more.</p>
+          </div>
+          <div class="column col-xs-12 col-md-6">
+            <h3><a href="/hastyscribe/">HastyScribe</a></h3>
+            <p>A self-contained Markdown to HTML compiler based on discount but including additional features such as support for snippets, custom fields, simple macros and more.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="column col-xs-12 col-md-6">
+    <div class="v-spacer"></div>
     <div class="panel">
       <div class="panel-header">
         <div class="panel-title">Credits</div>
@@ -135,19 +170,16 @@ content-type: page
         <p>Special thanks to the following people, who made this web site possible:</p>
         <ul>
           <li>
-          <a href="http://www.stoneship.org/">Denis Defreyne</a>, creator of the exceptional <a href="http://nanoc.stoneship.org/">nanoc</a> static site generator.
-          </li>
-          <li>
           <a href="http://scholarsfonts.net/">David J. Perry</a>, who designed the <a href="http://scholarsfonts.net/cardofnt.html">Cardo</a> font used for the H3RALD logo.
           </li>
           <li>
           <a href="http://atipo.es/en/">atipo</a>, who designed the <a href="http://calendasplus.com">Calendas Plus</a> font, used throughout this web site.
           </li>
           <li>
-          <a href="https://twitter.com/mdo">Mark Otto</a> and <a href="https://twitter.com/fat">fat-kun</a>, creators of the awesome <a href="http://getbootstrap.com">Bootstrap</a> framework.
+          <a href="https://twitter.com/picturepan2">Yan Zhu</a>, the creator of the <a href="https://picturepan2.github.io/spectre/">Spectre</a> CSS framework.
           </li>
           <li>
-          <a href="http://twitter.com/davegandy">Dave Gandy</a>, designer of the <a href="http://fontawesome.io/">FontAwesome</a> font, used for some of the icons on this web site.
+          <a href="http://www.danielbruce.se/">Daniel Bruce</a>, designer of the <a href="http://www.entypo.com/">Entypo</a> font, used for the icons on this web site.
           </li>
           <li>
           <a href="https://github.com/nagoshiashumari">Daniela Howe</a> and <a href="https://github.com/idmontie">Ivan Montiel</a>, designers of the <a href="http://nagoshiashumari.github.io/Rpg-Awesome/">RPG Awesome</a> font, used for some of the icons on this web site.
@@ -155,5 +187,11 @@ content-type: page
         </ul>
       </div>
     </div>
+  </div>
+</div>
+<div class="columns">
+  <div class="column col-xs-12 col-md-6">
+  </div>
+  <div class="column col-xs-12 col-md-6">
   </div>
 </div>

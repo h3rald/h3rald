@@ -29,6 +29,10 @@ h3 {
   font-size: 2rem;
 }
 
+h4 {
+  font-size: 1.5rem;  
+}
+
 .subtitle {
   font-size: 1.75rem;
   font-style: italic;
@@ -53,6 +57,16 @@ ol li, ul li {
     margin-top: 0.2rem;
 }
 
+main.container {
+  padding-left: 2.5rem;  
+  padding-right: 2.5rem;  
+}
+
+article {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 footer {
   font-size: 80%
 }
@@ -71,6 +85,10 @@ footer {
 
 .contact-list ul {
   list-style: none;
+}
+.contact-list li {
+  display: inline;
+  margin-right: 1rem;
 }
 
 .featured .panel-header {
@@ -93,4 +111,9 @@ footer {
 
 .avatar.avatar-xs {
   font-size: .9rem;  
+}
+
+.date {
+  font-style: italic;
+  text-align: right;
 }

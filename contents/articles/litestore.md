@@ -21,6 +21,8 @@ I wanted something even more lazy then that. I wanted a fully _self-contained_ p
 
 ...and that's how I ended up developing _LiteStore_.
 
+<hr class="sep" />
+
 [LiteStore](/litestore) is a lightweight, self-contained, RESTful, searchable, multi-format, NoSQL document store and web server. That sounds pretentious, but it is essentially an accurate description of what LiteStore is and does. 
 
 It is built using the [Nim](http://nim-lang.org/) programming language and its Administration App (see below) is built using [Mithril](https://lhorie.github.io/mithril/), two relatively less-known projects, both of which I highly recommend if you want to take a break from more mainstream programming languages like C# or Java and Javascript frameworks like AngularJS or React.
