@@ -319,6 +319,7 @@ extended_intro: |
 
 bq. &mdash; This article has been translated into <a href="http://science.webhostinggeeks.com/10-programskih-jezika">Serbo-Croatian</a> by ??<a href="http://webhostinggeeks.com/">Web Geeks</a>?? &mdash;
 
+bq. &mdash; This article has been translated into <a href="https://www.homeyou.com/~edu/10-linguagens-de-programacao">Portuguese</a> by ??<a href="https://www.homeyou.com/~edu/">Artur Weber</a>?? &mdash;
 
 If you program for fun or profit, chances are that you know C, C++, Java, PHP, Perl, Python or Ruby. These programming languages are all widely known, and, to a different degree, used in commercial applications. At least some of them can safely be considered _mainstream_, even if that word has become so overused and misused that has almost lost its original meaning, if it ever had one.
 
