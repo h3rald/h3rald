@@ -1,46 +1,122 @@
+/*
 @font-face {
-    font-family: 'Bunday Sans Light';
-    src: url('../fonts/bundaysans-light-webfont.woff2') format('woff2'),
-         url('../fonts/bundaysans-light-webfont.woff') format('woff'),
-         url('../fonts/bundaysans-light-webfont.ttf') format('truetype'),
-         url('../fonts/bundaysans-light-webfont.svg#Bunday Sanslight') format('svg');
+    font-family: 'Neris';
+    src: url('../fonts/neris-light-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'Bunday Sans Light';
-    src: url('../fonts/bundaysans-lightit-webfont.woff2') format('woff2'),
-         url('../fonts/bundaysans-lightit-webfont.woff') format('woff'),
-         url('../fonts/bundaysans-lightit-webfont.ttf') format('truetype'),
-         url('../fonts/bundaysans-lightit-webfont.svg#Bunday Sanslight_italic') format('svg');
+    font-family: 'Neris';
+     src: url('../fonts/neris-lightitalic-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
-
 }
 
 @font-face {
-    font-family: 'Bunday Sans Regular';
-    src: url('../fonts/bundaysans-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/bundaysans-semibold-webfont.woff') format('woff'),
-         url('../fonts/bundaysans-semibold-webfont.ttf') format('truetype'),
-         url('../fonts/bundaysans-semibold-webfont.svg#Bunday Sansregular') format('svg');
+    font-family: 'Neris';
+    src: url('../fonts/neris-semibold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neris';
+    src: url('../fonts/neris-semibold-italic-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+*/
+
+
+@font-face {
+    font-family: 'Bunday Sans';
+    src: url('../fonts/bundaysans-light-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'Bunday Sans Regular';
-    src: url('../fonts/bundaysans-semiboldit-webfont.woff2') format('woff2'),
-         url('../fonts/bundaysans-semiboldit-webfont.woff') format('woff'),
-         url('../fonts/bundaysans-semiboldit-webfont.ttf') format('truetype'),
-         url('../fonts/bundaysans-semiboldit-webfont.svg#Bunday Sansregular_italic') format('svg');
+    font-family: 'Bunday Sans';
+     src: url('../fonts/bundaysans-lightit-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
-
 }
+
+@font-face {
+    font-family: 'Bunday Sans';
+    src: url('../fonts/bundaysans-bold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bunday Sans';
+    src: url('../fonts/bundaysans-boldit-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*
+@font-face {
+    font-family: 'Noway';
+    src: url('../fonts/noway-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noway';
+     src: url('../fonts/noway_regular_italic-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Noway';
+    src: url('../fonts/noway-regular-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noway';
+    src: url('../fonts/noway_regular_italic-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+*/
+
+/*
+@font-face {
+    font-family: 'Clear Sans';
+    src: url('../fonts/ClearSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clear Sans';
+     src: url('../fonts/ClearSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Clear Sans';
+    src: url('../fonts/ClearSans-Medium.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clear Sans';
+    src: url('../fonts/ClearSans-MediumItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+*/
 
 @font-face {
     font-family: 'Hack';
@@ -109,7 +185,7 @@
   .h3rald-footer {
     position: relative;
     top: 3px;
-    font-size: 15px;
+    font-size: 13px;
   }
   
   @font-face {

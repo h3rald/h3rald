@@ -22,30 +22,11 @@
           {{#recents}}
             <article>
               <h4><a href="/{{id}}">{{title}}</a></h4>
-              <p>
+              <p class="subtitle">
                 {{subtitle}}
               </p>
             </article>
           {{/recents}}
-          <div class="panel featured contact-list">
-            <div class="panel-header">
-              Contact
-            </div>
-            <div class="panel-body">
-              <p>This site was made by Fabio Cevasco. For more information, see the <a href="/about/">About</a> page.</p>
-              <p>To contact me, use the links below.</p>
-              <ul>
-                <li><i class="ent ent-mail"></i>&nbsp;<a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#51;&#114;&#97;&#108;&#100;&#64;&#104;&#51;&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;'>E-mail</a></li>
-                <li><i class="ent ent-linkedin"></i>&nbsp;<a href="https://www.linkedin.com/in/fabiocevasco" rel="me">LinkedIn</a></li>
-                <li><i class="ent ent-twitter"></i>&nbsp;<a href="http://twitter.com/h3rald" rel="me">Twitter</a></li>
-                <li><i class="ent ent-pin"></i>&nbsp;<a href="http://pinboard.in/u:h3rald/" rel="me">Pinboard</a></li>
-                <li><i class="ent ent-instagram"></i>&nbsp;<a href="http://instagram.com/h3rald/" rel="me">Instagram</a></li>
-                <li><i class="ent ent-github"></i>&nbsp;<a href="https://github.com/h3rald" rel="me">Github</a></li>
-                <li><i class="ent ent-flickr"></i>&nbsp;<a href="https://www.flickr.com/photos/h3rald/" rel="me">Flickr</a></li>
-                <li><i class="ent ent-foursquare"></i>&nbsp;<a href="http://foursquare.com/h3rald" rel="me">Foursquare</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
         <div class="column col-xs-12 col-md-6">
           <div class="panel featured">
@@ -56,24 +37,25 @@
               <article id="a_randal-schwartz">
               <header>
               <h3><a href="/articles/randal-schwartz/">A pizza with Randal Schwartz</a></h3>
-              <p>Talking about open source, programming, emacs and technical writing</p>
+              <p class="subtitle">Talking about open source, programming, emacs and technical writing</p>
               </header>
               </article>
               <article id="a_herald-vim-color-scheme">
               <header>
               <h3><a href="/articles/herald-vim-color-scheme/">Herald (Vim Color Scheme)</a></h3>
-              <p>My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!</p>
+              <p class="subtitle">My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!</p>
               </header>
               </article>
               <article id="a_10-programming-languages">
               <header>
               <h3><a href="/articles/10-programming-languages/">10 programming languages worth checking out</a></h3>
-              <p>A quick comparison of 10 non-mainstream programming languages</p>
+              <p class="subtitle">A quick comparison of 10 non-mainstream programming languages</p>
               </header>
               </article>
             </div>
           </div>
           <div class="v-spacer"></div>
+          <!--
           <div class="panel featured">
             <div class="panel-header">
               top tags
@@ -90,6 +72,7 @@
             </div>
           </div>
           <div class="v-spacer"></div>
+          -->
           <div class="panel featured">
             <div class="panel-header">
               featured projects
@@ -110,7 +93,7 @@
           <div class="v-spacer"></div>
           <div class="panel featured">
             <div class="panel-header">
-              Credits
+              credits
             </div>
             <div class="panel-body">
               <p>Special thanks to the following people, who made this web site possible:</p>
@@ -136,12 +119,27 @@
         </div>
       </div>
       <div class="columns">
-        <div class="column col-xs-12 col-md-6">
-        </div>
-        <div class="column col-xs-12 col-md-6">
+        <div class="column col-xs-12">
+          <div class="panel featured contact-list">
+            <div class="panel-header">
+              contact
+            </div>
+            <div class="panel-body">
+              <p>This site was made by Fabio Cevasco. For more information, see the <a href="/about/">About</a> page. To contact me, use the links below.</p>
+              <ul>
+                <li><i class="ent ent-mail"></i>&nbsp;<a href='&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#51;&#114;&#97;&#108;&#100;&#64;&#104;&#51;&#114;&#97;&#108;&#100;&#46;&#99;&#111;&#109;'>E-mail</a></li>
+                <li><i class="ent ent-linkedin"></i>&nbsp;<a href="https://www.linkedin.com/in/fabiocevasco" rel="me">LinkedIn</a></li>
+                <li><i class="ent ent-twitter"></i>&nbsp;<a href="http://twitter.com/h3rald" rel="me">Twitter</a></li>
+                <li><i class="ent ent-pin"></i>&nbsp;<a href="http://pinboard.in/u:h3rald/" rel="me">Pinboard</a></li>
+                <li><i class="ent ent-instagram"></i>&nbsp;<a href="http://instagram.com/h3rald/" rel="me">Instagram</a></li>
+                <li><i class="ent ent-github"></i>&nbsp;<a href="https://github.com/h3rald" rel="me">Github</a></li>
+                <li><i class="ent ent-flickr"></i>&nbsp;<a href="https://www.flickr.com/photos/h3rald/" rel="me">Flickr</a></li>
+                <li><i class="ent ent-foursquare"></i>&nbsp;<a href="http://foursquare.com/h3rald" rel="me">Foursquare</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
       </main>
       {{> _footer}}
     </div>

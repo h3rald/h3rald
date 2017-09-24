@@ -1,121 +1,101 @@
 
 
 body {
-  font-family: 'Bunday Sans Light', sans-serif;
-  -moz-font-feature-settings: "liga", "pnum", "frac", "zero";
-  -webkit-font-feature-settings: "liga", "pnum", "frac", "zero";
-  -ms-font-feature-settings: "liga", "pnum", "frac", "zero";
-  font-feature-settings: "liga", "pnum", "frac", "zero";
+  font-family: 'Bunday Sans';
+  -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  font-feature-settings: "liga", "clig", "onum", "frac", "kern";
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   text-align: justify;
-  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
-}
-b, strong, h1, h2, h3, h4, h5, h6, .subtitle, .panel-title {
-  font-family: 'Bunday Sans Regular', sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
 }
 
-h2, h3, h4, h5, h6 {
-  margin-bottom: 0;
+b, strong, h1, h2, h3, h4, h5, h6, .panel-title {
+  font-weight: bold;
 }
 
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h4 {
-  font-size: 1.5rem;  
+i, em, .subtitle, .panel-header {
+  font-style: italic;
+  -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
 .subtitle {
-  font-size: 1.75rem;
   font-style: italic;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  margin-top: -0.4rem;
 }
 
 .featured .subtitle {
-  font-size: 1.25rem;  
 }
 
 p {
-  line-height: 2rem;
-  margin-bottom: 0.2rem;
 }
 
 ol, ul {
-  margin: 1rem 0 1rem 1rem;
-  padding: 0;
 }
 
 ol li, ul li {
-    margin-top: 0.2rem;
 }
 
 main.container {
-  padding-left: 2.5rem;  
-  padding-right: 2.5rem;  
+  padding: 1rem;
 }
 
 article {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
-footer {
-  font-size: 80%
+footer.container {
+  font-size: 0.7rem;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1rem;
 }
 
 .navbar {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 
 .navbar .btn {
-  font-size: 1.7rem;
+  margin-top: -0.3rem;
+  font-size: 1.2rem;
 }
 
 .navbar-right {
-  margin-left: -1rem;
 }
 
 .contact-list ul {
-  list-style: none;
 }
 .contact-list li {
   display: inline;
-  margin-right: 1rem;
+}
+
+
+.v-spacer {
+  padding-top: 1rem;  
 }
 
 .featured .panel-header {
   text-align: right;
   font-style: italic;
-  padding: 0.2rem;
-  padding-right: 0.5rem;
-  color: #f0f1f4;
-}
-
-.v-spacer {
-  height: 1.5rem;  
-}
-
-.chips {
-  line-height: 2.8rem;  
-}
-
-.chip {
-  height: 2rem;  
-}
-
-.avatar.avatar-xs {
-  font-size: .9rem;  
+  padding-top: 0;
+  padding-right: 0.3rem;
+  font-size: 0.8rem;
+  color: #51596c;
 }
 
 .date {
-  font-style: italic;
   text-align: right;
+  font-size: 0.8rem;
 }
