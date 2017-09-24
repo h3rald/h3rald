@@ -19,7 +19,8 @@ b, strong, h1, h2, h3, h4, h5, h6, .panel-title {
   font-weight: bold;
 }
 
-i, em, .subtitle, .panel-header {
+i, em, .subtitle, .panel-header, a {
+  font-family: 'Calendas Plus', serif;
   font-style: italic;
   -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
@@ -27,11 +28,24 @@ i, em, .subtitle, .panel-header {
   font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  font-family: 'Bunday Sans', sans-serif;  
+  font-style: normal;
+  -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+}
+
+a {
+  text-decoration-skip: ink;
+}
+
 .subtitle {
   font-style: italic;
   font-size: 1rem;
-  line-height: 1.1rem;
-  margin-top: -0.4rem;
+  line-height: 1.2rem;
+  margin-top: -0.3rem;
 }
 
 .featured .subtitle {
@@ -67,7 +81,7 @@ footer p {
   padding-top: 1rem;
 }
 
-.navbar .btn {
+.navbar-link {
   margin-top: -0.3rem;
   font-size: 1.2rem;
 }
