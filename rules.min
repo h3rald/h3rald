@@ -10,65 +10,65 @@
 
 ; Populates the ARCHIVE-COLUMNS array containing tags in groups
 ; of four, suitable for the creation of the archives page.
-(
-  ARCHIVES dsort reverse #ARCHIVES
-  0 :count
-  () =archcolumn
-  ARCHIVES size :acount
-  ARCHIVES (
-    =archive
-    acount pred @acount
-    archive last =arch
-    arch /id            :archid
-    arch /articles size :archcount
-    arch /month         :month
-    ()
-    archcount %count 
-    archid    %id
-    month     %month
-    =archdata
-    count succ @count
-    archdata archcolumn append #archcolumn
-    (count 4 == acount 0 == or) 
-    (
-      ()
-      archcolumn %archives
-      ARCHIVE-COLUMNS append #ARCHIVE-COLUMNS
-      0 @count
-      () #archcolumn
-    ) when
-  ) foreach
-) :prepare-archive-data
+;(
+;  ARCHIVES dsort reverse #ARCHIVES
+;  0 :count
+;  () =archcolumn
+;  ARCHIVES size :acount
+;  ARCHIVES (
+;    =archive
+;    acount pred @acount
+;    archive last =arch
+;    arch /id            :archid
+;    arch /articles size :archcount
+;    arch /month         :month
+;    ()
+;    archcount %count 
+;    archid    %id
+;    month     %month
+;    =archdata
+;    count succ @count
+;    archdata archcolumn append #archcolumn
+;    (count 4 == acount 0 == or) 
+;    (
+;      ()
+;      archcolumn %archives
+;      ARCHIVE-COLUMNS append #ARCHIVE-COLUMNS
+;      0 @count
+;      () #archcolumn
+;    ) when
+;  ) foreach
+;) :prepare-archive-data
 
 
 ; Populates the TAG-COLUMNS array containing tags in groups
 ; of four, suitable for the creation of the tags page.
-(
-  TAGS dsort #TAGS
-  0 :count
-  () =tagcolumn
-  TAGS size :tcount
-  TAGS (
-    =tag
-    tcount pred @tcount
-    tag first :tagname
-    tag last size :tagcount
-    ()
-    tagname %tag
-    tagcount %count 
-    =tagdata
-    count succ @count
-    tagdata tagcolumn append #tagcolumn
-    (count 4 == tcount 0 == or) 
-    (
-      ()
-      tagcolumn %tags
-      TAG-COLUMNS append #TAG-COLUMNS
-      0 @count
-      () #tagcolumn
-    ) when
-  ) foreach
-) :prepare-tag-data
+;(
+;  TAGS dsort #TAGS
+;  0 :count
+;  () =tagcolumn
+;  TAGS size :tcount
+;  TAGS (
+;    =tag
+;    tcount pred @tcount
+;    tag first :tagname
+;    tag last size :tagcount
+;    ()
+;    tagname %tag
+;    tagcount %count 
+;    =tagdata
+;    count succ @count
+;    tagdata tagcolumn append #tagcolumn
+;    (count 4 == tcount 0 == or) 
+;    (
+;      ()
+;      tagcolumn %tags
+;      TAG-COLUMNS append #TAG-COLUMNS
+;      0 @count
+;      () #tagcolumn
+;    ) when
+;  ) foreach
+;) :prepare-tag-data
 
 
 ; Utility operator to format a timestamp into a date
@@ -80,12 +80,13 @@
 ; Create the Archives page.
 (
   ()
-  "archives/index"  %id
-  "archives.html"   %path
-  ".html"           %ext
-  "Archives"        %title
-  "page"            %content-type
-  ARCHIVE-COLUMNS   %archive-columns
+  "archives/index"    %id
+  "archives.html"     %path
+  ".html"             %ext
+  "Archives"          %title
+  "page"              %content-type
+  ARCHIVES 'last map (/code :a /code :b a b >) sort %archives
+  ;ARCHIVE-COLUMNS   %archive-columns
   dup "_archives" swap mustache %contents
   dup "page" swap mustache %contents
   output-fwrite
@@ -93,80 +94,80 @@
 
 
 ; Create the Tags page.
-(
-  ()
-  "tags/index"  %id
-  "tags.html"   %path
-  ".html"       %ext
-  "Tags"        %title
-  "page"        %content-type
-  TAG-COLUMNS   %tag-columns
-  dup "_tags" swap mustache %contents
-  dup "page" swap mustache %contents
-  output-fwrite
-) :create-tags-page
+;(
+;  ()
+;  "tags/index"  %id
+;  "tags.html"   %path
+;  ".html"       %ext
+;  "Tags"        %title
+;  "page"        %content-type
+;  TAG-COLUMNS   %tag-columns
+;  dup "_tags" swap mustache %contents
+;  dup "page" swap mustache %contents
+;  output-fwrite
+;) :create-tags-page
 
 
 ; Create a page for a specific archive
-(
-  (quot) expect -> =archive
-  archive last =archdata
-  archdata /month     :month
-  archdata /articles  =articles
-  archdata /id        :id
-  articles 
-  articles (
-    ((/timestamp swap /timestamp >) sort)
-    ((dup /timestamp to-date %date) map)
-  ) tap #articles
-  articles size :count
-  (count 1 ==)
-  ("1 article was written") 
-  ("$1 articles were written" (count) => %) 
-  if :articles-written
-  ()
-  "archives/$1/index" (id) => %   %id
-  "archives/$1.html"  (id) => %   %path 
-  ".html"                         %ext
-  "page"                          %content-type
-  "Archive: $1" (month) => %      %title
-  month                           %month
-  articles-written                %articles-written
-  articles                        %articles
-  dup "_archive" swap mustache    %contents
-  dup "page" swap mustache        %contents
-  output-fwrite
-) :create-archive-page
+;(
+;  (quot) expect -> =archive
+;  archive last =archdata
+;  archdata /month     :month
+;  archdata /articles  =articles
+;  archdata /id        :id
+;  articles 
+;  articles (
+;    ((/timestamp swap /timestamp >) sort)
+;    ((dup /timestamp to-date %date) map)
+;  ) tap #articles
+;  articles size :count
+;  (count 1 ==)
+;  ("1 article was written") 
+;  ("$1 articles were written" (count) => %) 
+;  if :articles-written
+;  ()
+;  "archives/$1/index" (id) => %   %id
+;  "archives/$1.html"  (id) => %   %path 
+;  ".html"                         %ext
+;  "page"                          %content-type
+;  "Archive: $1" (month) => %      %title
+;  month                           %month
+;  articles-written                %articles-written
+;  articles                        %articles
+;  dup "_archive" swap mustache    %contents
+;  dup "page" swap mustache        %contents
+;  output-fwrite
+;) :create-archive-page
 
 
 ; Create a page for a specific tag
-(
-  (quot) expect -> =tagdata
-  tagdata first :tag
-  tagdata last  =articles
-  articles 
-  articles (
-    ((/timestamp swap /timestamp >) sort)
-    ((dup /timestamp to-date %date) map)
-  ) tap #articles
-  articles size :count
-  (count 1 ==)
-  ("1 article is tagged") 
-  ("$1 articles are tagged" (count) => %) 
-  if :articles-tagged
-  ()
-  "tags/$1/index" (tag) => %  %id
-  "tags/$1.html"  (tag) => %  %path 
-  tag                         %tag
-  ".html"                     %ext
-  "page"                      %content-type
-  "Tag: $1" (tag) => %        %title
-  articles-tagged             %articles-tagged
-  articles                    %articles
-  dup "_tag" swap mustache    %contents
-  dup "page" swap mustache    %contents
-  output-fwrite
-) :create-tag-page
+;(
+;  (quot) expect -> =tagdata
+;  tagdata first :tag
+;  tagdata last  =articles
+;  articles 
+;  articles (
+;    ((/timestamp swap /timestamp >) sort)
+;    ((dup /timestamp to-date %date) map)
+;  ) tap #articles
+;  articles size :count
+;  (count 1 ==)
+;  ("1 article is tagged") 
+;  ("$1 articles are tagged" (count) => %) 
+;  if :articles-tagged
+;  ()
+;  "tags/$1/index" (tag) => %  %id
+;  "tags/$1.html"  (tag) => %  %path 
+;  tag                         %tag
+;  ".html"                     %ext
+;  "page"                      %content-type
+;  "Tag: $1" (tag) => %        %title
+;  articles-tagged             %articles-tagged
+;  articles                    %articles
+;  dup "_tag" swap mustache    %contents
+;  dup "page" swap mustache    %contents
+;  output-fwrite
+;) :create-tag-page
 
 ; Group articles by month
 (
@@ -179,12 +180,12 @@
     ts int "MMMM yyyy" tformat :month
     ts int "MMMM-yyyy" tformat lowercase :id
     ; Add to articles
-    content date %date
+    content date %date #content
     content ARTICLES  append #ARTICLES
     (ARCHIVES code dhas?)
     (
       ; Add article to existing archive
-      content ("id" "title" "timestamp") dpick =article
+      content ("id" "title" "timestamp" "date") dpick =article
       ARCHIVES code dget =archivedata
       archivedata /articles =articles
       article articles append #articles
@@ -193,9 +194,10 @@
     )
     (
       ; Create new monthly archive
-      content ("id" "title" "timestamp") dpick ' =article
+      content ("id" "title" "timestamp" "date") dpick ' =article
       ()
       month   %month
+      code    %code
       article %articles
       id      %id
       =archive
@@ -314,14 +316,14 @@ contents (
 ) foreach
 
 ; Generate tag pages
-prepare-tag-data
-create-tags-page
-TAGS 'create-tag-page foreach
+;prepare-tag-data
+;create-tags-page
+;TAGS 'create-tag-page foreach
 
 ; Generate archive pages
-prepare-archive-data
+;prepare-archive-data
 create-archives-page
-ARCHIVES 'create-archive-page foreach
+;ARCHIVES 'create-archive-page foreach
 
 ; Generate home page
 generate-home

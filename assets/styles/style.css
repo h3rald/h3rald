@@ -113,3 +113,8 @@ footer p {
   text-align: right;
   font-size: 0.8rem;
 }
+
+.timeline .timeline-item .timeline-icon.icon-lg {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
