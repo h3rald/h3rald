@@ -1,7 +1,7 @@
 
 
 body {
-  font-family: 'Bunday Sans';
+  font-family: 'Raleway', sans-serif;
   -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
   -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
@@ -20,7 +20,7 @@ b, strong, h1, h2, h3, h4, h5, h6, .panel-title {
 }
 
 i, em, .subtitle, .panel-header, a {
-  font-family: 'Calendas Plus', serif;
+  font-family: 'Raleway', sans-serif;
   font-style: italic;
   -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
@@ -29,7 +29,7 @@ i, em, .subtitle, .panel-header, a {
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a {
-  font-family: 'Bunday Sans', sans-serif;  
+  font-family: 'Raleway', sans-serif;  
   font-style: normal;
   -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";

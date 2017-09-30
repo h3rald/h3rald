@@ -1,37 +1,31 @@
 @font-face {
-    font-family: 'Bunday Sans';
-    src: url('../fonts/bundaysans-light-webfont.woff2') format('woff2');
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-light.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Bunday Sans';
-    src: url('../fonts/bundaysans-semibold-webfont.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Calendas Plus';
-    src: url('../fonts/calendas_plus.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Calendas Plus';
-     src: url('../fonts/calendas_plus_italic.woff2') format('woff2');
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-lightitalic.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Calendas Plus';
-    src: url('../fonts/calendas_plus_bold.woff2') format('woff2');
+    font-family: 'Raleway';
+    src: url('../fonts/raleway-semibold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Raleway';
+     src: url('../fonts/raleway-semibolditalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
 
 @font-face {
     font-family: 'Hack';
