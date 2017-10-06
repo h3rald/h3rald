@@ -12,8 +12,8 @@
             <p class="subtitle">
               {{latest.subtitle}}
             </p>
-            <p class="date"><i class="ent ent-calendar"></i> <time>{{latest.date}}</time></p>
-            <section>
+            <time><i class="ent ent-calendar"></i> {{latest.date}}</time></p>
+            <section class="body-text">
               {{{latest.summary}}}
               <p><a href="/articles/litestore/">Continue reading →</a></p>
             </section>
@@ -25,6 +25,7 @@
               <p class="subtitle">
                 {{subtitle}}
               </p>
+              <time><i class="ent ent-calendar"></i> {{date}}</time></p>
             </article>
           {{/recents}}
         </div>
