@@ -263,7 +263,10 @@
     (contents %contents)
     (=temp tpl temp mustache @page temp)
     (page %contents)
-    ((id "index" !=)("$1/index" (id) => % %id ".html" %ext) when)
+    ((
+      ((id "^(glyph|ruby-compendium)\/book" match) ()) ;Do not add index.html
+      ((id "index" !=)("$1/index" (id) => % %id ".html" %ext))
+    ) case)
   ) tap
 ) :process-content
 
@@ -335,7 +338,6 @@ assets (
   dup
   (
     ((/id "^pdf\/" match) (copy-pdf-article-asset))
-    ;((/ext ".css" match) (process-css-asset))
     ((true) (output-cp))
   ) case
 ) foreach
