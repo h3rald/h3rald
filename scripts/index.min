@@ -6,10 +6,13 @@
 .                           :pwd
 (. "data.db") => "/" join   :store
 
-(. "contents") => "/" join cd
+(. "output") => "/" join cd
 
-"Deleting search index..." notice
-store rm
+(store file?) 
+(
+  "Deleting search index..." notice
+  store rm
+) when
 
 "Importing data..." notice
 "litestore -s:$1 -d:articles import" (store) => % !

@@ -1,9 +1,23 @@
-<div class="container article-aggregation">
+<div class="container archives">
   <div class="input-group archives-search">
-    <input type="text" class="form-input" placeholder="Search articles...">
-    <button class="btn btn-primary input-group-btn"><i class="ent ent-magnifying-glass"></i></button>
+    <input type="text" class="form-input search-input" placeholder="Search articles...">
+    <button class="btn input-group-btn clear-button d-none"><i class="ent ent-circle-with-cross"></i></button>
+    <button class="btn btn-primary input-group-btn search-button"><i class="ent ent-magnifying-glass"></i></button>
   </div>
-  <div class="timeline">
+  <div class="loading clearfix"></div>
+  <div class="no-search-results d-none clearfix">
+    <div class="empty">
+    <p class="empty-title h5">No results found</p>
+    <p class="empty-subtitle">There are no articles matching your query.</p>
+    <div class="empty-action">
+      <button class="btn btn-primary archives-button">Go back</button>
+    </div>
+  </div>
+  </div>
+  <div class="search-results d-none clearfix">
+    Results go here...
+  </div>
+  <div class="timeline clearfix d-none">
   {{#archives}}
     <div class="timeline-item">
       <div class="timeline-left">
@@ -39,3 +53,4 @@
   {{/archives}}
   </div>
 </div>
+<script src="/js/search.js" type="text/javascript"></script>

@@ -144,8 +144,12 @@ time {
   padding-bottom: 1rem;
 }
 
-.body-text, h4, .timeline {
+.body-text, h4 {
   clear: right;  
+}
+
+.clearfix {
+  clear: both;  
 }
 
 img {
@@ -154,4 +158,9 @@ img {
 
 .archives-search {
   float: right;  
+  margin-bottom: 1em;
+}
+
+.archives .card {
+  margin-bottom: 1em;
 }
