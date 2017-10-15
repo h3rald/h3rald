@@ -1,0 +1,102 @@
+-----
+title: "Glyph &ndash; XML Fallback"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/text_editing/raw_html.html">← Textile or Markdown</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/stylesheets.html">Adding Stylesheets →</a></nav>
+	<p>Sure Textile and Markdown are great, but sometimes you may want to just use HTML, without the extra verbosity, of course. Take tables for example: Textile offers an easy way to create them, but things may get dirty when you need to have multiple paragraphs or lists within cells.</p>
+	<p>Very early versions of Glyph used to offered some simple <code>table</code>, <code>tr</code>, <code>tr</code>, <code>td</code> macros just for that. Of course the problem was that thy didn't offer any way to customize the markup by adding, for example, CSS classes.</p>
+	<p>Instead, by default, Glyph can convert any unrecognized macro to the corresponding XML element and macro attributes to XML attributes.</p>
+	<aside class="box">
+<div class="box-title">Example</div>
+<p>
+The following Glyph code:
+</p>
+		<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>table[@class[features]
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  tr[
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    th[ID]
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    th[Priority]
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    th[Description]
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  ]
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  tr[
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    td[27]
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    td[span[@style[color:red;font-weight:bold;] HIGH]]
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    td[HTML output]
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  ]
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  tr[
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    td[42]
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    td[span[@style[color:green;font-weight:bols;] LOW]]
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    td[
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>      p[Support for less-used tags:]
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      ul[
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        li[cite]
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        li[sup]
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>        li[...]
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>      ]
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    ]
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  ]
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>]</pre></div>
+</div>
+
+		<p>
+Is translated into the following HTML code:
+</p>
+		<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="tag">&lt;table</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">features</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span class="tag">&lt;tr&gt;</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span class="tag">&lt;th&gt;</span>ID<span class="tag">&lt;/th&gt;</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span class="tag">&lt;th&gt;</span>Priority<span class="tag">&lt;/th&gt;</span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>    <span class="tag">&lt;th&gt;</span>Description<span class="tag">&lt;/th&gt;</span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>  <span class="tag">&lt;/tr&gt;</span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>  <span class="tag">&lt;tr&gt;</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span class="tag">&lt;td&gt;</span>27<span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span class="tag">&lt;td&gt;</span><span class="tag">&lt;span</span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="key">color</span>:<span class="value">red</span>;<span class="key">font-weight</span>:<span class="value">bold</span>;<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>HIGH<span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>    <span class="tag">&lt;td&gt;</span>HTML output<span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>  <span class="tag">&lt;/tr&gt;</span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>  <span class="tag">&lt;tr&gt;</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>    <span class="tag">&lt;td&gt;</span>42<span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>    <span class="tag">&lt;td&gt;</span><span class="tag">&lt;span</span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="key">color</span>:<span class="value">green</span>;<span class="key">font-weight</span>:<span class="value">bold</span>;<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>LOW<span class="tag">&lt;/span&gt;</span><span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>    <span class="tag">&lt;td&gt;</span>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>      <span class="tag">&lt;p&gt;</span>Support for less-used tags:<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>      <span class="tag">&lt;ul&gt;</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>        <span class="tag">&lt;li&gt;</span>cite<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>        <span class="tag">&lt;li&gt;</span>sup<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>        <span class="tag">&lt;li&gt;</span>...<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>      <span class="tag">&lt;/ul&gt;</span>
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span class="tag">&lt;/td&gt;</span>
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  <span class="tag">&lt;/tr&gt;</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span><span class="tag">&lt;/table&gt;</span></pre></div>
+</div>
+
+</aside>
+	<p>Basically, if the <a href="/glyph/book/config/options.html#s_options_xml_fallback"><code>options.xml_fallback</code></a> setting is set to <code>true</code>, any macro unknown to Glyph with at most one parameter will be converted to an XML tag with the same name and any attribute will be converted to the corresponding XML attribute.</p>
+	<aside class="important">
+<span class="note-title">Important</span>While macro names and attributes are validated so that an error is returned if they contain illegal character, no check is performed against any particular XML schema.
+
+</aside>
+	<p>Additionally, it is possible to force macro-to-<span class="caps">XML</span> conversion by composing the name of a tag with the <a href="/glyph/book/macros/macros_core.html#m_xml"><code>xml</code></a> macro, so for example <code>xml/snippet[test]</code> will be converted into <code>&lt;snippet&gt;test&lt;/snippet&gt;</code>.</p>
+	<section class="section">
+<header><h1 id="xml_blacklist" class="toc">Blacklisted XML tags</h1></header>
+<p>By default, the following tags are blacklisted and will be ignored:</p>
+<ul>
+	<li><code>applet</code></li>
+	<li><code>base</code></li>
+	<li><code>basefont</code></li>
+	<li><code>embed</code></li>
+	<li><code>frame</code></li>
+	<li><code>frameset</code></li>
+	<li><code>iframe</code></li>
+	<li><code>isindex</code></li>
+	<li><code>meta</code></li>
+	<li><code>noframes</code></li>
+	<li><code>noscript</code></li>
+	<li><code>object</code></li>
+	<li><code>param</code></li>
+	<li><code>title</code></li>
+</ul>
+<aside class="tip">
+<p><span class="note-title">Tip</span>You can change this list by modifying the <a href="/glyph/book/config/options.html#s_options_xml_blacklist"><code>options.xml_blacklist</code></a> setting.</p>
+</aside>
+
+</section>
+<nav class="navigation"><a href="/glyph/book/text_editing/raw_html.html">← Textile or Markdown</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/stylesheets.html">Adding Stylesheets →</a></nav>

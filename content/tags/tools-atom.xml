@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/tools/atom
-:title: H3RALD - Tag 'tools' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('tools'))%>

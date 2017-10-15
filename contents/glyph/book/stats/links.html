@@ -1,0 +1,108 @@
+-----
+title: "Glyph &ndash; Link Statistics"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/stats/bookmarks.html">← Bookmark Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/internals.html">A quick look at Glyph's internals →</a></nav>
+
+  <section class="section">
+<header><h1 id="h_77" class="toc">Displaying stats about all links</h1></header>
+<p>To display statistics about all links, execute <code>glyph stats --links</code>. Glyph displays something like this:</p>
+    <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Links
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Internal Links: 89
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Internal Links
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>   - #attribute_intro 
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>   - #auto_regeneration 
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>   - #c_add 
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>   - #c_compile 
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>   - #c_config 
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>   - #c_init 
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>   - #c_outline 
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>   - #c_stats 
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>   - #c_todo 
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>   - #cfg 
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>   - #cfg_document 
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>   - #cfg_filters 
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>[...]
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>-- Total External Links: 95
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>-- External Links
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>   - &amp;[rubydoc]/Glyph 
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>   - &amp;[rubydoc]/Glyph/Document 
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>   - &amp;[rubydoc]/Glyph/Interpreter 
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>   - &amp;[rubydoc]/Glyph/Macro 
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>   - &amp;[rubydoc]/Glyph/Macro/Validators 
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>   - &amp;[rubydoc]/Glyph/Macro:update_source 
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>   - &amp;[rubydoc]/Glyph/MacroNode 
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>   - &amp;[rubydoc]/Glyph/Parser 
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>   - &amp;[rubydoc]/Glyph/SyntaxNode 
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>   - &amp;[rubydoc]/Macro 
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>   - http://code.google.com/p/wkhtmltopdf/ 
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>   - http://coderay.rubychan.de/ 
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>   - http://coderay.rubychan.de/doc/classes/CodeRay/Encoders/HTML.html 
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>[...]</pre></div>
+</div>
+
+    <section class="section">
+<header><h1 id="h_78" class="toc">Remarks</h1></header>
+<ul>
+	<li>The only criteria used to determine if a link is internal is whether it starts with a <code>#</code> or not.</li>
+</ul>
+
+</section>
+
+</section>
+
+  <section class="section">
+<header><h1 id="h_79" class="toc">Displaying stats about links matching a regular expression</h1></header>
+<p>To display statistics about links matching a regular expression (e.g. <code>/c_/</code>), execute <code>glyph stats --link=c_</code>. Glyph displays something like this:</p>
+    <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Links matching /c_/
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Links: 8
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Link Targets:
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span>   - #c_add 
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span>   - #c_compile 
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span>   - #c_config 
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span>   - #c_init 
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>   - #c_outline 
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>   - #c_stats 
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>   - #c_todo 
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>   - #esc_quot 
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span>-- Details:
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>   - #c_add (2)
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>     - text/troubleshooting/errors_command.glyph (1)
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>     - text/troubleshooting/errors_generic.glyph (1)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - #c_compile (10)
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>     - text/changelog.glyph (1)
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>     - text/compiling/compiling.glyph (2)
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>     - text/compiling/lite_mode.glyph (1)
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>     - text/compiling/programmatic_usage.glyph (2)
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>     - text/getting_started/create_project.glyph (1)
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>     - text/ref_config.glyph (1)
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>     - text/troubleshooting/errors_command.glyph (2)
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>   - #c_config (6)
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>     - text/changelog.glyph (2)
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>     - text/getting_started/configuration.glyph (1)
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>     - text/troubleshooting/errors_command.glyph (3)
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>   - #c_init (1)
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>     - text/troubleshooting/errors_generic.glyph (1)
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>   - #c_outline (1)
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>     - text/changelog.glyph (1)
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span>   - #c_stats (1)
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>     - text/stats/stats.glyph (1)
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>   - #c_todo (1)
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>     - text/macros/macros_inline.glyph (1)
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>   - #esc_quot (2)
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>     - text/extending/macro_def.glyph (1)
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>     - text/text_editing/macro_intro.glyph (1)</pre></div>
+</div>
+
+    <section class="section">
+<header><h1 id="h_80" class="toc">Remarks</h1></header>
+<ul>
+	<li>No distinction between external and internal targets is made.</li>
+</ul>
+
+</section>
+
+</section>
+<nav class="navigation"><a href="/glyph/book/stats/bookmarks.html">← Bookmark Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/internals.html">A quick look at Glyph's internals →</a></nav>

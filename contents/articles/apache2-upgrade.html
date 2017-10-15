@@ -1,0 +1,25 @@
+-----
+title: "Beware of sudden upgrades!"
+content-type: article
+timestamp: 1198132860
+tags: "website|rails"
+-----
+<p>Yesterday I got a rather annoying early Christmas present: when visiting my site, I noticed that the raw source code of my dispatch.fcgi file (yes, I&#8217;m on shared hosting with FastCGI, for now) was displayed &#8220;as it is&#8221; instead of being interpreted.</p>
+<p>After the initial moment of anger and stress (I immediately realized it was BlueHost&#8217;s fault, not mine), I opened two tickets and went to bed, hoping to see everything solved in the morning.</p>
+<p>Unluckily it wasn&#8217;t the case, so I posted on BlueHost forum trying to be as polite as possible complaining because the issue wasn&#8217;t being dealt with. It turns out that for such issues you&#8217;re supposed to use the &#8220;Live Chat&#8221; feature instead of the tickets, so that&#8217;s what I did.</p>
+<p>After a quick chat with &#8220;Christian&#8221;, it turns out that BlueHost decided to perform a server upgrade &#8220;silently&#8221; upgrading to Apache2, PHP5, MySQL4.1, etc. etc.<br />
+Cool, pity that nobody told me that!</p>
+<p>I was expecting some sort of <span class="caps">PHP</span> upgrade (not that I care like that), which was supposed to happen according to the last BlueHost newsletter:</p>
+<blockquote>
+<p><em>&#8220;To alleviate any issues in the future with certain scripts that only run on one<br />
+version of <span class="caps">PHP</span> we have developed the ability to run PHP4 and PHP5 on the same server<br />
+simultaneously. This will be rolled out to all users in the next couple of weeks. Some<br />
+servers already have this ability while most will see it in the next two weeks.&#8221;</em></p>
+</blockquote>
+<p>But&#8230; hang on? Does it say anything about migrating to Apache2? I don&#8217;t think so! What&#8217;s worse, is that quite a few things changed with Apache2, in particular the way FastCGI handlers are declared:</p>
+<div class='text'><pre><code># Apache 1.3:
+AddHandler fastcgi-script .fcgi
+
+# Apache 2:
+AddHandler fcgid-script .fcgi</code></pre></div><p>See? Different. This is due to the fact that <a href="http://wiki.rubyonrails.org/rails/pages/Debian+mod_fastcgi+Notes"><code>mod_fcgid</code> is used instead of <code>mod_fastcgi</code> on Apache 2</a>.</p>
+<p>The fix was easy, of course, and now my site is up and running again (and actually running faster)&#8230; but, I wonder, why the hell wasn&#8217;t I informed? Is it acceptable? It sounds like I might end up on a <span class="caps">VPS</span> sooner than expected, unless BlueHost doesn&#8217;t roll out some new exciting feature soon, as I think it might&#8230;</p>

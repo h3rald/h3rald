@@ -1,0 +1,69 @@
+-----
+title: "Textiling"
+content-type: article
+timestamp: 1145605143
+tags: ""
+-----
+<p>Once upon a time I used <a href="http://en.wikipedia.org/wiki/BBCode">BBcode</a>. <a href="http://base--/bookmarks/view/cyberarmy">CyberArmy</a> and all its affiliated sites adopted it as <em>de-facto</em> standard for forums and articles, so consequently more or less all my articles are bbcoded. <br />
+I could copy and paste the <em>BBcodeHelper</em> I coded for this site, and it could be quite an interesting read for some people&#8230; well, tough luck: today I&#8217;d like to talk about <a href="http://base--/bookmarks/view/textile-reference/">Textile</a> instead, which now I consider <em>the answer</em> to all text formatting problems.</p>
+<p>If what I wrote up to here doesn&#8217;t make sense to you, I&#8217;m rambling about the apparent necessity and the undeniable need of web developers, content managers, and writers to use something else other than <span class="caps">HTML</span> for adding style and formatting text. What&#8217;s wrong with <span class="caps">HTML</span>? Nothing, it&#8217;s just too &#8220;tiresome&#8221; to use: you have to remember to close all tags, break lines, use the <code>&lt;strong&gt;</code> tag every time you want <strong>bold text</strong>, etc. etc.<br />
+Some people even freak out when you tell them that they have to use <span class="caps">HTML</span> in their text: &#8220;it&#8217;s just <em>waaaaaay too difficult</em> to learn and use&#8221; &#8230;things like that.</p>
+<p>Whether you are scared to learn <span class="caps">HTML</span>, you don&#8217;t want to, or you know it but you&#8217;re too lazy to seriously thinking about manually use a markup language to write your article, I can say that you&#8217;ll definitely become addicted to Textile. What? <em>&#8220;<acronym title="What You See is What You Get"><span class="caps">WYSIWYG</span></acronym> <span class="caps">HTML</span> editors?&#8221;</em> &#8211; C&#8217;mon, let&#8217;s at least <em>try</em> to be serious :)<br />
+Why BBcode doesn&#8217;t help enough? Well, simply because I don&#8217;t see why <code>[i]this[/i]</code> is easier than <code>&lt;i&gt;this&lt;/i&gt;</code>: unless you have a particular phobia for angular brackets, it seems quite similar to me!</p>
+<p>What about <code>_this_</code> instead? You use only two additional characters instead of seven. <span class="caps">SEVEN</span>. If I only want italcized text I honestly can&#8217;t imagine myself using more than two extra characters. It&#8217;s natural. It&#8217;s human.</p>
+<p style="float:left;"><img src="http://base--/img/pictures/pear2.gif" alt="" /></p>
+Precisely. Textile is a <em>&#8220;Humane web text generator&#8482;&#8221;</em>, it&#8217;s simple, elegant and produces standard compliant <span class="caps">XHTML</span> code. <a href="http://www.textism.com/about/">Dean Allen</a> should be worshipped by entire generations of web developers for inventing something so easy to use and so <em>elegant</em> at the same time. Maybe not worshipped, but for sure respected.
+<p>I won&#8217;t copy and paste the extremely useful <a href="http://cakeforge.org/projects/textilehelper/">TextileHelper</a> for CakePHP either, simply because it&#8217;s 4085 lines long and it would be pointless: you can just get it and use it.</p>
+<p>I&#8217;ll just include some examples of textile formatting&#8230;</p>
+<table>
+	<tr>
+		<td> <strong>Textile Code</strong> </td>
+		<td> <strong>Result</strong> </td>
+	</tr>
+	<tr>
+		<td> <code>*text*</code> </td>
+		<td> <strong>bold</strong> text </td>
+	</tr>
+	<tr>
+		<td> <code>_text_</code> </td>
+		<td> <em>italicized</em> text </td>
+	</tr>
+	<tr>
+		<td> <code>@text@</code> </td>
+		<td> <code>fixed width</code> text</td>
+	</tr>
+	<tr>
+		<td> <code>"text":url</code> </td>
+		<td> <a href="http://base--/">linked</a> text </td>
+	</tr>
+	<tr>
+		<td> <code>!path/to/image!</code> </td>
+		<td> image </td>
+	</tr>
+</table>
+<p>These are just some trivial examples. With textile you can also format text blocks, add custom <span class="caps">CSS</span> code and even float images or text! Tables? Sure, how do you think I created the table above?</p>
+<pre><code>
+| *Textile Code* | *Result* |
+| @*text*@ | *bold* text |
+| @_text_@ | _italicized_ text |
+| &lt;code&gt;@text@&lt;code&gt;| @fixed width@ text|
+| @"text":url@ | "linked":http://base--/ text |
+| @!path/to/image!@ | image |
+</code></pre>
+<p>The simplest and most intuitive way possible!</p>
+<p>Regardless, Textile is not perfect and may have some quirks, at least the CakePHP helper: the_undefined pointed out in a <a href="http://www.thinkingphp.org/2006/03/22/textile-a-personal-love-of-mine/">blog post</a> that external links are opened in the same window, so he provided a patch to the textile helper to handle this situation.<br />
+I also noticed that sometimes empty <code>style=""</code> and <code>class=""</code> attributed are generated, which don&#8217;t do any particular harm, but they are not needed either&#8230; so here&#8217;s a quick fix to improve your Textile experience in CakePHP: You can use this function ideally in your customized textile helper, <code>$data</code> should be the return value of TextileHelper&#8217;s <code>process()</code> method.</p>
+<pre><code>
+function _fixTextile($data)
+{
+  $patterns = array( '/http://base--/', 
+    '/style=""/', 
+	'/class=""/', 
+    '/  &gt;/');
+  $replaces = array($this-&gt;base, 
+    '', 
+    '', 
+    '&gt;');
+  return preg_replace($patterns, $replaces, $data);  
+}
+</code></pre>

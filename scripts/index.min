@@ -1,0 +1,22 @@
+;Re-index articles
+'hastysite import
+
+"Indexing articles..." notice
+
+.                           :pwd
+(. "data.db") => "/" join   :store
+
+(. "output") => "/" join cd
+
+(store file?) 
+(
+  "Deleting search index..." notice
+  store rm
+) when
+
+"Importing data..." notice
+"litestore -s:$1 -d:articles import" (store) => % !
+
+pwd cd
+
+"All done." notice

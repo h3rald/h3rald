@@ -1,0 +1,53 @@
+-----
+title: "Simply on Rails - Part 1: Concepts and Bubbles"
+content-type: article
+timestamp: 1183786980
+tags: "rails|website|web20"
+-----
+<p>The first thing I do when I start developing a new application is write down some ideas.</p>
+<p>Pen and paper normally do the job, but nowadays there are some valid online and offline applications which work as good if not (probably) better.</p>
+<p>I&#8217;ve never been a fan of <a href="http://en.wikipedia.org/wiki/Mind_Mapping">Mind Mapping</a>. I&#8217;ve been to a seminar on problem solving and creativity and they were showing how mind mapping can unleash your creativity, but it didn&#8217;t really work for me. I found the concept-idea-concept-idea sequences a bit too restrictive for my liking.</p>
+<p>So I decided to try something different: bubbles! <a href="http://www.bubbl.us/">Bubbl.us</a> is an interesting online flash application which lets you create bubbles. You can create bubbles and relationships between them, change their color, their dimensions etc. And above all it&#8217;s absolutely fun to use. I created two bubble sheets, the first one to define how content will be organized in the next version of ItalySimply:</p>
+<p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="450" height="340" id="bblviewer"><br />
+<param name="movie" value="http://bubbl.us/sys/view.swf?sid=26306&pw=yaeyI.megNtZcMTh3azVsVjhwVEt0TQ" /><br />
+<param name="quality" value="high" /><br />
+<param name="SeamlessTabbing" value="false" /><br />
+<param name="AllowScriptAccess" value="always" /><br />
+<param name="FlashVars" value="_sid=26306&_title=ItalySimply%20v3%20-%20Content&_z=75&_pw=yaeyI.megNtZcMTh3azVsVjhwVEt0TQ" /><br />
+<embed src="http://bubbl.us/sys/view.swf?sid=26306&pw=yaeyI.megNtZcMTh3azVsVjhwVEt0TQ" FlashVars="_sid=26306&_title=ItalySimply%20v3%20-%20Content&_z=75&_pw=yaeyI.megNtZcMTh3azVsVjhwVEt0TQ" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="450" height="340" allowscriptaccess="always" SeamlessTabbing="false" name="bblviewer"></embed><br />
+</object></p>
+<p>The diagram identifies three main types of content:</p>
+<ul>
+	<li>Houses &#8211; basically what the site is about: house listing with information and pictures about houses for sale or rent.</li>
+	<li>Links &#8211; Either swapped with partners or suggested by users.</li>
+	<li>Pages &#8211; Static content.</li>
+</ul>
+<p>which will be organized in three different ways:</p>
+<ul>
+	<li>Tags</li>
+	<li>Categories</li>
+	<li>An internal search engine, allowing people to filter houses according to some criteria.</li>
+</ul>
+<p>The other sheet focuses on relationships between content and users.</p>
+<p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="450" height="340" id="bblviewer"><br />
+<param name="movie" value="http://bubbl.us/sys/view.swf?sid=26307&pw=yaeyI.megNtZcMTgxeUw0S0FSNzhFNg" /><br />
+<param name="quality" value="high" /><br />
+<param name="SeamlessTabbing" value="false" /><br />
+<param name="AllowScriptAccess" value="always" /><br />
+<param name="FlashVars" value="_sid=26307&_title=ItalySimply%20v3%20-%20Communication&_z=75&_pw=yaeyI.megNtZcMTgxeUw0S0FSNzhFNg" /><br />
+<embed src="http://bubbl.us/sys/view.swf?sid=26307&pw=yaeyI.megNtZcMTgxeUw0S0FSNzhFNg" FlashVars="_sid=26307&_title=ItalySimply%20v3%20-%20Communication&_z=75&_pw=yaeyI.megNtZcMTgxeUw0S0FSNzhFNg" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="450" height="340" allowscriptaccess="always" SeamlessTabbing="false" name="bblviewer"></embed><br />
+</object></p>
+<p>At the far sides we have users and administrators, and in the middle how they interact between themselves or with content, in particular:</p>
+<ul>
+	<li>Users will be able to access house feeds and be notified automatically of new additions</li>
+	<li>Users will be able to ask questions or comments to each house (they&#8217;ll be moderated, of course).</li>
+	<li>Users will be able to suggest links, or contact administrators using a &#8220;House Preferences&#8221; form or a more generic contact form.</li>
+</ul>
+<p>Bubbles are fun, but while I was creating these two diagrams, I felt I absolutely needed to name the relationships between each entity or concept, so I spend some time trying to find a tool who would let me do so in an easy and fast way.</p>
+<p>Yep, I needed to create a <a href="http://en.wikipedia.org/wiki/Domain_model">domain model</a> to move a bit closer to create the database architecture of the site.<br />
+It turns out that this magic tool exists, and it&#8217;s free for non-commercial use: <a href="http://cmap.ihmc.us/download/">CmapTools</a>.<br />
+It&#8217;s not web based, and it&#8217;s a 59MB Java desktop application which can be used to create <a href="http://en.wikipedia.org/wiki/Concept_map">Concept Maps</a>.</p>
+<p>Within minutes I was able to create a simple but pretty and functional enough domain model for my site:</p>
+<p><img src="/files/ItalySimply-v3_domain-model.jpg" alt="" /></p>
+<p>Basically all the concepts I used are going to become models, and all the named relationships will become model associations in Rails.</p>
+<p>Next step: database architecture.</p>

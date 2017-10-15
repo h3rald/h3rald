@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-tar -cjf h3rald.tar.bz2 output

@@ -1,0 +1,49 @@
+-----
+title: "RawLine"
+content-type: project
+subtitle: "A pure-ruby alternative to ReadLine"
+github: rawline
+inactive: true
+home: /rawline/
+summary: "A Ruby library which provides a subset of the functionality of the C Readline library. Being implemented in pure Ruby, it gives Ruby developers much more control over key bindings and word completion."
+version: 0.3.2
+docs: "http://rawline.rubyforge.org"
+-----
+<p>RawLine is a 100% Ruby alternative to the ReadLine library, providing some of its most popular features such as:</p>
+<ul>
+	<li>Basic line editing operations</li>
+	<li>Word completion</li>
+	<li>History Management</li>
+	<li>Custom key/key sequences bindings</li>
+</ul>
+<h3>Installation</h3>
+<p>The simplest method to install RawLine is to install the gem:</p>
+<div><pre><code class="bash">gem install rawline</code></pre></div><h3>Usage</h3>
+<p>Editor initialization:</p>
+<div><pre><code class="ruby">require 'rawline'
+editor = RawLine::Editor.new</code></pre></div><p>Key binding:</p>
+<div><pre><code>editor.bind(:ctrl_z) { editor.undo }
+editor.bind(:up_arrow) { editor.history_back }
+editor.bind(:ctrl_x) { puts "Exiting..."; exit }</code></pre></div><p>Setup word completion</p>
+<div><pre><code>editor.completion_proc = lambda do |word|
+	if word
+		['select', 'update', 'delete', 'debug', 'destroy'].find_all  { |e| e.match(/^#{Regexp.escape(word)}/) }
+	end
+end
+
+editor.completion_append_string = " "</code></pre></div><p>Read input:</p>
+<div><pre><code>editor.read("=&gt; ", true)</code></pre></div><h3>Replacing Readline</h3>
+<p>Simply include the RawLine (or Rawline) module:</p>
+<div><pre><code>include Rawline</code></pre></div><p>…and you’ll get:</p>
+<div><pre><code class="ruby">readline(prompt, add_history) # RawLine::Editor#read(prompt, add_history)
+HISTORY # RawLine::Editor#history
+FILENAME_COMPLETION_PROC # Rawline::Editor#filename_completion_proc
+# ...</code></pre></div><p>but also:</p>
+<div><pre><code class="ruby">Rawline.editor # RawLine::Editor</code></pre></div><p>&#8230;which opens a world of endless possibilities! ;-)</p>
+<h3>Latest Updates</h3>
+<ul><li><a href="/articles/real-world-rawline-usage/">Real-world Rawline usage</a></li> 
+  <li><a href="/articles/rawline-030/">RawLine 0.3.0 released â now with Readline emulation</a></li> 
+  <li><a href="/articles/rawline-020/">New Release: RawLine 0.2.0</a></li> 
+  <li><a href="/articles/inline-name-change/">InLine name change: what&#8217;s your opinion?</a></li> 
+  <li><a href="/articles/inline-introduction/">RawLine &#8211; a 100% Ruby solution for console inline editing</a></li> 
+</ul>

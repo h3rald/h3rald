@@ -1,0 +1,82 @@
+-----
+title: "Simply On Rails - Part 4: Quick and Easy Default Data Migrations"
+content-type: article
+timestamp: 1189854600
+tags: "rails|ruby|databases"
+-----
+<p>In the <a href="http://www.h3rald.com/blog/simply-on-rails-3-shared-controller">last post</a> of this series I tried to find a <acronym title="Don&#39;t Repeat Yourself"><span class="caps">DRY</span></acronym> solution to deal with tables storing &#8220;ancillary&#8221; data, i.e. names of user roles, predefined categories, page state names and other similar things.<br />
+I personally chose to put this kind of data to make my application more dynamic, although I could have decided to use ENUMs or simply ordinary varchar fields &#8212; that would have been easier, but less flexible. For now, I&#8217;m sticking with my original choice.</p>
+<p>The data in these tables is kind of a prerequisite for the application to run: I must be able to have a status to assign to a user when creating it, and the same applies to roles. Sure, I could spend 20 minutes populating these tables manually, but it would be nice if there was a less tedious way, wouldn&#8217;t it?</p>
+<p>There is indeed. The inspiration came from a technique described in the book (which I highly recommend) <em>Agile Web Development With Rails</em>, in which the author outlines how it would be possible to use Rails&#8217; fixtures and migrations to load data in the database automatically from <span class="caps">YAML</span> files. <br />
+All you have to do is create a migration to load the specified <span class="caps">YAML</span> files and you&#8217;re all set.</p>
+<p>I wanted to take a little step further, allowing the migration to load data from <em>all <span class="caps">YAML</span> files in a specific directory</em>, automatically.Let&#8217;s start creating the <span class="caps">YAML</span> files then and place them all in one directory of the application like <code>/db/migrate/defaults</code>. Here&#8217;s the one I used for user roles, for example:</p>
+<div class='yaml'><pre><code>visitor:
+	id: 1
+	name: Visitor
+	level: 0
+
+user:
+	id: 2
+	name: User
+	level: 10
+
+contributor:
+	id: 3
+	name: Contributor
+	level: 20
+
+provider:
+	id: 4
+	name: Provider
+	level: 50
+
+operator:
+	id: 5
+	name: Operator
+	level: 100
+
+administrator:
+	id: 6
+	name: Administrator
+	level: 500
+
+webmaster:
+	id: 7
+	name: Webmaster
+	level: 1000</code></pre></div><p>The important thing to remember is to provide a unique string to identify each record, before specifying each fiels. The other files look similar, so I won&#8217;t bother listing them here.</p>
+<p>And here&#8217;s the simple code for the migration:</p>
+<div class='ruby'><pre><code>require 'active_record/fixtures'
+
+class LoadDefaults &lt; ActiveRecord::Migration
+
+	def self.up
+		down
+		models = self.default_models
+		models.each do |m|   
+			Fixtures.create_fixtures(self.default_directory, m)
+		end
+	end
+
+	def self.down
+		models = self.default_models
+		models.each do |m|
+			eval("#{m.singularize.capitalize}.delete_all")
+		end
+	end
+
+	def self.default_directory
+		File.join(File.dirname(__FILE__), "defaults" )
+	end
+
+	def self.default_models
+		files, names = Dir.glob("#{self.default_directory}/*.yml"), []
+		unless files.blank?
+			files.each { |f| names &lt;&lt; File.basename(f, '.yml') }
+			names
+		else
+			[]
+		end
+	end
+
+end</code></pre></div><p>Basically the migration will look in a directory named &#8220;defaults&#8221; for some <span class="caps">YAML</span> files named after a particular database table, and it will attempt to load all the records defined in each one of them. <br />
+The <code>down</code> method of the migration <em>deletes all the data in the specified tables</em>, so use with care&#8230;</p>

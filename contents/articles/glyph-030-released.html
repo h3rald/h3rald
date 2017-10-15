@@ -1,0 +1,84 @@
+-----
+title: "Glyph 0.3.0 Released"
+content-type: article
+subtitle: "The third release of the Glyph Authoring Framework features dramatic speed improvements, and much more"
+timestamp: 1276431000
+tags: "glyph|ruby|opensource"
+-----
+
+		<section class="section">
+<p>The third release of <a href="/glyph/">Glyph</a> is out!</p> 
+
+<p>For those checking it out for the first time, Glyph is a <em>Rapid Document Authoring Framework</em> focused on extensibility and content reuse. For an example of what Glyph can do, have a look at Glyph's <a href="http://github.com/downloads/h3rald/glyph/glyph.pdf">free PDF book</a>.</p>
+
+<p>This release brings more stability to Glyph, more speed, and features affecting Glyph's core functionality. As a consequence, some <a href="http://github.com/h3rald/glyph/issues/closed#issue/121">incompatibilities</a> had to be introduced &ndash; but after all, better now than later.</p> 
+
+<section class="section">
+<header><h1 id="h_1" class="toc">New parser and performance improvements</h1></header>
+<p>This release's big news is the brand new <a href="http://yardoc.org/docs/h3rald-glyph/glyph/parser">Glyph Parser</a>. Until this release, Glyph relied on the awesome <a href="http://treetop.rubyforge.org/">Treetop</a> library for parsing Glyph language. Treetop is great when it comes to creating language parsers effortlessly, but it can add quite a bit of an overhead especially when using <a href="http://groups.google.com/group/treetop-dev/browse_thread/thread/15ff7659b2efbeed">dot star</a> patterns.</p>
+
+	<p>So I ran a few benchmarks and in the end decided to write my very own (first!) parser from scratch using just the <a href="http://ruby-doc.org/core/classes/StringScanner.html">StringScanner</a> class, which is part of Ruby Standard Library. It took me a bit to get used to it, but in the end I managed to create something able to produce an Abstract Syntax Tree exactly the way I wanted.</p>
+
+	<p>After adding the new parser, Glyph became significantly faster. This doesn't mean it's as fast as, say, RedCloth, but I it can be used to process long books in just a few <em>seconds</em> rather than <em>minutes</em>.</p>
+
+</section>
+
+<section class="section">
+<header><h1 id="h_2" class="toc">Macro Attributes</h1></header>
+<p>Glyph now supports named attributes as well as positional parameters. This is particularly handy when you want to create macros with a lot of optional arguments: in this case, positional parameters are not great. As a result, for example, the <code>section</code> macro now takes an optional <code>title</code> and <code>id</code> attributes, rather than two parameters</p>
+	
+	<p>Attributes look like macros, but they all start with a <code>@</code> character. For example, see the the following image, showing this very section:</p>
+	
+	<img src="/img/pictures/updated_glyph_syntax.png" />
+
+</section>
+
+<section class="section">
+<header><h1 id="h_3" class="toc">Full XML support</h1></header>
+<p>Once macro attributes became available at parser level, having Glyph to produce arbitrary XML code became extremely easy. By default, now if Glyph doesn't find a macro it assumes you're inputting an XML tag of some kind, so you can write:</p>
+
+	<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>p[This is a paragraph with some em[emphasized] text.]
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>img[
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @alt[Glyph Code]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  @width[50%]
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  @height[50%]
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  @src[glyph_code.png]
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]</pre></div>
+</div>
+
+
+	<p>And get the following HTML code back:</p>
+	
+	<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;p&gt;</span>This is a paragraph with some <span class="tag">&lt;em&gt;</span>emphasized<span class="tag">&lt;/em&gt;</span> text.<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;img</span> 
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="attribute-name">alt</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Glyph Code</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span class="attribute-name">width</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">50%</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">60%</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">glyph_code.png</span><span class="delimiter">&quot;</span></span>  
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="tag">/&gt;</span></pre></div>
+</div>
+
+
+  <p>...and none of the macros used in the previosu Glyph code snippet are actually defined in Glyph. Among other things, this means that <em>you don't have to</em> use Textile or Markup within your Glyph code unless you absolutely need to (e.g. for lists, which would be a bit verbose to create using just Glyph markup).</p>
+
+</section>
+
+<section class="section">
+<header><h1 id="h_4" class="toc">Improved <code>include</code> macro and "safe mode"</h1></header>
+<p>The <code>include</code> macro now <em>must</em> take an path to a file relative to the <code>text/</code> directory of your project, <em>or</em> it can also be used to include (and <em>evaluate</em>) ruby code within your <code>lib/</code> directory. Moreover, you can now use the <code>include</code> macro even when compiling single Glyph files.</p>
+
+	<p>Now, while evaluating Ruby code in an external file can be quite handy, is also quite insecure. For this reason, it is now possible to use Glyph programmatically in "safe mode", thereby forbidding the usage of certain <em>unsafe</em> macros.</p>
+
+</section>
+
+<section class="section">
+<header><h1 id="h_5" class="toc">What's next?</h1></header>
+<p>Sooner or later I'll have to implement support for generating multiple files in output. This would make it possible to make the  <a href="http://github.com/downloads/h3rald/glyph/glyph.pdf">Glyph book</a> available online as a collection of separate HTML file, for example, or, later on, maybe even compiled into a (ugh!) CHM file.</p>
+
+	<p>Additionally, HTML5 support is also on the horizon: given the current Glyph architecture, it will be relatively easy to have Glyph macros to produce HTML5 code instead of XHTML. LaTeX support, on the other hand, is a completely different game, mainly because I'm not familiar with it, so if anyone feels creative and would like an easier way to produce reusable LaTeX code, <a href="http://github.com/h3rald/glyph/">get forking</a> and contact me!</p>
+
+</section>
+
+</section>

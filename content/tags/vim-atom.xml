@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/vim/atom
-:title: H3RALD - Tag 'vim' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('vim'))%>

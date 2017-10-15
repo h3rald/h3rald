@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/website/atom
-:title: H3RALD - Tag 'website' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('website'))%>

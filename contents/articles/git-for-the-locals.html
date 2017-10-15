@@ -1,0 +1,51 @@
+-----
+title: "Git for the Locals"
+content-type: article
+timestamp: 1216095480
+tags: "programming"
+-----
+<p><em>&#8220;This is a <strong>local</strong> shop for <strong>local</strong> people, we want no trouble here!&#8221;</em></p>
+<p>&mdash; Edward, <a href="http://en.wikipedia.org/wiki/League_of_gentlemen">The League of Gentlemen</a></p>
+<p>I&#8217;m normally quite cautious when it comes to IT novelties like new frameworks, new methodologies and similar, especially when it feels like they&#8217;re over-hyped. Especially nowadays, it is sometimes very hard to tell whether something new is over-hyped or really a Good Thing&#8482; without spending some time looking into it. And especially nowadays, finding the time to look into something new can be a real challange.</p>
+<p>I deliberately didn&#8217;t look into Git properly since it went &#8220;mainstream&#8221; (maybe I shouldn&#8217;t use this word), but when <a href="http://www.spheredev.org/wiki/Git_for_the_lazy">this tutorial</a> came out I couldn&#8217;t resist. Sure, I knew Git was an amazingly fast distributed version control system, that <a href="http://github.com/">GitHub</a> offered free accounts, that all the cool guys were slowly starting to use it in place of Subversion, etc. etc.</p>
+<p>What I didn&#8217;t realize though, that the most obvious advantage of this <span class="caps">DVCS</span> was the fact that it was <strong>distributed</strong>, i.e., it <em>didn&#8217;t need</em> a centralized server.</p>
+<p>Let me repeat this: <strong>Git <em>doesn&#8217;t need</em> a centralized server.</strong></p>
+<p>Really.h3. &#8230;But it&#8217;s not user-friendly!</p>
+<p>If you&#8217;re a Windows user and you used Subversion before, chances are that you got accustomed to <a href="http://tortoisesvn.tigris.org/">TortoiseSVN</a>, too. TortoiseSVN is &mdash; in a way &mdash; a nice graphical fron-end to <span class="caps">SVN</span> which provides seamless Windows Explorer integration. <br />
+Git doesn&#8217;t have anything like that yet. There&#8217;s something in the works, sure, but nothing really comparable to TortoiseSVN. Therefore, you are <em>kindly suggested</em> to get on and use the command line for all your git stuff.</p>
+<p>Oh well, I personally love using command line interfaces for certain tasks, event if I spend more time on Windows than on any other OS and well, the <span class="caps">DOS</span> prompt is no way near to bash &amp; Co.</p>
+<p>For the <del>lazy gits</del> Windows users, <a href="http://code.google.com/p/msysgit/">MSysGit</a> is the answer to all your problems. <em>Officially</em> you have to install Cygwin and all its crap to be able to use Git on Windows. Not that Cygwin is bad, but I personally don&#8217;t like the extra layer it creates between you and an OS symulation which is not really what&#8217;s on your machine.It would be great if you could get all the Bash goodies natively, without the hassle.</p>
+<p>that&#8217;s basically what you get for free when you install MSysGit: the best (to date) version of Bash you could possibly dream of for Windows, along with a few handy Gnu tools and of course all git commands.<br />
+In a few click, you&#8217;ll be able to use Git (and Bash!) right away: no tricks, no hassle, no kidding.</p>
+<p>And stop moaning about the command line not being user friendly. You want a new repository <em>anywhere</em>? Just type in the following:</p>
+<div class='text'><pre><code>git init
+git add .
+git commit</code></pre></div><p>This will create your new repository in the current directory, add all your files and filders recursively, and perform the initial commit. What&#8217;s so hard in this? Nothing. And it&#8217;s faster than <span class="caps">SVN</span>, for sure.</p>
+<h3>Are you local?</h3>
+<p>&#8220;Being local&#8221; has its own advantages: you know where you stand, you know what to expect, you don&#8217;t depend on other people. What I didn&#8217;t fully realize about Git is that it can be a 100% <em>local</em> repository.</p>
+<p>The three Git commands I mentioned earlier can be used to create a repository <em>there</em>, exactly where you are: not on a server far, far away.<br />
+Let&#8217;s see what this means:</p>
+<ol>
+	<li>You don&#8217;t need an Internet connection anymore to use a <span class="caps">VCS</span></li>
+	<li>You don&#8217;t get a .svn folder in <em>every</em> damn directory of your project, with a load of crappy files in it.</li>
+	<li>You get only a .git folder <em>at top level</em>, and that&#8217;s where your repository actually is. Granted, there are going to be quite a few files in there, but they&#8217;re not going to be scattered all over the place</li>
+	<li>You can physically copy your repository anywhere and still use it</li>
+	<li>You don&#8217;t need to signup to GitHub for an account, if you only want your own <span class="caps">VCS</span></li>
+</ol>
+<p>OK, this is an extreme scenario, but sometimes you may want your <em>own</em> local repository for your stuff. You may want a place to version your documents, or a place to version your own little pet programming project nobody knows about.<br />
+With Git, you can get all the advantages of a <span class="caps">VCS</span> (and an <em>incredibly fast</em> <span class="caps">VCS</span>) without having to setup any server infrastructure: just install Git on your machine, and you&#8217;re done. No server processes, no hassle.</p>
+<h3>Don&#8217;t connect, synchronize</h3>
+<p>All the information your repository needs is stored in that little .git folder, nowhere else. You can copy your files and that folder, and you&#8217;ll still get your repository back wherever you are. Maybe you can zip it before copying it, and then unzip it where you need a <span class="caps">VCS</span>, event.</p>
+<p>I tried using some synchronization utilities like SyncToy or RoboCopy on Windows to keep my files synchronized on multiple computers: it all started off from the fact that I can&#8217;t use <span class="caps">SSH</span> at work, so I wouldn&#8217;t be able to push my commits back to a central repository online like GitHub.</p>
+<p>So here&#8217;s what I did:</p>
+<ol>
+	<li>I setup a local repository for my project on a local folder at work.</li>
+	<li>I started working on my project, did a few commits.</li>
+	<li>After performing the last commit for the day (you are encouraged to commit often by Git, really), I synchronized that folder with my <span class="caps">USB</span> key, via SyncToy.</li>
+	<li>Back at home, I used SyncToy again to synchronize my files (including the repository) between the <span class="caps">USB</span> key and my home computer.</li>
+	<li>Performing a <code>git status</code> showed that some files have been modified (all of them, actually): that&#8217;s because Git detected that they weren&#8217;t the same files which were committed, presumably because of different timestamps etc.</li>
+	<li>All I did was a <code>git reset --hard</code> to get <em>exactly</em> the same files I committed at work, with absolutely no information loss.</li>
+</ol>
+<p>Isn&#8217;t it a bad thing to move your git folder back and forth and let another program to synchronize files within it? Maybe, but it seems to work so far. A safer option, in this case, may be zipping the folder before synchronizing it, just to be sure.</p>
+<h3>Conclusion</h3>
+<p>Git can do much more than this. Git offers some really interesting branching features, for example, which I didn&#8217;t mention in this article, of course, like several dozens of other commands. What I tried to point out was that Git can be used by <em>anyone</em>, as a fast, simple and very effective private <em>local</em> repository. In case you need one, that is (if you are really <em>local</em>).</p>

@@ -1,6 +1,0 @@
------ 
-permalink: "403"
-title: Forbidden
-type: page
------
-There's obviously nothing to see here. Go "home":/!

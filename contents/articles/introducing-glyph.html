@@ -1,0 +1,79 @@
+-----
+title: "Introducing Glyph"
+content-type: article
+timestamp: 1270834239
+tags: "glyph|ruby|frameworks|writing"
+-----
+<p>I&#8217;ve been writing technical documents for a living for the past four years, and I can tell you: there is no easy way to go about it.</p>
+<p>For example, you can use:</p>
+<ul>
+	<li><strong>a Word Processor</strong> like MS Word, for example &#8212; anyone can do that, right? Sure, but no, thanks: I strongly believe that Word Processors should not be used for writing technical documents as I firmly don&#8217;t believe GUIs are suitable for doing this at a professional level.</li>
+	<li><strong>a Document Authoring Software</strong> like Adobe Framemaker, Robohelp, etc. Still GUIs, only more complicated to use.</li>
+	<li><strong><span class="caps">XML</span>, like <span class="caps">DITA</span> or DocBook, or other markups</strong>, like ReStructuredText. Better, but still not easily extensible and flexible enough.</li>
+	<li><strong>your company&#8217;s tools</strong>, if you have them. That&#8217;s great if they are usable enough and the result makes your boss happy.</li>
+	<li><strong>LaTeX</strong>, and that&#8217;s probably your best option, if you know what you&#8217;re doing.</li>
+	<li><strong><span class="caps">XHTML</span> and CSS3</strong>, in conjunction with a <span class="caps">PDF</span> renderer like <a href="http://www.princexml.com/">Prince <span class="caps">XML</span></a> &#8212; that&#8217;s great if you know <span class="caps">HTML</span> and <span class="caps">CSS</span>, and you don&#8217;t mind hand-crafting the structure of the document.</li>
+</ul>
+<h3>Lightweight markups</h3>
+<p>I love Textile and Markdown. When people aren&#8217;t looking, I even use them at work to generate <span class="caps">HTML</span> code, because it&#8217;s just so much faster. Textile in particular can be used as a drop-in replacement for <span class="caps">HTML</span> (and a bit of LaTeX, too), as it can produce most inline <span class="caps">HTML</span> tags effortlessly and some block-level tags, too.</p>
+<p>For things like <code>&lt;div&gt;</code> tags and <code>&lt;tables&gt;</code> though, Textile is not the best thing in the world, so you normally end up falling back to <span class="caps">HTML</span>.</p>
+<p>Another &#8220;problem&#8221; is that <strong>Textile</strong> or other similar lightweight markups cannot be extended easily, simply because they were not meant to be extended in the first place.</p>
+<p>Moreover, if you are producing a book, Textile can&#8217;t help you if you want to generate things like a Table of Contents automatically or validate links: those things are simply not part of Textile&#8217;s job.</p>
+<h3>How Glyph can help</h3>
+<p style="float:right;"><img src="/img/pictures/glyph.png" alt="" /></p>
+<p>There are a few projects on the Internet that tackle structured document generation. One of them is <a href="http://github.com/fnando/kitabu">Kitabu</a>, which looks promising and is able to produce pretty documents using Textile and Prince for <span class="caps">PDF</span> rendering&#8230; but again, it&#8217;s not extensible because it relies too much on Textile and Markdown.</p>
+<p><a href="/glyph/">Glyph</a> is different. For one, it is much younger than any other, therefore it is most likely full of bugs.</p>
+<p>Jokes aside, Glyph follows a much more radical approach, which consists in using a <em>macro language</em> on top of Textile or Markdown. The good thing about it is that this macro language is very simple to learn and &#8212; most importantly &#8212; very easy to extend.</p>
+<p>Here&#8217;s an example:</p>
+<div class='text'><pre><code>section[header[Something about Glyph]
+You can use Glyph macros in conjunction
+ with _Textile_ or _Markdown_ to
+produce HTML files effortlessly.
+  section[header[What about PDFs?|pdf]
+Once you have a single, well-formatted HTML 
+file, converting it to PDF is
+extremely easy with a 3rd-party 
+renderer like =&gt;[http://www.princexml.com|Prince].
+  ]   
+]</code></pre></div><p>Which translates to:</p>
+<div class='html'><pre><code>&lt;div class="section"&gt;
+  &lt;h2 id="h_1"&gt;Something about Glyph&lt;/h2&gt;
+  &lt;p&gt;You can use Glyph macros in conjunction with 
+     &lt;em&gt;Textile&lt;/em&gt; or &lt;em&gt;Markdown&lt;/em&gt; to
+     produce HTML files effortlessly.&lt;/p&gt;
+  &lt;div class="section"&gt;
+   &lt;h3 id="pdf"&gt;What about PDFs?&lt;/h3&gt;
+   &lt;p&gt;Once you have a single, well-formatted HTML 
+      file, converting it to PDF is
+      extremely easy with a 3rd-party renderer 
+      like &lt;a href="http://www.princexml.com"&gt;Prince&lt;/a&gt;.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div><p>Glyph macros can be used to:</p>
+<ul>
+	<li>Generate block-level <span class="caps">HTML</span> tags not commonly managed by lightweight markups, like <code>head</code>, <code>body</code>, <code>div</code> and <code>table</code>.</li>
+	<li>Create and validate internal and external links.</li>
+	<li>Include and validate images and figures.</li>
+	<li>Automatically determine header levels based on the document structure.</li>
+	<li>Automatically generate a Table of Contents based on the document structure.</li>
+	<li>Store common snippets of text in a single <span class="caps">YAML</span> file and use them anywhere in your document, as many times as you need.</li>
+	<li>Store configuration settings in a <span class="caps">YAML</span> file and use them anywhere in your document, as many times as you need.</li>
+	<li>Evaluate Ruby code within your document.</li>
+	<li>Call macros from other macros (including snippets), carefully avoiding mutual calls.</li>
+	<li>Include text files in other text files.</li>
+	<li>Include the contents of configuration settings (author, title) in the document.</li>
+	<li>Filter input explicitly or implicitly, based on file extensions when including files.</li>
+	<li>Manage comments and todo items.</li>
+</ul>
+<p>An example Glyph project? Sure, Glyph&#8217;s own guide (<a href="https://github.com/h3rald/glyph/tree/master/book/">source</a> &#8212; <a href="http://cloud.github.com/downloads/h3rald/glyph/glyph.pdf"><span class="caps">PDF</span> output</a>).</p>
+<h3>Technical Details</h3>
+<p>Glyph is built on top of the following Ruby Gems:</p>
+<ul>
+	<li><a href="http://github.com/davetron5000/gli">gli</a> &#8212; For the high-level command line interface.</li>
+	<li><a href="http://rake.rubyforge.org/">rake</a> &#8212; For the mid-level interdependent task layer.</li>
+	<li><a href="http://treetop.rubyforge.org/">treetop</a> &#8212; For parsing Glyph Language, whose grammar is <a href="http://github.com/h3rald/glyph/blob/master/lib/glyph/glyph_language.treetop">ridiculously simple</a>, but it seems to work so far.</li>
+	<li><a href="http://rubyforge.org/projects/extlib/">extlib</a> &#8212; Because I can&#8217;t leave without it.</li>
+</ul>
+<h3>Disclaimer</h3>
+<p>Glyph is <strong>alpha software</strong> (hence the 0.1.0 version number) &#8212; handle with care and be aware that <em>everything</em> could change tomorrow. If you want to keep up-to-date and/or provide feedback, feel free to join <a href="http://groups.google.com/group/glyph-framework">Glyph&#8217;s User Group</a>.</p>
+<h3>For more information&#8230;</h3>
+<p>&#8230;head over to <a href="/glyph/">Glyph&#8217;s homepage</a>.</p>

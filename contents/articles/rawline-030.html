@@ -1,0 +1,64 @@
+-----
+title: "RawLine 0.3.0 released â now with Readline emulation"
+content-type: article
+timestamp: 1235890020
+tags: "ruby|opensource|rawline"
+-----
+<p><a href="/rawline">RawLine</a> 0.3.0 has been <a href="http://rubyforge.org/projects/rawline">released</a>. This new milestones fixes some minor bugs and adds some new functionalities, must notably:</p>
+<ul>
+	<li>Ruby 1.9 support</li>
+	<li>A filename completion function</li>
+	<li>A new <span class="caps">API</span> very similar to the one exposed by the Ruby wrapper for <span class="caps">GNU</span> Readline</li>
+</ul>
+<p>Some of you asked for Readline compatibility/emulation and that was actually not too difficult to implement: all the bricks were already there, I just had to put them together in the right place.</p>
+<p>The <code>RawLine</code> module (you can spell it &#8220;Rawline&#8221; as well, if you wish) now behaves like <code>Readline</code>. This means that you can now use RawLine like this (taken from examples/readline_emulation.rb):</p>
+<div class='ruby'><pre><code>include Rawline
+
+puts "*** Readline Emulation Test Shell ***"
+puts " * Press CTRL+X to exit"
+puts " * Press &lt;TAB&gt; for file completion"
+
+Rawline.editor.bind(:ctrl_x) { puts; puts "Exiting..."; exit }
+
+Dir.chdir '..'
+
+loop do
+	puts "You typed: [#{readline("=&gt; ", true).chomp!}]"
+end</code></pre></div><p>Basically you get a <code>readline</code> method, a <code>HISTORY</code> constant like the one exposed by Readline (Rawline&#8217;s is a RawLine::HistoryBuffer object though &mdash; much more manageable), and a <code>FILENAME_COMPLETION_PROC</code> constant, which provides basic filename completion. Here it is:</p>
+<div class='ruby'><pre><code>def filename_completion_proc
+			lambda do |word|
+				dirs = @line.text.split('/')
+					path = @line.text.match(/^\/|[a-zA-Z]:\//) ? "/" : Dir.pwd+"/"
+				if dirs.length == 0 then # starting directory
+					dir = path
+				else
+					dirs.delete(dirs.last) unless File.directory?(path+dirs.join('/'))
+					dir = path+dirs.join('/')
+				end
+				Dir.entries(dir).select { |e| (e =~ /^\./ && @match_hidden_files && word == '') || (e =~ /^#{word}/ && e !~ /^\./) }
+			end
+		end</code></pre></div><p>You can find this function as part of the <code>RawLine::Editor</code> class. The result is not exactly the same Readline, because completion matches are not displayed underneath the line but inline and can be cycled through &mdash; which is one of Readline&#8217;s completion modes anyway.</p>
+<p>A few methods of the <code>RawLine::Editor</code> class can now be accessed directly from the <code>RawLine</code> module, like with Readline:</p>
+<ul>
+	<li><code>Rawline.completion_proc</code> &mdash; the Proc object used for <span class="caps">TAB</span> completion (defaults to FILENAME_COMPLETION_PROC).</li>
+	<li><code>Rawline.completion_matches</code> &mdash; an array of completion matches.</li>
+	<li><code>Rawline.completion_append_char</code> &mdash; a character to append after a successful completion.</li>
+	<li><code>Rawline.basic_word_break_characters</code> &mdash; a String listing all the characters used as word separators.</li>
+	<li><code>Rawline.completer_word_break_characters</code> &mdash; same as above.</li>
+	<li><code>Rawline.library_version</code> &mdash; the current version of the Rawline library.</li>
+	<li><code>Rawline.clear_history</code> &mdash; to clear the current history.</li>
+	<li><code>Rawline.match_hidden_files</code> &mdash; whether FILENAME_COMPLETION_PROC matches hidden files and folders or not.</li>
+</ul>
+<p>I bet you didn&#8217;t know these methods were even in the Readline wrapper, did you? Probably because of lack of documentation.<br />
+Anyhow, another very important difference beween Rawline and Readline is <code>Rawline.editor</code>, i.e. the default instance of RawLine::Editor used by the Rawline module itself.</p>
+<p>This makes things easier if you want more control over the line which is being edited and the previously-edited lines. Sure, <code>Readline#completion_proc</code> exposes the current <em>word</em> being typed before hitting tab, and so does <code>Rawline#completion_proc</code> the difference is that if you access <code>Rawline.editor.line</code> you get a <code>RawLine::Line</code> object with all the information you could possibly need about the current line: the position of the cursor, the text, the order the characters were entered, etc. etc. <br />
+Now you can imagine why it took me a few minutes to write the <code>filename_completion_proc</code> method (and why it will take you even less time to write your own similar method if you wanna do something different): you can access not only the last word being typed but also the current <em>and previous</em> lines (through <code>Rawline.editor.history</code> or just <code>Rawline::HISTORY</code>)!</p>
+<p>It must be said, as usual, that Rawline is <em>not</em> a complete replacement for the Readline library yet (and it will probably never be, as Readline is huge!), but it&#8217;s a good cross-platform, more Ruby-esque alternative to what&#8217;s currently available by the Readline wrapper for Ruby.</p>
+<p>It&#8217;s not as fast, of course, especially when completing long words, but it&#8217;s quite usable. The following libraries are not required but recommended:</p>
+<ul>
+	<li><code>win32console</code> (on Windows)</li>
+	<li><code>termios</code> (on *nix)</li>
+</ul>
+<p>They basically make Rawline faster. If you don&#8217;t use them, Rawline will fall back on its pure-Ruby implementation to move left and right (i.e. printing backspaces and spaces character codes instead of <span class="caps">ASCII</span> escape codes).</p>
+<p>Unfortunately, there&#8217;s no <code>vi_editing_mode</code> or <code>emacs_editing_mode</code> yet (for time constraints: they <em>can</em> be implemented!) but patches are very welcome. Also, if you need more features, all you have to do is ask :-)</p>
+<p>P.S.: Check out the new <a href="/rawline">Project Page</a> and especially its Resources section!</p>

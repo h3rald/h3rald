@@ -1,6 +1,0 @@
------ 
-:type: feed
-:permalink: tags/review/atom
-:title: H3RALD - Tag 'review' (Atom Feed)
------
-<%= atom_feed(:articles => articles_tagged_with('review'))%>

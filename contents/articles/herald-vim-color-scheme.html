@@ -1,0 +1,31 @@
+-----
+title: "Herald (Vim Color Scheme)"
+content-type: article
+subtitle: "My very own VIM color scheme. Featuring 256, 16 and 8 color support, high readability and... pretty colors!"
+popular: true
+timestamp: 1245211860
+tags: "programming|vim"
+-----
+<p>I use <a href="http://www.vim.org">Vim</a> a lot. It&#8217;s my editor of choice when I code (mainly in Ruby), and also when I write my blog post and articles (mainly in Textile).</p>
+<p>One thing I always liked about Vim was it powerful syntax highlighting: there&#8217;s probably a syntax highlighting file for every programming language ever created, even the new ones (<a href="http://force7.de/nimrod/index.html">Nimrod</a>? Sure, <a href="http://www.vim.org/scripts/script.php?script_id=2632">here</a>!).</p>
+<p>Furthermore, Vim allows you to create color schemes, and that&#8217;s surprisingly easy to do. Everything you need to do is in the <a href="http://vimdoc.sourceforge.net/htmldoc/syntax.html">docs</a>, but that may put you off, so you can just start by editing an existing one &#8212; that&#8217;s what I did.h3. InfiniteRed Black</p>
+<p>I&#8217;ve been using the <a href="http://blog.infinitered.com/entries/show/8">ir_black</a> color scheme for near enough a year. It&#8217;s an excellent color scheme, recommended especially for writing Ruby code:</p>
+<p><img src="/images/herald.vim/ir_black_vim_example.png" alt="" /></p>
+<p>I honestly thought this was the best Vim color scheme until I discovered Moria&#8230;</p>
+<h3>Moria</h3>
+<p>Recently I switched to <a href="http://www.vim.org/scripts/script.php?script_id=1464">moria</a>, mainly because I find it easier on the eyes. It&#8217;s a matter of taste, of course:</p>
+<p><img src="/images/herald.vim/moria_vim_example.png" alt="" /></p>
+<p>The trick is in the background: it&#8217;s not completely black. Still, I didn&#8217;t quite like the colors, so I decided to write my own&#8230;</p>
+<h3>Herald</h3>
+<p>Meet <strong> <a href="/files/herald.vim">herald.vim</a> </strong> (this is a direct link to the raw file, but you may also want to check my <a href="http://github.com/h3rald/stash/tree/master">stash</a> on GitHub or the <a href="http://www.vim.org/scripts/script.php?script_id=2684">script page</a> on Vim.org):</p>
+<p><img src="/images/herald.vim/herald_vim_example.png" alt="" /></p>
+<p>To sum up, here&#8217;s the <em>features</em> offered by this new color scheme:</p>
+<ul>
+	<li>It&#8217;s easier to differentiate syntax elements; in particular reserved words like <code>if</code> or <code>end</code>, constants (symbols) and identifiers (instance variables).</li>
+	<li>Operators are highlighted and easier to notice.</li>
+	<li>Dark gray background and black column/row selectors.</li>
+	<li>Added highlight for titles (useful for Textile)</li>
+	<li>Comments do not stand out, unlike in most color schemes</li>
+	<li>Support for 256 color terminal (special thanks to <a href="http://www.frexx.de/xterm-256-notes/">Wolfgang Frisch</a> for providing all the info and tools required)</li>
+</ul>
+<p>So what do you think? Is it tool colorful perhaps? How would <strong>you</strong> improve it?</p>

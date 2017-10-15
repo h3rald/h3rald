@@ -1,6 +1,0 @@
------
-:title: H3RALD - Tag 'litestore' (Atom Feed)
-:type: feed
-:permalink: tags/litestore/atom
------
-<%= atom_feed(:articles => articles_tagged_with('litestore'))%>

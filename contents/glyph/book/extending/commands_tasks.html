@@ -1,0 +1,43 @@
+-----
+title: "Glyph &ndash; Defining Custom Commands and Tasks"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/extending/further_reading.html">← Further Reading</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/task.html">Defining Custom Tasks →</a></nav>
+<p>In most cases, you can extend Glyph just by creating your own <a href="/glyph/book/extending/macro_def.html#macro_def">custom macros</a>. In some cases though, you may want to further customize Glyph to fit the needs of your project, in terms of creating <a href="/glyph/book/extending/command.html#custom_command">custom commands</a> and <a href="/glyph/book/extending/task.html#custom_task">custom tasks</a>.</p>
+<p>Glyph&#8217;s modular architecture (and the Ruby language itself) lets you to add <em>arbitrary</em> functionality to its core, simply by creating a few Ruby files and putting them in the right places.</p>
+<section class="section">
+<header><h1 id="cmd_tasks_arch" class="toc">How Commands and Tasks work</h1></header>
+<p>Before creating custom Glyph commands and tasks, you should have a basic understanding on how they work, and which commands &#8212; or better, which tasks &#8212; are already available.</p>
+<p>The following diagram outlines the relationships between the default commands and some tasks:</p>
+	<figure><img src="/glyph/book/images/glyph/commands_tasks.png" /><figcaption>Some of Glyph default commands and tasks</figcaption></figure>
+	<p>As you can see:</p>
+<ul>
+	<li>All commands call at at least one task.</li>
+	<li>There are several task inter-dependencies spanning across three main Rake namespaces:
+	<ul>
+		<li><code>project:</code> &#8212; used for tasks affecting only the physical structure of the Glyph project.</li>
+		<li><code>load:</code> &#8212; used to load all kinds of files.</li>
+		<li><code>generate:</code> &#8212; used to generate files or copy files from source to output directories</li>
+	</ul></li>
+</ul>
+	<aside class="box">
+<div class="box-title">Example</div>
+<p>Suppose you want to generate a <span class="caps">PDF</span> file by issuing the <code>glyph compile -f pdf</code> command. Under the hood, Glyph calls the following tasks:</p>
+<ol>
+	<li><code>load:config</code> &#8212; Load the configuration files</li>
+	<li><code>load:tasks</code>  &#8212; Load custom tasks (if any)</li>
+	<li><code>load:commands</code> &#8212; Load custom commands (if any)</li>
+	<li><code>load:snippets</code> &#8212; Load snippets from the <code>snippet.yml</code> file</li>
+	<li><code>load:macros</code> &#8212; Load macros</li>
+	<li><code>load:all</code> &#8212; Dummy task used to call the previous ones</li>
+	<li><code>generate:document</code> &#8212; Parse, analyze and finalize the Glyph document</li>
+	<li><code>generate:images</code> &#8212; Copy images to the output directory (if any)</li>
+	<li><code>generate:styles</code> &#8212; Copy stylesheets to the output directory (if necessary)</li>
+	<li><code>generate:html</code> &#8212; Generate a standalone <span class="caps">HTML</span> file</li>
+	<li><code>generate:pdf</code> &#8212; Generate a <span class="caps">PDF</span> file from a standalone <span class="caps">HTML</span> file</li>
+</ol>
+
+</aside>
+
+</section>
+<nav class="navigation"><a href="/glyph/book/extending/further_reading.html">← Further Reading</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/task.html">Defining Custom Tasks →</a></nav>

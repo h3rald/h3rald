@@ -1,4 +1,7 @@
 output/*
-*.log
-.sass-cache/*
-tmp/*
+temp/*
+_tmp/*
+_bkp/*
+_old/*
+*.db
+*.db-journal

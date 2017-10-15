@@ -1,0 +1,35 @@
+-----
+title: "Personal Log - April 2009"
+content-type: article
+timestamp: 1240891860
+tags: "personal_log|ruby|books|wedding"
+-----
+<p>April is tratidionally a rather busy month: Easter, public holidays, and &mdash; always &mdash; some deadline to meet at work. Moreover, my birthday is also in April which makes it even more busy! Let&#8217;s see what happened this year&#8230;h3. Using Ruby in a corporate environment</p>
+<p>I&#8217;ve been using Ruby at work for a while now. I started off writing some automation script for my own needs, then someone noticed it and asked me if by chance I could develop some scripts for them, for automating part of their own job, and so on. My boss ultimately noticed it, and she liked the idea of me investing a small portion of my time to make other people save huge amount of <em>their</em> time, so now I am <em>officially</em> in charge of workflow improvements and automation (it&#8217;s even in my job description!).</p>
+<p>This month a colleague of mine and I had to figure out a way to write some documents <strong>once</strong> in <span class="caps">XML</span> format and then produce different kind of outputs (other <span class="caps">XML</span> files, PDFs, etc.) using the <a href="http://dita-ot.sourceforge.net/"><span class="caps">DITA</span> Open Toolkit</a>. Originally we thought the toolkit would do most of the job, but we soon realized we needed to tweak and change a lot more than what we usually expected.</p>
+<p>We ended up hacking together a <em>system</em> using:</p>
+<ul>
+	<li><a href="http://office.microsoft.com/en-us/infopath/default.aspx">Microsoft Infopath</a> as <span class="caps">XML</span> editor for the end users (the company buys it by default, so no worries there)</li>
+	<li>A Ruby program to parse and manipulate the original <span class="caps">XML</span> and produce <span class="caps">DITA</span>-compatible <span class="caps">XML</span> files.</li>
+	<li>Some <a href="http://ant.apache.org/">Apache Ant</a> tasks available in the open toolkit to produce an <span class="caps">XSL</span>-FO file</li>
+	<li><a href="http://xmlgraphics.apache.org/fop/">Apache <span class="caps">FOP</span></a> to produce the <span class="caps">PDF</span> from the <span class="caps">XSL</span>-FO file&#8230;</li>
+</ul>
+<p>The thing seems to work fine (after a lot of tweaking), and I really enjoyed creating the Ruby program to <em>glue</em> everything together. I even got a chance to introduce my colleagues to the wonderful world of <a href="http://hobix.com/textile/">Textile</a> (they are so happy that they don&#8217;t want to use <span class="caps">WYSIWYG</span> editors anymore!).</p>
+<h3>Easter in London</h3>
+<p>As usual, Roxanne and I spent our Easter holidays in London, at her brother&#8217;s place. This year we actually had 9 days to go around <del>squandering money</del>  spending <em>wisely</em> in food, books, clothes and entertainment.</p>
+<p>Most notably, I managed to drag Roxanne to <a href="http://www.foyles.co.uk/">Foyles</a> and I got myself a copy of <a href="http://www.pragprog.com/the-pragmatic-programmer">The Pragmatic Programmer</a>, which I&#8217;m reading avidly. If it was up to me I was going to buy half of the computing section, but Roxanne <em>kindly pointed out</em> that I could get all of them from Amazon for half the price. <br />
+And she was right: for my birthday I preordered a copy of <a href="http://www.amazon.com/Programming-Language-Pragmatics-Third-Michael/dp/0123745144">Programming Language Pragmatics, 3rd Ed.</a>, which should be shipped soon.</p>
+<h3>Wedding planning</h3>
+<p>My spreadsheets for the wedding guests, wedding expenses (!) and &#8230;suit sizes are getting bigger and bigger. We managed to book a lot of flights to Ireland to my parents, us, relatives etc., but there are still quite a few things to do for the wedding. The most urgent thing to do right now is sending the invites: we had them printed with the words <em><span class="caps">RSVP</span> within May</em> on them, so they <em>have</em> to be out in one or two weeks at most.</p>
+<p>The other thing which must be sorted soon are the suits. According to English (and Irish) tradition, the groom, the bestman, the father of the groom, the father  of the bride and the ushers have to wear the same type of suit, with minor differences (the color of the waistcoats?). In my case, this means getting 7 (<span class="caps">SEVEN</span>) <em>morning suits</em> off eBay, in the right sizes! Hopefully I&#8217;ll be able to get them by the end of next week (if my bestman manages to let me know his sizes).</p>
+<h3>XBox 360 Gaming</h3>
+<p>Now that our new XBox 360 finally came through, Roxanne and I have a lot of hours of hard core week end gaming ahead of us! This, added to the physiological increase of stress due to the wedding, may result in a temporary slowdown of my coding and writing activities.<br />
+Right now we&#8217;re playing <a href="http://xbox360.ign.com/objects/949/949455.html">Mirror&#8217;s Edge</a>, <a href="http://xbox360.ign.com/objects/718/718963.html">Mass Effect</a>, and <a href="http://xbox360.ign.com/objects/746/746631.html">Unreal Tournment <span class="caps">III</span></a>. The last one was a special surprise present from Roxanne (<em>&#8220;&#8230;so we can kill each other!&#8221;</em> &mdash; she&#8217;s really lovely at times!).</p>
+<h3>Other tech-related tidbits</h3>
+<ul>
+	<li>I can&#8217;t wait to go to the cinema to watch <a href="http://www.imdb.com/title/tt0796366/">Star Trek XI</a></li>
+	<li>I started using <a href="http://www.shelfari.com/">Shelfari</a></li>
+	<li>I started using <a href="http://start.io">Star.io</a> as my personal, bare-bones start page.</li>
+	<li>I recently <a href="http://www.h3rald.com/articles/concatenative-020">released Concatenative 0.2.0</a>.</li>
+	<li>I&#8217;m currently evaluating the possibility to create a Ruby-based <em>Document Authoring Framework</em>. Stay tuned.</li>
+</ul>

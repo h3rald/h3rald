@@ -1,0 +1,172 @@
+-----
+title: "Glyph &ndash; <code>document.*</code>"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/macros/macros_structure.html">← Structure Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/filters.html"><code>filters.*</code> →</a></nav>
+The following configuration settings are related to the current Glyph document. Therefore, you should update them right after creating a project.
+
+<table>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Default</th>
+			</tr>
+			<tr>
+		<td>
+<code>document.author</code> <a id="s_document_author"></a>
+</td>
+		<td>
+<p>The author of the document.</p>
+</td>
+		<td>
+			<code>
+""
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.cover</code> <a id="s_document_cover"></a>
+</td>
+		<td>
+<p>The image used as the document cover (used only for e-book generation).</p>
+</td>
+		<td>
+			<code>
+false
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.draft</code> <a id="s_document_draft"></a>
+</td>
+		<td>
+<p>If set to <code>true</code>, the document is considered a draft, so <a href="/glyph/book/macros/macros_inline.html#m_draftcomment">draft comments</a> and <a href="/glyph/book/macros/macros_inline.html#m_todo">todo items</a> will be displayed.</p>
+</td>
+		<td>
+			<code>
+false
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.filename</code> <a id="s_document_filename"></a>
+</td>
+		<td>
+<p>The name of the output file.</p>
+</td>
+		<td>
+			<code>
+""
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.output</code> <a id="s_document_output"></a>
+</td>
+		<td>
+<p>The format of the output file. It can be set to:</p>
+<ul>
+	<li><code>epub</code></li>
+	<li><code>html5</code></li>
+	<li><code>html</code></li>
+	<li><code>mobi</code></li>
+	<li><code>pdf</code></li>
+	<li><code>web5</code></li>
+	<li><code>web</code></li>
+</ul>
+</td>
+		<td>
+			<code>
+"html"
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.revision</code> <a id="s_document_revision"></a>
+</td>
+		<td>
+<p>The document&#8217;s revision.</p>
+</td>
+		<td>
+			<code>
+""
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.source</code> <a id="s_document_source"></a>
+</td>
+		<td>
+<p>The main source file to compile. It can be also be overridden by calling the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command with the <code>-s</code> option.</p>
+</td>
+		<td>
+			<code>
+"document.glyph"
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.styles</code> <a id="s_document_styles"></a>
+</td>
+		<td>
+<p>How to process stylesheets. It can be set to one of the following values:</p>
+<ul>
+	<li><code>embed</code> &#8212; Embed stylesheets within the document.</li>
+	<li><code>link</code> &#8212; Link stylesheets.</li>
+	<li><code>import</code> &#8212; Import stylesheets using the <code>@import</code> <span class="caps">CSS</span> directive.</li>
+</ul>
+</td>
+		<td>
+			<code>
+"embed"
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.subtitle</code> <a id="s_document_subtitle"></a>
+</td>
+		<td>
+<p>The subtitle of the document, displayed using the <a href="/glyph/book/macros/macros_block.html#m_subtitle"><code>subtitle</code></a> macro.</p>
+</td>
+		<td>
+			<code>
+""
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.title</code> <a id="s_document_title"></a>
+</td>
+		<td>
+<p>The title of the document, displayed using the <a href="/glyph/book/macros/macros_block.html#m_title"><code>title</code></a> macro.</p>
+</td>
+		<td>
+			<code>
+""
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>document.isbn</code> <a id="s_document_isbn"></a>
+</td>
+		<td>
+<p>The <span class="caps">ISBN</span> of the document, for e-book generation.</p>
+</td>
+		<td>
+			<code>
+false
+			</code>
+		</td>
+	</tr>
+		</table>
+<nav class="navigation"><a href="/glyph/book/macros/macros_structure.html">← Structure Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/filters.html"><code>filters.*</code> →</a></nav>

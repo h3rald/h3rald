@@ -1,0 +1,63 @@
+-----
+title: "An Interview with the creator of the Akelos Framework"
+content-type: article
+timestamp: 1184814120
+tags: "php|rails|cakephp|frameworks"
+-----
+<p>I <a href="http://www.h3rald.com/blog/34">already</a> <a href="http://www.h3rald.com/blog/38">covered</a> the Akelos <span class="caps">PHP</span> framework in the past, but for those who don&#8217;t know it, Akelos seems to be one of the few <a href="http://www.h3rald.com/articles/rails-inspired-php-frameworks">Rails-inspired <span class="caps">PHP</span> frameworks</a> still worth mentioning, besides CakePHP and Symphony of course.</p>
+<p>I recently has a look at their recently-relaunched <a href="http://www.akelos.org/">community website</a> and I noticed this phrase:</p>
+<blockquote>
+<p>&#8220;Being port of Ruby on Rails to <span class="caps">PHP</span> Akelos is also optimized for programmer happiness and sustainable productivity&#8221;</p>
+</blockquote>
+<p>Bermi Ferrer, Akelos creator, openly admits the framework is a port of Ruby on Rails to <span class="caps">PHP</span>, an attempt to help <em>&#8220;Ruby on Rails developers who need to code in <span class="caps">PHP</span>&#8221;</em>, among others. Of course Akelos is not Rails, simply because Ruby is (thank God for that!) not <span class="caps">PHP</span>, however I decided to find out more, and I asked Bermi a few questions, which he promptly answered.<h4><em>There are a lot of frameworks for <span class="caps">PHP</span>, perhaps too many: why did you decide to create Akelos rather than using one of the existing ones?</em></h4></p>
+<p>I started coding <a href="http://www.akelos.org/">Akelos</a> back in 2004 for our internal developments.  At that time I only found very few frameworks out there like <a href="http://www.mojavi.org/">Mojavi</a> and <a href="http://ez.no/">eZ Publish</a>. These frameworks were not my ideal of an <a href="http://en.wikipedia.org/wiki/Agile_software_development">Agile development</a> environment, so I decided to brew my own solution.</p>
+<p>After reading <a href="http://www.martinfowler.com/books.html">Patterns of Enterprise Application Architecture</a> it was clear to me the kind of framework I wanted <a href="http://www.akelos.org/">Akelos</a> to become,  so I started to implement some of the design patterns from the book into Akelos.</p>
+<p>During the summer of 2005 I had a look into other <span class="caps">PHP</span> frameworks like <a href="http://www.cakephp.org/">CakePHP</a>, <a href="http://phpontrax.com/"><span class="caps">PHP</span> on Trax</a>, and <a href="http://www.bennolan.com/biscuit/">Biscuit</a> but none of them was more complete or easier to use than what Akelos was already at that time.</p>
+<p>Then I used <a href="http://www.rubyonrails.org/">Rails</a> for one small personal project and immediately found that <a href="http://www.akelos.org/">Akelos</a> interfaces, conventions and philosophy were close to the Rails approach. <a href="http://api.rubyonrails.org/files/vendor/rails/activerecord/README.html">Rails ActiveRecord</a> implementation was impressive, better than mine and much much better than other existing <span class="caps">PHP</span> implementations, so I first ported the ActiveRecord code using <a href="http://adodb.sourceforge.net/"><span class="caps">PHP</span> AdoDB</a> as the database abstraction layer.</p>
+<p>After that point, whenever I had a problem to solve while coding my customers applications I turned to Rails and they usually had the most elegant solution available. So I did like the idea of digging into Rails code to learn more Ruby and bringing Rails magic to the <span class="caps">PHP</span> world. It also helped the fact that Rails inline documentation is excellent so it could be easily adapted for Akelos.</p>
+<h4><em>What&#8217;s new since last time I posted about Akelos?</em></h4>
+<p>The biggest change is the direction that the project has taken. Until now we have not dedicated time to promote Akelos, we just used it for our internal projects and we have been adding features as needed without a fixed roadmap or advocacy.</p>
+<p>Now this has changed. More and more developers are using Akelos and contributing functionalities they miss from Rails. After some serious contribution proposals and many developers telling us how much they like Akelos, we decided to take the time to build a nice community site which includes <a href="http://forum.akelos.org/">forums</a>, a <a href="http://wiki.akelos.org/">wiki</a>, a new <a href="http://www.akelos.org/docs/tutorials/booklink">tutorial</a> and <a href="http://www.akelos.org/screencasts">a screen-cast</a>.</p>
+<p>There are also some improvements like:</p>
+<ul>
+<li>Sintags, now accepts ruby-like calls to helper methods from the views.</li>
+<li>Action Webservice, a component for creating and consuming Web Services easily.</li>
+<li>Action Mailer, which allows you to receive and send (directly or in delayed mode) emails from within your application. (this is almost ready to ship)</li>
+<li>Acts as tree behavior for Models.</li>
+<li>Many performance improvements.</li>
+<li>Many small contributions and bug fixes.</li>
+<li>Code base reduced from 16MB to 9MB.</li>
+</ul>
+<h4><em>From the new site, it seems that Akelos is &#8211; or aims to be &#8211; a port of Rails for <span class="caps">PHP</span>. Is that true? Do you aim to target Rails developers as possible users of the framework in situations in which &#8220;they have no choice&#8221; but to use <span class="caps">PHP</span> instead of Ruby?</em></h4>
+<p>Akelos has ported many Ruby on Rails components keeping their interfaces and functionality whenever it was feasible to port the Ruby code to <span class="caps">PHP</span>. It might be considered a port in the sense of functionality, but there are some Rails strengths that rely on the Ruby language and that are impossible to port to <span class="caps">PHP</span>. However, Ruby developers will find that Akelos is the <span class="caps">PHP</span> framework with is the closest to Rails.</p>
+<p>On the other hand, many <span class="caps">PHP</span> developers have moved to Ruby because <span class="caps">PHP</span> lacked a hyper-productive and fun-to-use framework like Rails for building complex applications. That is no longer the case, and those who excel at <span class="caps">PHP</span> can start being productive from day one by using Akelos. In this way, Akelos target users are those who already know <span class="caps">PHP</span> and need to build complex applications that can run on almost any cheap shared hosting using a solid foundation based on good coding practices and widely accepted conventions.</p>
+<h4><em>What Rails features are missing in Akelos?</em></h4>
+<p>A standalone webserver like WebBrick, <span class="caps">RJS</span>, has and belongs to many through associations, string/number/date extensions and Active Resource.</p>
+<p>Ruby-powered features like modules, runtime class overriding and blocks will never be available in Akelos.</p>
+<p>Scaffolds in Akelos work by generating code, I found quite useless to enable $scaffold = true; and have magic functionality that you can&#8217;t modify, so I decided not to invest my time on that one.</p>
+<h4><em>I noticed quite a few generators available for Akelos, do they work as a Rails developer may expect them to work?</em></h4>
+<p>The ones that are available do pretty much the same as in RoR.</p>
+<h4><em>How does Akelos compare to other similar <span class="caps">PHP</span> frameworks like, say, CakePHP? What features does Akelos offer which Cake doesn&#8217;t offer and vice-versa?</em></h4>
+<p>I&#8217;m not aware of Cake&#8217;s functionalities. At the time I started porting Rails my feelings about CakePHP were that they missed the simplicity point in favor of architectural discussions that lead to confusing code, but that was long ago.</p>
+<p>Akelos (and Rails) do not implement <span class="caps">ACL</span> like Cake does, as that is a business logic component that varies too much from one case to other, it has no place inside the framework.</p>
+<p>Akelos is built with internationalization in its core. You can even internationalize your Models by prefixing the column name with the locale.</p>
+<p>I think that Cake only has an act_as_tree behavior on models while Akelos has Tree, Nested Set, and List. Akelos also implements handy features from Rails like <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic locking</a>, <a href="http://www.martinfowler.com/eaaCatalog/lazyLoad.html">lazy loading</a>, <a href="http://www.martinfowler.com/eaaCatalog/singleTableInheritance.html">table inheritance</a>, counters, automatic transactions, really powerful validations, calculations&#8230;, and I think most of these advanced features are still missing on Cake, but maybe I&#8217;m wrong.</p>
+<h4><em>Did you include unit tests for all the framework classes?</em></h4>
+<p>The main components are fully unit tested, and no new code or patch gets into the trunk without unit tests.</p>
+<h4><em>Did you or someone do any performance test or benchmarks on Akelos already?</em></h4>
+<p>During the last month a lot of code was refactored to improve performance with the help of <a href="http://xdebug.org/">Xdebug</a>, <a href="http://kcachegrind.sourceforge.net/">Kcachegrind</a> and <a href="http://httpd.apache.org/docs/2.0/programs/ab.html">ab</a>. We significantly improved the performance in one of our most complex intranet applications, a <a href="http://www.basecamphq.com/">basecamp</a>-like system.</p>
+<p>Akelos also implements caching at many levels, so it&#8217;s very easy to increase performance as we did with a new <span class="caps">CMS</span> that can handle +200 requests per second using <a href="http://www.apache.org/">Apache</a> in a cheap shared server environment.</p>
+<h4><em>Why should a <span class="caps">PHP</span> developer choose Akelos over another <span class="caps">PHP</span> framework?</em></h4>
+<p><a href="http://www.akelos.org/docs/tutorials/booklink#mvc">Akelos <span class="caps">MVC</span> implementation</a> and <a href="http://www.akelos.org/docs/tutorials/booklink#workflow">workflow</a> are really easy to understand.</p>
+<p>In Akelos all the methods and interfaces are thoroughly selected, so whenever you need to do something you just need to type what you think. Default options are selected with care so you don&#8217;t need to set any  configuration unless you want to modify the default behavior.</p>
+<p>Coding multilingual applications, building complex relationships within models, distributing databases changes within your development team, building Ajax interfaces, unit testing your code and many other common tasks for <span class="caps">PHP</span> developers are really simple to accomplish when using Akelos.</p>
+<p>Akelos is designed to work on PHP4 and PHP5 and it comes with an easy web installer you can adapt for your application. It has functions for working with files and directories in common situations when the web server runs as a different user.</p>
+<p>And one of the main reasons for choosing Akelos is that it makes coding fun and lets you focus on solving user problems rather than wasting your time in repetitive technical annoyances. When coding with other developers the <em>convention over configuration philosophy</em> helps everybody to understand  exactly how everything works and where to find things.</p>
+<h4><em>Is there any website using Akelos already?</em></h4>
+<p>The <a href="http://www.thechemicalbrothers.com/">Chemical Brothers</a> new website which has been developed by <a href="http://www.3ev.com/">3rd Eye Vision (3ev)</a> is using Akelos. </p>
+<p>The <a href="http://www.akelos.org/">Akelos.org</a> site is running a <span class="caps">CMS</span> named Editam which we will release as Open Source in a near future.</p>
+<p>Some small websites like <a href="http://www.fundaciocaixacarlet.com/">Fundacio Caixa Carlet</a> and many intranet/extranet sites that we&#8217;ve been coding during the last 2 years.</p>
+<h4><em>What are your future plans for Akelos? Anything new on the way?</em></h4>
+<p>A new manual, and a better <span class="caps">API</span> interface are the main priorities right now.</p>
+<p>Continuing bringing Rails functionality as needed.</p>
+<p>Releasing our sister project Editam <span class="caps">CMS</span> which will help developers who need to add functionality on the top of a <span class="caps">CMS</span> using a solid <span class="caps">MVC</span> framework like Akelos.</p>

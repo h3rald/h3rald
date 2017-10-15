@@ -1,0 +1,108 @@
+-----
+title: "Glyph &ndash; Generic Errors"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/extending/command.html">← Defining Custom Commands</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_parser.html">Parsing Errors →</a></nav>
+	
+		<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Error Message</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+			<td>Invalid alias: macro '<em>macro_name</em>' already exists</td>
+			<td>The alias name supplied to the <code>macro_alias</code> method has already been used for another macro or alias.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Undefined macro '<em>macro_name</em>'</td>
+			<td>The document contains a macro that does not exist, i.e. it is not a standard or used-defined <a href="/glyph/book/document.html#macro_ref">Glyph macro or alias</a>.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>No macro representation for '<em>macro_name</em>'</td>
+			<td>There is no valid macro representation for the specified macro.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>An error occurred when generating _file-name_.pdf</td>
+			<td>Returned if Prince could not generate the PDF file or if Prince is not installed. Normally, Prince provides additional details on the specific error(s).</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Glyph cannot generate PDF. Please specify a valid output.pdf.generator setting</td>
+			<td>Returned if the <a href="/glyph/book/config/output.html#s_output_pdf_generator"><code>output.pdf.generator</code></a> setting has not be set to a valid PDF renderer. Currently, the only supported values for this setting are <code>prince</code> and <code>wkhtmltopdf</code>.</td>
+		</tr>
+	
+    
+		<tr>
+			<td>Glyph cannot generate e-book. At present, output.<em>ebook_format</em>.generator can only be set to 'calibre'.</td>
+			<td>Returned if the output.<em>ebook_format</em>.generator setting has not be set to @calibre@.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>The current directory is not a valid Glyph project</td>
+			<td>Returned if a glyph command was executed outside a valid glyph project directory.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Invalid snippet file</td>
+			<td>The <code>snippet.yml</code> file contains invalid data. Most likely, it does not evaluate to a Ruby <code>Hash</code>.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Directory '<em>directory_name</em>' is not empty</td>
+			<td>Returned when executing the <a href="/glyph/book/ref_commands.html#c_init"><code>init</code></a> command in a directory that is not empty.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>File '<em>file_name</em>' already exists</td>
+			<td>Returned if the name of an existing file was specified as a parameter for the <a href="/glyph/book/ref_commands.html#c_add"><code>add</code></a> command.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Unknown macro '<em>macro_name</em>'</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command if the specified macro was not found.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Macro '<em>macro_name</em>' is not used in this document</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command if the specified macro is defined but unused.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Bookmark '<em>bookmark_name</em>' does not exist</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command if the specified bookmark does not exist.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>No link matching /<em>regexp</em>/ was found</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command if the no link target matches the supplied regular expression.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Unknown snippet '<em>snippet_name</em>'</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command if the specified snippet was not found.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Snippet '<em>snippet_name</em>' is not used in this document</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_stats"><code>stats</code></a> command if the specified snippet is defined but unused.</td>
+		</tr>
+		</table>
+	
+<nav class="navigation"><a href="/glyph/book/extending/command.html">← Defining Custom Commands</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_parser.html">Parsing Errors →</a></nav>

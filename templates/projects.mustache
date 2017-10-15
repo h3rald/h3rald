@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> _head}}
+	<body>
+    <div id="wrap">
+      {{> _header}}
+      <main id="main" class="container">
+        <article class="projects">
+          <div class="row">
+            {{> _page_header}}
+          </div>
+          <div class="body-text hyphenate">
+            {{#projects}}
+              {{> _project}}
+            {{/projects}}
+					</div>
+				</article>
+      </main>
+      {{> _footer}}
+    </div> 
+	</body>
+</html>

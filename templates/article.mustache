@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> _head}}
+	<body>
+    <div id="wrap">
+      {{> _header}}
+      <main class="container">
+        <article class="{{content-type}}">
+          <div class="row">
+            {{> _page_header}}
+            <time datetime="{{date-iso8601}}"><i class="ent ent-calendar"></i>&nbsp;{{date}}</time>
+          </div>
+          <div class="body-text" class="hyphenate">
+            {{{contents}}}
+					</div>
+				</article>
+      </main>
+      {{> _footer}}
+    </div> 
+    <script src="/js/highlight.pack.js"></script>
+    <script>
+      hljs.configure({tabReplace: '  '});
+      hljs.initHighlightingOnLoad();
+    </script>
+	</body>
+</html>

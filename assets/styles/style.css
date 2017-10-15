@@ -1,0 +1,205 @@
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+  -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+code, pre {
+  color: #333;
+  background-color: #f8f8f8;
+  font-family: 'Hack', monospace;  
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+b, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .panel-title {
+  font-weight: bold;
+}
+
+i, em, .subtitle, .panel-header {
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Raleway', sans-serif;  
+  font-style: normal;
+  -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+  font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+}
+
+.projects-page h3,
+.body-text h3, 
+.body-text h4, 
+.body-text h5 {
+  padding-top: 1rem;  
+}
+
+a {
+  text-decoration-skip: ink;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin-top: -0.3rem;
+}
+
+.body-text p {
+  padding-bottom: 1rem;
+}
+
+ol, ul {
+}
+
+ol li, ul li {
+}
+
+main.container {
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+article {
+}
+
+article.article header h3,
+article.project header h3 {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+footer.container {
+  font-size: 0.7rem;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1rem;
+}
+
+.navbar {
+  padding-top: 1rem;
+}
+
+.navbar-link {
+  margin-top: -0.3rem;
+  font-size: 1.2rem;
+}
+
+.navbar-right {
+}
+
+.contact-list ul {
+}
+.contact-list li {
+  display: inline;
+}
+
+
+.v-spacer {
+  padding-top: 1rem;  
+}
+
+.featured .panel-header {
+  text-align: right;
+  font-style: italic;
+  padding-top: 0;
+  padding-right: 0.3rem;
+  font-size: 0.8rem;
+  color: #51596c;
+}
+
+.date {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.timeline {
+  padding: 1rem 0;  
+}
+
+.timeline .timeline-item .timeline-icon.icon-lg {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+
+.timeline .timeline-item::before {
+  left: 9px;
+  top: 1.3rem;
+}
+
+time {
+  float: right;
+  padding-bottom: 1rem;
+}
+
+.body-text, h4 {
+  clear: right;  
+}
+
+.clearfix {
+  clear: both;  
+}
+
+img {
+  max-width: 100%;  
+}
+
+.archives-search {
+  float: right;  
+  margin-bottom: 1em;
+}
+
+.archives .card, .projects .card {
+  margin-bottom: 1em;
+}
+
+.label {
+  font-variant: small-caps;  
+  vertical-align: middle;
+}
+
+.card-subtitle {
+  font-style: italic;
+}
+
+a[href^=http]::after {
+  font-family: "entypo";
+  content: "\e9ab";
+  font-size: 0.8rem;
+  color: #aaa;
+  font-weight: normal;
+}
+
+.project-card {
+  margin-bottom: 0.5rem;
+}
+
+.project-card.card .card-footer {
+  text-align: center;  
+  padding: 0.4rem;
+}
+
+.project-card .card-footer a {
+  font-variant: small-caps;  
+}
