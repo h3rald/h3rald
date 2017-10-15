@@ -32,12 +32,13 @@ github: $1
 home: /$1/
 title: \"$2\"
 subtitle: \"$3\"
+summary: \"$4\"
 content-type: project
 active: true
-version: $4
+version: $5
 download: \"https://github.com/h3rald/$1/releases/download/\"
 -----
-" (ident title subtitle release) => % :metadata
+" (ident title subtitle summary release) => % :metadata
 
 metadata puts
 ("Create project?" confirm) 
