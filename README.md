@@ -2,7 +2,7 @@
 
 H3RALD.com was created in 2004 by Fabio Cevasco, a technical writer, programmer and IT enthusiast. It features over a hundred "articles":/articles/ covering a wide range of topics, from programming to writing, productivity and even traveling.
 
-Currently, this site is fully static (minus a few AJAX calls) and is powered by the [HastySite](https://github.com/h3rald/hastysite/) static site generator and [LiteStore](https://github.com/h3rald/litestore/) (for the archive search functionality).
+Currently, this site is fully static (minus a few AJAX calls) and is powered by the [HastySite](https://h3rald.com/hastysite/) static site generator and [LiteStore](https://h3rald.com/litestore/) (for the archive search functionality).
 
 
 ### Licensing
