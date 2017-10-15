@@ -1,7 +1,7 @@
 (function(window){
   var axios = window.axios;
   var hostname = window.location.hostname;
-  var endpoint = '/search/'; 
+  var endpoint = '/litestore/'; 
   var searchInput = window.document.getElementsByClassName('search-input')[0];
   var searchButton = window.document.getElementsByClassName('search-button')[0];
   var clearButton = window.document.getElementsByClassName('clear-button')[0];

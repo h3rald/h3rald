@@ -324,13 +324,16 @@
 ; Process all contents
 contents (
   =content
-  content /id :id
-  content
-  (/content-type "project" ==) (content PROJECTS append #PROJECTS content) when
-  process-tags 
-  process-timestamp 
-  process-content
-  (id "index" !=) 'output-fwrite when
+  (content ?content-type)
+  (
+    content /id :id
+    content
+    (/content-type "project" ==) (content PROJECTS append #PROJECTS content) when
+    process-tags 
+    process-timestamp 
+    process-content
+    (id "index" !=) 'output-fwrite when
+  ) when
 ) foreach
 
 ; Generate tag pages
