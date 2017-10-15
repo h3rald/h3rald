@@ -1,17 +1,13 @@
 -----
 title: "Concatenative"
 content-type: project
-github: concatenative
-status: On Hold
-version: 0.2.0
+github: "concatenative"
+docs: "http://concatenative.rubyforge.org"
+home: "/concatenative/"
+summary: "A Ruby DSL for concatenative programming. Although quite slow if compared to other concatenative languages like Factor, it implements all the most common concatenative combinator and makes it possible to use Ruby objects in a concatenative way."
+inactive: true
+version: "0.2.0"
 -----
-<nav class="project-links">
-<p><a href="http://concatenative.rubyforge.org"><span class="caps">DOCUMENTATION</span></a> | <a href="http://rubyforge.org/projects/concatenative"><span class="caps">DOWNLOAD</span></a> | <a href="http://github.com/h3rald/concatenative/tree/master"><span class="caps">SOURCE</span></a> | <a href="http://github.com/h3rald/concatenative/issues"><span class="caps">TRACKING</span></a></p>
-</nav>
-<ul class="project-data">
-	<li>Project Status: <strong>On Hold</strong></li>
-	<li>Version: <strong>0.2.0</strong></li>
-</ul>
 <p>Concatenative is a Ruby <acronym title="Domain-specific Language"><span class="caps">DSL</span></acronym> for concatenative programming. It is heavily inspired by <a href="http://www.latrobe.edu.au/philosophy/phimvt/joy.html">Joy</a>, a minimalist programming language by Manfred von Thun. Like Joy, Concatenative features:</p>
 <ul>
 	<li>function composition, instead of function application</li>
@@ -44,10 +40,10 @@ version: 0.2.0
 	<li>If a method has a different arity, you must specify it explicitly using the pipe (|) operator.</li>
 </ul>
 <p>Example:</p>
-<div class='ruby'><pre><code>concatenate(
-                "Goodbye, World!", /Goodbye/, "Hello", :sub|2
-        )</code></pre></div><p>The program above is equivalent to <code>"Goodbye, World!".sub(/Goodbye/, "Hello")</code>.</p>
+<div class='ruby'><pre><code>concatenate("Goodbye, World!", /Goodbye/, "Hello", :sub|2)</code></pre>
+</div>
+<p>The program above is equivalent to <code>"Goodbye, World!".sub(/Goodbye/, "Hello")</code>.</p>
 <h3>Latest Updates</h3>
-<ul><li><a href="/articles/concatenative-020/">Concatenative 0.2.0 released</a> &mdash; <time class="timeago" datetime="2009-04-19T07:42:00Z">Sunday, 19 April 2009</time></li>
-<li><a href="/articles/concatenative-programming-in-ruby/">Concatenative programming in Ruby</a> &mdash; <time class="timeago" datetime="2009-03-28T06:24:00Z">Saturday, 28 March 2009</time></li>
+<ul><li><a href="/articles/concatenative-020/">Concatenative 0.2.0 released</a></li>
+  <li><a href="/articles/concatenative-programming-in-ruby/">Concatenative programming in Ruby</a> </li>
 </ul>

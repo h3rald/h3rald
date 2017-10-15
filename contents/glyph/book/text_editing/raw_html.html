@@ -1,0 +1,39 @@
+-----
+title: "Glyph &ndash; Textile or Markdown"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/text_editing/code.html">← Source Code</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/xml_fallback.html">XML Fallback →</a></nav>
+		<p>
+Textile or Markdown are very easy and intuitive to use, and they can produce HTML markup with almost no effort. Using them with Glyph is as simple as using the <a href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro (aliased to <code>txt</code>) and the <a href="/glyph/book/macros/macros_filters.html#m_markdown"><code>markdown</code></a> macro (aliased to <code>md</code>).
+</p>
+		<aside class="box">
+<div class="box-title">Example</div>
+<p>The following Glyph code:</p>
+			<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>textile[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>This is a paragraph with some _emphasized_ text.
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>This is another paragraph with some -deleted- text.
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>* This is
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>* a bulletted
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>* list
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>]</pre></div>
+</div>
+
+			<p>produces the following HTML code:</p>
+			<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;p&gt;</span>This is a paragraph with some <span class="tag">&lt;em&gt;</span>emphasized<span class="tag">&lt;/em&gt;</span> text.<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;p&gt;</span>This is a paragraph with some <span class="tag">&lt;del&gt;</span>deleted<span class="tag">&lt;/del&gt;</span> text.<span class="tag">&lt;/p&gt;</span>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span><span class="tag">&lt;ul&gt;</span>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span class="tag">&lt;li&gt;</span>This is<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span class="tag">&lt;li&gt;</span>a bulletted<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span class="tag">&lt;li&gt;</span>list<span class="tag">&lt;/li&gt;</span>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="tag">&lt;/ul&gt;</span></pre></div>
+</div>
+
+</aside>
+		<aside class="important">
+<span class="note-title">Important</span>Be careful when using block-level HTML with Textile and Markdown: sometimes it may be necessary to add extra empty lines or escape tags.
+
+</aside>
+<nav class="navigation"><a href="/glyph/book/text_editing/code.html">← Source Code</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/xml_fallback.html">XML Fallback →</a></nav>

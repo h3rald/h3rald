@@ -1,0 +1,46 @@
+-----
+title: "Glyph &ndash; Section Aliases"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/text_editing/sections.html">← Sections and Headers</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/topics.html">Topics →</a></nav>
+  <p>There are <em>a lot</em> of macros that can be used in the same way as <code>section</code>, one for each element commonly used in <a href="http://en.wikipedia.org/wiki/Book_design">book design</a>.</p>
+<p>The following table lists the identifiers of all section-like macros, divided according to the part of the book they should be placed in:</p>
+  <table>
+    <tr>
+      <th>Frontmatter</th>
+      <td>
+<p><code>imprint</code> <sup>&dagger;</sup>, <code>dedication</code> <sup>&dagger;</sup>, <code>inspiration</code> <sup>&dagger;</sup>, <code>foreword</code> <sup>&Dagger;</sup>, <code>introduction</code> <sup>&Dagger;</sup>, <code>acknowledgement</code> <sup>&Dagger;</sup>, <code>prologue</code> <sup>&Dagger;</sup>, <code>toc</code> <sup>*</sup></p>
+</td>
+    </tr>
+    <tr>
+      <th>Bodymatter</th>
+      <td>
+<p><code>volume</code>, <code>book</code>, <code>part</code>, <code>chapter</code></p>
+</td>
+    </tr>
+    <tr>
+      <th>Backmatter</th>
+      <td>
+<p><code>epilogue</code> <sup>&Dagger;</sup>, <code>afterword</code> <sup>&Dagger;</sup>, <code>postscript</code> <sup>&dagger;</sup>, <code>appendix</code>, <code>addendum</code> <sup>&Dagger;</sup>, <code>glossary</code> <sup>**&Dagger;</sup>, <code>colophon</code> <sup>&dagger;</sup>, <code>bibliography</code> <sup>**&Dagger;</sup>, <code>promotion</code> <sup>&dagger;</sup>, <code>references</code> <sup>**&Dagger;</sup>, <code>index</code> <sup>**&Dagger;</sup>, <code>lot</code> <sup>**&Dagger;</sup>, <code>lof</code> <sup>**&Dagger;</sup></p>
+</td>
+    </tr>
+  </table>
+
+  <p>
+<strong>*</strong>: The <a href="/glyph/book/macros/macros_structure.html#m_toc"><code>toc</code></a> macro is used to generate the Table of Contents automatically, and it takes no parameters.
+</p>
+  <p>
+<strong>**</strong>: This macro is likely to be extended in future versions to generate/aggregate content automatically.
+</p>
+  <p>
+<strong>&dagger;</strong>: This section is not listed in the Table of Contents.
+</p>
+  <p>
+<strong>&Dagger;</strong>: Any subsection of this section is not listed in the Table of Contents.
+</p>
+
+  <aside class="note">
+<span class="note-title">Note</span><code>frontmatter</code>, <code>bodymatter</code> and <code>backmatter</code> are also macro identifiers, but they are also exposed as attributes for the <a href="/glyph/book/macros/macros_structure.html#m_book"><code>book</code></a> macro and the <a href="/glyph/book/macros/macros_structure.html#m_article"><code>article</code></a> macro, so if you're using either of these two macros as your root macro for your document, there's no need to use them explicitly.
+
+</aside>
+<nav class="navigation"><a href="/glyph/book/text_editing/sections.html">← Sections and Headers</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/topics.html">Topics →</a></nav>

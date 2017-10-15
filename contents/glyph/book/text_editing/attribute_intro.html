@@ -1,0 +1,32 @@
+-----
+title: "Glyph &ndash; Macro attributes"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/text_editing/macro_intro.html">← Introducing Glyph Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/macro_composition.html">Macro Composition →</a></nav>
+  <p>Although a macro can take any number of parameters, they are often no more than two or three, for readibility reasons: parameters have no name, but their position within a macro is significant.</p>
+<p>If you have something like this:</p>
+
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>custom_image[test.png|50%|50%|Test Image]</pre></div>
+</div>
+
+  <p>it may still be easy enough to understand what each parameter is used for, but:</p>
+<ul>
+	<li>you can easily forget that the third parameter is the image width</li>
+	<li>if you don&#8217;t want to resize the image, you still have to pass <em>empty parameters</em> to the macro, like this: <code>custom_image[test2.png|||Test Image]</code></li>
+</ul>
+<p>To avoid these situations, some macros which would normally take three or four parameters take optional attributes instead, so you can write:</p>
+  <div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>image[test.png
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @width[50%]
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @alt[Test Image]
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>  @height[50%]
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre></div>
+</div>
+
+  <p>More verbose, of course, but definitely more readable. In this way, if you won't want to scale an image, you can safely omit the <code>@width</code> and <code>@height</code> attributes.</p>
+  <aside class="note">
+<span class="note-title">Note</span>Like parameters, attributes can contain other macros, too.
+
+</aside>
+<nav class="navigation"><a href="/glyph/book/text_editing/macro_intro.html">← Introducing Glyph Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/macro_composition.html">Macro Composition →</a></nav>

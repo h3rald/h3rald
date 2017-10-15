@@ -1,0 +1,32 @@
+-----
+title: "Glyph &ndash; Macro Composition"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/text_editing/attribute_intro.html">← Macro attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting →</a></nav>
+<p>Glyph macros can be <em>composed</em> with other using the <code>/</code> character. Macro composition can be used instead of nesting, provided that macro containers (also called <em>dispatchers</em> in certain situations) take only one parameter and no attributes.</p>
+<p>For example, the following code:</p>
+<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  not[output?[pdf]]|
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  ...
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
+</div>
+
+
+<p>Can be written like this:</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>?[
+<span class="line-numbers"><a href="#n2" name="n2">2</a></span>  not/output?[pdf]|
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>  ...
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
+</div>
+
+
+<p>In this case, the <a href="/glyph/book/macros/macros_core.html#m_not"><code>not</code></a> macro was composed with the <a href="/glyph/book/macros/macros_core.html#m_output_"><code>output?</code></a> macro, thus removing one level of nesting.</p>
+<p>Composition can be useful to simplify complex Glyph macro constructs, but also for <em>macro dispatching</em>. Currently, Glyph supports two <em>dispatchers</em>:</p>
+<ul>
+	<li>The <a href="/glyph/book/macros/macros_core.html#m_s"><code>s</code></a> macro, used to call almost any method of the Ruby String class.</li>
+	<li>The <a href="/glyph/book/macros/macros_core.html#m_xml"><code>xml</code></a> macro, used to render raw <span class="caps">XML</span> tags.</li>
+</ul>
+<nav class="navigation"><a href="/glyph/book/text_editing/attribute_intro.html">← Macro attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/esc_quot.html">Escaping and Quoting →</a></nav>

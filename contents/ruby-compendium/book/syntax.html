@@ -1,0 +1,79 @@
+-----
+title: "Ruby Compendium &ndash; Syntax"
+content-type: page
+-----
+<nav class="navigation"><a href="/ruby-compendium/book/implementations.html">← Versions and Implementations</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/core-stdlib.html">The Core and the Standard Library →</a></nav>
+<p>
+Teaching you how to program in Ruby goes beyond the scope of this book, however, this section will show you at least what Ruby code looks like. If you know another programming language already, some things may already be familiar to you. If you don't, hopefully the following code will not appear too intimidating.
+</p>
+<div class="CodeRay">
+  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="comment"># This is a comment and will not be executed </span>
+<span class="line-numbers"> <a href="#n2" name="n2">2</a></span><span class="comment"># by the Ruby interpreter.</span>
+<span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span class="comment">#</span>
+<span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span class="comment"># This is not the usual 'Hello World' example, so </span>
+<span class="line-numbers"> <a href="#n5" name="n5">5</a></span><span class="comment"># don't worry if you don't understand everything. </span>
+<span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span class="comment"># This example is meant to give you a general feeling </span>
+<span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span class="comment"># of what it is like to write Ruby programs.</span>
+<span class="line-numbers"> <a href="#n8" name="n8">8</a></span>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span>require <span class="string"><span class="delimiter">'</span><span class="content">pathname</span><span class="delimiter">'</span></span>   <span class="comment"># Here we're requiring an external library</span>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>                     <span class="comment"># which is part of the Ruby Standard Library.</span>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>
+<span class="line-numbers"><a href="#n12" name="n12">12</a></span><span class="keyword">class</span> <span class="class">FilePrinter</span>
+<span class="line-numbers"><a href="#n13" name="n13">13</a></span>
+<span class="line-numbers"><a href="#n14" name="n14">14</a></span>  <span class="comment"># Constructor method</span>
+<span class="line-numbers"><a href="#n15" name="n15">15</a></span>  <span class="keyword">def</span> <span class="function">initialize</span>(path)
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>    <span class="comment"># This method expects a valid path, however Ruby is dynamically-typed</span>
+<span class="line-numbers"><a href="#n17" name="n17">17</a></span>    <span class="comment"># so anything can be passed to this method.</span>
+<span class="line-numbers"><a href="#n18" name="n18">18</a></span>    <span class="comment"># To check that the input value is valid, just check if if it behaves</span>
+<span class="line-numbers"><a href="#n19" name="n19">19</a></span>    <span class="comment"># like a path. This is called 'duck typing'.</span>
+<span class="line-numbers"><strong><a href="#n20" name="n20">20</a></strong></span>    raise <span class="constant">RuntimeError</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Invalid path: </span><span class="inline"><span class="inline-delimiter">#{</span>path<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span> <span class="keyword">unless</span> path.respond_to? <span class="symbol">:basename</span>
+<span class="line-numbers"><a href="#n21" name="n21">21</a></span>    <span class="instance-variable">@path</span> = path
+<span class="line-numbers"><a href="#n22" name="n22">22</a></span>    <span class="instance-variable">@name</span> = <span class="instance-variable">@path</span>.basename
+<span class="line-numbers"><a href="#n23" name="n23">23</a></span>  <span class="keyword">end</span>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>
+<span class="line-numbers"><a href="#n25" name="n25">25</a></span>  <span class="keyword">def</span> <span class="function">show</span>
+<span class="line-numbers"><a href="#n26" name="n26">26</a></span>    <span class="comment"># Ruby objects and expressions can be interpolated in strings</span>
+<span class="line-numbers"><a href="#n27" name="n27">27</a></span>    puts <span class="string"><span class="delimiter">&quot;</span><span class="content">  </span><span class="escape">#</span><span class="instance-variable">@name</span><span class="content"> -- </span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@path</span>.stat.size<span class="inline-delimiter">}</span></span><span class="content"> bytes</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n28" name="n28">28</a></span>  <span class="keyword">end</span>
+<span class="line-numbers"><a href="#n29" name="n29">29</a></span>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span class="keyword">end</span>
+<span class="line-numbers"><a href="#n31" name="n31">31</a></span>
+<span class="line-numbers"><a href="#n32" name="n32">32</a></span><span class="keyword">class</span> <span class="class">DirPrinter</span> &lt; <span class="constant">FilePrinter</span> <span class="comment"># Definition of a child class</span>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>
+<span class="line-numbers"><a href="#n34" name="n34">34</a></span>  <span class="keyword">def</span> <span class="function">initialize</span>(path)
+<span class="line-numbers"><a href="#n35" name="n35">35</a></span>    <span class="keyword">super</span> <span class="comment"># Call to the parent's constructur</span>
+<span class="line-numbers"><a href="#n36" name="n36">36</a></span>    <span class="instance-variable">@children</span> = <span class="instance-variable">@path</span>.children
+<span class="line-numbers"><a href="#n37" name="n37">37</a></span>  <span class="keyword">end</span>
+<span class="line-numbers"><a href="#n38" name="n38">38</a></span>
+<span class="line-numbers"><a href="#n39" name="n39">39</a></span>  <span class="keyword">def</span> <span class="function">show</span>
+<span class="line-numbers"><strong><a href="#n40" name="n40">40</a></strong></span>    puts <span class="string"><span class="delimiter">&quot;</span><span class="content">  </span><span class="escape">#</span><span class="instance-variable">@name</span><span class="content">/ -- </span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@children</span>.length<span class="inline-delimiter">}</span></span><span class="content"> item(s)</span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n41" name="n41">41</a></span>  <span class="keyword">end</span>
+<span class="line-numbers"><a href="#n42" name="n42">42</a></span>
+<span class="line-numbers"><a href="#n43" name="n43">43</a></span><span class="keyword">end</span>
+<span class="line-numbers"><a href="#n44" name="n44">44</a></span>
+<span class="line-numbers"><a href="#n45" name="n45">45</a></span><span class="comment"># No parenthesis are required unless needed!</span>
+<span class="line-numbers"><a href="#n46" name="n46">46</a></span>pwd = <span class="constant">Pathname</span>.new <span class="constant">Dir</span>.pwd
+<span class="line-numbers"><a href="#n47" name="n47">47</a></span>
+<span class="line-numbers"><a href="#n48" name="n48">48</a></span>puts <span class="string"><span class="delimiter">&quot;</span><span class="content">Current Directory: </span><span class="inline"><span class="inline-delimiter">#{</span>pwd<span class="inline-delimiter">}</span></span><span class="delimiter">&quot;</span></span>
+<span class="line-numbers"><a href="#n49" name="n49">49</a></span>
+<span class="line-numbers"><strong><a href="#n50" name="n50">50</a></strong></span><span class="comment"># Get the children items of the current directory, </span>
+<span class="line-numbers"><a href="#n51" name="n51">51</a></span><span class="comment"># select only directories, </span>
+<span class="line-numbers"><a href="#n52" name="n52">52</a></span><span class="comment"># sort them alphabetically,</span>
+<span class="line-numbers"><a href="#n53" name="n53">53</a></span><span class="comment"># and for each one of them...</span>
+<span class="line-numbers"><a href="#n54" name="n54">54</a></span>pwd.children.select{|i| i.directory? }.sort.each <span class="keyword">do</span> |item|
+<span class="line-numbers"><a href="#n55" name="n55">55</a></span>  <span class="comment"># Call the show method, printing the </span>
+<span class="line-numbers"><a href="#n56" name="n56">56</a></span>  <span class="comment"># directory name and the number of child items</span>
+<span class="line-numbers"><a href="#n57" name="n57">57</a></span>  <span class="constant">DirPrinter</span>.new(item).show
+<span class="line-numbers"><a href="#n58" name="n58">58</a></span><span class="keyword">end</span>
+<span class="line-numbers"><a href="#n59" name="n59">59</a></span>
+<span class="line-numbers"><strong><a href="#n60" name="n60">60</a></strong></span>pwd.children.select{|i| !i.directory? }.sort.each <span class="keyword">do</span> |item|
+<span class="line-numbers"><a href="#n61" name="n61">61</a></span>  <span class="constant">FilePrinter</span>.new(item).show
+<span class="line-numbers"><a href="#n62" name="n62">62</a></span><span class="keyword">end</span></pre></div>
+</div>
+
+<aside class="box">
+<div class="box-title">Trying out Ruby...</div>
+If your hands are itching to try writing Ruby code, but you don't want to install it just yet, head over to <a href="http://tryruby.org/">Try Ruby!</a>, a unique way to try the language right in your browser. Or, if you already installed Ruby, follow the <a href="http://www.ruby-lang.org/en/documentation/quickstart/">Ruby in 20 minutes</a> tutorial, using Interactive RuBy (IRB).
+
+</aside>
+<nav class="navigation"><a href="/ruby-compendium/book/implementations.html">← Versions and Implementations</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/core-stdlib.html">The Core and the Standard Library →</a></nav>

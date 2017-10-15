@@ -1,0 +1,53 @@
+-----
+title: "Glyph &ndash; Adding Stylesheets"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/text_editing/xml_fallback.html">← XML Fallback</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/inclusions.html">Content Reuse →</a></nav>
+  <p>Currently, Glyph does not provide any native way to format text and pages. The reason is that there's absolutely no need for that: CSS does the job just fine. In particular, CSS3 offers specific attributes and elements that can be used specifically for paginated documents. That's no replacement for LaTeX by any means, but it is enough if you're not looking for advanced typographical features.</p>
+  <p>You can embed CSS files using the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro, like this:</p>
+  <p>
+<code> style[default.css] </code>
+</p>
+  <p>In this case, the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro looks for a <code>default.css</code> file in the <code>/styles</code> folder of your Glyph project <em>and</em> among the default Glyph stylesheets, and embeds it within a <code>&lt;style&gt;</code> tag. If you supply a file with a <code>.sass</code> or <code>.scss</code> extension, it will interpret it as a Sass file and convert it to <span class="caps">CSS</span> automatically (if the <em>Haml</em> gem is installed).</p>
+  <aside class="tip">
+<span class="note-title">Tip</span>By default, stylesheets are embedded within text files. If necessary, you can choose to link them or import them by changing the values of the <a href="/glyph/book/config/document.html#s_document_styles"><code>document.styles</code></a> setting.
+
+</aside>
+  <section class="section">
+<header><h1 id="default_stylesheets" class="toc">Default Stylesheets</h1></header>
+<p>Glyph provides the following default stylesheets, that can be referenced directly using the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro:</p>
+    <table>
+      <tr>
+        <th>File name</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>
+<code>default.css</code>
+</td>
+        <td>The stylesheet used for this book.</td>
+      </tr>
+      <tr>
+        <td>
+<code>pagination.css</code>
+</td>
+        <td>A CSS3-compliant stylesheet used for pagination, suitable for PDF generation using <a href="http://www.princexml.com/">Prince</a>.</td>
+      </tr>
+      <tr>
+        <td>
+<code>coderay.css</code>
+</td>
+        <td>The default <a href="http://coderay.rubychan.de/">Coderay</a> stylesheet, used for syntax highlighting.</td>
+      </tr>
+      <tr>
+        <td>
+<code>ultraviolet/*</code>
+</td>
+        <td>This folder contains the following <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> stylesheets, used for syntax highlighting: <code>
+active4d.css, all_hallows_eve.css, amy.css, blackboard.css, brilliance_black.css, brilliance_dull.css, cobalt.css, dawn.css, eiffel.css, espresso_libre.css, idle.css, iplastic.css, lazy.css, mac_classic.css, magicwb_amiga.css, pastels_on_dark.css, slush_poppies.css, spacecadet.css, sunburst.css, twilight.css, zenburnesque.css
+</code></td>
+      </tr>
+    </table>
+
+</section>
+<nav class="navigation"><a href="/glyph/book/text_editing/xml_fallback.html">← XML Fallback</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/inclusions.html">Content Reuse →</a></nav>

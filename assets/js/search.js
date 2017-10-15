@@ -24,7 +24,6 @@
   }
 
   function result(data) {
-    console.log(data.id);
     var id = data.id.replace(/\/index\.html$/i, '');
     var card = window.document.createElement('div');
     card.classList.add('card');
@@ -40,10 +39,6 @@
     link.setAttribute('href', id);
     link.innerHTML = '&rarr; ' + id;
     
-    var subtitle = window.document.createElement('div');
-    title.classList.add('card-subtitle');
-    title.classList.add('text-gray');
-    
     var body = window.document.createElement('div');
     body.classList.add('card-body');
     body.innerHTML = data.highlight;
@@ -51,7 +46,6 @@
     // Structure
     title.appendChild(link);
     header.appendChild(title);
-    header.appendChild(subtitle);
     card.appendChild(header);
     card.appendChild(body);
 
@@ -76,7 +70,6 @@
     }
     searchInput.value = decodeURIComponent(q);
     var req = endpoint + '?search=' + q + '&contents=false';
-    console.log('executing...');
     axios.get(req).then(function(resp){
       results(resp.data.results);
     }).catch(function(resp){
@@ -98,7 +91,6 @@
     info.textContent = items.length + ' results found.';
     resultsDiv.innerHTML = '';
     resultsDiv.appendChild(info);
-    resultsDiv
     items.forEach(function(item) {
       resultsDiv.appendChild(result(item));
     });

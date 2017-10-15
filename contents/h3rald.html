@@ -3,90 +3,223 @@ title: "H3RALD Web Site"
 content-type: project
 subtitle: "The site you're looking at"
 github: h3rald
-status: Active
-version: 8.4.0
+active: true
+home: /h3rald/
+summary: "This very web site, in its 9th incarnation. H3RALD.com has been operative since 2004 and through the years its backend changed from being pure vanilla HTML, to server-side PHP (Prado and CakePHP) to Ruby (Rails, Nanoc), and finally Nim (HastySite)."
+version: 9.0.0
 -----
-<nav class="project-links">
-<p><a href="http://github.com/h3rald/h3rald/tree/master"><span class="caps">SOURCE</span></a> | <a href="http://github.com/h3rald/h3rald/issues"><span class="caps">TRACKING</span></a></p>
-</nav>
-<ul class="project-data">
-	<li>Project Status: <strong>Active</strong></li>
-	<li>Version: <strong>8.4.0</strong></li>
-</ul>
-<p>The H3RALD.com domain was bought in March 2004 and since than has always been my home on the Internet. Through the years, a total of 8 versions of this web site has been released, each featuring some change in the backend.</p>
-<p>Currently, this web site is fully static (minus a few Ajax calls) and is powered by the <a href="http://nanoc.stoneship.org/">Nanoc</a>, a very flexible web publishing system written in Ruby.</p>
-<div class="spacer-50"></div>
-<div class="spacer-50"></div>
-<h3>Releases</h3>
-<h4>Version 8 (September 2009 &ndash; now)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a>, <a href="http://wiki.nginx.org/Main">Nginx</a> (from version 8.3 onwards)</li>
-	<li>Database: n/a</li>
-	<li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.h3rald.com">Nanoc</a></li>
-	<li>Programming Language: <a href="http://www.ruby-lang.org">Ruby</a></li>
-</ul>
-<h4>Version 7 (July 2007 &ndash; September 2009)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: <a href="http://www.mysql.com">MySQL</a></li>
-	<li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.rubyonrails.org">Ruby on Rails</a> + <a href="http://www.typosphere.org">Typo</a></li>
-	<li>Programming Language: <a href="http://www.ruby-lang.org">Ruby</a></li>
-</ul>
-<h4>Version 6 (December 2005 &ndash; July 2007)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: <a href="http://www.mysql.com">MySQL</a></li>
-	<li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.cakephp.com">CakePHP</a></li>
-	<li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
-</ul>
-<h4>Version 5 (April 2005 &ndash; December 2005)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: <a href="http://www.sqlite.org">SQLite</a></li>
-	<li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.xisc.com/">Prado</a></li>
-	<li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
-</ul>
-<h4>Version 4 (February 2005 &ndash; April 2005)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: <a href="http://www.mysql.com">MySQL</a></li>
-	<li>Framework/<span class="caps">CMS</span>/Other: n/a</li>
-	<li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
-</ul>
-<h4>Version 3 (November 2005 &ndash; February 2005)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: <a href="http://www.mysql.com">MySQL</a></li>
-	<li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.xoops.org/"><span class="caps">XOOPS</span></a></li>
-	<li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
-</ul>
-<h4>Version 2 (May 2004 &ndash; November 2004)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: n/a</li>
-	<li>Framework/<span class="caps">CMS</span>/Other: n/a</li>
-	<li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
-</ul>
-<h4>Version 1 (March 2004 &ndash; May 2004)</h4>
-<ul>
-	<li>Web Server: <a href="http://www.apache.org">Apache</a></li>
-	<li>Database: n/a</li>
-	<li>Framework/<span class="caps">CMS</span>/Other: n/a</li>
-	<li>Programming Language: n/a</li>
-</ul>
+<p>The H3RALD.com domain was bought in March 2004 and since than has always been my home on the Internet. Through the years, a total of 9 major versions of this web site has been released, each featuring some change in the backend.</p>
+<p>Currently, this site is fully static (minus a few AJAX calls) and is powered by my very own static site generator, HastySite (soon to be released) and by <a href="/litestore/">LiteStore</a> (for the archive search functionality).</p>
+<h3>Major Releases</h3>
+
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 9 (October 2017 &ndash; present)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://wiki.nginx.org/Main">Nginx</a></li>
+            <li>Database: <a href="/litestore/">LiteStore</a> (for the archive search functionality only)</li>
+            <li>Framework/<span class="caps">CMS</span>/Other: HastySite (static site generator)</li>
+            <li>Programming Language: <a href="https://nim-lang.org">Nim</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 8 (September 2009 &ndash; October 2017)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a>, <a href="http://wiki.nginx.org/Main">Nginx</a> (from version 8.3 onwards)</li>
+            <li>Database: n/a</li>
+            <li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.h3rald.com">Nanoc</a> (static site generator)</li>
+            <li>Programming Language: <a href="http://www.ruby-lang.org">Ruby</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 7 (July 2007 &ndash; September 2009)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: <a href="http://www.mysql.com">MySQL</a></li>
+            <li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.rubyonrails.org">Ruby on Rails</a> + <a href="http://www.typosphere.org">Typo</a></li>
+            <li>Programming Language: <a href="http://www.ruby-lang.org">Ruby</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 6 (December 2005 &ndash; July 2007)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: <a href="http://www.mysql.com">MySQL</a></li>
+            <li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.cakephp.com">CakePHP</a></li>
+            <li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 5 (April 2005 &ndash; December 2005)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: <a href="http://www.sqlite.org">SQLite</a></li>
+            <li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.xisc.com/">Prado</a></li>
+            <li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 4 (February 2005 &ndash; April 2005)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: <a href="http://www.mysql.com">MySQL</a></li>
+            <li>Framework/<span class="caps">CMS</span>/Other: n/a</li>
+            <li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 3 (November 2005 &ndash; February 2005)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: <a href="http://www.mysql.com">MySQL</a></li>
+            <li>Framework/<span class="caps">CMS</span>/Other: <a href="http://www.xoops.org/"><span class="caps">XOOPS</span></a></li>
+            <li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 2 (May 2004 &ndash; November 2004)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: n/a</li>
+            <li>Framework/<span class="caps">CMS</span>/Other: n/a</li>
+            <li>Programming Language: <a href="http://www.php.net"><span class="caps">PHP</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-left">
+      <div class="timeline-icon icon-lg">
+        <i class="ent ent-flag"></i>
+      </div>
+    </div>
+    <div class="timeline-content">
+      <div class="tile">
+        <div class="tile-content">
+          <p class="tile-subtitle">
+          Version 1 (March 2004 &ndash; May 2004)
+          </p>
+          <ul>
+            <li>Web Server: <a href="http://www.apache.org">Apache</a></li>
+            <li>Database: n/a</li>
+            <li>Framework/<span class="caps">CMS</span>/Other: n/a</li>
+            <li>Programming Language: n/a</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h3>Latest Updates</h3>
-<ul><li><a href="/articles/h3rald-83/">H3RALD.com v8.3 Released</a> &mdash; <time class="timeago" datetime="2012-12-27T22:41:34Z">Thursday, 27 December 2012</time></li>
-<li><a href="/articles/h3rald-81/">H3RALD.com v8.1 Released</a> &mdash; <time class="timeago" datetime="2010-09-23T12:04:25Z">Thursday, 23 September 2010</time></li>
-<li><a href="/articles/take-back-your-site-with-nanoc/">Take back your site, with nanoc!</a> &mdash; <time class="timeago" datetime="2009-09-15T11:32:51Z">Tuesday, 15 September 2009</time></li>
-<li><a href="/articles/h3rald-71/">Introducing H3RALD.com v7.1</a> &mdash; <time class="timeago" datetime="2008-10-27T04:29:00Z">Monday, 27 October 2008</time></li>
-<li><a href="/articles/apache2-upgrade/">Beware of sudden upgrades!</a> &mdash; <time class="timeago" datetime="2007-12-20T06:41:00Z">Thursday, 20 December 2007</time></li>
-<li><a href="/articles/review-services/">Review Services</a> &mdash; <time class="timeago" datetime="2007-12-14T11:24:00Z">Friday, 14 December 2007</time></li>
-<li><a href="/articles/back-from-holiday/">Back from holiday</a> &mdash; <time class="timeago" datetime="2007-08-30T02:59:00Z">Thursday, 30 August 2007</time></li>
-<li><a href="/articles/simply-on-rails-1-concepts-map/">Simply on Rails &#8211; Part 1: Concepts and Bubbles</a> &mdash; <time class="timeago" datetime="2007-07-07T05:43:00Z">Saturday, 07 July 2007</time></li>
-<li><a href="/articles/h3rald-v7-overview/">Back on Track&#8230;</a> &mdash; <time class="timeago" datetime="2007-06-22T12:38:00Z">Friday, 22 June 2007</time></li>
-<li><a href="/articles/41/">Comments temporarily disabled</a> &mdash; <time class="timeago" datetime="2007-01-07T05:53:00Z">Sunday, 07 January 2007</time></li>
-<li><a href="/articles/37/">Some updates</a> &mdash; <time class="timeago" datetime="2006-07-25T01:07:00Z">Tuesday, 25 July 2006</time></li>
-<li><a href="/articles/29/">Writing more articles&#8230;</a> &mdash; <time class="timeago" datetime="2006-05-14T04:26:00Z">Sunday, 14 May 2006</time></li>
-<li><a href="/articles/21/">Birthday present? Web space, please&#8230;</a> &mdash; <time class="timeago" datetime="2006-04-27T12:47:00Z">Thursday, 27 April 2006</time></li>
-<li><a href="/articles/8/">New site operative</a> &mdash; <time class="timeago" datetime="2006-04-06T14:57:00Z">Thursday, 06 April 2006</time></li>
+<ul><li><a href="/articles/h3rald-83/">H3RALD.com v8.3 Released</a></li> 
+  <li><a href="/articles/h3rald-81/">H3RALD.com v8.1 Released</a></li> 
+  <li><a href="/articles/take-back-your-site-with-nanoc/">Take back your site, with nanoc!</a></li> 
+  <li><a href="/articles/h3rald-71/">Introducing H3RALD.com v7.1</a></li> 
+  <li><a href="/articles/h3rald-v7-overview/">Back on Track&#8230;</a></li> 
+  <li><a href="/articles/37/">Some updates</a></li> 
+  <li><a href="/articles/8/">New site operative</a></li> 
 </ul>

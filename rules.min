@@ -6,6 +6,7 @@
 () =ARCHIVE-COLUMNS
 () =ARTICLES
 () =HOME
+() =PROJECTS
 
 
 ; Populates the ARCHIVE-COLUMNS array containing tags in groups
@@ -92,6 +93,18 @@
   output-fwrite
 ) :create-archives-page
 
+; Create the Projects page
+(
+  ()
+  "projects/index"                          %id
+  "projects.html"                           %path
+  ".html"                                   %ext
+  "Projects"                                %title
+  "page"                                    %content-type
+  PROJECTS (?active) sort %projects
+  dup "projects" swap mustache %contents
+  output-fwrite
+) :create-projects-page
 
 ; Create the Tags page.
 ;(
@@ -254,6 +267,7 @@
   content /content-type :ct
   "page" :tpl
   (ct "article" ==) ("article" @tpl) when
+  (ct "project" ==) ("project" @tpl) when
   (id "index" ==) (content #HOME "home" @tpl) when
   "" :page
   "" :contents
@@ -312,6 +326,7 @@ contents (
   =content
   content /id :id
   content
+  (/content-type "project" ==) (content PROJECTS append #PROJECTS content) when
   process-tags 
   process-timestamp 
   process-content
@@ -325,6 +340,7 @@ contents (
 
 ; Generate archive pages
 ;prepare-archive-data
+create-projects-page
 create-archives-page
 ;ARCHIVES 'create-archive-page foreach
 

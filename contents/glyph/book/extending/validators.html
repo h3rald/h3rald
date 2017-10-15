@@ -1,0 +1,20 @@
+-----
+title: "Glyph &ndash; Using Validators"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/extending/placeholders.html">← Using Placeholders</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/interpreting.html">Interpreting Glyph Code →</a></nav>
+	<p>If you need to make sure that a macro is used properly, consider using <a href="http://rubydoc.info/gems/glyph/Glyph/Macro/Validators">validators</a>. These methods can be used anywhere within the macro code to check whether certain conditions are met or not. Some default validators are provided to check the number of parameters of a macro, and they are actually used in some system macros.</p>
+	<p>If you want to create your own validators, you can call the generic <code>validate</code> method which takes the message to display in case of error, a Hash of options and a block containing the validation to perform.</p>
+	<aside class="box">
+<div class="box-title">Validating macro placement</div>
+<p>You can, of course, create your own validators to check whether a macro is used directly within another. While this may seem a good idea to enforce constraints into the way documents are created, it has one major drawback: if you define a macro with such validation, you&#8217;re effectively limiting its usage, so for example you won&#8217;t be able to use within snippets or other custom macros.</p>
+<p>Suppose, for example, that the <a href="/glyph/book/macros/macros_block.html#m_box"><code>box</code></a> macro is only allowed directly under a <code>section</code> macro. This means that, for example:</p>
+<ul>
+	<li>the macro cannot be used within <code>chapter</code> or <code>appendix</code> macros.</li>
+	<li>the macro cannot be used in snippets</li>
+</ul>
+<p>Even if you consider all the possibilities within the scope of the default macros provided with Glyph, this could still make the <code>box</code> macro unusable within custom macros.</p>
+<p>For the specific cases where a macro does not make sense unless is within another (e.g. the <a href="/glyph/book/macros/macros_core.html#m_eq"><code>eq</code></a> macro), a <code>within</code> validator is used. Note though, that this validator only checks that the macro is used within another, but it is not necessarily its child.</p>
+
+</aside>
+<nav class="navigation"><a href="/glyph/book/extending/placeholders.html">← Using Placeholders</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/interpreting.html">Interpreting Glyph Code →</a></nav>

@@ -1,0 +1,76 @@
+-----
+title: "Glyph &ndash; Command Errors"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_parser.html">← Parsing Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_macro.html">Macro Errors →</a></nav>
+	
+		<table style="width:100%;">
+			<tr>
+				<th style="width:30%">Error Message</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+			<td>Source file '<em>source_file</em>' does not exist</td>
+			<td>Returned if Glyph is running in <a href="/glyph/book/compiling/lite_mode.html#lite_mode">lite mode</a> and the specified source file was not found.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Source and destination file are the same</td>
+			<td>Returned if Glyph is running in <a href="/glyph/book/compiling/lite_mode.html#lite_mode">lite mode</a> and you specified the same source and destination files.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>DirectoryWatcher is not available. Install it with: gem install directory_watcher</td>
+			<td>Returned if <a href="/glyph/book/compiling/compiling.html#auto_regeneration">auto regeneration</a> is enabled but the <code>directory_watcher</code> gem in not installed.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Document cannot be finalized due to previous errors</td>
+			<td>Returned if one or more errors occurred in the document prevented finalization.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Please specify a file name</td>
+			<td>No file name was specified for the <a href="/glyph/book/ref_commands.html#c_add"><code>add</code></a> command.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Output target not specified</td>
+			<td>Returned if no target was specified for the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command _and_ if the <a href="/glyph/book/config/document.html#s_document_output"><code>document.output</code></a> setting is not set.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Unknown output target '<em>target_name</em>'</td>
+			<td>An unsupported output target was specified for the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command. Only the following output targets are supported:
+			<ul>
+				<li>html</li>
+				<li>pdf</li>
+			</ul></td>
+		</tr>
+	
+		
+		<tr>
+			<td>Too few/too many arguments</td>
+			<td>Returned if the <a href="/glyph/book/ref_commands.html#c_config"><code>config</code></a> command was used with no arguments or more than two arguments respectively.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Unknown setting '<em>setting_name</em>'</td>
+			<td>The name of an unknown setting was specified for the <a href="/glyph/book/ref_commands.html#c_config"><code>config</code></a> command.</td>
+		</tr>
+	
+		
+		<tr>
+			<td>Cannot reset '<em>setting_name</em>' setting (system use only).</td>
+			<td>Returned by the <a href="/glyph/book/ref_commands.html#c_config"><code>config</code></a> command when attempting to override a setting in the <code>system.*</code> namespace.</td>
+		</tr>
+		</table>
+	
+<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_parser.html">← Parsing Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/troubleshooting/errors_macro.html">Macro Errors →</a></nav>

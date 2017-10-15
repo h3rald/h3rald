@@ -1,0 +1,41 @@
+-----
+title: "Glyph &ndash; Creating your first Glyph Project"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/acknowledgements.html">← Acknowledgements</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/getting_started/structure.html">Document Structure →</a></nav>
+<p>To install Glyph, simply run <code>gem install glyph</code>, like with any other Ruby gem. Then, create a new directory and initialize a new Glyph project, like so:</p>
+<p><code>mkdir</code> <em>test_document</em></p>
+<p><code>cd</code> <em>test_document</em></p>
+<p><code>glyph init</code></p>
+<p>That&#8217;s it. You just created a new Glyph project in the <code>test_document</code> directory.</p>
+<aside class="box">
+<div class="box-title">Glyph&#8217;s dependencies</div>
+<p>Glyph requires the following gems:</p>
+<ul>
+	<li>extlib</li>
+	<li>gli</li>
+	<li>rake</li>
+</ul>
+<p>Additionally, some Glyph macros may require additional gems, such as:</p>
+<ul>
+	<li>RedCloth (<a href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro)</li>
+	<li>BlueCloth <em>or</em> RDiscount <em>or</em> Maruku <em>or</em> Kramdown (<a href="/glyph/book/macros/macros_filters.html#m_markdown"><code>markdown</code></a> macro)</li>
+	<li>Sass (if you want to load .sass files with the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro)</li>
+	<li>CodeRay <em>or</em> UltraViolet (<a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro)</li>
+	<li>directory_watcher (to use auto-regeneration with the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command)</li>
+</ul>
+</aside>
+<p>Every Glyph project is comprised of the following directories:</p>
+<ul>
+	<li><code>images/</code> &#8212; used to store the image files used in your document.</li>
+	<li><code>lib/</code> &#8212; used to store your custom Glyph macros and Rake tasks.</li>
+	<li><code>output/</code> &#8212; used to store your generated output files.</li>
+	<li><code>styles/</code> &#8212; used to store your stylesheets.</li>
+	<li><code>text/</code> &#8212; used to store your source text files.</li>
+</ul>
+<p>Additionally, the following files are also created at top level:</p>
+<ul>
+	<li><code>config.yml</code> &#8212; containing your <a href="/glyph/book/getting_started/configuration.html#cfg">Project Configuration</a>.</li>
+	<li><code>document.glyph</code> &#8212; containing the <a href="/glyph/book/getting_started/structure.html#struct">structure</a> of your document.</li>
+</ul>
+<nav class="navigation"><a href="/glyph/book/acknowledgements.html">← Acknowledgements</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/getting_started/structure.html">Document Structure →</a></nav>

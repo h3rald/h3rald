@@ -1,0 +1,111 @@
+-----
+title: "Glyph &ndash; <code>options.*</code>"
+content-type: page
+-----
+<nav class="navigation"><a href="/glyph/book/config/filters.html">← <code>filters.*</code></a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/output.html"><code>output.*</code> →</a></nav>
+The following configuration settings are used to enable or disable specific Glyph functionalities and behaviors.
+
+<table>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Default</th>
+			</tr>
+			<tr>
+		<td>
+<code>options.filters_by_file_extension</code> <a id="s_options_filters_by_file_extension"></a>
+</td>
+		<td>
+<p>If set to <code>true</code>, a filter macro is applied to included files, based on their extensions (<span class="fmi">for more information on <mark>including files</mark>, see <a href="/glyph/book/text_editing/inclusions.html#incl">Content Reuse</a></span>).</p>
+</td>
+		<td>
+			<code>
+nil
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>options.macro_set</code> <a id="s_options_macro_set"></a>
+</td>
+		<td>
+<p>Determines which macro set will be loaded. It can be set to:</p>
+<ul>
+	<li>glyph &#8212; Loads core, filter, xml macros plus all macros necessary for the <a href="/glyph/book/config/document.html#s_document_output"><code>document.output</code></a> setting.</li>
+	<li>xml &#8212; Loads core and xml macros.</li>
+	<li>core &#8212; Loads core macros only.</li>
+</ul>
+</td>
+		<td>
+			<code>
+"glyph"
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>options.safe_mode</code> <a id="s_options_safe_mode"></a>
+</td>
+		<td>
+<p>Enables Safe Mode (<span class="fmi">for more information on <mark>Glyph modes</mark>, see <a href="/glyph/book/compiling/programmatic_usage.html#modes">Modes</a></span>).</p>
+</td>
+		<td>
+			<code>
+false
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>options.url_validation</code> <a id="s_options_url_validation"></a>
+</td>
+		<td>
+<p>If set to <em>true_, every external link will be validated (see </em>editing/links.html#links&quot;&gt;Links and Bookmarks</a>).</p>
+</td>
+		<td>
+			<code>
+false
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>options.xml_blacklist</code> <a id="s_options_xml_blacklist"></a>
+</td>
+		<td>
+<p>The <span class="caps">XML</span> tags listed here cannot be generated using Glyph code.</p>
+</td>
+		<td>
+			<code>
+["applet", "base", "basefont", "embed", "frame", "frameset", "iframe", "isindex", "meta", "noframes", "noscript", "object", "param", "title"]
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>options.xml_fallback</code> <a id="s_options_xml_fallback"></a>
+</td>
+		<td>
+<p>If set to true, any unknown macro name will considered an <span class="caps">XML</span> element (see <a href="/glyph/book/document.html#other_elements">Other <span class="caps">HTML</span> Elements</a>).</p>
+</td>
+		<td>
+			<code>
+true
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<code>options.ebook.converter</code> <a id="s_options_ebook_converter"></a>
+</td>
+		<td>
+<p>The full path name of the ebook-convert command. Defaults to /usr/bin/ebook-convert.</p>
+</td>
+		<td>
+			<code>
+nil
+			</code>
+		</td>
+	</tr>
+		</table>
+<nav class="navigation"><a href="/glyph/book/config/filters.html">← <code>filters.*</code></a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/output.html"><code>output.*</code> →</a></nav>

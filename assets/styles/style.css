@@ -15,7 +15,15 @@ body {
   font-size: 1rem;
 }
 
-b, strong, h1, h2, h3, h4, h5, h6, .panel-title {
+code, pre {
+  color: #333;
+  background-color: #f8f8f8;
+  font-family: 'Hack', monospace;  
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+b, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .panel-title {
   font-weight: bold;
 }
 
@@ -72,7 +80,8 @@ main.container {
 article {
 }
 
-article header h3 {
+article.article header h3,
+article.project header h3 {
     font-weight: normal;
     font-style: italic;
     font-size: 1.2em;
@@ -161,6 +170,36 @@ img {
   margin-bottom: 1em;
 }
 
-.archives .card {
+.archives .card, .projects .card {
   margin-bottom: 1em;
+}
+
+.label {
+  font-variant: small-caps;  
+  vertical-align: middle;
+}
+
+.card-subtitle {
+  font-style: italic;
+}
+
+a[href^=http]::after {
+  font-family: "entypo";
+  content: "\e9ab";
+  font-size: 0.8rem;
+  color: #aaa;
+  font-weight: normal;
+}
+
+.project-card {
+  margin-bottom: 0.5rem;
+}
+
+.project-card.card .card-footer {
+  text-align: center;  
+  padding: 0.4rem;
+}
+
+.project-card .card-footer a {
+  font-variant: small-caps;  
 }
