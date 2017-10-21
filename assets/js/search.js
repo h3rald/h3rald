@@ -36,7 +36,7 @@
     title.classList.add('h5');
 
     var link = window.document.createElement('a');
-    link.setAttribute('href', id);
+    link.setAttribute('href', "/" + id);
     link.innerHTML = '&rarr; ' + id;
     
     var body = window.document.createElement('div');

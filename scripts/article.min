@@ -29,6 +29,8 @@ subtitle: \"$3\"
 content-type: article
 timestamp: $4
 -----
+
+<hr />
 " (ident title subtitle ts) => % :metadata
 
 metadata puts
