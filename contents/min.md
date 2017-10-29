@@ -8,8 +8,8 @@ summary: "A functional, concatenative programming language with a minimalist syn
 content-type: project
 active: true
 download: "https://github.com/h3rald/min/releases/download/"
-version: 0.11.0
-docs: "https://cdn.rawgit.com/h3rald/min/v0.11.0/Min_DeveloperGuide.htm"
+version: 0.12.0
+docs: "https://cdn.rawgit.com/h3rald/min/v0.12.0/Min_DeveloperGuide.htm"
 -----
 
 *min* is a stack-based, concatenative programming language that uses postfix notation. If you already know [Forth](http://www.forth.org/), [Factor](http://factorcode.org/) or [Joy](http://www.kevinalbrecht.com/code/joy-mirror/), or if you ever used an [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator, then min will look somewhat familiar to you. 
