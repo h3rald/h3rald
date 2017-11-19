@@ -10,9 +10,12 @@
             {{> _page_header}}
           </div>
           <div class="body-text hyphenate">
-            {{#projects}}
+            {{#active-projects}}
               {{> _project}}
-            {{/projects}}
+            {{/active-projects}}
+            {{#inactive-projects}}
+              {{> _project}}
+            {{/inactive-projects}}
 					</div>
 				</article>
       </main>

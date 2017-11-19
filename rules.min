@@ -33,12 +33,13 @@
 ; Create the Projects page
 (
   ()
-  "projects/index"                          %id
-  "projects.html"                           %path
-  ".html"                                   %ext
-  "Projects"                                %title
-  "page"                                    %content-type
-  PROJECTS (?active) sort %projects
+  "projects/index"                                    %id
+  "projects.html"                                     %path
+  ".html"                                             %ext
+  "Projects"                                          %title
+  "page"                                              %content-type
+  PROJECTS (?active) filter (/id swap /id <) sort     %active-projects
+  PROJECTS (?active not) filter (/id swap /id <) sort %inactive-projects
   dup "projects" swap mustache %contents
   output-fwrite
 ) :create-projects-page

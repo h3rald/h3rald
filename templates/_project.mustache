@@ -1,13 +1,13 @@
   <div class="card project-card">
     <div class="card-header">
       <div class="card-title h5">
+        {{title}}
         {{#active}}
         <small class="label label-success">active</small>
         {{/active}}
         {{#inactive}}
         <small class="label label-warning">inactive</small>
         {{/inactive}}
-        {{title}}
         <span class="badge" data-badge="v{{version}}"></span>
       </div>
     </div>

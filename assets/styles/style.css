@@ -177,10 +177,17 @@ img {
 .label {
   font-variant: small-caps;  
   vertical-align: middle;
+  margin-top: -9px;
 }
 
 .card-subtitle {
   font-style: italic;
+}
+
+.projects .badge[data-badge]::after {
+  transform: translate(0rem,-.1rem); 
+  vertical-align: baseline;
+  font-weight: normal;
 }
 
 a[href^=http]::after {
