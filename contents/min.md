@@ -8,7 +8,7 @@ summary: "A functional, concatenative programming language with a minimalist syn
 content-type: project
 active: true
 download: "https://github.com/h3rald/min/releases/download/"
-version: 0.12.0
+version: 0.13.0
 docs: "https://cdn.rawgit.com/h3rald/min/v0.12.0/Min_DeveloperGuide.htm"
 -----
 
