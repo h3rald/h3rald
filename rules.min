@@ -186,7 +186,7 @@
 ; Process all contents
 contents (
   =content
-  (content ?content-type)
+  ((content ?draft not) (content ?content-type) dequote-and)
   (
     content /id :id
     content
@@ -198,16 +198,9 @@ contents (
   ) when
 ) foreach
 
-; Generate tag pages
-;prepare-tag-data
-;create-tags-page
-;TAGS 'create-tag-page foreach
-
-; Generate archive pages
-;prepare-archive-data
+; Create aggregator pages
 create-projects-page
 create-archives-page
-;ARCHIVES 'create-archive-page foreach
 
 ; Generate home page
 generate-home
