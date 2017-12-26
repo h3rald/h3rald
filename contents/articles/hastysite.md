@@ -1,8 +1,8 @@
 -----
 title: "Building my own static site generator"
 subtitle: "Why using your own product really matters"
-draft: true
 content-type: article
+draft: true
 timestamp: 1508087990
 -----
 
@@ -66,4 +66,4 @@ HastyScribe is also written in Nim, which makes it ideal for this project.
 
 ### Mustache Template Engine
 
-Like with lightweight markup languages, there are tons of different template engines out there. Some can be used together with code, Other are logic-less... Mustache is one of the oldest logic-less template engine, often emulated and improved upon.
+Like with lightweight markup languages, there are tons of different template engines out there. Some can be used together with code, Other are logic-less... [Mustache](http://mustache.github.io) is one of the oldest logic-less template engine, often emulated and improved upon. There are several implementation of Mustache in different languages, and luckily there's also one for Nim: [Moustachu](https://github.com/fenekku/moustachu).
