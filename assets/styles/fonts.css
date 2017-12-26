@@ -83,9 +83,9 @@
   }
   .h3rald-header,
   .navbar a.h3rald.h3rald-header {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     color: #000000;
-    font-size: 35px;
+    font-size: 55px;
   }
   .h3rald-header:hover,
   .navbar a.h3rald.h3rald-header:hover {

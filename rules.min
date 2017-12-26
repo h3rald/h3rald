@@ -21,7 +21,7 @@
   "archives/index"    %id
   "archives.html"     %path
   ".html"             %ext
-  "Archives"          %title
+  "Articles"          %title
   "page"              %content-type
   ARCHIVES 'last map (/code :a /code :b a b >) sort %archives
   ;ARCHIVE-COLUMNS   %archive-columns

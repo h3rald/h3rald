@@ -10,10 +10,20 @@ body {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  text-align: justify;
   font-weight: normal;
   font-size: 1rem;
+  background: #FEFDFC;
+  color: #27282E;
 }
+
+/*
+
+
+354871
+
+A22600
+
+ * */
 
 code, pre {
   color: #333;
@@ -21,6 +31,15 @@ code, pre {
   font-family: 'Hack', monospace;  
   font-size: 0.8rem;
   line-height: 1.2rem;
+}
+
+pre code {
+  border: 1px solid #CBD0F0;
+}
+
+p {
+  line-height: 1.8rem;  
+  margin: 0.9rem 0;
 }
 
 b, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .panel-title {
@@ -63,9 +82,6 @@ a {
   margin-top: -0.3rem;
 }
 
-.body-text p {
-  padding-bottom: 1rem;
-}
 
 ol, ul {
 }
@@ -74,10 +90,15 @@ ol li, ul li {
 }
 
 main.container {
+  padding: 2rem 3rem;  
+}
+
+article, .featured .column, .featured .panel-body {
   padding: 1rem;
 }
 
-article {
+.featured, .card {
+  background: #FEFEFE;  
 }
 
 article.article header h3,
@@ -107,6 +128,7 @@ footer p {
 }
 
 .navbar-right {
+  margin-left: -1rem;
 }
 
 .contact-list ul {
@@ -163,6 +185,7 @@ time {
 
 img {
   max-width: 100%;  
+  border: 1px solid #CBD0F0;
 }
 
 .archives-search {
