@@ -12,7 +12,7 @@ body {
   hyphens: auto;
   font-weight: normal;
   font-size: 1rem;
-  background: #FEFDFC;
+  background: #FFFFFF;
   color: #27282E;
 }
 
@@ -109,13 +109,13 @@ article.project header h3 {
 }
 
 footer.container {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   padding: 1rem;
 }
 
 footer p {
   margin: 0;
-  line-height: 1rem;
+  line-height: 1.2rem;
 }
 
 .navbar {
@@ -132,9 +132,17 @@ footer p {
 }
 
 .contact-list ul {
+  margin: 0.1rem 0;  
 }
+
 .contact-list li {
+  font-size: 110%;
   display: inline;
+  padding: 0 0.2rem;
+}
+
+.contact-list a:hover {
+  text-decoration: none;  
 }
 
 
@@ -210,14 +218,6 @@ img {
 .projects .badge[data-badge]::after {
   transform: translate(0rem,-.1rem); 
   vertical-align: baseline;
-  font-weight: normal;
-}
-
-a[href^=http]::after {
-  font-family: "entypo";
-  content: "\e9ab";
-  font-size: 0.8rem;
-  color: #aaa;
   font-weight: normal;
 }
 
