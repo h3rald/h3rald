@@ -222,6 +222,10 @@ hr::before {
   content: none;  
 }
 
+.panel {
+  margin-top: calc(var(--leading) * 1);  
+}
+
 .panel-header {
   text-align: right;  
 }
