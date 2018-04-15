@@ -234,7 +234,7 @@ hr::before {
   text-align: left;  
 }
 
-footer {
+footer, .badges {
   text-align: center;  
 }
 
