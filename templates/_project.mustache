@@ -1,14 +1,14 @@
-  <div class="card project-card">
+  <div class="card">
     <div class="card-header">
       <div class="card-title h5">
-        {{title}}
         {{#active}}
         <small class="label label-success">active</small>
         {{/active}}
         {{#inactive}}
         <small class="label label-warning">inactive</small>
         {{/inactive}}
-        <span class="badge" data-badge="v{{version}}"></span>
+        {{title}}
+        &middot; v{{version}}
       </div>
     </div>
     <div class="card-body">
@@ -16,20 +16,20 @@
     </div>
     <div class="card-footer">
       {{#home}}
-      <a href="{{home}}" class="btn btn-link">
+      <a href="{{home}}" class="action">
         info
       </a>
       {{/home}}
       {{#github}}
-      <a href="https://github.com/h3rald/{{github}}" class="btn btn-link">
+      <a href="https://github.com/h3rald/{{github}}" class="action">
         source
       </a>
-      <a href="https://github.com/h3rald/{{github}}/issues" class="btn btn-link">
+      <a href="https://github.com/h3rald/{{github}}/issues" class="action">
         issues
       </a>
       {{/github}}
       {{#docs}}
-      <a href="{{docs}}" class="btn btn-link">
+      <a href="{{docs}}" class="action">
         docs
       </a>
       {{/docs}}

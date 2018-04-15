@@ -33,6 +33,10 @@
   --primary-background: #fefefe;
   --light-background: #f5f5f5;
   --dark-background: #32373d;
+
+  --success-color: #10a887;
+  --warning-color: #F17F42;
+  --error-color: #da3c3c;
 }
 
 html {
@@ -97,6 +101,13 @@ ul ul, ol ol, ul ol, ol ul {
 a, b, i, strong, em, small, code {
   line-height: calc(var(--leading) * 0);
 }
+pre, code {
+  font-family: 'Hack', monospace;  
+}
+code.hljs {
+  font-size: calc(var(--base-font-size) * 0.75);
+  line-height: calc(var(--leading) * 0.75);
+}
 small, sub, sup, time, .panel-header, hr::before, footer {
   font-size: calc(var(--base-font-size) * 0.75);
 }
@@ -153,6 +164,7 @@ a {
 .content {
   border-radius: 4px;
   padding: 0 calc(var(--leading) * 0.5);
+  padding-bottom: calc(var(--leading) * 0.25);
 }
 .container-fluid {
   padding: 0 calc(var(--leading) * 0.5);
@@ -188,6 +200,28 @@ hr::before {
   text-align: center;
 }
 
+.card:last-child .card-footer::after {
+  content: none;  
+}
+
+.card-footer {
+  text-align: center;
+  margin: auto;
+}
+
+.label {
+  padding: calc(var(--leading) * 0.15);
+  border-radius: 2px;
+}
+
+.card-footer .action::after {
+  content: '\00B7';
+}
+
+.card-footer .action:last-child::after {
+  content: none;  
+}
+
 .panel-header {
   text-align: right;  
 }
@@ -220,6 +254,19 @@ footer .h3rald {
   font-size: 0.85rem; /* Compensate */
   vertical-align: text-bottom;
 }
+
+.clearfix {
+  clear: both;  
+}
+
+img {
+  max-width: 100%;  
+}
+
+pre code, img {
+  border-radius: 4px;
+}
+
 
 
 /*****
@@ -273,37 +320,26 @@ a.logo, a.logo:visited, a.logo:hover {
   color: var(--secondary-inverted-text-color);
 }
 
+.label {
+  color: var(--primary-inverted-text-color);
+}
 
-/*
+.label-success {
+  background: var(--success-color);  
+}
 
+.label-warning {
+  background: var(--warning-color);  
+}
 
-354871
-
-A22600
-
- * */
+.label-error {
+  background: var(--error-color);  
+}
 
 code, pre {
-  color: #333;
-  background-color: #f8f8f8;
-  font-family: 'Hack', monospace;  
+  background-color: var(--light-background);
 }
 
-pre code {
-  border: 1px solid #CBD0F0;
-}
-
-.clearfix {
-  clear: both;  
-}
-
-img {
-  max-width: 100%;  
-  border: 1px solid #CBD0F0;
-}
-
-.projects .badge[data-badge]::after {
-  transform: translate(0rem,-.1rem); 
-  vertical-align: baseline;
-  font-weight: normal;
+pre code, img {
+  border: 1px solid var(--line-color);
 }

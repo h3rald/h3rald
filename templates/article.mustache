@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> _head}}
-	<body>
-    <div id="wrap">
-      {{> _header}}
-      <main class="container">
-        <article class="{{content-type}}">
-          <div class="row">
-            {{> _page_header}}
-            <time datetime="{{date-iso8601}}"><i class="ent ent-calendar"></i>&nbsp;{{date}}</time>
-          </div>
+  <body>
+    <div class="main container-fluid">
+      <div class="row">
+        <div class="col-xs-12 sidebar">
+          {{> _header}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <article class="{{content-type}} box content">
+          {{> _page_header}}
+          <time datetime="{{date-iso8601}}"><i class="ent ent-calendar"></i>&nbsp;{{date}}</time>
           <div class="body-text" class="hyphenate">
             {{{contents}}}
-					</div>
-				</article>
-      </main>
-      {{> _footer}}
-    </div> 
-    <script src="/js/highlight.pack.js"></script>
-    <script>
-      hljs.configure({tabReplace: '  '});
-      hljs.initHighlightingOnLoad();
-    </script>
-	</body>
+          </div>
+          </article>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {{> _footer}}
+        </div>
+      </div>
+    </div>
+    {{> _highlight}}
+  </body>
 </html>

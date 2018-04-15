@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   {{> _head}}
-	<body>
-    <div id="wrap">
-      {{> _header}}
-      <main id="main" class="container">
-        <article class="{{content-type}}">
-          <div class="row">
-            {{> _page_header}}
-          </div>
+  <body>
+    <div class="main container-fluid">
+      <div class="row">
+        <div class="col-xs-12 sidebar">
+          {{> _header}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <article class="{{content-type}} box content">
+          {{> _page_header}}
           <div id="body-text" class="hyphenate">
             {{{contents}}}
-					</div>
-				</article>
-      </main>
-      {{> _footer}}
-    </div> 
-	</body>
+          </div>
+          </article>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {{> _footer}}
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
