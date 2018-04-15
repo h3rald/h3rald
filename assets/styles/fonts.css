@@ -81,22 +81,6 @@
   .h3rald:before {
     content: "\e7c4";
   }
-  .h3rald-header,
-  .navbar a.h3rald.h3rald-header {
-    margin-left: 0.5rem;
-    color: #000000;
-    font-size: 55px;
-  }
-  .h3rald-header:hover,
-  .navbar a.h3rald.h3rald-header:hover {
-    text-decoration: none;
-  }
-  .h3rald-footer {
-    position: relative;
-    top: 3px;
-    font-size: 13px;
-  }
-  
   @font-face {
     font-family: 'HastyScribe';
     src: url('../fonts/hastyscribe-eot.eot');

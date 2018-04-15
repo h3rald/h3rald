@@ -181,6 +181,19 @@
   ) tap!
 ) :generate-home
 
+;; Pre-process CSS assets
+(
+  (dict) expect -> =meta
+  "" :contents
+  meta (
+    (input-fread @contents meta)
+    (=temp contents preprocess-css @contents temp)
+    (contents %contents)
+  ) tap
+  output-fwrite
+) :process-css-asset
+
+
 ;;;;; MAIN ;;;;;
 
 ; Process all contents
@@ -212,6 +225,7 @@ assets (
   dup
   (
     ((/id "^pdf\/" match) (copy-pdf-article-asset))
+    ((/ext ".css" match) (process-css-asset))
     ((true) (output-cp))
   ) case
 ) foreach
