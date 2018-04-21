@@ -3,13 +3,14 @@ id: min
 github: min
 home: /min/
 title: "min"
+site: "https://min-lang.org"
 subtitle: "A functional, concatenative programming language with a minimalist syntax"
 summary: "A functional, concatenative programming language with a minimalist syntax, a small but practical standard library, and an advanced REPL. All packed in about 1MB."
 content-type: project
 active: true
 download: "https://github.com/h3rald/min/releases/download/"
 version: 0.15.1
-docs: "https://cdn.rawgit.com/h3rald/min/v0.15.1/Min_DeveloperGuide.htm"
+docs: /min/Min_DeveloperGuide.htm
 -----
 
 *min* is a stack-based, concatenative programming language that uses postfix notation. If you already know [Forth](http://www.forth.org/), [Factor](http://factorcode.org/) or [Joy](http://www.kevinalbrecht.com/code/joy-mirror/), or if you ever used an [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator, then min will look somewhat familiar to you. 
@@ -46,7 +47,3 @@ Unlike more traditional programming languages, in a concatenative programming la
 * [Linux (x86)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_x86.zip)
 * [Linux (ARM)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_arm.zip)
 * [Windows (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_windows_x64.zip)
-
-### Resources
-
-* [min web site](https://min-lang.org)
