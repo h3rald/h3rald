@@ -7,7 +7,7 @@ active: true
 home: /hastyscribe/
 docs: /hastyscribe/HastyScribe_UserGuide.htm
 summary: "A self-contained Markdown compiler that can generate self-contained HTML files, useful for writing essays, reports, meeting notes, etc."
-version: "1.8.0"
+version: "1.9.0"
 download: "https://github.com/h3rald/hastyscribe/releases/download/"
 -----
 {{download => https://github.com/h3rald/hastyscribe/releases/download/}}
