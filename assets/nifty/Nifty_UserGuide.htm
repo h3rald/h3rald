@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>HastySite User Guide</title>
+  <title>Nifty User Guide</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Fabio Cevasco">
@@ -5374,93 +5374,119 @@ div .terminal {
 <body class="headings">
   <div id="container">
     <a id="document-top"></a>
-    <div id="header"><h1>HastySite User Guide</h1></div>
+    <div id="header"><h1>Nifty User Guide</h1></div>
     <div id="toc"><ul>
  <li>
  <ul>
   <li><a href="#Overview">Overview</a>
   <ul>
-   <li><a href="#Key-Features">Key Features</a></li>
+   <li><a href="#Main-features">Main features</a>
+   <ul>
+    <li><a href="#Run-side-by-side-your-existing-package-manager">Run side-by-side your existing package manager</a></li>
+    <li><a href="#Define-your-own-packages">Define your own packages</a></li>
+    <li><a href="#Define-your-own-commands">Define your own commands</a></li>
+    <li><a href="#Run-on-many-different-platforms-and-regardless-of-the-type-of-project">Run on many different platforms and regardless of the type of project</a>
+</li>
+   </ul>
+   </li>
   </ul>
   </li>
-  <li><a href="#Why-HastySite?">Why HastySite?</a>
+  <li><a href="#Getting-started">Getting started</a>
   <ul>
-   <li><a href="#Technology-and-Credits">Technology and Credits</a></li>
-   <li><a href="#Sites-Using-HastySite">Sites Using HastySite</a></li>
-  </ul>
-  </li>
-  <li><a href="#Getting-Started">Getting Started</a>
-  <ul>
-   <li><a href="#Download">Download</a></li>
+   <li><a href="#Downloading-Pre-built-Binaries">Downloading Pre-built Binaries</a></li>
    <li><a href="#Building-from-Source">Building from Source</a></li>
-   <li><a href="#Running-HastySite">Running HastySite</a></li>
   </ul>
   </li>
-  <li><a href="#Usage">Usage</a>
+  <li><a href="#Using-nifty">Using nifty</a>
   <ul>
-   <li><a href="#Syntax">Syntax</a></li>
-   <li><a href="#Default-Commands">Default Commands</a>
+   <li><a href="#Managing-packages">Managing packages</a></li>
+   <li><a href="#Managing-commands">Managing commands</a></li>
+   <li><a href="#Executing-commands">Executing commands</a></li>
+  </ul>
+  </li>
+  <li><a href="#The-<code>nifty.json</code>-file-format">The <code>nifty.json</code> file format</a>
+  <ul>
+   <li><a href="#storage">storage</a></li>
+   <li><a href="#commands">commands</a>
    <ul>
-    <li><a href="#build">build</a></li>
-    <li><a href="#clean">clean</a></li>
-    <li><a href="#init">init</a></li>
-    <li><a href="#page">page</a></li>
-    <li><a href="#post">post</a></li>
+    <li><a href="#Command-configuration-example">Command configuration example</a></li>
    </ul>
    </li>
-   <li><a href="#Options">Options</a>
+   <li><a href="#packages">packages</a>
    <ul>
-    <li><a href="#-h,---help">-h, --help</a></li>
-    <li><a href="#-l=<em>level</em>,---loglevel=<em>level</em>">-l=<em>level</em>, --loglevel=<em>level</em></a></li>
-    <li><a href="#-v,---version">-v, --version</a>
+    <li><a href="#Package-definition-example">Package definition example</a>
 </li>
    </ul>
    </li>
   </ul>
   </li>
-  <li><a href="#Customization">Customization</a>
+  <li><a href="#Default-system-commands">Default system commands</a>
   <ul>
-   <li><a href="#Default-Build-Pipeline">Default Build Pipeline</a>
+   <li><a href="#help">help</a>
    <ul>
-    <li><a href="#Preprocess">Preprocess</a></li>
-    <li><a href="#Process-Rules">Process Rules</a></li>
-    <li><a href="#Postprocess">Postprocess</a></li>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
    </ul>
    </li>
-   <li><a href="#Modifying-the-rules.min-File">Modifying the rules.min File</a></li>
-   <li><a href="#Creating-Commands">Creating Commands</a></li>
-   <li><a href="#Leveraging-HastyScribe-Advanced-Features">Leveraging HastyScribe Advanced Features</a></li>
-  </ul>
-  </li>
-  <li><a href="#Reference">Reference</a>
-  <ul>
-   <li><a href="#Default-Content-and-Asset-Metadata">Default Content and Asset Metadata</a></li>
-   <li><a href="#hastysite-min-Module">hastysite min Module</a>
+   <li><a href="#info">info</a>
    <ul>
-    <li><a href="#assets">assets</a></li>
-    <li><a href="#clean-output">clean-output</a></li>
-    <li><a href="#clean-temp">clean-temp</a></li>
-    <li><a href="#contents">contents</a></li>
-    <li><a href="#input-fread">input-fread</a></li>
-    <li><a href="#markdown">markdown</a></li>
-    <li><a href="#mustache">mustache</a></li>
-    <li><a href="#output">output</a></li>
-    <li><a href="#output-cp">output-cp</a></li>
-    <li><a href="#output-fwrite">output-fwrite</a></li>
-    <li><a href="#postprocess">postprocess</a></li>
-    <li><a href="#preprocess">preprocess</a></li>
-    <li><a href="#preprocess-css">preprocess-css</a></li>
-    <li><a href="#process-rules">process-rules</a></li>
-    <li><a href="#settings">settings</a>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#init">init</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#list">list</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#map">map</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#remove">remove</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#unmap">unmap</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#update">update</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a>
 </li>
    </ul>
    </li>
   </ul>
   </li>
-  <li><a href="#Changelog">Changelog</a>
+  <li><a href="#Default-custom-commands">Default custom commands</a>
   <ul>
-   <li><a href="#v1.0.0">v1.0.0</a></li>
-   <li><a href="#v0.1.0">v0.1.0</a></li>
+   <li><a href="#install">install</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
+   <li><a href="#upgrade">upgrade</a>
+   <ul>
+    <li><a href="#Syntax">Syntax</a></li>
+    <li><a href="#Description">Description</a></li>
+   </ul>
+   </li>
   </ul>
   </li>
  </ul>
@@ -5471,774 +5497,629 @@ div .terminal {
 <a name="Overview"></a>
 <h2>Overview<a href="#document-top" title="Go to top"></a></h2>
 
-<p>HastySite is a minimalist but powerful static site generator written in <a href="https://nim-lang.org">Nim</a> which aims to be fast at processing content and highly configurable to suit your own needs.</p>
+<p><em>nifty</em> is a simple, self-contained program that can be used as a bare-bones, decentralized (pseudo) package manager and script runner.</p>
 
-<a name="Key-Features"></a>
-<h3>Key Features<a href="#document-top" title="Go to top"></a></h3>
+<p>It was born out of the necessity of building <a href="https://nim-lang.org">Nim</a> programs with several dependencies like <a href="https://h3rald.com/min">min</a> or <a href="https://h3rald.com/hastysite">hastysite</a> on machines with low memory (i.e. a VPS running x86 Linux with 500MB of RAM). The main problem was that on such low-end machine it <a href="https://github.com/nim-lang/nimble/issues/278">may not even be possible</a> to compile the <a href="https://github.com/nim-lang/nimble">Nimble</a> package manager, because apparently it requires more RAM to compile than Nim itself.</p>
 
-<div class="unstyled"><ul>
-<li><span class="check"></span> Built-in rich markdown support via <a href="https://h3rald.com/hastyscribe">HastyScribe</a>.</li>
-<li><span class="check"></span> Built-in <a href="https://mustache.github.io/">mustache</a> support for page templates.</li>
-<li><span class="check"></span> Limited support for standard <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variables</a>.</li>
-<li><span class="check"></span> Fully configurable content and asset processing pipeline, using the <a href="https://min-lang.org">min</a> programming language.</li>
-<li><span class="check"></span> Custom script definition, using the <a href="https://min-lang.org">min</a> programming language.</li>
-<li><span class="check"></span> Default stylesheet and fonts from <a href="https://h3rald.com/hastyscribe">HastyScribe</a>.</li>
-<li><span class="check"></span> Default scripts and rules to get started quickly.</li>
-<li><span class="check"></span> All packed in a single executable file, with no dependencies, available for the most common desktop platforms.</li>
-</ul>
-</div>
+<p>Nimble offers a lot of features that <em>proper</em> package managers do, like dependency management, package creation and publishing, support for semantic versioning, etc. while <em>nifty</em> does not. Hence <em>nifty</em> is only a <em>pseudo-</em>package manager and script runner, but it could be useful in certain situations nonetheless.</p>
 
-<a name="Why-HastySite?"></a>
-<h2>Why HastySite?<a href="#document-top" title="Go to top"></a></h2>
+<a name="Main-features"></a>
+<h3>Main features<a href="#document-top" title="Go to top"></a></h3>
 
-<p>HastySite is a static-site generator, similar to <a href="https://www.staticgen.com/">hundreds</a> of others. Why bother with yet another one then?</p>
+<p>In a nutshell, <em>nifty</em> is a program that executes user-defined scripts on a set of folders or files within a user-define package folder. It doesn&rsquo;t do (almost) anything by itself, it just relies on other programs and utilities that are typically already available on your system like <a href="https://git-scm.com">git</a> and <a href="https://curl.haxx.se">curl</a> to do all the heavy-lifting.</p>
 
-<p>Because HastySite:</p>
+<a name="Run-side-by-side-your-existing-package-manager"></a>
+<h4>Run side-by-side your existing package manager<a href="#document-top" title="Go to top"></a></h4>
+
+<p><em>nifty</em> doesn&rsquo;t claim to replace your existing package manager, therefore it tries not to get too much in the way of your existing project structure. All it needs to work resides in a humble <code>nifty.json</code> file that is used to:</p>
 
 <ul>
-<li>has been designed with minimalism in mind. It does not provide many features on its own, but it can be extended do do almost anything you&rsquo;d want it to do.</li>
-<li>is only comprised by a single executable file, available pre-compiled for all major desktop platforms, and it can be compiled to run on even more via <a href="https://nim-lang.org">Nim</a>.</li>
-<li>embeds a concatenative programming language in it, that can be used to customize almost every aspect of it.</li>
-<li>can be extended, from the way it processes files to creating custom commands to do literally what you want.</li>
-<li>provides a simple but functional fully-working site template out-of-the-box, which is also the same template used for its <a href="https://hastysite.h3rald.com">web site</a>.</li>
-<li>provides out-of-the-box Markdown support. But not just any markdown, <a href="https://h3rald.com/hastyscribe">HastyScribe</a>-compatible markdown, which extends the alredy-amazing and powerful <a href="https://www.pell.portland.or.us/~orc/Code/discount/">Discount</a> engine with more useful features such as snippets, macros, fields and transclusion.</li>
-<li>provides a robust logic-less templating engine based on <a href="https://mustache.github.io/">mustache</a>.</li>
-<li>provides support for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variables</a>, which doesn&rsquo;t substitute a full fledged CSS preprocessor like LESS or SASS, but it does help.</li>
+<li>keep track of what packages are part of the current project</li>
+<li>provide the full definition of all the available commands and how to execute them on specific packages</li>
 </ul>
 
 
-<a name="Technology-and-Credits"></a>
-<h3>Technology and Credits<a href="#document-top" title="Go to top"></a></h3>
+<p>The folder where packages will be stored is by default set to a <span class="kwd">packages</span> subfolder within the current project directory, but even this can be configured in the <code>nifty.json</code> file.</p>
 
-<p>HastySite has been built leveraging the following open source projects:</p>
+<a name="Define-your-own-packages"></a>
+<h4>Define your own packages<a href="#document-top" title="Go to top"></a></h4>
+
+<p>For <em>nifty</em>, a package can be a folder containing files, or even a single files. Through the <code>nifty.json</code> file, you can define:</p>
 
 <ul>
-<li>The <a href="https://min-lang.org">min</a> programming language.</li>
-<li>The <a href="https://h3rald.com/hastyscribe">HastyScribe</a> markdown compiler.</li>
-<li>The <a href="https://github.com/fenekku/moustachu">moustachu</a> mustache template engine.</li>
+<li>The <em>source</em> of a package (typically a git repository or event just a URL).</li>
+<li>Whether the package supports <em>git</em>, <em>curl</em> or any other command that will be used to retrieve its contents.</li>
 </ul>
 
 
-<p>Special thanks also to the creators and maintainers of the following projects, that made HastySite possible:</p>
+<div class="sidebar"><p>Example package</p>
+
+<pre><code>"niftylogger.nim": {
+  "name": "niftylogger.nim",
+  "src": "https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim",
+  "curl": true
+}
+</code></pre></div>
+
+<div class="warning"><p>Important</p>
+
+<p><em>nifty</em> does not support nor understand versioning of any kind. It will not attempt to figure out what version of software you need unless you tell it. This is by design, to keep things simple.</p></div>
+
+<a name="Define-your-own-commands"></a>
+<h4>Define your own commands<a href="#document-top" title="Go to top"></a></h4>
+
+<p>You can use your <code>nifty.json</code> to teach <em>nifty</em> new tricks, i.e. how to execute new commands on packages. Your commands look like&hellip; well, CLI commands, except that you can use placeholders like <code>{{name}}</code> and <code>{{src}}</code> in them for your package name, source, etc.</p>
+
+<div class="sidebar"><p>Example command</p>
+
+<pre><code>"install": {
+  "_syntax": "install [&lt;package&gt;]",
+  "_description": "Installs the specified package (or all mapped packages) to the storage directory.",
+  "git+src": {
+    "cmd": "git clone {{src}} --depth 1"
+  },
+  "git+src+tag": {
+    "cmd": "git clone --branch {{tag}} {{src}} --depth 1"
+  },
+  "curl+src+name": {
+    "cmd": "curl {{src}} -o {{name}}"
+  }
+}
+</code></pre></div>
+
+<a name="Run-on-many-different-platforms-and-regardless-of-the-type-of-project"></a>
+<h4>Run on many different platforms and regardless of the type of project<a href="#document-top" title="Go to top"></a></h4>
+
+<p><em>nifty</em> is a self-contained executable program written in <a href="https://nim-lang.org">Nim</a> and runs on all platforms where Nim compiles. Also, unlike other package managers that are typically used within the context of one specific programming language (like <a href="https://www.npmjs.com">NPM</a> for Javascript or <a href="https://rubygems.org">RubyGems</a> for Ruby), <em>nifty</em> can be used in virtually any project, regardless of the programming language used.</p>
+
+<a name="Getting-started"></a>
+<h2>Getting started<a href="#document-top" title="Go to top"></a></h2>
+
+<a name="Downloading-Pre-built-Binaries"></a>
+<h3>Downloading Pre-built Binaries<a href="#document-top" title="Go to top"></a></h3>
+
+<p>The easiest way to get <em>nifty</em> is by downloading one of the prebuilt binaries from the <a href="https://github.com/h3rald/nifty/releases">Github Releases Page</a>:</p>
 
 <ul>
-<li>The <a href="https://nim-lang.org">Nim</a> programming language, used to develop HastySite and all the above-mentioned projects.</li>
-<li>The <a href="https://www.pell.portland.or.us/~orc/Code/discount/">Discount</a> markdown compiler, used as the basis for HastyScribe.</li>
+<li><a href="https://github.com/h3rald/nifty/releases/dowload/1.0.0/nifty_v1.0.0_macosx_x64.zip">nifty for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/nifty/releases/dowload/1.0.0/nifty_v1.0.0_windows_x64.zip">nifty for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/nifty/releases/dowload/1.0.0/nifty_v1.0.0_linux_x64.zip">nifty for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/nifty/releases/dowload/1.0.0/nifty_v1.0.0_linux_x86.zip">nifty for Linux (x86)</a></li>
+<li><a href="https://github.com/h3rald/nifty/releases/dowload/1.0.0/nifty_v1.0.0_linux_arm.zip">nifty for Linux (ARM)</a></li>
 </ul>
 
-
-<a name="Sites-Using-HastySite"></a>
-<h3>Sites Using HastySite<a href="#document-top" title="Go to top"></a></h3>
-
-<p>HastySite powers the following web sites:</p>
-
-<ul>
-<li><a href="https://hastysite.h3rald.com">https://hastysite.h3rald.com</a></li>
-<li><a href="https://h3rald.com">https://h3rald.com</a></li>
-<li><a href="https://min-lang.org">https://min-lang.org</a></li>
-</ul>
-
-
-<a name="Getting-Started"></a>
-<h2>Getting Started<a href="#document-top" title="Go to top"></a></h2>
-
-<a name="Download"></a>
-<h3>Download<a href="#document-top" title="Go to top"></a></h3>
-
-<p>You can download one of the following pre-built HastySite binaries:</p>
-
-<div class="unstyled"><ul>
-<li><span class="apple"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.0/hastysite_v1.2.0_macosx_x64.zip">hastysite v1.2.0 for macOS (x64)</a></li>
-<li><span class="windows"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.0/hastysite_v1.2.0_windows_x64.zip">hastysite v1.2.0 for Windows (x64)</a></li>
-<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.0/hastysite_v1.2.0_linux_x64.zip">hastysite v1.2.0 for Linux (x64)</a></li>
-<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.0/hastysite_v1.2.0_linux_x86.zip">hastysite v1.2.0 for Linux (x86)</a></li>
-<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.0/hastysite_v1.2.0_linux_arm.zip">hastysite v1.2.0 for Linux (arm)</a></li>
-</ul>
-</div>
 
 <a name="Building-from-Source"></a>
 <h3>Building from Source<a href="#document-top" title="Go to top"></a></h3>
 
-<p>Alternatively, you can build HastySite from source as follows:</p>
+<p>You can also build <em>nifty</em> from source, if there is no pre-built binary for your platform.</p>
+
+<p>To do so, after installing the <a href="https://nim-lang.org">Nim</a> programming language, you can:</p>
 
 <ol>
-<li>Download and install <a href="https://nim-lang.org">nim</a>.</li>
-<li>Download and build <a href="https://github.com/h3rald/nifty">Nifty</a>, and put the nifty executable somewhere in your <span class="kwd">$PATH</span>.</li>
-<li>Clone the HastySite <a href="https://github.com/h3rald/hastysite">repository</a>.</li>
-<li>Navigate to the HastySite repository local folder.</li>
-<li>Run the following command to download HastySite&rsquo;s dependencies.
-
-<div class="terminal"><p>nifty install</p></div></li>
-<li>Run the following command to compile HastySite:
-
-<div class="terminal"><p>nim c -d:release hastysite.nim</p></div></li>
+<li>Clone the nifty <a href="https://github.com/h3rald/nifty">repository</a>.</li>
+<li>Navigate to the <span class="dir">nifty</span> repository local folder.</li>
+<li>Run <strong>nim c -d:release nifty.nim</strong></li>
 </ol>
 
 
-<div class="tip"><p>Tip</p>
-
-<p>You should put the compiled HastySite executable somewhere in yout <span class="kwd">$PATH</span>.</p></div>
-
-<a name="Running-HastySite"></a>
-<h3>Running HastySite<a href="#document-top" title="Go to top"></a></h3>
-
-<p>To create a new site, run the following command in an empty directory:</p>
-
-<div class="terminal"><p>hastysite init</p></div>
-
-<p>This will create the following default directory structure:</p>
-
-<ul>
-<li>assets/ &mdash; <em>Your site assets</em>
-
-<ul>
-<li>fonts/</li>
-<li>styles/</li>
-</ul>
-</li>
-<li>contents/ &mdash; <em>Your site contents.</em></li>
-<li>output/ &mdash; <em>Your static web site.</em></li>
-<li>rules.min &mdash; <em>Rules to process your contents and assets.</em></li>
-<li>scripts/ &mdash; <em>Scripts to manage your site.</em></li>
-<li>settings.json &mdash; <em>Your site configuration.</em></li>
-<li>temp/ &mdash; <em>Temporary files and folders will be placed here.</em></li>
-<li>templates/ &mdash; <em>Mustache templates.</em></li>
-</ul>
-
-
-<div class="tip"><p>Tip</p>
-
-<p>Default folder paths can be configured in your <span class="file">settings.json</span> file.</p></div>
-
-<p>Then, create your first page by running the following command and specifying the page ID and Title:</p>
-
-<div class="terminal"><p>hastysite page
-ID: home
-Title: Home Page
------
-id: home
-title: &quot;Home Page&quot;
-content-type: page
------
-Create page? [yes/no]: y</p></div>
-
-<p>Finally, run the following command to generate your site contents (just an empty home page for now) and copy the default assets.</p>
-
-<div class="terminal"><p>hastysite build
-   Preprocessing...
-   Processing rules...
-    - Writing file: output/index.html
-    - Copying: assets/fonts/SourceSansPro-Regular.woff -> output/fonts/SourceSansPro-Regular.woff
-    - Copying: assets/fonts/SourceSansPro-It.woff -> output/fonts/SourceSansPro-It.woff
-    - Copying: assets/fonts/fontawesome-webfont.woff -> output/fonts/fontawesome-webfont.woff
-    - Copying: assets/fonts/SourceCodePro-Regular.woff -> output/fonts/SourceCodePro-Regular.woff
-    - Copying: assets/fonts/SourceSansPro-Bold.woff -> output/fonts/SourceSansPro-Bold.woff
-    - Copying: assets/fonts/SourceSansPro-BoldIt.woff -> output/fonts/SourceSansPro-BoldIt.woff
-    - Writing file: output/styles/hastysite.css
-    - Writing file: output/styles/site.css
-    - Writing file: output/styles/luxbar.css
-    - Writing file: output/styles/hastyscribe.css
-    - Writing file: output/styles/fonts.css
-   Postprocessing...
-   All done.</p></div>
-
-<p>That&rsquo;s it! You can view the result by serving the <span class="dir">output</span> directory from any web server.</p>
-
-<a name="Usage"></a>
-<h2>Usage<a href="#document-top" title="Go to top"></a></h2>
-
-<p>HastySite is a simple command-line program that supports some default commands and options, described in the following sections.</p>
-
-<a name="Syntax"></a>
-<h3>Syntax<a href="#document-top" title="Go to top"></a></h3>
-
-<p><code>
-<strong>hastysite</strong> <em>command</em> [ <em>options</em> ]
-</code></p>
-
-<a name="Default-Commands"></a>
-<h3>Default Commands<a href="#document-top" title="Go to top"></a></h3>
-
-<p>The following sections define the default commands provided by HastySite. All of them except for <span class="kwd">init</span> can be modified, and you can also configure your own commands by creating your own <a href="https://min-lang.org">min</a> scripts and placing them in the <span class="dir">scripts</span> directory.</p>
-
-<a name="build"></a>
-<h4>build<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Builds the site by preprocessing contents and assets, processing rules defined in the <span class="file">rules.min</span> file, and creating a temporary file containing the checksums of all newly-generated files. By doing so, the next time this command is executed, only the files that have actually been modified will be copied to the <span class="dir">output</span> directory.</p>
-
-<p>The <span class="file">rules.min</span> file processed by this command:</p>
-
-<ul>
-<li>Ignores contents and assets starting with <span class="kwd">.</span> or <span class="kwd">_</span>.</li>
-<li>Pre-processes <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variables</a> in all <span class="ext">.css</span> files.</li>
-<li>Processes text as <a href="https://h3rald.com/hastysite">HastyScribe</a>-compatible Markdown in all <span class="ext">.md</span> content files.</li>
-<li>Associates contents to <a href="https://mustache.github.io/">mustache</a> templates based on the value of the <span class="kwd">content-type</span> metadata property.</li>
-<li>Copies each asset file &ldquo;as-is&rdquo; to the <span class="dir">output</span> directory, respecting the source directory structure in the <span class="dir">asset</span> directory.</li>
-<li>Copies each content file to a directory within the <span class="dir">output</span> named after the source content ID, in an <span class="file">index.html</span> file (to easily obtain &ldquo;pretty URLs&rdquo; ending with no extension).</li>
-</ul>
-
-
-<div class="note"><p>Note</p>
-
-<p>This command can be customized by modifying the <span class="file">scripts/build.min</span> file within your site directory.</p></div>
-
-<a name="clean"></a>
-<h4>clean<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Deletes all files and directories in the <span class="dir">output</span> and <span class="dir">temp</span> directories.</p>
-
-<div class="note"><p>Note</p>
-
-<p>This command can be customized by modifying the <span class="file">scripts/clean.min</span> file within your site directory.</p></div>
-
-<a name="init"></a>
-<h4>init<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Initializes a new HastySite site directory, by creating the following directory structure:</p>
-
-<ul>
-<li>assets/ &mdash; <em>Your site assets</em>
-
-<ul>
-<li>fonts/</li>
-<li>styles/</li>
-</ul>
-</li>
-<li>contents/ &mdash; <em>Your site contents.</em></li>
-<li>output/ &mdash; <em>Your static web site.</em></li>
-<li>rules.min &mdash; <em>Rules to process your contents and assets.</em></li>
-<li>scripts/ &mdash; <em>Scripts to manage your site.</em></li>
-<li>settings.json &mdash; <em>Your site configuration.</em></li>
-<li>temp/ &mdash; <em>Temporary files and folders will be placed here.</em></li>
-<li>templates/ &mdash; <em>Mustache templates.</em></li>
-</ul>
-
-
-<div class="tip"><p>Tip</p>
-
-<p>Default folder paths can be configured in your <span class="file">settings.json</span> file.</p></div>
-
-<a name="page"></a>
-<h4>page<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Generates an empty page content file containing initial metadata. This command asks the user for the following information:</p>
-
-<ul>
-<li>A valid ID composed only by letters, numbers, and dashes that has not yet been used for another page.</li>
-<li>The title of the page.</li>
-</ul>
-
-
-<p>After information has been provided, a new content will be created in the <span class="dir">contents</span> directory containing the following metadata properties:</p>
-
-<ul>
-<li>id</li>
-<li>title</li>
-<li>content-type (set to <strong>page</strong>)</li>
-</ul>
-
-
-<div class="note"><p>Note</p>
-
-<p>This command can be customized by modifying the <span class="file">scripts/page.min</span> file within your site directory.</p></div>
-
-<a name="post"></a>
-<h4>post<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Generates an empty post content file containing initial metadata. This command asks the user for the following information:</p>
-
-<ul>
-<li>A valid ID composed only by letters, numbers, and dashes that has not yet been used for another post.</li>
-<li>The title of the post.</li>
-</ul>
-
-
-<p>After information has been provided, a new content will be created in the <span class="dir">contents/posts</span> directory containing the following metadata properties:</p>
-
-<ul>
-<li>id</li>
-<li>title</li>
-<li>content-type (set to <strong>post</strong>)</li>
-<li>timestamp (set to the Unix timestamp of the creation of the content)</li>
-<li>data (set to a date string corresponding to the creation of the content)</li>
-</ul>
-
-
-<div class="note"><p>Note</p>
-
-<p>This command can be customized by modifying the <span class="file">scripts/post.min</span> file within your site directory.</p></div>
-
-<a name="Options"></a>
-<h3>Options<a href="#document-top" title="Go to top"></a></h3>
-
-<p>By default, HastySite provides the following options to display information about the program or alter its behavior.</p>
-
-<a name="-h,---help"></a>
-<h4>-h, --help<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Displays the description of all HastySite commands and options.</p>
-
-<a name="-l=<em>level</em>,---loglevel=<em>level</em>"></a>
-<h4>-l=<em>level</em>, --loglevel=<em>level</em><a href="#document-top" title="Go to top"></a></h4>
-
-<p>Sets the log level to one the following values:</p>
-
-<ul>
-<li>debug</li>
-<li>info</li>
-<li>notice (default)</li>
-<li>warn</li>
-<li>error</li>
-<li>fatal</li>
-</ul>
-
-
-<a name="-v,---version"></a>
-<h4>-v, --version<a href="#document-top" title="Go to top"></a></h4>
-
-<p>Displays the HastySite version string.</p>
-
-<a name="Customization"></a>
-<h2>Customization<a href="#document-top" title="Go to top"></a></h2>
-
-<p>By default, HastySite provide all the scripts and rules necessary to build a simple blog with static pages and timestamped blog posts. While this may work for a simple blogging site, you may need additional features like support for tags, or maybe group articles by months, or project pages with custom metadata, and so on.</p>
-
-<p>HastySite can be customized to your heart content essentially in the following ways:</p>
-
-<ul>
-<li>By modifying the <span class="file">rules.min</span> file and tweak the build pipeline.</li>
-<li>By creating custom scripts to create generators for custom content types, or any other task you deem useful for your use case.</li>
-<li>By leveraging HastyScribe advanced features for content reuse, like snippets, fields, macros, and transclusions.</li>
-</ul>
-
-
-<a name="Default-Build-Pipeline"></a>
-<h3>Default Build Pipeline<a href="#document-top" title="Go to top"></a></h3>
-
-<p>Before diving into customization techniques, you should be familiar with the way HastySite builds your site out-of-the-box. If you have a look at the <span class="file">scripts/build.min</span> file, it looks like this:</p>
-
-<pre><code>;Builds a site by processing contents and assets.
-'hastysite import
-
-"Preprocessing..." notice
-preprocess
-"Processing rules..." notice
-process-rules
-"Postprocessing..." notice
-postprocess
-"All done." notice
+<a name="Using-nifty"></a>
+<h2>Using nifty<a href="#document-top" title="Go to top"></a></h2>
+
+<p>To initialize a new project, run the following command within a folder (it doesn&rsquo;t have to be empty):</p>
+
+<div class="terminal"><p>nifty init
+&nbsp;&nbsp;&nbsp;&nbsp;Project initialized using &lsquo;packages&rsquo; as storage directory.</p></div>
+
+<p><em>nifty</em> will create a file like the following:</p>
+
+<pre><code>{
+  "storage": "packages",
+  "commands": {
+    "install": {
+      "_syntax": "install [&lt;package&gt;]",
+      "_description": "Installs the specified package (or all mapped packages) to the storage directory.",
+      "git+src": {
+        "cmd": "git clone {{src}} --depth 1"
+      },
+      "git+src+tag": {
+        "cmd": "git clone --branch {{tag}} {{src}} --depth 1"
+      },
+      "curl+src+name": {
+        "cmd": "curl {{src}} -o {{name}}"
+      }
+    },
+    "upgrade": {
+      "_syntax": "upgrade [&lt;package&gt;]",
+      "_description": "Upgrades the specified previously-installed package (or all packages).",
+      "git+name": {
+        "cmd": "git pull",
+        "pwd": "{{name}}"
+      },
+      "curl+src+name": {
+        "cmd": "curl {{src}} -o {{name}}"
+      }
+    }
+  },
+  "packages": {}
+}
 </code></pre>
 
-<p>Even if you are not familiar with the <a href="https://minl-lang.org">min</a> programming language, this code looks straightforward enough. as part of the build process, three actions are performed:</p>
+<a name="Managing-packages"></a>
+<h3>Managing packages<a href="#document-top" title="Go to top"></a></h3>
 
-<ol>
-<li>preprocess</li>
-<li>process-rules</li>
-<li>post-process</li>
-</ol>
+<p>After initializing a project, you&rsquo;d probably want to add some packages your project depends on. First, you must teach <em>nifty</em> where and how to retrieve your packages; this is done by executing the <a href="#map">map</a> command, which is used essentially to add or modify a package to the <code>nifty.json</code> file.</p>
 
+<p>Suppose you want to include &ldquo;NiftyLogger&rdquo; in your project. NiftyLogger is a simple logger module written in Nim, and it is constituted by a single file, available within the nifty repository itself:</p>
 
-<a name="Preprocess"></a>
-<h4>Preprocess<a href="#document-top" title="Go to top"></a></h4>
+<p><a href="https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim">https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim</a></p>
 
-<p>During this phase, the following operations are performed:</p>
+<p>You can create a <strong>niftylogger.nim</strong> package by running <code>nifty map niftylogger.nim</code> and specifying some properties that will help <em>nifty</em> manage your package:</p>
 
-<ol>
-<li>Some maintenance of temporary files is performed, e.g. the <span class="dir">temp</span> directory is created and populated with a <span class="file">checksums.json</span> file if needed, temporary contents from the previous build are deleted, and so on.</li>
-<li>All contents are loaded, and metadata in the content header is processed and saved in memory.</li>
-<li>All assets are loaded and bare-bones metadata is generated for them and saved in memory, as they have no header.</li>
-</ol>
+<div class="terminal"><p>nifty map niftylogger
+    Mapping new package: niftylogger
+(!) Specify properties for package &apos;niftylogger&apos;:
+   -> Name: src
+   -> Value: &quot;https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim&quot;
+(!) OK? [y/n]: y
+(!) Do you want to add/remove more properties? [y/n]: y
+   -> Name: curl
+   -> Value: true
+(!) OK? [y/n]: y
+(!) Do you want to add/remove more properties? [y/n]: n
+    Adding package mapping &apos;niftylogger&apos;&period;&period;&period;
+      src: &quot;https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim&quot;
+      curl: true
+    Package mapping &apos;niftylogger&apos; saved.</p></div>
 
+<p>The resulting package definition within the <code>nifty.json</code> file is the following:</p>
 
-<p>If you are wondering what this content header is, it&rsquo;s a section at the start of a content file delimited by five dashes, and containing metadata properties, like this:</p>
+<p> <a id="example_package"></a></p>
 
-<pre><code>-----
-id: getting-started
-title: "Getting Started"
-content-type: page
------
-</code></pre>
+<div class="sidebar"><p>Example package</p>
 
-<p>Now, this <em>looks</em> like <a href="http://yaml.org/">YAML</a>, but it is actually Nim&rsquo;s own <a href="https://nim-lang.org/docs/parsecfg.html">configuration file format</a>, which is a bit more limited, but it does the job. Just remember to wrap strings with spaces in double quotes and everything will be good.</p>
+<pre><code>"niftylogger.nim": {
+  "name": "niftylogger.nim",
+  "src": "https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim",
+  "curl": true
+}
+</code></pre></div>
 
-<p>Internally, after the preprocessing phase all contents and assets will have the following metadata:</p>
-
-<dl>
-<dt>id</dt>
-<dd>An identifier for the content or asset, corresponding to the path to the file relative to the <span class="dir">contents</span> or <span class="dir">assets</span> folder, without extension.</dd>
-<dt>path</dt>
-<dd>The path to the file relative to the <span class="dir">contents</span> or <span class="dir">assets</span> folder, <em>including</em> extension.</dd>
-<dt>type</dt>
-<dd>Either <strong>content</strong> or <strong>asset</strong>.</dd>
-<dt>ext</dt>
-<dd>The file extension (including the leading <span class="kwd">.</span>).</dd>
-</dl>
-
-<a name="Process-Rules"></a>
-<h4>Process Rules<a href="#document-top" title="Go to top"></a></h4>
-
-<p>In this phase, the control of the build process is passed to the <span class="file">rules.min</span> script. It is important to point out that in case of an empty <span class="file">rules.min</span> file, <em>nothing</em> will be done and no output file will be generated.</p>
-
-<p>Luckily, a default <span class="file">rules.min</span> file is provided, which:</p>
+<p>You can now:</p>
 
 <ul>
-<li>Ignores contents and assets starting with <span class="kwd">.</span> or <span class="kwd">_</span>.</li>
-<li>Pre-processes <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variables</a> in all <span class="ext">.css</span> files.</li>
-<li>Processes text as <a href="https://h3rald.com/hastysite">HastyScribe</a>-compatible Markdown in all <span class="ext">.md</span> content files.</li>
-<li>Associates contents to <a href="https://mustache.github.io/">mustache</a> templates based on the value of the <span class="kwd">content-type</span> metadata property.</li>
-<li>Copies each asset file &ldquo;as-is&rdquo; to the <span class="dir">output</span> directory, respecting the source directory structure in the <span class="dir">asset</span> directory.</li>
-<li>Copies each content file to a directory within the <span class="dir">output</span> named after the source content ID, in an <span class="file">index.html</span> file (to easily obtain &ldquo;pretty URLs&rdquo; ending with no extension).</li>
+<li>Install the package using the <a href="#install">install</a> command.</li>
+<li>Remove the package mapping using the <a href="#unmap">unmap</a></li>
 </ul>
 
 
-<p>Typically, you only need to modify this file to change how HastySite builds your site.</p>
+<a name="Managing-commands"></a>
+<h3>Managing commands<a href="#document-top" title="Go to top"></a></h3>
 
-<a name="Postprocess"></a>
-<h4>Postprocess<a href="#document-top" title="Go to top"></a></h4>
-
-<p>In this phase, the <span class="file">temp/checksums.json</span> is updated with the latest checksums of the generated output files.</p>
-
-<a name="Modifying-the-rules.min-File"></a>
-<h3>Modifying the <span class="kwd">rules.min</span> File<a href="#document-top" title="Go to top"></a></h3>
-
-<p>The <span class="kwd">rules.min</span> file is used to build your site. This file is nothing but a <a href="https://min-lang-org">min</a> script, and therefore you should have at least a basic understanding of the min programming language before diving in and modifying it.</p>
-
-<p>In particular, you should get acquainted with the following min modules, whose symbols and sigils are typically used to create <span class="kwd">rules.min</span> files:</p>
+<p>By default, when you <a href="#Using-nifty">initialize a project</a> the generated <code>nifty.json</code> file contains two default custom command configurations:</p>
 
 <ul>
-<li><a href="https://min-lang.org/reference-lang/">lang</a></li>
-<li><a href="https://min-seq.org/reference-seq/">seq</a></li>
-<li><a href="https://min-str.org/reference-str/">str</a></li>
-<li><a href="https://min-time.org/reference-time/">time</a></li>
+<li><a href="#install">install</a></li>
+<li><a href="#upgrade">upgrade</a></li>
 </ul>
 
 
-<p>Additionally, a dedicated <span class="kwd">hastysite</span> module is also provided specifically for HastySite, which is described in the Reference section.</p>
+<p>These commands can be used to respectively install and upgrade packages using git or curl. Consider for example the definition of the <strong>install</strong> command:</p>
 
-<a name="Creating-Commands"></a>
-<h3>Creating Commands<a href="#document-top" title="Go to top"></a></h3>
+<p> <a id="example_command"></a></p>
 
-<p>Once you are comfortable with witing min scripts and maybe after you modified the <span class="file">rules.min</span> file, you could try modifying or adding new HastySite commands. To do so, you must:</p>
+<div class="sidebar"><p>Example command</p>
+
+<pre><code>"install": {
+  "_syntax": "install [&lt;package&gt;]",
+  "_description": "Installs the specified package (or all mapped packages) to the storage directory.",
+  "git+src": {
+    "cmd": "git clone {{src}} --depth 1"
+  },
+  "git+src+tag": {
+    "cmd": "git clone --branch {{tag}} {{src}} --depth 1"
+  },
+  "curl+src+name": {
+    "cmd": "curl {{src}} -o {{name}}"
+  }
+}
+</code></pre></div>
+
+<p>Apart for the <strong>_syntax</strong> and the <strong>_description</strong> properties that are used internally by the <a href="#help">help</a> command, the other properties specify different command-line commands to execute on projects, depending on the properties that have been defined for them.</p>
+
+<a name="Executing-commands"></a>
+<h3>Executing commands<a href="#document-top" title="Go to top"></a></h3>
+
+<p>Considering for example the <a href="#example_package">example of package definition</a> for niftylogger, executing <code>nifty install niftylogger</code> will effectively execute the following command:</p>
+
+<p><code>curl https://github.com/h3rald/nifty/blob/master/lib/niftylogger.nim -o niftylogger.nim</code></p>
+
+<p>Essentially, when a command is executed, <em>nifty</em> will:</p>
 
 <ol>
-<li>Create a new <span class="ext">.min</span> file named after your command (e.g. <span class="file">project.min</span>) and place it in the <span class="dir">scripts</span> folder of your site.</li>
-<li>On the first line, enter a min comment corresponding to the description of your command. This description will be used by HastySite help system.</li>
-<li>On the subsequent lines, write the logic of your command in min.</li>
+<li>Retrieve the specified package definition within the <code>nifty.json</code> file.</li>
+<li>Retrieve the specified command within the <code>nifty.json</code> file.</li>
+<li>find a suitable definition for the specified package. Essentially, <em>nifty</em> will try to look for the command definition related to the specified command that most closely matches the properties defined for the specified package.</li>
 </ol>
 
 
-<p>For more information and examples, have a look at the default scripts generated by the <samp>hastysite init</samp> command.</p>
+<p>In this case, given the <a href="#example_command">example install command</a> and the <a href="#example_package">example niftylogger package</a>:</p>
 
-<a name="Leveraging-HastyScribe-Advanced-Features"></a>
-<h3>Leveraging HastyScribe Advanced Features<a href="#document-top" title="Go to top"></a></h3>
-
-<p>In some cases, you may not even need to edit <span class="kwd">.min</span> files to customize the way your site pages are rendered. In particular, <a href="https://h3rald.com/hastyscribe">HastyScribe</a>, the Markdown engine that powers HastySite, provide a lot of extra feature aimed at improving content reuse, such as:</p>
-
-<ul>
-<li><a href="https://h3rald.com/hastyscribe/HastyScribe_UserGuide.htm#Transclusion">Transclusion</a>, to basically load the contents of a Markdown file into another.</li>
-<li><a href="https://h3rald.com/hastyscribe/HastyScribe_UserGuide.htm#Snippets">Snippets</a>, to reuse chunks of text in the same file (and transcluded files).</li>
-<li><a href="https://h3rald.com/hastyscribe/HastyScribe_UserGuide.htm#Fields">Fields</a>, to specify things like current date and time, but also custom properties defined at run time.</li>
-<li><a href="https://h3rald.com/hastyscribe/HastyScribe_UserGuide.htm#Macros">Macros</a>, to create chunks of reusable text with placeholders.</li>
-</ul>
-
-
-<a name="Reference"></a>
-<h2>Reference<a href="#document-top" title="Go to top"></a></h2>
-
-<p>This section provides some reference information related to the default metadata of contents and assets, as well as the full documentation of the <span class="kwd">hastysite</span> min Module.</p>
-
-<a name="Default-Content-and-Asset-Metadata"></a>
-<h3>Default Content and Asset Metadata<a href="#document-top" title="Go to top"></a></h3>
-
-<p>The following table lists all the default metadata properties available for contents and assets, and also after which build phase they become available.</p>
-
-<div class="note"><p>Note</p>
-
-<p>You can define your own custom metadata for contents in a header section delimited by five dashes, at the start of each content file.</p></div>
-
-<div class="responsive"><table>
-<thead>
-<tr>
-<th>Property       </th>
-<th> Content               </th>
-<th> Asset</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id             </td>
-<td> <span class="check"></span>       </td>
-<td> <span class="check"></span></td>
-</tr>
-<tr>
-<td>path           </td>
-<td> <span class="check"></span>       </td>
-<td> <span class="check"></span></td>
-</tr>
-<tr>
-<td>ext            </td>
-<td> <span class="check"></span>       </td>
-<td> <span class="check"></span></td>
-</tr>
-<tr>
-<td>type           </td>
-<td> <span class="check"></span>       </td>
-<td> <span class="check"></span></td>
-</tr>
-<tr>
-<td>title          </td>
-<td> <span class="check"></span><sup>1</sup>     </td>
-<td> <span class="square"></span></td>
-</tr>
-<tr>
-<td>content-type   </td>
-<td> <span class="check"></span><sup>1</sup>     </td>
-<td> <span class="square"></span></td>
-</tr>
-<tr>
-<td>date           </td>
-<td> <span class="check"></span><sup>1,2</sup> </td>
-<td> <span class="square"></span></td>
-</tr>
-<tr>
-<td>timestamp      </td>
-<td> <span class="check"></span><sup>1,2</sup> </td>
-<td> <span class="square"></span></td>
-</tr>
-<tr>
-<td>contents       </td>
-<td> <span class="check"></span><sup>3</sup>     </td>
-<td> <span class="check"></span><sup>3</sup></td>
-</tr>
-</tbody>
-</table>
-</div>
+<ol>
+<li>The package definition for <strong>niftylogger</strong> is retrieved.</li>
+<li>The command configuration for <strong>install</strong> is retrieved.</li>
+<li>The <strong>git+src</strong> command definition is retrieved, because:
 
 <div class="unstyled"><ul>
-<li><sup>1</sup> This property is defined for all <strong>page</strong> and <strong>post</strong> contents created using the default <span class="kwd">page</span> and <span class="kwd">post</span> commands.</li>
-<li><sup>2</sup> This property is defined for all <strong>post</strong> contents created using the default <span class="kwd">post</span> command.</li>
-<li><sup>3</sup> This property <em>must</em> be added to contents and assets before they can be written to the output folder. This can be done implicitly using symbols provided with the <span class="kwd">hastysite</span> min module.</li>
+<li><span class="square"></span> The definition <strong>git+src+tag</strong> cannot be used, because niftylogger does not contain a <strong>git</strong> or a <strong>tag</strong> property.</li>
+<li><span class="square"></span> The definition <strong>git+src</strong> cannot be used, because niftylogger does not contain a <strong>git</strong> property.</li>
+<li><span class="check"></span> The definition <strong>curl+src+name</strong> is used, because niftylogger has a <strong>name</strong>, a <strong>src</strong>, and a <strong>curl</strong> property.</li>
+</ul>
+</div></li>
+</ol>
+
+
+<div class="sidebar"><p>Command execution rules</p>
+
+<ul>
+<li>If a package is specified when executing a command, the command will be executed only on the specified package.</li>
+<li>If the specified package is also a valid <em>nifty</em> project (i.e. it contains a valid <code>nifty.json</code> file), the same command will be executed on all the packages specified in the <code>nifty.json</code> file, and so on, recursively.</li>
+<li>If no packages are specified when executing a command, that command will be executed on <em>all packages</em> specified in the <code>nifty.json</code> file, recursively.</li>
 </ul>
 </div>
 
-<a name="hastysite-min-Module"></a>
-<h3><span class="kwd">hastysite</span> min Module<a href="#document-top" title="Go to top"></a></h3>
+<p>In a similar way, you can modify the <a href="#commands">commands</a> section of the <code>nifty.json</code> file and create your own command configurations. Each command configuration can have one or more command definitions identified by the property placeholders used.</p>
 
-<p>This <a href="https://min-lang.org">min</a> module can be imported in the <span class="kwd">rules.min</span> file or in any script file and can be used to perform common operations such as ready and writing files, and interact with HastySite data at build time.</p>
+<div class="tip"><p>Tip</p>
 
-<p><a id="op-assets"></a></p>
+<p><em>nifty</em> will always try to match the most specific command definition within any given configuration, i.e. the one with the most matching placeholders.</p></div>
 
-<a name="assets"></a>
-<h4><span class="kwd">assets</span><a href="#document-top" title="Go to top"></a></h4>
+<a name="The-<code>nifty.json</code>-file-format"></a>
+<h2>The <code>nifty.json</code> file format<a href="#document-top" title="Go to top"></a></h2>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">(meta<sub>*</sub>)</span></span></p>
-
-<p>Returns a quotation of metadata dictionaries <span class="kwd">(meta<sub>*</sub>)</span> containing the metadata of each asset file.</p></div>
-
-<p><a id="op-clean-output"></a></p>
-
-<a name="clean-output"></a>
-<h4><span class="kwd">clean-output</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Deletes all the contents of the <span class="dir">output</span> directory.</p></div>
-
-<p><a id="op-clean-temp"></a></p>
-
-<a name="clean-temp"></a>
-<h4><span class="kwd">clean-temp</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Deletes all the contents of the <span class="dir">temp</span> directory.</p></div>
-
-<p><a id="op-contents"></a></p>
-
-<a name="contents"></a>
-<h4><span class="kwd">contents</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">(meta<sub>*</sub>)</span></span></p>
-
-<p>Returns a quotation of metadata dictionaries <span class="kwd">(meta<sub>*</sub>)</span> containing the metadata of each content file.</p></div>
-
-<p><a id="op-input-fread"></a></p>
-
-<a name="input-fread"></a>
-<h4><span class="kwd">input-fread</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">meta</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
-
-<p>Reads the contents of the file identified by the metadata dictionary <span class="kwd">meta</span> (such as those returned by the <span class="kwd">contents</span> and <span class="kwd">assets</span> parameters).</p></div>
-
-<p>Note that:</p>
+<p>The <code>nifty.json</code> file contains information on the current <em>project</em> (for <em>nifty</em>, a project is simply a folder with a <code>nifty.json</code> in it), organized into three main sections:</p>
 
 <ul>
-<li>The source directory is determined by the value of the <span class="kwd">type</span> metadata property.</li>
-<li>The path within the source directory is determined by the value of the <span class="kwd">path</span> metadata property.</li>
+<li>storage</li>
+<li>commands</li>
+<li>packages</li>
 </ul>
 
 
-<p><a id="op-markdown"></a></p>
+<p>The following is an example of <code>nifty.json</code> file taken from the <a href="https://github.com/h3rald/min">min</a> repository:</p>
 
-<a name="markdown"></a>
-<h4><span class="kwd">markdown</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
-
-<p>Converts the <a href="https://h3rald.com/hastyscribe">HastyScribe</a> Markdown string <span class="kwd">string<sub>1</sub></span> into the HTML fragment <span class="kwd">string<sub>2</sub></span>, using the properties of <span class="kwd">dict</span> as custom fields (accessible therefore via HastyScribe&rsquo;s <span class="kwd">{{$&lt;field-name&gt;}}</span> syntax).</p></div>
-
-<p><a id="op-mustache"></a></p>
-
-<a name="mustache"></a>
-<h4><span class="kwd">mustache</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
-
-<p>Renders mustache template <span class="kwd">string<sub>1</sub></span> into <span class="kwd">string<sub>2</sub></span>, using dictionary <span class="kwd">dict</span> as context.</p></div>
-
-<div class="note"><p>Note</p>
-
-<p><span class="kwd">string<sub>1</sub></span> is the path to the mustache template file, relative to the <span class="dir">templates</span> directory and without <span class="ext">.mustache</span>.</p></div>
-
-<p><a id="op-output"></a></p>
-
-<a name="output"></a>
-<h4><span class="kwd">output</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
-
-<p>Returns the full path to the <span class="dir">output</span> directory.</p></div>
-
-<p><a id="op-output-cp"></a></p>
-
-<a name="output-cp"></a>
-<h4><span class="kwd">output-cp</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">meta</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Copies a file from the source directory (<span class="dir">contents</span> or <span class="dir">assets</span> depending on its <span class="kwd">type</span>) to the <span class="dir">output</span> directory.</p></div>
-
-<p>Note that:</p>
-
-<ul>
-<li>The source directory is determined by the value of the <span class="kwd">type</span> metadata property.</li>
-<li>The path within the source directory is determined by the value of the <span class="kwd">path</span> metadata property.</li>
-<li>The destination path within the output directory is determined by the value of concatenation of the <span class="kwd">id</span> and <span class="kwd">ext</span> metadata properties.</li>
-<li>The contents of the file are retrieved from the <span class="kwd">contents</span> metadata property (in case of contents) or the contents of the original file (in case of assets).</li>
-</ul>
-
-
-<p><a id="op-output-fwrite"></a></p>
-
-<a name="output-fwrite"></a>
-<h4><span class="kwd">output-fwrite</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">meta</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Writes the contents of the file identified by the metadata dictionary <span class="kwd">meta</span> (such as those returned by the <span class="kwd">contents</span> and <span class="kwd">assets</span> parameters).</p></div>
-
-<p>Note that:</p>
-
-<ul>
-<li>The destination path within the output directory is determined by the value of concatenation of the <span class="kwd">id</span> and <span class="kwd">ext</span> metadata properties.</li>
-<li>The contents of the file are retrieved from the <span class="kwd">contents</span> metadata property (in case of contents) or the contents of the original file (in case of assets).</li>
-</ul>
-
-
-<p><a id="op-postprocess"></a></p>
-
-<a name="postprocess"></a>
-<h4><span class="kwd">postprocess</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Starts the postprocessing phase of the build.</p></div>
-
-<p><a id="op-preprocess"></a></p>
-
-<a name="preprocess"></a>
-<h4><span class="kwd">preprocess</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Starts the preprocessing phase of the build.</p></div>
-
-<p><a id="op-preprocess-css"></a></p>
-
-<a name="preprocess-css"></a>
-<h4><span class="kwd">preprocess-css</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
-
-<p>Pre-process <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variable</a> declarations and usages within <span class="kwd">string<sub>1</sub></span>, returning the resulting CSS code <span class="kwd">string<sub>2</sub></span>.</p></div>
-
-<p>For example, the following CSS code:</p>
-
-<pre><code>:root {
-  --standard-gray: #cccccc;
-}
-
-.note {
-  background-color: var(--standard-gray);  
+<pre><code>{
+  "storage": "packages",
+  "commands": {
+    "install": {
+      "git+src": {
+        "cmd": "git clone {{src}} --depth 1"
+      },
+      "git+src+tag": {
+        "cmd": "git clone --branch {{tag}} {{src}} --depth 1"
+      },
+      "curl+src+name": {
+        "cmd": "curl {{src}} -o {{name}}"
+      },
+      "_syntax": "install [&lt;package&gt;]",
+      "_description": "Installs the specified package (or all mapped packages) to the storage directory."
+    },
+    "upgrade": {
+      "_syntax": "upgrade [&lt;package&gt;]",
+      "_description": "Upgrades the specified previously-installed package (or all packages).",
+      "git+name": {
+        "cmd": "git pull",
+        "pwd": "{{name}}"
+      },
+      "curl+src+name": {
+        "cmd": "curl {{src}} -o {{name}}"
+      }
+    }
+  },
+  "packages": {
+    "nim-sgregex": {
+      "name": "nim-sgregex",
+      "src": "https://github.com/h3rald/nim-sgregex.git",
+      "git": true
+    },
+    "nim-miniz": {
+      "name": "nim-miniz",
+      "src": "https://github.com/h3rald/nim-miniz.git",
+      "git": true
+    },
+    "nimSHA2": {
+      "name": "nimSHA2",
+      "src": "https://github.com/jangko/nimSHA2.git",
+      "git": true
+    },
+    "sha1": {
+      "name": "sha1",
+      "src": "https://github.com/onionhammer/sha1.git",
+      "git": true
+    },
+    "nimline": {
+      "name": "nimline",
+      "src": "https://github.com/h3rald/nimline.git",
+      "git": true
+    },
+    "niftylogger.nim": {
+      "name": "niftylogger.nim",
+      "src": "https://raw.githubusercontent.com/h3rald/nifty/master/lib/niftylogger.nim",
+      "curl": true
+    }
+  }
 }
 </code></pre>
 
-<p>Will be converted to the following:</p>
+<a name="storage"></a>
+<h3>storage<a href="#document-top" title="Go to top"></a></h3>
 
-<pre><code>:root {
-  --standard-gray: #cccccc;
-}
+<p>This property is used to specify which directory within the current directory contains (or will contain) packages. By default, it is set to <strong>packages</strong>.</p>
 
-.note {
-  background-color: #cccccc;  
+<a name="commands"></a>
+<h3>commands<a href="#document-top" title="Go to top"></a></h3>
+
+<p>Custom command configurations are placed within the <code>commands</code> object. Each command typically contains the following system properties:</p>
+
+<dl>
+<dt>_syntax</dt>
+<dd>The syntax of the command, displayed when the <a href="#help">help</a> command is executed.</dd>
+<dt>_description</dt>
+<dd>A brief description of the command, displayed when the <a href="#help">help</a> command is executed.</dd>
+</dl>
+
+<p>And one or more command definitions, each identified by the placeholders used in it. Command definition contain the following properties:</p>
+
+<dl>
+<dt>cmd</dt>
+<dd>A command to execute on a specified, containing placeholders for package properties. By default, the <strong>name</strong> property is always available for all packages, and corresponds to the package identifier.</dd>
+<dt>pwd <em>(optional)</em></dt>
+<dd>The directory where the command will be executed (relative to the <a href="#storage">storage</a> directory specified in the <code>nifty.json</code> file).</dd>
+</dl>
+
+<div class="note"><p>Notes</p>
+
+<ul>
+<li>Command definition identifiers must be composed by plus-separated property names, e.g. <strong>git+src</strong>, or <strong>wget+src+name</strong>.</li>
+<li>You can use any of the property names specified in the command definition identifier as placeholders within its definition.</li>
+</ul>
+</div>
+
+<a name="Command-configuration-example"></a>
+<h4>Command configuration example<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Consider the following command configuration for the default <a href="#upgrade">upgrade</a> custom command:</p>
+
+<pre><code>"upgrade": {
+  "_syntax": "upgrade [&lt;package&gt;]",
+  "_description": "Upgrades the specified previously-installed package (or all packages).",
+  "git+name": {
+    "cmd": "git pull",
+    "pwd": "{{name}}"
+  },
+  "curl+src+name": {
+    "cmd": "curl {{src}} -o {{name}}"
+  }
 }
 </code></pre>
 
-<div class="warning"><p>Limitation</p>
-
-<p>Only basic support for CSS variables is provided, e.g. no fallback values are supported.</p></div>
-
-<p><a id="op-process-rules"></a></p>
-
-<a name="process-rules"></a>
-<h4><span class="kwd">process-rules</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Starts the processing phase of the build, and interprets the <span class="file">rules.min</span> file.</p></div>
-
-<p><a id="op-settings"></a></p>
-
-<a name="settings"></a>
-<h4><span class="kwd">settings</span><a href="#document-top" title="Go to top"></a></h4>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
-
-<p>Returns a dictionary <span class="kwd">dict</span> containing all the settings defined in the <span class="file">settings.json</span> file.</p></div>
-
-<a name="Changelog"></a>
-<h2>Changelog<a href="#document-top" title="Go to top"></a></h2>
-
-<a name="v1.0.0"></a>
-<h3>v1.0.0<a href="#document-top" title="Go to top"></a></h3>
-
-<p>The first internal release of HastySite is out and available <a href="https://github.com/h3rald/hastysite/releases/tag/0.1.0">on Github</a>. This is intented to be only an internal pre-release, but as a matter of fact everything works as expected.</p>
-
-<p>This first release has already been tested in production on the following web sites:</p>
+<p>In this case, there are two command definitions:</p>
 
 <ul>
-<li><a href="https://h3rald.com">https://h3rald.com</a></li>
-<li><a href="https://min-lang.org">https://min-lang.org</a></li>
+<li>git+name</li>
+<li>curl+src+name</li>
 </ul>
 
 
-<a name="v0.1.0"></a>
-<h3>v0.1.0<a href="#document-top" title="Go to top"></a></h3>
+<a name="packages"></a>
+<h3>packages<a href="#document-top" title="Go to top"></a></h3>
 
-<p>This is the first public release of HastySite. There are not many things changed compared to the previous release, except for the brand new HastySite web site available at <a href="https://hastysite.h3rald.com">https://hastysite.h3rald.com</a>.</p>
+<p>Packages definitions are placed in a <code>packages</code> object. Each package must be identified uniquely by a name, and can contain arbitrary properties that will be used when <a href="Executing-commands">executing commands</a>.</p>
 
-<p>The contents of the site are also available in a standalone HTML document, <a href="https://h3rald.com/hastysite/HastySitee_UserGuide.htm">here</a>.</p>
+<p>Typically, you should create properties identifying:</p>
+
+<ul>
+<li>Where to get the package from, i.e. an URL to a file to download, a git repository, or whatever can be fetched. Typically a property called <strong>src</strong> is used for this purpose.</li>
+<li>How to get the package, i.e. the name of the actual command to run. Typically, you can just define boolean properties named <strong>git</strong>, <strong>curl</strong>, <strong>fossil</strong>, etc.</li>
+</ul>
+
+
+<a name="Package-definition-example"></a>
+<h4>Package definition example<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Consider the following definition for a package called <strong>nimSHA2</strong>:</p>
+
+<pre><code>"nimSHA2": {
+  "name": "nimSHA2",
+  "src": "https://github.com/jangko/nimSHA2.git",
+  "git": true
+}
+</code></pre>
+
+<p>In this case, the package can be fetchet from a git repository.</p>
+
+<a name="Default-system-commands"></a>
+<h2>Default system commands<a href="#document-top" title="Go to top"></a></h2>
+
+<p>The following sections describe the default system commands. Unlike <a href="#Default-custom-commands">custom commands</a>, system commands <em>cannot</em> be customized and do not require external programs to run.</p>
+
+<a name="help"></a>
+<h3>help<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty help [&lt;command&gt;]
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Display help on the specified command (or all commands).</p>
+
+<a name="info"></a>
+<h3>info<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty info &lt;package&gt;
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Displays information on &lt;package&gt; (essentially all its properties).</p>
+
+<a name="init"></a>
+<h3>init<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty init [&lt;storage-dir&gt;]
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Initializes a project in the current directory (using &lt;storage-dir&gt; as storage directory).</p>
+
+<a name="list"></a>
+<h3>list<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty list
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Lists all dependencies (recursively) of the current project.</p>
+
+<a name="map"></a>
+<h3>map<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty map &lt;package&gt;
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Configures a new or existing package &lt;package&gt;.</p>
+
+<p>The configuration of the package properly is interactive: <em>nifty</em> will prompt whether you want to add or modify properties.</p>
+
+<a name="remove"></a>
+<h3>remove<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty remove [&lt;package&gt;]
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Physically deletes the specified package (or all packages) from the storage directory.</p>
+
+<p>This command asks for confirmation before deleting each package.</p>
+
+<a name="unmap"></a>
+<h3>unmap<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty unmap &lt;package&gt;
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Unmaps the previously-mapped package &lt;package&gt;, removing all its properties from the <code>nifty.json</code> file.</p>
+
+<a name="update"></a>
+<h3>update<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty update
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Updates the command definitions for the current project and migrate nifty.json file (if necessary).</p>
+
+<p>This program effectively updates your <code>nifty.json</code> file adding/updating commands and settings, but it does not attempt to remove any custom command configurations or definitions that you may have added.</p>
+
+<a name="Default-custom-commands"></a>
+<h2>Default custom commands<a href="#document-top" title="Go to top"></a></h2>
+
+<a name="install"></a>
+<h3>install<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty install [&lt;package&gt;]
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Installs the specified package (or all mapped packages) to the storage directory, using the matching command definition.</p>
+
+<p>By default, the following definitions are available for this command:</p>
+
+<pre><code>"git+src": 
+{
+  "cmd": "git clone {{src}} --depth 1"
+}, 
+"git+src+tag": 
+{
+  "cmd": "git clone --branch {{tag}} {{src}} --depth 1"
+}, 
+"curl+src+name": 
+{
+  "cmd": "curl {{src}} -o {{name}}"
+}
+</code></pre>
+
+<a name="upgrade"></a>
+<h3>upgrade<a href="#document-top" title="Go to top"></a></h3>
+
+<a name="Syntax"></a>
+<h4>Syntax<a href="#document-top" title="Go to top"></a></h4>
+
+<pre><code>nifty upgrade [&lt;package&gt;]
+</code></pre>
+
+<a name="Description"></a>
+<h4>Description<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Upgrades the specified previously-installed package (or all packages).</p>
+
+<p>By default, the following definitions are available for this command:</p>
+
+<pre><code>"git+name": 
+{
+  "cmd": "git pull", 
+  "pwd": "{{name}}"
+}, 
+"curl+src+name": 
+{
+  "cmd": "curl {{src}} -o {{name}}"
+}
+</code></pre>
     </div>
     <div id="footer">
       <p><span class="copy"></span> Fabio Cevasco &ndash; April 29, 2018</p>
