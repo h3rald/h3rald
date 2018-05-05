@@ -7,7 +7,7 @@ subtitle: "A tiny static file web server."
 summary: "A tiny, self-contained program able to serve files within a directory via HTTP."
 content-type: project
 active: true
-version: 1.0.4
+version: 1.0.5
 download: "https://github.com/h3rald/nimhttpd/releases/download/"
 -----
 _NimHHTPd_ is a minimal web server that can be used to serve static files.
