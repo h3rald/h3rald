@@ -1,11 +1,11 @@
 'hastysite import
 
-() =TAGS
-() =TAG-COLUMNS
-() =ARCHIVES
+{} =TAGS
+{} =TAG-COLUMNS
+{} =ARCHIVES
 () =ARCHIVE-COLUMNS
 () =ARTICLES
-() =HOME
+{} =HOME
 () =PROJECTS
 
 
@@ -17,13 +17,13 @@
 
 ; Create the Archives page.
 (
-  ()
+  {}
   "archives/index"    %id
   "archives.html"     %path
   ".html"             %ext
   "Articles"          %title
   "page"              %content-type
-  ARCHIVES 'last map (/code :a /code :b a b >) sort %archives
+  ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
   ;ARCHIVE-COLUMNS   %archive-columns
   dup "_archives" swap mustache %contents
   dup "page" swap mustache %contents
@@ -32,7 +32,7 @@
 
 ; Create the Projects page
 (
-  ()
+  {}
   "projects/index"                                    %id
   "projects.html"                                     %path
   ".html"                                             %ext
@@ -43,6 +43,9 @@
   dup "projects" swap mustache %contents
   output-fwrite
 ) :create-projects-page
+
+
+0 :count ;....
 
 ; Group articles by month
 (
@@ -56,27 +59,27 @@
     ts int "MMMM-yyyy" tformat lowercase :id
     ; Add to articles
     content date %date #content
-    content ARTICLES  append #ARTICLES
+    content ARTICLES append #ARTICLES
     (ARCHIVES code dhas?)
     (
       ; Add article to existing archive
-      content ("id" "title" "timestamp" "date") dpick =article
-      ARCHIVES code dget =archivedata
+      content ("id" "title" "timestamp" "date") dpick :article
+      ARCHIVES code dget :archivedata
       archivedata /articles =articles
       article articles append #articles
-      archivedata articles %articles #archivedata
-      ARCHIVES archivedata code dset #ARCHIVES
+      archivedata articles %articles :archivedata
+      ARCHIVES archivedata code dset @ARCHIVES
     )
     (
       ; Create new monthly archive
-      content ("id" "title" "timestamp" "date") dpick ' =article
-      ()
-      month   %month
-      code    %code
-      article %articles
-      id      %id
-      =archive
-      ARCHIVES archive code dset #ARCHIVES
+      content ("id" "title" "timestamp" "date") dpick :article
+      {}
+      month     %month
+      code      %code
+      article ' %articles
+      id        %id
+      :archive
+      ARCHIVES archive code dset @ARCHIVES
     ) if
   ) when
   content
@@ -86,7 +89,7 @@
 ; Group articles by tags
 (
   (dict) expect -> =content
-  (content ?tags)
+  ((content ?tags) (content /tags "" !=) dequote-and)
   (
     content /tags "|" split =tags
     tags (
@@ -102,7 +105,7 @@
       (
         ; Create new tag
         content ("id" "title" "timestamp") dpick ' =article
-        TAGS article tag dset #TAGS
+        TAGS article ' tag dset #TAGS
       ) if
     ) foreach
   ) when
@@ -158,16 +161,16 @@
   latest summary %summary #latest
   latest dup /timestamp to-date %date #latest
   ; Process top tags
-  TAGS (
-    dup first :tag
-    last size :total
+  TAGS dkeys (
+    :tag
+    TAGS tag dget size :total
     (tag total) => 
   ) map
   (last swap last >) sort 
   0 9 slice
   (
     =data
-    ()
+    {}
     data first %tag
     data last  %total
   ) map
