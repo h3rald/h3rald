@@ -5438,7 +5438,6 @@ div .terminal {
    </li>
    <li><a href="#Running-then-min-Shell">Running then min Shell</a></li>
    <li><a href="#Executing-a-min-Program">Executing a min Program</a></li>
-   <li><a href="#Development-Mode">Development Mode</a></li>
    <li><a href="#Syntax-Highlighting">Syntax Highlighting</a></li>
   </ul>
   </li>
@@ -5574,11 +5573,11 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.18.0/min_v0.18.0_macosx_x64.zip">min v0.18.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.18.0/min_v0.18.0_windows_x64.zip">min v0.18.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.18.0/min_v0.18.0_linux_x64.zip">min v0.18.0 for Linux (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.18.0/min_v0.18.0_linux_x86.zip">min v0.18.0 for Linux (x86)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.18.0/min_v0.18.0_linux_arm.zip">min v0.18.0 for Linux (arm)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_macosx_x64.zip">min v0.19.0 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_windows_x64.zip">min v0.19.0 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_linux_x64.zip">min v0.19.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_linux_x86.zip">min v0.19.0 for Linux (x86)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_linux_arm.zip">min v0.19.0 for Linux (arm)</a></li>
 </ul>
 
 
@@ -5654,13 +5653,6 @@ div .terminal {
 <p>min also supports running programs from standard input, so the following command can also be used (on Unix-like system) to run a program saved in <span class="file">myfile.min</span>:</p>
 
 <div class="min-terminal"><p><span class="prompt">$</span> cat myfile.min | min</p></div>
-
-<a name="Development-Mode"></a>
-<h3>Development Mode<a href="#document-top" title="Go to top"></a></h3>
-
-<p>By default, when you execute a min program it is run in <em>production mode</em> meaning that some of the runtime checks and validation on the stack items expected by quotations are <em>not</em> performed, essentially to speed up execution a little bit. By contrast, when executing min code from the min shell, it will be executed in <em>development mode</em>, with all runtime checks and validations enabled.</p>
-
-<p>To enable development mode when executing a program, run min specifying the <strong>-d</strong> or <strong>&ndash;dev</strong> flag.</p>
 
 <a name="Syntax-Highlighting"></a>
 <h3>Syntax Highlighting<a href="#document-top" title="Go to top"></a></h3>
@@ -5787,7 +5779,7 @@ div .terminal {
 
 <p>In this case, the second quotation is used to <em>quote</em> the symbol <code>odd?</code> so that instead of being executed immediately, it will be executed by the symbol <code>filter</code> on each element of the first quotation. In this way, we may say that <code>(odd?)</code> is <em>dequoted</em> by the symbol <code>filter</code>.</p>
 
-<p>The synbol <a href="#min-operator-id-dequote">dequote</a> or its alias <code>-&gt;</code> can be used to dequote a quotation by pushing all its element on the main stack, while the symbol <a href="#min-operator-id-apply">apply</a> can be used to dequote a quotation by pushing its element on a separate stack.</p>
+<p>The synbol <a href="#min-operator-id-dequote">dequote</a> or its alias <code>-&gt;</code> can be used to dequote a quotation by pushing all its element on the main stack, while the symbol <a href="#min-operator-id-apply">apply</a> can be used to dequote a quotation by pushing its elements on a separate stack.</p>
 
 <a name="Operators"></a>
 <h3>Operators<a href="#document-top" title="Go to top"></a></h3>
@@ -6618,9 +6610,15 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <p><a id="min-operator-id-apply"></a>
 <span class="reference-title">apply</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span>|<span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)|{<span class="kwd">a<sub>*</sub></span>}</span></p>
 
-<p>Returns a new quotation <span class="kwd">quot</span> obtained by evaluating each element of <span class="kwd">quot</span> in a separate stack.</p></div>
+<p>This operator can be used on quotations or dictionaries:</p>
+
+<ul>
+<li>If a quotation <span class="kwd">quot</span> is passed, it returns a new quotation obtained by evaluating each element of <span class="kwd">quot</span> in a separate stack.</li>
+<li>If a quotation <span class="kwd">dict</span> is passed, it returns a new dictionary obtained by evaluating each symbol of <span class="kwd">dict</span> in a separate stack.</li>
+</ul>
+</div>
 
 <p><a id="min-operator-id-args"></a>
 <span class="reference-title">args</span></p>
@@ -7394,24 +7392,6 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <a name="<code>seq</code>-Module"></a>
 <h3><code>seq</code> Module<a href="#document-top" title="Go to top"></a></h3>
 
-<p><span class="reference-title">/</span> <span class="sigil"></span></p>
-
-<div class="operator"><p><span class="kwd"> /<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dget</span></p>
-
-<p>See <a href="#min-operator-id-dget">dget</a>.</p></div>
-
-<p><span class="reference-title">?</span> <span class="sigil"></span></p>
-
-<div class="operator"><p><span class="kwd"> ?<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dhas?</span></p>
-
-<p>See <a href="#min-operator-id-dhas?">dhas?</a>.</p></div>
-
-<p><span class="reference-title">%</span> <span class="sigil"></span></p>
-
-<div class="operator"><p><span class="kwd"> %<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dset</span></p>
-
-<p>See <a href="#min-operator-id-dset">dset</a>.</p></div>
-
 <p><a id="min-operator-id-all?"></a>
 <span class="reference-title">all?</span></p>
 
@@ -7447,89 +7427,12 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>Concatenates <span class="kwd">quot<sub>1</sub></span> with <span class="kwd">quot<sub>2</sub></span>.</p></div>
 
-<p><a id="min-operator-id-ddel"></a>
-<span class="reference-title">ddel</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
-
-<p>Returns a copy of <span class="kwd">dict<sub>1</sub></span> without the element with key <span class="kwd">&apos;sym</span>.</p></div>
-
-<p><a id="min-operator-id-dget"></a>
-<span class="reference-title">dget</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
-
-<p>Returns the value of key <span class="kwd">&apos;sym</span> from dictionary <span class="kwd">dict</span>.</p></div>
-
-<p><a id="min-operator-id-dhas?"></a>
-<span class="reference-title">dhas?</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Returns <span class="kwd">true</span> if dictionary <span class="kwd">dict</span> contains the key <span class="kwd">&apos;sym</span>, <span class="kwd">false</span> otherwise.</p>
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program returns <span class="kwd">true</span>:</p>
-
-<pre><code>(("a1" true) ("a2" "aaa") ("a3" false)) 'a2 dhas?
-</code></pre></div></div>
-
-<p><a id="min-operator-id-dkeys"></a>
-<span class="reference-title">dkeys</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">string</span><span class="kwd"><sub>*</sub></span>)</span></p>
-
-<p>Returns a quotation containing all the keys of dictionary <span class="kwd">dict</span>.</p></div>
-
-<p><a id="min-operator-id-dpick"></a>
-<span class="reference-title">dpick</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
-
-<p>Returns a new dictionary <span class="kwd">dict<sub>2</sub></span> containing the elements of <span class="kwd">dict<sub>1</sub></span> whose keys are included in <span class="kwd">quot</span>.</p>
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program returns <code>(("a" 4) ("d" 7))</code>:</p>
-
-<pre><code>(("q" 5) ("a" 4) ("c" 6) ("d" 7)) ("a" "d") dpick
-</code></pre></div></div>
-
 <p><a id="min-operator-id-drop"></a>
 <span class="reference-title">drop</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">quot<sub>2</sub></span></span></p>
 
 <p>Returns a quotation <span class="kwd">quot<sub>2</sub></span> containing the remaining elements after the first <em>n</em> values of the input quotation <span class="kwd">quot<sub>1</sub></span>, or an empty quotation if <span class="kwd">int</span> is greater than the length of <span class="kwd">quot<sub>1</sub></span>.</p></div>
-
-<p><a id="min-operator-id-dset"></a>
-<span class="reference-title">dset</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
-
-<p>Sets the value of the <span class="kwd">&apos;sym</span> of <span class="kwd">dict<sub>1</sub></span>  to <span class="kwd">a</span>, and returns the modified copy of the dictionary <span class="kwd">dict<sub>2</sub></span>.</p></div>
-
-<p><a id="min-operator-id-dsort"></a>
-<span class="reference-title">dsort</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
-
-<p>Returns a new dictionary <span class="kwd">dict<sub>2</sub></span> containing all elements of <span class="kwd">dict<sub>1</sub></span> sorted by key in ascending order.</p>
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program leaves <code>(("a" 342) ("b" true) ("c" -4) ("d" 22))</code> on the stack:</p>
-
-<pre><code>(("b" true) ("d" 22) ("c" -4) ("a" 342)) dsort
-</code></pre></div></div>
-
-<p><a id="min-operator-id-dvalues"></a>
-<span class="reference-title">dvalues</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)</span></p>
-
-<p>Returns a quotation containing all the values of dictionary <span class="kwd">dict</span>.</p></div>
 
 <p><a id="min-operator-id-filter"></a>
 <span class="reference-title">filter</span></p>
@@ -9324,7 +9227,7 @@ cli recv-line puts :line
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; July 8, 2018</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; August 12, 2018</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
