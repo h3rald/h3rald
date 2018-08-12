@@ -1360,7 +1360,16 @@ function main() {
   </div>
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
-  <p class="module-desc">This module provides a simple, limited but fully-functional line editing library written in pure Nim.</p>
+  <p class="module-desc"><p>This module provides a simple, limited but fully-functional line editing library written in pure Nim.</p>
+<p>To use this library, you must first initialize a <strong>LineEditor</strong> object using the <strong>initEditor</strong> method, and then use the <strong>readLine</strong> method to capture standard input instead of <strong>stdout.readLine</strong>:</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">ed</span> <span class="Operator">=</span> <span class="Identifier">initEditor</span><span class="Punctuation">(</span><span class="Identifier">historyFile</span> <span class="Operator">=</span> <span class="StringLit">&quot;history.txt&quot;</span><span class="Punctuation">)</span>
+<span class="Keyword">while</span> <span class="Identifier">true</span><span class="Punctuation">:</span>
+  <span class="Keyword">let</span> <span class="Identifier">str</span> <span class="Operator">=</span> <span class="Identifier">ed</span><span class="Operator">.</span><span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="StringLit">&quot;-&gt; &quot;</span><span class="Punctuation">)</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;You typed: &quot;</span><span class="Punctuation">,</span> <span class="Identifier">str</span></pre><p>Optionally, you can also configure custom key bindings for keys and key sequences:</p>
+<pre class="listing"><span class="Identifier">KEYMAP</span><span class="Punctuation">[</span><span class="StringLit">&quot;ctrl+k&quot;</span><span class="Punctuation">]</span> <span class="Operator">=</span> <span class="Keyword">proc</span><span class="Punctuation">(</span><span class="Identifier">ed</span><span class="Punctuation">:</span> <span class="Keyword">var</span> <span class="Identifier">LineEditor</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+  <span class="Identifier">ed</span><span class="Operator">.</span><span class="Identifier">clearLine</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre><p>Additionally, you can also configure a <strong>completionCallback</strong> proc to trigger auto-completion by pressing TAB:</p>
+<pre class="listing"><span class="Identifier">ed</span><span class="Operator">.</span><span class="Identifier">completionCallback</span> <span class="Operator">=</span> <span class="Keyword">proc</span><span class="Punctuation">(</span><span class="Identifier">ed</span><span class="Punctuation">:</span> <span class="Identifier">LineEditor</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">]</span> <span class="Operator">=</span>
+  <span class="Keyword">return</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="StringLit">&quot;copy&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;list&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;delete&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;move&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;remove&quot;</span><span class="Punctuation">]</span></pre></p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
@@ -1381,7 +1390,7 @@ A sequence of one or more Keys.
 </dd>
 <dt id="KeyCallback"><a name="KeyCallback"></a><pre><span class="Identifier">KeyCallback</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">ed</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">LineEditor</span><span class="Other">)</span></pre></dt>
 <dd>
-A proc to call that can modify the LineEditor.
+A proc that can be bound to a key or a key sequence to access line editing functionalities.
 
 </dd>
 <dt id="LineError"><a name="LineError"></a><pre><span class="Identifier">LineError</span> <span class="Other">=</span> <span class="Keyword">ref</span> <span class="Identifier">Exception</span></pre></dt>
@@ -1436,16 +1445,68 @@ An object representing a line editor, used to process text typed in the terminal
 <dl class="item">
 <dt id="KEYNAMES"><a name="KEYNAMES"></a><pre><span class="Identifier">KEYNAMES</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">31</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">]</span></pre></dt>
 <dd>
-
+The following strings can be used in keymaps instead of the correspinding ASCII codes:<pre class="listing"><span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+a&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+b&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">3</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+c&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">4</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+d&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">5</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+e&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">6</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+f&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">7</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+g&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">8</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+h&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">9</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+i&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">9</span><span class="Punctuation">]</span>    <span class="Operator">=</span>    <span class="StringLit">&quot;tab&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">10</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+j&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">11</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+k&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">12</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+l&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">13</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+m&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">14</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+n&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">15</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+o&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">16</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+p&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">17</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+q&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">18</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+r&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">19</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+s&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">20</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+t&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">21</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+u&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">22</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+v&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">23</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+w&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">24</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+x&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">25</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+y&quot;</span>
+<span class="Identifier">KEYNAMES</span><span class="Punctuation">[</span><span class="DecNumber">26</span><span class="Punctuation">]</span>   <span class="Operator">=</span>    <span class="StringLit">&quot;ctrl+z&quot;</span></pre>
 
 </dd>
 <dt id="KEYSEQS"><a name="KEYSEQS"></a><pre><span class="Identifier">KEYSEQS</span><span class="Other">:</span> <span class="Identifier">CritBitTree</span><span class="Other">[</span><span class="Identifier">KeySeq</span><span class="Other">]</span></pre></dt>
 <dd>
-
+The following key sequences are defined and are used internally by <strong>LineEditor</strong>:<pre class="listing"><span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;up&quot;</span><span class="Punctuation">]</span>         <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">65</span><span class="Punctuation">]</span>      <span class="Comment"># Windows: @[224, 72]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;down&quot;</span><span class="Punctuation">]</span>       <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">66</span><span class="Punctuation">]</span>      <span class="Comment"># Windows: @[224, 80]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;right&quot;</span><span class="Punctuation">]</span>      <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">67</span><span class="Punctuation">]</span>      <span class="Comment"># Windows: @[224, 77]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;left&quot;</span><span class="Punctuation">]</span>       <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">68</span><span class="Punctuation">]</span>      <span class="Comment"># Windows: @[224, 75]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;home&quot;</span><span class="Punctuation">]</span>       <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">72</span><span class="Punctuation">]</span>      <span class="Comment"># Windows: @[224, 71]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;end&quot;</span><span class="Punctuation">]</span>        <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">70</span><span class="Punctuation">]</span>      <span class="Comment"># Windows: @[224, 79]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;insert&quot;</span><span class="Punctuation">]</span>     <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">50</span><span class="Punctuation">,</span> <span class="DecNumber">126</span><span class="Punctuation">]</span> <span class="Comment"># Windows: @[224, 82]</span>
+<span class="Identifier">KEYSEQS</span><span class="Punctuation">[</span><span class="StringLit">&quot;delete&quot;</span><span class="Punctuation">]</span>     <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">27</span><span class="Punctuation">,</span> <span class="DecNumber">91</span><span class="Punctuation">,</span> <span class="DecNumber">51</span><span class="Punctuation">,</span> <span class="DecNumber">126</span><span class="Punctuation">]</span> <span class="Comment"># Windows: @[224, 83]</span></pre>
 
 </dd>
 <dt id="KEYMAP"><a name="KEYMAP"></a><pre><span class="Identifier">KEYMAP</span><span class="Other">:</span> <span class="Identifier">CritBitTree</span><span class="Other">[</span><span class="Identifier">KeyCallback</span><span class="Other">]</span></pre></dt>
 <dd>
+The following key mappings are configured by default:<ul class="simple"><li>backspace: <strong>deletePrevious</strong></li>
+<li>delete: <strong>deleteNext</strong></li>
+<li>insert: <em>toggle editor mode</em></li>
+<li>down: <strong>historyNext</strong></li>
+<li>up: <strong>historyPrevious</strong></li>
+<li>ctrl+n: <strong>historyNext</strong></li>
+<li>ctrl+p: <strong>historyPrevious</strong></li>
+<li>left: <strong>back</strong></li>
+<li>right: <strong>forward</strong></li>
+<li>ctrl+b: <strong>back</strong></li>
+<li>ctrl+f: <strong>forward</strong></li>
+<li>ctrl+c: <em>quits the program</em></li>
+<li>ctrl+d: <em>quits the program</em></li>
+<li>ctrl+u: <strong>clearLine</strong></li>
+<li>ctrl+a: <strong>goToStart</strong></li>
+<li>ctrl+e: <strong>goToEnd</strong></li>
+<li>home: <strong>goToStart</strong></li>
+<li>end: <strong>goToEnd</strong></li>
+</ul>
 
 
 </dd>
@@ -1590,7 +1651,7 @@ If there is at least one entry in the history, it sets the position of the curso
 <p>The following is a real-world example of a <strong>completionCallback</strong> used to complete the last word on the line with valid file paths.</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">sequtils</span><span class="Punctuation">,</span> <span class="Identifier">strutils</span><span class="Punctuation">,</span> <span class="Identifier">ospath</span>
 
-<span class="Identifier">editor</span><span class="Operator">.</span><span class="Identifier">completionCallback</span> <span class="Operator">=</span> <span class="Keyword">proc</span><span class="Punctuation">(</span><span class="Identifier">ed</span><span class="Punctuation">:</span> <span class="Identifier">LineEditor</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">]</span> <span class="Operator">=</span>
+<span class="Identifier">ed</span><span class="Operator">.</span><span class="Identifier">completionCallback</span> <span class="Operator">=</span> <span class="Keyword">proc</span><span class="Punctuation">(</span><span class="Identifier">ed</span><span class="Punctuation">:</span> <span class="Identifier">LineEditor</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">]</span> <span class="Operator">=</span>
   <span class="Keyword">var</span> <span class="Identifier">words</span> <span class="Operator">=</span> <span class="Identifier">ed</span><span class="Operator">.</span><span class="Identifier">lineText</span><span class="Operator">.</span><span class="Identifier">split</span><span class="Punctuation">(</span><span class="StringLit">&quot; &quot;</span><span class="Punctuation">)</span>
   <span class="Keyword">var</span> <span class="Identifier">word</span><span class="Punctuation">:</span> <span class="Identifier">string</span>
   <span class="Keyword">if</span> <span class="Identifier">words</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">==</span> <span class="DecNumber">0</span><span class="Punctuation">:</span>
@@ -1651,7 +1712,7 @@ Creates a <strong>LineEditor</strong> object.
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IndexError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-Convenience method to use instead of readline to hide the characters inputed by the user.
+Convenience method to use instead of <strong>readLine</strong> to hide the characters inputed by the user.
 
 </dd>
 
@@ -1664,7 +1725,7 @@ Convenience method to use instead of readline to hide the characters inputed by 
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-12 20:53:08 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-12 22:27:21 UTC</small>
       </div>
     </div>
   </div>
