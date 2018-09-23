@@ -5565,6 +5565,10 @@ pre code {
      <li><a href="#<code>tags</code>-option"><code>tags</code> option</a></li>
      <li><a href="#<code>filter</code>-option"><code>filter</code> option</a></li>
      <li><a href="#<code>select</code>-option"><code>select</code> option</a></li>
+     <li><a href="#<code>created-after</code>-option"><code>created-after</code> option</a></li>
+     <li><a href="#<code>created-before</code>-option"><code>created-before</code> option</a></li>
+     <li><a href="#<code>modified-after</code>-option"><code>modified-after</code> option</a></li>
+     <li><a href="#<code>modified-before</code>-option"><code>modified-before</code> option</a></li>
      <li><a href="#<code>sort</code>-option"><code>sort</code> option</a></li>
      <li><a href="#Query-String-Options">Query String Options</a></li>
      <li><a href="#Example">Example</a></li>
@@ -5593,6 +5597,32 @@ pre code {
     </ul>
     </li>
     <li><a href="#DELETE-docs/:id">DELETE docs/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a>
+</li>
+    </ul>
+    </li>
+   </ul>
+   </li>
+   <li><a href="#tags-(LiteStore-Tags)">tags (LiteStore Tags)</a>
+   <ul>
+    <li><a href="#OPTIONS-tags">OPTIONS tags</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-tags/:id">OPTIONS tags/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-tags">GET tags</a>
+    <ul>
+     <li><a href="#<code>like</code>-option"><code>like</code> option</a></li>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-tags/:id">GET tags/:id</a>
     <ul>
      <li><a href="#Example">Example</a>
 </li>
@@ -5912,12 +5942,12 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.4.1litestore_1.4.1_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.4.1/litestore_1.4.1_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.4.1/litestore_1.4.1_windows_x86.zip">LiteStore for Windows (x86)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.4.1/litestore_1.4.1_linux_x64.zip">LiteStore for Linux (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.4.1/litestore_1.4.1_linux_x86.zip">LiteStore for Linux (x86)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.4.1/litestore_1.4.1_linux_arm.zip">LiteStore for Linux (ARM)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.0litestore_1.5.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.0/litestore_1.5.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.0/litestore_1.5.0_windows_x86.zip">LiteStore for Windows (x86)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.0/litestore_1.5.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.0/litestore_1.5.0_linux_x86.zip">LiteStore for Linux (x86)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.0/litestore_1.5.0_linux_arm.zip">LiteStore for Linux (ARM)</a></li>
 </ul>
 
 
@@ -5948,7 +5978,7 @@ pre code {
 <p>To get the app up and running (assuming that you have the <span class="cmd">litestore</span> executable in your path):</p>
 
 <ol>
-<li>Download the default <a href="https://github.com/h3rald/litestore/releases/download/1.4.1/data.db">data.db</a> file. This file is a LiteStore data store file containing the sample app.</li>
+<li>Download the default <a href="https://github.com/h3rald/litestore/releases/download/1.5.0/data.db">data.db</a> file. This file is a LiteStore data store file containing the sample app.</li>
 <li>Go to the local directory in which you downloaded the <span class="cmd">data.db</span> file.</li>
 <li>Run <span class="cmd">litestore -s:data.db</span></li>
 <li>Go to <a href="http://localhost:9500/docs/admin/index.html">localhost:9500/docs/admin/index.html</a>.</li>
@@ -6337,7 +6367,7 @@ This is a test text file.
 <a name="OPTIONS-docs"></a>
 <h4>OPTIONS docs<a href="#document-top" title="Go to top"></a></h4>
 
-<p>Returns the allowed HTTP verbs for the this resource.</p>
+<p>Returns the allowed HTTP verbs for this resource.</p>
 
 <a name="Example"></a>
 <h5>Example<a href="#document-top" title="Go to top"></a></h5>
@@ -6569,6 +6599,50 @@ Server: LiteStore/1.0.3
 <p>Retrieve JSON documents containing only the specified fields. Fields must be specified by comma-separated path/alias expression.</p>
 
 <p>Example: http://127.0.0.1:9500/docs/?select=$.name.first%20as%20FirstName,$.age%20as%20Age</p>
+
+<a name="<code>created-after</code>-option"></a>
+<h5><code>created-after</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Retrieve only documents created after a the specified timestamp.</p>
+
+<p>Example: http://127.0.0.1:9500/?created-after=1537695677</p>
+
+<div class="note"><p>API v4 Required</p>
+
+<p>This query string option has been introduced in version 4 of the LiteStore API.</p></div>
+
+<a name="<code>created-before</code>-option"></a>
+<h5><code>created-before</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Retrieve only documents created before a the specified timestamp.</p>
+
+<p>Example: http://127.0.0.1:9500/?created-before=1537695677</p>
+
+<div class="note"><p>API v4 Required</p>
+
+<p>This query string option has been introduced in version 4 of the LiteStore API.</p></div>
+
+<a name="<code>modified-after</code>-option"></a>
+<h5><code>modified-after</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Retrieve only documents modified after a the specified timestamp.</p>
+
+<p>Example: http://127.0.0.1:9500/?modified-after=1537695677</p>
+
+<div class="note"><p>API v4 Required</p>
+
+<p>This query string option has been introduced in version 4 of the LiteStore API.</p></div>
+
+<a name="<code>modified-before</code>-option"></a>
+<h5><code>modified-before</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Retrieve only documents modified before a the specified timestamp.</p>
+
+<p>Example: http://127.0.0.1:9500/?modified-before=1537695677</p>
+
+<div class="note"><p>API v4 Required</p>
+
+<p>This query string option has been introduced in version 4 of the LiteStore API.</p></div>
 
 <a name="<code>sort</code>-option"></a>
 <h5><code>sort</code> option<a href="#document-top" title="Go to top"></a></h5>
@@ -6846,6 +6920,118 @@ Access-Control-Allow-Origin: *
 Server: LiteStore/1.0.3
 </code></pre>
 
+<a name="tags-(LiteStore-Tags)"></a>
+<h3>tags (LiteStore Tags)<a href="#document-top" title="Go to top"></a></h3>
+
+<p>This resource can be queried to retrieve the total of documents associated to a tag, or a list of tags matching a string.</p>
+
+<div class="note"><p>API v4 Required</p>
+
+<p>This resource has been introduced in version 4 of the LiteStore API.</p></div>
+
+<a name="OPTIONS-tags"></a>
+<h4>OPTIONS tags<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS http://127.0.0.1:9500/tags
+HTTP/1.1 200 OK
+server: LiteStore/1.5.0
+access-control-allow-origin: http://localhost:9500
+access-control-allow-headers: Content-Type
+allow: GET,OPTIONS
+access-control-allow-methods: GET,OPTIONS
+content-length: 0
+</code></pre>
+
+<a name="OPTIONS-tags/:id"></a>
+<h4>OPTIONS tags/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS http://127.0.0.1:9500/tags/$type:text
+HTTP/1.1 200 OK
+server: LiteStore/1.5.0
+access-control-allow-origin: http://localhost:9500
+access-control-allow-headers: Content-Type
+allow: GET,OPTIONS
+access-control-allow-methods: GET,OPTIONS
+Content-Length: 0
+</code></pre>
+
+<a name="GET-tags"></a>
+<h4>GET tags<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves all tags and the total of their associated documents.</p>
+
+<a name="<code>like</code>-option"></a>
+<h5><code>like</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>If this option is specified, retrieves all tags matching the specified string.</p>
+
+<div class="tip"><p>Wildcards</p>
+
+<p>You can use asterisks (*) as wildcards.</p></div>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i http://localhost:9500/tags/?like=%24type:%2A
+HTTP/1.1 200 OK
+server: LiteStore/1.5.0
+access-control-allow-origin: http://localhost:9500
+content-type: application/json
+vary: Origin
+access-control-allow-headers: Content-Type
+Content-Length: 290
+
+{
+  "like": "$type:*",
+  "total": 3,
+  "execution_time": 0.0008190000000000003,
+  "results": [
+    {
+      "id": "$type:application",
+      "documents": 43
+    },
+    {
+      "id": "$type:image",
+      "documents": 10
+    },
+    {
+      "id": "$type:text",
+      "documents": 32
+    }
+  ]
+}
+</code></pre>
+
+<a name="GET-tags/:id"></a>
+<h4>GET tags/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the specified tag and corresponding document total.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i http://localhost:9500/tags/%24type%3Atext
+HTTP/1.1 200 OK
+server: LiteStore/1.5.0
+access-control-allow-origin: http://localhost:9500
+content-type: application/json
+vary: Origin
+access-control-allow-headers: Content-Type
+Content-Length: 34
+
+{"id":"$type:text","documents":32}
+</code></pre>
+
 <a name="Nim-API-Reference"></a>
 <h2>Nim API Reference<a href="#document-top" title="Go to top"></a></h2>
 
@@ -6980,14 +7166,15 @@ runForever()
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>params</dt>
 <dd>The parameters to pass to the operation (see the corresponding HTTP querystring parameters).</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="post"></a>
 <h4>post<a href="#document-top" title="Go to top"></a></h4>
@@ -7002,14 +7189,15 @@ runForever()
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
-<dd>The identifier of the resource (set to an empty string if not needed).</dd>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>folder</dt>
+<dd>The folder that will contain the resource (set to an empty string if not needed).</dd>
 <dt>body</dt>
 <dd>The request body.</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="put"></a>
 <h4>put<a href="#document-top" title="Go to top"></a></h4>
@@ -7024,14 +7212,15 @@ runForever()
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>body</dt>
 <dd>The request body.</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="patch"></a>
 <h4>patch<a href="#document-top" title="Go to top"></a></h4>
@@ -7039,21 +7228,22 @@ runForever()
 <pre><code> proc patch*(resource, id, body: string, headers = newHttpHeaders()): LSResponse
 </code></pre>
 
-<p>Modifies the tags of an existing resource.</p>
+<p>Modifies the tags of an existing resource (or the data of a JSON document).</p>
 
 <a name="Parameters"></a>
 <h5>Parameters<a href="#document-top" title="Go to top"></a></h5>
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>body</dt>
 <dd>The request body.</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="delete"></a>
 <h4>delete<a href="#document-top" title="Go to top"></a></h4>
@@ -7068,12 +7258,13 @@ runForever()
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="head"></a>
 <h4>head<a href="#document-top" title="Go to top"></a></h4>
@@ -7088,12 +7279,13 @@ runForever()
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="options"></a>
 <h4>options<a href="#document-top" title="Go to top"></a></h4>
@@ -7108,12 +7300,13 @@ runForever()
 
 <dl>
 <dt>resource</dt>
-<dd>The resource to perform the operation on (<span class="kwd">info</span> or <span class="kwd">docs</span>).</dd>
-<dt>id </dt>
+<dd>The resource to perform the operation on ([info](class:kwd) or [docs](class:kwd)).</dd>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
-<dt>headers </dt>
-<dd>An <span class="kwd">HttpHeaders</span> object containing the headers of the request. Use the <span class="kwd">Content-Type</span> header to specify the content type of the <span class="kwd">body</span> parameter.</dd>
+<dt>headers</dt>
+<dd>An [HttpHeaders](class:kwd) object containing the headers of the request. Use the [Content-Type](class:kwd) header to specify the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="Low-Level-Nim-API"></a>
 <h3>Low-Level Nim API<a href="#document-top" title="Go to top"></a></h3>
@@ -7141,8 +7334,9 @@ runForever()
 
 <dl>
 <dt>options</dt>
-<dd>A <a href="#QueryOptions">QueryOptions</a> object representing a query to execute on a document.</dd>
+<dd>A [QueryOptions](#QueryOptions) object representing a query to execute on a document.</dd>
 </dl>
+
 
 <a name="getDocument"></a>
 <h4>getDocument<a href="#document-top" title="Go to top"></a></h4>
@@ -7156,11 +7350,12 @@ runForever()
 <h5>Parameters<a href="#document-top" title="Go to top"></a></h5>
 
 <dl>
-<dt>id </dt>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>options</dt>
-<dd>A <a href="#QueryOptions">QueryOptions</a> object representing a query to execute on a document.</dd>
+<dd>A [QueryOptions](#QueryOptions) object representing a query to execute on a document.</dd>
 </dl>
+
 
 <a name="getRawDocument"></a>
 <h4>getRawDocument<a href="#document-top" title="Go to top"></a></h4>
@@ -7174,11 +7369,12 @@ runForever()
 <h5>Parameters<a href="#document-top" title="Go to top"></a></h5>
 
 <dl>
-<dt>id </dt>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>options</dt>
-<dd>A <a href="#QueryOptions">QueryOptions</a> object representing a query to execute on a document.</dd>
+<dd>A [QueryOptions](#QueryOptions) object representing a query to execute on a document.</dd>
 </dl>
+
 
 <a name="deleteDocument"></a>
 <h4>deleteDocument<a href="#document-top" title="Go to top"></a></h4>
@@ -7192,9 +7388,10 @@ runForever()
 <h5>Parameters<a href="#document-top" title="Go to top"></a></h5>
 
 <dl>
-<dt>id </dt>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 </dl>
+
 
 <a name="postDocument"></a>
 <h4>postDocument<a href="#document-top" title="Go to top"></a></h4>
@@ -7211,10 +7408,11 @@ runForever()
 <dt>body</dt>
 <dd>The request body.</dd>
 <dt>ct</dt>
-<dd>Determines the content type of the <span class="kwd">body</span> parameter.</dd>
+<dd>Determines the content type of the [body](class:kwd) parameter.</dd>
 <dt>folder</dt>
 <dd>A logical folder where the document will be saved.</dd>
 </dl>
+
 
 <a name="putDocument"></a>
 <h4>putDocument<a href="#document-top" title="Go to top"></a></h4>
@@ -7228,13 +7426,14 @@ runForever()
 <h5>Parameters<a href="#document-top" title="Go to top"></a></h5>
 
 <dl>
-<dt>id </dt>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>body</dt>
 <dd>The request body.</dd>
 <dt>ct</dt>
-<dd>Determines the content type of the <span class="kwd">body</span> parameter.</dd>
+<dd>Determines the content type of the [body](class:kwd) parameter.</dd>
 </dl>
+
 
 <a name="patchDocument"></a>
 <h4>patchDocument<a href="#document-top" title="Go to top"></a></h4>
@@ -7242,17 +7441,18 @@ runForever()
 <pre><code> proc patchDocument*(id, body: string): LSResponse
 </code></pre>
 
-<p>Modifies the tags of an existing document.</p>
+<p>Modifies the tags of an existing document (or the body of a JSON document).</p>
 
 <a name="Parameters"></a>
 <h5>Parameters<a href="#document-top" title="Go to top"></a></h5>
 
 <dl>
-<dt>id </dt>
+<dt>id</dt> 
 <dd>The identifier of the resource (set to an empty string if not needed).</dd>
 <dt>body</dt>
 <dd>The request body.</dd>
 </dl>
+
 
 <a name="Credits"></a>
 <h2>Credits<a href="#document-top" title="Go to top"></a></h2>
@@ -7270,7 +7470,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; July 8, 2018</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; September 23, 2018</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
