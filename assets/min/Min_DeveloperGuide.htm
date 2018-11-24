@@ -3709,7 +3709,7 @@ a[href*="gitlab.com"]:before {
 }
 a[href*="google.com"]:before {
   content: "\f1a0" "\202F";
-  font-family: "Font Awesome 5 Free";
+  font-family: "Font Awesome 5 Brands";
 }
 a[href*="plus.google.com"]:before {
   content: "\f0d4" "\202F";
@@ -3845,14 +3845,14 @@ a[href="#document-top"]:before {
 .note p {
   margin: 0 auto;
 }
-.note p {
+.note > p {
   margin: 0 auto;
 }
-.note p:first-child {
+.note > p:first-child {
   font-weight: 600;
   color: #264c72;
 }
-.note p:first-child:before {
+.note > p:first-child:before {
   font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
@@ -3895,14 +3895,14 @@ a[href="#document-top"]:before {
 .tip p {
   margin: 0 auto;
 }
-.tip p {
+.tip > p {
   margin: 0 auto;
 }
-.tip p:first-child {
+.tip > p:first-child {
   font-weight: 600;
   color: #009926;
 }
-.tip p:first-child:before {
+.tip > p:first-child:before {
   font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
@@ -3945,14 +3945,14 @@ a[href="#document-top"]:before {
 .warning p {
   margin: 0 auto;
 }
-.warning p {
+.warning > p {
   margin: 0 auto;
 }
-.warning p:first-child {
+.warning > p:first-child {
   font-weight: 600;
   color: #705400;
 }
-.warning p:first-child:before {
+.warning > p:first-child:before {
   font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
@@ -3967,6 +3967,56 @@ a[href="#document-top"]:before {
 }
 .warning a {
   color: #241b00;
+}
+.blank-sidebar {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 10px auto;
+  padding: 2px 4px 0 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  color: #555;
+  background-color: #fefefe;
+  border: 1px solid #fefefe;
+  font-size: 95%;
+}
+.blank-sidebar code,
+.blank-sidebar samp,
+.blank-sidebar pre {
+  color: #555;
+}
+.blank-sidebar a {
+  color: #264c72;
+}
+.blank-sidebar p {
+  margin: 0 auto;
+}
+.blank-sidebar > p {
+  margin: 0 auto;
+}
+.blank-sidebar > p:first-child {
+  font-weight: 600;
+  color: #555;
+}
+.blank-sidebar > p:first-child:before {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  color: #555;
+  content: "" " ";
+}
+.blank-sidebar pre,
+.blank-sidebar code {
+  font-size: 400;
+  color: #3b3b3b;
+}
+.blank-sidebar a {
+  color: #2f2f2f;
 }
 .sidebar {
   -moz-background-clip: padding;
@@ -3995,14 +4045,14 @@ a[href="#document-top"]:before {
 .sidebar p {
   margin: 0 auto;
 }
-.sidebar p {
+.sidebar > p {
   margin: 0 auto;
 }
-.sidebar p:first-child {
+.sidebar > p:first-child {
   font-weight: 600;
   color: #555;
 }
-.sidebar p:first-child:before {
+.sidebar > p:first-child:before {
   font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
@@ -4089,8 +4139,8 @@ a[href="#document-top"]:before {
     white-space: nowrap;
   }
 }
-.terminal p,
-.terminal p:first-child {
+.terminal > p,
+.terminal > p:first-child {
   margin-top: -40px;
   margin-bottom: 0;
   text-shadow: none;
@@ -4099,12 +4149,20 @@ a[href="#document-top"]:before {
   font-size: 85%;
   color: #eee;
 }
-.terminal p:first-child,
-.terminal p:first-child:first-child {
+.terminal > p code,
+.terminal > p:first-child code,
+.terminal > p pre,
+.terminal > p:first-child pre,
+.terminal > p samp,
+.terminal > p:first-child samp {
+  font-size: 100%;
+}
+.terminal > p:first-child,
+.terminal > p:first-child:first-child {
   margin-top: 0px;
 }
-.terminal p:before,
-.terminal p:first-child:before {
+.terminal > p:before,
+.terminal > p:first-child:before {
   font-family: "Source Code Pro", "Monaco", "DejaVu Sans Mono", "Courier New", monospace;
   font-style: normal;
   font-weight: 800;
@@ -4156,8 +4214,8 @@ a[href="#document-top"]:before {
     white-space: nowrap;
   }
 }
-.terminal-su p,
-.terminal-su p:first-child {
+.terminal-su > p,
+.terminal-su > p:first-child {
   margin-top: -40px;
   margin-bottom: 0;
   text-shadow: none;
@@ -4166,20 +4224,28 @@ a[href="#document-top"]:before {
   font-size: 85%;
   color: #eee;
 }
-.terminal-su p:first-child,
-.terminal-su p:first-child:first-child {
+.terminal-su > p code,
+.terminal-su > p:first-child code,
+.terminal-su > p pre,
+.terminal-su > p:first-child pre,
+.terminal-su > p samp,
+.terminal-su > p:first-child samp {
+  font-size: 100%;
+}
+.terminal-su > p:first-child,
+.terminal-su > p:first-child:first-child {
   margin-top: 0px;
 }
-.terminal-su p:before,
-.terminal-su p:first-child:before {
+.terminal-su > p:before,
+.terminal-su > p:first-child:before {
   font-family: "Source Code Pro", "Monaco", "DejaVu Sans Mono", "Courier New", monospace;
   font-style: normal;
   font-weight: 800;
   color: #009926;
   content: "$ ";
 }
-.terminal-su p:before,
-.terminal-su p:first-child:before {
+.terminal-su > p:before,
+.terminal-su > p:first-child:before {
   color: #CC3300;
   content: "# ";
 }
@@ -5573,11 +5639,11 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_macosx_x64.zip">min v0.19.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_windows_x64.zip">min v0.19.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_linux_x64.zip">min v0.19.0 for Linux (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_linux_x86.zip">min v0.19.0 for Linux (x86)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.0/min_v0.19.0_linux_arm.zip">min v0.19.0 for Linux (arm)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_macosx_x64.zip">min v0.19.1 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_windows_x64.zip">min v0.19.1 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_linux_x64.zip">min v0.19.1 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_linux_x86.zip">min v0.19.1 for Linux (x86)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_linux_arm.zip">min v0.19.1 for Linux (arm)</a></li>
 </ul>
 
 
@@ -9227,7 +9293,7 @@ cli recv-line puts :line
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; August 12, 2018</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; November 18, 2018</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>

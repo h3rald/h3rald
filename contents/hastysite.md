@@ -9,7 +9,7 @@ subtitle: "A small but powerful static site generator"
 summary: "A self-contained static site generator featuring markdown support, mustache templates, and a powerful min-powered rule and script engine."
 content-type: project
 active: true
-version: 1.2.1
+version: 1.2.2
 download: "https://github.com/h3rald/hastysite/releases/download/"
 -----
 
