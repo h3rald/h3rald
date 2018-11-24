@@ -5639,11 +5639,11 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_macosx_x64.zip">min v0.19.1 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_windows_x64.zip">min v0.19.1 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_linux_x64.zip">min v0.19.1 for Linux (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_linux_x86.zip">min v0.19.1 for Linux (x86)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.1/min_v0.19.1_linux_arm.zip">min v0.19.1 for Linux (arm)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.2/min_v0.19.2_macosx_x64.zip">min v0.19.2 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.2/min_v0.19.2_windows_x64.zip">min v0.19.2 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.2/min_v0.19.2_linux_x64.zip">min v0.19.2 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.2/min_v0.19.2_linux_x86.zip">min v0.19.2 for Linux (x86)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.2/min_v0.19.2_linux_arm.zip">min v0.19.2 for Linux (arm)</a></li>
 </ul>
 
 
@@ -6678,11 +6678,11 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot</span>|<span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)|{<span class="kwd">a<sub>*</sub></span>}</span></p>
 
-<p>This operator can be used on quotations or dictionaries:</p>
+<p>This operator can be used on a quotation or a dictionary:</p>
 
 <ul>
 <li>If a quotation <span class="kwd">quot</span> is passed, it returns a new quotation obtained by evaluating each element of <span class="kwd">quot</span> in a separate stack.</li>
-<li>If a quotation <span class="kwd">dict</span> is passed, it returns a new dictionary obtained by evaluating each symbol of <span class="kwd">dict</span> in a separate stack.</li>
+<li>If a dictionary <span class="kwd">dict</span> is passed, it returns a new dictionary obtained by evaluating each symbol of <span class="kwd">dict</span> in a separate stack.</li>
 </ul>
 </div>
 
@@ -9293,7 +9293,7 @@ cli recv-line puts :line
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; November 18, 2018</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; November 24, 2018</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
