@@ -5573,7 +5573,7 @@ div .terminal {
 <li>provides a simple but functional fully-working site template out-of-the-box, which is also the same template used for its <a href="https://hastysite.h3rald.com">web site</a>.</li>
 <li>provides out-of-the-box Markdown support. But not just any markdown, <a href="https://h3rald.com/hastyscribe">HastyScribe</a>-compatible markdown, which extends the alredy-amazing and powerful <a href="https://www.pell.portland.or.us/~orc/Code/discount/">Discount</a> engine with more useful features such as snippets, macros, fields and transclusion.</li>
 <li>provides a robust logic-less templating engine based on <a href="https://mustache.github.io/">mustache</a>.</li>
-<li>provides support for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variables</a>, which doesn&rsquo;t substitute a full fledged CSS preprocessor like LESS or SASS, but it does help.</li>
+<li>provides support for SCSS-like partials and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variables</a>, which don&rsquo;t substitute a full fledged CSS preprocessor like LESS or SASS, but they do help.</li>
 </ul>
 
 
@@ -5618,11 +5618,11 @@ div .terminal {
 <p>You can download one of the following pre-built HastySite binaries:</p>
 
 <div class="unstyled"><ul>
-<li><span class="apple"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.2/hastysite_v1.2.2_macosx_x64.zip">hastysite v1.2.2 for macOS (x64)</a></li>
-<li><span class="windows"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.2/hastysite_v1.2.2_windows_x64.zip">hastysite v1.2.2 for Windows (x64)</a></li>
-<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.2/hastysite_v1.2.2_linux_x64.zip">hastysite v1.2.2 for Linux (x64)</a></li>
-<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.2/hastysite_v1.2.2_linux_x86.zip">hastysite v1.2.2 for Linux (x86)</a></li>
-<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.2.2/hastysite_v1.2.2_linux_arm.zip">hastysite v1.2.2 for Linux (arm)</a></li>
+<li><span class="apple"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.3.0/hastysite_v1.3.0_macosx_x64.zip">hastysite v1.3.0 for macOS (x64)</a></li>
+<li><span class="windows"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.3.0/hastysite_v1.3.0_windows_x64.zip">hastysite v1.3.0 for Windows (x64)</a></li>
+<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.3.0/hastysite_v1.3.0_linux_x64.zip">hastysite v1.3.0 for Linux (x64)</a></li>
+<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.3.0/hastysite_v1.3.0_linux_x86.zip">hastysite v1.3.0 for Linux (x86)</a></li>
+<li><span class="linux"></span><a href="https://github.com/h3rald/hastysite/releases/download/v1.3.0/hastysite_v1.3.0_linux_arm.zip">hastysite v1.3.0 for Linux (arm)</a></li>
 </ul>
 </div>
 
@@ -6241,20 +6241,33 @@ content-type: page
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
 
-<p>Pre-process <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variable</a> declarations and usages within <span class="kwd">string<sub>1</sub></span>, returning the resulting CSS code <span class="kwd">string<sub>2</sub></span>.</p></div>
+<p>Pre-process CSS contents within <span class="kwd">string<sub>1</sub></span>, i.e.:</p></div>
 
-<p>For example, the following CSS code:</p>
+<ol>
+<li>Pseudo-SCSS partial imports. Partial CSS files must start with an underscore and be placed in the <code>css-partials</code> directory (set in your <span class="file">settings.json</span>, or <span class="dir">assets/styles</span> if not specified).</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">CSS variable</a> declarations</li>
+</ol>
 
-<pre><code>:root {
-  --standard-gray: #cccccc;
+
+<p>Returns the resulting CSS code <span class="kwd">string<sub>2</sub></span>.</p>
+
+<p>For example, the following CSS code in two different files:</p>
+
+<dl>
+<dt>_vars.css:</dt>
+<dd><pre><code>:root {
+   --standard-gray: #cccccc;
 }
-
+</code></pre></dd>
+<dt>style.css:</dt>
+<dd><pre><code>@import 'vars';
 .note {
   background-color: var(--standard-gray);  
 }
-</code></pre>
+</code></pre></dd>
+</dl>
 
-<p>Will be converted to the following:</p>
+<p>Will be converted into the following:</p>
 
 <pre><code>:root {
   --standard-gray: #cccccc;
@@ -6345,7 +6358,7 @@ content-type: page
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; November 24, 2018</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; December 9, 2018</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
