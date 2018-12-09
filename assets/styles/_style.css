@@ -8,36 +8,6 @@
  * - https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
  * - http://concisecss.com/documentation/core#typography (colors)
  ****/
-:root {
-  --html-font-size: 16px;  
-  --base-font-size: 1rem;
-  --line-height: 1.5;
-  --scale-factor: 1.3333;
-  --leading: 1.5rem;
-  --letter-spacing: 0.05em;
-
-  --accent-color: #C65146;
-  --line-color: #DCDCDC;
-  --selection-color: #EBE1D3;
-  --link-color: #b73333;
-  --link-hover-color: #653131;
-  --nav-link-color: #fa8181;
-  --nav-link-hover-color: #f25a5a;
-
-  --heading-text-color: #222;
-  --primary-text-color: #444;
-  --secondary-text-color: #666;
-  --primary-inverted-text-color: #fefefe;
-  --secondary-inverted-text-color: #f5f5f5;
-
-  --primary-background: #fefefe;
-  --light-background: #f5f5f5;
-  --dark-background: #32373d;
-
-  --success-color: #10a887;
-  --warning-color: #F17F42;
-  --error-color: #da3c3c;
-}
 
 html {
   font-size: var(--html-font-size);
@@ -45,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Calendas Plus', serif;
   -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
   -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
@@ -54,7 +24,7 @@ body {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  font-weight: normal;
+  font-weight: 300;
   margin: auto;
   letter-spacing: var(--letter-spacing);
   font-size: var(--base-font-size);
@@ -138,11 +108,11 @@ sub {
 }
 
 b, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .panel-title {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 i, em, .primary-subtitle, .secondary-subtitle, .panel-header {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Calendas Plus', serif;
   font-style: italic;
   -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
@@ -151,7 +121,7 @@ i, em, .primary-subtitle, .secondary-subtitle, .panel-header {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Raleway', sans-serif;  
+  font-family: 'Calendas Plus', serif;  
   font-style: normal;
   -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
   -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
@@ -160,9 +130,9 @@ h1, h2, h3, h4, h5 {
 }
 a {
   text-decoration: none;
+  display: inline;
 }
 .content {
-  border-radius: 4px;
   padding: 0 calc(var(--leading) * 0.5);
   padding-bottom: calc(var(--leading) * 0.25);
 }
@@ -178,6 +148,15 @@ time {
 
 .sidebar header {
   text-align: center;  
+}
+
+#theme-switcher {
+  font-style: italic;  
+  cursor: pointer;
+}
+
+.main-header h1 {
+  margin-top: 0.1em;  
 }
 
 .logo {
@@ -211,7 +190,7 @@ hr::before {
 
 .label {
   padding: calc(var(--leading) * 0.15);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .card-footer .action::after {
@@ -282,7 +261,8 @@ body {
   color: var(--primary-text-color);
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5 {
   color: var(--heading-text-color);
 }
 
@@ -304,28 +284,29 @@ a:hover {
 }
 
 .main, .sidebar, .sidebar .content {
-  background: var(--dark-background);
-  color: var(--primary-inverted-text-color);
+  background: var(--primary-background);
+  color: var(--primary-text-color);
 }
 
 .sidebar a, .sidebar a:visited {
-  color: var(--nav-link-color);
+  color: var(--link-color);
 }
 
 .sidebar a:hover {
-  color: var(--nav-link-hover-color);  
+  color: var(--link-hover-color);  
 }
 
 a.logo, a.logo:visited, a.logo:hover {
-  color: var(--primary-inverted-text-color);
+  color: var(--heading-text-color);
 }
 
 .sidebar hr, .main hr, .panel-header {
-  color: var(--secondary-inverted-text-color);
+  color: var(--secondary-text-color);
 }
 
 .label {
-  color: var(--primary-inverted-text-color);
+  color: var(--heading-text-color);
+  font-variant: small-caps;
 }
 
 .label-success {
@@ -341,9 +322,9 @@ a.logo, a.logo:visited, a.logo:hover {
 }
 
 code, pre {
-  background-color: var(--light-background);
+  background-color: var(--secondary-background);
 }
 
 pre code, img {
-  border: 1px solid var(--line-color);
+  border: 1px solid var(--secondary-background);
 }

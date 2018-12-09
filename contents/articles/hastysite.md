@@ -5,7 +5,7 @@ content-type: article
 timestamp: 1514365455 
 -----
 
-It has been *over TWO years* since my [last article](/introducing-litestore/) on this site. I have been pretty busy with work and all and well... same old, same old. 
+It has been *over TWO years* since my [last article](/articles/litestore/) on this site. I have been pretty busy with work and all and well... same old, same old. 
 
 It's not that I didn't have time to write articles, it's a mixture of different things:
 

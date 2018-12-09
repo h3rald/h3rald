@@ -1,0 +1,23 @@
+:root {
+  --html-font-size: 16px;  
+  --base-font-size: 1rem;
+  --line-height: 1.5;
+  --scale-factor: 1.3333;
+  --leading: 1.5rem;
+  --letter-spacing: 0.05em;
+
+  --link-color: #8A232D;
+  --link-hover-color: #B22733;
+
+  --heading-text-color: #E0E0E0;
+  --primary-text-color: #8C8C8C;
+  --secondary-text-color: #C7C7C7;
+
+  --primary-background: #0D0D0D;
+  --secondary-background: #282726;
+
+  --success-color: #005E23;
+  --warning-color: #C97D05;
+  --error-color: #da3c3c;
+}
+
