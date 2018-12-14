@@ -128,6 +128,24 @@ h1, h2, h3, h4, h5 {
   -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
   font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
+
+.body-text {
+  margin-left: 2rem;
+}
+
+.home-content .body-text {
+  margin-left: 0;
+}
+
+.body-text h1,
+.body-text h2,
+.body-text h3,
+.body-text h4,
+.body-text h5,
+.body-text h6 {
+  margin-left: -2rem;
+}
+
 a {
   text-decoration: none;
   display: inline;

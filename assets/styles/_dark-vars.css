@@ -6,15 +6,15 @@
   --leading: 1.5rem;
   --letter-spacing: 0.05em;
 
-  --link-color: #8A232D;
-  --link-hover-color: #B22733;
+  --link-color: #dd4242;
+  --link-hover-color: #fe3838;
 
-  --heading-text-color: #E0E0E0;
-  --primary-text-color: #8C8C8C;
-  --secondary-text-color: #C7C7C7;
+  --heading-text-color: #dddada;
+  --primary-text-color: #c7c7c7;
+  --secondary-text-color: #e0e0e0;
 
-  --primary-background: #0D0D0D;
-  --secondary-background: #282726;
+  --primary-background: #171717;
+  --secondary-background: #262626;
 
   --success-color: #005E23;
   --warning-color: #C97D05;

@@ -14,9 +14,22 @@ The following 10 sections are devoted to 10 different programming languages. The
 
 <hr />
 
+### Crystal
+
+_Fast as C, slick as Ruby_ &mdash; it pretty much sums it up. Crystal was first released in 2014 as Ruby-like programming language but backed by [LLVM](https://llvm.org/), so compiled and inherently (much) faster than its popular, more-colorful ancestor.
+
+While no 1.0 has been released yet, the language is quite popular. It comes with a [web framework](https://amberframework.org/), it has been used to create [games](https://medium.com/@alanwillms/you-should-write-your-next-game-with-crystal-f27306b63e3d), and someone even calls it [the most promising programming language of 2018](https://medium.com/@DuroSoft/why-crystal-is-the-most-promising-programming-language-of-2018-aad669d8344f). It is not backed by a big companies like some of the languages on this list, but it could be a good thing, after all.
+
+#### To get you started...
+
+* [Official Web Site](https://crystal-lang.org/)
+* [Wikipedia Page](https://en.wikipedia.org/wiki/Crystal_(programming_language))
+* [Awesome Crystal](https://github.com/veelenga/awesome-crystal)
+* [Crystal Shards - a collection of awesome Crystal libraries](https://crystalshards.xyz/)
+
 ### Elixir
 
-Elixir came about in 2011, as an effort to bring more extensibility, metaprogramming and a more [Ruby](https://www.ruby-lang.org/en/)-esque syntax to the [Erlang](https://www.erlang.org/) world. If you are already in love Ruby, but you'd like a little bit more oomph, you'll love Elixir: it runs on top of the Erlang virtual machine but it looks and feels like Ruby.
+Elixir came about in 2011, as an effort to bring more extensibility, metaprogramming and a more [Ruby](https://www.ruby-lang.org/en/)-esque syntax to the [Erlang](https://www.erlang.org/) world. If you are already in love Ruby, but you'd like a little bit more oomph, you'll love Elixir: it runs on top of the Erlang virtual machine but it looks and feels like Ruby. And Crystal, of course.
 
 Over the years Elixir steadily grew in popularity, reached a version 1.0, and it now provides really comprehensive documentation, a friendly community and a rich ecosystem of packages. Also, if you are looking for a Rails/Django/Express equivalent, the [Phoenix](https://phoenixframework.org/) framework has been used successfully in [many projects](https://medium.com/aviabird/10-amazing-open-source-elixir-phoenix-apps-e2c52ee25053).
 
@@ -37,56 +50,81 @@ One example of a successful application written in Go? [Docker](https://www.dock
 #### To get you started...
 
 * [Official Web Site](https://golang.org/)
-* [Packages](https://golang.org/pkg/)
+* [dep - Dependency Management for Go](https://golang.github.io/dep/)
 * [Go By Example](https://gobyexample.com/)
 * [Awesome Go](https://awesome-go.com/)
+* [Go Search](https://go-search.org/)
 
 ### Julia
 
+Julia started out in 2009 and reached its 1.0 release just a few months ago. It is written mainly in C except for its parser that is written in [FemtoLisp](https://github.com/JeffBezanson/femtolisp) a Scheme implementation created by Julia's creator, Jeff Bezanson.
+
+Perhaps among the most specialized programming languages in this list, Julia excels in scientific computing, data analysis and machine learning although it can still be used for more ordinary things like web development (thanks to its [Genie](http://genieframework.com/) framework). The first thing that comes to mind when people approach this language is why would you use it when [Python](https://www.python.org/) and [R](https://www.r-project.org/) already exist and are more mainstream in the scientific domain... well, the answer seems to be predominantly performance (when compared to its direct competitors at least).
+
+Sure, it's less mature and tooling probably is not quite comparable to Python, but over the years it is slowly gaining some momentum, especially after its 1.0 release. Also, the fact that it has FFIs to C, Fortran, Python, R and Java could probably tempt more scientists into a more step-by-step adoption.
+
 #### To get you started...
+
+* [Official Web Site](https://julialang.org/)
+* [Official Documentation](https://docs.julialang.org/en/v1/)
+* [Official Forum](https://discourse.julialang.org/)
+* [Pkg - Julia Package Manager](https://pkg.julialang.org/)
+* [Awesome Julia](https://github.com/greister/Awesome-Julia)
 
 ### Kotlin
 
-#### To get you started...
+Born in 2011, Kotlin was originally JetBrains' attempt to create a language with cool features like functional programming support, extension methods, etc. but still compile very quickly compared to other JVM languages like Scala (it can also be compiled to JavaScript code).
 
-### Luna
+Quite a few high-profile Android apps [have been migrated to Kotlin](https://appinventiv.com/blog/apps-migrated-from-java-to-kotlin) over the years, reporting various benefits ranging from being much more concise, safer and overall more maintainable than Java code. Besides JetBrains, a few startups and companies are reportedly using Kotlin in production, such as Basecamp, Square, and Pinterest.
 
-I rediscovered a bookmark to the web site of the Luna programming language in my [-proglangs](https://pinboard.in/u:h3rald/t:-proglangs) Pinboard tag recently, and after reading more about it I decided to include it in this list because, unlike any other languages listed here, it provides _both_ a textual and a visual representation, and each can be used interchangeably to create Luna programs.
-
-Having multiple representations for the _model_ of a programming language is a very powerful concept, but it is not applied very often (and to such an extent) in mainstream programming languages. It is quite a cool concept nonetheless.
-
-I highly recommend giving Luna a try but downloading an installer for your operating system from Luna's home page. It will install Luna Studio, an [Atom](https://atom.io/)-based editor that can be used to create and run Luna programs.
+Although I have never been a big fan of the JVM, Kotlin is definitely one of the most innovative and trending languages running on it nowadays, and perhaps more well-known than its comparable contenders, like [Ceylon](https://ceylon-lang.org/) and [Xtend](https://www.eclipse.org/xtend/), the so-called _second generation_ JVM languages.
 
 #### To get you started...
 
-* [Official Web Site](https://www.luna-lang.org/)
-* [Reference Documentation](http://docs.luna-lang.org/)
-* [Official Blog](https://medium.com/@luna_language)
+* [Official Web Site](https://kotlinlang.org/)
+* [Official Forum](https://discuss.kotlinlang.org/)
+* [Wikipedia Page](https://en.wikipedia.org/wiki/Kotlin_(programming_language))
+* [Awesome Kotlin](https://github.com/KotlinBy/awesome-kotlin)
 
 ### Nim
 
-Nim is the only language in this list that is also present in the [original article](/articles/10-programming-languages), but under the name _Nimrod_. The language indeed changed name over the years to _Nim_ because apparently _Nimrod_ in the US means _idiot_ or something... Anyhow, after 10 years, the Nim programming language hasn't reached version 1.0 yet, but according to the core team we are apparently _very close_.
+Nim is the only language in this list that is also present in the [original article](/articles/10-programming-languages), but under the name _Nimrod_.
 
-Although currently at version 0.19.0, Nim is quite stable and can be used in production as quite an efficient system programming language that compiles to C. You may want to watch out for deprecations between one release and the other, but I've been using it for the last... _10 years_ and it has been a remarkable experience. I use Nim in my spare time in quite a few pet projects, such as:
+Anyhow, after 10 years, the Nim programming language hasn't reached version 1.0 yet, but according to the core team we are apparently _very close_.
 
-* [LiteStore](/litestore/) &mdash; A lightweight, self-contained, searchable document store. 
-* [min](/min/) &mdash; A small concatenative programming language that sneakily found its way into this article after all...
-* [HastyScribe](/hastyscribe/) &mdash; An advanced markdown compiler able to generate self-contained HTML files.
-* [HastySite](/hastysite/) &mdash; The static site generator powered by HastyScribe and min that currently powers this web site.
-* [Nifty](/nifty/) &mdash; A pseudo-package manager and script runner used to build nearly all the other projects.
-* [NimHTTPD](/nimhttpd/) &mdash; A simple web server for serving static files.
+Although currently at version 0.19.0, Nim is quite stable and can be used in production as quite an efficient system programming language that compiles to C. You may want to watch out for deprecations between one release and the other, but I've been using it for the last... _10 years_ and it has been a remarkable experience. I use Nim in my spare time in quite a few pet [projects](/projects/).
+
+Want to know something else really cool written in Nim? The open source [Nim forum engine](https://github.com/nim-lang/nimforum) which is based on the [Karax](https://github.com/pragmagic/karax) SPA framework and the [Jester](https://github.com/dom96/jester) web server.
 
 #### To get you started...
 
 * [Official Web Site](https://nim-lang.org)
+* [Wikipedia Page](https://en.wikipedia.org/wiki/Nim_(programming_language))
+* [Official Forum](https://forum.nim-lang.org/)
 
 ### Rust
 
+Mozilla unveiled Rust in 2010, as an effort to create a high-performance system programming language comparable to C and C++ for performance, but easier to use and with more modern features common to high-level programming language.
+
+After 8 years, portions of Firefox, Dropbox and Cloudflare are written in Rust, the [Piston](https://www.piston.rs/) open source game engine is written in Rust, and of course Mozilla's [Servo](https://servo.org/), a new browser engine that will probably make its way into Firefox in the near future.
+
+There are quite a few articles online comparing Rust to Nim and Go. These three language are somewhat in the same space, being at least born as system programming languages. If you read these articles you'll see an almost equal percentage of wins and losses... there are pros and cons as in everything: Nim has the smallest community, Go probably the biggest; Nim syntax is practically Python, Go's is pretty easy as well, while Rust seems syntactically the closes to C/C++, and also arguably the most complex. But again, your mileage may vary.
+
 #### To get you started...
+
+* [Official Web Site](https://www.rust-lang.org/)
+* [Wikipedia Page](https://en.wikipedia.org/wiki/Rust_(programming_language))
+* [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)
+* [Crates - Rust Package Registry](https://crates.io/)
+
 
 ### Swift
 
-Swift is Apple's answer to the prayers of many iOS app developers complaining that Objective C was too hard to program with.
+Swift is Apple's answer to the prayers of many iOS app developers complaining that Objective C was too hard to program with. It was first released in 2014 and it became very popular especially among iOS developers... in fact I don't believe it's used for anything else really.
+
+Similarly, it doesn't run on Windows but only on Unixes (Darwin/Linux/FreeBSD), but typically 90% of its users are going to program in Swift using XCode on their macOS machine.
+
+While definitely a step up from Objective-C from a syntax and high-level features point of view, unlike other languages on this list its niche is pretty much mobile apps, or better, iOS apps. If I were to develop an iOS app, I'd probably pick Swift as well.
 
 #### To get you started...
 
@@ -95,9 +133,38 @@ Swift is Apple's answer to the prayers of many iOS app developers complaining th
 
 ### Wren
 
+Now, this is a real gem. There's only a 0.1.0 release on GitHub from 2016, but you're better off cloning straight from the repo for the latest stuff. I think this pretty much answers the question _how new is this language?_
+
+Wren is a really small (in size), interpreted scripting language with a very clean and familiar syntax, that packs a lot of features, as well as concurrency support via lightweight fibers. It has no dependencies and it is extremely well suited for embedding in C programs. Oh, and it's [fast](http://wren.io/performance.html) compared to other interpreters.
+
+Of course it cannot be compared of behemoths like Rust or Go, it's a tiny little thing, written by [one single person](http://journal.stuffwithstuff.com/) I really admire very much.
+
+You won't use it for writing your next mission-critical, life-saving piece of software, but if you want a modern, advanced, easy to learn, pleasant to write scripting language for your next project, look no further: give Wren a shot. Yes sure, [Lua](https://www.lua.org/) is probably dominating this space, but what the hell, there's no harm in trying something new, right?
+
 #### To get you started...
+
+* [Official Web Site](http://wren.io/)
 
 ### Zig
 
+Slightly more mainstream then Wren, Zig was born in 2016 and it hit its 0.3.0 release just a few months ago. The language positions itself in the already-crowded space of the next generation system programming languages, but there's a [rationale](https://github.com/ziglang/zig/wiki/Why-Zig-When-There-is-Already-CPP,-D,-and-Rust%3F) for it. 
+
+It is essentially a much smaller, more minimalist alternative to Rust, C++, and D. Its syntax doesn't look as user-friendly as other languages on this list, but Zig seems to have a particular focus on being _safer_ than its competitors. It provides easy interoperability with C (_Compatible with C libraries with no wrapper necessary. Directly include C .h files and get access to the functions and symbols therein._) and aims at targeting as many platforms as possible.
+
+Could this be the holy grail, the true replacement of C? Only time will tell. It's way too soon to judge, but this new kid on the block is the last on this list, but one of the most promising.
+
 #### To get you started...
 
+* [Official Web Site](https://ziglang.org/)
+
+### Epilogue
+
+...And that's all, folks! Sorry if I missed your favorite language, I really am. But this is not really a competition, it's just a very opinionated article.
+
+The one thing to take away from this article, along with a bunch of links, is that _none of these languages existed_ when I wrote [the original article](/articles/10-programming-languages) 10 years ago (except for Nim of course that already existed as _Nimrod_). This is remarkable. 10 years ago people were already going crazy on the then-just-launched Hacker News and Reddit every time a new programming language popped up. 
+
+_Why bother?_ &mdash;They said. _Why did you create X when Y and Z already do the same thing?_
+
+The answer is that creating a new programming language is sometimes the best strategy to solve a problem. Apple had a problem with Objective-C and created Swift, Mozilla needed something better than C++ to create their next generation browser, some people really loved Ruby but hated its inherent slowness and created Crystal and Elixir. All these extraordinary people and companies were bold enough to bet on something _completely new_ and be successful.
+
+We are living a new Golden Age of programming language design, and we should be grateful for this diversity, not pissed off. Learning a new programming language may feel pointless sometimes, but it is always rewarding to some level... so pick one of these and try it out, you won't be disappointed.
