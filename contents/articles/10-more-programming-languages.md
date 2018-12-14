@@ -23,9 +23,11 @@ While no 1.0 has been released yet, the language is quite popular. It comes with
 #### To get you started...
 
 * [Official Web Site](https://crystal-lang.org/)
-* [Wikipedia Page](https://en.wikipedia.org/wiki/Crystal_(programming_language))
+* [Wikipedia Page][wiki-crystal]
 * [Awesome Crystal](https://github.com/veelenga/awesome-crystal)
 * [Crystal Shards - a collection of awesome Crystal libraries](https://crystalshards.xyz/)
+
+[wiki-crystal]:https://en.wikipedia.org/wiki/Crystal_(programming_language)
 
 ### Elixir
 
