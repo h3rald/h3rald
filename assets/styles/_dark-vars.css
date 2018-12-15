@@ -6,14 +6,14 @@
   --leading: 1.5rem;
   --letter-spacing: 0.05em;
 
-  --link-color: #ff6868;
-  --link-hover-color: #fe3838;
+  --link-color: #e96363;
+  --link-hover-color: #ff6e6e;
 
   --heading-text-color: #dddada;
   --primary-text-color: #c7c7c7;
   --secondary-text-color: #e0e0e0;
 
-  --primary-background: #171717;
+  --primary-background: #1e1e1e;
   --secondary-background: #262626;
 
   --success-color: #005E23;
