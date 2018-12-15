@@ -23,6 +23,7 @@ While no 1.0 has been released yet, the language is quite popular. It comes with
 #### To get you started...
 
 * [Official Web Site](https://crystal-lang.org/)
+* [Official Forum](https://forum.crystal-lang.org/)
 * [Wikipedia Page][wiki-crystal]
 * [Awesome Crystal](https://github.com/veelenga/awesome-crystal)
 * [Crystal Shards - a collection of awesome Crystal libraries](https://crystalshards.xyz/)
@@ -38,10 +39,12 @@ Over the years Elixir steadily grew in popularity, reached a version 1.0, and it
 #### To get you started...
 
 * [Official Web Site](https://elixir-lang.org/)
-* [Official learning material](https://elixir-lang.org/learning.html)
 * [Official Forum](https://elixirforum.com/)
-* [Toptal Getting Started with Elixir article](https://www.toptal.com/elixir/getting-started-elixir-programming-language)
+* [Wikipedia Page][wiki-elixir]
+* [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
 * [The hex package manager](https://hex.pm/)
+
+[wiki-elixir]:https://en.wikipedia.org/wiki/Elixir_(programming_language)
 
 ### Go
 
@@ -52,10 +55,12 @@ One example of a successful application written in Go? [Docker](https://www.dock
 #### To get you started...
 
 * [Official Web Site](https://golang.org/)
-* [dep - Dependency Management for Go](https://golang.github.io/dep/)
-* [Go By Example](https://gobyexample.com/)
+* [Official Forum](https://forum.golangbridge.org/)
+* [Wikipedia Page][wiki-go]
 * [Awesome Go](https://awesome-go.com/)
-* [Go Search](https://go-search.org/)
+* [dep - Dependency Management for Go](https://golang.github.io/dep/)
+
+[wiki-go]:https://en.wikipedia.org/wiki/Go_(programming_language)
 
 ### Julia
 
@@ -68,10 +73,12 @@ Sure, it's less mature and tooling probably is not quite comparable to Python, b
 #### To get you started...
 
 * [Official Web Site](https://julialang.org/)
-* [Official Documentation](https://docs.julialang.org/en/v1/)
 * [Official Forum](https://discourse.julialang.org/)
-* [Pkg - Julia Package Manager](https://pkg.julialang.org/)
+* [Wikipedia Page][wiki-julia]
 * [Awesome Julia](https://github.com/greister/Awesome-Julia)
+* [Pkg - Julia Package Manager](https://pkg.julialang.org/)
+
+[wiki-julia]:https://en.wikipedia.org/wiki/Julia_(programming_language)
 
 ### Kotlin
 
@@ -85,8 +92,10 @@ Although I have never been a big fan of the JVM, Kotlin is definitely one of the
 
 * [Official Web Site](https://kotlinlang.org/)
 * [Official Forum](https://discuss.kotlinlang.org/)
-* [Wikipedia Page](https://en.wikipedia.org/wiki/Kotlin_(programming_language))
+* [Wikipedia Page][wiki-kotlin]
 * [Awesome Kotlin](https://github.com/KotlinBy/awesome-kotlin)
+
+[wiki-kotlin]:https://en.wikipedia.org/wiki/Kotlin_(programming_language)
 
 ### Nim
 
@@ -101,8 +110,13 @@ Want to know something else really cool written in Nim? The open source [Nim for
 #### To get you started...
 
 * [Official Web Site](https://nim-lang.org)
-* [Wikipedia Page](https://en.wikipedia.org/wiki/Nim_(programming_language))
 * [Official Forum](https://forum.nim-lang.org/)
+* [Wikipedia Page][wiki-nim]
+* [Awesome Nim](https://github.com/VPashkov/awesome-nim)
+* [Nim Package Directory](https://nimble.directory/)
+
+[wiki-nim]:https://en.wikipedia.org/wiki/Nim_(programming_language)
+
 
 ### Rust
 
@@ -115,6 +129,7 @@ There are quite a few articles online comparing Rust to Nim and Go. These three 
 #### To get you started...
 
 * [Official Web Site](https://www.rust-lang.org/)
+* [Official Forum](https://users.rust-lang.org/)
 * [Wikipedia Page](https://en.wikipedia.org/wiki/Rust_(programming_language))
 * [Awesome Rust](https://github.com/rust-unofficial/awesome-rust)
 * [Crates - Rust Package Registry](https://crates.io/)
@@ -131,7 +146,11 @@ While definitely a step up from Objective-C from a syntax and high-level feature
 #### To get you started...
 
 * [Official Web Site](https://swift.org/)
-* [Apple Developer page on Swift](https://developer.apple.com/swift/)
+* [Official Forum](https://forums.swift.org/)
+* [Wikipedia Page][wiki-swift]
+* [Awesome Swift](https://github.com/matteocrippa/awesome-swift)
+
+[wiki-swift]:https://en.wikipedia.org/wiki/Swift_(programming_language)
 
 ### Wren
 
