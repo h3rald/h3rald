@@ -1,4 +1,3 @@
-
 /****
  * TYPOGRAPHY 
  * (perfect four ratio - 3:4)
@@ -10,321 +9,433 @@
  ****/
 
 html {
-  font-size: var(--html-font-size);
-  line-height: var(--line-height);
+    font-size: var(--html-font-size);
+    line-height: var(--line-height);
 }
 
 body {
-  font-family: 'Calendas Plus', serif;
-  -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-  -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-  -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-  font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  font-weight: 300;
-  margin: auto;
-  letter-spacing: var(--letter-spacing);
-  font-size: var(--base-font-size);
-  line-height: var(--leading);
+    font-family: 'Calendas Plus', serif;
+    -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+    -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+    -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+    font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    font-weight: 300;
+    margin: auto;
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--base-font-size);
+    line-height: var(--leading);
 }
-h1, .h1 {
-  font-size: 2.375rem;
-  line-height: calc(var(--leading) * 2);
-  margin-top: calc(var(--leading) * 1);
-  margin-bottom: calc(var(--leading) * 0);
+
+h1,
+.h1 {
+    font-size: 2.375rem;
+    line-height: calc(var(--leading) * 2);
+    margin-top: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 0);
 }
-h2, .h2 {
-  font-size: 1.75rem;
-  line-height: calc(var(--leading) * 2);
-  margin-top: calc(var(--leading) * 1);
-  margin-bottom: calc(var(--leading) * 1);
+
+h2,
+.h2 {
+    font-size: 1.75rem;
+    line-height: calc(var(--leading) * 2);
+    margin-top: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 1);
 }
-h3, .h3 {
-  font-size: 1.3125rem;
-  line-height: calc(var(--leading) * 1);
-  margin-top: calc(var(--leading) * 1);
-  margin-bottom: calc(var(--leading) * 0);
+
+h3,
+.h3 {
+    font-size: 1.3125rem;
+    line-height: calc(var(--leading) * 1);
+    margin-top: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 0);
 }
-h4, .h4 {
-  font-size: 1rem;
-  line-height: calc(var(--leading) * 1);
-  margin-top: calc(var(--leading) * 1);
-  margin-bottom: calc(var(--leading) * 0);
+
+h4,
+.h4 {
+    font-size: 1rem;
+    line-height: calc(var(--leading) * 1);
+    margin-top: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 0);
 }
-h5, .h5 {
-  font-size: 1rem;
-  line-height: calc(var(--leading) * 1);
-  margin-top: calc(var(--leading) * 1);
-  margin-bottom: calc(var(--leading) * 0);
+
+h5,
+.h5 {
+    font-size: 1rem;
+    line-height: calc(var(--leading) * 1);
+    margin-top: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 0);
 }
-p, ul, ol, pre, table, blockquote {
-  margin-top: calc(var(--leading) * 0);
-  margin-bottom: calc(var(--leading) * 1);
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+    margin-top: calc(var(--leading) * 0);
+    margin-bottom: calc(var(--leading) * 1);
 }
-ul ul, ol ol, ul ol, ol ul {
-  margin-top: calc(var(--leading) * 0);
-  margin-bottom: calc(var(--leading) * 0);
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin-top: calc(var(--leading) * 0);
+    margin-bottom: calc(var(--leading) * 0);
 }
-a, b, i, strong, em, small, code {
-  line-height: calc(var(--leading) * 0);
+
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+    line-height: calc(var(--leading) * 0);
 }
-pre, code {
-  font-family: 'Hack', monospace;  
+
+pre,
+code {
+    font-family: 'Hack', monospace;
 }
+
 code.hljs {
-  font-size: calc(var(--base-font-size) * 0.75);
-  line-height: calc(var(--leading) * 0.75);
+    font-size: calc(var(--base-font-size) * 0.75);
+    line-height: calc(var(--leading) * 0.75);
 }
-small, sub, sup, time, .panel-header, hr::before, footer {
-  font-size: calc(var(--base-font-size) * 0.75);
+
+small,
+sub,
+sup,
+time,
+.panel-header,
+hr::before,
+footer {
+    font-size: calc(var(--base-font-size) * 0.75);
 }
-sub, sup {
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
+
+sub,
 sup {
-  top: -0.5em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
+
+sup {
+    top: -0.5em;
+}
+
 sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
-.primary-subtitle, .secondary-subtitle {
-  font-style: italic;
-}
-.primary-subtitle { 
-  margin-top: calc(var(--leading) * -1);
-}
+
+.primary-subtitle,
 .secondary-subtitle {
-  margin-top: 0; 
+    font-style: italic;
 }
+
+.primary-subtitle {
+    margin-top: calc(var(--leading) * -1);
+}
+
+.secondary-subtitle {
+    margin-top: 0;
+}
+
 .leading {
-  line-height: calc(var(--leading) * 1);
-  margin-top: calc(var(--leading) * 1);
-  margin-bottom: calc(var(--leading) * 0);
+    line-height: calc(var(--leading) * 1);
+    margin-top: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 0);
 }
 
-b, strong, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .panel-title {
-  font-weight: 600;
+b,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.panel-title {
+    font-weight: 600;
 }
 
-i, em, .primary-subtitle, .secondary-subtitle, .panel-header {
-  font-family: 'Calendas Plus', serif;
-  font-style: italic;
-  -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-  -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-  -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-  font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+i,
+em,
+.primary-subtitle,
+.secondary-subtitle,
+.panel-header {
+    font-family: 'Calendas Plus', serif;
+    font-style: italic;
+    -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Calendas Plus', serif;  
-  font-style: normal;
-  -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-  -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-  -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-  font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Calendas Plus', serif;
+    font-style: normal;
+    -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
+
+.body-text {
+    margin-left: 2rem;
+}
+
+.home-content .body-text {
+    margin-left: 0;
+}
+
+.body-text h1,
+.body-text h2,
+.body-text h3,
+.body-text h4,
+.body-text h5,
+.body-text h6 {
+    margin-left: -2rem;
+}
+
 a {
-  text-decoration: none;
-  display: inline;
+    text-decoration: none;
+    display: inline;
 }
+
 .content {
-  padding: 0 calc(var(--leading) * 0.5);
-  padding-bottom: calc(var(--leading) * 0.25);
+    padding: 0 calc(var(--leading) * 0.5);
+    padding-bottom: calc(var(--leading) * 0.25);
 }
+
 .container-fluid {
-  padding: 0 calc(var(--leading) * 0.5);
+    padding: 0 calc(var(--leading) * 0.5);
 }
 
 time {
-  text-align: right;
-  display: block;
+    text-align: right;
+    display: block;
 }
 
-
 .sidebar header {
-  text-align: center;  
+    text-align: center;
 }
 
 #theme-switcher {
-  font-style: italic;  
-  cursor: pointer;
+    font-style: italic;
+    cursor: pointer;
 }
 
 .main-header h1 {
-  margin-top: 0.1em;  
+    margin-top: 0.1em;
 }
 
 .logo {
-  margin: auto;
-  display:block;
-  margin-left:20px; /* Fix for incorrect font alignment */
+    margin: auto;
+    display: block;
+    margin-left: 20px;
+    /* Fix for incorrect font alignment */
 }
 
 a.logo {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 hr {
-  border: none;  
-  margin: 0;
+    border: none;
+    margin: 0;
 }
 
 hr::before {
-  content: '\2042'; 
-  display:block;
-  text-align: center;
+    content: '\1F65E\00A0\00A0\2042\00A0\00A0\1F65C';
+    font-size: 1rem;
+    display: block;
+    text-align: center;
 }
 
 .card:last-child .card-footer::after {
-  content: none;  
+    content: none;
 }
 
 .card-footer {
-  text-align: center;
-  margin: auto;
+    text-align: center;
+    margin: auto;
 }
 
 .label {
-  padding: calc(var(--leading) * 0.15);
-  border-radius: 4px;
+    padding: calc(var(--leading) * 0.15);
+    border-radius: 4px;
 }
 
 .card-footer .action::after {
-  content: '\00B7';
+    content: '\00B7';
 }
 
 .card-footer .action:last-child::after {
-  content: none;  
+    content: none;
 }
 
 .panel {
-  margin-top: calc(var(--leading) * 1);  
+    margin-top: calc(var(--leading) * 1);
 }
 
 .panel-header {
-  text-align: right;  
+    text-align: right;
 }
 
 .panel-body {
-  margin-top: calc(var(--leading) * -1);  
+    margin-top: calc(var(--leading) * -1);
 }
 
 .panel-body header {
-  text-align: left;  
+    text-align: left;
 }
 
-footer, .badges {
-  text-align: center;  
+footer,
+.badges {
+    text-align: center;
 }
 
 ul.inline {
-  padding-left: 0;  
+    padding-left: 0;
 }
 
 ul.inline li {
-  display: inline;  
+    display: inline;
 }
 
-footer p, footer ul.inline, .secondary-subtitle {
-  margin-bottom: calc(var(--leading) * 0);  
+footer p,
+footer ul.inline,
+.secondary-subtitle {
+    margin-bottom: calc(var(--leading) * 0);
 }
 
 footer .h3rald {
-  font-size: 0.85rem; /* Compensate */
-  vertical-align: text-bottom;
+    font-size: 0.85rem;
+    /* Compensate */
+    vertical-align: text-bottom;
 }
 
 .clearfix {
-  clear: both;  
+    clear: both;
 }
 
 img {
-  max-width: 100%;  
+    max-width: 100%;
 }
 
-pre code, img {
-  border-radius: 4px;
+pre code,
+img {
+    border-radius: 4px;
 }
-
-
 
 /*****
  * THEME
  *****/
 
 body {
-  background: var(--primary-background);
-  color: var(--primary-text-color);
+    background: var(--primary-background);
+    color: var(--primary-text-color);
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5 {
-  color: var(--heading-text-color);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    color: var(--heading-text-color);
 }
 
 .primary-subtitle {
-  color: var(secondary-text-color);  
+    color: var(secondary-text-color);
 }
 
-a, a:visited {
-  color: var(--link-color);
+a,
+a:visited {
+    color: var(--link-color);
 }
 
 a:hover {
-  color: var(--link-hover-color);  
+    color: var(--link-hover-color);
 }
 
 .content {
-  background: var(--primary-background);
-  color: var(--primary-text-color);
+    background: var(--primary-background);
+    color: var(--primary-text-color);
 }
 
-.main, .sidebar, .sidebar .content {
-  background: var(--primary-background);
-  color: var(--primary-text-color);
+.main,
+.sidebar,
+.sidebar .content {
+    background: var(--primary-background);
+    color: var(--primary-text-color);
 }
 
-.sidebar a, .sidebar a:visited {
-  color: var(--link-color);
+.sidebar a,
+.sidebar a:visited {
+    color: var(--link-color);
 }
 
 .sidebar a:hover {
-  color: var(--link-hover-color);  
+    color: var(--link-hover-color);
 }
 
-a.logo, a.logo:visited, a.logo:hover {
-  color: var(--heading-text-color);
+a.logo,
+a.logo:visited,
+a.logo:hover {
+    color: var(--heading-text-color);
 }
 
-.sidebar hr, .main hr, .panel-header {
-  color: var(--secondary-text-color);
+.sidebar hr,
+.main hr,
+.panel-header {
+    color: var(--secondary-text-color);
 }
 
 .label {
-  color: var(--heading-text-color);
-  font-variant: small-caps;
+    color: var(--heading-text-color);
+    font-variant: small-caps;
 }
 
 .label-success {
-  background: var(--success-color);  
+    background: var(--success-color);
 }
 
 .label-warning {
-  background: var(--warning-color);  
+    background: var(--warning-color);
 }
 
 .label-error {
-  background: var(--error-color);  
+    background: var(--error-color);
 }
 
-code, pre {
-  background-color: var(--secondary-background);
+code,
+pre {
+    background-color: var(--secondary-background);
 }
 
-pre code, img {
-  border: 1px solid var(--secondary-background);
+pre code,
+img {
+    border: 1px solid var(--secondary-background);
 }
