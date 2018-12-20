@@ -211,6 +211,7 @@ h5 {
 .body-text h5,
 .body-text h6 {
     margin-left: -2rem;
+    margin-bottom: 0.8rem;
 }
 
 a {
@@ -262,8 +263,8 @@ hr {
 }
 
 hr::before {
-    content: '\1F65E\00A0\00A0\2042\00A0\00A0\1F65C';
-    font-size: 1rem;
+    content: '*\00A0\00A0*\00A0\00A0*';
+    font-size: 1.5rem;
     display: block;
     text-align: center;
 }
