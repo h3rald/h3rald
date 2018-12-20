@@ -43,7 +43,7 @@ h2,
     font-size: 1.75rem;
     line-height: calc(var(--leading) * 2);
     margin-top: calc(var(--leading) * 1);
-    margin-bottom: calc(var(--leading) * 1);
+    margin-bottom: calc(var(--leading) * 0.5);
 }
 
 h3,
@@ -51,7 +51,7 @@ h3,
     font-size: 1.3125rem;
     line-height: calc(var(--leading) * 1);
     margin-top: calc(var(--leading) * 1);
-    margin-bottom: calc(var(--leading) * 0);
+    margin-bottom: calc(var(--leading) * 0.5);
 }
 
 h4,
@@ -59,7 +59,7 @@ h4,
     font-size: 1rem;
     line-height: calc(var(--leading) * 1);
     margin-top: calc(var(--leading) * 1);
-    margin-bottom: calc(var(--leading) * 0);
+    margin-bottom: calc(var(--leading) * 0.5);
 }
 
 h5,
@@ -67,7 +67,7 @@ h5,
     font-size: 1rem;
     line-height: calc(var(--leading) * 1);
     margin-top: calc(var(--leading) * 1);
-    margin-bottom: calc(var(--leading) * 0);
+    margin-bottom: calc(var(--leading) * 0.5);
 }
 
 p,

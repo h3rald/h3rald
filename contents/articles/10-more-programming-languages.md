@@ -4,7 +4,6 @@ title: "10 more programming languages worth checking out"
 subtitle: "Another look at 10 non-mainstream programming languages, 10 years later"
 content-type: article
 timestamp: 1545358888
-draft: true
 -----
 
 It has been exactly 10 years today since I published my [10 programming languages worth checking out](/articles/10-programming-languages) article on this web site. 
@@ -13,6 +12,8 @@ I thought about writing another similar article for a long time, but at first I 
 
 The following 10 sections are devoted to 10 different programming languages. They are not numbered and they are presented in alphabetical order, because there's no winner in this list. Also, the number of people actively using these languages varies quite a lot, but none of these can be considered, at the time of writing, a _mainstream_ programming language like JavaScript, C, C++, Python or Ruby.
 
+For each language, I included a brief overview, an example implementation of a _quicksort_ algorithm (in most cases adapted from [RosettaCode](https://rosettacode.org/wiki/Sorting_algorithms/Quicksort)), and a collection of links to get started.
+
 <hr />
 
 ### Crystal
@@ -20,6 +21,17 @@ The following 10 sections are devoted to 10 different programming languages. The
 _Fast as C, slick as Ruby_ &mdash; it pretty much sums it up. Crystal was first released in 2014 as Ruby-like programming language but backed by [LLVM](https://llvm.org/), so compiled and inherently (much) faster than its popular, more-colorful ancestor.
 
 While no 1.0 has been released yet, the language is quite popular. It comes with a [web framework](https://amberframework.org/), it has been used to create [games](https://medium.com/@alanwillms/you-should-write-your-next-game-with-crystal-f27306b63e3d), and someone even calls it [the most promising programming language of 2018](https://medium.com/@DuroSoft/why-crystal-is-the-most-promising-programming-language-of-2018-aad669d8344f). It is not backed by a big companies like some of the languages on this list, but it could be a good thing, after all.
+
+#### Example Quicksort Implementation
+
+```
+def quick_sort(a : Array(Int32)) : Array(Int32)
+  return a if a.size <= 1
+  p = a[0]
+  lt, rt = a[1 .. -1].partition { |x| x < p }
+  return quick_sort(lt) + [p] + quick_sort(rt)
+end
+```
 
 #### To get you started...
 
@@ -37,6 +49,18 @@ Elixir came about in 2011, as an effort to bring more extensibility, metaprogram
 
 Over the years Elixir steadily grew in popularity, reached a version 1.0, and it now provides really comprehensive documentation, a friendly community and a rich ecosystem of packages. Also, if you are looking for a Rails/Django/Express equivalent, the [Phoenix](https://phoenixframework.org/) framework has been used successfully in [many projects](https://medium.com/aviabird/10-amazing-open-source-elixir-phoenix-apps-e2c52ee25053).
 
+#### Example Quicksort Implementation
+
+```
+defmodule Sort do
+  def qsort([]), do: []
+  def qsort([h | t]) do
+    {lesser, greater} = Enum.split_with(t, &(&1 < h))
+    qsort(lesser) ++ [h] ++ qsort(greater)
+  end
+end
+```
+
 #### To get you started...
 
 * [Official Web Site](https://elixir-lang.org/)
@@ -52,6 +76,52 @@ Over the years Elixir steadily grew in popularity, reached a version 1.0, and it
 One of the most significant trends in the last 10 years is big companies creating and sponsoring their own programming languages. In 2009, Google created Go as a more modern substitute to C and C++. It provides [structural typing](https://en.wikipedia.org/wiki/Structural_type_system), memory safety, multi-paradigm support, high performance and concurrency, but also a friendlier syntax.
 
 One example of a successful application written in Go? [Docker](https://www.docker.com/) of course, and [Kubernetes](https://kubernetes.io/) as well. But over the years Go has been used successfully to build almost anything, from web frameworks like [Revel](http://revel.github.io/), data stores like [InfluxDb](https://github.com/influxdata/influxdb) and static site generators like [Hugo](https://gohugo.io/).
+
+#### Example Quicksort Implementation
+
+```
+package main
+ 
+import (
+    "fmt"
+    "sort"
+    "math/rand"
+)
+ 
+func partition(a sort.Interface, first int, last int, pivotIndex int) int {
+    a.Swap(first, pivotIndex) // move it to beginning
+    left := first+1
+    right := last
+    for left <= right {
+        for left <= last && a.Less(left, first) {
+            left++
+        }
+        for right >= first && a.Less(first, right) {
+            right--
+        }
+        if left <= right {
+            a.Swap(left, right)
+            left++
+            right--
+        }
+    }
+    a.Swap(first, right) // swap into right place
+    return right    
+}
+ 
+func quicksortHelper(a sort.Interface, first int, last int) {
+    if first >= last {
+        return
+    }
+    pivotIndex := partition(a, first, last, rand.Intn(last - first + 1) + first)
+    quicksortHelper(a, first, pivotIndex-1)
+    quicksortHelper(a, pivotIndex+1, last)
+}
+ 
+func quicksort(a sort.Interface) {
+    quicksortHelper(a, 0, a.Len()-1)
+}
+```
 
 #### To get you started...
 
@@ -71,6 +141,33 @@ Perhaps among the most specialized programming languages in this list, Julia exc
 
 Sure, it's less mature and tooling probably is not quite comparable to Python, but over the years it is slowly gaining some momentum, especially after its 1.0 release. Also, the fact that it has FFIs to C, Fortran, Python, R and Java could probably tempt more scientists into a more step-by-step adoption.
 
+#### Example Quicksort Implementation
+
+```
+function quicksort!(A,i=1,j=length(A))
+    if j > i
+        pivot = A[rand(i:j)] # random element of A
+        left, right = i, j
+        while left <= right
+            while A[left] < pivot
+                left += 1
+            end
+            while A[right] > pivot
+                right -= 1
+            end
+            if left <= right
+                A[left], A[right] = A[right], A[left]
+                left += 1
+                right -= 1
+            end
+        end
+        quicksort!(A,i,right)
+        quicksort!(A,left,j)
+    end
+    return A
+end
+```
+
 #### To get you started...
 
 * [Official Web Site](https://julialang.org/)
@@ -88,6 +185,21 @@ Born in 2011, Kotlin was originally JetBrains' attempt to create a language with
 Quite a few high-profile Android apps [have been migrated to Kotlin](https://appinventiv.com/blog/apps-migrated-from-java-to-kotlin) over the years, reporting various benefits ranging from being much more concise, safer and overall more maintainable than Java code. Besides JetBrains, a few startups and companies are reportedly using Kotlin in production, such as Basecamp, Square, and Pinterest.
 
 Although I have never been a big fan of the JVM, Kotlin is definitely one of the most innovative and trending languages running on it nowadays, and perhaps more well-known than its comparable contenders, like [Ceylon](https://ceylon-lang.org/) and [Xtend](https://www.eclipse.org/xtend/), the so-called _second generation_ JVM languages.
+
+#### Example Quicksort Implementation
+
+```
+fun <T : Comparable<T>> quicksort(list: List<T>): List<T> {
+    if (list.isEmpty()) return emptyList()
+ 
+    val head = list.first()
+    val tail = list.takeLast(list.size - 1)
+ 
+    val (less, high) = tail.partition { it < head }
+ 
+    return less + head + high
+}
+```
 
 #### To get you started...
 
@@ -108,6 +220,30 @@ Although currently at version 0.19.0, Nim is quite stable and can be used in pro
 
 Want to know something else really cool written in Nim? The open source [Nim forum engine](https://github.com/nim-lang/nimforum) which is based on the [Karax](https://github.com/pragmagic/karax) SPA framework and the [Jester](https://github.com/dom96/jester) web server.
 
+#### Example Quicksort Implementation
+
+```
+proc quickSort[T](a: var openarray[T], inl = 0, inr = -1) =
+  var r = if inr >= 0: inr else: a.high
+  var l = inl
+  let n = r - l + 1
+  if n < 2: return
+  let p = a[l + 3 * n div 4]
+  while l <= r:
+    if a[l] < p:
+      inc l
+      continue
+    if a[r] > p:
+      dec r
+      continue
+    if l <= r:
+      swap a[l], a[r]
+      inc l
+      dec r
+  quickSort(a, inl, r)
+  quickSort(a, l, inr)
+```
+
 #### To get you started...
 
 * [Official Web Site](https://nim-lang.org)
@@ -127,6 +263,41 @@ After 8 years, portions of Firefox, Dropbox and Cloudflare are written in Rust, 
 
 There are quite a few articles online comparing Rust to Nim and Go. These three language are somewhat in the same space, being at least born as system programming languages. If you read these articles you'll see an almost equal percentage of wins and losses... there are pros and cons as in everything: Nim has the smallest community, Go probably the biggest; Nim syntax is practically Python, Go's is pretty easy as well, while Rust seems syntactically the closes to C/C++, and also arguably the most complex. But again, your mileage may vary.
 
+#### Example Quicksort Implementation
+
+```
+fn quick_sort<T,F>(v: &mut [T], f: &F) 
+    where F: Fn(&T,&T) -> bool
+{
+    let len = v.len();
+    if len >= 2 {
+        let pivot_index = partition(v, f);
+        quick_sort(&mut v[0..pivot_index], f);
+        quick_sort(&mut v[pivot_index + 1..len], f);
+    }
+}
+ 
+fn partition<T,F>(v: &mut [T], f: &F) -> usize 
+    where F: Fn(&T,&T) -> bool
+{
+    let len = v.len();
+    let pivot_index = len / 2;
+ 
+    v.swap(pivot_index, len - 1);
+ 
+    let mut store_index = 0;
+    for i in 0..len - 1 {
+        if f(&v[i], &v[len - 1]) {
+            v.swap(i, store_index);
+            store_index += 1;
+        }
+    }
+ 
+    v.swap(store_index, len - 1);
+    store_index
+}
+```
+
 #### To get you started...
 
 * [Official Web Site](https://www.rust-lang.org/)
@@ -143,6 +314,22 @@ Swift is Apple's answer to the prayers of many iOS app developers complaining th
 Similarly, it doesn't run on Windows but only on Unixes (Darwin/Linux/FreeBSD), but typically 90% of its users are going to program in Swift using XCode on their macOS machine.
 
 While definitely a step up from Objective-C from a syntax and high-level features point of view, unlike other languages on this list its niche is pretty much mobile apps, or better, iOS apps. If I were to develop an iOS app, I'd probably pick Swift as well.
+
+#### Example Quicksort Implementation
+
+```
+func quicksort<T where T : Comparable>(inout elements: [T], range: Range<Int>) {
+  if (range.endIndex - range.startIndex > 1) {
+    let pivotIndex = partition(&elements, range)
+    quicksort(&elements, range.startIndex ..< pivotIndex)
+    quicksort(&elements, pivotIndex+1 ..< range.endIndex)
+  }
+}
+ 
+func quicksort<T where T : Comparable>(inout elements: [T]) {
+  quicksort(&elements, indices(elements))
+}
+```
 
 #### To get you started...
 
@@ -163,6 +350,12 @@ Of course it cannot be compared of behemoths like Rust or Go, it's a tiny little
 
 You won't use it for writing your next mission-critical, life-saving piece of software, but if you want a modern, advanced, easy to learn, pleasant to write scripting language for your next project, look no further: give Wren a shot. Yes sure, [Lua](https://www.lua.org/) is probably dominating this space, but what the hell, there's no harm in trying something new, right?
 
+#### Example Quicksort Implementation
+
+```
+
+```
+
 #### To get you started...
 
 * [Official Web Site](http://wren.io/)
@@ -174,6 +367,12 @@ Slightly more mainstream then Wren, Zig was born in 2016 and it hit its 0.3.0 re
 It is essentially a much smaller, more minimalist alternative to Rust, C++, and D. Its syntax doesn't look as user-friendly as other languages on this list, but Zig seems to have a particular focus on being _safer_ than its competitors. It provides easy interoperability with C (_Compatible with C libraries with no wrapper necessary. Directly include C .h files and get access to the functions and symbols therein._) and aims at targeting as many platforms as possible.
 
 Could this be the holy grail, the true replacement of C? Only time will tell. It's way too soon to judge, but this new kid on the block is the last on this list, but one of the most promising.
+
+#### Example Quicksort Implementation
+
+```
+
+```
 
 #### To get you started...
 
