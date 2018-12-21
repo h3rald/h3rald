@@ -368,4 +368,4 @@ _Why bother?_ &mdash;They said. _Why did you create X when Y and Z already do th
 
 The answer is that creating a new programming language is sometimes the best strategy to solve a problem. Apple had a problem with Objective-C and created Swift, Mozilla needed something better than C++ to create their next generation browser, some people really loved Ruby but hated its inherent slowness and created Crystal and Elixir. All these extraordinary people and companies were bold enough to bet on something _completely new_ and be (relatively) successful.
 
-We are living a new Golden Age of programming language design, and we should be grateful for this diversity, not pissed off. Learning a new programming language may feel pointless sometimes, but it is always rewarding to some level... so pick one of these and try it out, you won't be disappointed!ù
+We are living a new Golden Age of programming language design, and we should be grateful for this diversity, not pissed off. Learning a new programming language may feel pointless sometimes, but it is always rewarding to some level... so pick one of these and try it out, you won't be disappointed!
