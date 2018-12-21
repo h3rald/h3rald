@@ -41,6 +41,39 @@ end
 
 #### To get you started...
 
+* [Official Web Site](https://crystal-lang.org/)
+* [Official Forum](https://forum.crystal-lang.org/)
+* [Wikipedia Page][wiki-crystal]
+* [Awesome Crystal](https://github.com/veelenga/awesome-crystal)
+* [Crystal Shards - a collection of awesome Crystal libraries](https://crystalshards.xyz/)
+
+[wiki-crystal]:https://en.wikipedia.org/wiki/Crystal_(programming_language)
+
+### Elixir
+
+Elixir came about in 2011 as an effort to bring more extensibility, metaprogramming and a more [Ruby](https://www.ruby-lang.org/en/)-esque syntax to the [Erlang](https://www.erlang.org/) world. If you are already in love Ruby, but you'd like a little bit more oomph, you'll love Elixir: it runs on top of the Erlang virtual machine but it looks and feels like Ruby. 
+
+Over the years Elixir steadily grew in popularity, reached a version 1.0, and it now provides really comprehensive documentation, a friendly community and a rich ecosystem of packages. Also, if you are looking for a Rails/Django/Express equivalent, the [Phoenix](https://phoenixframework.org/) framework has been used successfully in [many projects](https://medium.com/aviabird/10-amazing-open-source-elixir-phoenix-apps-e2c52ee25053).
+
+Elixir is also considered a first-class citizen within the Erlang community: if you visit [hex.pm](https://hex.pm/), the title says _the package manager for the Erlang ecosystem_ and it tells you right away how to specify dependencies with Elixir and Erlang. 
+
+If you always wanted to try out Erlang but never did because its syntax scared you, then Elixir can definitely help.
+
+#### Example FizzBuzz Implementation
+
+```
+1..100 |> Enum.map(fn i ->
+  cond do
+    rem(i,3*5) == 0 -> "FizzBuzz"
+    rem(i,3) == 0   -> "Fizz"
+    rem(i,5) == 0   -> "Buzz"
+    true            -> i
+  end
+end) |> Enum.each(fn i -> IO.puts i end)
+```
+
+#### To get you started...
+
 * [Official Web Site](https://elixir-lang.org/)
 * [Official Forum](https://elixirforum.com/)
 * [Wikipedia Page][wiki-elixir]
