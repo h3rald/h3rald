@@ -19,5 +19,4 @@
     }
     themeSwitcher.addEventListener('click', switchTheme);
   });
-
 })(window)
