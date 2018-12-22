@@ -334,25 +334,24 @@ Could this be the holy grail, the true replacement of C? Only time will tell. It
 #### Example FizzBuzz Implementation
 
 ```
-fn fizzbuzz(n: usize) -> []u8 {
-    var result: var = []u8{};
-    {var i: usize = 1; while (i <= 100; i += 1) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            result = result ++ "FizzBuzz\n";
+const std = @import("std");
+
+pub fn main() void {
+    var i: usize = 1;
+    while (i <= 100) : (i += 1) {
+        if (i % 3 == 0 and i % 5 == 0) {
+            std.debug.warn("FizzBuzz\n");
         } else if (i % 3 == 0) {
-            result = result ++ "Fizz\n";
+            std.debug.warn("Fizz\n");
         } else if (i % 5 == 0) {
-            result = result ++ "Buzz\n";
+            std.debug.warn("Buzz\n");
         } else {
-            var buf: [20]u8 = undefined;
-            const len = io.buf_print_unsigned(usize, buf[0...], i);
-            result = result ++ buf[0...len] ++ "\n";
+            std.debug.warn("{}\n", i);
         }
-    }}
-    return result;
+    }
 }
 ```
-_(adapted from [this gist](https://gist.github.com/andrewrk/6780fa252b693169897686e907c9da2a) by Andrew Kelly)_
+_(updated based on [this Reddit comment](https://www.reddit.com/r/programming/comments/a8cbm6/comment/ecapcf5?st=JPZF7J15&sh=1ae81c06))_
 
 #### To get you started...
 
