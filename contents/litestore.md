@@ -24,10 +24,7 @@ LiteStore is:
 
 * [macOS (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_macosx_x64.zip)
 * [Linux (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_x64.zip)
-* [Linux (x86)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_x86.zip)
-* [Linux (ARM)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_arm.zip)
 * [Windows (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_windows_x64.zip)
-* [Windows (x86)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_windows_x86.zip)
 
 ### Resources
 
