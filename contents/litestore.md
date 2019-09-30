@@ -5,11 +5,17 @@ github: litestore
 home: /litestore/
 active: true
 docs: /litestore/LiteStore_UserGuide.htm
-version: 1.5.0
+version: 1.5.1
 subtitle: "A tiny NoSQL database for rapid prototyping"
 summary: "A lightweight, self-contained, RESTful, multi-format NoSQL document store server written in Nim and powered by a SQLite backend for storage."
 download: "https://github.com/h3rald/litestore/releases/download/"
 -----
+
+{{$docs}}
+{{$download}} -- download
+
+{{$github}}  -- github
+
 
 LiteStore is a lightweight, self-contained, RESTful, multi-format NoSQL document store server written in [Nim](http://nim-lang.org) and powered by a [SQLite](http://www.sqlite.org)" backend for storage. It aims to be a very simple and lightweight backend ideal for prototyping and testing REST APIs and client-side, single-page applications. 
 
