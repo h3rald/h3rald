@@ -11,12 +11,6 @@ summary: "A lightweight, self-contained, RESTful, multi-format NoSQL document st
 download: "https://github.com/h3rald/litestore/releases/download/"
 -----
 
-{{$docs}}
-{{$download}} -- download
-
-{{$github}}  -- github
-
-
 LiteStore is a lightweight, self-contained, RESTful, multi-format NoSQL document store server written in [Nim](http://nim-lang.org) and powered by a [SQLite](http://www.sqlite.org)" backend for storage. It aims to be a very simple and lightweight backend ideal for prototyping and testing REST APIs and client-side, single-page applications. 
 
 LiteStore is:
