@@ -5527,6 +5527,7 @@ pre code {
    </li>
   </ul>
   </li>
+  <li><a href="#Authorization">Authorization</a></li>
   <li><a href="#Administration-App">Administration App</a>
   <ul>
    <li><a href="#Obtaining-and-Running-the-Administration-App">Obtaining and Running the Administration App</a>
@@ -6008,9 +6009,9 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.1litestore_1.5.1_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.1/litestore_1.5.1_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.5.1/litestore_1.5.1_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.6.0litestore_1.6.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.6.0/litestore_1.6.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.6.0/litestore_1.6.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
 </ul>
 
 
@@ -6041,7 +6042,7 @@ pre code {
 <p>To get the app up and running (assuming that you have the <span class="cmd">litestore</span> executable in your path):</p>
 
 <ol>
-<li>Download the default <a href="https://github.com/h3rald/litestore/releases/download/1.5.1/data.db">data.db</a> file. This file is a LiteStore data store file containing the sample app.</li>
+<li>Download the default <a href="https://github.com/h3rald/litestore/releases/download/1.6.0/data.db">data.db</a> file. This file is a LiteStore data store file containing the sample app.</li>
 <li>Go to the local directory in which you downloaded the <span class="cmd">data.db</span> file.</li>
 <li>Run <span class="cmd">litestore -s:data.db</span></li>
 <li>Go to <a href="http://localhost:9500/docs/admin/index.html">localhost:9500/docs/admin/index.html</a>.</li>
@@ -6075,6 +6076,7 @@ pre code {
 
 <ul>
 <li><strong>-a</strong>, <strong>--address</strong> &mdash; Specify server address (default: 127.0.0.1).</li>
+<li><strong>&ndash;auth</strong> &mdash; Specify an authorization configuration file.</li>
 <li><strong>-b</strong>, <strong>&ndash;body</strong> &mdash; Specify a string containing input data for an operation to be executed.</li>
 <li><strong>-d</strong>, <strong>--directory</strong> &mdash; Specify a directory to serve, import, export, delete, or mount.</li>
 <li><strong>-f</strong>, <strong>&ndash;file</strong> &mdash; Specify a file containing input data for an operation to be executed.</li>
@@ -6162,6 +6164,49 @@ pre code {
 <p><span class="cmd">litestore execute -o:put -u:docs/test-doc -f:test.json -t:application/json</span></p></li>
 </ul>
 
+
+<a name="Authorization"></a>
+<h2>Authorization<a href="#document-top" title="Go to top"></a></h2>
+
+<p>LiteStore can be configured to automatically validate <a href="https://jwt.io/">JWT</a> tokens and authorize authenticated users on specific resources (and specific resource verbs even) based on their <a href="https://oauth.net/2/scope/">OAuth2 scopes</a> specified in the token itself.</p>
+
+<p>To configure authorization, create an <strong>auth.json</strong> file like the following:</p>
+
+<pre><code>{
+  "access": {
+    "/info": {
+      "GET": ["admin:server"]
+    }, 
+    "/docs/*": {
+      "POST": ["admin:server"],
+      "PATCH": ["admin:server"],
+      "PUT": ["admin:server"],
+      "DELETE": ["admin:server"]
+    },
+    "/docs/wiki/*": {
+      "POST": ["admin:wiki"],
+      "PUT": ["admin:wiki"],
+      "PATCH": ["admin:wiki"],
+      "DELETE": ["admin:wiki"]
+    }
+  },
+  "signature": "\n-----BEGIN CERTIFICATE-----\n&lt;certificate text goes here&gt;\n-----END CERTIFICATE-----\n"
+}
+</code></pre>
+
+<p>The <strong>access</strong> property is a dictionary of endpoints to which only users that have one of the specified scopes can access.</p>
+
+<p>For example, in this case only users with the <strong>admin:server</strong> scope will be able to access /info, and any /docs/ document.</p>
+
+<p>However, users with the <strong>admin:wiki</strong> scope will be able to access documents located under the /docs/wiki/ folder.</p>
+
+<p>Finally, specify the public signature to be used to validate JWT tokens using the <strong>signature</strong> property. Typically, its value should be set to the first value of the <a href="https://auth0.com/docs/tokens/reference/jwt/jwks-properties">x.509 certificate chain</a> specified in the <a href="https://auth0.com/docs/jwks">JSON Web Key Set</a> of your API.</p>
+
+<p>To use this configuration at runtime, specify it through the <strong>&ndash;auth</strong> option, like this:</p>
+
+<p><code>litestore --auth:auth.json</code></p>
+
+<p>Once enabled, LiteStore will return HTTP 401 error codes if an invalid token or no token is included in the HTTP Authorization header of the request accessing the resource or HTTP 403 error codes in case an authenticated user does not have a valid scope to access a specified resource.</p>
 
 <a name="Administration-App"></a>
 <h2>Administration App<a href="#document-top" title="Go to top"></a></h2>
@@ -7533,7 +7578,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; September 30, 2019</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; December 29, 2019</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
