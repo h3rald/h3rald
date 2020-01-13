@@ -5463,9 +5463,10 @@ pre code {
    <ul>
     <li><a href="#Multi-format-Documents">Multi-format Documents</a></li>
     <li><a href="#Document-Tagging">Document Tagging</a></li>
-    <li><a href="#Enhanced-Querying-of-JSON-documents">Enhanced Querying of JSON documents</a></li>
+    <li><a href="#Enhanced-Querying-and-Indexing-of-JSON-documents">Enhanced Querying and Indexing of JSON documents</a></li>
     <li><a href="#Full-text-Search">Full-text Search</a></li>
     <li><a href="#RESTful-HTTP-API">RESTful HTTP API</a></li>
+    <li><a href="#Authorization">Authorization</a></li>
     <li><a href="#Nim-API">Nim API</a></li>
     <li><a href="#Command-line-API">Command-line API</a></li>
     <li><a href="#Directory-Bulk-Import/Export">Directory Bulk Import/Export</a></li>
@@ -5686,10 +5687,48 @@ pre code {
     <li><a href="#GET-tags">GET tags</a>
     <ul>
      <li><a href="#<code>like</code>-option"><code>like</code> option</a></li>
+     <li><a href="#<code>limit</code>-and-<code>offset</code>-options"><code>limit</code> and <code>offset</code> options</a></li>
      <li><a href="#Example">Example</a></li>
     </ul>
     </li>
     <li><a href="#GET-tags/:id">GET tags/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a>
+</li>
+    </ul>
+    </li>
+   </ul>
+   </li>
+   <li><a href="#indexes-(LiteStore-Indexes)">indexes (LiteStore Indexes)</a>
+   <ul>
+    <li><a href="#OPTIONS-indexes">OPTIONS indexes</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-indexes/:id">OPTIONS indexes/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-indexes">GET indexes</a>
+    <ul>
+     <li><a href="#<code>like</code>-option"><code>like</code> option</a></li>
+     <li><a href="#<code>limit</code>-and-<code>offset</code>-options"><code>limit</code> and <code>offset</code> options</a></li>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-indexes/:id">GET indexes/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#PUT-indexes/:id">PUT indexes/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#DELETE-indexes/:id">DELETE indexes/:id</a>
     <ul>
      <li><a href="#Example">Example</a>
 </li>
@@ -5840,8 +5879,8 @@ pre code {
 
 <p>You can add custom tags to documents to easily categorize them and retrieve them. Some system tags are also added automatically to identify the document content type, format and collection.</p>
 
-<a name="Enhanced-Querying-of-JSON-documents"></a>
-<h4>Enhanced Querying of JSON documents<a href="#document-top" title="Go to top"></a></h4>
+<a name="Enhanced-Querying-and-Indexing-of-JSON-documents"></a>
+<h4>Enhanced Querying and Indexing of JSON documents<a href="#document-top" title="Go to top"></a></h4>
 
 <p>By leveraging the <a href="https://www.sqlite.org/json1.html">SQLite JSON1 extension</a> and implementing custom query string parsing, LiteStore provides enhanced filtering, ordering, and custom field selection of JSON documents.</p>
 
@@ -5854,6 +5893,11 @@ pre code {
 <h4>RESTful HTTP API<a href="#document-top" title="Go to top"></a></h4>
 
 <p>Every operation can be performed on the data store using a simple but powerful RESTful HTTP API, perfect for client-side, single-page applications.</p>
+
+<a name="Authorization"></a>
+<h4>Authorization<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Optionally, you can configure per-resource authorization by validating <a href="https://jwt.io/">JWT</a> tokens and checking <a href="https://oauth.net/2/scope/">Oauth2 Scopes</a></p>
 
 <a name="Nim-API"></a>
 <h4>Nim API<a href="#document-top" title="Go to top"></a></h4>
@@ -6009,9 +6053,9 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.6.0litestore_1.6.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.6.0/litestore_1.6.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.6.0/litestore_1.6.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.7.0litestore_1.7.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.7.0/litestore_1.7.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.7.0/litestore_1.7.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
 </ul>
 
 
@@ -6042,7 +6086,7 @@ pre code {
 <p>To get the app up and running (assuming that you have the <span class="cmd">litestore</span> executable in your path):</p>
 
 <ol>
-<li>Download the default <a href="https://github.com/h3rald/litestore/releases/download/1.6.0/data.db">data.db</a> file. This file is a LiteStore data store file containing the sample app.</li>
+<li>Download the default <a href="https://github.com/h3rald/litestore/releases/download/1.7.0/data.db">data.db</a> file. This file is a LiteStore data store file containing the sample app.</li>
 <li>Go to the local directory in which you downloaded the <span class="cmd">data.db</span> file.</li>
 <li>Run <span class="cmd">litestore -s:data.db</span></li>
 <li>Go to <a href="http://localhost:9500/docs/admin/index.html">localhost:9500/docs/admin/index.html</a>.</li>
@@ -6675,10 +6719,14 @@ Server: LiteStore/1.0.3
 
 <ul>
 <li>A path expression indicating a field or array item within the JSON document.</li>
-<li>One operator among the following: eq, not eq, gt, gte, lt, lte, contains.</li>
+<li>One operator among the following: eq, not eq, gt, gte, lt, lte, contains, and like.</li>
 <li>A value that can be a number, string, <strong>true</strong>, <strong>false</strong> or <strong>nil</strong></li>
 </ul>
 
+
+<div class="note"><p>API v5 Required</p>
+
+<p>Support for the <strong>like</strong> operator has been added in version 5 of the LiteStore API.</p></div>
 
 <div class="warning"><p>Limitations</p>
 
@@ -6694,6 +6742,7 @@ Server: LiteStore/1.0.3
 <ul>
 <li>http://127.0.0.1:9500/docs/?filter=$.age%20gte%2018%20or%20$.skills%20contains%20"maths"</li>
 <li>http://127.0.0.1:9500/docs/?filter=$.name.first&amp;20eq%20"Jack"%20or%20$.fav_food[0]%20eq%20"pizza"</li>
+<li>http://127.0.0.1:9500/docs/?filter=$.name.first&amp;20like%20"J*"</li>
 </ul>
 
 
@@ -7087,6 +7136,17 @@ Content-Length: 0
 
 <p>You can use asterisks (*) as wildcards.</p></div>
 
+<a name="<code>limit</code>-and-<code>offset</code>-options"></a>
+<h5><code>limit</code> and <code>offset</code> options<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Provide a way to implement pagination:</p>
+
+<ul>
+<li><strong>limit</strong> causes the query to retrieve only the first <em>n</em> results.</li>
+<li><strong>offset</strong> causes the query to skip the first <em>n</em> results.</li>
+</ul>
+
+
 <a name="Example"></a>
 <h5>Example<a href="#document-top" title="Go to top"></a></h5>
 
@@ -7138,6 +7198,172 @@ access-control-allow-headers: Content-Type
 Content-Length: 34
 
 {"id":"$type:text","documents":32}
+</code></pre>
+
+<a name="indexes-(LiteStore-Indexes)"></a>
+<h3>indexes (LiteStore Indexes)<a href="#document-top" title="Go to top"></a></h3>
+
+<div class="note"><p>API v5 Required</p>
+
+<p>This resource has been introduced in version 5 of the LiteStore API.</p></div>
+
+<p>LiteStore Indexes are special indexes used to optimize the performance of queries on JSON documents.</p>
+
+<div class="warning"><p>JSON-only Documents Required!</p>
+
+<p>Indexes can be created <em>only</em> if the entire database is composed by JSON documents. If not, LiteStore will return an error when attempting to create the first index.</p></div>
+
+<a name="OPTIONS-indexes"></a>
+<h4>OPTIONS indexes<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS http://127.0.0.1:9500/indexes
+HTTP/1.1 200 OK
+server: LiteStore/1.7.0
+access-control-allow-origin: http://localhost:9500
+access-control-allow-headers: Content-Type
+allow: GET,OPTIONS
+access-control-allow-methods: GET,OPTIONS
+content-length: 0
+</code></pre>
+
+<a name="OPTIONS-indexes/:id"></a>
+<h4>OPTIONS indexes/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS http://127.0.0.1:9500/indexes/name
+HTTP/1.1 200 OK
+server: LiteStore/1.7.0
+access-control-allow-origin: http://localhost:9500
+access-control-allow-headers: Content-Type
+allow: GET,OPTIONS,PUT,DELETE
+access-control-allow-methods: GET,OPTIONS,PUT,DELETE
+Content-Length: 0
+</code></pre>
+
+<a name="GET-indexes"></a>
+<h4>GET indexes<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves all indexes and their respective JSON fields.</p>
+
+<a name="<code>like</code>-option"></a>
+<h5><code>like</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>If this option is specified, retrieves all indexes matching the specified string.</p>
+
+<div class="tip"><p>Wildcards</p>
+
+<p>You can use asterisks (*) as wildcards.</p></div>
+
+<a name="<code>limit</code>-and-<code>offset</code>-options"></a>
+<h5><code>limit</code> and <code>offset</code> options<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Provide a way to implement pagination:</p>
+
+<ul>
+<li><strong>limit</strong> causes the query to retrieve only the first <em>n</em> results.</li>
+<li><strong>offset</strong> causes the query to skip the first <em>n</em> results.</li>
+</ul>
+
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i http://localhost:9500/indexes/?like=%2Aname%2A
+HTTP/1.1 200 OK
+server: LiteStore/1.7.0
+access-control-allow-origin: http://localhost:9500
+content-type: application/json
+vary: Origin
+access-control-allow-headers: Content-Type
+Content-Length: 244
+
+{
+  "like": "*name*",
+  "total": 2,
+  "execution_time": 0.0006140000000000001,
+  "results": [
+    {
+      "id": "name",
+      "field": "$.name"
+    },
+    {
+      "id": "document.name",
+      "field": "$.document.name"
+    }
+  ]
+}
+</code></pre>
+
+<a name="GET-indexes/:id"></a>
+<h4>GET indexes/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the specified index and corresponding JSON field.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i http://localhost:9500/indexes/name
+HTTP/1.1 200 OK
+server: LiteStore/1.7.0
+access-control-allow-origin: http://localhost:9500
+content-type: application/json
+vary: Origin
+access-control-allow-headers: Content-Type
+Content-Length: 30
+
+{"id":"name","field":"$.name"}
+</code></pre>
+
+<a name="PUT-indexes/:id"></a>
+<h4>PUT indexes/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Creates a new index with the specified ID.</p>
+
+<p>Note that:
+* Index IDs can only contain letters, numbers, and underscores.
+* Index fields must be valid paths to JSON fields.</p>
+
+<div class="warning"><p>No updates</p>
+
+<p>It is not possible to update an existing index. Delete it and re-create it instead.</p></div>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X PUT -d '{"field": "$.name"}' 'http://127.0.0.1:9500/indexes/name' --header "Content-Type:application/json"
+HTTP/1.1 201 Created
+Content-Length: 31
+Content-Type: application/json
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: http://localhost:9500
+Server: LiteStore/1.7.0
+
+{"id":"name", "field":"$.name"}
+</code></pre>
+
+<a name="DELETE-indexes/:id"></a>
+<h4>DELETE indexes/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Deletes the specified index.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X DELETE 'http://127.0.0.1:9500/indexes/name'
+HTTP/1.1 204 No Content
+Content-Length: 0
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: http://localhost:9500
+Server: LiteStore/1.7.0
 </code></pre>
 
 <a name="Nim-API-Reference"></a>
@@ -7578,7 +7804,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; December 29, 2019</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; January 13, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
