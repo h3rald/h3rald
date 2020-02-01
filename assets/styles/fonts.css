@@ -63,6 +63,36 @@
 
 
 @font-face {
+  font-family: 'Noway';
+  src: url('../fonts/noway_light-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noway';
+  src: url('../fonts/noway_light_italic-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Noway';
+  src: url('../fonts/noway_regular-webfont.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noway';
+   src: url('../fonts/noway_regular_italic-webfont.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+@font-face {
     font-family: 'Hack';
     src: url('../fonts/hack-regular-webfont.eot?v=2.020');
     src: url('../fonts/hack-regular-webfont.eot?#iefix&v=2.020') format('embedded-opentype'), url('../fonts/hack-regular-webfont.woff2?v=2.020') format('woff2'), url('../fonts/hack-regular-webfont.woff?v=2.020') format('woff'), url('../fonts/hack-regular-webfont.ttf?v=2.020') format('truetype');

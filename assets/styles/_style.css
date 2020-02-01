@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
     -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
     -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
@@ -175,7 +175,7 @@ em,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     font-style: italic;
     -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
     -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
@@ -188,7 +188,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     font-style: normal;
     -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
     -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
