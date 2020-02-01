@@ -5564,6 +5564,7 @@ div .terminal {
    <li><a href="#<code>lang</code>-Module"><code>lang</code> Module</a></li>
    <li><a href="#<code>stack</code>-Module"><code>stack</code> Module</a></li>
    <li><a href="#<code>seq</code>-Module"><code>seq</code> Module</a></li>
+   <li><a href="#<code>dict</code>-Module"><code>dict</code> Module</a></li>
    <li><a href="#<code>io</code>-Module"><code>io</code> Module</a></li>
    <li><a href="#<code>fs</code>-Module"><code>fs</code> Module</a></li>
    <li><a href="#<code>logic</code>-Module"><code>logic</code> Module</a></li>
@@ -5639,9 +5640,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.5/min_v0.19.5_macosx_x64.zip">min v0.19.5 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.5/min_v0.19.5_windows_x64.zip">min v0.19.5 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.19.5/min_v0.19.5_linux_x64.zip">min v0.19.5 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.6/min_v0.19.6_macosx_x64.zip">min v0.19.6 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.6/min_v0.19.6_windows_x64.zip">min v0.19.6 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.19.6/min_v0.19.6_linux_x64.zip">min v0.19.6 for Linux (x64)</a></li>
 </ul>
 
 
@@ -5701,7 +5702,7 @@ div .terminal {
 {1} -> 16
 <span class="prompt">[/Users/h3rald/test]$</span></p></div>
 
-<p>To exit min shell, press <span class="kbd">CTRL+C</span> or type <span class="cmd">exit</span> and press <span class="kbd">ENTER</span>.</p>
+<p>To exit min shell, press <span class="kbd">CTRL+C</span> or type <span class="cmd">0 exit</span> and press <span class="kbd">ENTER</span>.</p>
 
 <a name="Executing-a-min-Program"></a>
 <h3>Executing a min Program<a href="#document-top" title="Go to top"></a></h3>
@@ -5747,7 +5748,7 @@ div .terminal {
 
 <ol>
 <li>First a list containing the first five integer is pushed on the stack.</li>
-<li>Then, another list containing two symbols (<code>dup</code> and <code>*</code>) is pushed on the stack. This constitutes a quoted program which, when executed duplicates (<code>dup</code>) the first element on the stack and then multiplies (<code>*</code>) the two elements together.</li>
+<li>Then, another list containing two symbols (<code>dup</code> and <code>*</code>) is pushed on the stack. This constitutes a quoted program which, when executed duplicates the first element on the stack &mdash;this is done by <code>dup</code>&mdash; and then multiplies &mdash;with <code>*</code>&mdash; the two elements together.</li>
 <li>Finally, the symbol <code>map</code> is pushed on the stack. Map takes a list of elements and a quoted program and applies the program to each element.</li>
 </ol>
 
@@ -5757,8 +5758,8 @@ div .terminal {
 <ul>
 <li>There are no variable assignments.</li>
 <li>elements are pushed on the stack one by one.</li>
-<li>Parentheses are grouped together one or more elements, so that they are treated as a single element and they are not evaluated immediately.</li>
-<li>Symbols can be used to perform operations on the whole stack.</li>
+<li>Parentheses are used to group together one or more elements, so that they are treated as a single element and they are not evaluated immediately.</li>
+<li><em>Symbols</em> (typically single words, or several words joined by dashes) are used to execute code that performs operations on the whole stack.</li>
 </ul>
 
 
@@ -5770,6 +5771,8 @@ div .terminal {
 <p>The type system of min is very simple &ndash; only the following data types are available:</p>
 
 <dl>
+<dt>boolean</dt>
+<dd><strong>true</strong> or <strong>false</strong>.</dd>
 <dt>integer</dt>
 <dd>An integer number like 1, 27 or -15.</dd>
 <dt>float</dt>
@@ -5843,7 +5846,22 @@ div .terminal {
 
 <p>In this case, the second quotation is used to <em>quote</em> the symbol <code>odd?</code> so that instead of being executed immediately, it will be executed by the symbol <code>filter</code> on each element of the first quotation. In this way, we may say that <code>(odd?)</code> is <em>dequoted</em> by the symbol <code>filter</code>.</p>
 
-<p>The synbol <a href="#min-operator-id-dequote">dequote</a> or its alias <code>-&gt;</code> can be used to dequote a quotation by pushing all its element on the main stack, while the symbol <a href="#min-operator-id-apply">apply</a> can be used to dequote a quotation by pushing its elements on a separate stack.</p>
+<p>The symbol <a href="#min-operator-id-dequote">dequote</a> or its alias <code>-&gt;</code> can be used to dequote a quotation by pushing all its elements on the main stack. Essentially, this <em>executes</em> the quotation in the current context.</p>
+
+<p>For example, the following program leaves the elements <code>1</code> and <code>-1</code> on the stack:</p>
+
+<pre><code> (1 2 3 -) -&gt;
+</code></pre>
+
+<p>Alternatively, the symbol <a href="#min-operator-id-apply">apply</a> or its alias <code>=&gt;</code> can also be used to dequote a quotation but in this case it will not push its elements on the main stack, instead it will:
+1. Create a temporary empty stack.
+2. Push all elements on it, one by one.
+3. Push the entire temporary stack as a quotation back on the main stack.</p>
+
+<p>For example, the following program leaves the element <code>(1 -1)</code> on the stack:</p>
+
+<pre><code> (1 2 3 -) =&gt;
+</code></pre>
 
 <a name="Operators"></a>
 <h3>Operators<a href="#document-top" title="Go to top"></a></h3>
@@ -5872,7 +5890,7 @@ div .terminal {
 <pre><code> (dup *) "square" define
 </code></pre>
 
-<p>Besides symbols, min provides a set of predefined <em>sigils</em> for commonly-used symbols. For example, the previous definition could be rewritten as follows using sigils:</p>
+<p>Besides symbols, min provides a set of predefined <em>sigils</em> as abbreviations for for commonly-used symbols. For example, the previous definition could be rewritten as follows using sigils:</p>
 
 <pre><code> (dup *) :square
 </code></pre>
@@ -5917,7 +5935,7 @@ div .terminal {
 <a name="Definitions"></a>
 <h3>Definitions<a href="#document-top" title="Go to top"></a></h3>
 
-<p>Being a concatenative language, min does not really need named parameters or variables: simbols just pop elements off the main stack in order, and that&rsquo;s normally enough. There is however one small problem with the traditional concatenative paradigm; consider the following program for example:</p>
+<p>Being a concatenative language, min does not really need named parameters or variables: symbols just pop elements off the main stack in order, and that&rsquo;s normally enough. There is however one small problem with the traditional concatenative paradigm; consider the following program for example:</p>
 
 <pre><code> dup dup
  "\.zip$" match 
@@ -5943,7 +5961,7 @@ div .terminal {
 <a name="Lexical-scoping-and-binding"></a>
 <h4>Lexical scoping and binding<a href="#document-top" title="Go to top"></a></h4>
 
-<p>min, like many other programming languages, uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science">lexical scoping</a>#Lexical_scope_vs._dynamic_scope) to resolve symbols.</p>
+<p>min, like many other programming languages, uses <a href="https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scope_vs._dynamic_scope">lexical scoping</a> to resolve symbols.</p>
 
 <p>Consider the following program:</p>
 
@@ -6222,7 +6240,7 @@ div .terminal {
 <a name="Shell-configuration-files"></a>
 <h3>Shell configuration files<a href="#document-top" title="Go to top"></a></h3>
 
-<p>When the min interpreter is first launched, the following files are created automatically in the $HOME directory (%HOMEPROFILE% on Windows).</p>
+<p>When the min interpreter is first launched, the following files are created automatically in the $HOME directory (%USERPROFILE% on Windows).</p>
 
 <a name=".minrc"></a>
 <h4>.minrc<a href="#document-top" title="Go to top"></a></h4>
@@ -7737,6 +7755,97 @@ harvest
 
 <p>Returns a quotation <span class="kwd">quot<sub>2</sub></span> containing the first <em>n</em> values of the input quotation <span class="kwd">quot<sub>1</sub></span>, or <span class="kwd">quot<sub>1</sub></span> itself if <span class="kwd">int</span> is greater than the length of <span class="kwd">quot<sub>1</sub></span>.</p></div>
 
+<a name="<code>dict</code>-Module"></a>
+<h3><code>dict</code> Module<a href="#document-top" title="Go to top"></a></h3>
+
+<p><span class="reference-title">/</span> <span class="sigil"></span></p>
+
+<div class="operator"><p><span class="kwd"> /<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dget</span></p>
+
+<p>See <a href="#min-operator-id-dget">dget</a>.</p></div>
+
+<p><span class="reference-title">?</span> <span class="sigil"></span></p>
+
+<div class="operator"><p><span class="kwd"> ?<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dhas?</span></p>
+
+<p>See <a href="#min-operator-id-dhas?">dhas?</a>.</p></div>
+
+<p><span class="reference-title">%</span> <span class="sigil"></span></p>
+
+<div class="operator"><p><span class="kwd"> %<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dset</span></p>
+
+<p>See <a href="#min-operator-id-dset">dset</a>.</p></div>
+
+<p><a id="min-operator-id-ddup"></a>
+<span class="reference-title">ddup</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
+
+<p>Returns a copy of <span class="kwd">dict<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-ddel"></a>
+<span class="reference-title">ddel</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+
+<p>Removes <span class="kwd">&apos;sym</span> from <span class="kwd">dict<sub>1</sub></span> and returns <span class="kwd">dict<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-dget"></a>
+<span class="reference-title">dget</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+
+<p>Returns the value of key <span class="kwd">&apos;sym</span> from dictionary <span class="kwd">dict</span>.</p></div>
+
+<p><a id="min-operator-id-dhas?"></a>
+<span class="reference-title">dhas?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if dictionary <span class="kwd">dict</span> contains the key <span class="kwd">&apos;sym</span>, <span class="kwd">false</span> otherwise.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program returns <span class="kwd">true</span>:</p>
+
+<pre><code>{true :a1 "aaa" :a2 false :a3} 'a2 dhas?
+</code></pre></div></div>
+
+<p><a id="min-operator-id-dkeys"></a>
+<span class="reference-title">dkeys</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">string</span><span class="kwd"><sub>*</sub></span>)</span></p>
+
+<p>Returns a quotation containing all the keys of dictionary <span class="kwd">dict</span>.</p></div>
+
+<p><a id="min-operator-id-dpick"></a>
+<span class="reference-title">dpick</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
+
+<p>Returns a new dictionary <span class="kwd">dict<sub>2</sub></span> containing the elements of <span class="kwd">dict<sub>1</sub></span> whose keys are included in <span class="kwd">quot</span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program returns <code>{4 :a 7 :d}</code>:</p>
+
+<pre><code>{5 :q 4 :a 6 :c 7 :d "d" :a} ("a" "d") dpick
+</code></pre></div></div>
+
+<p><a id="min-operator-id-dset"></a>
+<span class="reference-title">dset</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+
+<p>Sets the value of the <span class="kwd">&apos;sym</span> of <span class="kwd">dict<sub>1</sub></span>  to <span class="kwd">a</span>, and returns the modified dictionary <span class="kwd">dict</span>.</p></div>
+
+<p><a id="min-operator-id-dvalues"></a>
+<span class="reference-title">dvalues</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)</span></p>
+
+<p>Returns a quotation containing all the values of dictionary <span class="kwd">dict</span>.</p></div>
+
 <a name="<code>io</code>-Module"></a>
 <h3><code>io</code> Module<a href="#document-top" title="Go to top"></a></h3>
 
@@ -9225,12 +9334,12 @@ cli recv-line puts :line
 
 <div class="sidebar"><p>Example</p>
 
-<p>The following code constructs a <span class="kwd">request</span> dictionary using the <strong>tap</strong> operator and passes it to the <strong>request</strong> operator to perform an HTTP GET request to <a href="http://httpbin.org/ip">http://httpbin.org/ip</a>:</p>
+<p>The following code constructs a <span class="kwd">request</span> dictionary and passes it to the <strong>request</strong> operator to perform an HTTP GET request to <a href="http://httpbin.org/ip">http://httpbin.org/ip</a>:</p>
 
-<pre><code>{} (
-  ("GET" %method)
-  ("http://httpbin.org/ip" %url)
-) tap request
+<pre><code>{}
+  "GET" %method)
+  "http://httpbin.org/ip" %url
+request
 </code></pre></div></div>
 
 <p><a id="min-operator-id-start-server"></a>
@@ -9255,32 +9364,43 @@ cli recv-line puts :line
 
 <p>The following program starts a very simple HTTP server that can display the current timestamp or date and time in ISO 8601 format:</p>
 
-<pre><code>(
- :req
- req /url :url
- ;Set response body
- "Invalid Request: $1" (url) =&gt; % :body
- ("/datetime" url ==) (
-  timestamp datetime @body
- ) when
- ("/timestamp" url ==) (
-   timestamp string @body
- ) when
- ("/shutdown" url ==) (
-  "Stopping server..." puts!
-  stop-server
- ) when
- ;Prepare response
- {body :body}
-) =handler
+<pre><code>; Define the request handler
+(
+  ; Assume there is a request on the stack, take it off and give it the name req
+  :req
+  ; Let's see what we got (print req to standard out)
+  "THE REQUEST:" puts! req puts!
+  ; The request is a dictionary, we retrieve the value for the key url, and give it the name url
+  req /url :url
+  "THE URL is '$1'." url quote % puts!
+  ; Constuct response body
+  (
+    (("/datetime" url ==) (timestamp datetime))
+    (("/timestamp" url ==) (timestamp string))
+    (("/shutdown" url ==) ("Stopping server..." puts! stop-server))
+    (("/" url ==) (
+      ; this is a bit short, but works with Chrome, IE, Edge, Safari
+      "&lt;a href='/datetime'&gt;datetime&lt;/a&gt;, &lt;a href='/timestamp'&gt;timestamp&lt;/a&gt;, &lt;a href='/shutdown'&gt;stop&lt;/a&gt;"
+    ))
+    ((true) ("Invalid Request: $1" url quote %))
+  ) case
+  :body
+  ; Prepare the response
+  {} body %body
+  dup puts!
+)
+; The request handler is ready, give it the name handler
+=handler
 
-;Start server
+; Create the parameter dictionary for the server
+{}
+handler %handler
+5555 %port
+
+; Start server
 "Server started on port 5555." puts!
 "Press Ctrl+C to stop." puts!
-{
- handler :handler
- 5555 :port
-} tap start-server
+start-server
 </code></pre></div></div>
 
 <p><a id="min-operator-id-stop-server"></a>
@@ -9291,7 +9411,7 @@ cli recv-line puts :line
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; September 29, 2019</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; January 13, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
