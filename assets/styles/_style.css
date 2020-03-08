@@ -33,39 +33,39 @@ body {
 h1,
 .h1 {
     font-size: 2.375rem;
-    line-height: calc(var(--leading) * 2);
+    line-height: calc(var(--leading) * 1.8);
     margin-top: calc(var(--leading) * 1);
     margin-bottom: calc(var(--leading) * 0);
 }
 
 h2,
 .h2 {
-    font-size: 1.75rem;
-    line-height: calc(var(--leading) * 2);
+    font-size: 2rem;
+    line-height: calc(var(--leading) * 1.8);
     margin-top: calc(var(--leading) * 1);
     margin-bottom: calc(var(--leading) * 0.5);
 }
 
 h3,
 .h3 {
-    font-size: 1.3125rem;
-    line-height: calc(var(--leading) * 1);
+    font-size: 1.5rem;
+    line-height: calc(var(--leading) * 1.3);
     margin-top: calc(var(--leading) * 1);
     margin-bottom: calc(var(--leading) * 0.5);
 }
 
 h4,
 .h4 {
-    font-size: 1rem;
-    line-height: calc(var(--leading) * 1);
+    font-size: 1.3rem;
+    line-height: calc(var(--leading) * 1.3);
     margin-top: calc(var(--leading) * 1);
     margin-bottom: calc(var(--leading) * 0.5);
 }
 
 h5,
 .h5 {
-    font-size: 1rem;
-    line-height: calc(var(--leading) * 1);
+    font-size: 1.2rem;
+    line-height: calc(var(--leading) * 1.3);
     margin-top: calc(var(--leading) * 1);
     margin-bottom: calc(var(--leading) * 0.5);
 }
@@ -242,15 +242,24 @@ time {
     cursor: pointer;
 }
 
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .main-header h1 {
     margin-top: 0.1em;
+}
+
+.main-header .navlinks {
+    align-self: center;
+    text-align: left;
+    flex-grow: 1;
 }
 
 .logo {
     margin: auto;
     display: block;
-    margin-left: 20px;
-    /* Fix for incorrect font alignment */
 }
 
 a.logo {
@@ -274,7 +283,6 @@ hr::before {
 }
 
 .card-footer {
-    text-align: center;
     margin: auto;
 }
 
@@ -369,6 +377,7 @@ h6,
 }
 
 .primary-subtitle {
+    margin-top: 0.5rem;
     color: var(secondary-text-color);
 }
 

@@ -7,7 +7,13 @@
         {{#inactive}}
         <small class="label label-warning">inactive</small>
         {{/inactive}}
+        {{#home}}
+          <a href="{{home}}">
+        {{/home}}
         {{title}}
+        {{#home}}
+          </a>
+        {{/home}}
         &middot; v{{version}}
       </div>
     </div>
@@ -15,11 +21,6 @@
         {{summary}}
     </div>
     <div class="card-footer">
-      {{#home}}
-      <a href="{{home}}" class="action">
-        info
-      </a>
-      {{/home}}
       {{#site}}
       <a href="{{site}}" class="action">
         web site

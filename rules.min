@@ -155,7 +155,7 @@
   ; Sort articles by timestamp
   ARTICLES (/timestamp swap /timestamp >) sort #ARTICLES
   ARTICLES first        =latest
-  ARTICLES 1 4 slice    =recents
+  ARTICLES 1 5 slice    =recents
   ; Process summary
   latest input-fread "/(.+)?<hr/ms" regex 1 get latest markdown :summary
   latest summary %summary #latest
