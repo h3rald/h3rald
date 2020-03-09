@@ -2,10 +2,10 @@
     <div class="card-header">
       <div class="card-title h5">
         {{#active}}
-        <small class="label label-success">active</small>
+        <small class="badge badge-success"></small>
         {{/active}}
         {{#inactive}}
-        <small class="label label-warning">inactive</small>
+        <small class="badge badge-warning"></small>
         {{/inactive}}
         {{#home}}
           <a href="{{home}}">
@@ -14,30 +14,12 @@
         {{#home}}
           </a>
         {{/home}}
-        &middot; v{{version}}
+        <div class="project-version">
+        v{{version}}
+        </div>
       </div>
     </div>
     <div class="card-body">
         {{summary}}
-    </div>
-    <div class="card-footer">
-      {{#site}}
-      <a href="{{site}}" class="action">
-        web site
-      </a>
-      {{/site}}
-      {{#github}}
-      <a href="https://github.com/h3rald/{{github}}" class="action">
-        source
-      </a>
-      <a href="https://github.com/h3rald/{{github}}/issues" class="action">
-        issues
-      </a>
-      {{/github}}
-      {{#docs}}
-      <a href="{{docs}}" class="action">
-        docs
-      </a>
-      {{/docs}}
     </div>
   </div>
