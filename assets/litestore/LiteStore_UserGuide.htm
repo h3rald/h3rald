@@ -5468,6 +5468,7 @@ pre code {
     <li><a href="#RESTful-HTTP-API">RESTful HTTP API</a></li>
     <li><a href="#JWT-based-Authorization">JWT-based Authorization</a></li>
     <li><a href="#Middleware">Middleware</a></li>
+    <li><a href="#Multiple-Data-Stores">Multiple Data Stores</a></li>
     <li><a href="#Nim-API">Nim API</a></li>
     <li><a href="#Command-line-API">Command-line API</a></li>
     <li><a href="#Directory-Bulk-Import/Export">Directory Bulk Import/Export</a></li>
@@ -5535,6 +5536,7 @@ pre code {
   <li><a href="#Configuration-File">Configuration File</a>
   <ul>
    <li><a href="#settings">settings</a></li>
+   <li><a href="#stores">stores</a></li>
    <li><a href="#resources">resources</a></li>
    <li><a href="#signature">signature</a></li>
   </ul>
@@ -5562,6 +5564,11 @@ pre code {
   <ul>
    <li><a href="#Importing,-exporting-and-deleting-System-Documents">Importing, exporting and deleting System Documents</a></li>
    <li><a href="#How-LiteStore-uses-System-Documents">How LiteStore uses System Documents</a></li>
+  </ul>
+  </li>
+  <li><a href="#Multiple-Data-Stores">Multiple Data Stores</a>
+  <ul>
+   <li><a href="#Configuring-additional-stores">Configuring additional stores</a></li>
   </ul>
   </li>
   <li><a href="#Administration-App">Administration App</a>
@@ -5768,6 +5775,46 @@ pre code {
      <li><a href="#Example">Example</a>
 </li>
     </ul>
+    </li>
+   </ul>
+   </li>
+   <li><a href="#stores-(LiteStore-Stores)">stores (LiteStore Stores)</a>
+   <ul>
+    <li><a href="#OPTIONS-stores">OPTIONS stores</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-stores/:id">OPTIONS stores/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-indexes">GET indexes</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-stores/:id">GET stores/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#PUT-stores/:id">PUT stores/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#DELETE-stores/:id">DELETE stores/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#*-stores/:id/*">* stores/:id/*</a>
+    <ul>
+     <li><a href="#Examples">Examples</a>
+</li>
+    </ul>
     
 </li>
    </ul>
@@ -5938,6 +5985,11 @@ pre code {
 <h4>Middleware<a href="#document-top" title="Go to top"></a></h4>
 
 <p>By leveraging the <a href="https://duktape.org/">duktape</a> library, you can create your own middleware functions in JavaScript to perform additional tasks (validation, logging, data aggregation&hellip;) before accessing data.</p>
+
+<a name="Multiple-Data-Stores"></a>
+<h4>Multiple Data Stores<a href="#document-top" title="Go to top"></a></h4>
+
+<p>LiteStore can be configured to manage more than one SQLite file through the same process. At run time, it will be possible to access data stored in each store but also add and remove stores.</p>
 
 <a name="Nim-API"></a>
 <h4>Nim API<a href="#document-top" title="Go to top"></a></h4>
@@ -6115,9 +6167,9 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.8.0/litestore_1.8.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.8.0/litestore_1.8.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.8.0/litestore_1.8.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.9.0/litestore_1.9.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.9.0/litestore_1.9.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.9.0/litestore_1.9.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
 </ul>
 
 
@@ -6348,6 +6400,32 @@ pre code {
     "log": "debug",
     "port": 9200
   },
+  "stores": {
+    "logs": {
+      "file": "logs.db",
+      "config": {
+        "resources": {
+          "/docs/*": {
+            "GET": {
+              "auth": ["admin:server"]
+            },
+            "POST": {
+              "allowed": false
+            },
+            "PUT": {
+              "allowed": false
+            },
+            "PATCH": {
+              "allowed": false
+            },
+            "DELETE": {
+              "allowed": false
+            }
+          }
+        }
+      }
+    }
+  },
   "resources": {
     "/docs/vehicles/*": {
       "GET": {
@@ -6371,26 +6449,8 @@ pre code {
         "auth": ["admin:vehicles"],
         "middleware": ["validate", "log"]
       }
-    },
-    "/docs/logs/*": {
-      "GET": {
-        "auth": ["admin:server"]
-      },
-      "POST": {
-        "allowed": false
-      },
-      "PUT": {
-        "allowed": false
-      },
-      "PATCH": {
-        "allowed": false
-      },
-      "DELETE": {
-        "allowed": false
-      }
     }
-  },
-  "signature": "\n-----BEGIN CERTIFICATE-----\n&lt;certificate text goes here&gt;\n-----END CERTIFICATE-----\n"
+  }
 }
 </code></pre>
 
@@ -6414,6 +6474,13 @@ pre code {
 
 
 <p>If a configuration file is specified and some of these settings are configured, they will be recognized as if they were specified via command line. However, if you also specify the same settings via command line, the command line settings will take precedence over the settings defined in the configuration file.</p>
+
+<a name="stores"></a>
+<h3>stores<a href="#document-top" title="Go to top"></a></h3>
+
+<p>This section is used to defined additional stores to be managed by LiteStore by specifying the SQLite file to open and optionally the store configuration.</p>
+
+<p>In this case, the <strong>logs</strong> store is configured as an additional store.</p>
 
 <a name="resources"></a>
 <h3>resources<a href="#document-top" title="Go to top"></a></h3>
@@ -6755,6 +6822,95 @@ Examples:
 </ol>
 
 
+<a name="Multiple-Data-Stores"></a>
+<h2>Multiple Data Stores<a href="#document-top" title="Go to top"></a></h2>
+
+<p>As of version 1.9.0, it is possible to configure LiteStore to manage several different SQLite database files, or <em>stores</em>. Essentially, besides the <em>master</em> store it is possible to create, delete or access additional stores at run time though the new <strong>/stores</strong> resource.</p>
+
+<p>Although folders already provide some partitioning for documents, in certain situations you may want to physically separate your data into multiple files, for example when:</p>
+
+<ul>
+<li>Managing time-dependent content (store only records of a day or month in a single file)</li>
+<li>Storing accessory content that is unrelated to other data, like logging/diagnostic information</li>
+<li>Managing data belonging to different tenants</li>
+</ul>
+
+
+<p>Although all stores can be accessed by the same process using the <strong>/stores</strong> resource (which can essentially forward requests to be executed on a specific file), each store can have its own configuration file stored as a system document, its own authentication and its own middleware.</p>
+
+<a name="Configuring-additional-stores"></a>
+<h3>Configuring additional stores<a href="#document-top" title="Go to top"></a></h3>
+
+<p>If you know the details of each store at development/configuration time, you can configure them in the <strong>stores</strong> section of the LiteStore configuration file, like this:</p>
+
+<pre><code>{
+  "settings": {
+    "log": "debug",
+    "port": 9200
+  },
+  "stores": {
+    "test1": {
+      "file": "test1.db",
+      "config": null
+    },
+    "test2": {
+      "file": "test2.db",
+      "config": null
+    },
+    "test3": {
+      "file": "test3.db",
+      "config": null
+    }
+  },
+  "resources": {
+    "/docs/vehicles/*": {
+      "GET": {
+        "middleware": ["validate", "log"]
+      },
+      "HEAD": {
+        "middleware": ["validate", "log"]
+      },
+      "POST": {
+        "allowed": false
+      },
+      "PATCH": {
+        "auth": ["admin:vehicles"],
+        "middleware": ["validate", "log"]
+      },
+      "PUT": {
+        "auth": ["admin:vehicles"],
+        "middleware": ["validate", "log"]
+      },
+      "DELETE": {
+        "auth": ["admin:vehicles"],
+        "middleware": ["validate", "log"]
+      }
+    },
+    "/docs/logs/*": {
+      "GET": {
+        "auth": ["admin:server"]
+      },
+      "POST": {
+        "allowed": false
+      },
+      "PUT": {
+        "allowed": false
+      },
+      "PATCH": {
+        "allowed": false
+      },
+      "DELETE": {
+        "allowed": false
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>  When LiteStore is executed, the three additional stores will be created and initialized, their configuration (if any) will be saved as a system document and they will be immediately accessible.</p>
+
+<p>  Alternatively, you can add or remove stores dynamically at run time by executing POST and DELETE requests to the <strong>/stores</strong> resource, optionally specifying configuration settings as the request body.</p>
+
 <a name="Administration-App"></a>
 <h2>Administration App<a href="#document-top" title="Go to top"></a></h2>
 
@@ -6896,12 +7052,16 @@ Server: LiteStore/1.0.3
 
 <ul>
 <li>Version</li>
+<li>Datastore version</li>
+<li>API version</li>
 <li>Size of the database on disk (in MB)</li>
 <li>Whether the database is read-only or not</li>
 <li>Log level (debug, info, warning, error, none)</li>
 <li>Mounted directory (if any)</li>
+<li>Additional stores (if any)</li>
+<li>Whether authorization is enabled or not</li>
 <li>Total documents</li>
-<li>Total Tags</li>
+<li>Total tags</li>
 <li>Number of documents per tag</li>
 </ul>
 
@@ -6913,18 +7073,21 @@ Server: LiteStore/1.0.3
 HTTP/1.1 200 OK
 Content-Length: 965
 Content-Type: application/json
-Access-Control-Allow-Headers: Content-Type
-Access-Control-Allow-Origin: *
-Server: LiteStore/1.0.3
+Access-Control-Allow-Headers: Authorization, Content-Type
+Access-Control-Allow-Origin: http://127.0.0.1:9500
+Server: LiteStore/1.9.0
 
 {
-  "version": "LiteStore v1.1.0",
-  "datastore_version": 1,
-  "size": "5.76 MB",
+  "version": "LiteStore v1.9.0",
+  "datastore_version": 2,
+  "api_version": 7,
+  "size": "6.98 MB",
   "read_only": false,
-  "log_level": "info",
+  "log_level": "warn",
   "directory": "admin",
   "mount": true,
+  "additional_stores": [],
+  "auth": false,
   "total_documents": 68,
   "total_tags": 18,
   "tags": [
@@ -7869,6 +8032,264 @@ Access-Control-Allow-Origin: http://localhost:9500
 Server: LiteStore/1.7.0
 </code></pre>
 
+<a name="stores-(LiteStore-Stores)"></a>
+<h3>stores (LiteStore Stores)<a href="#document-top" title="Go to top"></a></h3>
+
+<div class="note"><p>API v7 Required</p>
+
+<p>This resource has been introduced in version 7 of the LiteStore API.</p></div>
+
+<p>As of version 1.9.0, it is possible for a single LiteStore process to manage multiple data store files. These additional stores can be accessed but also added or removed at run time using this resource.</p>
+
+<a name="OPTIONS-stores"></a>
+<h4>OPTIONS stores<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS http://127.0.0.1:9500/stores
+HTTP/1.1 200 OK
+server: LiteStore/1.9.0
+access-control-allow-origin: http://localhost:9500
+access-control-allow-headers: Content-Type
+allow: GET,OPTIONS
+access-control-allow-methods: GET,OPTIONS
+content-length: 0
+</code></pre>
+
+<a name="OPTIONS-stores/:id"></a>
+<h4>OPTIONS stores/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS http://127.0.0.1:9500/stores/test1
+HTTP/1.1 200 OK
+server: LiteStore/1.9.0
+access-control-allow-origin: http://localhost:9500
+access-control-allow-headers: Content-Type
+allow: GET,OPTIONS,PUT,DELETE
+access-control-allow-methods: GET,OPTIONS,PUT,DELETE
+Content-Length: 0
+</code></pre>
+
+<a name="GET-indexes"></a>
+<h4>GET indexes<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves information on all available stores (file name and configuration).</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i http://localhost:9500/stores
+HTTP/1.1 200 OK
+content-type: application/json
+access-control-allow-origin: http://127.0.0.1:9500
+access-control-allow-headers: Authorization, Content-Type
+vary: Origin
+server: LiteStore/1.9.0
+Content-Length: 2346
+
+{
+  "total": 4,
+  "execution_time": 0.0,
+  "results": [
+    {
+      "id": "test1",
+      "file": "test1.db",
+      "config": null
+    },
+    {
+      "id": "test2",
+      "file": "test2.db",
+      "config": null
+    },
+    {
+      "id": "test3",
+      "file": "test3.db",
+      "config": null
+    },
+    {
+      "id": "master",
+      "file": "data.db",
+      "config": {
+        "settings": {
+          "log": "debug",
+          "port": 9200
+        },
+        "stores": {
+          "test1": {
+            "file": "test1.db",
+            "config": null
+          },
+          "test2": {
+            "file": "test2.db",
+            "config": null
+          },
+          "test3": {
+            "file": "test3.db",
+            "config": null
+          }
+        },
+        "resources": {
+          "/docs/vehicles/*": {
+            "GET": {
+              "middleware": [
+                "validate",
+                "log"
+              ]
+            },
+            "HEAD": {
+              "middleware": [
+                "validate",
+                "log"
+              ]
+            },
+            "POST": {
+              "allowed": false
+            },
+            "PATCH": {
+              "auth": [
+                "admin:vehicles"
+              ],
+              "middleware": [
+                "validate",
+                "log"
+              ]
+            },
+            "PUT": {
+              "auth": [
+                "admin:vehicles"
+              ],
+              "middleware": [
+                "validate",
+                "log"
+              ]
+            },
+            "DELETE": {
+              "auth": [
+                "admin:vehicles"
+              ],
+              "middleware": [
+                "validate",
+                "log"
+              ]
+            }
+          },
+          "/docs/logs/*": {
+            "GET": {
+              "auth": [
+                "admin:server"
+              ]
+            },
+            "POST": {
+              "allowed": false
+            },
+            "PUT": {
+              "allowed": false
+            },
+            "PATCH": {
+              "allowed": false
+            },
+            "DELETE": {
+              "allowed": false
+            }
+          }
+        },
+        "signature": "\n-----BEGIN CERTIFICATE-----\n&lt;certificate text goes here&gt;\n-----END CERTIFICATE-----\n"
+      }
+    }
+  ]
+}
+</code></pre>
+
+<a name="GET-stores/:id"></a>
+<h4>GET stores/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves information on the specified store.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>HTTP/1.1 200 OK
+content-type: application/json
+access-control-allow-origin: http://127.0.0.1:9500
+access-control-allow-headers: Authorization, Content-Type
+vary: Origin
+server: LiteStore/1.9.0
+Content-Length: 46
+
+{"id":"test1","file":"test1.db","config":null}
+</code></pre>
+
+<a name="PUT-stores/:id"></a>
+<h4>PUT stores/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Adds a new stores with the specified ID. If a file called <strong>\&lt;id>.db</strong> does not exist already, it will be created in the current working directory and initialized as a LiteStore store.</p>
+
+<p>Note that:
+* Index IDs can only contain letters, numbers, and underscores.
+* The body must be present and contain the store configuration (or <strong>null</strong>).</p>
+
+<div class="warning"><p>No updates</p>
+
+<p>It is not possible to update an existing store. Remove it and re-add it instead.</p></div>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>curl -i -X PUT -d "null" "http://127.0.0.1:9500/stores/test3" --header "Content-Type:application/json"
+HTTP/1.1 201 Created
+content-type: application/json
+access-control-allow-origin: http://127.0.0.1:9500
+access-control-allow-headers: Authorization, Content-Type
+vary: Origin
+server: LiteStore/1.9.0
+Content-Length: 46
+
+{"id":"test3","file":"test3.db","config":null}
+</code></pre>
+
+<a name="DELETE-stores/:id"></a>
+<h4>DELETE stores/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Removes the specified store. Although it will no longer be accessible via LiteStore, the corresponding file will <em>not</em> be deleted from the filesystem.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X DELETE "http://127.0.0.1:9200/stores/test3"
+HTTP/1.1 204 No Content
+vary: Origin
+access-control-allow-origin: http://127.0.0.1:9200
+access-control-allow-headers: Authorization, Content-Type
+content-length: 0
+server: LiteStore/1.9.0
+Content-Length: 0
+</code></pre>
+
+<a name="*-stores/:id/*"></a>
+<h4>* stores/:id/*<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Forward the request to the specified store. Essentially, the path fragment after the store ID will be forwarded as a standard request to the specified store.</p>
+
+<a name="Examples"></a>
+<h5>Examples<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Retrieve all tags from store <strong>vehicles</strong>:
+<code>
+$ curl -i http://localhost:9500/stores/vehicles/tags/
+</code></p>
+
+<p>Delete the document with ID <strong>AA457DB</strong> from store <strong>vehicles</strong>:</p>
+
+<pre><code>$ curl -i -X DELETE "http://127.0.0.1:9200/stores/vehicles/docs/AA457DB"
+</code></pre>
+
 <a name="Nim-API-Reference"></a>
 <h2>Nim API Reference<a href="#document-top" title="Go to top"></a></h2>
 
@@ -8307,7 +8728,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; March 7, 2020</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; March 18, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>

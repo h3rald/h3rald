@@ -5,7 +5,7 @@ github: litestore
 home: /litestore/
 active: true
 docs: /litestore/LiteStore_UserGuide.htm
-version: 1.8.0
+version: 1.9.0
 subtitle: "A tiny NoSQL database for rapid prototyping"
 summary: "A lightweight, self-contained, RESTful, multi-format NoSQL document store server written in Nim and powered by a SQLite backend for storage."
 download: "https://github.com/h3rald/litestore/releases/download/"
@@ -44,6 +44,10 @@ LiteStore can be configured to validate [JWT](https://jwt.io/) tokens and config
 #### Middleware
 
 By leveraging the [duktape](https://duktape.org/) library, you can create your own middleware functions in JavaScript to perform additional tasks (validation, logging, data aggregation...) before accessing data.
+
+#### Multiple Data Stores
+
+LiteStore can be configured to manage more than one SQLite file through the same process. At run time, it will be possible to access data stored in each store but also add and remove stores.
 
 #### Nim API
 
