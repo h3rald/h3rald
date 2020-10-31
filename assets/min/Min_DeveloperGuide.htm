@@ -7436,9 +7436,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.20.0/min_v0.20.0_macosx_x64.zip">min v0.20.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.20.0/min_v0.20.0_windows_x64.zip">min v0.20.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.20.0/min_v0.20.0_linux_x64.zip">min v0.20.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.21.1/min_v0.21.1_macosx_x64.zip">min v0.21.1 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.21.1/min_v0.21.1_windows_x64.zip">min v0.21.1 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.21.1/min_v0.21.1_linux_x64.zip">min v0.21.1 for Linux (x64)</a></li>
 </ul>
 
 
@@ -8682,9 +8682,9 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
 
-<p>Pushes the contents of quotation <span class="kwd">quot</span> on the stack.</p></div>
+<p>Pushes the contents of quotation <span class="kwd">quot</span> on the stack.</p>
 
-<p>Each element is pushed on the stack one by one. If any error occurs, <span class="kwd">quot</span> is restored on the stack.</p>
+<p>Each element is pushed on the stack one by one. If any error occurs, <span class="kwd">quot</span> is restored on the stack.</p></div>
 
 <p><a id="min-operator-id-eval"></a>
 <span class="reference-title">eval</span></p>
@@ -8996,6 +8996,13 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <pre><code>{} :myscope (2 :due scope @myscope) -&gt;
 </code></pre></div></div>
 
+<p><a id="min-operator-id-saved-symbols"></a>
+<span class="reference-title">saved-symbols</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
+
+<p>Returns a quotation containing all symbols saved in the <span class="file">.min_symbols</span> file.</p></div>
+
 <p><a id="min-operator-id-scope-sigils"></a>
 <span class="reference-title">scope-sigils</span></p>
 
@@ -9037,13 +9044,6 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
 
 <p>Display the source code of symbol <span class="kwd">&apos;sym</span> (if it has been implemented a <em>min</em> quotation).</p></div>
-
-<p><a id="min-operator-id-stored-symbols"></a>
-<span class="reference-title">stored-symbols</span></p>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
-
-<p>Returns a quotation containing all symbols stored in the <span class="file">.min_symbols</span> file.</p></div>
 
 <p><a id="min-operator-id-string"></a>
 <span class="reference-title">string</span></p>
@@ -10483,6 +10483,12 @@ harvest
 
 <p>See <a href="#min-operator-id-system">system</a>.</p></div>
 
+<p><span class="reference-title">!!</span></p>
+
+<div class="operator"><p><span class="kwd"> !! <strong>&rArr;</strong> system!</span></p>
+
+<p>See <a href="#min-operator-id-system!">system!</a>.</p></div>
+
 <p><span class="reference-title">&amp;</span> <span class="sigil"></span></p>
 
 <div class="operator"><p><span class="kwd"> &amp;<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> run</span></p>
@@ -10689,6 +10695,13 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
 
 <p>Executes the external command <span class="kwd">&apos;sym</span> in the current directory and pushes its return code on the stack.</p></div>
+
+<p><a id="min-operator-id-system!"></a>
+<span class="reference-title">system!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Executes the external command <span class="kwd">&apos;sym</span> in the current directory without pushing its return code on the stack.</p></div>
 
 <p><a id="min-operator-id-unzip"></a>
 <span class="reference-title">unzip</span></p>
@@ -11369,7 +11382,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; June 18, 2020</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; October 31, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
