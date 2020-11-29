@@ -7282,6 +7282,8 @@ div .terminal {
   <ul>
    <li><a href="#Building-from-Source">Building from Source</a>
    <ul>
+    <li><a href="#Using-nimble">Using nimble</a></li>
+    <li><a href="#Without-using-nimble">Without using nimble</a></li>
     <li><a href="#Additional-build-options">Additional build options</a>
     <ul>
      <li><a href="#-d:ssl">-d:ssl</a></li>
@@ -7386,14 +7388,14 @@ div .terminal {
 <a name="About-min"></a>
 <h2>About min<a href="#document-top" title="Go to top"></a></h2>
 
-<p><strong>min</strong> is an concatenative, fully-homoiconic, functional, interpreted programming language.</p>
+<p><strong>min</strong> is a concatenative, fully-homoiconic, functional, interpreted programming language.</p>
 
 <p>This basically means that:</p>
 
 <ul>
-<li>It is based on a somewhat obscure and slightly unintuitive programming paradigm, think of <a href="http://www.forth.org/">Forth</a>, <a href="http://factorcode.org/">Factor</a> and <a href="http://www.kevinalbrecht.com/code/joy-mirror/">Joy</a> but with parethesis for an extra <a href="https://common-lisp.net/">Lisp</a>y flavor.</li>
+<li>It is based on a somewhat obscure and slightly unintuitive programming paradigm, think of <a href="http://www.forth.org/">Forth</a>, <a href="http://factorcode.org/">Factor</a> and <a href="http://www.kevinalbrecht.com/code/joy-mirror/">Joy</a> but with parentheses for an extra <a href="https://common-lisp.net/">Lisp</a>y flavor.</li>
 <li>Programs written in min are actually written using <em>quotations</em>, i.e. lists.</li>
-<li>It comes with map, filter, find, map-reduce and loads of other functional goodies. See the <a href="#&lt;code>seq&lt;/code>-Module">seq Module</a> for more.</li>
+<li>It comes with map, filter, find, map-reduce, and loads of other functional goodies. See the <a href="#&lt;code>seq&lt;/code>-Module">seq Module</a> for more.</li>
 <li>It is probably slower than the average production-ready programming language.</li>
 </ul>
 
@@ -7403,11 +7405,11 @@ div .terminal {
 
 <p>Because creating a programming language is something that every programmer needs to do, at some point in life. And also because there are way too few <a href="http://concatenative.org/wiki/view/Front%20Page">concatenative</a> programming language out there &ndash; so people are likely to be <em>less</em> pissed off than if I made a yet another Lisp instead.</p>
 
-<p>I always wanted to build a minimalist language, but that could also be used for real work and provided a standard library for common tasks and functionalities like regular expression support, cryptography, execution of external programs, shell-like operators and keywords to work with files, and more.</p>
+<p>I always wanted to build a minimalist language, but that could also be used for real work and provided a standard library for common tasks and functionalities like regular expression support, cryptography, execution of external programs, shell-like operators, and keywords to work with files, and more.</p>
 
-<p>Also, I wanted it to be fully self-contained, cross platform, and tiny. About 1MB (depending on the platform) is not really tiny, but I feel it&rsquo;s a good compromise compared to the alternatives out there, considering that you only need <em>one file</em> to run any min program.</p>
+<p>Also, I wanted it to be fully self-contained, cross-platform, and tiny. About 1MB (depending on the platform) is not really tiny, but I feel it&rsquo;s a good compromise compared to the alternatives out there, considering that you only need <em>one file</em> to run any min program.</p>
 
-<p>I am currently building a static site generator called <a href="https://github.com/h3rald/hastysite">HastySite</a>, that also powers <a href="https://min-lang.org">https://min-lang.org</a>. HastySite internally uses min as the language to write the <a href="https://github.com/h3rald/min/blob/master/site/rules.min">rules</a> to process the source files of the site, and also all its <a href="https://github.com/h3rald/min/tree/master/site/scripts">scripts</a>.</p>
+<p>I am currently building a static site generator called <a href="https://github.com/h3rald/hastysite">HastySite</a>, which also powers <a href="https://min-lang.org">https://min-lang.org</a>. HastySite internally uses min as the language to write the <a href="https://github.com/h3rald/min/blob/master/site/rules.min">rules</a> to process the source files of the site, and also all its <a href="https://github.com/h3rald/min/tree/master/site/scripts">scripts</a>.</p>
 
 <p>Finally, I think more and more people should get to know concatenative programming languages, because <a href="http://evincarofautumn.blogspot.it/2012/02/why-concatenative-programming-matters.html">concatenative programming matters</a>.</p>
 
@@ -7416,7 +7418,7 @@ div .terminal {
 
 <p>min is developed entirely in <a href="https://nim-lang.org">Nim</a> &ndash; the name is (almost) entirely a coincidence. I wanted to call it <em>minim</em> but then shortened it for more&hellip; minimalism.</p>
 
-<p>min&rsquo;s parser started off as a fork of Nim&rsquo;s JSON parser &ndash; adapted to process a concatenative programming language with less primitive types than JSON. It is interpreted in the traditional sense: no bytecode, no JIT, just plain read, parse and run.</p>
+<p>min&rsquo;s parser started off as a fork of Nim&rsquo;s JSON parser &ndash; adapted to process a concatenative programming language with less primitive types than JSON. It is interpreted in the traditional sense: no bytecode, no JIT, just plain read, parse, and run.</p>
 
 <a name="Who?"></a>
 <h3>Who?<a href="#document-top" title="Go to top"></a></h3>
@@ -7436,20 +7438,30 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.21.1/min_v0.21.1_macosx_x64.zip">min v0.21.1 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.21.1/min_v0.21.1_windows_x64.zip">min v0.21.1 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.21.1/min_v0.21.1_linux_x64.zip">min v0.21.1 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.22.0/min_v0.22.0_macosx_x64.zip">min v0.22.0 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.22.0/min_v0.22.0_windows_x64.zip">min v0.22.0 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.22.0/min_v0.22.0_linux_x64.zip">min v0.22.0 for Linux (x64)</a></li>
 </ul>
 
 
 <a name="Building-from-Source"></a>
 <h3>Building from Source<a href="#document-top" title="Go to top"></a></h3>
 
-<p>Alternatively, you can build min from source as follows:</p>
+<p>Alternatively, you can build min from source in one of the following ways:</p>
+
+<a name="Using-nimble"></a>
+<h4>Using nimble<a href="#document-top" title="Go to top"></a></h4>
+
+<p>If you already installed <a href="https://nim-lang.org">nim</a>, you probably already have the <a href="https://github.com/nim-lang/nimble">nimble</a> package manager installed.</p>
+
+<p>If that&rsquo;s the case, simply run <strong>nimble install min</strong>. This will actually install and run <a href="https://github.com/h3rald/nifty">nifty</a> which will download min dependencies for you before compiling.</p>
+
+<a name="Without-using-nimble"></a>
+<h4>Without using nimble<a href="#document-top" title="Go to top"></a></h4>
 
 <ol>
 <li>Download and install <a href="https://nim-lang.org">nim</a>.</li>
-<li>Download and build <a href="https://github.com/h3rald/nifty">Nifty</a>, and put the nifty executable somewhere in your <span class="kwd">$PATH</span>.</li>
+<li>Download and build <a href="https://github.com/h3rald/nifty">nifty</a>, and put the nifty executable somewhere in your <span class="kwd">$PATH</span>.</li>
 <li>Clone the min <a href="https://github.com/h3rald/min">repository</a>.</li>
 <li>Navigate to the min repository local folder.</li>
 <li>Run <strong>nifty install</strong> to download min’s dependencies.</li>
@@ -7500,7 +7512,7 @@ div .terminal {
 
 <p>To exit min shell, press <span class="kbd">CTRL+C</span> or type <span class="cmd">0 exit</span> and press <span class="kbd">ENTER</span>.</p>
 
-<div class="tip"><p>By default, the min shell provides advanced features like tab-completion, history, etc. If however you run into problems, you can disable these features by running <span class="cmd">min -i</span> instead, and run min shell with a bare-bones REPL.</p></div>
+<div class="tip"><p>By default, the min shell provides advanced features like tab-completion, history, etc. If however, you run into problems, you can disable these features by running <span class="cmd">min -i</span> instead, and run min shell with a bare-bones REPL.</p></div>
 
 <a name="Executing-a-min-Program"></a>
 <h3>Executing a min Program<a href="#document-top" title="Go to top"></a></h3>
@@ -7545,8 +7557,8 @@ div .terminal {
 <p>Let&rsquo;s see how it works:</p>
 
 <ol>
-<li>First a list containing the first five integer is pushed on the stack.</li>
-<li>Then, another list containing two symbols (<code>dup</code> and <code>*</code>) is pushed on the stack. This constitutes a quoted program which, when executed duplicates the first element on the stack &mdash;this is done by <code>dup</code>&mdash; and then multiplies &mdash;with <code>*</code>&mdash; the two elements together.</li>
+<li>First, a list containing the first five integers is pushed on the stack.</li>
+<li>Then, another list containing two symbols (<code>dup</code> and <code>*</code>) is pushed on the stack. This constitutes a quoted program which, when executed duplicates the first element on the stack &mdash; this is done by <code>dup</code>&mdash; and then multiplies &mdash; with <code>*</code>&mdash; the two elements together.</li>
 <li>Finally, the symbol <code>map</code> is pushed on the stack. Map takes a list of elements and a quoted program and applies the program to each element.</li>
 </ol>
 
@@ -7556,12 +7568,12 @@ div .terminal {
 <ul>
 <li>There are no variable assignments.</li>
 <li>elements are pushed on the stack one by one.</li>
-<li>Parentheses are used to group together one or more elements, so that they are treated as a single element and they are not evaluated immediately.</li>
+<li>Parentheses are used to group one or more elements together so that they are treated as a single element and they are not evaluated immediately.</li>
 <li><em>Symbols</em> (typically single words, or several words joined by dashes) are used to execute code that performs operations on the whole stack.</li>
 </ul>
 
 
-<p>Unlike more traditional programming languages, in a concatenative programming language there is no inherent need of variables or named parameters, as symbols acts as stack operators that consume elements that are placed in order on top of a stack.</p>
+<p>Unlike more traditional programming languages, in a concatenative programming language, there is no inherent need for variables or named parameters, as symbols act as stack operators that consume elements that are placed in order on top of a stack.</p>
 
 <a name="Data-Types"></a>
 <h3>Data Types<a href="#document-top" title="Go to top"></a></h3>
@@ -7572,13 +7584,13 @@ div .terminal {
 <dt>boolean</dt>
 <dd><strong>true</strong> or <strong>false</strong>.</dd>
 <dt>integer</dt>
-<dd>A 64-bit integer number like 1, 27 or -15.</dd>
+<dd>A 64-bit integer number like 1, 27, or -15.</dd>
 <dt>float</dt>
 <dd>A 64-bit floating-point number like 3.14 or -56.9876.</dd>
 <dt>string</dt>
 <dd>A series of characters wrapped in double quotes: &ldquo;Hello, World!&rdquo;.</dd>
 <dt>quotation</dt>
-<dd>A list of elements, which may also contain symbols. Quotations can be be used to create heterogenous lists of elements of any data type, and also to create a block of code that will be evaluated later on (quoted program). Example: (1 2 3 + *)</dd>
+<dd>A list of elements, which may also contain symbols. Quotations can be used to create heterogenous lists of elements of any data type, and also to create a block of code that will be evaluated later on (quoted program). Example: (1 2 3 + *)</dd>
 <dt>dictionary</dt>
 <dd><p>A key/value table. Dictionaries are implemented as an immediately-dequoted quotation, are enclosed in curly braces, and are represented by their symbol definitions. Note that dictionary keys are symbols and therefore can only contain characters allowed in symbols. The <a href="#&lt;code>dict&lt;/code>-Module">dict Module</a> provides some operators on dictionaries.</p>
 
@@ -7594,7 +7606,7 @@ div .terminal {
 </code></pre></div></dd>
 </dl>
 
-<p>The <a href="#&lt;code>logic&lt;/code>-Module">logic Module</a> provides predicate operators to check if an element belong to a particular data type or pseudo-type (<code>boolean?</code>, <code>number?</code>, <code>integer?</code>, <code>float?</code>, <code>string?</code>, <code>quotation?</code>, <code>dictionary?</code>).</p>
+<p>The <a href="#&lt;code>logic&lt;/code>-Module">logic Module</a> provides predicate operators to check if an element belongs to a particular data type or pseudo-type (<code>boolean?</code>, <code>number?</code>, <code>integer?</code>, <code>float?</code>, <code>string?</code>, <code>quotation?</code>, <code>dictionary?</code>).</p>
 
 <p>Additionally, the <a href="#&lt;code>lang&lt;/code>-Module">lang Module</a> provides operators to convert values from a data type to another (e.g. <a href="#min-operator-id-int">int</a>, <a href="#min-operator-id-string">string</a>, and so on).</p>
 
@@ -7775,7 +7787,7 @@ div .terminal {
 
 <p>&hellip;What is the value of the symbol <code>a</code> after executing it?</p>
 
-<p>Simple: <code>4</code>. Every quotation defines its own scope, and in each scope a new variable called <code>a</code> is defined. In the innermost scope containing the quotation <code>(a dup * :a)</code> the value of <code>a</code> is set to <code>64</code>, but this value is not propagated to the outer scopes. Note also that the value of <code>a</code> in the innermost scope is first retrieved from the outer scope (8).</p>
+<p>Simple: <code>4</code>. Every quotation defines its own scope, and in each scope, a new variable called <code>a</code> is defined. In the innermost scope containing the quotation <code>(a dup * :a)</code> the value of <code>a</code> is set to <code>64</code>, but this value is not propagated to the outer scopes. Note also that the value of <code>a</code> in the innermost scope is first retrieved from the outer scope (8).</p>
 
 <p>If we want to change the value of the original <code>a</code> symbol defined in the outermost scope, we have to use the <a href="#min-operator-id-bind">bind</a> or its shorthand sigil <code>@</code>, so that the program becomes the following:</p>
 
@@ -7808,9 +7820,9 @@ div .terminal {
      &lt;repl&gt;(1,19) in symbol: map
 </code></pre>
 
-<p>This error says that when the <a href="#min-operator-id-map">map</a> operator was evaluated, there were incorrect values on the stack. Two quotations were expected, but instead a quotation and an integer were found. How did this happen?</p>
+<p>This error says that when the <a href="#min-operator-id-map">map</a> operator was evaluated, there were incorrect values on the stack. Two quotations were expected, but instead, a quotation and an integer were found. How did this happen?</p>
 
-<p>Basically, when <code>my-list</code> was pushed on the stack, it pushed all its item on top of the stack. If you run <a href="#min-operator-id-get-stack">get-stack</a>, it will return the following list:</p>
+<p>Basically, when <code>my-list</code> was pushed on the stack, it pushed all its items on top of the stack. If you run <a href="#min-operator-id-get-stack">get-stack</a>, it will return the following list:</p>
 
 <pre><code> (1 2 3 4 5 (dup *))
 </code></pre>
@@ -7851,8 +7863,8 @@ div .terminal {
 <a name="Scopes"></a>
 <h3>Scopes<a href="#document-top" title="Go to top"></a></h3>
 
-<p>As explained in <a href="/learn-definitions">Definitions</a>, min uses lexical scoping to resolve symbol. A <em>scope</em> is an execution context (a symbol table really) that:
-* is created while a a new quotation is being dequoted or a dictiionary is created.
+<p>As explained in <a href="/learn-definitions">Definitions</a>, min uses lexical scoping to resolve symbols. A <em>scope</em> is an execution context (a symbol table really) that:
+* is created while a new quotation is being dequoted or a dictionary is created.
 * is destroyed after a quotation has been dequoted.
 * is attached to a dictionary.</p>
 
@@ -7908,12 +7920,12 @@ div .terminal {
 <pre><code> 4 2 (-)
 </code></pre>
 
-<p>At this points, the <a href="#min-operator-id-dequote">dequote</a> operator is pushed on the stack and the subtraction is executed leaving <code>2</code> on the stack.</p>
+<p>At this point, the <a href="#min-operator-id-dequote">dequote</a> operator is pushed on the stack and the subtraction is executed leaving <code>2</code> on the stack.</p>
 
 <a name="Control-Flow"></a>
 <h3>Control Flow<a href="#document-top" title="Go to top"></a></h3>
 
-<p>The <a href="#&lt;code>lang&lt;/code>-Module">lang Module</a> provide some symbols that can be used for the most common control flow statements. Unlike most programming language, min does not differentiate between functions and statements &ndash; control flow statements are just ordinary symbols that manipulate the main stack.</p>
+<p>The <a href="#&lt;code>lang&lt;/code>-Module">lang Module</a> provide some symbols that can be used for the most common control flow statements. Unlike most programming languages, min does not differentiate between functions and statements &ndash; control flow statements are just ordinary symbols that manipulate the main stack.</p>
 
 <a name="Conditionals"></a>
 <h4>Conditionals<a href="#document-top" title="Go to top"></a></h4>
@@ -7943,7 +7955,7 @@ div .terminal {
  ) :display-file-info
 </code></pre>
 
-<p>This program defines a symbol <code>display-file-info</code> that takes a file name and outputs a message displaying its type, if known.</p>
+<p>This program defines a symbol <code>display-file-info</code> that takes a file name and outputs a message displaying its type if known.</p>
 
 <a name="Loops"></a>
 <h4>Loops<a href="#document-top" title="Go to top"></a></h4>
@@ -7998,7 +8010,7 @@ div .terminal {
  1 (+) reduce
 </code></pre>
 
-<p>This program calculates the size in bytes of all files included in the current directory. Because the <a href="#min-operator-id-fsize">fsize</a> symbol throws an error if the argument provided is not a file (for example if it is a directory), the <code>try</code> symbol is used to remove the error from the stack and push <code>0</code> on the stack instead.</p>
+<p>This program calculates the size in bytes of all files included in the current directory. Because the <a href="#min-operator-id-fsize">fsize</a> symbol throws an error if the argument provided is not a file (for example, if it is a directory), the <code>try</code> symbol is used to remove the error from the stack and push <code>0</code> on the stack instead.</p>
 
 <a name="Using-the-min-Shell"></a>
 <h2>Using the min Shell<a href="#document-top" title="Go to top"></a></h2>
@@ -8008,7 +8020,7 @@ div .terminal {
 <div class="min-terminal"><p><span class="prompt">$</span> min -i
 <span class="prompt">&#91;/Users/h3rald/Development/min&#93;$</span></p></div>
 
-<p>Although not as advanced, the min REPL is not dissimilar from an OS system shell like Bash, and as a matter of fact it provides many functionalities that are found in other shells or command prompts, such as:</p>
+<p>Although not as advanced, the min REPL is not dissimilar from an OS system shell like Bash, and as a matter of fact, it provides many functionalities that are found in other shells or command prompts, such as:</p>
 
 <ul>
 <li>Auto-completion</li>
@@ -8551,6 +8563,18 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>See <a href="#min-operator-id-dequote">dequote</a>.</p></div>
 
+<p><span class="reference-title">>></span></p>
+
+<div class="operator"><p><span class="kwd"> >> <strong>&rArr;</strong> prefix-dequote</span></p>
+
+<p>See <a href="#min-operator-id-prefix-dequote">prefix-dequote</a>.</p></div>
+
+<p><span class="reference-title">>&lt;</span></p>
+
+<div class="operator"><p><span class="kwd"> >&lt; <strong>&rArr;</strong> infix-dequote</span></p>
+
+<p>See <a href="#min-operator-id-infix-dequote">infix-dequote</a>.</p></div>
+
 <p><span class="reference-title">=></span></p>
 
 <div class="operator"><p><span class="kwd"> => <strong>&rArr;</strong> apply</span></p>
@@ -8784,6 +8808,26 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>Imports the a previously-loaded module <span class="kwd">&apos;sym</span>, defining all its symbols in the current scope.</p></div>
 
+<p><a id="min-operator-id-infix-dequote"></a>
+<span class="reference-title">infix-dequote</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+
+<p>Dequotes <span class="kwd">quot</span> using infix notation.</p>
+
+<div class="note"><p>No operator precedence</p>
+
+<p>No special operator preference is defined, symbols precedence is always left-to-right. However, you can use parentheses (quotes) to evaluate expressions before others.</p>
+
+<p>%sidebar%
+Example</p>
+
+<p>The following program leaves <code>17</code> on the stack:
+    (2 + (3 * 5)) infix-dequote</p>
+
+<p>while this program leaves <code>25</code> on the stack:
+    (2 + 3 * 5) infix-dequote</p></div></div>
+
 <p><a id="min-operator-id-int"></a>
 <span class="reference-title">int</span></p>
 
@@ -8894,6 +8938,20 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
 
 <p>Parses <span class="kwd">string</span> and returns a quoted program <span class="kwd">quot</span>.</p></div>
+
+<p><a id="min-operator-id-prefix-dequote"></a>
+<span class="reference-title">prefix-dequote</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+
+<p>Dequotes <span class="kwd">quot</span> using prefix notation (essentially it reverses <span class="kwd">quot</span> and dequotes it.</p>
+
+<blockquote><p>%sidebar%
+Example</p>
+
+<p>The following program leaves <code>4</code> on the stack:
+    (* 8 4) prefix-dequote
+#</p></blockquote></div>
 
 <p><a id="min-operator-id-prompt"></a>
 <span class="reference-title">prompt</span></p>
@@ -11308,7 +11366,7 @@ cli recv-line puts :line
 <p>The following code constructs a <span class="kwd">request</span> dictionary and passes it to the <strong>request</strong> operator to perform an HTTP GET request to <a href="http://httpbin.org/ip">http://httpbin.org/ip</a>:</p>
 
 <pre><code>{}
-  "GET" %method)
+  "GET" %method
   "http://httpbin.org/ip" %url
 request
 </code></pre></div></div>
@@ -11382,7 +11440,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; October 31, 2020</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; November 29, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
