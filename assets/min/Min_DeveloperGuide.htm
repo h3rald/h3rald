@@ -8815,18 +8815,19 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>Dequotes <span class="kwd">quot</span> using infix notation.</p>
 
-<div class="note"><p>No operator precedence</p>
+<p>Note that no special operator preference is defined, symbols precedence is always left-to-right. However, you can use parentheses (quotes) to evaluate expressions before others.</p>
 
-<p>No special operator preference is defined, symbols precedence is always left-to-right. However, you can use parentheses (quotes) to evaluate expressions before others.</p>
+<div class="sidebar"><p>Example</p>
 
-<p>%sidebar%
-Example</p>
+<p>The following program leaves <code>17</code> on the stack:</p>
 
-<p>The following program leaves <code>17</code> on the stack:
-    (2 + (3 * 5)) infix-dequote</p>
+<pre><code> (2 + (3 * 5)) infix-dequote
+</code></pre>
 
-<p>while this program leaves <code>25</code> on the stack:
-    (2 + 3 * 5) infix-dequote</p></div></div>
+<p>while this program leaves <code>25</code> on the stack:</p>
+
+<pre><code> (2 + 3 * 5) infix-dequote
+</code></pre></div></div>
 
 <p><a id="min-operator-id-int"></a>
 <span class="reference-title">int</span></p>
@@ -8944,14 +8945,14 @@ Example</p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
-<p>Dequotes <span class="kwd">quot</span> using prefix notation (essentially it reverses <span class="kwd">quot</span> and dequotes it.</p>
+<p>Dequotes <span class="kwd">quot</span> using prefix notation (essentially it reverses <span class="kwd">quot</span> and dequotes it).</p>
 
-<blockquote><p>%sidebar%
-Example</p>
+<div class="sidebar"><p>Example</p>
 
-<p>The following program leaves <code>4</code> on the stack:
-    (* 8 4) prefix-dequote
-#</p></blockquote></div>
+<p>The following program leaves <code>4</code> on the stack:</p>
+
+<pre><code>(* 8 4) prefix-dequote
+</code></pre></div></div>
 
 <p><a id="min-operator-id-prompt"></a>
 <span class="reference-title">prompt</span></p>
