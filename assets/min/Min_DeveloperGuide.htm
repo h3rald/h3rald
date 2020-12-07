@@ -7438,9 +7438,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.22.0/min_v0.22.0_macosx_x64.zip">min v0.22.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.22.0/min_v0.22.0_windows_x64.zip">min v0.22.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.22.0/min_v0.22.0_linux_x64.zip">min v0.22.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.23.0/min_v0.23.0_macosx_x64.zip">min v0.23.0 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.23.0/min_v0.23.0_windows_x64.zip">min v0.23.0 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.23.0/min_v0.23.0_linux_x64.zip">min v0.23.0 for Linux (x64)</a></li>
 </ul>
 
 
@@ -7533,6 +7533,7 @@ div .terminal {
 <h3>Syntax Highlighting<a href="#document-top" title="Go to top"></a></h3>
 
 <ul>
+<li>If you are using <a href="https://code.visualstudio.com/">Visual Studio Code</a>, you can install the official <a href="https://marketplace.visualstudio.com/items?itemName=h3rald.vscode-min-lang">min extension</a> which provides syntax highlighting support, code folding, and auto-indentation.</li>
 <li>If you are using <a href="https://www.vim.org">Vim</a>, a <a href="https://github.com/h3rald/min/blob/master/min.vim">min.vim</a> syntax definition file is available in the min repo.</li>
 <li>If you are using <a href="https://www.sublimetext.com/3">Sublime Text 3</a>, Rafael Carrasco created a min syntax definition file that is available <a href="https://github.com/rscarrasco/min-sublime-syntax">here</a>.</li>
 </ul>
@@ -8790,9 +8791,20 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <p><a id="min-operator-id-from-json"></a>
 <span class="reference-title">from-json</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
 <p>Converts a JSON string into <em>min</em> data.</p></div>
+
+<p><a id="min-operator-id-from-yaml"></a>
+<span class="reference-title">from-yaml</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+
+<p>Converts a YAML string into <em>min</em> data.</p>
+
+<div class="note"><p>Note</p>
+
+<p>At present, only YAML objects containing string values are supported.</p></div></div>
 
 <p><a id="min-operator-id-if"></a>
 <span class="reference-title">if</span></p>
@@ -8977,6 +8989,13 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>Publish symbol <span class="kwd">my-local-symbol</span> to <span class="kwd">ROOT</span> scope:
 <code>'my-local-symbol ROOT publish</code></p></div></div>
+
+<p><a id="min-operator-id-quit"></a>
+<span class="reference-title">quit</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Exits the program or shell with 0 as return code.</p></div>
 
 <p><a id="min-operator-id-quote"></a>
 <span class="reference-title">quote</span></p>
@@ -9194,9 +9213,20 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <p><a id="min-operator-id-to-json"></a>
 <span class="reference-title">to-json</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
 
-<p>Converts <span class="kwd">quot</span> into a JSON string <span class="kwd">string</span>.</p></div>
+<p>Converts <span class="kwd">a</span> into a JSON string.</p></div>
+
+<p><a id="min-operator-id-to-yaml"></a>
+<span class="reference-title">to-yaml</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>Converts <span class="kwd">a</span> into a YAML string.</p>
+
+<div class="note"><p>Note</p>
+
+<p>At present, only <em>min</em> dictionaries containing string values are supported.</p></div></div>
 
 <p><a id="min-operator-id-try"></a>
 <span class="reference-title">try</span></p>
@@ -9807,6 +9837,13 @@ harvest
 <pre><code>{5 :q 4 :a 6 :c 7 :d "d" :a} ("a" "d") dpick
 </code></pre></div></div>
 
+<p><a id="min-operator-id-dpairs"></a>
+<span class="reference-title">dpairs</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)</span></p>
+
+<p>Returns a quotation containing all the keys (odd items) and values (even items) of dictiionary <span class="kwd">dict</span>.</p></div>
+
 <p><a id="min-operator-id-dset"></a>
 <span class="reference-title">dset</span></p>
 
@@ -10281,11 +10318,24 @@ harvest
 
 <p>See <a href="#min-operator-id-interpolate">interpolate</a>.</p></div>
 
+<p><span class="reference-title">=%</span></p>
+
+<div class="operator"><p><span class="kwd"> =% <strong>&rArr;</strong> apply-interpolate</span></p>
+
+<p>See <a href="#min-operator-id-apply-interpolate">apply-interpolate</a>.</p></div>
+
 <p><span class="reference-title">=~</span></p>
 
 <div class="operator"><p><span class="kwd"> =~ <strong>&rArr;</strong> regex</span></p>
 
 <p>See <a href="#min-operator-id-regex">regex</a>.</p></div>
+
+<p><a id="min-operator-id-apply-interpolate"></a>
+<span class="reference-title">apply-interpolate</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>The same as pushing <code>apply</code> and then <code>interpolate</code> on the stack.</p></div>
 
 <p><a id="min-operator-id-capitalize"></a>
 <span class="reference-title">capitalize</span></p>
@@ -10300,6 +10350,21 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
 
 <p>Returns the single character <span class="kwd">string</span> obtained by interpreting <span class="kwd">int</span> as an ASCII code.</p></div>
+
+<p><a id="min-operator-id-escape"></a>
+<span class="reference-title">escape</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>Returns a copy of <span class="kwd">&apos;sym</span> with quotes and backslashes escaped with a backslash.</p></div>
+
+<p><a id="min-operator-id-from-semver"></a>
+<span class="reference-title">from-semver</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+
+<p>Given a basic <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string</span>,
+it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <strong>major</strong>, <strong>minor</strong>, and <strong>patch</strong> key/value pairs.</p></div>
 
 <p><a id="min-operator-id-indent"></a>
 <span class="reference-title">indent</span></p>
@@ -10322,9 +10387,14 @@ harvest
 
 <p>Substitutes the placeholders included in <span class="kwd">string</span> with the values in <span class="kwd">quot</span>.</p>
 
-<div class="note"><p>Note</p>
+<div class="note"><p>Notes</p>
 
-<p>If <span class="kwd">quot</span> contains symbols or quotations, they are not interpreted. To do so, call <code>apply</code> before interpolating.</p></div>
+<ul>
+<li>If <span class="kwd">quot</span> contains symbols or quotations, they are not interpreted. To do so, call <code>apply</code> before interpolating or use <code>apply-interpolate</code> instead.</li>
+<li>You can use the <code>$#</code> placeholder to indicate the next placeholder that has not been already referenced in the string.</li>
+<li>You can use named placeholders like <code>$pwd</code>, but in this case <span class="kwd">quot</span> must contain a quotation containing both the placeholder names (odd items) and the values (even items).</li>
+</ul>
+</div>
 
 <div class="sidebar"><p>Example</p>
 
@@ -10375,6 +10445,13 @@ harvest
 
 <p>Returns the ASCII code <span class="kwd">int</span> corresponding to the single character <span class="kwd">string</span>.</p></div>
 
+<p><a id="min-operator-id-prefix"></a>
+<span class="reference-title">prefix</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>Prepends <span class="kwd">&apos;sym<sub>2</sub></span> to <span class="kwd">&apos;sym<sub>1</sub></span>.</p></div>
+
 <p><a id="min-operator-id-repeat"></a>
 <span class="reference-title">repeat</span></p>
 
@@ -10399,7 +10476,9 @@ harvest
 
 <p><code>"This is a stupid test. Is it really a stupid test?" " s[a-z]+" " simple" replace</code></p>
 
-<p>produces: <code>"This is a simple test. Is it really a simple test?"</code></p></div></div>
+<p>produces:</p>
+
+<p><code>"This is a simple test. Is it really a simple test?"</code></p></div></div>
 
 <p><a id="min-operator-id-regex"></a>
 <span class="reference-title">regex</span></p>
@@ -10480,6 +10559,34 @@ harvest
 
 <p>produces: <code>("192.168.1.1", "1", "1")</code></p></div></div>
 
+<p><a id="min-operator-id-semver-inc-major"></a>
+<span class="reference-title">semver-inc-major</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+
+<p>Increments the major digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-semver-inc-minor"></a>
+<span class="reference-title">semver-inc-minor</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+
+<p>Increments the minor digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-semver-inc-patch"></a>
+<span class="reference-title">semver-inc-patch</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+
+<p>Increments the patch digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-semver?"></a>
+<span class="reference-title">semver?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Checks whether <span class="kwd">string</span> is a <a href="https://semver.org">SemVer</a>-compliant version or not.</p></div>
+
 <p><a id="min-operator-id-split"></a>
 <span class="reference-title">split</span></p>
 
@@ -10501,12 +10608,26 @@ harvest
 
 <p>Returns a substring <span class="kwd">string<sub>2</sub></span> obtained by retriving <span class="kwd">int<sub>2</sub></span> characters starting from index <span class="kwd">int<sub>1</sub></span> within <span class="kwd">string<sub>1</sub></span>.</p></div>
 
+<p><a id="min-operator-id-suffix"></a>
+<span class="reference-title">suffix</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>Appends <span class="kwd">&apos;sym<sub>2</sub></span> to <span class="kwd">&apos;sym<sub>1</sub></span>.</p></div>
+
 <p><a id="min-operator-id-titleize"></a>
 <span class="reference-title">titleize</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
 
 <p>Returns a copy of <span class="kwd">&apos;sym</span> in which the first character of each word is capitalized.</p></div>
+
+<p><a id="min-operator-id-to-semver"></a>
+<span class="reference-title">to-semver</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>Given a a dictionary <span class="kwd">dict</span> containing a <strong>major</strong>, <strong>minor</strong>, and <strong>patch</strong> key/value pairs , it pushes a basic <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string</span> on the stack.</p></div>
 
 <p><a id="min-operator-id-uppercase"></a>
 <span class="reference-title">uppercase</span></p>
@@ -11441,7 +11562,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; November 29, 2020</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; December 7, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
