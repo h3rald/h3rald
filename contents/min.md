@@ -5,11 +5,11 @@ home: /min/
 title: "min"
 site: "https://min-lang.org"
 subtitle: "A functional, concatenative programming language with a minimalist syntax"
-summary: "A functional, concatenative programming language with a minimalist syntax, a small but practical standard library, and an advanced REPL. All packed in about 1MB."
+summary: "A functional, concatenative programming language with a minimalist syntax, a small but practical standard library, and an advanced REPL. All packed in a single file."
 content-type: project
 active: true
 download: "https://github.com/h3rald/min/releases/download/"
-version: 0.23.0
+version: 0.24.0
 docs: /min/Min_DeveloperGuide.htm
 -----
 

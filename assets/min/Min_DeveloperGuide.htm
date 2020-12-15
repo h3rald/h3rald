@@ -7286,15 +7286,16 @@ div .terminal {
     <li><a href="#Without-using-nimble">Without using nimble</a></li>
     <li><a href="#Additional-build-options">Additional build options</a>
     <ul>
-     <li><a href="#-d:ssl">-d:ssl</a></li>
-     <li><a href="#-d:lite">-d:lite</a>
+     <li><a href="#-d:lite">-d:lite</a></li>
+     <li><a href="#-d:mini">-d:mini</a>
 </li>
     </ul>
     </li>
    </ul>
    </li>
-   <li><a href="#Running-then-min-Shell">Running then min Shell</a></li>
+   <li><a href="#Running-the-min-Shell">Running the min Shell</a></li>
    <li><a href="#Executing-a-min-Program">Executing a min Program</a></li>
+   <li><a href="#Compiling-a-min-Program">Compiling a min Program</a></li>
    <li><a href="#Syntax-Highlighting">Syntax Highlighting</a></li>
   </ul>
   </li>
@@ -7438,9 +7439,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.23.0/min_v0.23.0_macosx_x64.zip">min v0.23.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.23.0/min_v0.23.0_windows_x64.zip">min v0.23.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.23.0/min_v0.23.0_linux_x64.zip">min v0.23.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.24.0/min_v0.24.0_macosx_x64.zip">min v0.24.0 for macOS (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.24.0/litemin_v0.24.0_macosx_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.24.0/minimin_v0.24.0_macosx_x64.zip">mini</a>]</small></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.24.0/min_v0.24.0_windows_x64.zip">min v0.24.0 for Windows (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.24.0/litemin_v0.24.0_windows_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.24.0/minimin_v0.24.0_windows_x64.zip">mini</a>]</small></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.24.0/min_v0.24.0_linux_x64.zip">min v0.24.0 for Linux (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.24.0/litemin_v0.24.0_linux_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.24.0/minimin_v0.24.0_linux_x64.zip">mini</a>]</small></li>
 </ul>
 
 
@@ -7472,15 +7473,10 @@ div .terminal {
 <a name="Additional-build-options"></a>
 <h4>Additional build options<a href="#document-top" title="Go to top"></a></h4>
 
-<a name="-d:ssl"></a>
-<h5>-d:ssl<a href="#document-top" title="Go to top"></a></h5>
-
-<p>If the <strong>-d:ssl</strong> flag is specified when compiling, min will be built with SSL support, so it will be possible to perform HTTPS requests with the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>. This means that the resulting <strong>min</strong> executable will no longer be self-contained and it will require the OpenSSL dynamic library to be available on your system.</p>
-
 <a name="-d:lite"></a>
 <h5>-d:lite<a href="#document-top" title="Go to top"></a></h5>
 
-<p>If the <strong>d:lite</strong> flag is specified, an even more minimal executable file will be generated, however the following functionalities will not be available:</p>
+<p>If the <strong>d:lite</strong> flag is specified, a more minimal executable file will be generated (typically, it should be called &ldquo;litemin&rdquo;), however the following functionalities will not be available:</p>
 
 <ul>
 <li>The <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a></li>
@@ -7491,8 +7487,57 @@ div .terminal {
 </ul>
 
 
-<a name="Running-then-min-Shell"></a>
-<h3>Running then min Shell<a href="#document-top" title="Go to top"></a></h3>
+<a name="-d:mini"></a>
+<h5>-d:mini<a href="#document-top" title="Go to top"></a></h5>
+
+<p>If the <strong>d:mini</strong> flag is specified, an even more minimal executable file will be generated (typically, it should be called litemin), however the following functionalities will not be available:</p>
+
+<ul>
+<li>The <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a></li>
+<li>The <a href="#&lt;code>net&lt;/code>-Module">net Module</a></li>
+<li>The <a href="#&lt;code>http&lt;/code>-Module">http Module</a></li>
+<li>The <a href="#&lt;code>math&lt;/code>-Module">math Module</a></li>
+<li>The <a href="#&lt;code>io&lt;/code>-Module">io Module</a></li>
+<li>The <a href="#&lt;code>fs&lt;/code>-Module">fs Module</a></li>
+<li>The <a href="#&lt;code>sys&lt;/code>-Module">sys Module</a></li>
+<li>The following operators:
+
+<ul>
+<li><a href="#min-operator-id-load">load</a></li>
+<li><a href="#min-operator-id-read">read</a></li>
+<li><a href="#min-operator-id-to-json">to-json</a></li>
+<li><a href="#min-operator-id-from-json">from-json</a></li>
+<li><a href="#min-operator-id-raw-args">raw-args</a></li>
+<li><a href="#min-operator-id-save-symbol">save-symbol</a></li>
+<li><a href="#min-operator-id-load-symbol">load-symbol</a></li>
+<li><a href="#min-operator-id-saved-symbol">saved-symbol</a></li>
+<li><a href="#min-operator-id-loaded-symbol">loaded-symbol</a></li>
+<li><a href="#min-operator-id-search">search</a></li>
+<li><a href="#min-operator-id-match">match</a></li>
+<li><a href="#min-operator-id-replace">replace</a></li>
+<li><a href="#min-operator-id-regex">regex</a></li>
+<li><a href="#min-operator-id-semver?">semver?</a></li>
+<li><a href="#min-operator-id-from-semver">from-semver</a></li>
+<li><a href="#min-operator-id-zip">zip</a></li>
+<li><a href="#min-operator-id-unzip">unzip</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p>Additionally:</p>
+
+<ul>
+<li>No checks will be performed when defining symbols.</li>
+<li>Only the simple REPL will be available.</li>
+<li>There will be no support for dynamic libraries.</li>
+<li>The <strong>-m, --module-path</strong> option has no effect.</li>
+<li>No environment configuration files (<span class="file">.minrc</span>, <span class="file">.min_symbols</span>) are used.</li>
+</ul>
+
+
+<a name="Running-the-min-Shell"></a>
+<h3>Running the min Shell<a href="#document-top" title="Go to top"></a></h3>
 
 <p>To start min shell, run <span class="cmd">min -i</span>. You will be presented with a prompt displaying the path to the current directory:</p>
 
@@ -7512,7 +7557,9 @@ div .terminal {
 
 <p>To exit min shell, press <span class="kbd">CTRL+C</span> or type <span class="cmd">0 exit</span> and press <span class="kbd">ENTER</span>.</p>
 
-<div class="tip"><p>By default, the min shell provides advanced features like tab-completion, history, etc. If however, you run into problems, you can disable these features by running <span class="cmd">min -i</span> instead, and run min shell with a bare-bones REPL.</p></div>
+<div class="tip"><p>Tip</p>
+
+<p>By default, the min shell provides advanced features like tab-completion, history, etc. If however, you run into problems, you can disable these features by running <span class="cmd">min -j</span> instead, and run min shell with a bare-bones REPL.</p></div>
 
 <a name="Executing-a-min-Program"></a>
 <h3>Executing a min Program<a href="#document-top" title="Go to top"></a></h3>
@@ -7528,6 +7575,35 @@ div .terminal {
 <p>min also supports running programs from standard input, so the following command can also be used (on Unix-like system) to run a program saved in <span class="file">myfile.min</span>:</p>
 
 <div class="min-terminal"><p><span class="prompt">$</span> cat myfile.min | min</p></div>
+
+<a name="Compiling-a-min-Program"></a>
+<h3>Compiling a min Program<a href="#document-top" title="Go to top"></a></h3>
+
+<p>min programs can be compiled to a single executable simply by specifying the <code>-c</code> (or <code>--compile</code>) flag when executing a min file:</p>
+
+<div class="min-terminal"><p><span class="prompt">$</span> min -c myfile.min</p></div>
+
+<p>Essentially, this will:</p>
+
+<ol>
+<li>Generate a <span class="file">myfile.nim</span> containing the equivalent Nim code of your min program.</li>
+<li>Call the Nim compiler to do the rest ;)</li>
+</ol>
+
+
+<p>If you want to pass any options to the Nim compiler (like <code>-d:release</code> for example) you can do so by using the <code>-n</code> (or <code>--passN</code>) option:</p>
+
+<div class="min-terminal"><p><span class="prompt">$</span> min -c myfile.min -n:-d:release</p></div>
+
+<p>Additionally, you can also use <code>-m:&lt;path&gt;</code> (or <code>--module-path</code>) to specify one path containing <span class="ext">.min</span> files which will be compiled as well (but not executed) along with the specified file. Whenever a <a href="#min-operator-id-load">load</a> symbol is used to load an external <span class="ext">.min</span> file, it will attempt to load from the pre-loaded files first before searching the filesystem.</p>
+
+<p>For example, the following command executed in the root folder of the min project will compile <span class="file">run.min</span> along with all <span class="ext">.min</span> files included in the <span class="dir">task</span> and its subfolders:</p>
+
+<div class="min-terminal"><p><span class="prompt">$</span> min -c run.min -m:tasks</p></div>
+
+<div class="note"><p>Note</p>
+
+<p>In order to successfully compile <a href="class.ext">.min</a> files, Nim must be installed on your system and min must be installed via nimble.</p></div>
 
 <a name="Syntax-Highlighting"></a>
 <h3>Syntax Highlighting<a href="#document-top" title="Go to top"></a></h3>
@@ -8217,7 +8293,7 @@ div .terminal {
 
 <p>The following code is taken from <a href="https://github.com/h3rald/hastysite">HastySite</a> and shows how to define a new <code>hastysite</code> module containing some symbols (<code>preprocess</code>, <code>postprocess</code>, <code>process-rules</code>, &hellip;):</p>
 
-<pre><code>import packages/min/min
+<pre><code>import min
 
 proc hastysite_module*(i: In, hs1: HastySite) =
   var hs = hs1
@@ -8297,11 +8373,13 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>You can compile the following library by running the following command:</p>
 
-<div class="min-terminal"><p><span class="prompt">$</span> nim c --app:lib -d:release --noMain dyntest.nim</p></div>
+<div class="min-terminal"><p><span class="prompt">$</span> nim c --app:lib -d:release \
+--noMain dyntest.nim</p></div>
 
 <p>If you are using <a href="https://clang.llvm.org/">clang</a> to compile Nim code, you may need to run the following command instead:</p>
 
-<div class="min-terminal"><p><span class="prompt">$</span> nim c --app:lib -d:release --noMain  -l:&#34;-undefined dynamic_lookup&#34; dyntest.nim</p></div>
+<div class="min-terminal"><p><span class="prompt">$</span> nim c --app:lib -d:release --noMain \
+-l:&#34;-undefined dynamic_lookup&#34; dyntest.nim</p></div>
 
 <p>Now you should have a <code>libdyntest.so|dyn|dll</code> file. To make min load it and link it automatically when it starts, just run:</p>
 
@@ -8681,6 +8759,13 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 ) case
 </code></pre></div></div>
 
+<p><a id="min-operator-id-compiled?"></a>
+<span class="reference-title">compiled?</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the current program has been compiled.</p></div>
+
 <p><a id="min-operator-id-define"></a>
 <span class="reference-title">define</span></p>
 
@@ -8805,6 +8890,13 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 <div class="note"><p>Note</p>
 
 <p>At present, only YAML objects containing string values are supported.</p></div></div>
+
+<p><a id="min-operator-id-gets"></a>
+<span class="reference-title">gets</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+
+<p>Reads a line from STDIN and places it on top of the stack as a string.</p></div>
 
 <p><a id="min-operator-id-if"></a>
 <span class="reference-title">if</span></p>
@@ -8989,6 +9081,20 @@ proc dyntest*(i: In) {.dynlib, exportc.} =
 
 <p>Publish symbol <span class="kwd">my-local-symbol</span> to <span class="kwd">ROOT</span> scope:
 <code>'my-local-symbol ROOT publish</code></p></div></div>
+
+<p><a id="min-operator-id-puts"></a>
+<span class="reference-title">puts</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+
+<p>Prints <span class="kwd">a</span> and a new line to STDOUT.</p></div>
+
+<p><a id="min-operator-id-puts!"></a>
+<span class="reference-title">puts!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Prints <span class="kwd">a</span> and a new line to STDOUT, removing <span class="kwd">a</span> from the stack.</p></div>
 
 <p><a id="min-operator-id-quit"></a>
 <span class="reference-title">quit</span></p>
@@ -9954,13 +10060,6 @@ harvest
 
 <p>Reads single character from STDIN without waiting for ENTER key and places its ASCII code on top of the stack.</p></div>
 
-<p><a id="min-operator-id-gets"></a>
-<span class="reference-title">gets</span></p>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
-
-<p>Reads a line from STDIN and places it on top of the stack as a string.</p></div>
-
 <p><a id="min-operator-id-info"></a>
 <span class="reference-title">info</span></p>
 
@@ -10009,20 +10108,6 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
 <p>Prints <span class="kwd">string</span> to STDOUT without printing a new line (<span class="kwd">string</span> must contain only one character).</p></div>
-
-<p><a id="min-operator-id-puts"></a>
-<span class="reference-title">puts</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
-
-<p>Prints <span class="kwd">a</span> and a new line to STDOUT.</p></div>
-
-<p><a id="min-operator-id-puts!"></a>
-<span class="reference-title">puts!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> and a new line to STDOUT, removing <span class="kwd">a</span> from the stack.</p></div>
 
 <p><a id="min-operator-id-type"></a>
 <span class="reference-title">type</span></p>
@@ -11562,7 +11647,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; December 7, 2020</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; December 12, 2020</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
