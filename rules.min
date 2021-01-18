@@ -38,8 +38,8 @@
   ".html"                                             %ext
   "Projects"                                          %title
   "page"                                              %content-type
-  PROJECTS (?active) filter (/id swap /id <) sort     %active-projects
-  PROJECTS (?active not) filter (/id swap /id <) sort %inactive-projects
+  PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
+  PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects
   dup "projects" swap mustache %contents
   output-fwrite
 ) :create-projects-page
@@ -50,7 +50,7 @@
 ; Group articles by month
 (
   (dict) expect -> =content
-  (content ?timestamp)
+  (content 'timestamp dhas?)
   (
     content /timestamp :ts
     ts to-date :date 
@@ -89,7 +89,7 @@
 ; Group articles by tags
 (
   (dict) expect -> =content
-  ((content ?tags) (content /tags "" !=) dequote-and)
+  ((content 'tags dhas?) (content /tags "" !=) dequote-and)
   (
     content /tags "|" split =tags
     tags (
@@ -202,7 +202,7 @@
 ; Process all contents
 contents (
   =content
-  ((content ?draft not) (content ?content-type) dequote-and)
+  ((content 'draft dhas? not) (content 'content-type dhas?) dequote-and)
   (
     content /id :id
     content

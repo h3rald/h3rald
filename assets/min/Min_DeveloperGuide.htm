@@ -7286,7 +7286,7 @@ div .terminal {
     <li><a href="#Without-using-nimble">Without using nimble</a></li>
     <li><a href="#Additional-build-options">Additional build options</a>
     <ul>
-     <li><a href="#-d:ssl-(enabled-by-default)">-d:ssl (enabled by default)</a></li>
+     <li><a href="#-d:ssl">-d:ssl</a></li>
      <li><a href="#-d:lite">-d:lite</a></li>
      <li><a href="#-d:mini">-d:mini</a>
 </li>
@@ -7308,7 +7308,17 @@ div .terminal {
     <li><a href="#Quoting,-dequoting,-and-applying">Quoting, dequoting, and applying</a></li>
    </ul>
    </li>
-   <li><a href="#Operators">Operators</a></li>
+   <li><a href="#Operators">Operators</a>
+   <ul>
+    <li><a href="#Operator-signatures">Operator signatures</a>
+    <ul>
+     <li><a href="#Type-classes">Type classes</a></li>
+     <li><a href="#Generics">Generics</a>
+</li>
+    </ul>
+    </li>
+   </ul>
+   </li>
    <li><a href="#Definitions">Definitions</a>
    <ul>
     <li><a href="#Lexical-scoping-and-binding">Lexical scoping and binding</a></li>
@@ -7425,7 +7435,7 @@ div .terminal {
 <a name="Who?"></a>
 <h3>Who?<a href="#document-top" title="Go to top"></a></h3>
 
-<p>min was created and implemented by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions by <a href="https://peterme.net">Peter Munch-Ellingsen</a>.</p>
+<p>min was created and implemented by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions by <a href="https://peterme.net">Peter Munch-Ellingsen</a> and <a href="https://github.com/baykus871">baykus871</a>.</p>
 
 <p>Special thanks to <a href="https://github.com/mwgkgk">mwgkgk</a> for contributing to the design of native dictionaries.</p>
 
@@ -7440,9 +7450,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.27.1/min_v0.27.1_macosx_x64.zip">min v0.27.1 for macOS (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.27.1/litemin_v0.27.1_macosx_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.27.1/minimin_v0.27.1_macosx_x64.zip">mini</a>]</small></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.27.1/min_v0.27.1_windows_x64.zip">min v0.27.1 for Windows (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.27.1/litemin_v0.27.1_windows_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.27.1/minimin_v0.27.1_windows_x64.zip">mini</a>]</small></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.27.1/min_v0.27.1_linux_x64.zip">min v0.27.1 for Linux (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.27.1/litemin_v0.27.1_linux_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.27.1/minimin_v0.27.1_linux_x64.zip">mini</a>]</small></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.29.0/min_v0.29.0_macosx_x64.zip">min v0.29.0 for macOS (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.29.0/litemin_v0.29.0_macosx_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.29.0/minimin_v0.29.0_macosx_x64.zip">mini</a>]</small></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.29.0/min_v0.29.0_windows_x64.zip">min v0.29.0 for Windows (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.29.0/litemin_v0.29.0_windows_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.29.0/minimin_v0.29.0_windows_x64.zip">mini</a>]</small></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.29.0/min_v0.29.0_linux_x64.zip">min v0.29.0 for Linux (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.29.0/litemin_v0.29.0_linux_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.29.0/minimin_v0.29.0_linux_x64.zip">mini</a>]</small></li>
 </ul>
 
 
@@ -7474,16 +7484,21 @@ div .terminal {
 <a name="Additional-build-options"></a>
 <h4>Additional build options<a href="#document-top" title="Go to top"></a></h4>
 
-<a name="-d:ssl-(enabled-by-default)"></a>
-<h5>-d:ssl (enabled by default)<a href="#document-top" title="Go to top"></a></h5>
+<a name="-d:ssl"></a>
+<h5>-d:ssl<a href="#document-top" title="Go to top"></a></h5>
 
 <p>If the <strong>-d:ssl</strong> flag is specified when compiling, min will be built with SSL support, so it will be possible to:
 * perform HTTPS requests with the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>.
-* use the cryptographic symbols defined in the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>.</p>
+* use all the cryptographic symbols defined in the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>.</p>
 
-<div class="note"><p>Note</p>
-
-<p>By default, this flag is enabled in the <span class="file">min.nims</span>. use <strong>-d:nossl</strong> to disable it.</p></div>
+<p>If this flag is not specified:
+* It will not be possible to perform HTTPS requests
+* Only the following symbols will be exposed by the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>:
+  * <a href="#min-operator-id-md5">md5</a>
+  * <a href="#min-operator-id-sha1">sha1</a>
+  * <a href="#min-operator-id-encode">encode</a>
+  * <a href="#min-operator-id-decode">decode</a>
+  * <a href="#min-operator-id-aes">aes</a></p>
 
 <a name="-d:lite"></a>
 <h5>-d:lite<a href="#document-top" title="Go to top"></a></h5>
@@ -7517,7 +7532,6 @@ div .terminal {
 <ul>
 <li><a href="#min-operator-id-load">load</a></li>
 <li><a href="#min-operator-id-require">require</a></li>
-<li><a href="#min-operator-id-read">read</a></li>
 <li><a href="#min-operator-id-to-json">to-json</a></li>
 <li><a href="#min-operator-id-from-json">from-json</a></li>
 <li><a href="#min-operator-id-raw-args">raw-args</a></li>
@@ -7555,9 +7569,10 @@ div .terminal {
 <a name="Running-the-min-Shell"></a>
 <h3>Running the min Shell<a href="#document-top" title="Go to top"></a></h3>
 
-<p>To start min shell, run <span class="cmd">min -i</span>. You will be presented with a prompt displaying the path to the current directory:</p>
+<p>To start the min shell, run <span class="cmd">min</span> with no arguments. You will be presented with a prompt displaying the path to the current directory:</p>
 
-<div class="min-terminal"><p><span class="prompt">[/Users/h3rald/test]$</span></p></div>
+<div class="min-terminal"><p>min shell v$versio
+<span class="prompt">[/Users/h3rald/test]$</span></p></div>
 
 <p>You can type min code and press <span class="kbd">ENTER</span> to evaluate it immediately:</p>
 
@@ -7630,6 +7645,7 @@ div .terminal {
 <li>If you are using <a href="https://code.visualstudio.com/">Visual Studio Code</a>, you can install the official <a href="https://marketplace.visualstudio.com/items?itemName=h3rald.vscode-min-lang">min extension</a> which provides syntax highlighting support, code folding, and auto-indentation.</li>
 <li>If you are using <a href="https://www.vim.org">Vim</a>, a <a href="https://github.com/h3rald/min/blob/master/min.vim">min.vim</a> syntax definition file is available in the min repo.</li>
 <li>If you are using <a href="https://www.sublimetext.com/3">Sublime Text 3</a>, Rafael Carrasco created a min syntax definition file that is available <a href="https://github.com/rscarrasco/min-sublime-syntax">here</a>.</li>
+<li>If you are hsing <a href="https://notepad-plus-plus.org">Notepad++</a>, a <a href="https://github.com/h3rald/min/blob/master/minNotepad++.xml">Notepad++ language file</a> contributed by baykus871 is available in tbe repo.</li>
 </ul>
 
 
@@ -7673,7 +7689,7 @@ div .terminal {
 <a name="Data-Types"></a>
 <h3>Data Types<a href="#document-top" title="Go to top"></a></h3>
 
-<p>The type system of min is very simple &ndash; only the following data types are available:</p>
+<p>The following data types are availanle in <em>min</em>:</p>
 
 <dl>
 <dt>null</dt>
@@ -7703,9 +7719,26 @@ div .terminal {
 </code></pre></div></dd>
 </dl>
 
-<p>The <a href="#&lt;code>logic&lt;/code>-Module">logic Module</a> provides predicate operators to check if an element belongs to a particular data type or pseudo-type (<code>boolean?</code>, <code>number?</code>, <code>integer?</code>, <code>float?</code>, <code>string?</code>, <code>quotation?</code>, <code>dictionary?</code>).</p>
+<p>Additionally, dictionaries can also be typed to denote complex objects like sockets, errors, etc. For example, the following dictionary defines an error:</p>
 
-<p>Additionally, the <a href="#&lt;code>lang&lt;/code>-Module">lang Module</a> provides operators to convert values from a data type to another (e.g. <a href="#min-operator-id-int">int</a>, <a href="#min-operator-id-string">string</a>, and so on).</p>
+<pre><code>  {
+   "MyError" :error
+   "An error occurred" :message
+   "symbol1" :symbol
+   "dir1/file1.min" :filename
+   3 :line
+   13 :column
+   ;error
+  }
+</code></pre>
+
+<div class="tip"><p>Tip</p>
+
+<p>The <a href="#min-operator-id-dtype">dtype</a> operator can be used to set the type of a dictionary.</p></div>
+
+<p>The <a href="#&lt;code>logic&lt;/code>-Module">logic Module</a> provides predicate operators to check if an element belongs to a particular data type or pseudo-type (<code>boolean?</code>, <code>number?</code>, <code>integer?</code>, <code>float?</code>, &hellip;).</p>
+
+<p>Additionally, the <a href="#&lt;code>lang&lt;/code>-Module">lang Module</a> provides operators to convert values from a data type to another (e.g. <a href="#min-operator-id-integer">integer</a>, <a href="#min-operator-id-string">string</a>, and so on).</p>
 
 <div class="note"><p>Note</p>
 
@@ -7801,7 +7834,7 @@ div .terminal {
 <pre><code> (dup *) "square" define
 </code></pre>
 
-<p>Now, while the <a href="#min-operator-id-define">define</a> symbol can be fine to define (the equivalent of) variables and simple operators, it is typically better to use the <a href="#min-operator-id-operator">operator</a> symbol instead, as it provides better readability, additional checks and automatic input/output capturing. The previous <code>square</code> symbol could also be defined like this:</p>
+<p>Now, while the <a href="#min-operator-id-define">define</a> symbol can be fine to define (the equivalent of) variables and simple operators, it is typically better to use the <a href="#min-operator-id-operator">operator</a> symbol instead, as it provides better readability, additional checks and automatic input/output capturing. The previous <code>square</code> symbol could also be defined with the <a href="#min-operator-id-operator">operator</a> operator like this:</p>
 
 <pre><code> (
    symbol square
@@ -7880,6 +7913,111 @@ div .terminal {
 </code></pre>
 
 <p>This will define a <code>j</code> sigil that will parse any string as JSON and convert it to its corresponding min representation.</p>
+
+<p>Sigils can also (and should!) be defined with the <a href="#min-operator-id-operator">operator</a> operator to add additional checks. The sigil definition above could be rewritten like this, for example:</p>
+
+<pre><code> (
+   sigil j
+   (str :json ==&gt; a :result)
+   (json from-json @result)
+ ) operator
+</code></pre>
+
+<a name="Operator-signatures"></a>
+<h4>Operator signatures<a href="#document-top" title="Go to top"></a></h4>
+
+<p>When defining symbols and sigils witb the <a href="#min-operator-id-operator">operator</a> operator, you must specify a <em>signature</em> that will be used to validate and captuee input and output values:</p>
+
+<pre><code> (
+   symbol square
+   (num :n ==&gt; num :result)
+   (n dup * @result)
+ ) operator
+</code></pre>
+
+<p>In this case for example tbe <code>square</code> symbol expects a number on the stack, which will be captured to tbe symbol <code>n</code> and it will place a number on the stack which needs to be bound in the operator body to the symbol <code>result</code>.</p>
+
+<p>In a signature, a type expression must precede the capturing symbol. Such type expression can be:</p>
+
+<ul>
+<li>One of the following shorthand symbols identifying a well-known <em>min</em> base type (see the reference section for more information): <code>a</code>, <code>bool</code>, <code>null</code>, <code>str</code>, <code>int</code>, <code>num</code>, <code>float</code>, <code>'sym</code>, <code>quot</code>, or <code>dict</code>.</li>
+<li>A typed dictionary like <code>dict:module</code> or <code>dict:datastore</code>.</li>
+<li>A type class (see below).</li>
+<li>a union of types/typed dictionaries/type classes, like <code>str|int</code>.</li>
+</ul>
+
+
+<div class="note"><p>Note</p>
+
+<p>If the operator you are defining doesn&rsquo;t require any input value or doesn&rsquo;t leave ang output value on the srack, simply don&rsquo;t put anything before or after the <code>==&gt;</code> separator, respectively. For example, the signature of the <a href="#min-operator-id-puts!">puts!</a> operator could be written like <code>(a ==&gt;)</code>.</p></div>
+
+<a name="Type-classes"></a>
+<h5>Type classes<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Besides standard base types, you can define your own <em>type classes</em> to express custom constraints/validations for operator input and output values.</p>
+
+<p>Consider the following type class definition validating a quotation containing strings:</p>
+
+<pre><code> ((string?) all?) 'strquot typeclass
+</code></pre>
+
+<p>The <a href="#min-operator-id-typeclass">typeclass</a> operator defines a symbol prefixed with <code>type:</code> (<code>type:strquot</code> in this case) corresponding to a type class that can be used in operator signatures in place of a type, like this:</p>
+
+<pre><code> (
+   symbol join-strings
+   (strquot :q ==&gt; string :result)
+   ( 
+      q "" (suffix) reduce @result
+   )
+ )
+</code></pre>
+
+<p>This operator will raise an error if anything other than a quotation of strings is found on the stack.</p>
+
+<div class="tip"><p>Tip</p>
+
+<p><code>type:</code>-prefixed symbols are just like ordinary shmbols: they are lexically scoped, they can be sealed, unsealed and deleted.</p></div>
+
+<a name="Generics"></a>
+<h5>Generics<a href="#document-top" title="Go to top"></a></h5>
+
+<p><em>min</em> supports generics in operator signatures. in other words, you can define a custom type alias on-the-fly directly in an operator signature, like this:</p>
+
+<pre><code>(
+  symbol add
+  ((string|num|quot :t) :a t :b ==&gt; t :result)
+  (
+   (a type "string" ==)
+     (a b suffix @result return)
+   when
+   (a type "num" ==)
+     (a b + @result return)
+   when
+   (a type "quot" ==)
+     (a b concat #result return)
+   when
+  )
+) ::
+</code></pre>
+
+<p>In this case, <code>t</code> is set to the type union <code>stribg|num|quot</code>, and the <code>add</code> method above can be use too sum two numbers or join two strings or quotations.</p>
+
+<p>Note that the value of <code>t</code> is evaluated to the type of the first value that is processed. In other words, the following programs will work as expected:</p>
+
+<pre><code> 3 5 add ;outputs 8
+
+ "hello, " "world" ;outputs "hello, world"
+</code></pre>
+
+<p>while tbe fullowing will raise an error, because the value of <code>t</code> from <code>num</code> to <code>quot</code> within the same operator use:</p>
+
+<pre><code> 12 "test" add ;raises an error
+</code></pre>
+
+<div class="sidebar"><p>Generics vs type unions</p>
+
+<p>Generics allow to specify a type as a type union, but the type will remain the same one throughout the same operator call.
+By contrast, using the same type union several times within the same signature allows different types to be used in the same call, and that is probably something you dont want!</p></div>
 
 <a name="Definitions"></a>
 <h3>Definitions<a href="#document-top" title="Go to top"></a></h3>
@@ -8680,12 +8818,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>See <a href="#min-operator-id-dequote">dequote</a>.</p></div>
 
-<p><span class="reference-title">--</span></p>
-
-<div class="operator"><p><span class="kwd"> -- <strong>&rArr;</strong> reverse-expect-dequote</span></p>
-
-<p>See <a href="#min-operator-id-reverse-expect-dequote">reverse-expect-dequote</a>.</p></div>
-
 <p><span class="reference-title">>></span></p>
 
 <div class="operator"><p><span class="kwd"> >> <strong>&rArr;</strong> prefix-dequote</span></p>
@@ -8746,13 +8878,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot</span>|<span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)|{<span class="kwd">a<sub>*</sub></span>}</span></p>
 
-<p>This operator can be used on a quotation or a dictionary:</p>
-
-<ul>
-<li>If a quotation <span class="kwd">quot</span> is passed, it returns a new quotation obtained by evaluating each element of <span class="kwd">quot</span> in a separate stack.</li>
-<li>If a dictionary <span class="kwd">dict</span> (with values and keys) is passed, it returns a new dictionary obtained by evaluating each value in the dict that is a symbol in a separate stack (values that aren&rsquo;t symbols stay as they are).</li>
-</ul>
-</div>
+<p>Returns a new quotation obtained by evaluating each element of <span class="kwd">quot</span> in a separate stack.</p></div>
 
 <p><a id="min-operator-id-args"></a>
 <span class="reference-title">args</span></p>
@@ -9051,6 +9177,13 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <pre><code>{{100 :b} :a} :test *test/a/b
 </code></pre></div></div>
 
+<p><a id="min-operator-id-line-info"></a>
+<span class="reference-title">line-info</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+
+<p>Returns a dictionary <span class="kwd">dict</span> containing a <strong>filename</strong>, <strong>line</strong>, and <strong>column</strong> properties identifying the filename, line and column of the current symbol.</p></div>
+
 <p><a id="min-operator-id-linrec"></a>
 <span class="reference-title">linrec</span></p>
 
@@ -9283,12 +9416,12 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Raises the error specified via the dictionary <span class="kwd">dict:error</span>.</p></div>
 
-<p><a id="min-operator-id-read"></a>
-<span class="reference-title">read</span></p>
+<p><a id="min-operator-id-raw-args"></a>
+<span class="reference-title">raw-args</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
 
-<p>Reads and parses the specified <em>min</em> file <span class="kwd">&apos;sym</span> and returns a quoted program <span class="kwd">quot</span>.</p></div>
+<p>Returns a list of all arguments and (non-parsed) options passed to the current program.</p></div>
 
 <p><a id="min-operator-id-remove-symbol"></a>
 <span class="reference-title">remove-symbol</span></p>
@@ -9303,21 +9436,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
 
 <p>Parses and interprets (in a separater interpreter) the specified <em>min</em> file <span class="kwd">&apos;sym</span>, adding <span class="ext">.min</span> if not specified, and returns a module dictionary <span class="kwd">dict</span> containing all the symbols defined in <span class="kwd">&apos;sym</span>.</p></div>
-
-<p><a id="min-operator-id-reverse-expect-dequote"></a>
-<span class="reference-title">reverse-expect-dequote</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
-
-<p>Validates the first <em>n</em> elements of the stack against the type descriptions specified in <span class="kwd">quot<sub>1</sub></span> (<em>n</em> is <span class="kwd">quot<sub>1</sub></span>&rsquo;s length) in reverse order and if all the elements are valid restores them on the stack.</p>
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program maps the three values on the stack to three symbols, after validating them:</p>
-
-<pre><code>1 3.5 true
-(int float bool) -- :my-int :my-float :my-bool
-</code></pre></div></div>
 
 <p><a id="min-operator-id-return"></a>
 <span class="reference-title">return</span></p>
@@ -9359,7 +9477,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>The following program leaves <code>{(2) :two ;module}</code> on the stack:</p>
 
-<pre><code>{} :myscope (2 :due scope @myscope) -&gt;
+<pre><code>{} :myscope (2 :two scope @myscope) -&gt;
 </code></pre></div></div>
 
 <p><a id="min-operator-id-saved-symbols"></a>
@@ -9396,6 +9514,20 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
 <p>Seals the user-defined sigil <span class="kwd">&apos;sym</span>, so that it cannot be re-defined.</p></div>
+
+<p><a id="min-operator-id-sealed?"></a>
+<span class="reference-title">sealed?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the symbol <span class="kwd">&apos;sym</span> is sealed, <span class="kwd">false</span> otherwise.</p></div>
+
+<p><a id="min-operator-id-sealed-sigil?"></a>
+<span class="reference-title">sealed-sigil?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the sigil <span class="kwd">&apos;sym</span> is sealed, <span class="kwd">false</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-set-type"></a>
 <span class="reference-title">set-type</span></p>
@@ -9456,14 +9588,13 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>The following program:</p>
 
-<pre><code>(
-  (("a" 1) ("b" 2) ("c" 3)) (
+<pre><code>{1 :a 2 :b 3 :c} (
   (dup /a  succ succ %a)
   (dup /b  succ %b)
 ) tap
 </code></pre>
 
-<p>Returns <code>(("a" 3) ("b" 3) ("c" 3))</code>.</p></div></div>
+<p>Returns <code>{3 :a 3 :b 3 :c}</code>.</p></div></div>
 
 <p><a id="min-operator-id-tap!"></a>
 <span class="reference-title">tap!</span></p>
@@ -9548,6 +9679,29 @@ proc hastysite_module*(i: In, hs1: HastySite) =
     (format-error puts)
     (0)
   ) try
+</code></pre></div></div>
+
+<p><a id="min-operator-id-typeclass"></a>
+<span class="reference-title">typeclass</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Defines a new type class <span class="kwd">&apos;sym</span> set to quotation <span class="kwd">quot</span>, which can be used in operator signatures.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>Consider the following type class which defines a natural number:</p>
+
+<pre><code> (:n ((n integer?) (n 0 &gt;)) &amp;&amp;) 'natural typeclass
+</code></pre>
+
+<p>It can now be used in operator signatures, like this:</p>
+
+<pre><code> (
+   symbol natural-sum
+   (natural :n natural :m ==&gt; natural :result)
+   (n m + @result)
+ ) ::
 </code></pre></div></div>
 
 <p><a id="min-operator-id-unless"></a>
@@ -9814,6 +9968,20 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Concatenates <span class="kwd">quot<sub>1</sub></span> with <span class="kwd">quot<sub>2</sub></span>.</p></div>
 
+<p><a id="min-operator-id-difference"></a>
+<span class="reference-title">difference</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot<sub>3</sub></span></span></p>
+
+<p>Calculates the difference <span class="kwd">quot<sub>3</sub></span> of <span class="kwd">quot<sub>1</sub></span> and <span class="kwd">quot<sub>2</sub></span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program leaves <code>(2)</code> on the stack:</p>
+
+<pre><code>(1 2 "test") ("test" "a" true 1) difference
+</code></pre></div></div>
+
 <p><a id="min-operator-id-drop"></a>
 <span class="reference-title">drop</span></p>
 
@@ -9841,7 +10009,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
 
-<p>Returns the index of the first element within <span class="kwd">quot<sub>1</sub></span> that satisfies predicate <span class="kwd">quot<sub>2</sub></span>.</p>
+<p>Returns the index of the first element within <span class="kwd">quot<sub>1</sub></span> that satisfies predicate <span class="kwd">quot<sub>2</sub></span>, or -1 if no element satisfies it.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -9902,6 +10070,20 @@ harvest
 
 <p>Inserts <span class="kwd">a</span> as the value of the <em>n<sup>th</sup></em> element <span class="kwd">quot<sub>1</sub></span> (zero-based), and returns the modified copy of the quotation <span class="kwd">quot<sub>2</sub></span>.</p></div>
 
+<p><a id="min-operator-id-intersection"></a>
+<span class="reference-title">intersection</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot<sub>3</sub></span></span></p>
+
+<p>Calculates the intersection <span class="kwd">quot<sub>3</sub></span> of <span class="kwd">quot<sub>1</sub></span> and <span class="kwd">quot<sub>2</sub></span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program leaves <code>(1 "test")</code> on the stack:</p>
+
+<pre><code>(1 2 "test") ("test" "a" true 1) intersection
+</code></pre></div></div>
+
 <p><a id="min-operator-id-last"></a>
 <span class="reference-title">last</span></p>
 
@@ -9940,11 +10122,18 @@ harvest
 
 <div class="sidebar"><p>Example</p>
 
-<p>The following program leaves <code>(1 2 3) (2 4 6)</code> on the stack:</p>
+<p>The following program leaves <code>(1 3 5) (2 4 6)</code> on the stack:</p>
 
 <pre><code>(1 2 3 4 5 6)
 (odd?) partition
 </code></pre></div></div>
+
+<p><a id="min-operator-id-one?"></a>
+<span class="reference-title">one?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Applies predicate <span class="kwd">quot<sub>2</sub></span> to each element of <span class="kwd">quot<sub>1</sub></span> and returns <span class="kwd">true</span> if only one element of <span class="kwd">quot<sub>1</sub></span> satisfies predicate <span class="kwd">quot<sub>2</sub></span>, <span class="kwd">false</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-prepend"></a>
 <span class="reference-title">prepend</span></p>
@@ -10053,12 +10242,40 @@ harvest
 <pre><code>(1 9 5 13 16 3 7) '&gt; sort
 </code></pre></div></div>
 
+<p><a id="min-operator-id-symmetric-difference"></a>
+<span class="reference-title">symmetric-difference</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot<sub>3</sub></span></span></p>
+
+<p>Calculates the symmetric difference <span class="kwd">quot<sub>3</sub></span> of <span class="kwd">quot<sub>1</sub></span> and <span class="kwd">quot<sub>2</sub></span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program leaves <code>(true "a" 2)</code> on the stack:</p>
+
+<pre><code>(1 2 "test") ("test" "a" true 1) symmetric-difference
+</code></pre></div></div>
+
 <p><a id="min-operator-id-take"></a>
 <span class="reference-title">take</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">quot<sub>2</sub></span></span></p>
 
 <p>Returns a quotation <span class="kwd">quot<sub>2</sub></span> containing the first <em>n</em> values of the input quotation <span class="kwd">quot<sub>1</sub></span>, or <span class="kwd">quot<sub>1</sub></span> itself if <span class="kwd">int</span> is greater than the length of <span class="kwd">quot<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-union"></a>
+<span class="reference-title">union</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot<sub>3</sub></span></span></p>
+
+<p>Calculates the union <span class="kwd">quot<sub>3</sub></span> of <span class="kwd">quot<sub>1</sub></span> and <span class="kwd">quot<sub>2</sub></span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program leaves <code>(true 1 "test" "a" 2)</code> on the stack:</p>
+
+<pre><code>(1 2 "test") ("test" "a" true 1) union
+</code></pre></div></div>
 
 <a name="<code>dict</code>-Module"></a>
 <h3><code>dict</code> Module<a href="#document-top" title="Go to top"></a></h3>
@@ -10175,6 +10392,13 @@ harvest
 
 <p>Removes an item from the datastore <span class="kwd">dict:datastore</span>. The item is uniquely identified by <span class="kwd">&apos;sym</span>, which contains the collection containing the item and the item id, separated by a forward slash (/). Puts the reference to the modified datastore back on tbe stack.</p></div>
 
+<p><a id="min-operator-id-dsdelete!"></a>
+<span class="reference-title">dsdelete!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Same as <code>dsdelete</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
+
 <p><a id="min-operator-id-dsget"></a>
 <span class="reference-title">dsget</span></p>
 
@@ -10189,6 +10413,13 @@ harvest
 
 <p>Initializes a bew datastore by creating the <span class="kwd">&apos;sym</span> JSON file. Puts the datastore instance on the stack.</p></div>
 
+<p><a id="min-operator-id-dsinit!"></a>
+<span class="reference-title">dsinit!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">dict</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Same as <code>dsinit</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
+
 <p><a id="min-operator-id-dspost"></a>
 <span class="reference-title">dspost</span></p>
 
@@ -10196,12 +10427,26 @@ harvest
 
 <p>Adds the dictionary <span class="kwd">dict</span> to the datastore <span class="kwd">dict:datastore</span> inside collection <span class="kwd">&apos;sym</span>, generating and adding a unique <strong>id</strong> field to <span class="kwd">dict</span>. If the collection <span class="kwd">&apos;sym</span> does not exist it is created. Puts the reference to the modified datastore back on tbe stack.</p></div>
 
+<p><a id="min-operator-id-dspost!"></a>
+<span class="reference-title">dspost!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <span class="kwd">dict</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Same as <code>dspost</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
+
 <p><a id="min-operator-id-dsput"></a>
 <span class="reference-title">dsput</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">dict:datastore</span></span></p>
 
 <p>Adds the dictionary <span class="kwd">dict</span> to the datastore <span class="kwd">dict:datastore</span>. <span class="kwd">&apos;sym</span> contains the collection where <span class="kwd">dict</span> will be placed and the id of <span class="kwd">dict</span>, separated by a forward slash (/). If the collection <span class="kwd">&apos;sym</span> does not exist it is created. Puts the reference to the modified datastore back on tbe stack.</p></div>
+
+<p><a id="min-operator-id-dsput!"></a>
+<span class="reference-title">dsput!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Same as <code>dsput</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
 
 <p><a id="min-operator-id-dsquery"></a>
 <span class="reference-title">dsquery</span></p>
@@ -10230,6 +10475,13 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <strong>&rArr;</strong> <span class="kwd">dict:datastore</span></span></p>
 
 <p>Writes the contents of the datastore <span class="kwd">dict:datastore</span> to the filesystem.</p></div>
+
+<p><a id="min-operator-id-dswrite!"></a>
+<span class="reference-title">dswrite!</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Same as <code>dswrite</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
 
 <a name="<code>io</code>-Module"></a>
 <h3><code>io</code> Module<a href="#document-top" title="Go to top"></a></h3>
@@ -10272,7 +10524,7 @@ harvest
 <p>Prints <span class="kwd">string</span> (prompt) appending <code>" [yes/no]: "</code>, reads a line from STDIN and:</p>
 
 <ul>
-<li>if it matches <code>/^y(es)$/i</code>, puts <span class="kwd">true</span> on the stack.</li>
+<li>if it matches <code>/^y(es)?$/i</code>, puts <span class="kwd">true</span> on the stack.</li>
 <li>if it matches <code>/^no?$/i</code>, puts <span class="kwd">false</span> on the stack.</li>
 <li>Otherwise, it prints <code>Invalid answer. Please enter 'yes' or 'no':</code> and waits for a new answer.</li>
 </ul>
@@ -10620,58 +10872,6 @@ harvest
 
 <p>Returns <span class="kwd">true</span> if <span class="kwd">a</span> is a boolean, <span class="kwd">false</span> otherwise.</p></div>
 
-<p><a id="min-operator-id-dequote-and"></a>
-<span class="reference-title">dequote-and</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a<sub>1</sub></span> <span class="kwd">a<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Short-circuited logical and. It performs the following operations:</p>
-
-<ol>
-<li>Pops <span class="kwd">a<sub>1</sub></span> and <span class="kwd">a<sub>2</sub></span> off the stack.</li>
-<li>Dequotes <span class="kwd">a<sub>1</sub></span>, if <span class="kwd">false</span> is on the stack, it pushes <span class="kwd">false</span> on the stack and stops, otherwise it carries on.</li>
-<li>Dequotes <span class="kwd">a<sub>2</sub></span>.</li>
-<li>If <span class="kwd">a<sub>2</sub></span> is <span class="kwd">true</span>, it pushes <span class="kwd">true</span> on the stack.</li>
-</ol>
-
-
-<div class="note"><p>Note</p>
-
-<p><span class="kwd">a<sub>1</sub></span> (and <span class="kwd">a<sub>2</sub></span>, if dequoted) must evaluate to a boolean value, otherwise an exception is raised.</p></div>
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program returns <span class="kwd">false</span> and never executes the second quotation.</p>
-
-<pre><code> "test" :x (x number?) (x 5 &lt;) dequote-and
-</code></pre></div></div>
-
-<p><a id="min-operator-id-dequote-or"></a>
-<span class="reference-title">dequote-or</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a<sub>1</sub></span> <span class="kwd">a<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Short-circuited logical or. It performs the following operations:</p>
-
-<ol>
-<li>Pops <span class="kwd">a<sub>1</sub></span> and <span class="kwd">a<sub>2</sub></span> off the stack.</li>
-<li>Dequotes <span class="kwd">a<sub>1</sub></span>, if <span class="kwd">true</span> is on the stack, it pushes <span class="kwd">true</span> on the stack and stops, otherwise it carries on.</li>
-<li>Dequotes <span class="kwd">a<sub>2</sub></span>.</li>
-<li>If <span class="kwd">a<sub>2</sub></span> is <span class="kwd">false</span>, it pushes <span class="kwd">false</span> on the stack.</li>
-</ol>
-
-
-<div class="note"><p>Note</p>
-
-<p><span class="kwd">a<sub>1</sub></span> (and <span class="kwd">a<sub>2</sub></span>, if dequoted) must evaluate to a boolean value, otherwise an exception is raised.</p></div>
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program returns <span class="kwd">true</span> and never executes the second quotation.</p>
-
-<pre><code> "test" :x (x string?) (x quotation?) dequote-or
-</code></pre></div></div>
-
 <p><a id="min-operator-id-dictionary?"></a>
 <span class="reference-title">dictionary?</span></p>
 
@@ -10741,6 +10941,20 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
 <p>Returns <span class="kwd">true</span> if <span class="kwd">a</span> is a quotation, <span class="kwd">false</span> otherwise.</p></div>
+
+<p><a id="min-operator-id-string?"></a>
+<span class="reference-title">string?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if <span class="kwd">a</span> is a string, <span class="kwd">false</span> otherwise.</p></div>
+
+<p><a id="min-operator-id-stringlike?"></a>
+<span class="reference-title">stringlike?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if <span class="kwd">a</span> is a string or a quoted symbol, <span class="kwd">false</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-type?"></a>
 <span class="reference-title">type?</span></p>
@@ -11602,6 +11816,13 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <a name="<code>math</code>-Module"></a>
 <h3><code>math</code> Module<a href="#document-top" title="Go to top"></a></h3>
 
+<p><a id="min-operator-id-abs"></a>
+<span class="reference-title">abs</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">num<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">num<sub>2</sub></span></span></p>
+
+<p>Calculates tbe absolute value of <span class="kwd">num<sub>1</sub></span>.</p></div>
+
 <p><a id="min-operator-id-acos"></a>
 <span class="reference-title">acos</span></p>
 
@@ -12022,7 +12243,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; January 2, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; January 18, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
