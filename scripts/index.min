@@ -1,7 +1,7 @@
 ;Re-index articles
 'hastysite import
 
-"Indexing articles..." notice
+"Indexing articles..." notice!
 
 .                           :pwd
 (. "data.db") => "/" join   :store
@@ -10,13 +10,13 @@
 
 (store file?) 
 (
-  "Deleting search index..." notice
+  "Deleting search index..." notice!
   store rm
 ) when
 
-"Importing data..." notice
-"litestore -s:$1 -d:articles import" (store) => % !
+"Importing data..." notice!
+"litestore -s:$1 -d:articles import" (store) =% !
 
 pwd cd
 
-"All done." notice
+"All done." notice!

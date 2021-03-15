@@ -6,12 +6,12 @@ timestamp :ts
 false     :valid-id
 
 (
-  (string) expect first :ident
-  ident "^[a-z0-9-]+$" match :valid-regexp
-  (. "contents" "articles") => "/" join ls =filelist
+  (str) expect first :ident
+  ident "^[a-z0-9-]+$" match? :valid-regexp
+  (. "contents" "articles") => "/" join ls :filelist
   filelist (filename "(.+)\..+$" search 1 get) map ident in? not :valid-file
   valid-regexp valid-file and
-) :validate
+) ^validate
 
 
 (valid-id not) (
@@ -34,7 +34,7 @@ timestamp: $4
 <hr />
 " (ident title subtitle ts) => % :metadata
 
-metadata puts
+metadata puts!
 ("Create article?" confirm) 
 (
   (ident ".md") => "" join :fn 
