@@ -7,7 +7,7 @@ subtitle: "Find and Edit Utility"
 summary: "A minuscule utility to find and edit text in files." 
 content-type: project
 active: true
-version: 1.0.0
+version: 1.1.0
 download: "https://github.com/h3rald/fae/releases/download/"
 -----
 

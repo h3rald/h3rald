@@ -7280,20 +7280,19 @@ div .terminal {
   </li>
   <li><a href="#Get-Started">Get Started</a>
   <ul>
-   <li><a href="#Building-from-Source">Building from Source</a>
+   <li><a href="#Building-from-source">Building from source</a>
    <ul>
     <li><a href="#Using-nimble">Using nimble</a></li>
     <li><a href="#Without-using-nimble">Without using nimble</a></li>
     <li><a href="#Additional-build-options">Additional build options</a>
     <ul>
-     <li><a href="#-d:ssl">-d:ssl</a></li>
-     <li><a href="#-d:lite">-d:lite</a></li>
-     <li><a href="#-d:mini">-d:mini</a>
+     <li><a href="#-d:ssl">-d:ssl</a>
 </li>
     </ul>
     </li>
    </ul>
    </li>
+   <li><a href="#Building-a-Docker-image">Building a Docker image</a></li>
    <li><a href="#Running-the-min-Shell">Running the min Shell</a></li>
    <li><a href="#Executing-a-min-Program">Executing a min Program</a></li>
    <li><a href="#Compiling-a-min-Program">Compiling a min Program</a></li>
@@ -7310,10 +7309,24 @@ div .terminal {
    </li>
    <li><a href="#Operators">Operators</a>
    <ul>
+    <li><a href="#Symbols">Symbols</a>
+    <ul>
+     <li><a href="#Using-the-lambda-operator">Using the lambda operator</a></li>
+    </ul>
+    </li>
+    <li><a href="#Sigils">Sigils</a></li>
+    <li><a href="#Auto-popping">Auto-popping</a></li>
     <li><a href="#Operator-signatures">Operator signatures</a>
     <ul>
-     <li><a href="#Type-classes">Type classes</a></li>
-     <li><a href="#Generics">Generics</a>
+     <li><a href="#Type-classes">Type classes</a>
+     <ul>
+      <li><a href="#Capturing-lambdas">Capturing lambdas</a></li>
+     </ul>
+     </li>
+     <li><a href="#Type-expressions">Type expressions</a></li>
+     <li><a href="#Type-aliases">Type aliases</a></li>
+     <li><a href="#Generics">Generics</a></li>
+     <li><a href="#Constructors">Constructors</a>
 </li>
     </ul>
     </li>
@@ -7322,7 +7335,6 @@ div .terminal {
    <li><a href="#Definitions">Definitions</a>
    <ul>
     <li><a href="#Lexical-scoping-and-binding">Lexical scoping and binding</a></li>
-    <li><a href="#quote-define-and-quote-bind">quote-define and quote-bind</a></li>
     <li><a href="#Sealing-symbols">Sealing symbols</a></li>
    </ul>
    </li>
@@ -7435,7 +7447,7 @@ div .terminal {
 <a name="Who?"></a>
 <h3>Who?<a href="#document-top" title="Go to top"></a></h3>
 
-<p>min was created and implemented by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions by <a href="https://peterme.net">Peter Munch-Ellingsen</a> and <a href="https://github.com/baykus871">baykus871</a>.</p>
+<p>min was created and implemented by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions by <a href="https://peterme.net">Peter Munch-Ellingsen</a>, <a href="https://github.com/drkameleon">Yanis Zafirópulos</a>, and <a href="https://github.com/baykus871">baykus871</a>.</p>
 
 <p>Special thanks to <a href="https://github.com/mwgkgk">mwgkgk</a> for contributing to the design of native dictionaries.</p>
 
@@ -7450,14 +7462,14 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.29.0/min_v0.29.0_macosx_x64.zip">min v0.29.0 for macOS (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.29.0/litemin_v0.29.0_macosx_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.29.0/minimin_v0.29.0_macosx_x64.zip">mini</a>]</small></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.29.0/min_v0.29.0_windows_x64.zip">min v0.29.0 for Windows (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.29.0/litemin_v0.29.0_windows_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.29.0/minimin_v0.29.0_windows_x64.zip">mini</a>]</small></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.29.0/min_v0.29.0_linux_x64.zip">min v0.29.0 for Linux (x64)</a> <small>[<a href="https://github.com/h3rald/min/releases/download/v0.29.0/litemin_v0.29.0_linux_x64.zip">lite</a>, <a href="https://github.com/h3rald/min/releases/download/v0.29.0/minimin_v0.29.0_linux_x64.zip">mini</a>]</small></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.34.1/min_v0.34.1_macosx_x64.zip">min v0.34.1 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.34.1/min_v0.34.1_windows_x64.zip">min v0.34.1 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.34.1/min_v0.34.1_linux_x64.zip">min v0.34.1 for Linux (x64)</a></li>
 </ul>
 
 
-<a name="Building-from-Source"></a>
-<h3>Building from Source<a href="#document-top" title="Go to top"></a></h3>
+<a name="Building-from-source"></a>
+<h3>Building from source<a href="#document-top" title="Go to top"></a></h3>
 
 <p>Alternatively, you can build min from source in one of the following ways:</p>
 
@@ -7500,71 +7512,18 @@ div .terminal {
   * <a href="#min-operator-id-decode">decode</a>
   * <a href="#min-operator-id-aes">aes</a></p>
 
-<a name="-d:lite"></a>
-<h5>-d:lite<a href="#document-top" title="Go to top"></a></h5>
+<a name="Building-a-Docker-image"></a>
+<h3>Building a Docker image<a href="#document-top" title="Go to top"></a></h3>
 
-<p>If the <strong>d:lite</strong> flag is specified, a more minimal executable file will be generated (typically, it should be called &ldquo;litemin&rdquo;), however the following functionalities will not be available:</p>
+<p><a href="https://github.com/drkameleon">Yanis Zafirópulos</a> contributed a Dockerfile that you can use to create your own Docker image for min based on Alpine Linux.</p>
 
-<ul>
-<li>The <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a></li>
-<li>The <a href="#&lt;code>net&lt;/code>-Module">net Module</a></li>
-<li>The <a href="#&lt;code>http&lt;/code>-Module">http Module</a></li>
-<li>The <a href="#&lt;code>math&lt;/code>-Module">math Module</a></li>
-<li>The <a href="#min-operator-id-zip">zip</a> and <a href="#min-operator-id-unzip">unzip</a> operators.</li>
-</ul>
+<p>To build the image locally, execute the following command from the repository root directory:</p>
 
+<div class="terminal"><p>docker build -t mindocker .</p></div>
 
-<a name="-d:mini"></a>
-<h5>-d:mini<a href="#document-top" title="Go to top"></a></h5>
+<p>To run it, execute:</p>
 
-<p>If the <strong>d:mini</strong> flag is specified, an even more minimal executable file will be generated (typically, it should be called &ldquo;minimin&rdquo;), however the following functionalities will not be available:</p>
-
-<ul>
-<li>The <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a></li>
-<li>The <a href="#&lt;code>net&lt;/code>-Module">net Module</a></li>
-<li>The <a href="#&lt;code>http&lt;/code>-Module">http Module</a></li>
-<li>The <a href="#&lt;code>math&lt;/code>-Module">math Module</a></li>
-<li>The <a href="#&lt;code>io&lt;/code>-Module">io Module</a></li>
-<li>The <a href="#&lt;code>fs&lt;/code>-Module">fs Module</a></li>
-<li>The <a href="#&lt;code>sys&lt;/code>-Module">sys Module</a></li>
-<li>The following operators:
-
-<ul>
-<li><a href="#min-operator-id-load">load</a></li>
-<li><a href="#min-operator-id-require">require</a></li>
-<li><a href="#min-operator-id-to-json">to-json</a></li>
-<li><a href="#min-operator-id-from-json">from-json</a></li>
-<li><a href="#min-operator-id-raw-args">raw-args</a></li>
-<li><a href="#min-operator-id-save-symbol">save-symbol</a></li>
-<li><a href="#min-operator-id-load-symbol">load-symbol</a></li>
-<li><a href="#min-operator-id-saved-symbol">saved-symbol</a></li>
-<li><a href="#min-operator-id-loaded-symbol">loaded-symbol</a></li>
-<li><a href="#min-operator-id-search">search</a></li>
-<li><a href="#min-operator-id-match">match</a></li>
-<li><a href="#min-operator-id-replace">replace</a></li>
-<li><a href="#min-operator-id-regex">regex</a></li>
-<li><a href="#min-operator-id-semver?">semver?</a></li>
-<li><a href="#min-operator-id-from-semver">from-semver</a></li>
-<li><a href="#min-operator-id-parse-url">parse-url</a></li>
-<li><a href="#min-operator-id-decode-url">decode-url</a></li>
-<li><a href="#min-operator-id-encode-url">encode-url</a></li>
-<li><a href="#min-operator-id-zip">zip</a></li>
-<li><a href="#min-operator-id-unzip">unzip</a></li>
-</ul>
-</li>
-</ul>
-
-
-<p>Additionally:</p>
-
-<ul>
-<li>No checks will be performed when defining symbols.</li>
-<li>Only the simple REPL will be available.</li>
-<li>There will be no support for dynamic libraries.</li>
-<li>The <strong>-m, --module-path</strong> and <strong>-a, --asset-path</strong> options have no effect.</li>
-<li>No environment configuration files (<span class="file">.minrc</span>, <span class="file">.min_symbols</span>) are used.</li>
-</ul>
-
+<div class="terminal"><p>docker run -it mindocker</p></div>
 
 <a name="Running-the-min-Shell"></a>
 <h3>Running the min Shell<a href="#document-top" title="Go to top"></a></h3>
@@ -7658,6 +7617,8 @@ div .terminal {
 
 <pre><code>; This is a comment
 (1 2 3 4 5) (dup *) map
+#| This is a...
+   ...multiline comment |#
 </code></pre>
 
 <p>This program returns a list containing the square values of the first five integer numbers:</p>
@@ -7689,22 +7650,22 @@ div .terminal {
 <a name="Data-Types"></a>
 <h3>Data Types<a href="#document-top" title="Go to top"></a></h3>
 
-<p>The following data types are availanle in <em>min</em>:</p>
+<p>The following data types are availanle in <em>min</em> (with the corresponding shorthand symbols used in operator signatures in brackets):</p>
 
 <dl>
-<dt>null</dt>
+<dt>null (null)</dt>
 <dd>null value.</dd>
-<dt>boolean</dt>
+<dt>boolean (bool)</dt>
 <dd><strong>true</strong> or <strong>false</strong>.</dd>
-<dt>integer</dt>
+<dt>integer (int)</dt>
 <dd>A 64-bit integer number like 1, 27, or -15.</dd>
-<dt>float</dt>
+<dt>float (flt)</dt>
 <dd>A 64-bit floating-point number like 3.14 or -56.9876.</dd>
-<dt>string</dt>
+<dt>string (str)</dt>
 <dd>A series of characters wrapped in double quotes: &ldquo;Hello, World!&rdquo;.</dd>
-<dt>quotation</dt>
+<dt>quotation (quot)</dt>
 <dd>A list of elements, which may also contain symbols. Quotations can be used to create heterogenous lists of elements of any data type, and also to create a block of code that will be evaluated later on (quoted program). Example: (1 2 3 + *)</dd>
-<dt>dictionary</dt>
+<dt>dictionary (dict)</dt>
 <dd><p>A key/value table. Dictionaries are implemented as an immediately-dequoted quotation, are enclosed in curly braces, and are represented by their symbol definitions. Note that dictionary keys must start with <code>:</code>and be followed by a double-quoted string, or a single word (which can be written witbout double quotes). The <a href="#&lt;code>dict&lt;/code>-Module">dict Module</a> provides some operators on dictionaries.</p>
 
 <div class="sidebar"><p>Example</p>
@@ -7821,6 +7782,9 @@ div .terminal {
 
 <p>There are two types of operators: <em>symbols</em> and <em>sigils</em>.</p>
 
+<a name="Symbols"></a>
+<h4>Symbols<a href="#document-top" title="Go to top"></a></h4>
+
 <p><em>Symbols</em> are the most common type of operator. A min symbol is a single word that is either provided by one of the predefined min modules like <code>dup</code> or <code>.</code> or defined by the user. User-defined symbols must:</p>
 
 <ul>
@@ -7829,30 +7793,51 @@ div .terminal {
 </ul>
 
 
-<p>It is possible to define symbols using the <a href="#min-operator-id-define">define</a> symbol. The following min program defines a new symbol called square that duplicates the first element on the stack and multiplies the two elements:</p>
-
-<pre><code> (dup *) "square" define
-</code></pre>
-
-<p>Now, while the <a href="#min-operator-id-define">define</a> symbol can be fine to define (the equivalent of) variables and simple operators, it is typically better to use the <a href="#min-operator-id-operator">operator</a> symbol instead, as it provides better readability, additional checks and automatic input/output capturing. The previous <code>square</code> symbol could also be defined with the <a href="#min-operator-id-operator">operator</a> operator like this:</p>
+<p>It is possible to define operator symbols using the <a href="#min-operator-id-operator">operator</a> symbol. The following min program defines a new symbol called square that duplicates the first element on the stack and multiplies the two elements:</p>
 
 <pre><code> (
    symbol square
    (num :n ==&gt; num :result)
    (n dup * @result)
  ) operator
+ ;; Calculates the square of n.
 </code></pre>
 
-<p>In this case, note how inputs and outputs are captured into the <code>n</code> and <code>result</code> symbols in the signature quotation and then referenced in the body quotation. Sure, the original version was much more succinct, but this is definitely more readable.</p>
+<p> The <a href="#min-operator-id-operator">operator</a> symbol provides way to:
+ * Specify the name of the symbol operator (<strong>square</strong> in this case)
+ * Specify a signature to identify the type of the input and output values (in this case, the operator takes a numeric input value and produces a numeric output value). Also, note how inputs and outputs are captured into the <code>n</code> and <code>result</code> symbols in the signature quotation and then referenced in the body quotation.
+ * Specify a quotation containing the code that the operator will execute.</p>
 
-<p>Besides symbols, you can also define sigils. min provides a set of predefined <em>sigils</em> as abbreviations for for commonly-used symbols. For example, the previous definition could be rewritten as follows using sigils:</p>
+<p>Also, symbol operator definitions can be annotated with documentation comments (starting with <code>;;</code> or wrapped in <code>#|| ... ||#</code>)) so that a help text can be displayed using the <a href="#min-operator-id-help">help</a> symbol.</p>
 
-<pre><code> (dup *) :square
+<a name="Using-the-lambda-operator"></a>
+<h5>Using the lambda operator<a href="#document-top" title="Go to top"></a></h5>
+
+<p>Sometimes you just want to bind a piece of code to a symbol to reuse it later, typically something simple and easy-to-read. In these cases, you can use the <a href="#min-operator-id-lambda">lambda</a> operator (or the <code>^</code> sigil). For example, the previous <code>square</code> operator definition could be rewritten simply as the following.</p>
+
+<pre><code> (dup *) ^square
 </code></pre>
 
-<p>A sigil like <code>:</code> can be prepended to a double-quoted string or a single word (with no spaces) which will be treated as a string instead of using the corresponding symbol.</p>
+<p>Note that this feels like using <a href="#min-operator-id-define">define</a>, but the main difference between <a href="#min-operator-id-lambda">lambda</a> and <a href="#min-operator-id-define">define</a> is that <code>lambda</code> only works on quotations doesn&rsquo;t auto-quote them, so that they are immediately evaluated when the corresponding symbol is pushed on the stack.</p>
 
-<p>For example, the following executes the command <code>ls -al</code> and pushes the command return code on the atack:</p>
+<p>Also note that unlike with <a href="#min-operator-id-operator">operator</a>, symbols defined with <a href="#min-operator-id-lambda">lambda</a>:
+* have no built-in validation of input and output values.
+* do not support the <code>return</code> symbol to immediately end their execution.
+* have no built-in stack pollution checks.</p>
+
+<blockquote><p>%tip
+Tip</p>
+
+<p>You can use <a href="#min-operator-id-lambda-bind">lambda-bind</a> to re-set a previously set lambda.</p></blockquote>
+
+<a name="Sigils"></a>
+<h4>Sigils<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Besides symbols, you can also define sigils. min provides a set of predefined <em>sigils</em> as abbreviations for for commonly-used symbols.</p>
+
+<p>A sigil can be prepended to a double-quoted string or a single word (with no spaces) which will be treated as a string instead of using the corresponding symbol.</p>
+
+<p>For example, the following executes the command <code>ls -al</code> and pushes the command return code on the stack:</p>
 
 <pre><code> !"ls -al"`
 </code></pre>
@@ -7860,34 +7845,26 @@ div .terminal {
 <p>Currently min provides the following sigils:</p>
 
 <dl>
-<dt>+</dt>
-<dd>Alias for <a href="#min-operator-id-module">module</a>.</dd>
-<dt>~</dt>
-<dd>Alias for <a href="#min-operator-id-delete">delete</a>.</dd>
 <dt>'</dt>
 <dd>Alias for <a href="#min-operator-id-quote">quote</a>.</dd>
 <dt>:</dt>
 <dd>Alias for <a href="#min-operator-id-define">define</a>.</dd>
-<dt>^</dt>
-<dd>Alias for <a href="#min-operator-id-call">call</a>.</dd>
 <dt>*</dt>
 <dd>Alias for <a href="#min-operator-id-invoke">invoke</a>.</dd>
 <dt>@</dt>
 <dd>Alias for <a href="#min-operator-id-bind">bind</a>.</dd>
+<dt>^</dt>
+<dd>Alias for <a href="#min-operator-id-lambda">lambda</a>.</dd>
 <dt>></dt>
 <dd>Alias for <a href="#min-operator-id-save-symbol">save-symbol</a>.</dd>
 <dt>&lt;</dt>
 <dd>Alias for <a href="#min-operator-id-load-symbol">load-symbol</a>.</dd>
-<dt>&#61;</dt>
-<dd>Alias for <a href="#min-operator-id-quote-bind">quote-bind</a>.</dd>
-<dt>#</dt>
-<dd>Alias for <a href="#min-operator-id-quote-define">quote-define</a>.</dd>
 <dt>/</dt>
 <dd>Alias for <a href="#min-operator-id-dget">dget</a>.</dd>
 <dt>%</dt>
 <dd>Alias for <a href="#min-operator-id-dset">dset</a>.</dd>
 <dt>?</dt>
-<dd>Alias for <a href="#min-operator-id-dhas?">dhas?</a>.</dd>
+<dd>Alias for <a href="#min-operator-id-help">help</a>.</dd>
 <dt>!</dt>
 <dd>Alias for <a href="#min-operator-id-system">system</a>.</dd>
 <dt>&amp;</dt>
@@ -7899,7 +7876,7 @@ div .terminal {
 <p>Besides system sigils, you can also create your own sigils. Unlike system sigils however, user defined sigils:</p>
 
 <ul>
-<li>have the same character restricrions as symbols</li>
+<li>have the same character restrictions as symbols</li>
 <li>can only be prepended to double-quoted strings</li>
 <li>can be unsealed, deleted, redefined, and sealed.</li>
 </ul>
@@ -7907,20 +7884,34 @@ div .terminal {
 
 <p>Sigils can be a very powerful construct and a way to reduce boulerplate code: you can define a sigil to use as you would use any symbol which requires a single string or quoted symbol on the stack.</p>
 
-<p>Consider the following example:</p>
-
-<pre><code> 'from-json 'j define-sigil
-</code></pre>
-
-<p>This will define a <code>j</code> sigil that will parse any string as JSON and convert it to its corresponding min representation.</p>
-
-<p>Sigils can also (and should!) be defined with the <a href="#min-operator-id-operator">operator</a> operator to add additional checks. The sigil definition above could be rewritten like this, for example:</p>
+<p>Like symbols, sigils can be defined with the <a href="#min-operator-id-operator">operator</a> operator, like this:</p>
 
 <pre><code> (
    sigil j
-   (str :json ==&gt; a :result)
+   (string :json ==&gt; a :result)
    (json from-json @result)
  ) operator
+</code></pre>
+
+<p>This definition will add a <code>j</code> sigil that will process the follwing string as JSON code, so for example:</p>
+
+<pre><code> j"{\"test\": true}"
+</code></pre>
+
+<p>&hellip;will push the following dictionary on the stack:</p>
+
+<pre><code>{true :test}
+</code></pre>
+
+<p>Also, sigil definitions can be annotated with documentation comments (starting with <code>;;</code> or wrapped in <code>#|| ... ||#</code>)`) so that a help text can be displayed using the <a href="#min-operator-id-help">help</a> symbol.</p>
+
+<a name="Auto-popping"></a>
+<h4>Auto-popping<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Typically, but not always, operators push one or more value to the stack. While this is typically the desired behavior, in some cases you may want to keep the stack clear so in these cases you can append a <code>!</code> character to any symbol to cause the symbol <a href="#min-operator-id-pop">pop</a> to be pushed on the stack immediately afterwards.</p>
+
+<pre><code> "test" puts  ;Prints "test" and pushes "test" on the stack.
+ "test" puts! ;Prints "test" without pushing anything on the stack.
 </code></pre>
 
 <a name="Operator-signatures"></a>
@@ -7940,10 +7931,10 @@ div .terminal {
 <p>In a signature, a type expression must precede the capturing symbol. Such type expression can be:</p>
 
 <ul>
-<li>One of the following shorthand symbols identifying a well-known <em>min</em> base type (see the reference section for more information): <code>a</code>, <code>bool</code>, <code>null</code>, <code>str</code>, <code>int</code>, <code>num</code>, <code>float</code>, <code>'sym</code>, <code>quot</code>, or <code>dict</code>.</li>
+<li>One of the following shorthand symbols identifying a well-known <em>min</em> base type (see the reference section for more information): <code>a</code>, <code>bool</code>, <code>null</code>, <code>str</code>, <code>int</code>, <code>num</code>, <code>flt</code>, <code>'sym</code>, <code>quot</code>, or <code>dict</code>.</li>
 <li>A typed dictionary like <code>dict:module</code> or <code>dict:datastore</code>.</li>
 <li>A type class (see below).</li>
-<li>a union of types/typed dictionaries/type classes, like <code>str|int</code>.</li>
+<li>a type expression like <code>str|int</code>.</li>
 </ul>
 
 
@@ -7958,14 +7949,18 @@ div .terminal {
 
 <p>Consider the following type class definition validating a quotation containing strings:</p>
 
-<pre><code> ((string?) all?) 'strquot typeclass
+<pre><code> (
+   typeclass strquot
+   (quot :q ==&gt; bool :o)
+   (q (string?) all? @o)
+ ) ::
 </code></pre>
 
-<p>The <a href="#min-operator-id-typeclass">typeclass</a> operator defines a symbol prefixed with <code>type:</code> (<code>type:strquot</code> in this case) corresponding to a type class that can be used in operator signatures in place of a type, like this:</p>
+<p>The <a href="#min-operator-id-operator">operator</a> operator can be used to define a symbol prefixed with <code>typeclass:</code> (<code>typeclass:strquot</code> in this case) corresponding to a type class that can be used in operator signatures in place of a type, like this:</p>
 
 <pre><code> (
    symbol join-strings
-   (strquot :q ==&gt; string :result)
+   (strquot :q ==&gt; str :result)
    ( 
       q "" (suffix) reduce @result
    )
@@ -7976,7 +7971,107 @@ div .terminal {
 
 <div class="tip"><p>Tip</p>
 
-<p><code>type:</code>-prefixed symbols are just like ordinary shmbols: they are lexically scoped, they can be sealed, unsealed and deleted.</p></div>
+<p><code>typeclass:</code>-prefixed symbols are just like ordinary shmbols: they are lexically scoped, they can be sealed, unsealed and deleted.</p></div>
+
+<a name="Capturing-lambdas"></a>
+<h6>Capturing lambdas<a href="#document-top" title="Go to top"></a></h6>
+
+<p>You can also specify a lambda to be captured to an output value, like this:</p>
+
+<pre><code> (
+   symbol square
+   (==&gt; quot ^o)
+   (
+     (dup *) ~o
+   )
+ ) ::
+</code></pre>
+
+<p>Essentially, this allows you to push a lambda on the stack from an operator.</p>
+
+<p>Note that:</p>
+
+<ul>
+<li>Lambdas must be captured using the <code>^</code> sigil in signatures and bound using <a href="#min-operator-id-lambda-bind">lambda-bind</a> in the operator body.</li>
+<li>Lambdas cannot be captured in input values (they have already been pushed on the stack).</li>
+<li>Requiring a lambda as an output value effectively bypasses stack pollution checks. While this can be useful at times, use with caution!</li>
+</ul>
+
+
+<a name="Type-expressions"></a>
+<h5>Type expressions<a href="#document-top" title="Go to top"></a></h5>
+
+<p>When specifying types in operator signatures or through the <a href="#min-operator-id-expect">expect</a> operator, you can specify a logical expression containing types and type classes joined with one of the following operators:</p>
+
+<ul>
+<li><code>|</code> (or)</li>
+<li><code>&amp;</code> (and)</li>
+<li><code>!</code> (not)</li>
+</ul>
+
+
+<p>Suppose for example you defined the following type classes:</p>
+
+<pre><code>(typeclass fiveplus
+    (int :n ==&gt; bool :o)
+    (
+      n 5 &gt; @o
+    )
+) ::
+
+(typeclass tenminus
+    (int :n ==&gt; bool :o)
+    (
+      n 10 &lt; @o
+    )
+) ::
+
+(typeclass even
+    (int :n ==&gt; bool :o)
+    (
+      n 2 mod 0 == @o
+    )
+) ::
+</code></pre>
+
+<p>You can combine them in a type expression as following:</p>
+
+<pre><code>(symbol test
+    (!even|tenminus&amp;fiveplus :n ==&gt; bool :o)
+    (
+      true @o
+    )
+) ::
+4 test  ; error
+6 test  ; true
+11 test ; true 
+</code></pre>
+
+<a name="Type-aliases"></a>
+<h5>Type aliases<a href="#document-top" title="Go to top"></a></h5>
+
+<p>As you can see, type expressions can quickly become quite long and complex. To avoid this, you can define <em>type aliases</em> using the <a href="#min-operator-id-typealias">typealias</a> operator.</p>
+
+<p>For example, you can create an alias of part of the type expression used in the previous example, like this:</p>
+
+<pre><code>'tenminus&amp;fiveplus 'five-to-ten typealias
+
+(symbol test
+    (!even|five-to-ten :n ==&gt; bool :o)
+    (
+      true @o
+    )
+) ::
+</code></pre>
+
+<p>Note that:</p>
+
+<ul>
+<li>Type aliases be used to create an alias for any type expression.</li>
+<li>Aliased type expressions can contain standard <em>min</em> types, dictionary types, type classes, and even other type aliases.</li>
+<li>The <a href="#min-operator-id-typealias">typealias</a> operator actually creates lexically-scoped, <code>typealias:</code>-prefixed symbols that can be sealed, unsealed, and deleted exactly like other symbols.</li>
+</ul>
+
 
 <a name="Generics"></a>
 <h5>Generics<a href="#document-top" title="Go to top"></a></h5>
@@ -7985,9 +8080,9 @@ div .terminal {
 
 <pre><code>(
   symbol add
-  ((string|num|quot :t) :a t :b ==&gt; t :result)
+  ((str|num|quot :t) :a t :b ==&gt; t :result)
   (
-   (a type "string" ==)
+   (a type "str" ==)
      (a b suffix @result return)
    when
    (a type "num" ==)
@@ -8018,6 +8113,34 @@ div .terminal {
 
 <p>Generics allow to specify a type as a type union, but the type will remain the same one throughout the same operator call.
 By contrast, using the same type union several times within the same signature allows different types to be used in the same call, and that is probably something you dont want!</p></div>
+
+<a name="Constructors"></a>
+<h5>Constructors<a href="#document-top" title="Go to top"></a></h5>
+
+<p>The <a href="#min-operator-id-operator">operator</a> operator can also be used to create <em>constructor</em> symbols. A constructor is a particular type of operator that is used to create a new typed dictionary.</p>
+
+<p>Consider the following example:</p>
+
+<pre><code> (
+   constructor point
+   (num :x num :y ==&gt; dict :out)
+   (
+     {}
+       x %x
+       y %y
+     @out
+   )
+ ) ::
+</code></pre>
+
+<p>The operator above creates a <code>point</code> constructor symbol that can be used to create a new <code>dict:point</code> typed dictionary by popping two numbers from the stack:</p>
+
+<pre><code> 2 3 point ; {2 :x 3 :y ;point}
+</code></pre>
+
+<div class="note"><p>Tip</p>
+
+<p>Except for some native symbols, constructors represent the only way to create new typed dictionaries. The more validations you perform in a constructor, the most effective checking for a specific type using the <a href="#min-operator-id-type?">type?</a> operator will be, as <code>type?</code> only checks if a specific type annotation is present on a typed dictionary, nothing else.</p></div>
 
 <a name="Definitions"></a>
 <h3>Definitions<a href="#document-top" title="Go to top"></a></h3>
@@ -8078,44 +8201,6 @@ By contrast, using the same type union several times within the same signature a
  ) dequote
 </code></pre>
 
-<a name="quote-define-and-quote-bind"></a>
-<h4>quote-define and quote-bind<a href="#document-top" title="Go to top"></a></h4>
-
-<p>So far, we saw how to use the <a href="#min-operator-id-define">define</a> and <a href="#min-operator-id-bind">bind</a> operator (or better, their shorthand sigils <code>:</code> and <code>@</code>) to define new symbols or bind values to existing ones.</p>
-
-<p>Consider the following example:</p>
-
-<pre><code> (1 2 3 4 5) :my-list
- my-list (dup *) map
-</code></pre>
-
-<p>If run the program above in min shell by pasting the first and then the second line in it, you&rsquo;ll get an error similar to the following:</p>
-
-<pre><code> (!) &lt;repl&gt;(1,19) [map]: Incorrect values found on the stack:
- - expected: {top} quot quot {bottom}
- - got:      {top} quot int {bottom}
-     &lt;repl&gt;(1,19) in symbol: map
-</code></pre>
-
-<p>This error says that when the <a href="#min-operator-id-map">map</a> operator was evaluated, there were incorrect values on the stack. Two quotations were expected, but instead, a quotation and an integer were found. How did this happen?</p>
-
-<p>Basically, when <code>my-list</code> was pushed on the stack, it pushed all its items on top of the stack. If you run <a href="#min-operator-id-get-stack">get-stack</a>, it will return the following list:</p>
-
-<pre><code> (1 2 3 4 5 (dup *))
-</code></pre>
-
-<p>This happens because by default min assumes that when you define a quotation you want to define a new operator rather than a list. The following program works as expected, and it returns a list containing the squares of the first five integer numbers:</p>
-
-<pre><code> (dup *) :square
- (1 2 3 4 5) (square) map
-</code></pre>
-
-<p>To avoid this behavior &ndash; i.e. whenever you want to define a list of items rather than an operator that will be immediately evaluated when pushed on the stack, you have to use the <a href="#min-operator-id-quote-define">quote-define</a> and the <a href="#min-operator-id-quote-bind">quote-bind</a> or their respective sigils <code>#</code> and <code>=</code>:</p>
-
-<pre><code> (1 2 3 4 5) #my-list
- my-list (dup *) map ;Returns (1 4 9 16 25) 
-</code></pre>
-
 <a name="Sealing-symbols"></a>
 <h4>Sealing symbols<a href="#document-top" title="Go to top"></a></h4>
 
@@ -8135,15 +8220,19 @@ By contrast, using the same type union several times within the same signature a
 
 <div class="note"><p>Note</p>
 
-<p>The <a href="#min-operator-id-unseal">unseal</a> operator can be used to effectively un-seal a previously-sealed symbol. Use with caution!</p></div>
+<p>The <a href="#min-operator-id-unseal-symbol">unseal-symbol</a> operator can be used to effectively un-seal a previously-sealed symbol. Use with caution!</p></div>
 
 <a name="Scopes"></a>
 <h3>Scopes<a href="#document-top" title="Go to top"></a></h3>
 
-<p>As explained in <a href="/learn-definitions">Definitions</a>, min uses lexical scoping to resolve symbols and sigils. A <em>scope</em> is an execution context (a symbol table really) that:
-* is created while a new quotation is being dequoted or a dictionary is created.
-* is destroyed after a quotation has been dequoted.
-* is attached to a dictionary.</p>
+<p>As explained in <a href="/learn-definitions">Definitions</a>, min uses lexical scoping to resolve symbols and sigils. A <em>scope</em> is an execution context (a symbol table really) that:</p>
+
+<ul>
+<li>is created while a new quotation is being dequoted or a dictionary is created.</li>
+<li>is destroyed after a quotation has been dequoted.</li>
+<li>is attached to a dictionary.</li>
+</ul>
+
 
 <p>The main, root-level scope in min can be accessed using the <a href="#min-operator-id-ROOT">ROOT</a> symbol and it typically contains all symbols and sigils imported from all the standard library modules. The ROOT symbol pushes a module on the stack that references the ROOT scope:</p>
 
@@ -8229,7 +8318,7 @@ By contrast, using the same type union several times within the same signature a
      ((true) ("unknown" @type))
    ) case 
    "This is a $1 file." (type) % echo
- ) :display-file-info
+ ) ^display-file-info
 </code></pre>
 
 <p>This program defines a symbol <code>display-file-info</code> that takes a file name and outputs a message displaying its type if known.</p>
@@ -8258,7 +8347,7 @@ By contrast, using the same type union several times within the same signature a
      i succ @i
    ) while
    f
- ) :factorial
+ ) ^factorial
 </code></pre>
 
 <p>This program defines a symbol <code>factorial</code> that calculates the factorial of an integer iteratively using the symbol <a href="#min-operator-id-while">while</a>.</p>
@@ -8337,7 +8426,7 @@ By contrast, using the same type union several times within the same signature a
 <td> Auto-completes the current word using environment variable names.</td>
 </tr>
 <tr>
-<td>&hellip;a word starting with <code>'</code>, <code>~</code>, <code>@</code>, <code>#</code>, <code>&gt;</code>, <code>&lt;</code>, <code>*</code>, <code>(</code> </td>
+<td>&hellip;a word starting with <code>'</code>, <code>@</code>, <code>#</code>, <code>&gt;</code>, <code>&lt;</code>, <code>*</code>, <code>(</code>, <code>?</code> </td>
 <td> Auto-completes the current word using symbol names.</td>
 </tr>
 </tbody>
@@ -8429,24 +8518,18 @@ By contrast, using the same type union several times within the same signature a
 
 <p>When you just want to create more high-level min operator using functionalities that are already available in min, the easiest way is to create your own reusable min modules.</p>
 
-<p>The <a href="#min-operator-id-module">module</a> (and the <strong>+</strong> sigil) allows you to create a new min module:</p>
+<p>To create a new module, simply create a file containing your operator definitions implemented using either the <a href="#min-operator-id-operator">operator</a> operator or the <a href="#min-operator-id-lambda">lambda</a> operator</p>
 
-<pre><code>{
-  (dup *)             :pow2
-
-  (dup dup * *)       :pow3
-
-  (dup dup dup * * *) :pow4
-
-} +quickpows
+<pre><code>(dup *)             ^pow2
+(dup dup * *)       ^pow3
+(dup dup dup * * *) ^pow4
 </code></pre>
 
-<p>Save your code to a file (e.g. <em>quickpows.min</em>) and you can use it in other nim files using the <a href="#min-operator-id-load">load</a> operator and the <a href="#min-operator-id-import">import</a>:</p>
+<p>Save your code to a file (e.g. <em>quickpows.min</em>) and you can use it in other nim files using the <a href="#min-operator-id-require">require</a> operator and the <a href="#min-operator-id-import">import</a> (if you want to import the operators in the current scope):</p>
 
-<pre><code>'quickpows load
-'quickpows import
+<pre><code>'quickpows require :qp
 
-2 pow3 pow2 puts ;prints 64
+2 \*qp/pow3 \*qp/pow2 puts ;prints 64
 </code></pre>
 
 <a name="Specifying-your-custom-prelude-program"></a>
@@ -8474,7 +8557,7 @@ By contrast, using the same type union several times within the same signature a
   ) ROOT with
 ) unless
 ; Unseal prompt symbol
-'prompt    unseal
+'prompt    unseal-symbol
 </code></pre>
 
 <p>Essentially, this causes min to import <em>all</em> the modules (except for some if the <strong>lite</strong> flag was defined at compilation time) and unseals the <a href="#min-operator-id-prompt">prompt</a> symbol so that it can be customized. If you want, you can provide your own prelude file to specify your custom behaviors, selectively import modules, and define your own symbols, like this:</p>
@@ -8534,7 +8617,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="tip"><p>Tip</p>
 
-<p>For more information on how to create new modules with Nim, have a look in the <a href="https://github.com/h3rald/min/tree/master/lib">lib folder</a> of the min repository, which contains all the min modules included in the standard library.</p></div>
+<p>For more information on how to create new modules with Nim, have a look in the <a href="https://github.com/h3rald/min/tree/master/minpkg/lib">lib folder</a> of the min repository, which contains all the min modules included in the standard library.</p></div>
 
 <a name="Reference"></a>
 <h2>Reference<a href="#document-top" title="Go to top"></a></h2>
@@ -8595,11 +8678,11 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <dd>A boolean value</dd>
 <dt><span class="kwd">int</span></dt>
 <dd>An integer value.</dd>
-<dt><span class="kwd">float</span></dt>
+<dt><span class="kwd">flt</span></dt>
 <dd>A float value.</dd>
 <dt><span class="kwd">num</span></dt>
 <dd>A numeric (integer or float) value.</dd>
-<dt><span class="kwd">string</span></dt>
+<dt><span class="kwd">str</span></dt>
 <dd>A string value.</dd>
 <dt><span class="kwd">&apos;sym</span></dt>
 <dd>A string-like value (string or quoted symbol).</dd>
@@ -8607,7 +8690,18 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <dd>A quotation (also expressed as parenthesis enclosing other values).</dd>
 <dt><span class="kwd">dict</span></dt>
 <dd>A dictionary value.</dd>
-<dt><span class="kwd">url</span></dt>
+<dt><span class="kwd">dict:help</span></dt>
+<dd><p>A help dictionary:</p>
+
+<pre><code>{
+ "puts" :name
+ "symbol" :kind
+ "a ==&gt;" :signature
+ "Prints a and a new line to STDOUT." :description
+ ;help
+}
+</code></pre></dd>
+<dt><span class="kwd">dict:url</span></dt>
 <dd><p>An URL dictionary:</p>
 
 <pre><code>{
@@ -8619,6 +8713,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
  "/min" :path
  "" :anchor
  "" :query
+ ;url
 }
 </code></pre></dd>
 <dt><span class="kwd">dict:timeinfo</span></dt>
@@ -8670,7 +8765,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
  ;datastore
 }
 </code></pre></dd>
-<dt><span class="kwd">request</span></dt>
+<dt><span class="kwd">dict:http-request</span></dt>
 <dd><p>A request dictionary, representing an HTTP request to be performed through the operators exposed by the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>:</p>
 
 <pre><code>{
@@ -8685,7 +8780,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
  "test body" :body      ;optional
 }
 </code></pre></dd>
-<dt><span class="kwd">response</span></dt>
+<dt><span class="kwd">dict:http-response</span></dt>
 <dd><p>A response dictionary, representing an HTTP response returned by some of the operators exposed by the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>:</p>
 
 <pre><code>{
@@ -8697,10 +8792,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
   "{\"test\": \"This is a test\"}" :body
 }
 </code></pre></dd>
-<dt><span class="kwd">true</span></dt>
-<dd>true (boolean type).</dd>
-<dt><span class="kwd">false</span></dt>
-<dd>false (boolean type)</dd>
 </dl>
 
 <a name="Suffixes"></a>
@@ -8730,19 +8821,19 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p><span class="reference-title">&apos;</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> &apos;<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> quote</span></p>
+<div class="operator"><p><span class="kwd"> &apos;<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> quotesym</span></p>
 
-<p>See <a href="#min-operator-id-quote">quote</a>.</p></div>
+<p>See <a href="#min-operator-id-quotesym">quotesym</a>.</p></div>
 
 <p><span class="reference-title">&apos;</span></p>
 
-<div class="operator"><p><span class="kwd"> &apos; <strong>&rArr;</strong> quote</span></p>
+<div class="operator"><p><span class="kwd"> &apos; <strong>&rArr;</strong> quotesym</span></p>
 
-<p>See <a href="#min-operator-id-quote">quote</a>.</p></div>
+<p>See <a href="#min-operator-id-quotesym">quotesym</a>.</p></div>
 
 <p><span class="reference-title">:</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> :<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> define</span></p>
+<div class="operator"><p><span class="kwd"> :<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> define</span></p>
 
 <p>See <a href="#min-operator-id-define">define</a>.</p></div>
 
@@ -8758,39 +8849,27 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>See <a href="#min-operator-id-operator">operator</a>.</p></div>
 
-<p><span class="reference-title">~</span> <span class="sigil"></span></p>
+<p><span class="reference-title">?</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> ~<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> delete</span></p>
+<div class="operator"><p><span class="kwd"> ?<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> help</span></p>
 
-<p>See <a href="#min-operator-id-delete">delete</a>.</p></div>
+<p>See <a href="#min-operator-id-help">help</a>.</p></div>
 
-<p><span class="reference-title">+</span> <span class="sigil"></span></p>
+<p><span class="reference-title">?</span></p>
 
-<div class="operator"><p><span class="kwd"> +<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> module</span></p>
+<div class="operator"><p><span class="kwd"> ? <strong>&rArr;</strong> help</span></p>
 
-<p>See <a href="#min-operator-id-module">module</a>.</p></div>
+<p>See <a href="#min-operator-id-help">help</a>.</p></div>
 
-<p><span class="reference-title">^</span> <span class="sigil"></span></p>
+<p><span class="reference-title">&ast;</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> ^<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> call</span></p>
-
-<p>See <a href="#min-operator-id-call">call</a>.</p></div>
-
-<p><span class="reference-title">^</span></p>
-
-<div class="operator"><p><span class="kwd"> ^ <strong>&rArr;</strong> call</span></p>
-
-<p>See <a href="#min-operator-id-call">call</a>.</p></div>
-
-<p><span class="reference-title">*</span> <span class="sigil"></span></p>
-
-<div class="operator"><p><span class="kwd"> *<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> invoke</span></p>
+<div class="operator"><p><span class="kwd"> &ast;<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> invoke</span></p>
 
 <p>See <a href="#min-operator-id-invoke">invoke</a>.</p></div>
 
 <p><span class="reference-title">@</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> @<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> bind</span></p>
+<div class="operator"><p><span class="kwd"> @<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> bind</span></p>
 
 <p>See <a href="#min-operator-id-bind">bind</a>.</p></div>
 
@@ -8800,15 +8879,15 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>See <a href="#min-operator-id-bind">bind</a>.</p></div>
 
-<p><span class="reference-title">></span> <span class="sigil"></span></p>
+<p><span class="reference-title">&gt;</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> ><span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> save-symbol</span></p>
+<div class="operator"><p><span class="kwd"> &gt;<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> save-symbol</span></p>
 
 <p>See <a href="#min-operator-id-save-symbol">save-symbol</a>.</p></div>
 
 <p><span class="reference-title">&lt;</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> &lt;<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> load-symbol</span></p>
+<div class="operator"><p><span class="kwd"> &lt;<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> load-symbol</span></p>
 
 <p>See <a href="#min-operator-id-load-symbol">load-symbol</a>.</p></div>
 
@@ -8818,30 +8897,30 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>See <a href="#min-operator-id-dequote">dequote</a>.</p></div>
 
-<p><span class="reference-title">>></span></p>
+<p><span class="reference-title">&gt;&gt;</span></p>
 
-<div class="operator"><p><span class="kwd"> >> <strong>&rArr;</strong> prefix-dequote</span></p>
+<div class="operator"><p><span class="kwd"> &gt;&gt; <strong>&rArr;</strong> prefix-dequote</span></p>
 
 <p>See <a href="#min-operator-id-prefix-dequote">prefix-dequote</a>.</p></div>
 
-<p><span class="reference-title">>&lt;</span></p>
+<p><span class="reference-title">&gt;&lt;</span></p>
 
-<div class="operator"><p><span class="kwd"> >&lt; <strong>&rArr;</strong> infix-dequote</span></p>
+<div class="operator"><p><span class="kwd"> &gt;&lt; <strong>&rArr;</strong> infix-dequote</span></p>
 
 <p>See <a href="#min-operator-id-infix-dequote">infix-dequote</a>.</p></div>
 
-<p><span class="reference-title">=></span></p>
+<p><span class="reference-title">=&gt;</span></p>
 
-<div class="operator"><p><span class="kwd"> => <strong>&rArr;</strong> apply</span></p>
+<div class="operator"><p><span class="kwd"> =&gt; <strong>&rArr;</strong> apply</span></p>
 
 <p>See <a href="#min-operator-id-apply">apply</a>.</p></div>
 
-<p><a id="min-operator-id-==>&ldquo;></a>
-<span class="reference-title">==></span></p>
+<p><a id="min-operator-id-==&gt;"></a>
+<span class="reference-title">==&gt;</span></p>
 
 <div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Symbol used to separate input and output calues in operator signatures.</p></div>
+<p>Symbol used to separate input and output values in operator signatures.</p></div>
 
 <p><span class="reference-title">=-=</span></p>
 
@@ -8849,34 +8928,22 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>See <a href="#min-operator-id-expect-empty-stack">expect-empty-stack</a>.</p></div>
 
-<p><span class="reference-title">#</span> <span class="sigil"></span></p>
+<p><span class="reference-title">^</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> #<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> quote-bind</span></p>
+<div class="operator"><p><span class="kwd"> ^<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> lambda</span></p>
 
-<p>See <a href="#min-operator-id-quote-bind">quote-bind</a>.</p></div>
+<p>See <a href="#min-operator-id-lambda">lambda</a>.</p></div>
 
-<p><span class="reference-title">#</span></p>
+<p><span class="reference-title">^</span></p>
 
-<div class="operator"><p><span class="kwd"> # <strong>&rArr;</strong> quote-bind</span></p>
+<div class="operator"><p><span class="kwd"> ^ <strong>&rArr;</strong> lambda</span></p>
 
-<p>See <a href="#min-operator-id-quote-bind">quote-bind</a>.</p></div>
-
-<p><span class="reference-title">=</span> <span class="sigil"></span></p>
-
-<div class="operator"><p><span class="kwd"> =<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> quote-define</span></p>
-
-<p>See <a href="#min-operator-id-quote-define">quote-define</a>.</p></div>
-
-<p><span class="reference-title">=</span></p>
-
-<div class="operator"><p><span class="kwd"> = <strong>&rArr;</strong> quote-define</span></p>
-
-<p>See <a href="#min-operator-id-quote-define">quote-define</a>.</p></div>
+<p>See <a href="#min-operator-id-lambda">lambda</a>.</p></div>
 
 <p><a id="min-operator-id-apply"></a>
 <span class="reference-title">apply</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span>|<span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)|{<span class="kwd">a<sub>*</sub></span>}</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)</span></p>
 
 <p>Returns a new quotation obtained by evaluating each element of <span class="kwd">quot</span> in a separate stack.</p></div>
 
@@ -8909,13 +8976,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <li>If <span class="kwd">a</span> is a string, the empty string, and <code>"false"</code> are converted to <span class="kwd">false</span>, otherwise it is converted to <span class="kwd">true</span>.</li>
 </ul>
 </div>
-
-<p><a id="min-operator-id-call"></a>
-<span class="reference-title">call</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
-
-<p>Calls operator <span class="kwd">&apos;sym</span> defined in dictionary <span class="kwd">dict</span>.</p></div>
 
 <p><a id="min-operator-id-case"></a>
 <span class="reference-title">case</span></p>
@@ -8955,7 +9015,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Defines a new symbol <span class="kwd">&apos;sym</span>, containing the specified value (auto-quoted if not already a quotation).</p></div>
+<p>Defines a new symbol <span class="kwd">&apos;sym</span>, containing the specified value.</p></div>
 
 <p><a id="min-operator-id-define-sigil"></a>
 <span class="reference-title">define-sigil</span></p>
@@ -8964,8 +9024,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Defines a new sigil <span class="kwd">&apos;sym</span>, containing the specified value (auto-quoted if not already a quotation).</p></div>
 
-<p><a id="min-operator-id-defined?"></a>
-<span class="reference-title">defined?</span></p>
+<p><a id="min-operator-id-defined-symbol?"></a>
+<span class="reference-title">defined-symbol?</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
@@ -8978,8 +9038,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Returns <span class="kwd">true</span> if the symbol <span class="kwd">&apos;sym</span> is defined, <span class="kwd">false</span> otherwise.</p></div>
 
-<p><a id="min-operator-id-delete"></a>
-<span class="reference-title">delete</span></p>
+<p><a id="min-operator-id-delete-sigil"></a>
+<span class="reference-title">delete-sigil</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
@@ -9004,9 +9064,9 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-eval"></a>
 <span class="reference-title">eval</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
 
-<p>Parses and interprets <span class="kwd">string</span>.</p></div>
+<p>Parses and interprets <span class="kwd">str</span>.</p></div>
 
 <p><a id="min-operator-id-exit"></a>
 <span class="reference-title">exit</span></p>
@@ -9026,7 +9086,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <ul>
 <li>You can specify a typed dictionary by prepending the type name with <code>dict:</code>. Example: <code>dict:socket</code></li>
-<li>You can specify two or more matching types by separating the type names with a pipe: <code>string|quot</code></li>
+<li>You can specify two or more matching types by separating combined together in a logical type expression, e.g.: <code>string|quot</code></li>
 </ul>
 </div>
 
@@ -9050,9 +9110,9 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-float"></a>
 <span class="reference-title">float</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">float</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
-<p>Converts <span class="kwd">a</span> to an integer value based on the following rules:</p>
+<p>Converts <span class="kwd">a</span> to a float value based on the following rules:</p>
 
 <ul>
 <li>If <span class="kwd">a</span> is <span class="kwd">true</span>, it is converted to <code>1.0</code>.</li>
@@ -9074,29 +9134,35 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-format-error"></a>
 <span class="reference-title">format-error</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:error</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:error</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Formats the error <span class="kwd">dict:error</span> as a string.</p>
 
 <div class="sidebar"><p>Example</p>
 
-<p>The following:</p>
+<p>The following code:</p>
 
-<p><code>{"MyError" :error "This is a test error" :message} 'error set-type format-error</code></p>
+<pre><code> (
+   (
+      {"MyError" :error "This is a test error" :message} raise
+   ) 
+   (format-error)
+ ) try
+</code></pre>
 
 <p>produces: <code>"This is a test error"</code></p></div></div>
 
 <p><a id="min-operator-id-from-json"></a>
 <span class="reference-title">from-json</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
 <p>Converts a JSON string into <em>min</em> data.</p></div>
 
 <p><a id="min-operator-id-from-yaml"></a>
 <span class="reference-title">from-yaml</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
 <p>Converts a YAML string into <em>min</em> data.</p>
 
@@ -9107,9 +9173,16 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-gets"></a>
 <span class="reference-title">gets</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Reads a line from STDIN and places it on top of the stack as a string.</p></div>
+
+<p><a id="min-operator-id-help"></a>
+<span class="reference-title">help</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Prints the help text for <span class="kwd">&apos;sym</span>, if available.</p></div>
 
 <p><a id="min-operator-id-if"></a>
 <span class="reference-title">if</span></p>
@@ -9146,8 +9219,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <pre><code> (2 + 3 * 5) infix-dequote
 </code></pre></div></div>
 
-<p><a id="min-operator-id-int"></a>
-<span class="reference-title">int</span></p>
+<p><a id="min-operator-id-integer"></a>
+<span class="reference-title">integer</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
 
@@ -9176,6 +9249,15 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <pre><code>{{100 :b} :a} :test *test/a/b
 </code></pre></div></div>
+
+<p> <a id="min-operator-id-lambda"></a>
+<span class="reference-title">lambda</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Defines a new symbol <span class="kwd">&apos;sym</span>, containing the specified quotation <span class="kwd">quot</span>. Unlike with <code>define</code>, in this case <span class="kwd">quot</span> will not be quoted, so its values will be pushed on the stack when the symbol <span class="kwd">&apos;sym</span> is pushed on the stack.</p></div>
+
+<p>Essentially, this symbol allows you to define an operator without any validation of constraints and bind it to a symbol.</p>
 
 <p><a id="min-operator-id-line-info"></a>
 <span class="reference-title">line-info</span></p>
@@ -9254,28 +9336,21 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-loglevel?"></a>
 <span class="reference-title">loglevel?</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the current log level (debug, info, notive, warn, error or fatal).</p></div>
-
-<p><a id="min-operator-id-module"></a>
-<span class="reference-title">module</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Creates a new module <span class="kwd">&apos;sym</span> based on dictionary <span class="kwd">dict</span>.</p></div>
 
 <p><a id="min-operator-id-operator"></a>
 <span class="reference-title">operator</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
 
-<p>Provides a way to define a new operator (symbol or sigil) on the current scope performing additional checks (compared to <code>define</code> and <code>define-sigil</code>), and automatically mapping inputs and outputs.</p>
+<p>Provides a way to define a new operator (symbol, sigil, or typeclass) on the current scope performing additional checks (compared to <code>define</code> and <code>define-sigil</code>), and automatically mapping inputs and outputs.</p>
 
 <p><span class="kwd">quot</span> is a quotation containing:</p>
 
 <ul>
-<li>A symbol identifying the type of operator to define (<code>symbol</code> or <code>sigil</code>).</li>
+<li>A symbol identifying the type of operator to define (<code>symbol</code>, <code>sigil</code>, or <code>typeclass</code>).</li>
 <li>A symbol identifying the name of the operator.</li>
 <li>A quotation defining the signature of the operatorm containing input and output values identified by their type and a capturing symbol, separated by the <code>==&gt;</code> symbol.</li>
 <li>A quotation identifying the body of the operator.</li>
@@ -9322,12 +9397,19 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Returns a dictionary of all options passed to the current program, with their respective values.</p></div>
 
+<p><a id="min-operator-id-parent-scope"></a>
+<span class="reference-title">parent-scope</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">dict<sub>2</sub></span></span></p>
+
+<p>Returns a dictionary <span class="kwd">dict<sub>2</sub></span> holding a reference to the parent scope of <span class="kwd">dict<sub>1</sub></span> or <span class="kwd">null</span> if <span class="kwd">dict<sub>1</sub></span> is ROOT.</p></div>
+
 <p><a id="min-operator-id-parse"></a>
 <span class="reference-title">parse</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
 
-<p>Parses <span class="kwd">string</span> and returns a quoted program <span class="kwd">quot</span>.</p></div>
+<p>Parses <span class="kwd">str</span> and returns a quoted program <span class="kwd">quot</span>.</p></div>
 
 <p><a id="min-operator-id-prefix-dequote"></a>
 <span class="reference-title">prefix-dequote</span></p>
@@ -9346,7 +9428,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-prompt"></a>
 <span class="reference-title">prompt</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>This symbol is used to configure the prompt of the min shell. By default, it is set to the following quotation:</p>
 
@@ -9374,13 +9456,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Prints <span class="kwd">a</span> and a new line to STDOUT.</p></div>
 
-<p><a id="min-operator-id-puts!"></a>
-<span class="reference-title">puts!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> and a new line to STDOUT, removing <span class="kwd">a</span> from the stack.</p></div>
-
 <p><a id="min-operator-id-quit"></a>
 <span class="reference-title">quit</span></p>
 
@@ -9395,19 +9470,12 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Wraps <span class="kwd">a</span> in a quotation.</p></div>
 
-<p><a id="min-operator-id-quote-bind"></a>
-<span class="reference-title">quote-bind</span></p>
+<p><a id="min-operator-id-quotesym"></a>
+<span class="reference-title">quotesym</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> (<span class="kwd">sym</span>)</span></p>
 
-<p>Quotes <span class="kwd">a</span> and binds the quotation to the existing symbol <span class="kwd">&apos;sym</span>.</p></div>
-
-<p><a id="min-operator-id-quote-define"></a>
-<span class="reference-title">quote-define</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Quotes <span class="kwd">a</span> and assigns the quotation to the symbol <span class="kwd">&apos;sym</span>, creating it if not already defined.</p></div>
+<p>Creates a symbol with the value of <span class="kwd">str</span> and wraps it in a quotation.</p></div>
 
 <p><a id="min-operator-id-raise"></a>
 <span class="reference-title">raise</span></p>
@@ -9483,26 +9551,26 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-saved-symbols"></a>
 <span class="reference-title">saved-symbols</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">str<sub>*</sub></span>)</span></p>
 
 <p>Returns a quotation containing all symbols saved in the <span class="file">.min_symbols</span> file.</p></div>
 
 <p><a id="min-operator-id-scope-sigils"></a>
 <span class="reference-title">scope-sigils</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">str<sub>*</sub></span>)</span></p>
 
 <p>Returns a list of all sigils defined in dictionary <span class="kwd">dict</span>.</p></div>
 
 <p><a id="min-operator-id-scope-symbols"></a>
 <span class="reference-title">scope-symbols</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">str<sub>*</sub></span>)</span></p>
 
 <p>Returns a list of all symbols defined in dictionary <span class="kwd">dict</span>.</p></div>
 
-<p><a id="min-operator-id-seal"></a>
-<span class="reference-title">seal</span></p>
+<p><a id="min-operator-id-seal-symbol"></a>
+<span class="reference-title">seal-symbol</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
@@ -9515,8 +9583,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Seals the user-defined sigil <span class="kwd">&apos;sym</span>, so that it cannot be re-defined.</p></div>
 
-<p><a id="min-operator-id-sealed?"></a>
-<span class="reference-title">sealed?</span></p>
+<p><a id="min-operator-id-sealed-symbol?"></a>
+<span class="reference-title">sealed-symbol?</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
@@ -9529,17 +9597,17 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Returns <span class="kwd">true</span> if the sigil <span class="kwd">&apos;sym</span> is sealed, <span class="kwd">false</span> otherwise.</p></div>
 
-<p><a id="min-operator-id-set-type"></a>
-<span class="reference-title">set-type</span></p>
+<p><a id="min-operator-id-sigil-help"></a>
+<span class="reference-title">sigil-help</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:help</span>|<span class="kwd">null</span></span></p>
 
-<p>Sets the type for dictionary <span class="kwd">dict</span> to <span class="kwd">&apos;sym</span>.</p></div>
+<p>Returns the help dictionary for the sigil <span class="kwd">&apos;sym</span>, if available, <span class="kwd">null</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-sigils"></a>
 <span class="reference-title">sigils</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">str<sub>*</sub></span>)</span></p>
 
 <p>Returns a list of all sigils defined in the <span class="kwd">ROOT</span> scope.</p></div>
 
@@ -9553,16 +9621,23 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-string"></a>
 <span class="reference-title">string</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Converts <span class="kwd">a</span> to its string representation.</p></div>
 
 <p><a id="min-operator-id-symbols"></a>
 <span class="reference-title">symbols</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">string<sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> (<span class="kwd">str<sub>*</sub></span>)</span></p>
 
 <p>Returns a list of all symbols defined in the <span class="kwd">ROOT</span> scope.</p></div>
+
+<p><a id="min-operator-id-symbol-help"></a>
+<span class="reference-title">symbol-help</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:help</span>|<span class="kwd">null</span></span></p>
+
+<p>Returns the help dictionary for the symbol <span class="kwd">&apos;sym</span>, if available, <span class="kwd">null</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-tap"></a>
 <span class="reference-title">tap</span></p>
@@ -9596,39 +9671,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Returns <code>{3 :a 3 :b 3 :c}</code>.</p></div></div>
 
-<p><a id="min-operator-id-tap!"></a>
-<span class="reference-title">tap!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
-
-<p>Performs the following operations:</p>
-
-<ol>
-<li>Removes <span class="kwd">a</span> from the stack.</li>
-<li>For each quotation defined in <span class="kwd">quot</span> (which is a quotation of quotations each requiring one argument and returning one argument):
-
-<ol>
-<li>Pushes <span class="kwd">a</span> back to the stack.</li>
-<li>Dequotes the quotation and saves the result as <span class="kwd">a</span>.</li>
-</ol>
-</li>
-</ol>
-
-
-<div class="sidebar"><p>Example</p>
-
-<p>The following program:</p>
-
-<pre><code>"" :s1
-"test" (
-  (' "1" swap append "" join)
-  (' "2" swap append "" join)
-  (' "3" swap append "" join @s1 s1)
-) tap!
-</code></pre>
-
-<p>Sets <code>s1</code> to <code>"test123"</code>.</p></div></div>
-
 <p><a id="min-operator-id-times"></a>
 <span class="reference-title">times</span></p>
 
@@ -9639,14 +9681,14 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-to-json"></a>
 <span class="reference-title">to-json</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Converts <span class="kwd">a</span> into a JSON string.</p></div>
 
 <p><a id="min-operator-id-to-yaml"></a>
 <span class="reference-title">to-yaml</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Converts <span class="kwd">a</span> into a YAML string.</p>
 
@@ -9681,28 +9723,12 @@ proc hastysite_module*(i: In, hs1: HastySite) =
   ) try
 </code></pre></div></div>
 
-<p><a id="min-operator-id-typeclass"></a>
-<span class="reference-title">typeclass</span></p>
+<p><a id="min-operator-id-typealias"></a>
+<span class="reference-title">typealias</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Defines a new type class <span class="kwd">&apos;sym</span> set to quotation <span class="kwd">quot</span>, which can be used in operator signatures.</p>
-
-<div class="sidebar"><p>Example</p>
-
-<p>Consider the following type class which defines a natural number:</p>
-
-<pre><code> (:n ((n integer?) (n 0 &gt;)) &amp;&amp;) 'natural typeclass
-</code></pre>
-
-<p>It can now be used in operator signatures, like this:</p>
-
-<pre><code> (
-   symbol natural-sum
-   (natural :n natural :m ==&gt; natural :result)
-   (n m + @result)
- ) ::
-</code></pre></div></div>
+<p>Creates a type alias <span class="kwd">&apos;sym<sub>1</sub></span> for type expression <span class="kwd">&apos;sym<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-unless"></a>
 <span class="reference-title">unless</span></p>
@@ -9711,8 +9737,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>If <span class="kwd"><sub>1</sub></span> evaluates to <span class="kwd">false</span> then evaluates <span class="kwd"><sub>2</sub></span>.</p></div>
 
-<p><a id="min-operator-id-unseal"></a>
-<span class="reference-title">unseal</span></p>
+<p><a id="min-operator-id-unseal-symbol"></a>
+<span class="reference-title">unseal-symbol</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
@@ -9728,7 +9754,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-version"></a>
 <span class="reference-title">version</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the current min version number.</p></div>
 
@@ -10282,19 +10308,13 @@ harvest
 
 <p><span class="reference-title">/</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> /<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dget</span></p>
+<div class="operator"><p><span class="kwd"> /<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> dget</span></p>
 
 <p>See <a href="#min-operator-id-dget">dget</a>.</p></div>
 
-<p><span class="reference-title">?</span> <span class="sigil"></span></p>
-
-<div class="operator"><p><span class="kwd"> ?<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dhas?</span></p>
-
-<p>See <a href="#min-operator-id-dhas?">dhas?</a>.</p></div>
-
 <p><span class="reference-title">%</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> %<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> dset</span></p>
+<div class="operator"><p><span class="kwd"> %<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> dset</span></p>
 
 <p>See <a href="#min-operator-id-dset">dset</a>.</p></div>
 
@@ -10336,7 +10356,7 @@ harvest
 <p><a id="min-operator-id-dkeys"></a>
 <span class="reference-title">dkeys</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">string</span><span class="kwd"><sub>*</sub></span>)</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">str</span><span class="kwd"><sub>*</sub></span>)</span></p>
 
 <p>Returns a quotation containing all the keys of dictionary <span class="kwd">dict</span>.</p></div>
 
@@ -10371,7 +10391,7 @@ harvest
 <p><a id="min-operator-id-dtype"></a>
 <span class="reference-title">dtype</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns a string set to the type of <span class="kwd">dict</span> (empty if the dictionary has no type).</p></div>
 
@@ -10392,13 +10412,6 @@ harvest
 
 <p>Removes an item from the datastore <span class="kwd">dict:datastore</span>. The item is uniquely identified by <span class="kwd">&apos;sym</span>, which contains the collection containing the item and the item id, separated by a forward slash (/). Puts the reference to the modified datastore back on tbe stack.</p></div>
 
-<p><a id="min-operator-id-dsdelete!"></a>
-<span class="reference-title">dsdelete!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Same as <code>dsdelete</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
-
 <p><a id="min-operator-id-dsget"></a>
 <span class="reference-title">dsget</span></p>
 
@@ -10413,13 +10426,6 @@ harvest
 
 <p>Initializes a bew datastore by creating the <span class="kwd">&apos;sym</span> JSON file. Puts the datastore instance on the stack.</p></div>
 
-<p><a id="min-operator-id-dsinit!"></a>
-<span class="reference-title">dsinit!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">dict</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Same as <code>dsinit</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
-
 <p><a id="min-operator-id-dspost"></a>
 <span class="reference-title">dspost</span></p>
 
@@ -10427,26 +10433,12 @@ harvest
 
 <p>Adds the dictionary <span class="kwd">dict</span> to the datastore <span class="kwd">dict:datastore</span> inside collection <span class="kwd">&apos;sym</span>, generating and adding a unique <strong>id</strong> field to <span class="kwd">dict</span>. If the collection <span class="kwd">&apos;sym</span> does not exist it is created. Puts the reference to the modified datastore back on tbe stack.</p></div>
 
-<p><a id="min-operator-id-dspost!"></a>
-<span class="reference-title">dspost!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <span class="kwd">dict</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Same as <code>dspost</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
-
 <p><a id="min-operator-id-dsput"></a>
 <span class="reference-title">dsput</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">dict:datastore</span></span></p>
 
 <p>Adds the dictionary <span class="kwd">dict</span> to the datastore <span class="kwd">dict:datastore</span>. <span class="kwd">&apos;sym</span> contains the collection where <span class="kwd">dict</span> will be placed and the id of <span class="kwd">dict</span>, separated by a forward slash (/). If the collection <span class="kwd">&apos;sym</span> does not exist it is created. Puts the reference to the modified datastore back on tbe stack.</p></div>
-
-<p><a id="min-operator-id-dsput!"></a>
-<span class="reference-title">dsput!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Same as <code>dsput</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
 
 <p><a id="min-operator-id-dsquery"></a>
 <span class="reference-title">dsquery</span></p>
@@ -10476,29 +10468,22 @@ harvest
 
 <p>Writes the contents of the datastore <span class="kwd">dict:datastore</span> to the filesystem.</p></div>
 
-<p><a id="min-operator-id-dswrite!"></a>
-<span class="reference-title">dswrite!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:datastore</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Same as <code>dswrite</code>, but doesn&rsquo;t leave anything on the stack.</p></div>
-
 <a name="<code>io</code>-Module"></a>
 <h3><code>io</code> Module<a href="#document-top" title="Go to top"></a></h3>
 
 <p><a id="min-operator-id-ask"></a>
 <span class="reference-title">ask</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Prints <span class="kwd">string<sub>1</sub></span> (prompt), reads a line from STDIN and places it on top of the stack as a string.</p></div>
+<p>Prints <span class="kwd">str<sub>1</sub></span> (prompt), reads a line from STDIN and places it on top of the stack as a string.</p></div>
 
 <p><a id="min-operator-id-choose"></a>
 <span class="reference-title">choose</span></p>
 
-<div class="operator"><p><span class="kwd"> ((<span class="kwd">string<sub>1</sub></span> <span class="kwd">quot<sub>1</sub></span>)<span class="kwd"><sub>+</sub></span>) <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> ((<span class="kwd">str<sub>1</sub></span> <span class="kwd">quot<sub>1</sub></span>)<span class="kwd"><sub>+</sub></span>) <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
 
-<p>Prints <span class="kwd">string<sub>2</sub></span>, then prints all <span class="kwd">string<sub>1</sub></span> included in the quotation prepended with a number, and waits from valid input from the user.</p>
+<p>Prints <span class="kwd">str<sub>2</sub></span>, then prints all <span class="kwd">str<sub>1</sub></span> included in the quotation prepended with a number, and waits from valid input from the user.</p>
 
 <p>If the user enters a number that matches one of the choices, then the corresponding quotation <span class="kwd">quot<sub>1</sub></span> is executed, otherwise the choice menu is displayed again until a valid choice is made.</p></div>
 
@@ -10519,9 +10504,9 @@ harvest
 <p><a id="min-operator-id-confirm"></a>
 <span class="reference-title">confirm</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
-<p>Prints <span class="kwd">string</span> (prompt) appending <code>" [yes/no]: "</code>, reads a line from STDIN and:</p>
+<p>Prints <span class="kwd">str</span> (prompt) appending <code>" [yes/no]: "</code>, reads a line from STDIN and:</p>
 
 <ul>
 <li>if it matches <code>/^y(es)?$/i</code>, puts <span class="kwd">true</span> on the stack.</li>
@@ -10537,13 +10522,6 @@ harvest
 
 <p>Prints <span class="kwd">a</span> and a new line to STDOUT, if logging level is set to <span class="kwd">debug</span> or lower.</p></div>
 
-<p><a id="min-operator-id-debug!"></a>
-<span class="reference-title">debug!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> (removing it from the stack) and a new line to STDOUT, if logging level is set to <span class="kwd">debug</span> or lower.</p></div>
-
 <p><a id="min-operator-id-error"></a>
 <span class="reference-title">error</span></p>
 
@@ -10551,19 +10529,12 @@ harvest
 
 <p>Prints <span class="kwd">a</span> and a new line to STDERR, if logging level is set to <span class="kwd">error</span> or lower.</p></div>
 
-<p><a id="min-operator-id-error!"></a>
-<span class="reference-title">error!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> (removing it from the stack) and a new line to STDERR, if logging level is set to <span class="kwd">error</span> or lower.</p></div>
-
 <p><a id="min-operator-id-fappend"></a>
 <span class="reference-title">fappend</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Appends <span class="kwd">string<sub>1</sub></span> to the end of file <span class="kwd">string<sub>2</sub></span>.</p></div>
+<p>Appends <span class="kwd">str<sub>1</sub></span> to the end of file <span class="kwd">str<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-fatal"></a>
 <span class="reference-title">fatal</span></p>
@@ -10575,16 +10546,16 @@ harvest
 <p><a id="min-operator-id-fread"></a>
 <span class="reference-title">fread</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Reads the file <span class="kwd">string</span> and puts its contents on the top of the stack as a string.</p></div>
+<p>Reads the file <span class="kwd">str</span> and puts its contents on the top of the stack as a string.</p></div>
 
 <p><a id="min-operator-id-fwrite"></a>
 <span class="reference-title">fwrite</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Writes <span class="kwd">string<sub>1</sub></span> to the file <span class="kwd">string<sub>2</sub></span>, erasing all its contents first.</p></div>
+<p>Writes <span class="kwd">str<sub>1</sub></span> to the file <span class="kwd">str<sub>2</sub></span>, erasing all its contents first.</p></div>
 
 <p><a id="min-operator-id-getchr"></a>
 <span class="reference-title">getchr</span></p>
@@ -10599,13 +10570,6 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
 <p>Prints <span class="kwd">a</span> and a new line to STDOUT, if logging level is set to <span class="kwd">info</span> or lower.</p></div>
-
-<p><a id="min-operator-id-info!"></a>
-<span class="reference-title">info!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> (removing it from the stack) and a new line to STDOUT, if logging level is set to <span class="kwd">info</span> or lower.</p></div>
 
 <p><a id="min-operator-id-mapkey"></a>
 <span class="reference-title">mapkey</span></p>
@@ -10645,17 +10609,10 @@ harvest
 
 <p>Prints <span class="kwd">a</span> and a new line to STDOUT, if logging level is set to <span class="kwd">notice</span> (default) or lower.</p></div>
 
-<p><a id="min-operator-id-notice!"></a>
-<span class="reference-title">notice!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> (removing it from the stack) and a new line to STDOUT, if logging level is set to <span class="kwd">notice</span> (default) or lower.</p></div>
-
 <p><a id="min-operator-id-password"></a>
 <span class="reference-title">password</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Reads a line from STDIN displaying * for each typed character, and places it on top of the stack as a string.</p></div>
 
@@ -10666,24 +10623,17 @@ harvest
 
 <p>Prints <span class="kwd">a</span> to STDOUT.</p></div>
 
-<p><a id="min-operator-id-print!"></a>
-<span class="reference-title">print!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> to STDOUT and removes <span class="kwd">a</span> from the stack.</p></div>
-
 <p><a id="min-operator-id-putchr"></a>
 <span class="reference-title">putchr</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
-<p>Prints <span class="kwd">string</span> to STDOUT without printing a new line (<span class="kwd">string</span> must contain only one character).</p></div>
+<p>Prints <span class="kwd">str</span> to STDOUT without printing a new line (<span class="kwd">str</span> must contain only one character).</p></div>
 
 <p><a id="min-operator-id-type"></a>
 <span class="reference-title">type</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Puts the data type of <span class="kwd">a</span> on the stack. In cased of typed dictionaries, the type name is prefixed by <code>dict:</code>, e.g. <code>dict:module</code>, <code>dict:socket</code>, etc.</p></div>
 
@@ -10709,27 +10659,20 @@ harvest
 
 <p>Prints <span class="kwd">a</span> and a new line to STDERR, if logging level is set to <span class="kwd">warning</span> or lower.</p></div>
 
-<p><a id="min-operator-id-warning!"></a>
-<span class="reference-title">warning!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Prints <span class="kwd">a</span> (removing it from the stack) and a new line to STDERR, if logging level is set to <span class="kwd">warning</span> or lower.</p></div>
-
 <a name="<code>fs</code>-Module"></a>
 <h3><code>fs</code> Module<a href="#document-top" title="Go to top"></a></h3>
 
 <p><a id="min-operator-id-atime"></a>
 <span class="reference-title">atime</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">float</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
 <p>Returns a timestamp corresponding to the time that file/directory <span class="kwd">&apos;sym</span> was last accessed.</p></div>
 
 <p><a id="min-operator-id-ctime"></a>
 <span class="reference-title">ctime</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">float</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
 <p>Returns a timestamp corresponding to the time that file/directory <span class="kwd">&apos;sym</span> was created.</p></div>
 
@@ -10779,7 +10722,7 @@ harvest
 <p><a id="min-operator-id-ftype"></a>
 <span class="reference-title">ftype</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the type of file/directory <span class="kwd">&apos;sym</span> (<code>"file"</code> or <code>"dir"</code>).</p></div>
 
@@ -10793,7 +10736,7 @@ harvest
 <p><a id="min-operator-id-mtime"></a>
 <span class="reference-title">mtime</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">float</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
 <p>Returns a timestamp corresponding to the time that file/directory <span class="kwd">&apos;sym</span> was last modified.</p></div>
 
@@ -10961,7 +10904,7 @@ harvest
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
-<p>Returns <span class="kwd">true</span> if the data type of <span class="kwd">a</span> is the specified type <span class="kwd">&apos;sym</span>, <span class="kwd">false</span> otherwise.</p></div>
+<p>Returns <span class="kwd">true</span> if the data type of <span class="kwd">a</span> satisfies the specified type expression <span class="kwd">&apos;sym</span>, <span class="kwd">false</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-xor"></a>
 <span class="reference-title">xor</span></p>
@@ -10994,59 +10937,59 @@ harvest
 <p><a id="min-operator-id-apply-interpolate"></a>
 <span class="reference-title">apply-interpolate</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>The same as pushing <code>apply</code> and then <code>interpolate</code> on the stack.</p></div>
 
 <p><a id="min-operator-id-capitalize"></a>
 <span class="reference-title">capitalize</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns a copy of <span class="kwd">&apos;sym</span> with the first character capitalized.</p></div>
 
 <p><a id="min-operator-id-chr"></a>
 <span class="reference-title">chr</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Returns the single character <span class="kwd">string</span> obtained by interpreting <span class="kwd">int</span> as an ASCII code.</p></div>
+<p>Returns the single character <span class="kwd">str</span> obtained by interpreting <span class="kwd">int</span> as an ASCII code.</p></div>
 
 <p><a id="min-operator-id-escape"></a>
 <span class="reference-title">escape</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns a copy of <span class="kwd">&apos;sym</span> with quotes and backslashes escaped with a backslash.</p></div>
 
 <p><a id="min-operator-id-from-semver"></a>
 <span class="reference-title">from-semver</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
 
-<p>Given a basic <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string</span>,
+<p>Given a basic <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">str</span>,
 it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <strong>major</strong>, <strong>minor</strong>, and <strong>patch</strong> key/value pairs.</p></div>
 
 <p><a id="min-operator-id-indent"></a>
 <span class="reference-title">indent</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Returns <span class="kwd">string</span> containing <span class="kwd">&apos;sym</span> indented with <span class="kwd">int</span> spaces.</p></div>
+<p>Returns <span class="kwd">str</span> containing <span class="kwd">&apos;sym</span> indented with <span class="kwd">int</span> spaces.</p></div>
 
 <p><a id="min-operator-id-indexof"></a>
 <span class="reference-title">indexof</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
 
-<p>If <span class="kwd">string<sub>2</sub></span> is contained in <span class="kwd">string<sub>1</sub></span>, returns the index of the first match or -1 if no match is found.</p></div>
+<p>If <span class="kwd">str<sub>2</sub></span> is contained in <span class="kwd">str<sub>1</sub></span>, returns the index of the first match or -1 if no match is found.</p></div>
 
 <p><a id="min-operator-id-interpolate"></a>
 <span class="reference-title">interpolate</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Substitutes the placeholders included in <span class="kwd">string</span> with the values in <span class="kwd">quot</span>.</p>
+<p>Substitutes the placeholders included in <span class="kwd">str</span> with the values in <span class="kwd">quot</span>.</p>
 
 <div class="note"><p>Notes</p>
 
@@ -11070,9 +11013,9 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-join"></a>
 <span class="reference-title">join</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Joins the elements of <span class="kwd">quot</span> using separator <span class="kwd">&apos;sym</span>, producing <span class="kwd">string</span>.</p></div>
+<p>Joins the elements of <span class="kwd">quot</span> using separator <span class="kwd">&apos;sym</span>, producing <span class="kwd">str</span>.</p></div>
 
 <p><a id="min-operator-id-length"></a>
 <span class="reference-title">length</span></p>
@@ -11084,59 +11027,59 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-lowercase"></a>
 <span class="reference-title">lowercase</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns a copy of <span class="kwd">&apos;sym</span> converted to lowercase.</p></div>
 
-<p><a id="min-operator-id-match"></a>
-<span class="reference-title">match</span></p>
+<p><a id="min-operator-id-match?"></a>
+<span class="reference-title">match?</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
-<p>Returns <span class="kwd">true</span> if <span class="kwd">string<sub>2</sub></span> matches <span class="kwd">string<sub>1</sub></span>, <span class="kwd">false</span> otherwise.</p>
+<p>Returns <span class="kwd">true</span> if <span class="kwd">str<sub>2</sub></span> matches <span class="kwd">str<sub>1</sub></span>, <span class="kwd">false</span> otherwise.</p>
 
 <div class="tip"><p>Tip</p>
 
-<p><span class="kwd">string<sub>2</sub></span> can be a <a href="https://github.com/snake5/sgregex">sgregex</a>.-compatible regular expression.</p></div></div>
+<p><span class="kwd">str<sub>2</sub></span> is a <a href="https://www.pcre.org/">Perl Compatible Regular Expression</a>.</p></div></div>
 
 <p><a id="min-operator-id-ord"></a>
 <span class="reference-title">ord</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
 
-<p>Returns the ASCII code <span class="kwd">int</span> corresponding to the single character <span class="kwd">string</span>.</p></div>
+<p>Returns the ASCII code <span class="kwd">int</span> corresponding to the single character <span class="kwd">str</span>.</p></div>
 
 <p><a id="min-operator-id-parse-url"></a>
 <span class="reference-title">parse-url</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">url</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">dict:url</span></span></p>
 
-<p>Parses the url <span class="kwd">string</span> into its components and stores them into <span class="kwd">url</span>.</p></div>
+<p>Parses the url <span class="kwd">str</span> into its components and stores them into <span class="kwd">dict:url</span>.</p></div>
 
 <p><a id="min-operator-id-prefix"></a>
 <span class="reference-title">prefix</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Prepends <span class="kwd">&apos;sym<sub>2</sub></span> to <span class="kwd">&apos;sym<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-repeat"></a>
 <span class="reference-title">repeat</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Returns <span class="kwd">string</span> containing <span class="kwd">&apos;sym</span> repeated <span class="kwd">int</span> times.</p></div>
+<p>Returns <span class="kwd">str</span> containing <span class="kwd">&apos;sym</span> repeated <span class="kwd">int</span> times.</p></div>
 
 <p><a id="min-operator-id-replace"></a>
 <span class="reference-title">replace</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <span class="kwd">string<sub>3</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>4</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <span class="kwd">str<sub>3</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>4</sub></span></span></p>
 
-<p>Returns a copy of <span class="kwd">string<sub>1</sub></span> containing all occurrences of <span class="kwd">string<sub>2</sub></span> replaced by <span class="kwd">string<sub>3</sub></span></p>
+<p>Returns a copy of <span class="kwd">str<sub>1</sub></span> containing all occurrences of <span class="kwd">str<sub>2</sub></span> replaced by <span class="kwd">str<sub>3</sub></span></p>
 
 <div class="tip"><p>Tip</p>
 
-<p><span class="kwd">string<sub>2</sub></span> can be a <a href="https://github.com/snake5/sgregex">sgregex</a>.-compatible regular expression.</p></div>
+<p><span class="kwd">str<sub>2</sub></span> is a <a href="https://www.pcre.org/">Perl Compatible Regular Expression</a>.</p></div>
 
 <div class="sidebar"><p>Example</p>
 
@@ -11148,76 +11091,50 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p><code>"This is a simple test. Is it really a simple test?"</code></p></div></div>
 
-<p><a id="min-operator-id-regex"></a>
-<span class="reference-title">regex</span></p>
+<p><a id="min-operator-id-replace-apply"></a>
+<span class="reference-title">replace-apply</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">str<sub>3</sub></span></span></p>
 
-<p>Performs a search and/or a search-and-replace operation using pattern <span class="kwd">string<sub>2</sub></span>.</p>
-
-<p><span class="kwd">string<sub>2</sub></span> can be one of the following patterns:</p>
-
-<ul>
-<li><strong>/</strong><em>search-regex</em><strong>/</strong><em>modifiers</em></li>
-<li><strong>s/</strong><em>search-regex</em><strong>/</strong><em>replacemenet</em><strong>/</strong><em>modifiers</em></li>
-</ul>
-
-
-<p><span class="kwd">quot</span> is always a quotation containing:</p>
-
-<ul>
-<li>One or more strings containing the first match and captures (if any), like for the <code>search</code> operator.</li>
-<li>A string containing the resuling string after the search-and-replace operation.</li>
-</ul>
-
+<p>Returns a copy of <span class="kwd">str<sub>1</sub></span> containing all occurrences of <span class="kwd">str<sub>2</sub></span> replaced by applying <span class="kwd">quot</span> to each quotation correponding to each match.</p>
 
 <div class="tip"><p>Tip</p>
 
-<ul>
-<li><em>search-regex</em> can be a <a href="https://github.com/snake5/sgregex">sgregex</a>.-compatible regular expression.</li>
-<li><em>modifiers</em> are optionals can contain one or more of the following characters, in any order:
+<p><span class="kwd">str<sub>2</sub></span> is a <a href="https://www.pcre.org/">Perl Compatible Regular Expression</a>.</p></div>
 
-<ul>
-<li><strong>i</strong>: case-insensitive match.</li>
-<li><strong>m</strong>: multi-line match.</li>
-<li><strong>s</strong>: dot character includes newlines.</li>
-</ul>
-</li>
-</ul>
-</div>
-
-<div class="sidebar"><p>Example: Search</p>
+<div class="sidebar"><p>Example</p>
 
 <p>The following:</p>
 
-<p><code>"This is a GOOD idea." "/(good) idea/i" regex</code></p>
+<p><code>":1::2::3::4:" ":(\d):" (=m m 1 get :d "-$#-" (d) =%) replace-apply</code></p>
 
-<p>produces: <code>("GOOD idea", "GOOD")</code></p></div>
+<p>produces:</p>
 
-<div class="sidebar"><p>Example: Search and Replace</p>
+<p><code>"-1--2--3--4-"</code></p>
 
-<p>The following:</p>
-
-<p><code>"This is a GOOD idea." "s/good/bad/i" regex</code></p>
-
-<p>produces: <code>("This is a bad idea")</code></p></div></div>
+<p>Note that for each match the following quotations (each containing tbe full matcb and the captured matches) are produced as input for the replace quotation:
+     (&ldquo;-1-&rdquo; &ldquo;1&rdquo;)
+     (&ldquo;-2-&rdquo; &ldquo;2&rdquo;)
+     (&ldquo;-3-&rdquo; &ldquo;3&rdquo;)
+     (&ldquo;-4-&rdquo; &ldquo;4&rdquo;)</p></div></div>
 
 <p><a id="min-operator-id-search"></a>
 <span class="reference-title">search</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
 
-<p>Returns a quotation containing the first occurrence of <span class="kwd">string<sub>2</sub></span> within <span class="kwd">string<sub>2</sub></span>. Note that:</p>
+<p>Returns a quotation containing the first occurrence of <span class="kwd">str<sub>2</sub></span> within <span class="kwd">str<sub>1</sub></span>. Note that:</p>
 
 <ul>
 <li>The first element of <span class="kwd">quot</span> is the matching substring.</li>
 <li>Other elements (if any) contain captured substrings.</li>
+<li>If no matches are found, the quotation contains empty strings.</li>
 </ul>
 
 
 <div class="tip"><p>Tip</p>
 
-<p><span class="kwd">string<sub>2</sub></span> can be a <a href="https://github.com/snake5/sgregex">sgregex</a>.-compatible regular expression.</p></div>
+<p><span class="kwd">str<sub>2</sub></span> is a <a href="https://www.pcre.org/">Perl Compatible Regular Expression</a>.</p></div>
 
 <div class="sidebar"><p>Example</p>
 
@@ -11227,75 +11144,82 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>produces: <code>("192.168.1.1", "1", "1")</code></p></div></div>
 
+<p><a id="min-operator-id-search-all"></a>
+<span class="reference-title">search-all</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
+
+<p>Returns a quotation of quotations (like the one returned by the search operator) containing all occurrences of <span class="kwd">str<sub>2</sub></span> within <span class="kwd">str<sub>1</sub></span>.</p></div>
+
 <p><a id="min-operator-id-semver-inc-major"></a>
 <span class="reference-title">semver-inc-major</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Increments the major digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string<sub>1</sub></span>.</p></div>
+<p>Increments the major digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">str<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-semver-inc-minor"></a>
 <span class="reference-title">semver-inc-minor</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Increments the minor digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string<sub>1</sub></span>.</p></div>
+<p>Increments the minor digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">str<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-semver-inc-patch"></a>
 <span class="reference-title">semver-inc-patch</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Increments the patch digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string<sub>1</sub></span>.</p></div>
+<p>Increments the patch digit of the <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">str<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-semver?"></a>
 <span class="reference-title">semver?</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
-<p>Checks whether <span class="kwd">string</span> is a <a href="https://semver.org">SemVer</a>-compliant version or not.</p></div>
+<p>Checks whether <span class="kwd">str</span> is a <a href="https://semver.org">SemVer</a>-compliant version or not.</p></div>
 
 <p><a id="min-operator-id-split"></a>
 <span class="reference-title">split</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot</span></span></p>
 
-<p>Splits <span class="kwd">&apos;sym<sub>1</sub></span> using separator <span class="kwd">&apos;sym<sub>2</sub></span> and returns the resulting strings within the quotation <span class="kwd">quot</span>.</p></div>
+<p>Splits <span class="kwd">&apos;sym<sub>1</sub></span> using separator <span class="kwd">&apos;sym<sub>2</sub></span> (a <a href="https://www.pcre.org/">Perl Compatible Regular Expression</a>) and returns the resulting strings within the quotation <span class="kwd">quot</span>.</p></div>
 
 <p><a id="min-operator-id-strip"></a>
 <span class="reference-title">strip</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Returns <span class="kwd">string</span>, which is set to <span class="kwd">&apos;sym</span> with leading and trailing spaces removed.</p></div>
+<p>Returns <span class="kwd">str</span>, which is set to <span class="kwd">&apos;sym</span> with leading and trailing spaces removed.</p></div>
 
 <p><a id="min-operator-id-substr"></a>
 <span class="reference-title">substr</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Returns a substring <span class="kwd">string<sub>2</sub></span> obtained by retriving <span class="kwd">int<sub>2</sub></span> characters starting from index <span class="kwd">int<sub>1</sub></span> within <span class="kwd">string<sub>1</sub></span>.</p></div>
+<p>Returns a substring <span class="kwd">str<sub>2</sub></span> obtained by retriving <span class="kwd">int<sub>2</sub></span> characters starting from index <span class="kwd">int<sub>1</sub></span> within <span class="kwd">str<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-suffix"></a>
 <span class="reference-title">suffix</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Appends <span class="kwd">&apos;sym<sub>2</sub></span> to <span class="kwd">&apos;sym<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-titleize"></a>
 <span class="reference-title">titleize</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns a copy of <span class="kwd">&apos;sym</span> in which the first character of each word is capitalized.</p></div>
 
 <p><a id="min-operator-id-to-semver"></a>
 <span class="reference-title">to-semver</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Given a a dictionary <span class="kwd">dict</span> containing a <strong>major</strong>, <strong>minor</strong>, and <strong>patch</strong> key/value pairs , it pushes a basic <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">string</span> on the stack.</p></div>
+<p>Given a a dictionary <span class="kwd">dict</span> containing a <strong>major</strong>, <strong>minor</strong>, and <strong>patch</strong> key/value pairs , it pushes a basic <a href="https://semver.org">SemVer</a>-compliant string (with no additional labels) <span class="kwd">str</span> on the stack.</p></div>
 
 <p><a id="min-operator-id-uppercase"></a>
 <span class="reference-title">uppercase</span></p>
@@ -11309,7 +11233,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p><span class="reference-title">$</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> $<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> get-env</span></p>
+<div class="operator"><p><span class="kwd"> $<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> get-env</span></p>
 
 <p>See <a href="#min-operator-id-get-env">get-env</a>.</p></div>
 
@@ -11319,27 +11243,27 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>See <a href="#min-operator-id-get-env">get-env</a>.</p></div>
 
-<p><span class="reference-title">!</span> <span class="sigil"></span></p>
+<p><span class="reference-title">&excl;</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> !<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> system</span></p>
-
-<p>See <a href="#min-operator-id-system">system</a>.</p></div>
-
-<p><span class="reference-title">!</span></p>
-
-<div class="operator"><p><span class="kwd"> ! <strong>&rArr;</strong> system</span></p>
+<div class="operator"><p><span class="kwd"> &excl;<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> system</span></p>
 
 <p>See <a href="#min-operator-id-system">system</a>.</p></div>
 
-<p><span class="reference-title">!!</span></p>
+<p><span class="reference-title">&excl;</span></p>
 
-<div class="operator"><p><span class="kwd"> !! <strong>&rArr;</strong> system!</span></p>
+<div class="operator"><p><span class="kwd"> &excl; <strong>&rArr;</strong> system</span></p>
+
+<p>See <a href="#min-operator-id-system">system</a>.</p></div>
+
+<p><span class="reference-title">&excl;&excl;</span></p>
+
+<div class="operator"><p><span class="kwd"> &excl;&excl; <strong>&rArr;</strong> system!</span></p>
 
 <p>See <a href="#min-operator-id-system!">system!</a>.</p></div>
 
 <p><span class="reference-title">&amp;</span> <span class="sigil"></span></p>
 
-<div class="operator"><p><span class="kwd"> &amp;<span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span> run</span></p>
+<div class="operator"><p><span class="kwd"> &amp;<span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span> run</span></p>
 
 <p>See <a href="#min-operator-id-run">run</a>.</p></div>
 
@@ -11352,14 +11276,14 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-."></a>
 <span class="reference-title">.</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the full path to the current directory.</p></div>
 
 <p><a id="min-operator-id-.."></a>
 <span class="reference-title">..</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the full path to the parent directory.</p></div>
 
@@ -11381,7 +11305,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Change the current directory to {<span class="kwd">&apos;sym</span>.</p></div>
+<p>Change the current directory to <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-cp"></a>
 <span class="reference-title">cp</span></p>
@@ -11393,7 +11317,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-cpu"></a>
 <span class="reference-title">cpu</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the host CPU. It can be one of the following strings i386, alpha, powerpc, powerpc64, powerpc64el, sparc, amd64, mips, mipsel, arm, arm64.</p></div>
 
@@ -11414,7 +11338,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-dirname"></a>
 <span class="reference-title">dirname</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the path of the directory containing path <span class="kwd">&apos;sym</span>.</p></div>
 
@@ -11435,14 +11359,14 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-filename"></a>
 <span class="reference-title">filename</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the file name of path <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-get-env"></a>
 <span class="reference-title">get-env</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns environment variable <span class="kwd">&apos;sym</span>.</p></div>
 
@@ -11484,14 +11408,14 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-os"></a>
 <span class="reference-title">os</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the host operating system. It can be one of the following strings: windows, macosx, linux, netbsd, freebsd, openbsd, solaris, aix, standalone.</p></div>
 
 <p><a id="min-operator-id-put-env"></a>
 <span class="reference-title">put-env</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Sets environment variable <span class="kwd">&apos;sym<sub>2</sub></span> to <span class="kwd">&apos;sym<sub>1</sub></span>.</p></div>
 
@@ -11544,13 +11468,6 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>Executes the external command <span class="kwd">&apos;sym</span> in the current directory and pushes its return code on the stack.</p></div>
 
-<p><a id="min-operator-id-system!"></a>
-<span class="reference-title">system!</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
-
-<p>Executes the external command <span class="kwd">&apos;sym</span> in the current directory without pushing its return code on the stack.</p></div>
-
 <p><a id="min-operator-id-unzip"></a>
 <span class="reference-title">unzip</span></p>
 
@@ -11561,14 +11478,14 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-which"></a>
 <span class="reference-title">which</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the full path to the directory containing executable <span class="kwd">&apos;sym</span>, or an empty string if the executable is not found in <strong>$PATH</strong>.</p></div>
 
 <p><a id="min-operator-id-zip"></a>
 <span class="reference-title">zip</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <span class="kwd">quot</span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
 <p>Compresses files included in quotation <span class="kwd">quot</span> into zip file <span class="kwd">&apos;sym</span>.</p></div>
 
@@ -11596,8 +11513,8 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>Returns negative infinity.</p></div>
 
-<p><a id="min-operator-id-\*"></a>
-<span class="reference-title">*</span></p>
+<p><a id="min-operator-id-&ast;"></a>
+<span class="reference-title">&ast;</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">num<sub>1</sub></span> <span class="kwd">num<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">num<sub>3</sub></span></span></p>
 
@@ -11609,6 +11526,41 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <div class="operator"><p><span class="kwd"> <span class="kwd">num<sub>1</sub></span> <span class="kwd">num<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">num<sub>3</sub></span></span></p>
 
 <p>Divides <span class="kwd">num<sub>1</sub></span> by <span class="kwd">num<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-avg"></a>
+<span class="reference-title">avg</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">num</span></span></p>
+
+<p>Returns the average of the items of <span class="kwd">quot</span>.</p></div>
+
+<p><a id="min-operator-id-bitand"></a>
+<span class="reference-title">bitand</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int<sub>3</sub></span></span></p>
+
+<p>Computes the bitwise <em>and</em> of numbers <span class="kwd">int<sub>1</sub></span> and <span class="kwd">int<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-bitnot"></a>
+<span class="reference-title">bitnot</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">int<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">int<sub>2</sub></span></span></p>
+
+<p>Computes the bitwise <em>complement</em> of <span class="kwd">int<sub>1</sub></span>.</p></div>
+
+<p><a id="min-operator-id-bitor"></a>
+<span class="reference-title">bitor</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int<sub>3</sub></span></span></p>
+
+<p>Computes the bitwise <em>or</em> of numbers <span class="kwd">int<sub>1</sub></span> and <span class="kwd">int<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-bitxor"></a>
+<span class="reference-title">bitxor</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int<sub>3</sub></span></span></p>
+
+<p>Computes the bitwise <em>xor</em> of numbers <span class="kwd">int<sub>1</sub></span> and <span class="kwd">int<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-even?"></a>
 <span class="reference-title">even?</span></p>
@@ -11630,6 +11582,13 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">num</span></span></p>
 
 <p>Returns infinity.</p></div>
+
+<p><a id="min-operator-id-med"></a>
+<span class="reference-title">med</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">num</span></span></p>
+
+<p>Returns the median of the items of <span class="kwd">quot</span>.</p></div>
 
 <p><a id="min-operator-id-mod"></a>
 <span class="reference-title">mod</span></p>
@@ -11659,6 +11618,13 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>Returns the predecessor of <span class="kwd">int<sub>1</sub></span>.</p></div>
 
+<p><a id="min-operator-id-product"></a>
+<span class="reference-title">product</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
+
+<p>Returns the product of all items of <span class="kwd">quot</span>. <span class="kwd">quot</span> is a quotation of integers.</p></div>
+
 <p><a id="min-operator-id-random"></a>
 <span class="reference-title">random</span></p>
 
@@ -11676,6 +11642,27 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> {{null}</span></p>
 
 <p>Initializes the random number generator using a seed based on the current timestamp.</p></div>
+
+<p><a id="min-operator-id-range"></a>
+<span class="reference-title">range</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">quot<sub>2</sub></span></span></p>
+
+<p>Takes a quotation <span class="kwd">quot<sub>1</sub></span> of two or three integers in the form of <em>start</em>, <em>end</em> and an optional <em>step</em> (1 if not specified) and generates the sequence and returns the resulting quotation of integers <span class="kwd">quot<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-shl"></a>
+<span class="reference-title">shl</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int<sub>3</sub></span></span></p>
+
+<p>Computes the <em>shift left</em> operation of <span class="kwd">int<sub>1</sub></span> and <span class="kwd">int<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-shr"></a>
+<span class="reference-title">shr</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int<sub>3</sub></span></span></p>
+
+<p>Computes the <em>shift right</em> operation of <span class="kwd">int<sub>1</sub></span> and <span class="kwd">int<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-succ"></a>
 <span class="reference-title">succ</span></p>
@@ -11697,7 +11684,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-now"></a>
 <span class="reference-title">now</span></p>
 
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">float</span></span></p>
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
 <p>Returns the current time as Unix timestamp with microseconds.</p></div>
 
@@ -11725,16 +11712,16 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-datetime"></a>
 <span class="reference-title">datetime</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns an ISO 8601 string representing the combined date and time in UTC of timestamp <span class="kwd">int</span>.</p></div>
 
 <p><a id="min-operator-id-tformat"></a>
 <span class="reference-title">tformat</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <span class="kwd">string</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">int</span> <span class="kwd">str</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Formats timestamp <span class="kwd">int</span> using string <span class="kwd">string</span>.</p>
+<p>Formats timestamp <span class="kwd">int</span> using string <span class="kwd">str</span>.</p>
 
 <div class="tip"><p>Tip</p>
 
@@ -11746,70 +11733,70 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-aes"></a>
 <span class="reference-title">aes</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Encrypts or decrypts <span class="kwd">&apos;sym<sub>1</sub></span> using the Advanced Encryption Standard (AES) in CTR mode, using <span class="kwd">&apos;sym<sub>2</sub></span> as password.</p></div>
 
 <p><a id="min-operator-id-decode"></a>
 <span class="reference-title">decode</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Decodes the Base64-encoded string <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-encode"></a>
 <span class="reference-title">encode</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Base64-encodes <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-md4"></a>
 <span class="reference-title">md4</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the MD4 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-md5"></a>
 <span class="reference-title">md5</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the MD5 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-sha1"></a>
 <span class="reference-title">sha1</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the SHA1 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-sha224"></a>
 <span class="reference-title">sha224</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the SHA224 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-sha256"></a>
 <span class="reference-title">sha256</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the SHA256 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-sha384"></a>
 <span class="reference-title">sha384</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the SHA384 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-sha512"></a>
 <span class="reference-title">sha512</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
 <p>Returns the SHA512 hash of <span class="kwd">&apos;sym</span>.</p></div>
 
@@ -12004,9 +11991,9 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <p><a id="min-operator-id-connect"></a>
 <span class="reference-title">connect</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <span class="kwd">string</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">dict:socket</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <span class="kwd">str</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">dict:socket</span></span></p>
 
-<p>Connects socket <span class="kwd">dict:socket</span> to address <span class="kwd">string</span> and port <span class="kwd">int</span>.</p>
+<p>Connects socket <span class="kwd">dict:socket</span> to address <span class="kwd">str</span> and port <span class="kwd">int</span>.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -12064,16 +12051,16 @@ srv close
 <p><a id="min-operator-id-recv"></a>
 <span class="reference-title">recv</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Waits to receive <span class="kwd">int</span> characters from <span class="kwd">dict:socket</span> and returns the resulting data <span class="kwd">string</span>.</p></div>
+<p>Waits to receive <span class="kwd">int</span> characters from <span class="kwd">dict:socket</span> and returns the resulting data <span class="kwd">str</span>.</p></div>
 
 <p><a id="min-operator-id-recv-line"></a>
 <span class="reference-title">recv-line</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <strong>&rArr;</strong> <span class="kwd">string</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Waits to receive a line of data from <span class="kwd">dict:socket</span> and returns the resulting data <span class="kwd">string</span>. <code>""</code> is returned if <span class="kwd">dict:socket</span> is disconnected.</p>
+<p>Waits to receive a line of data from <span class="kwd">dict:socket</span> and returns the resulting data <span class="kwd">str</span>. <code>""</code> is returned if <span class="kwd">dict:socket</span> is disconnected.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -12093,9 +12080,9 @@ cli recv-line puts :line
 <p><a id="min-operator-id-send"></a>
 <span class="reference-title">send</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <span class="kwd">string</span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:socket</span> <span class="kwd">str</span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Sends <span class="kwd">string</span> to the connected socket <span class="kwd">dict:socket</span>.</p></div>
+<p>Sends <span class="kwd">str</span> to the connected socket <span class="kwd">dict:socket</span>.</p></div>
 
 <p><a id="min-operator-id-socket"></a>
 <span class="reference-title">socket</span></p>
@@ -12146,27 +12133,27 @@ cli recv-line puts :line
 <p><a id="min-operator-id-download"></a>
 <span class="reference-title">download</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <span class="kwd">string<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
 
-<p>Downloads the contents of URL <span class="kwd">string<sub>1</sub></span> to the local file <span class="kwd">string<sub>2</sub></span>.</p></div>
+<p>Downloads the contents of URL <span class="kwd">str<sub>1</sub></span> to the local file <span class="kwd">str<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-get-content"></a>
 <span class="reference-title">get-content</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">string<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">string<sub>2</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Retrieves the contents of URL <span class="kwd">string<sub>1</sub></span> as <span class="kwd">string<sub>2</sub></span>.</p></div>
+<p>Retrieves the contents of URL <span class="kwd">str<sub>1</sub></span> as <span class="kwd">str<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-request"></a>
 <span class="reference-title">request</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">request</span> <strong>&rArr;</strong> <span class="kwd">response</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> <span class="kwd">dict:http-response</span></span></p>
 
-<p>Performs an HTTP request.</p>
+<p>Performs an HTTP request. Note that <span class="kwd">dict</span> is can be a standard (untyped) dictionary but its fields will be validated like if it was a <span class="kwd">dict:http-request</span>.</p>
 
 <div class="sidebar"><p>Example</p>
 
-<p>The following code constructs a <span class="kwd">request</span> dictionary and passes it to the <strong>request</strong> operator to perform an HTTP GET request to <a href="http://httpbin.org/ip">http://httpbin.org/ip</a>:</p>
+<p>The following code constructs <span class="kwd">dict</span> and passes it to the <strong>request</strong> operator to perform an HTTP GET request to <a href="http://httpbin.org/ip">http://httpbin.org/ip</a>:</p>
 
 <pre><code>{}
   "GET" %method
@@ -12189,7 +12176,7 @@ request
 <dt>port</dt>
 <dd>The port to bind the server to.</dd>
 <dt>handler</dt>
-<dd>A quotation with the following signature, used to handle all incoming requests: <span class="kwd"><span class="kwd">request</span> &rArr; <span class="kwd">response</span></span></dd>
+<dd>A quotation with the following signature, used to handle all incoming requests: <span class="kwd"><span class="kwd">dict:http-request</span> &rArr; <span class="kwd">dict:http-response</span></span></dd>
 </dl>
 
 <div class="sidebar"><p>Example</p>
@@ -12243,7 +12230,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; January 18, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; March 13, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
