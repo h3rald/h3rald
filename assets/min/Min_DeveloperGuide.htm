@@ -7431,7 +7431,7 @@ div .terminal {
 
 <p>I always wanted to build a minimalist language, but that could also be used for real work and provided a standard library for common tasks and functionalities like regular expression support, cryptography, execution of external programs, shell-like operators, and keywords to work with files, and more.</p>
 
-<p>Additionally, I wanted it to be fully self-contained, cross-platform, and tiny. About 1MB (or more, depending on the platform and whether SSL support is enabled or not) is not really tiny, but I feel it&rsquo;s a good compromise compared to the alternatives out there, considering that you only need <em>one file</em> to run any min program.</p>
+<p>Additionally, I wanted it to be fully self-contained, cross-platform, and small. Not stupidly small, but I feel it&rsquo;s a good compromise compared to the alternatives out there, considering that you only need <em>one file</em> to run any min program.</p>
 
 <p> I also created a static site generator called <a href="https://github.com/h3rald/hastysite">HastySite</a>, which also powers <a href="https://min-lang.org">https://min-lang.org</a>. HastySite internally uses min as the language to write the <a href="https://github.com/h3rald/min/blob/master/site/rules.min">rules</a> to process the source files of the site, and also all its <a href="https://github.com/h3rald/min/tree/master/site/scripts">scripts</a>.</p>
 
@@ -7462,9 +7462,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.34.1/min_v0.34.1_macosx_x64.zip">min v0.34.1 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.34.1/min_v0.34.1_windows_x64.zip">min v0.34.1 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.34.1/min_v0.34.1_linux_x64.zip">min v0.34.1 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.35.0/min_v0.35.0_macosx_x64.zip">min v0.35.0 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.35.0/min_v0.35.0_windows_x64.zip">min v0.35.0 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.35.0/min_v0.35.0_linux_x64.zip">min v0.35.0 for Linux (x64)</a></li>
 </ul>
 
 
@@ -8548,19 +8548,15 @@ By contrast, using the same type union several times within the same signature a
 'dict      import
 'time      import
 'fs        import
-'lite? (
-  (
-    'crypto    import
-    'math      import
-    'net       import
-    'http      import
-  ) ROOT with
-) unless
+'crypto    import
+'math      import
+'net       import
+'http      import
 ; Unseal prompt symbol
 'prompt    unseal-symbol
 </code></pre>
 
-<p>Essentially, this causes min to import <em>all</em> the modules (except for some if the <strong>lite</strong> flag was defined at compilation time) and unseals the <a href="#min-operator-id-prompt">prompt</a> symbol so that it can be customized. If you want, you can provide your own prelude file to specify your custom behaviors, selectively import modules, and define your own symbols, like this:</p>
+<p>Essentially, this causes min to import <em>all</em> the modules and unseals the <a href="#min-operator-id-prompt">prompt</a> symbol so that it can be customized. If you want, you can provide your own prelude file to specify your custom behaviors, selectively import modules, and define your own symbols, like this:</p>
 
 <div class="min-terminal"><p><span class="prompt">$</span> min -i -p:myfile.min</p></div>
 
@@ -9291,13 +9287,6 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>   5 (dup 0 ==) &lsquo;succ (dup pred) &rsquo;* linrec</p></div></div>
 
-<p><a id="min-operator-id-lite?"></a>
-<span class="reference-title">lite?</span></p>
-
-<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Returns <span class="kwd">true</span> if min was built in <em>lite</em> mode.</p></div>
-
 <p><a id="min-operator-id-load"></a>
 <span class="reference-title">load</span></p>
 
@@ -9786,21 +9775,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
 
-<p>Pushes each item of <span class="kwd">quot<sub>1</sub></span> on the stack using the scope of <span class="kwd">quot<sub>2</sub></span> as scope.</p>
-
-<div class="sidebar"><p>Example</p>
-
-<p>This operator is useful to define symbols on the <span class="kwd">ROOT</span> scope or another scope. For example min&rsquo;s prelude includes the following code used to import certain modules only if min was not compiled in lite mode:</p>
-
-<pre><code>'lite? (
- (
-  'crypto    import
-  'math      import
-  'net       import
-  'http      import
- ) ROOT with
-) unless
-</code></pre></div></div>
+<p>Pushes each item of <span class="kwd">quot<sub>1</sub></span> on the stack using the scope of <span class="kwd">quot<sub>2</sub></span> as scope.</p></div>
 
 <a name="<code>stack</code>-Module"></a>
 <h3><code>stack</code> Module<a href="#document-top" title="Go to top"></a></h3>
@@ -12230,7 +12205,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; March 13, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; April 2, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
