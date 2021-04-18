@@ -136,17 +136,16 @@
   (id "index" ==) (content @HOME "home" @tpl) when
   "" :page
   "" :contents
-  content (
-    (input-fread @contents content)
-    ((/ext ".md" ==) (:temp contents temp markdown @contents temp) when)
-    (contents %contents)
-    (:temp tpl temp mustache @page temp)
-    (page %contents)
-    ((
+  content input-fread @contents
+  (content /ext ".md" ==) (contents content markdown @contents) when
+  content contents %contents @content
+  tpl content mustache @page
+  content page %contents @content
+  (
       ((id "^(glyph|ruby-compendium)\/book" match?) ()) ;Do not add index.html
-      ((id "index" !=)("$1/index" (id) => % %id ".html" %ext))
-    ) case)
-  ) tap
+      ((id "index" !=)(content "$1/index" (id) =% %id ".html" %ext @content))
+  ) case
+  content
 ) ^process-content
 
 
@@ -160,6 +159,7 @@
   latest input-fread "(?ms)(.+)?<hr" search 1 get latest markdown :summary
   latest summary %summary @latest
   latest dup /timestamp to-date %date @latest
+  #|
   ; Process top tags
   TAGS dkeys (
     :tag
@@ -175,13 +175,13 @@
     data last  %total
   ) map
   :tags
-  HOME (
-    (latest   %latest)
-    (recents  %recents)
-    (tags     %tags)
-    (:temp temp "home" temp mustache %contents)
-    (output-fwrite)
-  ) tap!
+  |#
+  HOME
+  latest %latest
+  recents %recents
+  ;tags %tags
+  "home" HOME mustache %contents
+  output-fwrite
 ) ^generate-home
 
 ;; Pre-process CSS assets
@@ -205,12 +205,13 @@ contents (
   (((content 'draft dhas? not) (content 'content-type dhas?)) &&)
   (
     content /id :id
+    (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
     content
-    (/content-type "project" ==) (content PROJECTS append @PROJECTS content) when
-    process-tags 
+    ;process-tags 
     process-timestamp 
-    process-content
-    (id "index" !=) 'output-fwrite when
+    process-content 
+    @content 
+    (id "index" !=) (content output-fwrite) when
   ) when
 ) foreach
 
