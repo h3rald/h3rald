@@ -24,7 +24,7 @@
   "Articles"          %title
   "page"              %content-type
   ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
-  ;ARCHIVE-COLUMNS   %archive-columns
+  ARCHIVE-COLUMNS   %archive-columns
   dup "_archives" swap mustache %contents
   dup "page" swap mustache %contents
   output-fwrite
@@ -180,7 +180,7 @@
   latest %latest
   recents %recents
   ;tags %tags
-  "home" HOME mustache %contents
+  dup "home" swap mustache %contents
   output-fwrite
 ) ^generate-home
 
