@@ -7294,6 +7294,7 @@ pre code {
   <li><a href="#Getting-Started">Getting Started</a>
   <ul>
    <li><a href="#Downloading-Pre-built-Binaries">Downloading Pre-built Binaries</a></li>
+   <li><a href="#Running-a-Docker-Image-as-a-Container">Running a Docker Image as a Container</a></li>
    <li><a href="#Installing-using-Nimble">Installing using Nimble</a></li>
    <li><a href="#Running-the-Administration-App">Running the Administration App</a></li>
   </ul>
@@ -7460,6 +7461,7 @@ pre code {
      <li><a href="#<code>content</code>-option"><code>content</code> option</a></li>
      <li><a href="#<code>limit</code>-and-<code>offset</code>-options"><code>limit</code> and <code>offset</code> options</a></li>
      <li><a href="#<code>search</code>-option"><code>search</code> option</a></li>
+     <li><a href="#<code>like</code>-option"><code>like</code> option</a></li>
      <li><a href="#<code>tags</code>-option"><code>tags</code> option</a></li>
      <li><a href="#<code>filter</code>-option"><code>filter</code> option</a></li>
      <li><a href="#<code>select</code>-option"><code>select</code> option</a></li>
@@ -7955,11 +7957,28 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.9.3/litestore_1.9.3_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.9.3/litestore_1.9.3_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.9.3/litestore_1.9.3_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.10.0/litestore_1.10.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.10.0/litestore_1.10.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.10.0/litestore_1.10.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
 </ul>
 
+
+<a name="Running-a-Docker-Image-as-a-Container"></a>
+<h3>Running a Docker Image as a Container<a href="#document-top" title="Go to top"></a></h3>
+
+<p>Official Docker images are available <a href="https://hub.docker.com/repository/docker/h3rald/litestore">on Docker Hub</a>.</p>
+
+<p>Just pull the latest version:</p>
+
+<p><span class="cmd">docker pull h3rald/litestore:v1.10.0</span></p>
+
+<p>then start a container to run the image on port 9500:</p>
+
+<p><span class="cmd">docker run -p 9500:9500 h3rald/litestore:v1.10.0 -a:0.0.0.0</span></p>
+
+<div class="tip"><p>Tip</p>
+
+<p>The <a href="https://github.com/h3rald/litestore/blob/master/Dockerfile">Dockerfile</a> used to create tbe image is available in root of tbe LiteStore Github repository.</p></div>
 
 <a name="Installing-using-Nimble"></a>
 <h3>Installing using Nimble<a href="#document-top" title="Go to top"></a></h3>
@@ -8010,23 +8029,24 @@ pre code {
 
 <ul>
 <li><strong>-a</strong>, <strong>--address</strong> &mdash; Specify server address (default: 127.0.0.1).</li>
-<li><strong>&ndash;auth</strong> &mdash; Specify an authorization configuration file.</li>
-<li><strong>-b</strong>, <strong>&ndash;body</strong> &mdash; Specify a string containing input data for an operation to be executed.</li>
-<li><strong>-c</strong>, <strong>&ndash;config</strong> &mdash; Specify a configuration file.</li>
+<li><strong>--auth</strong> &mdash; Specify an authorization configuration file.</li>
+<li><strong>-b</strong>, <strong>--body</strong> &mdash; Specify a string containing input data for an operation to be executed.</li>
+<li><strong>-c</strong>, <strong>--config</strong> &mdash; Specify a configuration file.</li>
 <li><strong>-d</strong>, <strong>--directory</strong> &mdash; Specify a directory to serve, import, export, delete, or mount.</li>
-<li><strong>-f</strong>, <strong>&ndash;file</strong> &mdash; Specify a file containing input data for an operation to be executed.</li>
+<li><strong>-f</strong>, <strong>--file</strong> &mdash; Specify a file containing input data for an operation to be executed.</li>
 <li><strong>-h</strong>, <strong>--help</strong> &mdash; Display program usage.</li>
 <li><strong>-l</strong>, <strong>--log</strong> &mdash; Specify the log level: debug, info, warn, error, none (default: info)</li>
 <li><strong>-m</strong>, <strong>--mount</strong> &mdash; Mirror database changes to the specified directory on the filesystem.</li>
-<li><strong>-o</strong>, <strong>&ndash;operation</strong> &mdash; Specify an operation to execute via the execute command: get, put, delete, patch, post, head, options.</li>
+<li><strong>-o</strong>, <strong>--operation</strong> &mdash; Specify an operation to execute via the execute command: get, put, delete, patch, post, head, options.</li>
 <li><strong>-p</strong>, <strong>--port</strong> &mdash;Specify server port number (default: 9500).</li>
 <li><strong>-r</strong>, <strong>--readonly</strong> &mdash; Allow only data retrieval operations.</li>
 <li><strong>-s</strong>, <strong>--store</strong> &mdash; Specify a datastore file (default: data.db)</li>
-<li><strong>&ndash;system</strong>  &mdash; Set the system flag for import, export, and delete operations</li>
-<li><strong>-t</strong>, <strong>&ndash;type</strong> &mdash; Specify a content type for the body an operation to be executed via the execute command.</li>
-<li><strong>-u</strong>, <strong>&ndash;uri</strong> &mdash; Specify an uri to execute an operation through the execute command.</li>
+<li><strong>--system</strong>  &mdash; Set the system flag for import, export, and delete operations</li>
+<li><strong>--import-tags</strong>  &mdash; During import read tags from &lsquo;_tags&rsquo; file and apply them to imported documents from the same directory.</li>
+<li><strong>-t</strong>, <strong>--type</strong> &mdash; Specify a content type for the body an operation to be executed via the execute command.</li>
+<li><strong>-u</strong>, <strong>--uri</strong> &mdash; Specify an uri to execute an operation through the execute command.</li>
 <li><strong>-v</strong>, <strong>--version</strong> &mdash; Display the program version.</li>
-<li><strong>-w</strong>, <strong>&ndash;middleware</strong> &mdash; Specify a path to a folder containing middleware definitions</li>
+<li><strong>-w</strong>, <strong>--middleware</strong> &mdash; Specify a path to a folder containing middleware definitions</li>
 </ul>
 
 
@@ -8073,7 +8093,31 @@ pre code {
 
 <p>Import all documents stored in a directory called <strong>system</strong> as system documents:</p>
 
-<p><span class="cmd">litestore import -d:system &ndash;system</span></p>
+<p><span class="cmd">litestore import -d:system --system</span></p>
+
+<p>Import all documents stored in a directory called <strong>media</strong> (including subdirectories):</p>
+
+<pre><code>+ media
+  + cars
+  | + _tags
+  | + Lamborghini.jpg
+  | + VW.jpg
+  | ` BMW.jpg
+  + planes
+  | + _tags
+  | + 767.jpg
+  | + F-16.jpg
+  | ` B-1.jpg
+  ` trains
+    + TGV.jpg
+    ` Eurostar.jpg
+</code></pre>
+
+<p><span class="cmd">litestore import -d:media --import-tags</span></p>
+
+<p>Every <strong>_tags</strong> file contains a list of tags, one per line, which are applied to all imported documents from the same directory. In the example above all cars and planes images will be tagged on import. The trains images, not as there is not <strong>_tags</strong> file in the <strong>trains</strong> directory.</p>
+
+<p>The individual <strong>_tags</strong> files are also imported. When the <strong>--import-tags</strong> option is not set the <strong>_tags</strong> files are ignored and not imported.</p>
 
 <a name="Exporting-a-directory"></a>
 <h4>Exporting a directory<a href="#document-top" title="Go to top"></a></h4>
@@ -8156,16 +8200,16 @@ pre code {
 
 <p>Finally, specify the public signature to be used to validate JWT tokens using the <strong>signature</strong> property. Typically, its value should be set to the first value of the <a href="https://auth0.com/docs/tokens/reference/jwt/jwks-properties">x.509 certificate chain</a> specified in the <a href="https://auth0.com/docs/jwks">JSON Web Key Set</a> of your API.</p>
 
-<p>To use this configuration at runtime, specify it through the <strong>&ndash;auth</strong> option, like this:</p>
+<p>To use this configuration at runtime, specify it through the <strong>--auth</strong> option, like this:</p>
 
-<p><code>litestore --auth:auth.json</code></p>
+<p><code>litestore -\-auth:auth.json</code></p>
 
 <p>Once enabled, LiteStore will return HTTP 401 error codes if an invalid token or no token is included in the HTTP Authorization header of the request accessing the resource or HTTP 403 error codes in case an authenticated user does not have a valid scope to access a specified resource.</p>
 
 <a name="Configuration-File"></a>
 <h2>Configuration File<a href="#document-top" title="Go to top"></a></h2>
 
-<p>As of version 1.8.0, you can specify a configuration file containing settings, middleware and authorization configuration using the  <strong>&ndash;config</strong> or <strong>-c</strong> command  line option:</p>
+<p>As of version 1.8.0, you can specify a configuration file containing settings, middleware and authorization configuration using the  <strong>--config</strong> or <strong>-c</strong> command  line option:</p>
 
 <p><span class="cmd">litestore -c:config.json</span></p>
 
@@ -8555,7 +8599,7 @@ Examples:
 <a name="Importing,-exporting-and-deleting-System-Documents"></a>
 <h3>Importing, exporting and deleting System Documents<a href="#document-top" title="Go to top"></a></h3>
 
-<p>You can import, export, and delete system documents with the respective commands, but you must specify the <span class="kwd">&ndash;system</span> command line flag.</p>
+<p>You can import, export, and delete system documents with the respective commands, but you must specify the <span class="kwd">--system</span> command line flag.</p>
 
 <p>For example, suppose you have a <span class="dir">sysdocs</span> folder containing the following file hierarchy:</p>
 
@@ -8580,14 +8624,14 @@ Examples:
 
 <p>To import all the documents stored within the <span class="dir">sysdocs</span> folder, you must run the following command:</p>
 
-<p><span class="kwd">litestore -d:sysdocs &ndash;system import</span></p>
+<p><span class="kwd">litestore -d:sysdocs --system import</span></p>
 
-<p>Similarly, the <span class="kwd">export</span> and <span class="kwd">delete</span> commands can be used to export and delete system documents respectively, always specifying the <span class="kwd">&ndash;system</span> flag.</p>
+<p>Similarly, the <span class="kwd">export</span> and <span class="kwd">delete</span> commands can be used to export and delete system documents respectively, always specifying the <span class="kwd">--system</span> flag.</p>
 
 <a name="How-LiteStore-uses-System-Documents"></a>
 <h3>How LiteStore uses System Documents<a href="#document-top" title="Go to top"></a></h3>
 
-<p>While at development time you may want to be able to edit your system documents and therefore keep them outside your data store as ordinary text files (and load them using the <strong>&ndash;auth</strong>, <strong>&ndash;config</strong> and <strong>&ndash;middleware</strong> options), in production you may want to ship them within the data store along with your application data.</p>
+<p>While at development time you may want to be able to edit your system documents and therefore keep them outside your data store as ordinary text files (and load them using the <strong>--auth</strong>, <strong>--config</strong> and <strong>-\s-middleware</strong> options), in production you may want to ship them within the data store along with your application data.</p>
 
 <p>At run time, LiteStore will attempt to retrieve settings/middleware/authorization configuration using the following order of precedence (first listed have higher precedence):</p>
 
@@ -9024,7 +9068,7 @@ Server: LiteStore/1.1.0
 <a name="Example"></a>
 <h5>Example<a href="#document-top" title="Go to top"></a></h5>
 
-<pre><code>$ curl -i -X POST -d 'A document with a randomly-generated ID.' 'http://127.0.0.1:9500/docs' --header "Content-Type:text/plain"
+<pre><code>$ curl -i -X POST -d 'A document with a randomly-generated ID.' 'http://127.0.0.1:9500/docs' -\-header "Content-Type:text/plain"
 HTTP/1.1 201 Created
 Content-Length: 197
 Content-Type: application/json
@@ -9140,6 +9184,19 @@ Server: LiteStore/1.0.3
 <div class="tip"><p>Tip</p>
 
 <p>If <strong>search</strong> is specified, each result will contain a <strong>highlight</strong> property with a highlighted search snippet, and a <strong>rank</strong> property identified the rank of the result within the search. Results will also be automatically ordered by descending rank.</p></div>
+
+<a name="<code>like</code>-option"></a>
+<h5><code>like</code> option<a href="#document-top" title="Go to top"></a></h5>
+
+<p>If this option is specified, retrieves a single document which id matches the specified pattern. The value give to <code>like</code> option is not used so the search pattern is specified as the regular document id as a part of the path. The regular SQL wildcards <code>%</code> and <code>_</code> can be used. To escape them use <code>\</code> encoded in the URL as <code>%5C</code>.</p>
+
+<p>Example: http://127.0.0.1:9500/docs/%/api%5C_%.md?like=1&amp;raw=true&amp;contents=false&amp;search=API%20v7%Required</p>
+
+<p>If finds the first markdown file which name starts with <em>api_</em> and which contains string <em>API v7 Required</em>.</p>
+
+<div class="tip"><p>Tip</p>
+
+<p>Only the first matching document is returned even if there was more than one which id matched the pattern. To get the subsequent documents use <code>offset</code> option and increase its value from <em>1</em> up.</p></div>
 
 <a name="<code>tags</code>-option"></a>
 <h5><code>tags</code> option<a href="#document-top" title="Go to top"></a></h5>
@@ -10487,6 +10544,15 @@ runForever()
 <a name="Credits"></a>
 <h2>Credits<a href="#document-top" title="Go to top"></a></h2>
 
+<p>LiteStore was created and is maintained by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions from:</p>
+
+<ul>
+<li>Piotr Kaminski (<a href="https://github.com/tomidery">@tomidery</a>)</li>
+<li>Steve Kellock (<a href="https://github.com/skellock">@skellock</a>)</li>
+<li><a href="https://github.com/nightlyworker">@nightlyworker</a></li>
+</ul>
+
+
 <p>Special thanks to the following individuals, communities and organizations that made LiteStore possible:</p>
 
 <ul>
@@ -10500,7 +10566,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; November 30, 2020</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; April 21, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
