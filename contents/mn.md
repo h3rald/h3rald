@@ -8,7 +8,7 @@ summary: "A tiny, very minimalistic programming language inspired by min."
 content-type: project
 active: true
 download: "https://github.com/h3rald/mn/releases/download/"
-version: 0.1.0
+version: 0.2.0
 docs: /mn/Mn_DeveloperGuide.htm
 -----
 
