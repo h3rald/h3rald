@@ -453,3 +453,13 @@ pre code,
 img {
     border: 1px solid var(--secondary-background);
 }
+
+/* iPad Fix */
+
+@media screen and (min-width: 768px) and (max-width: 768px) {
+  .col-sm-8 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+

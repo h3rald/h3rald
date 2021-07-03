@@ -5,29 +5,26 @@
     <div class="main container-fluid">
         {{> _header}}
       <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 sidebar">
-          <div class="hidden-xs">
-            {{> _panels}}
-          </div>
+        <div class="hidden-xs col-sm-4 col-md-3 sidebar">
+          {{> _panels}}
         </div>
-        <!-- Sidebar End -->
         <div class="col-xs-12 col-sm-8 col-md-9">
           <div class="box content home-content">
             <article>
-            <h2><a href="/{{latest.id}}">{{latest.title}}</a></h2>
+            <h2><a href="/{{latest.rawid}}">{{latest.title}}</a></h2>
             <p class="primary-subtitle">
             {{latest.subtitle}}
             </p>
             <time><i class="ent ent-calendar"></i> {{latest.date}}</time></p>
             <section class="body-text">
             {{{latest.summary}}}
-            <p><a href="/{{latest.id}}">Continue reading →</a></p>
+            <p><a href="/{{latest.rawid}}">Continue reading →</a></p>
             </section>
             </article>
             <div class="divider text-center" data-content="more recent articles"></div>
             {{#recents}}
             <article>
-            <h4><a href="/{{id}}">{{title}}</a></h4>
+            <h4><a href="/{{rawid}}">{{title}}</a></h4>
             <p class="secondary-subtitle">
             {{subtitle}}
             </p>
@@ -37,10 +34,8 @@
           </div>
         </div>
       </div>
-      <div class="visible-xs row">
-        <div class="col-xs-12 sidebar">
-        {{> _panels}}
-        </div>
+      <div class="hidden-md hidden-lg hidden-xl col-xs-12 sidebar">
+      {{> _panels}}
       </div>
       <div class="row">
         <div class="col-xs-12">
