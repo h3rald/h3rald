@@ -7312,6 +7312,8 @@ pre code {
     <li><a href="#Starting-the-HTTP-Server">Starting the HTTP Server</a></li>
     <li><a href="#Importing-a-directory">Importing a directory</a></li>
     <li><a href="#Importing-system-documents-from-a-directory">Importing system documents from a directory</a></li>
+    <li><a href="#Importing-a-directory-and-tagging-files">Importing a directory and tagging files</a></li>
+    <li><a href="#Excluding-files-from-full-text-search">Excluding files from full text search</a></li>
     <li><a href="#Exporting-a-directory">Exporting a directory</a></li>
     <li><a href="#Deleting-documents-within-a-directory">Deleting documents within a directory</a></li>
     <li><a href="#Performing-maintenance-operations">Performing maintenance operations</a></li>
@@ -7957,9 +7959,9 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.10.0/litestore_1.10.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.10.0/litestore_1.10.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/1.10.0/litestore_1.10.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.11.0/litestore_1.11.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.11.0/litestore_1.11.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.11.0/litestore_1.11.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
 </ul>
 
 
@@ -7970,11 +7972,11 @@ pre code {
 
 <p>Just pull the latest version:</p>
 
-<p><span class="cmd">docker pull h3rald/litestore:v1.10.0</span></p>
+<p><span class="cmd">docker pull h3rald/litestore:v1.11.0</span></p>
 
 <p>then start a container to run the image on port 9500:</p>
 
-<p><span class="cmd">docker run -p 9500:9500 h3rald/litestore:v1.10.0 -a:0.0.0.0</span></p>
+<p><span class="cmd">docker run -p 9500:9500 h3rald/litestore:v1.11.0 -a:0.0.0.0</span></p>
 
 <div class="tip"><p>Tip</p>
 
@@ -8043,6 +8045,7 @@ pre code {
 <li><strong>-s</strong>, <strong>--store</strong> &mdash; Specify a datastore file (default: data.db)</li>
 <li><strong>--system</strong>  &mdash; Set the system flag for import, export, and delete operations</li>
 <li><strong>--import-tags</strong>  &mdash; During import read tags from &lsquo;_tags&rsquo; file and apply them to imported documents from the same directory.</li>
+<li><strong>--not-searchable</strong>  &mdash; During import exclude content of files and folders starting with &lsquo;_&rsquo; from full text search.</li>
 <li><strong>-t</strong>, <strong>--type</strong> &mdash; Specify a content type for the body an operation to be executed via the execute command.</li>
 <li><strong>-u</strong>, <strong>--uri</strong> &mdash; Specify an uri to execute an operation through the execute command.</li>
 <li><strong>-v</strong>, <strong>--version</strong> &mdash; Display the program version.</li>
@@ -8095,6 +8098,9 @@ pre code {
 
 <p><span class="cmd">litestore import -d:system --system</span></p>
 
+<a name="Importing-a-directory-and-tagging-files"></a>
+<h4>Importing a directory and tagging files<a href="#document-top" title="Go to top"></a></h4>
+
 <p>Import all documents stored in a directory called <strong>media</strong> (including subdirectories):</p>
 
 <pre><code>+ media
@@ -8115,9 +8121,41 @@ pre code {
 
 <p><span class="cmd">litestore import -d:media --import-tags</span></p>
 
-<p>Every <strong>_tags</strong> file contains a list of tags, one per line, which are applied to all imported documents from the same directory. In the example above all cars and planes images will be tagged on import. The trains images, not as there is not <strong>_tags</strong> file in the <strong>trains</strong> directory.</p>
+<p>Every <strong>_tags</strong> file contains a list of tags, one per line, which are applied to all imported documents from the same directory. In the example above all cars and planes images will be tagged on import. The trains images however will not as there is no <strong>_tags</strong> file in the <strong>trains</strong> directory.</p>
 
 <p>The individual <strong>_tags</strong> files are also imported. When the <strong>--import-tags</strong> option is not set the <strong>_tags</strong> files are ignored and not imported.</p>
+
+<a name="Excluding-files-from-full-text-search"></a>
+<h4>Excluding files from full text search<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Import all documents stored in a directory called <strong>media</strong> (including subdirectories):</p>
+
+<pre><code>+ media
+  + _css
+  | + style1.css
+  | ` style2.css
+  + cars
+  | + _index.html
+  | + Lamborghini.md
+  | + VW.md
+  | ` BMW.md
+  + planes
+  | + _index.html
+  | + 767.md
+  | + F-16.md
+  | ` B-1.md
+  ` trains
+    + _index.html
+    * _script.js
+    + TGV.md
+    ` Eurostar.md
+</code></pre>
+
+<p><span class="cmd">litestore import -d:media --not-searchable</span></p>
+
+<p>All documents are imported but the files whose name starts with <strong>underscore</strong> and files inside a folder which name starts with <strong>underscore</strong> are excluded from full text search. The idea is that these files have special meaning for the application:
+* they should be accessible via regular URLs (unlike <strong>system</strong> files)
+* but they content should not be searchable.</p>
 
 <a name="Exporting-a-directory"></a>
 <h4>Exporting a directory<a href="#document-top" title="Go to top"></a></h4>
@@ -10566,7 +10604,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; April 21, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; July 3, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
