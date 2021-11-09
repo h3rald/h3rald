@@ -7503,14 +7503,22 @@ div .terminal {
 * perform HTTPS requests with the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>.
 * use all the cryptographic symbols defined in the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>.</p>
 
-<p>If this flag is not specified:
-* It will not be possible to perform HTTPS requests
-* Only the following symbols will be exposed by the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>:
-  * <a href="#min-operator-id-md5">md5</a>
-  * <a href="#min-operator-id-sha1">sha1</a>
-  * <a href="#min-operator-id-encode">encode</a>
-  * <a href="#min-operator-id-decode">decode</a>
-  * <a href="#min-operator-id-aes">aes</a></p>
+<p>If this flag is not specified:</p>
+
+<ul>
+<li>It will not be possible to perform HTTPS requests</li>
+<li><p>Only the following symbols will be exposed by the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>:</p>
+
+<ul>
+<li><a href="#min-operator-id-md5">md5</a></li>
+<li><a href="#min-operator-id-sha1">sha1</a></li>
+<li><a href="#min-operator-id-encode">encode</a></li>
+<li><a href="#min-operator-id-decode">decode</a></li>
+<li><a href="#min-operator-id-aes">aes</a></li>
+</ul>
+</li>
+</ul>
+
 
 <a name="Building-a-Docker-image"></a>
 <h3>Building a Docker image<a href="#document-top" title="Go to top"></a></h3>
@@ -7803,10 +7811,14 @@ div .terminal {
  ;; Calculates the square of n.
 </code></pre>
 
-<p> The <a href="#min-operator-id-operator">operator</a> symbol provides way to:
- * Specify the name of the symbol operator (<strong>square</strong> in this case)
- * Specify a signature to identify the type of the input and output values (in this case, the operator takes a numeric input value and produces a numeric output value). Also, note how inputs and outputs are captured into the <code>n</code> and <code>result</code> symbols in the signature quotation and then referenced in the body quotation.
- * Specify a quotation containing the code that the operator will execute.</p>
+<p> The <a href="#min-operator-id-operator">operator</a> symbol provides way to:</p>
+
+<ul>
+<li>Specify the name of the symbol operator (<strong>square</strong> in this case)</li>
+<li>Specify a signature to identify the type of the input and output values (in this case, the operator takes a numeric input value and produces a numeric output value). Also, note how inputs and outputs are captured into the <code>n</code> and <code>result</code> symbols in the signature quotation and then referenced in the body quotation.</li>
+<li>Specify a quotation containing the code that the operator will execute.</li>
+</ul>
+
 
 <p>Also, symbol operator definitions can be annotated with documentation comments (starting with <code>;;</code> or wrapped in <code>#|| ... ||#</code>)) so that a help text can be displayed using the <a href="#min-operator-id-help">help</a> symbol.</p>
 
@@ -7820,15 +7832,18 @@ div .terminal {
 
 <p>Note that this feels like using <a href="#min-operator-id-define">define</a>, but the main difference between <a href="#min-operator-id-lambda">lambda</a> and <a href="#min-operator-id-define">define</a> is that <code>lambda</code> only works on quotations doesn&rsquo;t auto-quote them, so that they are immediately evaluated when the corresponding symbol is pushed on the stack.</p>
 
-<p>Also note that unlike with <a href="#min-operator-id-operator">operator</a>, symbols defined with <a href="#min-operator-id-lambda">lambda</a>:
-* have no built-in validation of input and output values.
-* do not support the <code>return</code> symbol to immediately end their execution.
-* have no built-in stack pollution checks.</p>
+<p>Also note that unlike with <a href="#min-operator-id-operator">operator</a>, symbols defined with <a href="#min-operator-id-lambda">lambda</a>:</p>
 
-<blockquote><p>%tip
-Tip</p>
+<ul>
+<li>have no built-in validation of input and output values.</li>
+<li>do not support the <code>return</code> symbol to immediately end their execution.</li>
+<li>have no built-in stack pollution checks.</li>
+</ul>
 
-<p>You can use <a href="#min-operator-id-lambda-bind">lambda-bind</a> to re-set a previously set lambda.</p></blockquote>
+
+<div class="tip"><p>Tip</p>
+
+<p>You can use <a href="#min-operator-id-lambda-bind">lambda-bind</a> to re-set a previously set lambda.</p></div>
 
 <a name="Sigils"></a>
 <h4>Sigils<a href="#document-top" title="Go to top"></a></h4>
@@ -12211,7 +12226,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; April 23, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; September 12, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
