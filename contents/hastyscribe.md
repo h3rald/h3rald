@@ -4,6 +4,7 @@ content-type: project
 github: hastyscribe
 subtitle: "A self-contained markdown compiler"
 active: true
+ci: true
 home: /hastyscribe/
 docs: /hastyscribe/HastyScribe_UserGuide.htm
 summary: "A self-contained Markdown compiler that can generate self-contained HTML files, useful for writing essays, reports, meeting notes, etc."

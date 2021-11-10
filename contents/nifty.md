@@ -7,6 +7,7 @@ title: "nifty"
 subtitle: "A decentralized (pseudo) package manager and script runner"
 summary: "A self-contained command-line program that can be used as a bare bones package manager and as a versatile script runner."
 content-type: project
+ci: true
 active: true
 version: 1.2.2
 download: "https://github.com/h3rald/nifty/releases/download/"

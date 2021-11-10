@@ -7,6 +7,7 @@ subtitle: "A tiny static file web server."
 summary: "A tiny, self-contained program able to serve files within a directory via HTTP."
 content-type: project
 active: true
+ci: true
 version: 1.2.0
 download: "https://github.com/h3rald/nimhttpd/releases/download/"
 -----

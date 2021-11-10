@@ -8,6 +8,7 @@ subtitle: "A functional, concatenative programming language with a minimalist sy
 summary: "A functional, concatenative programming language with a minimalist syntax, a small but practical standard library, and an advanced REPL. All packed in a single file."
 content-type: project
 active: true
+ci: true
 download: "https://github.com/h3rald/min/releases/download/"
 version: 0.35.1
 docs: /min/Min_DeveloperGuide.htm

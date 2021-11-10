@@ -4,6 +4,8 @@ github: hastysite
 home: /hastysite/
 docs: /hastysite/HastySite_UserGuide.htm
 title: "HastySite"
+ci: true
+ci: true
 site: "https://hastysite.h3rald.com"
 subtitle: "A small but powerful static site generator"
 summary: "A self-contained static site generator featuring markdown support, mustache templates, and a powerful min-powered rule and script engine."

@@ -7,6 +7,7 @@ subtitle: "A polite but determined task runner"
 summary: "A simple but powerful task runner that lets you define your own commands by editing a YAML configuration file."
 content-type: project
 active: true
+ci: true
 download: "https://github.com/h3rald/pls/releases/download/"
 version: 1.0.0
 docs: /pls/Pls_UserGuide.htm
