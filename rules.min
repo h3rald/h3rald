@@ -215,12 +215,14 @@ contents (
     (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
     content
     ;process-tags 
+    "." print!
     process-timestamp 
     process-content 
     @content 
     (id "index" !=) (content output-fwrite) when
   ) when
 ) foreach
+"" puts!
 
 ; Create aggregator pages
 create-projects-page

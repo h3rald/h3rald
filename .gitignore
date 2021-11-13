@@ -5,3 +5,4 @@ _bkp/*
 _old/*
 *.db
 *.db-journal
+.DS_Store
