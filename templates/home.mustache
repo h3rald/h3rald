@@ -11,26 +11,47 @@
         <div class="col-xs-12 col-sm-8 col-md-9">
           <div class="box content home-content">
             <article>
-            <h2><a href="/{{latest.rawid}}">{{latest.title}}</a></h2>
-            <p class="primary-subtitle">
-            {{latest.subtitle}}
-            </p>
-            <time><i class="ent ent-calendar"></i> {{latest.date}}</time></p>
-            <section class="body-text">
-            {{{latest.summary}}}
-            <p><a href="/{{latest.rawid}}">Continue reading →</a></p>
-            </section>
+              <h2>Welcome</h2>
+              <section class="body-text">
+                <p>Welcome to H3RALD.com. This site was used to be a fairly active blog back in the early 2000s, but sadly I progressively lost interest in writing articles, perhaps because I didn't have anything new to write about that you couldn't find elsewhere. However, all the content is still here, so feel free to browse through the <a href="/articles">articles</a> section.</p>
+                <p>As I progressively neglected writing, I started creating more and more small programs and tools to perform common tasks, mostly using the <a href="https://nim-lang.org" target="_blank">Nim</a> programming language. They are all open source and they all have a dedicated project page here, and there's some pretty decent documentation for most of them. You can find them all in the <a href="/projects">projects</a> section.</p>
+                <p>At any rate, thank you for stopping by!</p>
+                <p>&mdash; Fabio</p>
+              </section>
             </article>
-            <div class="divider text-center" data-content="more recent articles"></div>
-            {{#recents}}
-            <article>
-            <h4><a href="/{{rawid}}">{{title}}</a></h4>
-            <p class="secondary-subtitle">
-            {{subtitle}}
-            </p>
-            <time><i class="ent ent-calendar"></i> {{date}}</time></p>
-            </article>
-            {{/recents}}
+            <div class="panel">
+              <div class="panel-header">
+                about
+              </div>
+              <div class="panel-body">
+                <p class="leading">This site is built using HastySite, my very own static site generator. Over the years, it underwent several iterations characterized by different visual themes and technology stacks, you can read about it here.</p>
+                <p>I consider myself a hacker in the true meaning of the word:</p>
+                <blockquote>"A person who enjoys exploring the details of programmable systems and how to stretch their capabilities, as opposed to most users, who prefer to learn only the minimum necessary."</blockquote>
+                <p style="padding-left:4em;">
+                &mdash; Eric S. Raymond, <cite><a href="http://www.catb.org/jargon/html/H/hacker.html">The Jargon File</a></cite>
+                </p>
+                <p>I am a passionate programmer and open source advocate, a technology enthusiast and a devoted Star Trek fan, and throughout my professional career I have been working as a developer, technical writer, software architect, and product owner. </p>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-header">
+                credits
+              </div>
+              <div class="panel-body">
+                <p class="leading">Special thanks to the following people, who made this web site possible:</p>
+                <ul>
+                  <li>
+                  <a href="http://scholarsfonts.net/">David J. Perry</a>, who designed the <a href="http://scholarsfonts.net/cardofnt.html">Cardo</a> font used for the H3RALD logo.
+                  </li>
+                  <li>
+                  <a href="http://atipo.es/en/">atipo</a>, who designed the <a href="http://atipofoundry.com/fonts/noway">Noway</a> font, used throughout this web site.
+                  </li>
+                  <li>
+                  <a href="http://www.danielbruce.se/">Daniel Bruce</a>, designer of the <a href="http://www.entypo.com/">Entypo</a> font, used for the icons on this web site.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
