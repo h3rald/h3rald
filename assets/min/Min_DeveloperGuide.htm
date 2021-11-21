@@ -7462,9 +7462,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.35.0/min_v0.35.0_macosx_x64.zip">min v0.35.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.35.0/min_v0.35.0_windows_x64.zip">min v0.35.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.35.0/min_v0.35.0_linux_x64.zip">min v0.35.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.36.0/min_v0.36.0_macosx_x64.zip">min v0.36.0 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.36.0/min_v0.36.0_windows_x64.zip">min v0.36.0 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.36.0/min_v0.36.0_linux_x64.zip">min v0.36.0 for Linux (x64)</a></li>
 </ul>
 
 
@@ -7573,6 +7573,8 @@ div .terminal {
 <p>min also supports running programs from standard input, so the following command can also be used (on Unix-like system) to run a program saved in <span class="file">myfile.min</span>:</p>
 
 <div class="min-terminal"><p><span class="prompt">$</span> cat myfile.min | min</p></div>
+
+<div class="tip"><p>You can enable <em>development mode</em> (runtime checks and validations) by spacifying <code>-d</code> (<code>--dev</code>) when running a min program. If development mode is not enabled, min programs run faster.</p></div>
 
 <a name="Compiling-a-min-Program"></a>
 <h3>Compiling a min Program<a href="#document-top" title="Go to top"></a></h3>
@@ -9072,6 +9074,13 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Each element is pushed on the stack one by one. If any error occurs, <span class="kwd">quot</span> is restored on the stack.</p></div>
 
+<p><a id="min-operator-id-dev?"></a>
+<span class="reference-title">dev?</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the current program is being executed in development mode.</p></div>
+
 <p><a id="min-operator-id-eval"></a>
 <span class="reference-title">eval</span></p>
 
@@ -9091,7 +9100,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <strong>&rArr;</strong> <span class="kwd">quot<sub>2</sub></span></span></p>
 
-<p>Validates the first <em>n</em> elements of the stack against the type descriptions specified in <span class="kwd">quot<sub>1</sub></span> (<em>n</em> is <span class="kwd">quot<sub>1</sub></span>&rsquo;s length) and if all the elements are valid returns them wrapped in <span class="kwd">quot<sub>2</sub></span> (in reverse order).</p>
+<p>If the <code>-d</code> (<code>--dev</code>) flag is specified when running the program, validates the first <em>n</em> elements of the stack against the type descriptions specified in <span class="kwd">quot<sub>1</sub></span> (<em>n</em> is <span class="kwd">quot<sub>1</sub></span>&rsquo;s length) and if all the elements are valid returns them wrapped in <span class="kwd">quot<sub>2</sub></span> (in reverse order). If the <code>-d</code> (<code>--dev</code>) flag is not specified when running the program, no validation is performed and all elements are just returned in a quotation in reverse order.</p>
 
 <div class="tip"><p>Tips</p>
 
@@ -9364,7 +9373,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p>The main additional features offered by this way of defining operators are the following:</p>
 
 <ul>
-<li>Both input and output values are checked against a type (like when using the <code>expect</code> operator <em>and</em> automatically captured in a symbol that can be referenced in the operator body quotation.</li>
+<li>If in development mode (<code>-d</code> or <code>--dev</code> flag specified at run time), both input and output values are checked against a type (like when using the <code>expect</code> operator <em>and</em> automatically captured in a symbol that can be referenced in the operator body quotation.</li>
 <li>The full signature of the operator is declared, making the resulting code easier to understand at quick glance.</li>
 <li>An exception is automatically raised if the operator body pollutes the stack by adding or removing elementa from the stack (besides adding the declared output values).</li>
 <li>It is possible to use the <code>return</code> symbol within the body quotation to immediately stop the evaluation of the body quotation and automatically push the output values on the stack.</li>
@@ -10652,6 +10661,20 @@ harvest
 <a name="<code>fs</code>-Module"></a>
 <h3><code>fs</code> Module<a href="#document-top" title="Go to top"></a></h3>
 
+<p><a id="min-operator-id-absolute-path"></a>
+<span class="reference-title">absolute-path</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the absolute path to <span class="kwd">&apos;sym</span>.</p></div>
+
+<p><a id="min-operator-id-absolute-path?"></a>
+<span class="reference-title">absolute-path?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if <span class="kwd">&apos;sym</span> is an absolute path.</p></div>
+
 <p><a id="min-operator-id-atime"></a>
 <span class="reference-title">atime</span></p>
 
@@ -10665,6 +10688,55 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
 <p>Returns a timestamp corresponding to the time that file/directory <span class="kwd">&apos;sym</span> was created.</p></div>
+
+<p><a id="min-operator-id-dirname"></a>
+<span class="reference-title">dirname</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the path of the directory containing path <span class="kwd">&apos;sym</span>.</p></div>
+
+<p><a id="min-operator-id-dir?"></a>
+<span class="reference-title">dir?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the specified path <span class="kwd">&apos;sym</span> exists and is a directory.</p></div>
+
+<p><a id="min-operator-id-exists?"></a>
+<span class="reference-title">exists?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the specified file or directory <span class="kwd">&apos;sym</span> exists.</p></div>
+
+<p><a id="min-operator-id-expand-filename"></a>
+<span class="reference-title">expand-filename</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the absolute path to the file name <span class="kwd">&apos;sym</span>.</p></div>
+
+<p><a id="min-operator-id-expand-symlink"></a>
+<span class="reference-title">expand-symlink</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the absolute path to the symlink <span class="kwd">&apos;sym</span> (an error is raised if <span class="kwd">&apos;sym</span> is not a symlink).</p></div>
+
+<p><a id="min-operator-id-file?"></a>
+<span class="reference-title">file?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the specified path <span class="kwd">&apos;sym</span> exists and is a file.</p></div>
+
+<p><a id="min-operator-id-filename"></a>
+<span class="reference-title">filename</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the file name of path <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-fperms"></a>
 <span class="reference-title">fperms</span></p>
@@ -10723,12 +10795,54 @@ harvest
 
 <p>Returns <span class="kwd">true</span> if file/directory <span class="kwd">&apos;sym</span> is hidden, <span class="kwd">false</span> otherwise.</p></div>
 
+<p><a id="min-operator-id-join-path"></a>
+<span class="reference-title">join-path</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Joins the strings contained in <span class="kwd">quot</span> with <code>/</code>.</p></div>
+
+<p><a id="min-operator-id-normalized-path"></a>
+<span class="reference-title">normalized-path</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the normalized path to <span class="kwd">&apos;sym</span>.</p></div>
+
 <p><a id="min-operator-id-mtime"></a>
 <span class="reference-title">mtime</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">flt</span></span></p>
 
 <p>Returns a timestamp corresponding to the time that file/directory <span class="kwd">&apos;sym</span> was last modified.</p></div>
+
+<p><a id="min-operator-id-relative-path"></a>
+<span class="reference-title">relative-path</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the path of <span class="kwd">&apos;sym<sub>1</sub></span> relative to <span class="kwd">&apos;sym<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-symlink?"></a>
+<span class="reference-title">symlink?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the specified path <span class="kwd">&apos;sym</span> exists and is a symbolic link.</p></div>
+
+<p><a id="min-operator-id-unix-path"></a>
+<span class="reference-title">unix-path</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Converts all backslashes in <span class="kwd">&apos;sym</span> to slashes.</p></div>
+
+<p><a id="min-operator-id-windows-path"></a>
+<span class="reference-title">windows-path</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Converts all slashes in <span class="kwd">&apos;sym</span> to backslashes.</p></div>
 
 <a name="<code>logic</code>-Module"></a>
 <h3><code>logic</code> Module<a href="#document-top" title="Go to top"></a></h3>
@@ -11283,6 +11397,13 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>Returns the full path to the parent directory.</p></div>
 
+<p><a id="min-operator-id-admin?"></a>
+<span class="reference-title">admin?</span></p>
+
+<div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if the program is being run with administrative privileges.</p></div>
+
 <p><a id="min-operator-id-chmod"></a>
 <span class="reference-title">chmod</span></p>
 
@@ -11323,41 +11444,6 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
 <p>Returns <span class="kwd">true</span> if environment variable <span class="kwd">&apos;sym</span> exists, <span class="kwd">false</span> otherwise.</p></div>
-
-<p><a id="min-operator-id-dir?"></a>
-<span class="reference-title">dir?</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Returns <span class="kwd">true</span> if the specified path <span class="kwd">&apos;sym</span> exists and is a directory.</p></div>
-
-<p><a id="min-operator-id-dirname"></a>
-<span class="reference-title">dirname</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
-
-<p>Returns the path of the directory containing path <span class="kwd">&apos;sym</span>.</p></div>
-
-<p><a id="min-operator-id-exists?"></a>
-<span class="reference-title">exists?</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Returns <span class="kwd">true</span> if the specified file or directory <span class="kwd">&apos;sym</span> exists.</p></div>
-
-<p><a id="min-operator-id-file?"></a>
-<span class="reference-title">file?</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Returns <span class="kwd">true</span> if the specified path <span class="kwd">&apos;sym</span> exists and is a file.</p></div>
-
-<p><a id="min-operator-id-filename"></a>
-<span class="reference-title">filename</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
-
-<p>Returns the file name of path <span class="kwd">&apos;sym</span>.</p></div>
 
 <p><a id="min-operator-id-get-env"></a>
 <span class="reference-title">get-env</span></p>
@@ -11449,13 +11535,6 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym<sub>1</sub></span> <span class="kwd">&apos;sym<sub>2</sub></span> <strong>&rArr;</strong> &#x2205;</span></p>
 
 <p>Creates symlink <span class="kwd">&apos;sym<sub>2</sub></span> for file or directory <span class="kwd">&apos;sym<sub>1</sub></span>.</p></div>
-
-<p><a id="min-operator-id-symlink?"></a>
-<span class="reference-title">symlink?</span></p>
-
-<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
-
-<p>Returns <span class="kwd">true</span> if the specified path <span class="kwd">&apos;sym</span> exists and is a symbolic link.</p></div>
 
 <p><a id="min-operator-id-system"></a>
 <span class="reference-title">system</span></p>
@@ -12226,7 +12305,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; September 12, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; November 14, 2021</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
