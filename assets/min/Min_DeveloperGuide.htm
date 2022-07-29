@@ -7447,7 +7447,7 @@ div .terminal {
 <a name="Who?"></a>
 <h3>Who?<a href="#document-top" title="Go to top"></a></h3>
 
-<p>min was created and implemented by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions by <a href="https://peterme.net">Peter Munch-Ellingsen</a>, <a href="https://github.com/drkameleon">Yanis Zafirópulos</a>, and <a href="https://github.com/baykus871">baykus871</a>.</p>
+<p>min was created and implemented by <a href="https://h3rald.com">Fabio Cevasco</a>, with contributions by <a href="https://peterme.net">Peter Munch-Ellingsen</a>, <a href="https://github.com/drkameleon">Yanis Zafirópulos</a>, and <strong>baykus871</strong>.</p>
 
 <p>Special thanks to <a href="https://github.com/mwgkgk">mwgkgk</a> for contributing to the design of native dictionaries.</p>
 
@@ -7462,9 +7462,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.36.0/min_v0.36.0_macosx_x64.zip">min v0.36.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.36.0/min_v0.36.0_windows_x64.zip">min v0.36.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.36.0/min_v0.36.0_linux_x64.zip">min v0.36.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.37.0/min_v0.37.0_macosx_x64.zip">min v0.37.0 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.37.0/min_v0.37.0_windows_x64.zip">min v0.37.0 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.37.0/min_v0.37.0_linux_x64.zip">min v0.37.0 for Linux (x64)</a></li>
 </ul>
 
 
@@ -7850,13 +7850,13 @@ div .terminal {
 <a name="Sigils"></a>
 <h4>Sigils<a href="#document-top" title="Go to top"></a></h4>
 
-<p>Besides symbols, you can also define sigils. min provides a set of predefined <em>sigils</em> as abbreviations for for commonly-used symbols.</p>
+<p>Besides symbols, you can also define sigils. min provides a set of predefined <em>sigils</em> as abbreviations for commonly used symbols.</p>
 
 <p>A sigil can be prepended to a double-quoted string or a single word (with no spaces) which will be treated as a string instead of using the corresponding symbol.</p>
 
 <p>For example, the following executes the command <code>ls -al</code> and pushes the command return code on the stack:</p>
 
-<pre><code> !"ls -al"`
+<pre><code> !"ls -al"
 </code></pre>
 
 <p>Currently min provides the following sigils:</p>
@@ -7899,7 +7899,7 @@ div .terminal {
 </ul>
 
 
-<p>Sigils can be a very powerful construct and a way to reduce boulerplate code: you can define a sigil to use as you would use any symbol which requires a single string or quoted symbol on the stack.</p>
+<p>Sigils can be a very powerful construct and a way to reduce boilerplate code: you can define a sigil to use as you would use any symbol which requires a single string or quoted symbol on the stack.</p>
 
 <p>Like symbols, sigils can be defined with the <a href="#min-operator-id-operator">operator</a> operator, like this:</p>
 
@@ -7910,7 +7910,7 @@ div .terminal {
  ) operator
 </code></pre>
 
-<p>This definition will add a <code>j</code> sigil that will process the follwing string as JSON code, so for example:</p>
+<p>This definition will add a <code>j</code> sigil that will process the following string as JSON code, so for example:</p>
 
 <pre><code> j"{\"test\": true}"
 </code></pre>
@@ -7920,7 +7920,7 @@ div .terminal {
 <pre><code>{true :test}
 </code></pre>
 
-<p>Also, sigil definitions can be annotated with documentation comments (starting with <code>;;</code> or wrapped in <code>#|| ... ||#</code>)`) so that a help text can be displayed using the <a href="#min-operator-id-help">help</a> symbol.</p>
+<p>Also, sigil definitions can be annotated with documentation comments (starting with <code>;;</code> or wrapped in <code>#|| ... ||#</code>) so that a help text can be displayed using the <a href="#min-operator-id-help">help</a> symbol.</p>
 
 <a name="Auto-popping"></a>
 <h4>Auto-popping<a href="#document-top" title="Go to top"></a></h4>
@@ -7934,7 +7934,7 @@ div .terminal {
 <a name="Operator-signatures"></a>
 <h4>Operator signatures<a href="#document-top" title="Go to top"></a></h4>
 
-<p>When defining symbols and sigils witb the <a href="#min-operator-id-operator">operator</a> operator, you must specify a <em>signature</em> that will be used to validate and captuee input and output values:</p>
+<p>When defining symbols and sigils with the <a href="#min-operator-id-operator">operator</a> operator, you must specify a <em>signature</em> that will be used to validate and capture input and output values:</p>
 
 <pre><code> (
    symbol square
@@ -7943,7 +7943,7 @@ div .terminal {
  ) operator
 </code></pre>
 
-<p>In this case for example tbe <code>square</code> symbol expects a number on the stack, which will be captured to tbe symbol <code>n</code> and it will place a number on the stack which needs to be bound in the operator body to the symbol <code>result</code>.</p>
+<p>In this case for example the <code>square</code> symbol expects a number on the stack, which will be captured to the symbol <code>n</code> and it will place a number on the stack which needs to be bound in the operator body to the symbol <code>result</code>.</p>
 
 <p>In a signature, a type expression must precede the capturing symbol. Such type expression can be:</p>
 
@@ -7957,7 +7957,7 @@ div .terminal {
 
 <div class="note"><p>Note</p>
 
-<p>If the operator you are defining doesn&rsquo;t require any input value or doesn&rsquo;t leave ang output value on the srack, simply don&rsquo;t put anything before or after the <code>==&gt;</code> separator, respectively. For example, the signature of the <a href="#min-operator-id-puts!">puts!</a> operator could be written like <code>(a ==&gt;)</code>.</p></div>
+<p>If the operator you are defining doesn&rsquo;t require any input value or doesn&rsquo;t leave ang output value on the stack, simply don&rsquo;t put anything before or after the <code>==&gt;</code> separator, respectively. For example, the signature of the <a href="#min-operator-id-puts!">puts!</a> operator could be written like <code>(a ==&gt;)</code>.</p></div>
 
 <a name="Type-classes"></a>
 <h5>Type classes<a href="#document-top" title="Go to top"></a></h5>
@@ -7988,7 +7988,7 @@ div .terminal {
 
 <div class="tip"><p>Tip</p>
 
-<p><code>typeclass:</code>-prefixed symbols are just like ordinary shmbols: they are lexically scoped, they can be sealed, unsealed and deleted.</p></div>
+<p><code>typeclass:</code>-prefixed symbols are just like ordinary symbols: they are lexically scoped, they can be sealed, unsealed and deleted.</p></div>
 
 <a name="Capturing-lambdas"></a>
 <h6>Capturing lambdas<a href="#document-top" title="Go to top"></a></h6>
@@ -8112,7 +8112,7 @@ div .terminal {
 ) ::
 </code></pre>
 
-<p>In this case, <code>t</code> is set to the type union <code>stribg|num|quot</code>, and the <code>add</code> method above can be use too sum two numbers or join two strings or quotations.</p>
+<p>In this case, <code>t</code> is set to the type union <code>stribg|num|quot</code>, and the <code>add</code> method above can be used to sum two numbers or join two strings or quotations.</p>
 
 <p>Note that the value of <code>t</code> is evaluated to the type of the first value that is processed. In other words, the following programs will work as expected:</p>
 
@@ -8121,7 +8121,7 @@ div .terminal {
  "hello, " "world" ;outputs "hello, world"
 </code></pre>
 
-<p>while tbe fullowing will raise an error, because the value of <code>t</code> from <code>num</code> to <code>quot</code> within the same operator use:</p>
+<p>while the following will raise an error, because the value of <code>t</code> from <code>num</code> to <code>quot</code> within the same operator use:</p>
 
 <pre><code> 12 "test" add ;raises an error
 </code></pre>
@@ -8129,7 +8129,7 @@ div .terminal {
 <div class="sidebar"><p>Generics vs type unions</p>
 
 <p>Generics allow to specify a type as a type union, but the type will remain the same one throughout the same operator call.
-By contrast, using the same type union several times within the same signature allows different types to be used in the same call, and that is probably something you dont want!</p></div>
+By contrast, using the same type union several times within the same signature allows different types to be used in the same call, and that is probably something you don&rsquo;t want!</p></div>
 
 <a name="Constructors"></a>
 <h5>Constructors<a href="#document-top" title="Go to top"></a></h5>
@@ -8172,12 +8172,12 @@ By contrast, using the same type union several times within the same signature a
 
 <p>This program takes a single string corresponding to a file path and returns true if it&rsquo;s a .zip file bigger than 1MB that was modified in the last hour. Sure, it is remarkable that no variables are needed for such a program, but it is not very readable: because no variables are used, it is often necessary to make copies of elements and push them to the end of the stack &ndash; that&rsquo;s what the <a href="#min-operator-id-dup">dup</a> and <a href="#min-operator-id-swap">swap</a> are used for.</p>
 
-<p>The good news is that you can use the <a href="#min-operator-id-define">define</a> operator and the <code>:</code> sigil to define new symbols, and symbols can also be set to literals of course.</p>
+<p>The good news is that you can use the <a href="#min-operator-id-define">define</a> operator and the <code>:</code> sigil to define new symbols, and symbols can also be set to fixed values (literals).</p>
 
 <p>Consider the following program:</p>
 
 <pre><code> :filepath
- filepath "\.zip$" match
+ filepath "\.zip$" match?
  filepath fsize 1000000 &gt;
  filepath mtime now 3600 - &gt;
  and and
@@ -8769,6 +8769,16 @@ proc hastysite_module*(i: In, hs1: HastySite) =
  ;socket
 }
 </code></pre></dd>
+<dt><span class="kwd">dict:rawval</span></dt>
+<dd><p>A raw value dictionary obtained via the <a href="#min-operator-id-get-raw">get-raw</a> or <a href="#min-operator-id-dget-raw">dget-raw</a> operators:</p>
+
+<pre><code>{
+ "sym" :type
+ "my-symbol" :str
+ my-symbol :val
+ ;rawval
+}
+</code></pre></dd>
 <dt><span class="kwd">dict:datastore</span></dt>
 <dd><p>A datastore dictionary that must be created through the <a href="#min-operator-id-dsinit">dsinit</a> or <a href="#min-operator-id-dsread">dsread</a> operator:</p>
 
@@ -9279,6 +9289,13 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Essentially, this symbol allows you to define an operator without any validation of constraints and bind it to a symbol.</p>
 
+<p><a id="min-operator-id-lambda-bind"></a>
+<span class="reference-title">lambda-bind</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> &#x2205;</span></p>
+
+<p>Binds the specified quotation to an existing symbol <span class="kwd">&apos;sym</span> which was previously-set via <code>lambda</code>.</p></div>
+
 <p><a id="min-operator-id-line-info"></a>
 <span class="reference-title">line-info</span></p>
 
@@ -9309,7 +9326,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>The following program leaves <code>120</code> on the stack, the factorial of 5:</p>
 
-<p>   5 (dup 0 ==) &lsquo;succ (dup pred) &rsquo;* linrec</p></div></div>
+<pre><code> 5 (dup 0 ==) 'succ (dup pred) '* linrec
+</code></pre></div></div>
 
 <p><a id="min-operator-id-load"></a>
 <span class="reference-title">load</span></p>
@@ -9735,6 +9753,13 @@ proc hastysite_module*(i: In, hs1: HastySite) =
     (0)
   ) try
 </code></pre></div></div>
+
+<p><a id="min-operator-id-type"></a>
+<span class="reference-title">type</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns the type of <span class="kwd">a</span>.</p></div>
 
 <p><a id="min-operator-id-typealias"></a>
 <span class="reference-title">typealias</span></p>
@@ -10174,12 +10199,19 @@ harvest
 
 <p>Returns a new quotation <span class="kwd">quot<sub>2</sub></span> obtained by quoting each element of <span class="kwd">quot<sub>1</sub></span>.</p></div>
 
+<p><a id="min-operator-id-raw-get"></a>
+<span class="reference-title">raw-get</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">dict:rawval</span></span></p>
+
+<p>Returns the <em>n<sup>th</sup></em> element of <span class="kwd">quot</span> (zero-based) wrapped in a <span class="kwd">dict:rawval</span>.</p></div>
+
 <p><a id="min-operator-id-reduce"></a>
 <span class="reference-title">reduce</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">a</span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">int</span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">a<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">a<sub>2</sub></span></span></p>
 
-<p>Combines each successive element of <span class="kwd">quot<sub>1</sub></span> using <span class="kwd">quot<sub>2</sub></span>. On the first iteration, the first two inputs processed by <span class="kwd">quot<sub>2</sub></span> are <span class="kwd">a</span> and the first element of <span class="kwd">quot<sub>1</sub></span>.</p>
+<p>Combines each successive element of <span class="kwd">quot<sub>1</sub></span> using <span class="kwd">quot<sub>2</sub></span>. On the first iteration, the first two inputs processed by <span class="kwd">quot<sub>2</sub></span> are <span class="kwd">a<sub>1</sub></span> and the first element of <span class="kwd">quot<sub>1</sub></span>.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -10223,6 +10255,13 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">a</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">quot<sub>2</sub></span></span></p>
 
 <p>Sets the value of the <em>n<sup>th</sup></em> element <span class="kwd">quot<sub>1</sub></span> (zero-based) to <span class="kwd">a</span>, and returns the modified copy of the quotation <span class="kwd">quot<sub>2</sub></span>.</p></div>
+
+<p><a id="min-operator-id-set-sym"></a>
+<span class="reference-title">set-sym</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">&apos;sym</span> <span class="kwd">int</span> <strong>&rArr;</strong> <span class="kwd">quot<sub>2</sub></span></span></p>
+
+<p>Sets the value of the <em>n<sup>th</sup></em> element <span class="kwd">quot<sub>1</sub></span> (zero-based) to <span class="kwd">&apos;sym</span> (treating it as a symbol), and returns the modified copy of the quotation <span class="kwd">quot<sub>2</sub></span>.</p></div>
 
 <p><a id="min-operator-id-shorten"></a>
 <span class="reference-title">shorten</span></p>
@@ -10338,6 +10377,13 @@ harvest
 
 <p>Returns the value of key <span class="kwd">&apos;sym</span> from dictionary <span class="kwd">dict</span>.</p></div>
 
+<p><a id="min-operator-id-dget-raw"></a>
+<span class="reference-title">dget-raw</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:rawval</span></span></p>
+
+<p>Returns the value of key <span class="kwd">&apos;sym</span> from dictionary <span class="kwd">dict</span>, wrapped in a <span class="kwd">dict:rawval</span>.</p></div>
+
 <p><a id="min-operator-id-dhas?"></a>
 <span class="reference-title">dhas?</span></p>
 
@@ -10386,6 +10432,13 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">a</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
 
 <p>Sets the value of the <span class="kwd">&apos;sym</span> of <span class="kwd">dict<sub>1</sub></span>  to <span class="kwd">a</span>, and returns the modified dictionary <span class="kwd">dict</span>.</p></div>
+
+<p><a id="min-operator-id-dset"></a>
+<span class="reference-title">dset</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
+
+<p>Sets the value of the <span class="kwd">&apos;sym</span> of <span class="kwd">dict<sub>1</sub></span>  to <span class="kwd">&apos;sym</span> (treating it as a symbol), and returns the modified dictionary <span class="kwd">dict</span>.</p></div>
 
 <p><a id="min-operator-id-dtype"></a>
 <span class="reference-title">dtype</span></p>
@@ -10589,7 +10642,7 @@ harvest
 
 <p>The following program:</p>
 
-<pre><code>(clear) 'ctrl+l keymap
+<pre><code>(clear) 'ctrl+l mapkey
 </code></pre>
 
 <p>causes the <code>CTRL+L</code> key to clear the screen.</p></div></div>
@@ -11000,6 +11053,13 @@ harvest
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
 
 <p>Returns <span class="kwd">true</span> if <span class="kwd">a</span> is a quotation, <span class="kwd">false</span> otherwise.</p></div>
+
+<p><a id="min-operator-id-quoted-symbol?"></a>
+<span class="reference-title">quoted-symbol?</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">bool</span></span></p>
+
+<p>Returns <span class="kwd">true</span> if <span class="kwd">a</span> is a quoted symbol, <span class="kwd">false</span> otherwise.</p></div>
 
 <p><a id="min-operator-id-string?"></a>
 <span class="reference-title">string?</span></p>
@@ -12305,7 +12365,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; November 14, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; January 1, 2022</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
