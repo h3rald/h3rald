@@ -7506,6 +7506,33 @@ pre code {
     </li>
    </ul>
    </li>
+   <li><a href="#assets-(LiteStore-Assets)">assets (LiteStore Assets)</a>
+   <ul>
+    <li><a href="#OPTIONS-assets">OPTIONS assets</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-assets/:id">OPTIONS assets/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-assets/:folder/">OPTIONS assets/:folder/</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-assets">GET assets</a></li>
+    <li><a href="#GET-assets/:folder/">GET assets/:folder/</a></li>
+    <li><a href="#GET-assets/:id">GET assets/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a>
+</li>
+    </ul>
+    </li>
+   </ul>
+   </li>
    <li><a href="#tags-(LiteStore-Tags)">tags (LiteStore Tags)</a>
    <ul>
     <li><a href="#OPTIONS-tags">OPTIONS tags</a>
@@ -7605,6 +7632,33 @@ pre code {
     <li><a href="#*-stores/:id/*">* stores/:id/*</a>
     <ul>
      <li><a href="#Examples">Examples</a>
+</li>
+    </ul>
+    </li>
+   </ul>
+   </li>
+   <li><a href="#assets-(LiteStore-Assets)">assets (LiteStore Assets)</a>
+   <ul>
+    <li><a href="#OPTIONS-assets">OPTIONS assets</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-assets/:id">OPTIONS assets/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#OPTIONS-assets/:folder/">OPTIONS assets/:folder/</a>
+    <ul>
+     <li><a href="#Example">Example</a></li>
+    </ul>
+    </li>
+    <li><a href="#GET-assets">GET assets</a></li>
+    <li><a href="#GET-assets/:folder/">GET assets/:folder/</a></li>
+    <li><a href="#GET-assets/:id">GET assets/:id</a>
+    <ul>
+     <li><a href="#Example">Example</a>
 </li>
     </ul>
     
@@ -7959,9 +8013,9 @@ pre code {
 <p>The easiest way to get LiteStore is by downloading one of the prebuilt binaries from the [Github Release Page][release]:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/litestore/releases/download/v1.11.0/litestore_v1.11.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/v1.11.0/litestore_v1.11.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/litestore/releases/download/v1.11.0/litestore_v1.11.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.11.0/litestore_1.11.0_macosx_x64.zip">LiteStore for Mac OS X (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.11.0/litestore_1.11.0_windows_x64.zip">LiteStore for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/litestore/releases/download/1.11.0/litestore_1.11.0_linux_x64.zip">LiteStore for Linux (x64)</a></li>
 </ul>
 
 
@@ -7972,11 +8026,11 @@ pre code {
 
 <p>Just pull the latest version:</p>
 
-<p><span class="cmd">docker pull h3rald/litestore:vv1.11.0</span></p>
+<p><span class="cmd">docker pull h3rald/litestore:v1.11.0</span></p>
 
 <p>then start a container to run the image on port 9500:</p>
 
-<p><span class="cmd">docker run -p 9500:9500 h3rald/litestore:vv1.11.0 -a:0.0.0.0</span></p>
+<p><span class="cmd">docker run -p 9500:9500 h3rald/litestore:v1.11.0 -a:0.0.0.0</span></p>
 
 <div class="tip"><p>Tip</p>
 
@@ -9614,6 +9668,102 @@ Access-Control-Allow-Origin: *
 Server: LiteStore/1.0.3
 </code></pre>
 
+<a name="assets-(LiteStore-Assets)"></a>
+<h3>assets (LiteStore Assets)<a href="#document-top" title="Go to top"></a></h3>
+
+<div class="note"><p>API v8 Required</p>
+
+<p>This resource has been introduced in version 5 of the LiteStore API.</p></div>
+
+<p>Assets represents another way to query LiteStore Documents. All documents can also be retrieved via <code>/assets/</code> instead of docs, but when doing so:
+* a non-raw version of the document will always be returned
+* when querying a folder without specifying a document ID, LiteStore will attempt to retrieve an <code>index.html</code> or <code>index.htm</code> file within that folder</p>
+
+<p>This is particularly useful when your documents have been imported from the filesystem and you need to effectively serve files.</p>
+
+<a name="OPTIONS-assets"></a>
+<h4>OPTIONS assets<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS 'http://127.0.0.1:9500/assets'
+HTTP/1.1 200 OK
+Content-Length: 0
+Access-Control-Allow-Methods: GET,OPTIONS
+Allow: GET,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+</code></pre>
+
+<a name="OPTIONS-assets/:id"></a>
+<h4>OPTIONS assets/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>curl -i -X OPTIONS 'http://127.0.0.1:9500/assets/test.json' 
+HTTP/1.1 200 OK
+Content-Length: 0
+Access-Control-Allow-Methods: GET,OPTIONS
+Allow: GET,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+</code></pre>
+
+<a name="OPTIONS-assets/:folder/"></a>
+<h4>OPTIONS assets/:folder/<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS 'http://127.0.0.1:9500/assets/test/'
+HTTP/1.1 200 OK
+Content-Length: 0
+Access-Control-Allow-Methods: GET,OPTIONS
+Allow: GET,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+</code></pre>
+
+<a name="GET-assets"></a>
+<h4>GET assets<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the file <code>assets/index.html</code> or <code>assets/index.htm</code> if not found.</p>
+
+<a name="GET-assets/:folder/"></a>
+<h4>GET assets/:folder/<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the file <code>assets/:folder/index.html</code> or <code>assets/:folder/index.htm</code> if not found.</p>
+
+<a name="GET-assets/:id"></a>
+<h4>GET assets/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the specified document. The response is returned in the document&rsquo;s content type (even for JSON files).</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i 'http://127.0.0.1:9500/docs/test.txt'
+HTTP/1.1 200 OK
+Content-Length: 24
+Content-Type: text/plain
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+
+This is a test document.
+</code></pre>
+
 <a name="tags-(LiteStore-Tags)"></a>
 <h3>tags (LiteStore Tags)<a href="#document-top" title="Go to top"></a></h3>
 
@@ -10157,6 +10307,102 @@ $ curl -i http://localhost:9500/stores/vehicles/tags/
 <pre><code>$ curl -i -X DELETE "http://127.0.0.1:9200/stores/vehicles/docs/AA457DB"
 </code></pre>
 
+<a name="assets-(LiteStore-Assets)"></a>
+<h3>assets (LiteStore Assets)<a href="#document-top" title="Go to top"></a></h3>
+
+<div class="note"><p>API v8 Required</p>
+
+<p>This resource has been introduced in version 5 of the LiteStore API.</p></div>
+
+<p>Assets represents another way to query LiteStore Documents. All documents can also be retrieved via <code>/assets/</code> instead of docs, but when doing so:
+* a non-raw version of the document will always be returned
+* when querying a folder without specifying a document ID, LiteStore will attempt to retrieve an <code>index.html</code> or <code>index.htm</code> file within that folder</p>
+
+<p>This is particularly useful when your documents have been imported from the filesystem and you need to effectively serve files.</p>
+
+<a name="OPTIONS-assets"></a>
+<h4>OPTIONS assets<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS 'http://127.0.0.1:9500/assets'
+HTTP/1.1 200 OK
+Content-Length: 0
+Access-Control-Allow-Methods: GET,OPTIONS
+Allow: GET,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+</code></pre>
+
+<a name="OPTIONS-assets/:id"></a>
+<h4>OPTIONS assets/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>curl -i -X OPTIONS 'http://127.0.0.1:9500/assets/test.json' 
+HTTP/1.1 200 OK
+Content-Length: 0
+Access-Control-Allow-Methods: GET,OPTIONS
+Allow: GET,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+</code></pre>
+
+<a name="OPTIONS-assets/:folder/"></a>
+<h4>OPTIONS assets/:folder/<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Returns the allowed HTTP verbs for this resource.</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i -X OPTIONS 'http://127.0.0.1:9500/assets/test/'
+HTTP/1.1 200 OK
+Content-Length: 0
+Access-Control-Allow-Methods: GET,OPTIONS
+Allow: GET,OPTIONS
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+</code></pre>
+
+<a name="GET-assets"></a>
+<h4>GET assets<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the file <code>assets/index.html</code> or <code>assets/index.htm</code> if not found.</p>
+
+<a name="GET-assets/:folder/"></a>
+<h4>GET assets/:folder/<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the file <code>assets/:folder/index.html</code> or <code>assets/:folder/index.htm</code> if not found.</p>
+
+<a name="GET-assets/:id"></a>
+<h4>GET assets/:id<a href="#document-top" title="Go to top"></a></h4>
+
+<p>Retrieves the specified document. The response is returned in the document&rsquo;s content type (even for JSON files).</p>
+
+<a name="Example"></a>
+<h5>Example<a href="#document-top" title="Go to top"></a></h5>
+
+<pre><code>$ curl -i 'http://127.0.0.1:9500/docs/test.txt'
+HTTP/1.1 200 OK
+Content-Length: 24
+Content-Type: text/plain
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Origin: *
+Server: LiteStore/1.12.0
+
+This is a test document.
+</code></pre>
+
 <a name="Nim-API-Reference"></a>
 <h2>Nim API Reference<a href="#document-top" title="Go to top"></a></h2>
 
@@ -10604,7 +10850,7 @@ runForever()
 
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; September 12, 2021</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; August 19, 2022</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
