@@ -9,7 +9,7 @@ content-type: project
 active: true
 ci: true
 download: "https://github.com/h3rald/mn/releases/download/"
-version: 0.2.0
+version: 0.3.0
 docs: /mn/Mn_DeveloperGuide.htm
 -----
 
