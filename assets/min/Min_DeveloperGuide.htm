@@ -7499,9 +7499,13 @@ div .terminal {
 <a name="-d:ssl"></a>
 <h5>-d:ssl<a href="#document-top" title="Go to top"></a></h5>
 
-<p>If the <strong>-d:ssl</strong> flag is specified when compiling, min will be built with SSL support, so it will be possible to:
-* perform HTTPS requests with the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>.
-* use all the cryptographic symbols defined in the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>.</p>
+<p>If the <strong>-d:ssl</strong> flag is specified when compiling, min will be built with SSL support, so it will be possible to:</p>
+
+<ul>
+<li>perform HTTPS requests with the <a href="#&lt;code>http&lt;/code>-Module">http Module</a>.</li>
+<li>use all the cryptographic symbols defined in the <a href="#&lt;code>crypto&lt;/code>-Module">crypto Module</a>.</li>
+</ul>
+
 
 <p>If this flag is not specified:</p>
 
@@ -7574,7 +7578,7 @@ div .terminal {
 
 <div class="min-terminal"><p><span class="prompt">$</span> cat myfile.min | min</p></div>
 
-<div class="tip"><p>You can enable <em>development mode</em> (runtime checks and validations) by spacifying <code>-d</code> (<code>--dev</code>) when running a min program. If development mode is not enabled, min programs run faster.</p></div>
+<div class="tip"><p>You can enable <em>development mode</em> (runtime checks and validations) by specifying <code>-d</code> (<code>--dev</code>) when running a min program. If development mode is not enabled, min programs run faster.</p></div>
 
 <a name="Compiling-a-min-Program"></a>
 <h3>Compiling a min Program<a href="#document-top" title="Go to top"></a></h3>
@@ -7614,7 +7618,7 @@ div .terminal {
 <li>If you are using <a href="https://code.visualstudio.com/">Visual Studio Code</a>, you can install the official <a href="https://marketplace.visualstudio.com/items?itemName=h3rald.vscode-min-lang">min extension</a> which provides syntax highlighting support, code folding, and auto-indentation.</li>
 <li>If you are using <a href="https://www.vim.org">Vim</a>, a <a href="https://github.com/h3rald/min/blob/master/min.vim">min.vim</a> syntax definition file is available in the min repo.</li>
 <li>If you are using <a href="https://www.sublimetext.com/3">Sublime Text 3</a>, Rafael Carrasco created a min syntax definition file that is available <a href="https://github.com/rscarrasco/min-sublime-syntax">here</a>.</li>
-<li>If you are hsing <a href="https://notepad-plus-plus.org">Notepad++</a>, a <a href="https://github.com/h3rald/min/blob/master/minNotepad++.xml">Notepad++ language file</a> contributed by baykus871 is available in tbe repo.</li>
+<li>If you are using <a href="https://notepad-plus-plus.org">Notepad++</a>, a <a href="https://github.com/h3rald/min/blob/master/minNotepad++.xml">Notepad++ language file</a> contributed by baykus871 is available in the repo.</li>
 </ul>
 
 
@@ -7675,8 +7679,10 @@ div .terminal {
 <dd>A series of characters wrapped in double quotes: &ldquo;Hello, World!&rdquo;.</dd>
 <dt>quotation (quot)</dt>
 <dd>A list of elements, which may also contain symbols. Quotations can be used to create heterogenous lists of elements of any data type, and also to create a block of code that will be evaluated later on (quoted program). Example: (1 2 3 + *)</dd>
+<dt>command (cmd)</dt>
+<dd>A command string wrapped in square brackets that will be immediately executed on the current shell and converted into the command standard output. Example: <code>[ls -a]</code></dd>
 <dt>dictionary (dict)</dt>
-<dd><p>A key/value table. Dictionaries are implemented as an immediately-dequoted quotation, are enclosed in curly braces, and are represented by their symbol definitions. Note that dictionary keys must start with <code>:</code>and be followed by a double-quoted string, or a single word (which can be written witbout double quotes). The <a href="#&lt;code>dict&lt;/code>-Module">dict Module</a> provides some operators on dictionaries.</p>
+<dd><p>A key/value table. Dictionaries are implemented as an immediately-dequoted quotation, are enclosed in curly braces, and are represented by their symbol definitions. Note that dictionary keys must start with <code>:</code>and be followed by a double-quoted string, or a single word (which can be written without double quotes). The <a href="#&lt;code>dict&lt;/code>-Module">dict Module</a> provides some operators on dictionaries.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -7734,7 +7740,7 @@ div .terminal {
 <li>The <code>ls</code> symbol is pushed on the stack, it consumes the string already on the stack and returns a quotation containing all files and directories within the current directory.</li>
 <li>The quotation <code>(ftype 'file ==)</code> is pushed on the stack. It is treated exactly like a list of data and it is not evaluated.</li>
 <li>The <code>filter</code> symbol is pushed on the stack. This symbol takes two quotations as input, and applies the result of the first quotation on the stack (<code>(ftype "file" ==)</code>) to all elements of the second quotation of the stack (the list of files and directories), returning a new quotation containing only those elements of the second quotation on the stack that satisfy the result of the first quotation. In this case, it returns a new quotation containing only files.</li>
-<li><code>'&gt;</code> is pushed on the stack. The <code>'</code> sigil can be used instead of the <code>quote</code> symbol to quote a single symbol, <code>&lt;</code> in this case. In other words, it is instantly evaluated to the quotation <code>(&gt;)</code>.</li>
+<li><code>'&gt;</code> is pushed on the stack. The <code>'</code> sigil can be used instead of the <code>quote</code> symbol to quote a single symbol, <code>&gt;</code> in this case. In other words, it is instantly evaluated to the quotation <code>(&gt;)</code>.</li>
 <li>The symbol <code>sort</code> is pushed on the stack. This symbol, like <code>filter</code>, takes two quotations as input, and applies the first quotation to each element of the second quotation, effectively sorting each element of the second quotation using the predicate expressed by the first quotation. In this case, all files are sorted by name in ascending order.</li>
 </ol>
 
@@ -8165,7 +8171,7 @@ By contrast, using the same type union several times within the same signature a
 <p>Being a concatenative language, min does not really need named parameters or variables: symbols just pop elements off the main stack in order, and that&rsquo;s normally enough. There is however one small problem with the traditional concatenative paradigm; consider the following program for example:</p>
 
 <pre><code> dup dup
- "\.zip$" match 
+ "\.zip$" match?
  swap fsize 1000000 &gt; and 
  swap mtime now 3600 - &gt;
 </code></pre>
@@ -8537,12 +8543,12 @@ By contrast, using the same type union several times within the same signature a
 
 <p>To create a new module, simply create a file containing your operator definitions implemented using either the <a href="#min-operator-id-operator">operator</a> operator or the <a href="#min-operator-id-lambda">lambda</a> operator</p>
 
-<pre><code>(dup *)             ^pow2
-(dup dup * *)       ^pow3
-(dup dup dup * * *) ^pow4
+<pre><code>(dup *)       ^pow2
+(dup dup * *) ^pow3
+(dup * dup *) ^pow4
 </code></pre>
 
-<p>Save your code to a file (e.g. <em>quickpows.min</em>) and you can use it in other nim files using the <a href="#min-operator-id-require">require</a> operator and the <a href="#min-operator-id-import">import</a> (if you want to import the operators in the current scope):</p>
+<p>Save your code to a file (e.g. <em>quickpows.min</em>) and you can use it in other Nim files using the <a href="#min-operator-id-require">require</a> operator and the <a href="#min-operator-id-import">import</a> (if you want to import the operators in the current scope):</p>
 
 <pre><code>'quickpows require :qp
 
@@ -9147,8 +9153,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <ul>
 <li>If <span class="kwd">a</span> is <span class="kwd">true</span>, it is converted to <code>1.0</code>.</li>
 <li>If <span class="kwd">a</span> is <span class="kwd">false</span>, it is converted to <code>0.0</code>.</li>
-<li>If <span class="kwd">a</span> is <span class="kwd">null</span>, it is converted to <code>0.0</code>
-.  * If <span class="kwd">a</span> is a integer, it is converted to float value.</li>
+<li>If <span class="kwd">a</span> is <span class="kwd">null</span>, it is converted to <code>0.0</code>.</li>
+<li>If <span class="kwd">a</span> is a integer, it is converted to float value.</li>
 <li>If <span class="kwd">a</span> is a float, no conversion is performed.</li>
 <li>If <span class="kwd">a</span> is a string, it is parsed as a float value.</li>
 </ul>
@@ -9271,7 +9277,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span></span></p>
 
-<p>Assming that <span class="kwd">&apos;sym</span> is a formatted like <em>dictionary</em>/<em>symbol</em>, calls <em>symbol</em> defined in <em>dictionary</em> (note that this also works for nested dictionaries.</p>
+<p>Assuming that <span class="kwd">&apos;sym</span> is a formatted like <em>dictionary</em>/<em>symbol</em>, calls <em>symbol</em> defined in <em>dictionary</em> (note that this also works for nested dictionaries.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -9288,6 +9294,12 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p>Defines a new symbol <span class="kwd">&apos;sym</span>, containing the specified quotation <span class="kwd">quot</span>. Unlike with <code>define</code>, in this case <span class="kwd">quot</span> will not be quoted, so its values will be pushed on the stack when the symbol <span class="kwd">&apos;sym</span> is pushed on the stack.</p></div>
 
 <p>Essentially, this symbol allows you to define an operator without any validation of constraints and bind it to a symbol.</p>
+
+<p><span class="reference-title">lambdabind</span></p>
+
+<div class="operator"><p><span class="kwd"> lambdabind <strong>&rArr;</strong> lambda-bind</span></p>
+
+<p>See <a href="#min-operator-id-lambda-bind">lambda-bind</a>.</p></div>
 
 <p><a id="min-operator-id-lambda-bind"></a>
 <span class="reference-title">lambda-bind</span></p>
@@ -9369,7 +9381,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
 
-<p>Returns the current log level (debug, info, notive, warn, error or fatal).</p></div>
+<p>Returns the current log level (debug, info, notice, warn, error or fatal).</p></div>
 
 <p><a id="min-operator-id-operator"></a>
 <span class="reference-title">operator</span></p>
@@ -9383,7 +9395,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <ul>
 <li>A symbol identifying the type of operator to define (<code>symbol</code>, <code>sigil</code>, or <code>typeclass</code>).</li>
 <li>A symbol identifying the name of the operator.</li>
-<li>A quotation defining the signature of the operatorm containing input and output values identified by their type and a capturing symbol, separated by the <code>==&gt;</code> symbol.</li>
+<li>A quotation defining the signature of the operator, containing input and output values identified by their type and a capturing symbol, separated by the <code>==&gt;</code> symbol.</li>
 <li>A quotation identifying the body of the operator.</li>
 </ul>
 
@@ -9393,7 +9405,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <ul>
 <li>If in development mode (<code>-d</code> or <code>--dev</code> flag specified at run time), both input and output values are checked against a type (like when using the <code>expect</code> operator <em>and</em> automatically captured in a symbol that can be referenced in the operator body quotation.</li>
 <li>The full signature of the operator is declared, making the resulting code easier to understand at quick glance.</li>
-<li>An exception is automatically raised if the operator body pollutes the stack by adding or removing elementa from the stack (besides adding the declared output values).</li>
+<li>An exception is automatically raised if the operator body pollutes the stack by adding or removing elements from the stack (besides adding the declared output values).</li>
 <li>It is possible to use the <code>return</code> symbol within the body quotation to immediately stop the evaluation of the body quotation and automatically push the output values on the stack.</li>
 </ul>
 
@@ -9500,6 +9512,13 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> (<span class="kwd">a</span>)</span></p>
 
 <p>Wraps <span class="kwd">a</span> in a quotation.</p></div>
+
+<p><a id="min-operator-id-quotecmd"></a>
+<span class="reference-title">quotecmd</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">str</span> <strong>&rArr;</strong> (<span class="kwd">sym</span>)</span></p>
+
+<p>Creates a command with the value of <span class="kwd">str</span> and wraps it in a quotation.</p></div>
 
 <p><a id="min-operator-id-quotesym"></a>
 <span class="reference-title">quotesym</span></p>
@@ -9870,6 +9889,12 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Duplicates the first element on the stack.</p></div>
 
+<p><span class="reference-title">getstack</span></p>
+
+<div class="operator"><p><span class="kwd"> getstack <strong>&rArr;</strong> get-stack</span></p>
+
+<p>See <a href="#min-operator-id-get-stack">get-stack</a>.</p></div>
+
 <p><a id="min-operator-id-get-stack"></a>
 <span class="reference-title">get-stack</span></p>
 
@@ -9889,7 +9914,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">a<sub>1</sub></span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span> <span class="kwd">a<sub>1</sub></span></span></p>
 
-<p>Applies each quotation contained in the first element to each subsequent corresponding element.</p>
+<p>Removes the first element from the stack, dequotes it, and restores the second element.</p>
 
 <div class="sidebar"><p>Example</p>
 
@@ -9939,6 +9964,12 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 
 <p>Moves the third and second element into second and third position and moves the first element into third position.</p></div>
 
+<p><span class="reference-title">setstack</span></p>
+
+<div class="operator"><p><span class="kwd"> setstack <strong>&rArr;</strong> set-stack</span></p>
+
+<p>See <a href="#min-operator-id-set-stack">set-stack</a>.</p></div>
+
 <p><a id="min-operator-id-set-stack"></a>
 <span class="reference-title">set-stack</span></p>
 
@@ -9949,9 +9980,9 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <p><a id="min-operator-id-sip"></a>
 <span class="reference-title">sip</span></p>
 
-<div class="operator"><p><span class="kwd"> <span class="kwd">a<sub>1</sub></span> (<span class="kwd">a<sub>2</sub></span>) <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span> <span class="kwd">a<sub>1</sub></span></span></p>
+<div class="operator"><p><span class="kwd"> <span class="kwd">quot<sub>1</sub></span> <span class="kwd">quot<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">a<sub>*</sub></span> <span class="kwd">quot<sub>1</sub></span></span></p>
 
-<p>Saves the <span class="kwd">a<sub>1</sub></span>, dequotes <span class="kwd">a<sub>2</sub></span>, and restores <span class="kwd">a<sub>1</sub></span>.</p></div>
+<p>Saves the <span class="kwd">quot<sub>1</sub></span>, dequotes <span class="kwd">quot<sub>2</sub></span>, and restores <span class="kwd">quot<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-spread"></a>
 <span class="reference-title">spread</span></p>
@@ -10424,7 +10455,7 @@ harvest
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <strong>&rArr;</strong> (<span class="kwd">a<sub>*</sub></span>)</span></p>
 
-<p>Returns a quotation containing all the keys (odd items) and values (even items) of dictiionary <span class="kwd">dict</span>.</p></div>
+<p>Returns a quotation containing all the keys (odd items) and values (even items) of dictionary <span class="kwd">dict</span>.</p></div>
 
 <p><a id="min-operator-id-dset"></a>
 <span class="reference-title">dset</span></p>
@@ -10433,8 +10464,8 @@ harvest
 
 <p>Sets the value of the <span class="kwd">&apos;sym</span> of <span class="kwd">dict<sub>1</sub></span>  to <span class="kwd">a</span>, and returns the modified dictionary <span class="kwd">dict</span>.</p></div>
 
-<p><a id="min-operator-id-dset"></a>
-<span class="reference-title">dset</span></p>
+<p><a id="min-operator-id-dset-sym"></a>
+<span class="reference-title">dset-sym</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">dict</span> <span class="kwd">&apos;sym</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict</span></span></p>
 
@@ -10682,6 +10713,12 @@ harvest
 
 <p>Prints <span class="kwd">str</span> to STDOUT without printing a new line (<span class="kwd">str</span> must contain only one character).</p></div>
 
+<p><span class="reference-title">read</span></p>
+
+<div class="operator"><p><span class="kwd"> read <strong>&rArr;</strong> fread</span></p>
+
+<p>See <a href="#min-operator-id-fread">fread</a>.</p></div>
+
 <p><a id="min-operator-id-type"></a>
 <span class="reference-title">type</span></p>
 
@@ -10704,12 +10741,18 @@ harvest
 </ul>
 </div></div>
 
-<p><a id="min-operator-id-warning"></a>
-<span class="reference-title">warning</span></p>
+<p><a id="min-operator-id-warn"></a>
+<span class="reference-title">warn</span></p>
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">a</span> <strong>&rArr;</strong> <span class="kwd">a</span></span></p>
 
-<p>Prints <span class="kwd">a</span> and a new line to STDERR, if logging level is set to <span class="kwd">warning</span> or lower.</p></div>
+<p>Prints <span class="kwd">a</span> and a new line to STDERR, if logging level is set to <span class="kwd">warn</span> or lower.</p></div>
+
+<p><span class="reference-title">write</span></p>
+
+<div class="operator"><p><span class="kwd"> write <strong>&rArr;</strong> fwrite</span></p>
+
+<p>See <a href="#min-operator-id-fwrite">fwrite</a>.</p></div>
 
 <a name="<code>fs</code>-Module"></a>
 <h3><code>fs</code> Module<a href="#document-top" title="Go to top"></a></h3>
@@ -11104,12 +11147,6 @@ harvest
 
 <p>See <a href="#min-operator-id-apply-interpolate">apply-interpolate</a>.</p></div>
 
-<p><span class="reference-title">=~</span></p>
-
-<div class="operator"><p><span class="kwd"> =~ <strong>&rArr;</strong> regex</span></p>
-
-<p>See <a href="#min-operator-id-regex">regex</a>.</p></div>
-
 <p><a id="min-operator-id-apply-interpolate"></a>
 <span class="reference-title">apply-interpolate</span></p>
 
@@ -11272,7 +11309,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">str<sub>2</sub></span> <span class="kwd">quot</span> <strong>&rArr;</strong> <span class="kwd">str<sub>3</sub></span></span></p>
 
-<p>Returns a copy of <span class="kwd">str<sub>1</sub></span> containing all occurrences of <span class="kwd">str<sub>2</sub></span> replaced by applying <span class="kwd">quot</span> to each quotation correponding to each match.</p>
+<p>Returns a copy of <span class="kwd">str<sub>1</sub></span> containing all occurrences of <span class="kwd">str<sub>2</sub></span> replaced by applying <span class="kwd">quot</span> to each quotation corresponding to each match.</p>
 
 <div class="tip"><p>Tip</p>
 
@@ -11282,13 +11319,13 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>The following:</p>
 
-<p><code>":1::2::3::4:" ":(\d):" (=m m 1 get :d "-$#-" (d) =%) replace-apply</code></p>
+<p><code>":1::2::3::4:" ":(\d):" (1 get :d "-$#-" (d) =%) replace-apply</code></p>
 
 <p>produces:</p>
 
 <p><code>"-1--2--3--4-"</code></p>
 
-<p>Note that for each match the following quotations (each containing tbe full matcb and the captured matches) are produced as input for the replace quotation:
+<p>Note that for each match the following quotations (each containing the full match and the captured matches) are produced as input for the replace quotation:
      (&ldquo;-1-&rdquo; &ldquo;1&rdquo;)
      (&ldquo;-2-&rdquo; &ldquo;2&rdquo;)
      (&ldquo;-3-&rdquo; &ldquo;3&rdquo;)
@@ -11374,7 +11411,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <div class="operator"><p><span class="kwd"> <span class="kwd">str<sub>1</sub></span> <span class="kwd">int<sub>1</sub></span> <span class="kwd">int<sub>2</sub></span> <strong>&rArr;</strong> <span class="kwd">str<sub>2</sub></span></span></p>
 
-<p>Returns a substring <span class="kwd">str<sub>2</sub></span> obtained by retriving <span class="kwd">int<sub>2</sub></span> characters starting from index <span class="kwd">int<sub>1</sub></span> within <span class="kwd">str<sub>1</sub></span>.</p></div>
+<p>Returns a substring <span class="kwd">str<sub>2</sub></span> obtained by retrieving <span class="kwd">int<sub>2</sub></span> characters starting from index <span class="kwd">int<sub>1</sub></span> within <span class="kwd">str<sub>1</sub></span>.</p></div>
 
 <p><a id="min-operator-id-suffix"></a>
 <span class="reference-title">suffix</span></p>
@@ -12134,7 +12171,7 @@ it pushes a dictionary <span class="kwd">dict</span> on the stack containing a <
 
 <p>The following code shows how to send a message to a server running on localhost:7777. The message is passed as the first argument to the program.</p>
 
-<pre><code>{} socket "localhost" 7777 connect =cli
+<pre><code>{} socket "localhost" 7777 connect :cli
 
 args 1 get :msg
 
@@ -12165,11 +12202,11 @@ cli close
 
 <p>The following code shows how to create a simple server that listens on port 7777, prints data received from clients, and exits when it receives the string <code>exit</code>:</p>
 
-<pre><code>{} socket {"127.0.0.1" :address 7777 :port} listen =srv
+<pre><code>{} socket {"127.0.0.1" :address 7777 :port} listen :srv
 
 "Server listening on localhost:7777" puts!
 
-{} socket =cli
+{} socket :cli
 "" :line
 (line "exit" !=)
 (
@@ -12201,7 +12238,7 @@ srv close
 
 <p>The following code shows how to make a simple GET request to <a href="http://httpbin.org/uuid">http://httpbin.org/uuid</a> to receive a random UUID and display its response:</p>
 
-<pre><code>{} socket "httpbin.org" 80 connect =cli
+<pre><code>{} socket "httpbin.org" 80 connect :cli
 
 cli "GET /uuid HTTP/1.1\r\nHost: httpbin.org\r\n\r\n" send
 
@@ -12344,7 +12381,7 @@ request
   dup puts!
 )
 ; The request handler is ready, give it the name handler
-=handler
+:handler
 
 ; Create the parameter dictionary for the server
 {}
@@ -12365,7 +12402,7 @@ start-server
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; January 1, 2022</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; July 21, 2023</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>
