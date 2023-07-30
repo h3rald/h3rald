@@ -10,7 +10,7 @@ content-type: project
 active: true
 ci: true
 download: "https://github.com/h3rald/min/releases/download/"
-version: 0.38.0
+version: 0.38.1
 docs: /min/Min_DeveloperGuide.htm
 -----
 
