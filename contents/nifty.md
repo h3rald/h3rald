@@ -9,7 +9,7 @@ summary: "A self-contained command-line program that can be used as a bare bones
 content-type: project
 ci: true
 active: true
-version: 1.2.2
+version: 1.2.3
 download: "https://github.com/h3rald/nifty/releases/download/"
 -----
 

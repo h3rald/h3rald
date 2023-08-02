@@ -7284,9 +7284,11 @@ div .terminal {
    <ul>
     <li><a href="#Using-nimble">Using nimble</a></li>
     <li><a href="#Without-using-nimble">Without using nimble</a></li>
+    <li><a href="#Building-from-source-for-additional-platforms">Building from source for additional platforms</a></li>
     <li><a href="#Additional-build-options">Additional build options</a>
     <ul>
-     <li><a href="#-d:ssl">-d:ssl</a>
+     <li><a href="#-d:ssl">-d:ssl</a></li>
+     <li><a href="#-d:nopcre">-d:nopcre</a>
 </li>
     </ul>
     </li>
@@ -7398,6 +7400,7 @@ div .terminal {
    <li><a href="#<code>math</code>-Module"><code>math</code> Module</a></li>
    <li><a href="#<code>net</code>-Module"><code>net</code> Module</a></li>
    <li><a href="#<code>http</code>-Module"><code>http</code> Module</a></li>
+   <li><a href="#<code>xml</code>-Module"><code>xml</code> Module</a></li>
   </ul>
   </li>
  </ul>
@@ -7462,9 +7465,9 @@ div .terminal {
 <p>You can download one of the following pre-built min binaries:</p>
 
 <ul>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.38.0/min_v0.38.0_macosx_x64.zip">min v0.38.0 for macOS (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.38.0/min_v0.38.0_windows_x64.zip">min v0.38.0 for Windows (x64)</a></li>
-<li><a href="https://github.com/h3rald/min/releases/download/v0.38.0/min_v0.38.0_linux_x64.zip">min v0.38.0 for Linux (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.38.1/min_v0.38.1_macosx_x64.zip">min v0.38.1 for macOS (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.38.1/min_v0.38.1_windows_x64.zip">min v0.38.1 for Windows (x64)</a></li>
+<li><a href="https://github.com/h3rald/min/releases/download/v0.38.1/min_v0.38.1_linux_x64.zip">min v0.38.1 for Linux (x64)</a></li>
 </ul>
 
 
@@ -7492,6 +7495,34 @@ div .terminal {
 <li>Run <strong>nim c -d:release min.nim</strong>.</li>
 </ol>
 
+
+<a name="Building-from-source-for-additional-platforms"></a>
+<h4>Building from source for additional platforms<a href="#document-top" title="Go to top"></a></h4>
+
+<p>By default, min is released as a pre-built binary executable for Windows x64, macOS x64 and Linux x64. However, it should run without issues on any <a href="https://github.com/nim-lang/Nim/blob/devel/lib/system/platforms.nim">platform supported by the Nim programming language</a>.</p>
+
+<p>To build on a different operating system and architecture from the default ones, you also need to get or build the following static libraries:</p>
+
+<ul>
+<li>libssl (OpenSSL)</li>
+<li>libcrypto (OpenSSL)</li>
+<li>libpcre (PCRE)</li>
+</ul>
+
+
+<p>and also specify the following additional flag when compiling:</p>
+
+<p><code>--passL:"-static -L&lt;dir&gt; -lpcre -lssl -lcrypto"</code></p>
+
+<p>Where <code>&lt;dir&gt;</code> is the directory containing the <code>*.a</code> files for the static libraries listed above.</p>
+
+<div class="tip"><p>Alternatively, if you can also opt out from OpenSSL and PCRE support by:</p>
+
+<ul>
+<li><em>Not</em> specifying <code>-d:ssl</code></li>
+<li>Specifying <code>-d:nopcre</code></li>
+</ul>
+</div>
 
 <a name="Additional-build-options"></a>
 <h4>Additional build options<a href="#document-top" title="Go to top"></a></h4>
@@ -7524,6 +7555,20 @@ div .terminal {
 </ul>
 
 
+<a name="-d:nopcre"></a>
+<h5>-d:nopcre<a href="#document-top" title="Go to top"></a></h5>
+
+<p>If the <strong>-d:nopcre</strong> is specified when compiling, min will be built <em>without</em> PCRE support, so it will not be possible to use regular expressions and the following symbols will <em>not</em> be exposed by the <a href="#&lt;code>str&lt;/code>-Module">str Module</a>:</p>
+
+<ul>
+<li><a href="#min-operator-id-search">search</a></li>
+<li><a href="#min-operator-id-match?">match?</a></li>
+<li><a href="#min-operator-id-search-all">search-all</a></li>
+<li><a href="#min-operator-id-replace">replace</a></li>
+<li><a href="#min-operator-id-replace-apply">replace-apply</a></li>
+</ul>
+
+
 <a name="Building-a-Docker-image"></a>
 <h3>Building a Docker image<a href="#document-top" title="Go to top"></a></h3>
 
@@ -7542,7 +7587,7 @@ div .terminal {
 
 <p>To start the min shell, run <span class="cmd">min</span> with no arguments. You will be presented with a prompt displaying the path to the current directory:</p>
 
-<div class="min-terminal"><p>min shell v0.38.0
+<div class="min-terminal"><p>min shell v0.38.1
 <span class="prompt">[/Users/h3rald/test]$</span></p></div>
 
 <p>You can type min code and press <span class="kbd">ENTER</span> to evaluate it immediately:</p>
@@ -8424,7 +8469,7 @@ By contrast, using the same type union several times within the same signature a
 <a name="Autocompletion-and-shortcuts"></a>
 <h3>Autocompletion and shortcuts<a href="#document-top" title="Go to top"></a></h3>
 
-<p>The min shell features smart tab autocompletion and keyboard shortcut implemented using the <a href="https://github.com/h3rald/nimline">nimline</a> library.</p>
+<p>The min shell features smart tab autocompletion and keyboard shortcut implemented using the <a href="https://github.com/h3rald/minline">minline</a> library.</p>
 
 <p>The following behaviors are implemented when pressing the <code>TAB</code> key within:</p>
 
@@ -8676,6 +8721,8 @@ proc hastysite_module*(i: In, hs1: HastySite) =
 <dd>Provides basic supports for sockets (some features are not supported on Windows systems).</dd>
 <dt><a href="#&lt;code>http&lt;/code>-Module">http Module</a></dt>
 <dd>Provides operators to perform HTTP requests, download files and create basic HTTP servers.</dd>
+<dt><a href="#&lt;code>xml&lt;/code>-Module">xml Module</a></dt>
+<dd>Provides operators for parsing, creating and querying XML/HTML code using CSS selectors.</dd>
 </dl>
 
 <a name="Notation"></a>
@@ -8807,6 +8854,7 @@ proc hastysite_module*(i: In, hs1: HastySite) =
   "httpbin.org" :Host
  } :headers             ;optional
  "test body" :body      ;optional
+ ;[dict:http-request](class:kwd)
 }
 </code></pre></dd>
 <dt><span class="kwd">dict:http-response</span></dt>
@@ -8819,7 +8867,55 @@ proc hastysite_module*(i: In, hs1: HastySite) =
     "application/json" :Content-Type
   } :headers     ;optional
   "{\"test\": \"This is a test\"}" :body
+  ;[dict:http-response](class:kwd)
 }
+</code></pre></dd>
+<dt><span class="kwd">dict:xml-element</span></dt>
+<dd><p>A dictionary representing an XML or HTML element, exposed by the <a href="#&lt;code>xml&lt;/code>-Module">xml Module</a></p>
+
+<pre><code>{
+  {"https://min-lang.org" :href} :attributes
+  ({"min web site" :text ;xml-text}) :children
+  "a" :tag
+  ;xml-element
+}
+</code></pre></dd>
+<dt><span class="kwd">dict:xml-comment</span></dt>
+<dd><p>A dictionary representing an XML comment.</p>
+
+<pre><code>{
+  "This is a comment" :text
+  ;[dict:xml-comment](class:kwd)
+}
+</code></pre></dd>
+<dt><span class="kwd">dict:xml-cdata</span></dt>
+<dd><p>A dictionary representing XML CDATA text.</p>
+
+<pre><code>{
+  "This is some text" :text
+  ;[dict:xml-cdata](class:kwd)
+}
+</code></pre></dd>
+<dt><span class="kwd">dict:xml-entity</span></dt>
+<dd><p>A dictionary representing an XML entity.</p>
+
+<pre><code>{
+  "amp" :text
+  ;[dict:xml-entity](class:kwd)
+}
+</code></pre></dd>
+<dt><span class="kwd">dict:xml-text</span></dt>
+<dd><p>A dictionary representing XML text.</p>
+
+<pre><code>{
+  "This is some text" :text
+  ;[dict:xml-text](class:kwd)
+}
+</code></pre></dd>
+<dt><span class="kwd">xml-node</span></dt>
+<dd><p>A typealias to identify all XML dictionary types.</p>
+
+<pre><code>"[dict:xml-element](class:kwd)|[dict:xml-text](class:kwd)|[dict:xml-comment](class:kwd)|[dict:xml-entity](class:kwd)|[dict:xml-cdata](class:kwd)"
 </code></pre></dd>
 </dl>
 
@@ -10664,7 +10760,7 @@ harvest
 <div class="note"><p>Notes</p>
 
 <ul>
-<li>At present, only the key names and sequences defined in the <a href="https://h3rald.com/nimline/nimline.html">nimline</a> library are supported.</li>
+<li>At present, only the key names and sequences defined in the <a href="https://h3rald.com/minline/minline.html">minline</a> library are supported.</li>
 <li>The quotation will be executed by a copy of the min interpreter created when the mapping was defined. In other words, quotations executed by key bindings will not affect the current stack.</li>
 </ul>
 </div>
@@ -10736,8 +10832,8 @@ harvest
 <div class="note"><p>Notes</p>
 
 <ul>
-<li>At present, only the key names and sequences defined in the <a href="https://h3rald.com/nimline/nimline.html">nimline</a> library are supported.</li>
-<li>At present, all the default mappings of min are those provided by the <a href="https://h3rald.com/nimline/nimline.html">nimline</a> library.</li>
+<li>At present, only the key names and sequences defined in the <a href="https://h3rald.com/minline/minline.html">minline</a> library are supported.</li>
+<li>At present, all the default mappings of min are those provided by the <a href="https://h3rald.com/minline/minline.html">minline</a> library.</li>
 </ul>
 </div></div>
 
@@ -12400,9 +12496,142 @@ start-server
 <div class="operator"><p><span class="kwd"> &#x2205; <strong>&rArr;</strong> &#x2205;</span></p>
 
 <p>Stops the currently-running HTTP server. This operator should be used within an HTTP server handler quotation.</p></div>
+
+<a name="<code>xml</code>-Module"></a>
+<h3><code>xml</code> Module<a href="#document-top" title="Go to top"></a></h3>
+
+<p><a id="min-operator-id-from-xml"></a>
+<span class="reference-title">from-xml</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">xml-node</span></span></p>
+
+<p>Returns an <span class="kwd">xml-node</span> representing an XML string representing an element or fragment.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program:</p>
+
+<pre><code>"&lt;a href='https://min-lang.org'&gt;min web site&lt;/a&gt;" from-xml
+</code></pre>
+
+<p>returns the following:</p>
+
+<pre><code>{
+  {"https://min-lang.org" :href} :attributes
+ ({"min web site" :text ;xml-text}) :children
+ "a" :tag
+ ;xml-element
+}
+</code></pre></div></div>
+
+<p><a id="min-operator-id-to-xml"></a>
+<span class="reference-title">to-xml</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">xml-node</span> <strong>&rArr;</strong> <span class="kwd">str</span></span></p>
+
+<p>Returns a <span class="kwd">str</span> representing an XML node.</p></div>
+
+<p><a id="min-operator-id-xcdata"></a>
+<span class="reference-title">xcdata</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-cdata</span></span></p>
+
+<p>Returns a <span class="kwd">dict:xml-cdata</span> representing an XML CDATA section.</p></div>
+
+<p><a id="min-operator-id-xcomment"></a>
+<span class="reference-title">xcomment</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-comment</span></span></p>
+
+<p>Returns a <span class="kwd">dict:xml-comment</span> representing an XML comment.</p></div>
+
+<p><a id="min-operator-id-xelement"></a>
+<span class="reference-title">xelement</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-element</span></span></p>
+
+<p>Returns a <span class="kwd">dict:xml-element</span> representing an XML element (it will be an empty element with no attributes or children).</p></div>
+
+<p><a id="min-operator-id-xentity"></a>
+<span class="reference-title">xentity</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-entity</span></span></p>
+
+<p>Returns a <span class="kwd">dict:xml-entity</span> representing an XML entity.</p></div>
+
+<p><a id="min-operator-id-xquery"></a>
+<span class="reference-title">xquery</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:xml-element</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-element</span></span></p>
+
+<p>Returns an <span class="kwd">dict:xml-element</span> representing the first element matching CSS the selector <span class="kwd">&apos;sym</span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program:</p>
+
+<pre><code>"&lt;ul&gt;
+   &lt;li class='test'&gt;first&lt;/li&gt;
+   &lt;li class='other'&gt;second&lt;/li&gt;
+   &lt;li class='test'&gt;third&lt;/li&gt;
+&lt;/ul&gt;" 
+from-xml ".test" xquery
+</code></pre>
+
+<p>Returns the following:</p>
+
+<pre><code>{
+  {"test" :class} :attributes 
+  ({"first" :text ;xml-text}) :children 
+  "li" :tag 
+  ;xml-element
+}
+</code></pre></div></div>
+
+<p><a id="min-operator-id-xqueryall"></a>
+<span class="reference-title">xqueryall</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">dict:xml-element</span> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-element</span></span></p>
+
+<p>Returns a list of <span class="kwd">dict:xml-element</span> dictionaries representing all the elements matching CSS the selector <span class="kwd">&apos;sym</span>.</p>
+
+<div class="sidebar"><p>Example</p>
+
+<p>The following program:</p>
+
+<pre><code>"&lt;ul&gt;
+   &lt;li class='test'&gt;first&lt;/li&gt;
+   &lt;li class='other'&gt;second&lt;/li&gt;
+   &lt;li class='test'&gt;third&lt;/li&gt;
+&lt;/ul&gt;" 
+from-xml ".test" xqueryall
+</code></pre>
+
+<p>Returns the following:</p>
+
+<pre><code>({
+  {"test" :class} :attributes 
+  ({"first" :text ;xml-text}) :children 
+  "li" :tag 
+  ;xml-element
+}
+{
+  {"test" :class} :attributes 
+  ({"third" :text ;xml-text}) :children 
+  "li" :tag 
+  ;xml-element
+})
+</code></pre></div></div>
+
+<p><a id="min-operator-id-xtext"></a>
+<span class="reference-title">xtext</span></p>
+
+<div class="operator"><p><span class="kwd"> <span class="kwd">&apos;sym</span> <strong>&rArr;</strong> <span class="kwd">dict:xml-text</span></span></p>
+
+<p>Returns a <span class="kwd">dict:xml-text</span> representing an XML text node.</p></div>
     </div>
     <div id="footer">
-      <p><span class="copy"></span> Fabio Cevasco &ndash; July 23, 2023</p>
+      <p><span class="copy"></span> Fabio Cevasco &ndash; August 2, 2023</p>
       <p><span>Powered by</span> <a href="https://h3rald.com/hastyscribe"><span class="hastyscribe"></span></a></p>
     </div>
   </div>

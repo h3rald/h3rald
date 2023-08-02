@@ -7,7 +7,7 @@ subtitle: "A mininalist line editing library"
 summary: "A minimalist but highly-customizable line editing library for Nim projects, providing auto-completion, custom key bindings, and more."
 content-type: project
 active: true
-version: 0.1.0
+version: 0.1.1
 download: "https://github.com/h3rald/minline/releases/download/"
 docs: /minline/minline.html
 -----
