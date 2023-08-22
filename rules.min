@@ -30,6 +30,20 @@
   output-fwrite
 ) ^create-archives-page
 
+(
+  {}
+  "articles/index"    %id
+  "articles.html"     %path
+  ".html"             %ext
+  "Articles"          %title
+  "page"              %content-type
+  ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
+  ARCHIVE-COLUMNS   %archive-columns
+  dup "_archives" swap mustache %contents
+  dup "page" swap mustache %contents
+  output-fwrite
+) ^create-articles-page
+
 ; Create the Projects page
 (
   {}
@@ -227,6 +241,7 @@ contents (
 ; Create aggregator pages
 create-projects-page
 create-archives-page
+create-articles-page
 
 ; Generate home page
 generate-home
