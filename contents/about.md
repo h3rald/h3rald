@@ -4,8 +4,6 @@ title: About
 content-type: page
 -----
 
-### About Me
-
 I consider myself a _hacker_ in the true meaning of the word:
 
 > "A person who enjoys exploring the details of programmable systems and how to stretch their capabilities, as opposed to most users, who prefer to learn only the minimum necessary."
@@ -31,6 +29,5 @@ This site is now built with [HastySite](/hastysite/), my very own static site ge
 Special thanks to the following people, who made this web site possible:
 
 * [David J. Perry](http://scholarsfonts.net), who designed the [Cardo](http://scholarsfonts.net/cardofnt.html) font used for the H3RALD logo.
-* [atypo](http://atipo.es/en/), who designed the [Noway](http://atipofoundry.com/fonts/noway) font, used throughout this web site.
 * [Daniel Bruce](http://www.danielbruce.se/), designer of the [Entypo](http://www.entypo.com) font, used for the icons on this web site.
 

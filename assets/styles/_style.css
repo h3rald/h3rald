@@ -4,14 +4,7 @@ html {
 }
 
 body {
-    font-family: 'Noway', sans-serif;
-    -moz-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-    -webkit-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-    -ms-font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-    font-feature-settings: "liga", "clig", "onum", "frac", "kern";
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
+    font-family: serif;
     hyphens: auto;
     font-weight: 300;
     margin: auto;
@@ -90,12 +83,7 @@ code {
 
 pre,
 code {
-    font-family: 'Hack', monospace;
-}
-
-code.hljs {
-    font-size: calc(var(--base-font-size) * 0.75);
-    line-height: calc(var(--leading) * 0.75);
+    font-family: monospace;
 }
 
 small,
@@ -105,7 +93,7 @@ time,
 .panel-header,
 hr::before,
 footer {
-    font-size: calc(var(--base-font-size) * 0.75);
+    font-size: calc(var(--base-font-size) * 0.85);
 }
 
 sub,
@@ -157,7 +145,7 @@ h6,
 .h5,
 .h6,
 .panel-title {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 i,
@@ -165,12 +153,8 @@ em,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
-    font-family: 'Noway', sans-serif;
+    font-family: serif;
     font-style: italic;
-    -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-    -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-    -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
 h1,
@@ -178,12 +162,8 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Noway', sans-serif;
+    font-family: serif;
     font-style: normal;
-    -moz-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-    -webkit-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-    -ms-font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
 .body-text {
@@ -205,8 +185,14 @@ h5 {
 }
 
 a {
-    text-decoration: none;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
     display: inline;
+}
+
+a[href^=http] {
+    text-decoration-style: dotted;
 }
 
 .content {
@@ -245,16 +231,18 @@ time {
 .main-header .navlinks {
     text-align: left;
     flex-grow: 1;
+    margin: 0 1rem;
 }
 
 .logo {
-    margin: auto;
+    width: 130px;
+    border: none;
     display: block;
-    font-size: 2rem;
 }
 
-a.logo {
-    text-decoration: none;
+.logo-mini {
+    height: 1rem;
+    vertical-align: middle;
 }
 
 hr {
@@ -454,8 +442,27 @@ img {
     border: 1px solid var(--secondary-background);
 }
 
-.icon-link {
-  width: 25px;
+pre {
+    padding: 1rem;
+}
+
+.navlinks {
+    font-size: 1rem;
+}
+
+a.icon-link, a[href^=http].icon-link {
+  text-decoration: none;
+}
+
+.icon-link img {
+  width: 20px;
+  border: none;
+}
+
+.icon {
+    width: 16px;
+    border: none;
+    vertical-align: text-top;
 }
 
 /* iPad Fix */
