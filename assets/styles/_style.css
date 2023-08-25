@@ -170,10 +170,6 @@ h5 {
     margin-left: 2rem;
 }
 
-.home-content .body-text {
-    margin-left: 0;
-}
-
 .body-text h1,
 .body-text h2,
 .body-text h3,
@@ -185,14 +181,14 @@ h5 {
 }
 
 a {
-    text-decoration-line: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 2px;
+    text-decoration: none;
     display: inline;
 }
 
 a[href^=http] {
-    text-decoration-style: dotted;
+    text-decoration: underline dotted;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
 }
 
 .content {
@@ -236,13 +232,16 @@ time {
 
 .logo {
     width: 130px;
+    height: 33.725px;
     border: none;
     display: block;
 }
 
 .logo-mini {
-    height: 1rem;
+    width: 69.375px;
+    height: 18px;
     vertical-align: middle;
+    border: none;
 }
 
 hr {
@@ -255,10 +254,6 @@ hr::before {
     font-size: 1.5rem;
     display: block;
     text-align: center;
-}
-
-.card:last-child .card-footer::after {
-    content: none;
 }
 
 .card-footer {
@@ -283,16 +278,25 @@ hr::before {
     font-size: 75%;
 }
 
-.card-footer .action::after {
-    content: '\00B7';
+.card-footer .action {
+    margin: 0 10px;
 }
 
-.card-footer .action:last-child::after {
-    content: none;
+.card-footer .action:first-child {
+  margin-left: 0;
+}
+
+.panel-wrapper {
+    margin: calc(var(--leading) * 1) 0;
 }
 
 .panel {
-    margin-top: calc(var(--leading) * 1);
+  margin: 4px;
+  background: var(--secondary-background);
+  padding: 8px;
+  border: 1px solid var(--secondary-background);
+  border-radius: 4px;
+  height: 100%;
 }
 
 .panel-header {
@@ -369,7 +373,7 @@ h6,
 
 .primary-subtitle {
     margin-top: 0.5rem;
-    color: var(secondary-text-color);
+    color: var(--secondary-text-color);
 }
 
 a,
@@ -456,11 +460,14 @@ a.icon-link, a[href^=http].icon-link {
 
 .icon-link img {
   width: 20px;
+  height: 20px;
   border: none;
+  margin: 12px;
 }
 
 .icon {
     width: 16px;
+    height: 16px;
     border: none;
     vertical-align: text-top;
 }
