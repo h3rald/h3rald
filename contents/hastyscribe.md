@@ -13,7 +13,7 @@ download: "https://github.com/h3rald/hastyscribe/releases/download/"
 -----
 {{download => https://github.com/h3rald/hastyscribe/releases/download/}}
 
-[](class:hastyscribe) is a simple, self-contained, command-line program able to convert [markdown](http://daringfireball.net/projects/markdown) files into self-contained HTML pages, automatically embedding all the needed fonts, stylesheets and images.
+HastyScribe is a simple, self-contained, command-line program able to convert [markdown](http://daringfireball.net/projects/markdown) files into self-contained HTML pages, automatically embedding all the needed fonts, stylesheets and images.
 
 HastyScribe is:
 
