@@ -6,7 +6,7 @@ home: /litestore/
 active: true
 docs: /litestore/LiteStore_UserGuide.htm
 ci: true
-version: 1.12.2
+version: 1.13.0
 subtitle: "A tiny NoSQL database for rapid prototyping"
 summary: "A lightweight, self-contained, RESTful, multi-format NoSQL document store server written in Nim and powered by a SQLite backend for storage."
 download: "https://github.com/h3rald/litestore/releases/download/"
