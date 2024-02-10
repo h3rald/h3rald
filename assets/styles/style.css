@@ -1,7 +1,6 @@
 /* Theme Switcher */
 /* Credits: https://endtimes.dev/no-javascript-dark-mode-toggle/ */
 
-/* Tutorial CSS starts here */
 :root {
 
     --html-font-size: 18px;
@@ -26,23 +25,6 @@
     --error-color: #DB141A;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --link-color: #e96363;
-        --link-hover-color: #ff6e6e;
-
-        --heading-text-color: #dddada;
-        --primary-text-color: #c7c7c7;
-        --secondary-text-color: #e0e0e0;
-
-        --primary-background: #1e1e1e;
-        --secondary-background: #262626;
-
-        --success-color: #28b869;
-        --warning-color: #C97D05;
-        --error-color: #da3c3c;
-    }
-}
 
 #color-mode:checked~* {
     --link-color: #e96363;
@@ -60,7 +42,35 @@
     --error-color: #da3c3c;
 }
 
+.color-scheme-wrapper {
+    min-height: 100vh;
+}
+
+.light-mode-hide {
+    display: none;
+}
+
+.dark-mode-hide {
+    display: initial;
+}
+
 @media (prefers-color-scheme: dark) {
+    :root {
+        --link-color: #e96363;
+        --link-hover-color: #ff6e6e;
+
+        --heading-text-color: #dddada;
+        --primary-text-color: #c7c7c7;
+        --secondary-text-color: #e0e0e0;
+
+        --primary-background: #1e1e1e;
+        --secondary-background: #262626;
+
+        --success-color: #28b869;
+        --warning-color: #C97D05;
+        --error-color: #da3c3c;
+    }
+
     #color-mode:checked~* {
         --link-color: #b73333;
         --link-hover-color: #653131;
@@ -76,23 +86,11 @@
         --warning-color: #FFAF00;
         --error-color: #DB141A;
     }
-}
 
-.color-scheme-wrapper {
-    min-height: 100vh;
-}
-
-.light-mode-hide {
-    display: none;
-}
-
-@media (prefers-color-scheme: dark) {
     .dark-mode-hide {
         display: none;
     }
-}
 
-@media (prefers-color-scheme: dark) {
     .light-mode-hide {
         display: initial;
     }
