@@ -3,8 +3,7 @@
 
 /* Tutorial CSS starts here */
 :root {
-    --bg: white;
-    --text: black;
+
     --html-font-size: 18px;
     --base-font-size: 1rem;
     --line-height: 1.5;
@@ -29,9 +28,6 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: black;
-        --text: white;
-
         --link-color: #e96363;
         --link-hover-color: #ff6e6e;
 
@@ -49,9 +45,6 @@
 }
 
 #color-mode:checked~* {
-    --bg: black;
-    --text: white;
-
     --link-color: #e96363;
     --link-hover-color: #ff6e6e;
 
@@ -69,9 +62,6 @@
 
 @media (prefers-color-scheme: dark) {
     #color-mode:checked~* {
-        --bg: white;
-        --text: black;
-
         --link-color: #b73333;
         --link-hover-color: #653131;
 
@@ -90,8 +80,6 @@
 
 .color-scheme-wrapper {
     min-height: 100vh;
-    background: var(--bg);
-    color: var(--text);
 }
 
 .light-mode-hide {
@@ -109,7 +97,6 @@
         display: initial;
     }
 }
-
 
 
 html {

@@ -211,7 +211,7 @@
   "" :contents
   meta (
     (input-fread @contents meta)
-    (:temp contents preprocess-css @contents temp)
+    (:temp contents @contents temp)
     (contents %contents)
   ) tap
   output-fwrite
