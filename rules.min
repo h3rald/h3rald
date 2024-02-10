@@ -100,7 +100,7 @@
 ) ^process-timestamp
 
 
-; Group articles by tags
+; Group articles by tags (not used)
 (
   (dict) expect -> :content
   (((content 'tags dhas?) (content /tags "" !=)) &&)
@@ -245,8 +245,6 @@ create-articles-page
 
 ; Generate home page
 generate-home
-
-
 
 ; Process all assets.
 assets (

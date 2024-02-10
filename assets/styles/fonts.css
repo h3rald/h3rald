@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Calendas Plus';
+    src: url('../fonts/calendas_plus.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: normal;
+}
+@font-face {
+    font-family: 'Calendas Plus';
+    src: url('../fonts/calendas_plus_bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: normal;
+}
+@font-face {
+    font-family: 'Calendas Plus';
+    src: url('../fonts/calendas_plus_italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: normal;
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("../fonts/JetBrainsMono-Medium.woff2") format("woff2");
+    font-weight: 400;
+    -webkit-font-feature-settings: "liga" on, "calt" on;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: normal;
+}

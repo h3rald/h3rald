@@ -1,10 +1,125 @@
+/* Theme Switcher */
+/* Credits: https://endtimes.dev/no-javascript-dark-mode-toggle/ */
+
+/* Tutorial CSS starts here */
+:root {
+    --bg: white;
+    --text: black;
+    --html-font-size: 18px;
+    --base-font-size: 1rem;
+    --line-height: 1.5;
+    --scale-factor: 1.3333;
+    --leading: 1.5rem;
+    --letter-spacing: 0.05em;
+
+    --link-color: #b73333;
+    --link-hover-color: #653131;
+
+    --heading-text-color: #222;
+    --primary-text-color: #444;
+    --secondary-text-color: #666;
+
+    --primary-background: #fefefe;
+    --secondary-background: #f5f5f5;
+
+    --success-color: #00B918;
+    --warning-color: #FFAF00;
+    --error-color: #DB141A;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: black;
+        --text: white;
+
+        --link-color: #e96363;
+        --link-hover-color: #ff6e6e;
+
+        --heading-text-color: #dddada;
+        --primary-text-color: #c7c7c7;
+        --secondary-text-color: #e0e0e0;
+
+        --primary-background: #1e1e1e;
+        --secondary-background: #262626;
+
+        --success-color: #28b869;
+        --warning-color: #C97D05;
+        --error-color: #da3c3c;
+    }
+}
+
+#color-mode:checked~* {
+    --bg: black;
+    --text: white;
+
+    --link-color: #e96363;
+    --link-hover-color: #ff6e6e;
+
+    --heading-text-color: #dddada;
+    --primary-text-color: #c7c7c7;
+    --secondary-text-color: #e0e0e0;
+
+    --primary-background: #1e1e1e;
+    --secondary-background: #262626;
+
+    --success-color: #28b869;
+    --warning-color: #C97D05;
+    --error-color: #da3c3c;
+}
+
+@media (prefers-color-scheme: dark) {
+    #color-mode:checked~* {
+        --bg: white;
+        --text: black;
+
+        --link-color: #b73333;
+        --link-hover-color: #653131;
+
+        --heading-text-color: #222;
+        --primary-text-color: #444;
+        --secondary-text-color: #666;
+
+        --primary-background: #fefefe;
+        --secondary-background: #f5f5f5;
+
+        --success-color: #00B918;
+        --warning-color: #FFAF00;
+        --error-color: #DB141A;
+    }
+}
+
+.color-scheme-wrapper {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.light-mode-hide {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark-mode-hide {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .light-mode-hide {
+        display: initial;
+    }
+}
+
+
+
 html {
     font-size: var(--html-font-size);
     line-height: var(--line-height);
 }
 
 body {
-    font-family: serif;
+    font-family: 'Calendas Plus', serif;
+    font-feature-settings: "liga", "clig", "onum", "frac", "kern";
     hyphens: auto;
     font-weight: 300;
     margin: auto;
@@ -83,7 +198,7 @@ code {
 
 pre,
 code {
-    font-family: monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 small,
@@ -153,8 +268,9 @@ em,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
-    font-family: serif;
+    font-family: 'Calendas Plus', serif;
     font-style: italic;
+    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
 h1,
@@ -162,12 +278,9 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: serif;
+    font-family: 'Calendas Plus', serif;
     font-style: normal;
-}
-
-.body-text {
-    margin-left: 2rem;
+    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
 .body-text h1,
@@ -176,7 +289,6 @@ h5 {
 .body-text h4,
 .body-text h5,
 .body-text h6 {
-    margin-left: -2rem;
     margin-bottom: 0.8rem;
 }
 
@@ -222,6 +334,7 @@ time {
     justify-content: space-between;
     align-items: center;
 }
+
 .main-header h1 {
     margin-top: 0.1em;
 }
@@ -285,7 +398,7 @@ hr::before {
 }
 
 .card-footer .action:first-child {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .panel-wrapper {
@@ -293,12 +406,12 @@ hr::before {
 }
 
 .panel {
-  margin: 4px;
-  background: var(--secondary-background);
-  padding: 8px;
-  border: 1px solid var(--secondary-background);
-  border-radius: 4px;
-  height: 100%;
+    margin: 4px;
+    background: var(--secondary-background);
+    padding: 8px;
+    border: 1px solid var(--secondary-background);
+    border-radius: 4px;
+    height: 100%;
 }
 
 .panel-header {
@@ -456,15 +569,16 @@ pre {
     font-size: 1rem;
 }
 
-a.icon-link, a[href^=http].icon-link {
-  text-decoration: none;
+a.icon-link,
+a[href^=http].icon-link {
+    text-decoration: none;
 }
 
 .icon-link img {
-  width: 20px;
-  height: 20px;
-  border: none;
-  margin: 12px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin: 12px;
 }
 
 .icon {
@@ -477,9 +591,8 @@ a.icon-link, a[href^=http].icon-link {
 /* iPad Fix */
 
 @media screen and (min-width: 768px) and (max-width: 768px) {
-  .col-sm-8 {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+    .col-sm-8 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 }
-
