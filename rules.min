@@ -220,6 +220,7 @@
 
 ;;;;; MAIN ;;;;;
 
+#|
 ; Process all contents
 contents (
   :content
@@ -245,6 +246,7 @@ create-articles-page
 
 ; Generate home page
 generate-home
+|#
 
 ; Process all assets.
 assets (

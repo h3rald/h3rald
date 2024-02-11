@@ -10,23 +10,6 @@
     --leading: 1.5rem;
     --letter-spacing: 0.05em;
 
-    --link-color: #b73333;
-    --link-hover-color: #653131;
-
-    --heading-text-color: #222;
-    --primary-text-color: #444;
-    --secondary-text-color: #666;
-
-    --primary-background: #fefefe;
-    --secondary-background: #f5f5f5;
-
-    --success-color: #00B918;
-    --warning-color: #FFAF00;
-    --error-color: #DB141A;
-}
-
-
-#color-mode:checked~* {
     --link-color: #e96363;
     --link-hover-color: #ff6e6e;
 
@@ -42,36 +25,46 @@
     --error-color: #da3c3c;
 }
 
-.color-scheme-wrapper {
+
+#color-mode:checked~.themed-content {
+    --link-color: #b73333;
+    --link-hover-color: #653131;
+
+    --heading-text-color: #222;
+    --primary-text-color: #444;
+    --secondary-text-color: #666;
+
+    --primary-background: #fefefe;
+    --secondary-background: #f5f5f5;
+
+    --success-color: #00B918;
+    --warning-color: #FFAF00;
+    --error-color: #DB141A;
+}
+
+/*.themed-content {
     min-height: 100vh;
 }
+*/
 
-.light-mode-hide {
-    display: none;
-}
-
-.dark-mode-hide {
+.themed-content .light-mode-hide {
     display: initial;
 }
 
-@media (prefers-color-scheme: dark) {
+.themed-content .dark-mode-hide {
+    display: none;
+}
+
+#color-mode:checked~.themed-content .light-mode-hide {
+    display: none;
+}
+
+#color-mode:checked~.themed-content .dark-mode-hide {
+    display: initial;
+}
+
+@media (prefers-color-scheme: light) {
     :root {
-        --link-color: #e96363;
-        --link-hover-color: #ff6e6e;
-
-        --heading-text-color: #dddada;
-        --primary-text-color: #c7c7c7;
-        --secondary-text-color: #e0e0e0;
-
-        --primary-background: #1e1e1e;
-        --secondary-background: #262626;
-
-        --success-color: #28b869;
-        --warning-color: #C97D05;
-        --error-color: #da3c3c;
-    }
-
-    #color-mode:checked~* {
         --link-color: #b73333;
         --link-hover-color: #653131;
 
@@ -87,11 +80,35 @@
         --error-color: #DB141A;
     }
 
-    .dark-mode-hide {
+    #color-mode:checked~.themed-content {
+        --link-color: #e96363;
+        --link-hover-color: #ff6e6e;
+
+        --heading-text-color: #dddada;
+        --primary-text-color: #c7c7c7;
+        --secondary-text-color: #e0e0e0;
+
+        --primary-background: #1e1e1e;
+        --secondary-background: #262626;
+
+        --success-color: #28b869;
+        --warning-color: #C97D05;
+        --error-color: #da3c3c;
+    }
+
+    .themed-content .dark-mode-hide {
+        display: initial;
+    }
+
+    .themed-content .light-mode-hide {
         display: none;
     }
 
-    .light-mode-hide {
+    #color-mode:checked~.themed-content .dark-mode-hide {
+        display: none;
+    }
+
+    #color-mode:checked~.themed-content .light-mode-hide {
         display: initial;
     }
 }
@@ -103,7 +120,7 @@ html {
 }
 
 body {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     font-feature-settings: "liga", "clig", "onum", "frac", "kern";
     hyphens: auto;
     font-weight: 300;
@@ -253,7 +270,7 @@ em,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     font-style: italic;
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
@@ -263,7 +280,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     font-style: normal;
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
