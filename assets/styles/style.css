@@ -1,6 +1,18 @@
 /* Theme Switcher */
 /* Credits: https://endtimes.dev/no-javascript-dark-mode-toggle/ */
 
+.theme-switcher-icon {
+    cursor: pointer;
+    float: right;
+    margin: 2px;
+    margin-right: 10px;
+}
+
+#theme-switcher {
+    display: none;
+}
+
+
 :root {
 
     --html-font-size: 18px;
@@ -9,7 +21,9 @@
     --scale-factor: 1.3333;
     --leading: 1.5rem;
     --letter-spacing: 0.05em;
+}
 
+.themed-content {
     --link-color: #e96363;
     --link-hover-color: #ff6e6e;
 
@@ -26,7 +40,7 @@
 }
 
 
-#color-mode:checked~.themed-content {
+#theme-switcher:checked~.themed-content {
     --link-color: #b73333;
     --link-hover-color: #653131;
 
@@ -55,11 +69,11 @@
     display: none;
 }
 
-#color-mode:checked~.themed-content .light-mode-hide {
+#theme-switcher:checked~.themed-content .light-mode-hide {
     display: none;
 }
 
-#color-mode:checked~.themed-content .dark-mode-hide {
+#theme-switcher:checked~.themed-content .dark-mode-hide {
     display: initial;
 }
 
@@ -80,7 +94,7 @@
         --error-color: #DB141A;
     }
 
-    #color-mode:checked~.themed-content {
+    #theme-switcher:checked~.themed-content {
         --link-color: #e96363;
         --link-hover-color: #ff6e6e;
 
@@ -104,11 +118,11 @@
         display: none;
     }
 
-    #color-mode:checked~.themed-content .dark-mode-hide {
+    #theme-switcher:checked~.themed-content .dark-mode-hide {
         display: none;
     }
 
-    #color-mode:checked~.themed-content .light-mode-hide {
+    #theme-switcher:checked~.themed-content .light-mode-hide {
         display: initial;
     }
 }
@@ -597,4 +611,15 @@ a[href^=http].icon-link {
         flex-basis: 100%;
         max-width: 100%;
     }
+}
+
+/* SVG icons */
+
+.icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.icon svg path {
+    fill: var(--primary-text-color);
 }

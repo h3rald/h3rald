@@ -25,8 +25,11 @@
   "page"              %content-type
   ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
   ARCHIVE-COLUMNS   %archive-columns
+  ; TODO: why processing twice??
   dup "_archives" swap mustache %contents
-  dup "page" swap mustache %contents
+  dup "page" swap mustache :page
+  "archives" page process-icons
+  %contents
   output-fwrite
 ) ^create-archives-page
 
@@ -39,8 +42,11 @@
   "page"              %content-type
   ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
   ARCHIVE-COLUMNS   %archive-columns
+  ; TODO: why processing twice??
   dup "_archives" swap mustache %contents
-  dup "page" swap mustache %contents
+  dup "page" swap mustache :page
+  "articles" page process-icons
+  %contents
   output-fwrite
 ) ^create-articles-page
 
@@ -54,7 +60,9 @@
   "page"                                              %content-type
   PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
   PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects
-  dup "projects" swap mustache %contents
+  dup "projects" swap mustache :page
+  "projects" page process-icons
+  %contents
   output-fwrite
 ) ^create-projects-page
 
@@ -138,6 +146,34 @@
 ) ^copy-pdf-article-asset
 
 
+; Process :icon: markup
+(
+  symbol process-icons
+  (str :id str :text ==> str :result)
+  ( 
+    ; whitelist of common false positives for icon markup
+    ("borrow", "http", "cakephp") :whitelist
+    text ":([a-z]+[a-z0-9-]+):" (
+      :match
+      match 0 get :content
+      match 1 get :icon
+      "assets/images/entypo/$#.svg" (icon) =% :path
+      (path file?)
+        (
+          path fread from-xml "svg" xquery to-xml :svg
+          "<span class=\"icon\">$#</span>" (svg) =% @content
+        )
+        (
+          (whitelist icon in? not)
+            ("$# - Icon not found: $#" (id icon) =% warn)
+          when
+        )
+      if
+      content
+    ) replace-apply @result
+  ) 
+) ::
+
 ; Process a content file applying the appropriate template
 ; and compiling markdown to HTML if necessary.
 (
@@ -154,6 +190,7 @@
   (content /ext ".md" ==) (contents content markdown @contents) when
   content contents %contents @content
   tpl content mustache @page
+  id page process-icons @page
   content page %contents @content
   (
       ((id "^(glyph|ruby-compendium)\/book" match?) ()) ;Do not add index.html
@@ -201,7 +238,9 @@
   latest %latest
   recents %recents
   ;tags %tags
-  dup "home" swap mustache %contents
+  dup "home" swap mustache :page
+  "home" page process-icons
+  %contents
   output-fwrite
 ) ^generate-home
 
@@ -217,10 +256,9 @@
   output-fwrite
 ) ^process-css-asset
 
-
 ;;;;; MAIN ;;;;;
 
-#|
+;#|
 ; Process all contents
 contents (
   :content
@@ -246,7 +284,7 @@ create-articles-page
 
 ; Generate home page
 generate-home
-|#
+;|#
 
 ; Process all assets.
 assets (
