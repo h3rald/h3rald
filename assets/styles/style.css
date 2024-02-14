@@ -56,10 +56,15 @@
     --error-color: #DB141A;
 }
 
-/*.themed-content {
-    min-height: 100vh;
+.theme-switcher-icon.dark-mode-hide::after {
+    content: " dark mode";
+    color: var(--primary-text-color);
 }
-*/
+
+.theme-switcher-icon::after {
+    content: " light mode";
+    color: var(--primary-text-color);
+}
 
 .themed-content .light-mode-hide {
     display: initial;
@@ -519,6 +524,10 @@ a:hover {
 .content {
     background: var(--primary-background);
     color: var(--primary-text-color);
+}
+
+.main {
+    padding-top: 35px;
 }
 
 .main,
