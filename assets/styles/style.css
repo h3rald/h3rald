@@ -363,7 +363,7 @@ time {
 .main-header .navlinks {
     text-align: left;
     flex-grow: 1;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
 }
 
 .logo {
