@@ -113,7 +113,14 @@
       "assets/images/entypo/$#.svg" (icon) =% :path
       (path file?)
         (
-          path fread from-xml "svg" xquery to-xml :svg
+          path fread from-xml "svg" xquery :svgx
+          ; Add title tag
+          "<title>$#</title>" (icon) =% from-xml :svg-title
+          svgx dup /children svg-title swap prepend %children @svgx
+          ; Add role="img"
+          svgx /attributes :svg-attrs
+          svgx svg-attrs "img" %role %attributes @svgx
+          svgx to-xml :svg
           "<span class=\"icon\">$#</span>" (svg) =% @content
         )
         (
@@ -214,7 +221,6 @@ contents (
 
 ; Create aggregator pages
 create-projects-page
-create-archives-page
 create-articles-page
 
 ; Generate home page
