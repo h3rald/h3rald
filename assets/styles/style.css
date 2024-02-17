@@ -140,7 +140,7 @@ html {
 
 body {
     font-family: 'Noway', sans-serif;
-    font-feature-settings: "liga", "clig", "onum", "frac", "kern";
+    font-feature-settings: "liga", "clig", "kern";
     hyphens: auto;
     font-weight: 300;
     margin: auto;
@@ -577,16 +577,17 @@ a.logo:hover {
 
 code,
 pre {
-    background-color: var(--secondary-background);
+    /*background-color: var(--secondary-background);*/
     font-size: 0.8rem;
 }
 
-pre code,
 img {
     border: 1px solid var(--secondary-background);
 }
 
 pre {
+    border-radius: 4px;
+    white-space: pre-wrap;
     padding: 1rem;
 }
 

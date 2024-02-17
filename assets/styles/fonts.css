@@ -30,7 +30,6 @@
     font-family: "JetBrains Mono";
     src: url("../fonts/JetBrainsMono-Medium.woff2") format("woff2");
     font-weight: 400;
-    -webkit-font-feature-settings: "liga" on, "calt" on;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-variant-ligatures: normal;

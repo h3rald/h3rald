@@ -109,7 +109,7 @@
       :match
       match 1 get escape :code
       cmd (code) =% run /output :out
-      "<code>$#</code>" (out) =%
+      "<code class=\"chroma\">$#</code>" (out) =%
     ) replace-apply @result
 
   )
@@ -217,7 +217,7 @@
 
 ;;;;; MAIN ;;;;;
 
-;#|
+#|
 ; Process all contents
 contents (
   :content
