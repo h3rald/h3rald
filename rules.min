@@ -99,6 +99,22 @@
   asset output-cp
 ) ^copy-pdf-article-asset
 
+; Syntax highlighting
+(
+  symbol process-code
+  (str :text ==> str :result)
+  (
+    "echo \"$#\" | chroma --html --html-only --html-prevent-surrounding-pre" :cmd
+    text "<code[^>]*>([\s\S]+?)</code>" (
+      :match
+      match 1 get escape :code
+      cmd (code) =% run /output :out
+      "<code>$#</code>" (out) =%
+    ) replace-apply @result
+
+  )
+) ::
+
 ; Process :icon: markup
 (
   symbol process-icons
@@ -151,6 +167,7 @@
   content contents %contents @content
   tpl content mustache @page
   id page process-icons @page
+  id page process-code @page
   content page %contents @content
   (
       ((id "^(glyph|ruby-compendium)\/book" match?) ()) ;Do not add index.html
