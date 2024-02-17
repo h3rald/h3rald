@@ -108,7 +108,7 @@
     text "<pre>\s*<code[^>]*>([\s\S]+?)</code></pre>" (
       :match
       match 1 get escape :code
-      cmd (code) =% run /output puts ;:out
+      cmd (code) =% run /output ;:out
       ;"<code class=\"chroma\">$#</code>" (out) =%
     ) replace-apply @result
 
