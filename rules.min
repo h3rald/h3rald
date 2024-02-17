@@ -104,12 +104,12 @@
   symbol process-code
   (str :text ==> str :result)
   (
-    "echo \"$#\" | chroma --html --html-only --html-prevent-surrounding-pre" :cmd
-    text "<code[^>]*>([\s\S]+?)</code>" (
+    "echo \"$#\" | chroma --html --html-only" :cmd
+    text "<pre>\s*<code[^>]*>([\s\S]+?)</code></pre>" (
       :match
       match 1 get escape :code
-      cmd (code) =% run /output :out
-      "<code class=\"chroma\">$#</code>" (out) =%
+      cmd (code) =% run /output puts ;:out
+      ;"<code class=\"chroma\">$#</code>" (out) =%
     ) replace-apply @result
 
   )
@@ -217,7 +217,7 @@
 
 ;;;;; MAIN ;;;;;
 
-#|
+;#|
 ; Process all contents
 contents (
   :content
