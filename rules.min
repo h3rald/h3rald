@@ -14,25 +14,7 @@
   integer "dddd, d MMMM yyyy" tformat
 ) ^to-date
 
-
-; Create the Archives page.
-(
-  {}
-  "archives/index"    %id
-  "archives.html"     %path
-  ".html"             %ext
-  "Articles"          %title
-  "page"              %content-type
-  ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
-  ARCHIVE-COLUMNS   %archive-columns
-  ; TODO: why processing twice??
-  dup "_archives" swap mustache %contents
-  dup "page" swap mustache :page
-  "archives" page process-icons
-  %contents
-  output-fwrite
-) ^create-archives-page
-
+; Create articles page
 (
   {}
   "articles/index"    %id
@@ -107,34 +89,6 @@
   content
 ) ^process-timestamp
 
-
-; Group articles by tags (not used)
-(
-  (dict) expect -> :content
-  (((content 'tags dhas?) (content /tags "" !=)) &&)
-  (
-    content /tags "\|" split :tags
-    tags (
-      :tag
-      (TAGS tag dhas?)
-      (
-        ; Add article to existing tag
-        content ("id" "title" "timestamp") dpick :article
-        TAGS tag dget :tagdata
-        article tagdata append @tagdata
-        TAGS tagdata tag dset @TAGS
-      )
-      (
-        ; Create new tag
-        content ("id" "title" "timestamp") dpick :article
-        TAGS article quote tag dset @TAGS
-      ) if
-    ) foreach
-  ) when
-  content
-) ^process-tags
-
-
 ; Copy PDF files saved in asset folder
 ; to the corresponding article output folder.
 (
@@ -144,7 +98,6 @@
   asset "output/articles/$1/$1" (name) => % %id @asset
   asset output-cp
 ) ^copy-pdf-article-asset
-
 
 ; Process :icon: markup
 (
@@ -206,7 +159,6 @@
   content
 ) ^process-content
 
-
 ; Process and generate home page
 (
   ; Sort articles by timestamp
@@ -217,23 +169,6 @@
   latest input-fread "(?ms)(.+)?<hr" search 1 get latest markdown :summary
   latest summary %summary @latest
   latest dup /timestamp to-date %date @latest
-  #|
-  ; Process top tags
-  TAGS dkeys (
-    :tag
-    TAGS tag dget size :total
-    (tag total) => 
-  ) map
-  (last swap last >) sort 
-  0 9 slice
-  (
-    :data
-    {}
-    data first %tag
-    data last  %total
-  ) map
-  :tags
-  |#
   HOME
   latest %latest
   recents %recents
