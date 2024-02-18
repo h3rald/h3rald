@@ -55,9 +55,9 @@
      color: #6e7681
  }
 
- .chroma .line {
+ /*.chroma .line {
      display: flex;
- }
+ }*/
 
  .chroma .k {
      color: #ff7b72
