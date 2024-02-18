@@ -104,7 +104,8 @@
   symbol process-code
   (str :text ==> str :result)
   (
-    "echo '$#' | chroma --html --html-only --html-prevent-surrounding-pre --fail" :cmd
+    "temp/highlight" :tmpfile
+    "chroma $# --html --html-only --html-prevent-surrounding-pre --fail" :cmd
     text "<pre>\s*<code[^>]*>([\s\S]+?)</code></pre>" (
       :match
       match 1 get escape :code
@@ -124,7 +125,8 @@
           ("&")
         when
       ) replace-apply "\\\\\"" "\"" replace @code
-      cmd (code) =% run /output :out
+      code tmpfile fwrite
+      cmd (tmpfile) =% run /output :out
       "<pre class=\"chroma\"><code>$#</code></pre>" (out) =%
     ) replace-apply @result
   )
