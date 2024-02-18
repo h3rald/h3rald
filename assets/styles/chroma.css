@@ -6,6 +6,7 @@
  .chroma {
      color: #e6edf3;
      background-color: #0d1117;
+     white-space: pre-wrap;
  }
 
  .chroma .err {
