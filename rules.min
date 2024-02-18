@@ -104,12 +104,28 @@
   symbol process-code
   (str :text ==> str :result)
   (
-    "echo \"$#\" | chroma --html --html-only" :cmd
+    "echo \"$#\" | chroma --html --html-only --html-prevent-surrounding-pre" :cmd
     text "<pre>\s*<code[^>]*>([\s\S]+?)</code></pre>" (
       :match
       match 1 get escape :code
-      cmd (code) =% run /output puts ;:out
-      ;"<code class=\"chroma\">$#</code>" (out) =%
+      code "&(gt|lt|quot|amp);" (
+        :match
+        match 1 get :ntt
+        (ntt "gt" ==)
+          (">")
+        when
+        (ntt "lt" ==)
+          ("<")
+        when
+        (ntt "quot" ==)
+          ("\"")
+        when
+        (ntt "amp" ==)
+          ("&")
+        when
+      ) replace-apply @code
+      cmd (code) =% run /output :out
+      "<pre class=\"chroma\"><code>$#</code></pre>" (out) =%
     ) replace-apply @result
 
   )
@@ -226,7 +242,6 @@ contents (
     content /id :id
     (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
     content
-    ;process-tags 
     "." print!
     process-timestamp 
     process-content 
