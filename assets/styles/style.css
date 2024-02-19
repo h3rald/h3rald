@@ -349,6 +349,33 @@ time {
     cursor: pointer;
 }
 
+/** Fixed header **/
+
+#theme-switcher~label,
+#theme-switcher {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-background);
+}
+
+.main-header {
+    position: fixed;
+    top: 28px;
+    right: 0;
+    left: 0;
+    padding: 0 8px;
+    background-color: var(--primary-background);
+    box-shadow: 0 16px 16px -16px #000;
+}
+
+.main-content {
+    margin-top: 20px;
+}
+
+/* End fixed header */
+
 .main-header {
     display: flex;
     flex-direction: row;

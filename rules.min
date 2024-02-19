@@ -240,31 +240,39 @@
 
 ;;;;; MAIN ;;;;;
 
-;#|
-; Process all contents
-contents (
-  :content
-  (((content 'draft dhas? not) (content 'content-type dhas?)) &&)
-  (
-    content /id :id
-    (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
-    content
-    ;"." print!
-    process-timestamp 
-    process-content 
-    @content 
-    (id "index" !=) (content output-fwrite) when
-  ) when
-) foreach
-"" puts!
+true :enable-content-processing
 
-; Create aggregator pages
-create-projects-page
-create-articles-page
+(opts 'no-contents dhas?)
+  (false @enable-content-processing)
+when 
 
-; Generate home page
-generate-home
-;|#
+(enable-content-processing)
+(
+  ; Process all contents
+  contents (
+    :content
+    (((content 'draft dhas? not) (content 'content-type dhas?)) &&)
+    (
+      content /id :id
+      (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
+      content
+      ;"." print!
+      process-timestamp 
+      process-content 
+      @content 
+      (id "index" !=) (content output-fwrite) when
+    ) when
+  ) foreach
+  "" puts!
+
+  ; Create aggregator pages
+  create-projects-page
+  create-articles-page
+
+  ; Generate home page
+  generate-home
+)
+when
 
 ; Process all assets.
 assets (
