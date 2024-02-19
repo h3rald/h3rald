@@ -29,5 +29,7 @@ This site is now built with [HastySite](/hastysite/), my very own static site ge
 Special thanks to the following people, who made this web site possible:
 
 * [David J. Perry](http://scholarsfonts.net), who designed the [Cardo](http://scholarsfonts.net/cardofnt.html) font used for the H3RALD logo.
+* [atypo](https://www.atipofoundry.com) foundry, who designed the [Noway](https://www.atipofoundry.com/fonts/noway) font used for the text on this site.
+* Philipp Nurullin, who designed the [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font used for the code blocks on this site.
 * [Daniel Bruce](http://www.danielbruce.se/), designer of the [Entypo](http://www.entypo.com) font, used for the icons on this web site.
 
