@@ -617,9 +617,14 @@ pre {
     padding: 1rem;
 }
 
-.navlinks {
+.navlinks-secondary-row {
+    font-size: 0.7rem;
+}
+
+.navlinks-primary-row {
     font-size: 1rem;
 }
+
 
 a.icon-link,
 a[href^=http].icon-link {
