@@ -145,16 +145,21 @@
   ( 
     ; whitelist of common false positives for icon markup
     ("borrow", "http", "cakephp") :whitelist
-    text ":([a-z]+[a-z0-9-]+):" (
+    text ":([a-z]+[a-z0-9-]+)(?:\|([a-zA-Z0-9 ]+))?:" (
       :match
       match 0 get :content
       match 1 get :icon
+      match 2 get :explicit-title
       "assets/images/entypo/$#.svg" (icon) =% :path
       (path file?)
         (
           path fread from-xml "svg" xquery :svgx
+          icon :title
+          (explicit-title "" !=)
+            (explicit-title @title)
+          when
           ; Add title tag
-          "<title>$#</title>" (icon) =% from-xml :svg-title
+          "<title>$#</title>" (title) =% from-xml :svg-title
           svgx dup /children svg-title swap prepend %children @svgx
           ; Add role="img"
           svgx /attributes :svg-attrs

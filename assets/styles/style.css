@@ -8,6 +8,11 @@
     margin-right: 10px;
 }
 
+.theme-switcher-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
 #theme-switcher {
     display: none;
 }
@@ -56,6 +61,7 @@
     --error-color: #DB141A;
 }
 
+/*
 .theme-switcher-icon.dark-mode-hide::after {
     content: " dark mode";
     color: var(--primary-text-color);
@@ -65,6 +71,7 @@
     content: " light mode";
     color: var(--primary-text-color);
 }
+*/
 
 .themed-content .light-mode-hide {
     display: initial;
