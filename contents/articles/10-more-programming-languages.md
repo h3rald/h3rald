@@ -25,7 +25,7 @@ While no 1.0 version has been released yet, the language is quite popular. It co
 
 #### Example FizzBuzz Implementation
 
-```
+```crystal
 1.upto(100) do |v|
   p fizz_buzz(v)
 end
@@ -61,7 +61,7 @@ If you always wanted to try out Erlang but never did because its syntax scared y
 
 #### Example FizzBuzz Implementation
 
-```
+```elixir
 1..100 |> Enum.map(fn i ->
   cond do
     rem(i,3*5) == 0 -> "FizzBuzz"
@@ -92,7 +92,7 @@ Elm offers static typing, [type inference](https://guide.elm-lang.org/types/), [
 
 #### Example FizzBuzz Implementation
 
-```
+```elm
 import Graphics.Element exposing (show)
 import List exposing (map)
  
@@ -130,7 +130,7 @@ If you want a fairly stable and well-rounded programming language for your next 
 
 #### Example FizzBuzz Implementation
 
-```
+```go
 package main
  
 import "fmt"
@@ -171,7 +171,7 @@ Sure, it's less mature and tooling probably is not quite on-par with Python, but
 
 #### Example FizzBuzz Implementation
 
-```
+```julia
 for i in 1:100
     if i % 15 == 0
         println("FizzBuzz")
@@ -205,7 +205,7 @@ Although I have never been a big fan of the JVM, Kotlin is definitely one of the
 
 #### Example FizzBuzz Implementation
 
-```
+```kotlin
 fun fizzBuzz() {
     for (i in 1..100) {
         when {
@@ -239,7 +239,7 @@ Want to know something else really cool written in Nim? The open source [Nim for
 
 #### Example FizzBuzz Implementation
 
-```
+```nim
 for i in 1..100:
   if i mod 15 == 0:
     echo("FizzBuzz")
@@ -272,7 +272,7 @@ There are quite a few articles online comparing Rust to Nim and Go. These three 
 
 #### Example FizzBuzz Implementation
 
-```
+```rust
 use std::borrow::Cow;
 fn main() {
     for i in 1..101 {
@@ -305,7 +305,7 @@ While definitely a step up from Objective-C from a syntax and high-level feature
 
 #### Example FizzBuzz Implementation
 
-```
+```swift
 for i in 1...100{
     var s:String?
     if i%3==0{s="Fizz"}
@@ -333,7 +333,7 @@ Could this be the holy grail, the true replacement of C? Only time will tell. It
 
 #### Example FizzBuzz Implementation
 
-```
+```zig
 const std = @import("std");
 
 pub fn main() void {
