@@ -105,13 +105,15 @@
   (str :text ==> str :result)
   (
     "temp/highlight" :tmpfile
-    "chroma $# --html --html-only --html-prevent-surrounding-pre --fail" :cmd
+    "chroma $# --html --html-only --html-prevent-surrounding-pre" :cmd
     text "<pre>\s*<code[^>]*>([\s\S]+?)</code></pre>" (
       :match
-      match 1 get escape :code
+      match 1 get :code
+      ; Unescape HTML entities
       code "(&gt;|&lt;|&quot;|&amp;)" (
         :match
         match 1 get :ntt
+
         (ntt "&gt;" ==)
           (">")
         when
@@ -124,9 +126,9 @@
         (ntt "&amp;" ==)
           ("&")
         when
-      ) replace-apply "\\\\\"" "\"" replace @code
+      ) replace-apply @code
       code tmpfile fwrite
-      cmd (tmpfile) =% run /output :out
+      "$#" (cmd) =% (tmpfile) =% run /output :out
       "<pre class=\"chroma\"><code>$#</code></pre>" (out) =%
     ) replace-apply @result
   )
