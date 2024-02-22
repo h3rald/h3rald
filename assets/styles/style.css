@@ -316,7 +316,13 @@ a {
 }
 
 a[href^=http]::after {
-    content: "\293B";
+    background-image: url("/images/entypo/external-link.svg");
+    display: inline-block;
+    background-repeat: no-repeat;
+    content: "";
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
 }
 
 .content {
@@ -614,7 +620,7 @@ a[href^=http].icon-link {
 }
 
 a[href^=http].icon-link::after {
-    content: "";
+  display: none;
 }
 
 .icon-link img {
