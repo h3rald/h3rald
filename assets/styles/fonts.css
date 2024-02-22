@@ -1,27 +1,27 @@
 @font-face {
     font-family: 'Noway';
-    src: url('../fonts/noway_light-webfont.woff2') format('woff2');
+    src: url('../fonts/noway-light-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Noway';
-    src: url('../fonts/noway_light_italic-webfont.woff2') format('woff2');
+    src: url('../fonts/noway-light-italic-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Noway';
-    src: url('../fonts/noway_regular-webfont.woff2') format('woff2');
+    src: url('../fonts/noway-regular-webfont.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Noway';
-    src: url('../fonts/noway_regular_italic-webfont.woff2') format('woff2');
+    src: url('../fonts/noway-regular-italic-webfont.woff2') format('woff2');
     font-weight: bold;
     font-style: italic;
 }
