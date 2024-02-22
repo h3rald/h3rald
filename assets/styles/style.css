@@ -316,7 +316,7 @@ a {
 }
 
 a[href^=http]::after {
-    content: "\10548";
+    content: "\2934";
 }
 
 .content {
