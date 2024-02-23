@@ -5,7 +5,7 @@ timestamp: 1200890820
 tags: "ruby|review|books"
 -----
 <p style="float:right;"><img src="/images/efficient_ruby_shortcut.jpeg" alt="" /></p>
-<p>The second shortcut from Addison-Wesley Professional series I&#8217;m going to review is called <a
+<p>The second shortcut from Addison-Wesley Professional series I'm going to review is called <a
 		href="http://www.informit.com/store/product.aspx?isbn=0321540034">Writing Efficient Ruby Code</a>. A very
 	promising title, especially considering that this book is only 50 pages long.</p>
 <p>As usual, this shortcut can be intended as a sort of programmer-friendly detailed cheatsheet: like the other ones in
@@ -13,7 +13,7 @@ tags: "ruby|review|books"
 	necessary to understand a particular concept.</p>
 <h3>The Author</h3>
 <p><a href="http://railsexpress.de/blog/">Dr. Stefan Kaes</a>, the author, contributed a lot to improve Ruby on
-	Rails&#8217; performance by refactoring portions of its core and try to &#8220;get maximum speed out of
+	Rails' performance by refactoring portions of its core and try to &#8220;get maximum speed out of
 	performance-critical sections of code&#8221;. This short but interesting shortcut groups together a lot of
 	performance tweaks, tips and tricks but also some &#8220;anti-patterns&#8221; Kaes was able to identify through his
 	career as programming teacher Ruby software consultant and key Rails contributor.</p>
@@ -21,8 +21,8 @@ tags: "ruby|review|books"
 <p>Like with the previously-covered <a href="/articles/mongrel-shortcut-review">Mongrel shortcut</a>, <em>Writing
 		Efficient Ruby Code</em> always goes straight to the point when it comes to identify problems. The first one
 	mentioned is of course that the <em>Ruby Interpreter is Slow</em>, most people are aware of that, due to their
-	direct experience or because this argument is normally used by non-Rubyists to argue the language&#8217;s usability
-	in commercial projects. What you may not know is why that is so, and that&#8217;s where the first part of this book
+	direct experience or because this argument is normally used by non-Rubyists to argue the language's usability
+	in commercial projects. What you may not know is why that is so, and that's where the first part of this book
 	comes into play.</p>
 <blockquote>
 	<p><em>&#8220;Ruby is a highly dynamic language: Almost all language entities are first-class citizens in that they
@@ -42,27 +42,29 @@ tags: "ruby|review|books"
 <p>Other useful tips include, for example:</p>
 <ul>
 	<li>Use syntax constructs (e.g. assignments) as expressinons. Use evaluation precedences.</li>
-	<li>Use interpolated strings <code>"... #{string_variable}"</code> (there&#8217;s also no performance difference if
+	<li>Use interpolated strings <code>"... #{string_variable}"</code> (there's also no performance difference if
 		constant strings are used between <code>"</code> or <code>'</code>)</li>
 	<li>Use operators which update the data structure without copying it (when possible). Use <code>update</code> or
-		<code>merge</code> to update hashes.</li>
+		<code>merge</code> to update hashes.
+	</li>
 	<li>Iterating using <code>for a in  A</code> is slightly faster than performing the same iteration using
-		<code>each</code>, (it is the opposite in Ruby 1.9 though)</li>
+		<code>each</code>, (it is the opposite in Ruby 1.9 though)
+	</li>
 	<li>do not use <code>return</code> unless you have to</li>
 	<li>test in order of expected case frequency</li>
 	<li>Use parallel assignment (<code>a, b = 5, 6</code>) where applicable</li>
 	<li>If a module gets included in only one other class (or module), it’s preferable to open the class instead.</li>
 </ul>
-<p>I deliberately chose not to elaborate any further on the tips listed above because otherwise I&#8217;ll give a big
+<p>I deliberately chose not to elaborate any further on the tips listed above because otherwise I'll give a big
 	chunk of the contents of the book itself. If you know Ruby enough, you may already know why such reccommendations
-	make sense, but if you don&#8217;t, <em>Writing Efficient Ruby Code</em> can be a short but very interesting read.
+	make sense, but if you don't, <em>Writing Efficient Ruby Code</em> can be a short but very interesting read.
 </p>
 <h3>The Good</h3>
 <p>For each of the 30 &#8220;coding patterns&#8221; (and consequent anti-patterns) described in the book, the author
 	does a great job explaining the reasons of doing something in a particular way, also through examples and
 	benchmarks, where possible.</p>
 <p>Furthermore, this <em>shortcut</em> can really be useful to grasp a few difference between Ruby 1.8.5, 1.8.6 and 1.9
-	in terms of performance: not all the patters apply to all Ruby implementations, and when that&#8217;s the case it is
+	in terms of performance: not all the patters apply to all Ruby implementations, and when that's the case it is
 	clearly stated.</p>
 <h3>The Bad</h3>
 <p>My only complaint about the book is probably the lack of details and more &#8220;specialized&#8221; patterns.

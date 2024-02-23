@@ -7,7 +7,7 @@ tags: "website|webdevelopment"
 -----
 
 <section class="section">
-	<p>One of the many things that really bothered me about my web site was the fact that it didn&#8217;t look good on
+	<p>One of the many things that really bothered me about my web site was the fact that it didn't look good on
 		my iPhone, or any small screen for that matter.</p>
 	<p>Years ago I <a href="http://www.alistapart.com/articles/responsive-web-design/">read about</a> responsive web
 		design, media queries, etc., but I never had the will or the time to dive into the subject. Then <a
@@ -56,7 +56,7 @@ tags: "website|webdevelopment"
 				</p>
 			</tr>
 		</table>
-		<p>That&#8217;s grey with black text. Boring. Want it red? Sure, add the <code>.btn-danger</code> class:</p>
+		<p>That's grey with black text. Boring. Want it red? Sure, add the <code>.btn-danger</code> class:</p>
 		<table>
 			<tr>
 				<td>
@@ -90,7 +90,7 @@ tags: "website|webdevelopment"
 				</p>
 			</tr>
 		</table>
-		<p>Wouldn&#8217;t it be nice to have a nice icon in it? Add an empty <code>&lt;i&gt;</code> element with a
+		<p>Wouldn't it be nice to have a nice icon in it? Add an empty <code>&lt;i&gt;</code> element with a
 			suitable class and there you have a nice <a
 				href="http://twitter.github.com/bootstrap/base-css.html#icons">Glyphicon</a> before the button text (or
 			you can use other icon fonts, like <a href="http://fontawesome.io/">FontAwesome</a>).</p>
@@ -113,24 +113,24 @@ tags: "website|webdevelopment"
 		<p>&#8230;You get the picture. And it works surprisingly well &#8212; if you embrace its philosophy, that is.
 			Just like Rails &amp; Co.: an <em>opinionated</em> framework.</p>
 		<p>The only thing that bugged me about all this was that by adding smart <span class="caps">CSS</span> classes
-			to elements you&#8217;re actually specifying how something looks like by polluting <span
-				class="caps">HTML</span> code. Granted, if your stylesheet doesn&#8217;t include a
-			<code>.btn-inverse</code> your buttons won&#8217;t automagically become black, but you know what I mean.
-			Although in a very nice way, by following Bootstrap&#8217;s way of doing things you are no longer separating
-			content from presentation. And in the next six months, when I&#8217;ll ditch Bootstrap for something better,
-			all the previews of the code snippets above won&#8217;t work unless I keep using the Bootstrap stylesheet or
+			to elements you're actually specifying how something looks like by polluting <span class="caps">HTML</span>
+			code. Granted, if your stylesheet doesn't include a
+			<code>.btn-inverse</code> your buttons won't automagically become black, but you know what I mean.
+			Although in a very nice way, by following Bootstrap's way of doing things you are no longer separating
+			content from presentation. And in the next six months, when I'll ditch Bootstrap for something better,
+			all the previews of the code snippets above won't work unless I keep using the Bootstrap stylesheet or
 			at least some of its button classes.
 		</p>
 		<p>The real problems arise for the stylesheets provided for general elements. By default, Bootstrap styles
 			tables with no borders or colors. What if I wanted just ordinary tables to be striped and bordered? Sure, I
 			can add the <code>.table-striped</code> and <code>.table-bordered</code> classes to all tables, and
-			that&#8217;s it. In <span class="caps">EVERY</span> table. Or of course undo bootstrap&#8217;s magic by
+			that's it. In <span class="caps">EVERY</span> table. Or of course undo bootstrap's magic by
 			overriding the <span class="caps">CSS</span> rules for ordinary tables, to include the rules specified for
-			<code>.table-striped</code> and <code>.table-bordered</code>. Copy &amp; paste someone else&#8217;s code?
+			<code>.table-striped</code> and <code>.table-bordered</code>. Copy &amp; paste someone else's code?
 			Not nice.
 		</p>
 		<p>Luckily, using <a href="http://sass-lang.com/"><span class="caps">SASS</span></a> finally paid off, and
-			here&#8217;s how to do it in a nice and tidy way:</p>
+			here's how to do it in a nice and tidy way:</p>
 
 		<div class="code">
 			<pre>
@@ -163,17 +163,17 @@ table {
 			</li>
 			<li>A <em>responsive</em> navigation bar with links to all the main sections of the site</li>
 		</ul>
-		<p>As far as the navigation bar goes, that&#8217;s pure Bootstrap goodness, nothing new there (except the serif
+		<p>As far as the navigation bar goes, that's pure Bootstrap goodness, nothing new there (except the serif
 			font), <a href="http://twitter.github.com/bootstrap/components.html#navbar">look it up</a>.</p>
 		<p>For the logo&#8230; Well, I had this nice plan of using just plain <span class="caps">CSS</span> and web
-			fonts to make it (hell, it&#8217;s basically the word &#8220;H3RALD&#8221;, with the 3 slightly bigger and
-			moved a bit). It worked mostly fine (in webkit browser and in Opera), but Firefox didn&#8217;t like it much,
-			and IE&#8230; well, some old versions of IE don&#8217;t play nice with web fonts, so I decided to make a
+			fonts to make it (hell, it's basically the word &#8220;H3RALD&#8221;, with the 3 slightly bigger and
+			moved a bit). It worked mostly fine (in webkit browser and in Opera), but Firefox didn't like it much,
+			and IE&#8230; well, some old versions of IE don't play nice with web fonts, so I decided to make a
 			nice <span class="caps">PNG</span> image and stick it there instead. Less hassle, it works everywhere, job
 			done.</p>
 		<p>The search input box was a bit more of a challenge. I read up on the new <a
 				href="https://developers.google.com/custom-search/docs/element">Custom Search Element Control <span
-					class="caps">API</span></a>, discovered that Google decided that web designers don&#8217;t know
+					class="caps">API</span></a>, discovered that Google decided that web designers don't know
 			Javascript or <span class="caps">CSS</span> nowadays and proposed a new <span class="caps">API</span> that
 			has numerous advantages like:</p>
 		<blockquote>
@@ -181,14 +181,14 @@ table {
 				<li>Easy to use syntax—no JavaScript knowledge required.</li>
 				<li>Custom Search elements (search boxes and results pages) are rendered based on settings stored on the
 					<span class="caps">CSE</span> servers (along with any client-side customization). Server-side
-					changes don&#8217;t require you to copy and paste any new code into your site<br />
+					changes don't require you to copy and paste any new code into your site<br />
 		</blockquote>
 		</li>
 		</ul>
 		<p>Thanks Google. Now every time I change my stylesheet I have to remember to go back to your page and change
 			the link colors etc. And if I decide to hide the page <span class="caps">URL</span> underneath the link in
-			the results? I can&#8217;t. And that&#8217;s why I decided to reverse engineer their <span
-				class="caps">CSS</span> and provide my overrides. Nasty, but at least I have some control! They&#8217;re
+			the results? I can't. And that's why I decided to reverse engineer their <span class="caps">CSS</span> and
+			provide my overrides. Nasty, but at least I have some control! They're
 			all <a href="https://github.com/h3rald/h3rald/blob/master/content/styles/_vendor.scss">here</a>, if you are
 			curious.</p>
 
@@ -211,9 +211,9 @@ table {
 				with their nasty buttons, badges, ribbons &amp; alike.</li>
 			<li>No ads! I have a full-time job, my site uses free and open source technologies, and I write because I
 				like to do so, not to make money. And I can afford the few bucks necessary to pay the hosting provider.
-				That&#8217;s why there are NO <span class="caps">ADS</span> on H3RALD.com anymore <sup>(*)</sup>.</li>
+				That's why there are NO <span class="caps">ADS</span> on H3RALD.com anymore <sup>(*)</sup>.</li>
 		</ul>
-		<p><sup>(*)</sup>: For now, that is. Then I&#8217;ll probably change my mind, but until then enjoy the true
+		<p><sup>(*)</sup>: For now, that is. Then I'll probably change my mind, but until then enjoy the true
 			no-ads experience!</p>
 
 	</section>

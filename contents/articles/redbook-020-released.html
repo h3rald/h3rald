@@ -5,46 +5,70 @@ timestamp: 1191812700
 tags: "redbook|ruby|productivity|opensource"
 -----
 <blockquote>
-<p><em>&#8220;Release Early, Release Often&#8221;</em></p>
-<p>&#8212; Eric S. Raymond, <a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html">The Cathedral and the Bazaar</a></p>
+	<p><em>&#8220;Release Early, Release Often&#8221;</em></p>
+	<p>&#8212; Eric S. Raymond, <a
+			href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html">The Cathedral and
+			the Bazaar</a></p>
 </blockquote>
-<p>In other words, time for another (early) release of <a href="http://www.assembla.com/space/redbook">RedBook</a>. There are quite a few new features which are worth examining, in particular:</p>
+<p>In other words, time for another (early) release of <a href="http://www.assembla.com/space/redbook">RedBook</a>.
+	There are quite a few new features which are worth examining, in particular:</p>
 <h3>Regexp search for messages</h3>
-<p>This was actually already available before, just if you inputted a search string which was not a regexp, you&#8217;d get an unhandled exception (more or less). This exception is now handled propertly so you get a pretty message instead, if an error occurs when parsing the search string.</p>
+<p>This was actually already available before, just if you inputted a search string which was not a regexp, you'd get an
+	unhandled exception (more or less). This exception is now handled propertly so you get a pretty message instead, if
+	an error occurs when parsing the search string.</p>
 <h3>Log Backup</h3>
-<p>A new <strong>&#58;backup</strong> keyword is available to quickly backup your log file. Here&#8217;s what it does:</p>
+<p>A new <strong>&#58;backup</strong> keyword is available to quickly backup your log file. Here's what it does:</p>
 <ul>
 	<li>Loads all messages silently</li>
 	<li>Writes them to a file in the same directory as the original log file named &lt;log-alias&gt;.bkp.yml.</li>
 </ul>
-<p>Handy, especially if there was a similar keyword to restore the last backup, which is planned for <a href="http://www.assembla.com/spaces/milestones/index/bWE7NkzCqr3k25abIlDkbG?spaces_tool_id=ceS8UazCqr3k25abIlDkbG">later on</a>.</p>
+<p>Handy, especially if there was a similar keyword to restore the last backup, which is planned for <a
+		href="http://www.assembla.com/spaces/milestones/index/bWE7NkzCqr3k25abIlDkbG?spaces_tool_id=ceS8UazCqr3k25abIlDkbG">later
+		on</a>.</p>
 <h3>Support for multiple log files</h3>
-<p>This is perhaps the most important feature introduced by this release. It is now possible to configure more than one log file by adding any number of <strong>&#58;data_&lt;alias&gt;&#58;</strong> settings inside your config.yml file, where alias is the name of your log file. So, for example, if your config.yml file contains the following:</p>
+<p>This is perhaps the most important feature introduced by this release. It is now possible to configure more than one
+	log file by adding any number of <strong>&#58;data_&lt;alias&gt;&#58;</strong> settings inside your config.yml file,
+	where alias is the name of your log file. So, for example, if your config.yml file contains the following:</p>
 <p><strong>&#58;data_test&#58; &#8220;testlog.yml&#8221;</strong></p>
 <p>You can load the &#8220;test&#8221; log by typing</p>
 <p><strong>&#58;use test</strong></p>
-<p>(&#58;use is a shorthand for &#58;load_log). Similarly, another new keyword <strong>&#58;dest</strong> has been introduced to be able to log a message to a different log file without loading it into memory, like this:</p>
+<p>(&#58;use is a shorthand for &#58;load_log). Similarly, another new keyword <strong>&#58;dest</strong> has been
+	introduced to be able to log a message to a different log file without loading it into memory, like this:</p>
 <p><strong>&#58;log This message will be saved to testlog.yml &#58;dest test</strong></p>
 <p>Finally, a <strong>&#58;refresh</strong> keyword has been introduced as an alias to reloading the current log.</p>
 <h3>(Almost) automatic log of completed activities</h3>
-<p>Right when I was coding the <strong>&#58;timecalc</strong> operation, I thought it would be nice to be able to log the start and end of a task without having to type it twice. Now this is possible using the <strong>&#58;complete</strong> keyword:</p>
+<p>Right when I was coding the <strong>&#58;timecalc</strong> operation, I thought it would be nice to be able to log
+	the start and end of a task without having to type it twice. Now this is possible using the
+	<strong>&#58;complete</strong> keyword:</p>
 <p>&#58;log Testing feature X in product Y</p>
 <p>&#58;complete</p>
 <p><strong>&#58;complete</strong> will re-log the last message prepended with [<span class="caps">COMPLETED</span>]:</p>
 4 Mon Oct 08 2007 &#8211; 10:47:45 AM Testing feature X in product Y
 5 Mon Oct 08 2007 &#8211; 10:54:31 AM [<span class="caps">COMPLETED</span>] Testing feature X in product Y
-<p>What if I start another task before completing the first one? No problem, it is sufficient to load the last activities using a <strong>&#58;load</strong> command and then issuing <strong>&#58;complete &lt;number&gt;</strong> where &lt;number&gt; is the index of the loaded activity. <br />
-This nifty little feature will become more and more important when (starting from release 0.4) I&#8217;ll implement more time tracking functions, and it will be possible to track completed tasks in a specific timeframe and/or marked with a specific tag.</p>
+<p>What if I start another task before completing the first one? No problem, it is sufficient to load the last
+	activities using a <strong>&#58;load</strong> command and then issuing <strong>&#58;complete &lt;number&gt;</strong>
+	where &lt;number&gt; is the index of the loaded activity. <br />
+	This nifty little feature will become more and more important when (starting from release 0.4) I'll implement more
+	time tracking functions, and it will be possible to track completed tasks in a specific timeframe and/or marked with
+	a specific tag.</p>
 <h3>Easy integration with launchers like Launchy and QuickSilver</h3>
-<p>To conclude, as someone pointed out that it would be cool to use RedBook from launchers like Launchy or Quicksilver, I made another standalone script (redbooklet.rb or redbooklet.exe) which is just able to parse a log command and write a message to the specified log file.<br />
-To use it with Launchy, for example, all you have to do is the following:</p>
+<p>To conclude, as someone pointed out that it would be cool to use RedBook from launchers like Launchy or Quicksilver,
+	I made another standalone script (redbooklet.rb or redbooklet.exe) which is just able to parse a log command and
+	write a message to the specified log file.<br />
+	To use it with Launchy, for example, all you have to do is the following:</p>
 <ol>
-	<li>Create a shortcut to redbooklet.exe (or to a way to execute the corresponding ruby script) named &#8220;log&#8221;.</li>
+	<li>Create a shortcut to redbooklet.exe (or to a way to execute the corresponding ruby script) named
+		&#8220;log&#8221;.</li>
 	<li>Copy the &#8220;log&#8221; shortcut anywhere in your start menu</li>
 	<li>Bring up launchy (ALT+SPACE) and type in &#8220;log&#8221;</li>
 	<li>Hit tab</li>
 	<li>Type in your log message, optionally with the any &#58;tags or &#58;dest keywords.</li>
-	<li>The message will be logged to your default log file or to the log you specified using the &#58;dest keyword. If an error occurs, it will appear in a command line window for 15 seconds before the program is closed.</li>
+	<li>The message will be logged to your default log file or to the log you specified using the &#58;dest keyword. If
+		an error occurs, it will appear in a command line window for 15 seconds before the program is closed.</li>
 </ol>
-<p>That&#8217;s all folks! As usual, if you have any comment or suggestion feel free to reply to this post or email me. For a list of the planned features and releases, check out the <a href="http://www.assembla.com/spaces/milestones/index/bWE7NkzCqr3k25abIlDkbG?spaces_tool_id=ceS8UazCqr3k25abIlDkbG">Milestones</a> page.</p>
-<p style="text-align:center;"><strong><a href="http://www.assembla.com/spaces/files/bWE7NkzCqr3k25abIlDkbG"><span class="caps">DOWNLOAD</span> <span class="caps">HERE</span></a></strong></p>
+<p>That's all folks! As usual, if you have any comment or suggestion feel free to reply to this post or email me. For a
+	list of the planned features and releases, check out the <a
+		href="http://www.assembla.com/spaces/milestones/index/bWE7NkzCqr3k25abIlDkbG?spaces_tool_id=ceS8UazCqr3k25abIlDkbG">Milestones</a>
+	page.</p>
+<p style="text-align:center;"><strong><a href="http://www.assembla.com/spaces/files/bWE7NkzCqr3k25abIlDkbG"><span
+				class="caps">DOWNLOAD</span> <span class="caps">HERE</span></a></strong></p>

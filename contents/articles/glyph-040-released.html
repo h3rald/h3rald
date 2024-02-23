@@ -6,17 +6,27 @@ timestamp: 1283535900
 tags: "glyph|ruby|opensource"
 -----
 
-		<section class="section">
-<p>This new release of Glyph introduces an unusually large number of features, improvements and bugfixes. Not so much in terms of new macros maybe (no index or bibliography support for now, but it will come, don&#8217;t worry!), but rather&#8230; pretty much everything else!</p>
-
 <section class="section">
-<header><h1 id="h_1" class="toc">Web Output</h1></header>
-<p>By far the biggest feature of this release is support for multi-file output, i.e. the possibility to transform your book into a web site. You&#8217;ve asked for it, I needed it too, and now it&#8217;s finally here.</p>
-<p>An example? Sure. Take the <a href="http://github.com/downloads/h3rald/glyph/glyph.pdf">Glyph Book</a> (now a 98-page <span class="caps">PDF</span> file) for instance. My only regret was that a long <span class="caps">PDF</span> is quite heavy to digest and peruse, especially if you&#8217;re in a hurry. It would be so much nice to have it available online, in chunks of more manageable size.</p>
-<p>Well, <a href="/glyph/book/">here it is</a>. That&#8217;s the very same document, split in several <span class="caps">HTML</span> files with a custom layout that matches this site&#8217;s. The good news is that you can do it too:</p>
-	
-<div class="code">
-<pre>
+	<p>This new release of Glyph introduces an unusually large number of features, improvements and bugfixes. Not so
+		much in terms of new macros maybe (no index or bibliography support for now, but it will come, don't worry!),
+		but rather&#8230; pretty much everything else!</p>
+
+	<section class="section">
+		<header>
+			<h1 id="h_1" class="toc">Web Output</h1>
+		</header>
+		<p>By far the biggest feature of this release is support for multi-file output, i.e. the possibility to
+			transform your book into a web site. You've asked for it, I needed it too, and now it's finally here.</p>
+		<p>An example? Sure. Take the <a href="http://github.com/downloads/h3rald/glyph/glyph.pdf">Glyph Book</a> (now a
+			98-page <span class="caps">PDF</span> file) for instance. My only regret was that a long <span
+				class="caps">PDF</span> is quite heavy to digest and peruse, especially if you're in a hurry. It would
+			be so much nice to have it available online, in chunks of more manageable size.</p>
+		<p>Well, <a href="/glyph/book/">here it is</a>. That's the very same document, split in several <span
+				class="caps">HTML</span> files with a custom layout that matches this site's. The good news is that you
+			can do it too:</p>
+
+		<div class="code">
+			<pre>
 <code>
 section[
   @title[This title is compulsory]
@@ -25,45 +35,81 @@ section[
 ]
 </code>
 </pre>
-</div>
-	<p>Note the <code>@src</code> attribute? It basically includes the specified topic file. So by creating a <code>document.glyph</code> file like <a href="http://github.com/h3rald/glyph/blob/master/book/document.glyph">this</a>, you can create a tidy table of contents (not a single <code>include</code> macro) <em>and</em> get a website for free. Glyph, as usual, takes care of anything for you, especially links between topics. Just link away like you did so far, nothing changes from previous versions, it will just work as expected (<a href="/glyph/book/compiling/compiling.html#web_output">read more</a>).</p>
+		</div>
+		<p>Note the <code>@src</code> attribute? It basically includes the specified topic file. So by creating a
+			<code>document.glyph</code> file like <a
+				href="http://github.com/h3rald/glyph/blob/master/book/document.glyph">this</a>, you can create a tidy
+			table of contents (not a single <code>include</code> macro) <em>and</em> get a website for free. Glyph, as
+			usual, takes care of anything for you, especially links between topics. Just link away like you did so far,
+			nothing changes from previous versions, it will just work as expected (<a
+				href="/glyph/book/compiling/compiling.html#web_output">read more</a>).</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_2" class="toc">HTML5 Output</h1></header>
-<p>Compared to Web output, HTML5 support was trivial and only took a few hours to implement and test. You can now produce single-file HTML5-compliant documents (<code>html5</code> output format) or even HTML5-compliant web sites (<code>web5</code> output). Just using <code>section</code> tags instead of <code>div</code> tags made it worth it.</p>
-<p>Of course, the default <span class="caps">CSS</span> files have been updated to be compatible with HTML5 output too.</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_2" class="toc">HTML5 Output</h1>
+		</header>
+		<p>Compared to Web output, HTML5 support was trivial and only took a few hours to implement and test. You can
+			now produce single-file HTML5-compliant documents (<code>html5</code> output format) or even HTML5-compliant
+			web sites (<code>web5</code> output). Just using <code>section</code> tags instead of <code>div</code> tags
+			made it worth it.</p>
+		<p>Of course, the default <span class="caps">CSS</span> files have been updated to be compatible with HTML5
+			output too.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_3" class="toc">Project Statistics</h1></header>
-<p>Anoher big thing was a shiny new command, <code>glyph stats</code>, which brings &#8212; guess &#8212; stats. No more chasing after bookmark references, just type <code>glyph stats --bookmark=#web_output</code> and you&#8217;ll know where the <code>#web_output</code> bookmark was defined <em>and</em> what links to it. Similar stats are available for:</p>
-<ul>
-	<li>macros</li>
-	<li>links</li>
-	<li>files</li>
-	<li>snippets</li>
-</ul>
-<p><code>glyph stats -m</code> tells me that I used 3236 macro instances throughout the Glyph book. Just so you know.</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_3" class="toc">Project Statistics</h1>
+		</header>
+		<p>Anoher big thing was a shiny new command, <code>glyph stats</code>, which brings &#8212; guess &#8212; stats.
+			No more chasing after bookmark references, just type <code>glyph stats --bookmark=#web_output</code> and
+			you'll know where the <code>#web_output</code> bookmark was defined <em>and</em> what links to it. Similar
+			stats are available for:</p>
+		<ul>
+			<li>macros</li>
+			<li>links</li>
+			<li>files</li>
+			<li>snippets</li>
+		</ul>
+		<p><code>glyph stats -m</code> tells me that I used 3236 macro instances throughout the Glyph book. Just so you
+			know.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_4" class="toc">Custom tasks and commands</h1></header>
-<p>&#8220;Glyph is extensible&#8221;, &#8220;Glyph lets you create your own macros&#8221;, &#8230;great, but kinda limited right? No more. Glyph now lets you create <em>custom Rake tasks</em> and even <em>custom commands</em>.</p>
-<p>Have a look at <a href="/glyph/book/extending/commands_tasks.html">this page</a> for more information on what you can do and how. You can now extend Glyph in any way you like (including adding custom output formats) without having to touch its core, just do it <em>within your own project</em>.</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_4" class="toc">Custom tasks and commands</h1>
+		</header>
+		<p>&#8220;Glyph is extensible&#8221;, &#8220;Glyph lets you create your own macros&#8221;, &#8230;great, but
+			kinda limited right? No more. Glyph now lets you create <em>custom Rake tasks</em> and even <em>custom
+				commands</em>.</p>
+		<p>Have a look at <a href="/glyph/book/extending/commands_tasks.html">this page</a> for more information on what
+			you can do and how. You can now extend Glyph in any way you like (including adding custom output formats)
+			without having to touch its core, just do it <em>within your own project</em>.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_5" class="toc">wkhtmltopdf</h1></header>
-<p>Last but not least, you no longer need Prince <span class="caps">XML</span> to produce <span class="caps">PDF</span> file. Granted, Prince is awesome and the <span class="caps">PDF</span> it produces are very, very nice&#8230; but if you want to produce PDFs commercially and want to same some money, you can now use <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a>: it&#8217;s <em>free</em> and <em>open source</em>, and it keeps getting better and better.</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_5" class="toc">wkhtmltopdf</h1>
+		</header>
+		<p>Last but not least, you no longer need Prince <span class="caps">XML</span> to produce <span
+				class="caps">PDF</span> file. Granted, Prince is awesome and the <span class="caps">PDF</span> it
+			produces are very, very nice&#8230; but if you want to produce PDFs commercially and want to same some
+			money, you can now use <a href="http://code.google.com/p/wkhtmltopdf/">wkhtmltopdf</a>: it's <em>free</em>
+			and <em>open source</em>, and it keeps getting better and better.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_6" class="toc">...and more to come!</h1></header>
-<p>After this release I&#8217;m going to take a small break from Glyph. Nothing major, I just want to redesign my site (again) and find the time to write a proper Glyph tutorial. This doesn&#8217;t mean that development will be halted or anything, just that it will take a few months for Glyph 0.5.0 to come out.</p>
-<p>Meanwhile, there may be bugfix releases (depends how many bugs turn up). It would be a good time to come out of the closet and propose/vote on new <a href="http://github.com/h3rald/glyph/issues">features</a>!</p>
-<p>Hope you enjoy using Glyph 0.4.0, and if you need anything or feel social, remember that the doors of the <a href="http://groups.google.com/group/glyph-framework">Glyph User Group</a> are always open!</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_6" class="toc">...and more to come!</h1>
+		</header>
+		<p>After this release I'm going to take a small break from Glyph. Nothing major, I just want to redesign my site
+			(again) and find the time to write a proper Glyph tutorial. This doesn't mean that development will be
+			halted or anything, just that it will take a few months for Glyph 0.5.0 to come out.</p>
+		<p>Meanwhile, there may be bugfix releases (depends how many bugs turn up). It would be a good time to come out
+			of the closet and propose/vote on new <a href="http://github.com/h3rald/glyph/issues">features</a>!</p>
+		<p>Hope you enjoy using Glyph 0.4.0, and if you need anything or feel social, remember that the doors of the <a
+				href="http://groups.google.com/group/glyph-framework">Glyph User Group</a> are always open!</p>
 
-</section>
+	</section>
 
 </section>

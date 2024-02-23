@@ -22,7 +22,7 @@ tags: "glyph|ruby|opensource"
     </header>
     <p><a href="https://github.com/tammycravit">Tammy Cravit</a> proposed (and more or less implemented) an interesting
       new feature: integrate <a href="http://calibre-ebook.com/">Calibre</a> to generate ebooks in <span
-        class="caps">EPUB</span> and <span class="caps">MOBI</span> format from Glyph&#8217;s native standalone <span
+        class="caps">EPUB</span> and <span class="caps">MOBI</span> format from Glyph's native standalone <span
         class="caps">HTML</span> output format.</p>
     <p>Although the support is still somewhat rough, you can, as a matter of fact, generate ebooks with Glyph, using
       Calibre.</p>
@@ -61,7 +61,8 @@ tags: "glyph|ruby|opensource"
     <p>Additionally, I used this features to create an <code>xml</code> macro dispatcher that can be used to render raw
       <span class="caps">XML</span> tags, and an <code>s</code> macro dispatcher that basically is able to call nearly
       all the instance methods of the Ruby String class. So you can write things like
-      <code>s/sub[This feature makes my life easier|/my/|your]</code> and similar.</p>
+      <code>s/sub[This feature makes my life easier|/my/|your]</code> and similar.
+    </p>
 
   </section>
   <section class="section">
@@ -95,7 +96,8 @@ tags: "glyph|ruby|opensource"
     </div>
 
     <p>Not that you <em>need</em> to be able to calculate factorials in your documents, but know that now you
-      <em>can</em>. An you can also define lexically scoped variables, err&#8230; <em>attributes</em>, like this:</p>
+      <em>can</em>. An you can also define lexically scoped variables, err&#8230; <em>attributes</em>, like this:
+    </p>
     <div class="CodeRay">
       <div class="code">
         <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>let[
@@ -117,7 +119,8 @@ tags: "glyph|ruby|opensource"
       <h1 id="h_4" class="toc">Embeddable fragments</h1>
     </header>
     <p>Too lazy to create snippets? Feel the urge to re-use something you already wrote somewhere? Use a
-      <em>fragment</em> and embed it, as follows:</p>
+      <em>fragment</em> and embed it, as follows:
+    </p>
     <div class="CodeRay">
       <div class="code">
         <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>Snippets and fragments ##[good_way|are a good way to reuse] small chunks of content, 
@@ -136,17 +139,18 @@ tags: "glyph|ruby|opensource"
     <p>To sum up:</p>
     <ul>
       <li><code>snippets.yml</code> is no more, define all your snippets inside your document instead.</li>
-      <li>New &#8220;invisible space separator&#8221;: <code>\/</code> instead of <code>\.</code>. Because it&#8217;s
+      <li>New &#8220;invisible space separator&#8221;: <code>\/</code> instead of <code>\.</code>. Because it's
         slightly prettier, nothing else.</li>
       <li>The <code>rewrite:</code> macro has been replaced by the <code>define:</code> macro, which also allows
         recursion, so be careful!</li>
       <li>If you want to render raw <span class="caps">XML</span> tags, use <code>xml/tag_name</code> instead of
-        <code>=tag_name</code>.</li>
+        <code>=tag_name</code>.
+      </li>
       <li>No more <code>match</code> macro, use <code>s/match</code> instead.</li>
     </ul>
     <p>For the full list of the issues fixed in this release, see the <a
         href="/glyph/book/changelog.html">Changelog</a>.</p>
-    <p>Hope you&#8217;ll enjoy this new release of Glyph. If you want to contribute, go ahead and <a
+    <p>Hope you'll enjoy this new release of Glyph. If you want to contribute, go ahead and <a
         href="https://github.com/h3rald/glyph">fork the repo</a>!</p>
 
   </section>

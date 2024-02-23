@@ -10,19 +10,19 @@ tags: "rails|ruby|databases"
 	things.<br />
 	I personally chose to put this kind of data to make my application more dynamic, although I could have decided to
 	use ENUMs or simply ordinary varchar fields &#8212; that would have been easier, but less flexible. For now,
-	I&#8217;m sticking with my original choice.</p>
+	I'm sticking with my original choice.</p>
 <p>The data in these tables is kind of a prerequisite for the application to run: I must be able to have a status to
 	assign to a user when creating it, and the same applies to roles. Sure, I could spend 20 minutes populating these
-	tables manually, but it would be nice if there was a less tedious way, wouldn&#8217;t it?</p>
+	tables manually, but it would be nice if there was a less tedious way, wouldn't it?</p>
 <p>There is indeed. The inspiration came from a technique described in the book (which I highly recommend) <em>Agile Web
-		Development With Rails</em>, in which the author outlines how it would be possible to use Rails&#8217; fixtures
+		Development With Rails</em>, in which the author outlines how it would be possible to use Rails' fixtures
 	and migrations to load data in the database automatically from <span class="caps">YAML</span> files. <br />
-	All you have to do is create a migration to load the specified <span class="caps">YAML</span> files and you&#8217;re
+	All you have to do is create a migration to load the specified <span class="caps">YAML</span> files and you're
 	all set.</p>
 <p>I wanted to take a little step further, allowing the migration to load data from <em>all <span
-			class="caps">YAML</span> files in a specific directory</em>, automatically.Let&#8217;s start creating the
+			class="caps">YAML</span> files in a specific directory</em>, automatically.Let's start creating the
 	<span class="caps">YAML</span> files then and place them all in one directory of the application like
-	<code>/db/migrate/defaults</code>. Here&#8217;s the one I used for user roles, for example:
+	<code>/db/migrate/defaults</code>. Here's the one I used for user roles, for example:
 </p>
 <div class='yaml'>
 	<pre><code>visitor:
@@ -61,8 +61,8 @@ webmaster:
 	level: 1000</code></pre>
 </div>
 <p>The important thing to remember is to provide a unique string to identify each record, before specifying each fiels.
-	The other files look similar, so I won&#8217;t bother listing them here.</p>
-<p>And here&#8217;s the simple code for the migration:</p>
+	The other files look similar, so I won't bother listing them here.</p>
+<p>And here's the simple code for the migration:</p>
 <div class='ruby'>
 	<pre><code>require 'active_record/fixtures'
 

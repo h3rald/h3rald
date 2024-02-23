@@ -4,9 +4,13 @@ content-type: article
 timestamp: 1193289480
 tags: "redbook|ruby|productivity|opensource"
 -----
-<p>It&#8217;s time for a new beta release of RedBook. This was actually going to be a fairly modest release in terms of features, but I actually ended up implementing a lot more than expected, even things which were planned for the first production release 1.0. So, let&#8217;s see what&#8217;s new</p>
+<p>It's time for a new beta release of RedBook. This was actually going to be a fairly modest release in terms of
+	features, but I actually ended up implementing a lot more than expected, even things which were planned for the
+	first production release 1.0. So, let's see what's new</p>
 <h3>New operation names <em>(which break compatibility with previous versions)</em></h3>
-<p>I had a look at the names I choose for the operations and I noticed that they were either not intuitive enough or too verbose. So I decided to change a fair few of them (thus breaking compatibility with previous versions, but after all that&#8217;s what beta releases are for, right?):</p>
+<p>I had a look at the names I choose for the operations and I noticed that they were either not intuitive enough or too
+	verbose. So I decided to change a fair few of them (thus breaking compatibility with previous versions, but after
+	all that's what beta releases are for, right?):</p>
 <table>
 	<tr>
 		<th><span class="caps">OLD</span> </th>
@@ -38,29 +42,52 @@ tags: "redbook|ruby|productivity|opensource"
 	</tr>
 </table>
 <h3>New Manual/Home Page</h3>
-<p>A while ago I discovered <a href="http://www.tiddlywiki.com/">TiddlyWiki</a>, but as a matter of fact I never used it for anything practical. From last week though, I started using it a work for taking notes and create short memos, and then I thought of using it to replace RedBook&#8217;s standard <span class="caps">README</span> file (which was made in a hurry and was kinda cryptical). Now a brand new &#8220;manual.html&#8221; ships with RedBook &#8212; 308 KB (30 of actual docs and 278 of Javascript/<span class="caps">HTML</span>/<span class="caps">CSS</span> magic) with everything you need to know about it. Additionally, an online version is available at the following address:</p>
+<p>A while ago I discovered <a href="http://www.tiddlywiki.com/">TiddlyWiki</a>, but as a matter of fact I never used it
+	for anything practical. From last week though, I started using it a work for taking notes and create short memos,
+	and then I thought of using it to replace RedBook's standard <span class="caps">README</span> file (which was made
+	in a hurry and was kinda cryptical). Now a brand new &#8220;manual.html&#8221; ships with RedBook &#8212; 308 KB (30
+	of actual docs and 278 of Javascript/<span class="caps">HTML</span>/<span class="caps">CSS</span> magic) with
+	everything you need to know about it. Additionally, an online version is available at the following address:</p>
 <p style="text-align:center;"><strong><a href="http://redbook.h3rald.com">redbook.h3rald.com</a></strong></p>
 <h3>Removed Win32::Console Library</h3>
-<p>OK this is not good news for people (like me) who use RedBook on Windows, but I promise you&#8217;ll forgive me when you read about the other new features below. I discovered by chance that the Win32::Console library (which was used to get colors working on Windows) seems not to handle international characters properly and also seems to be conflicting in some way with the Readline library I decided to include (see below). I don&#8217;t know whether this is a problem of the actual library or just of the gem used to pack it.</p>
+<p>OK this is not good news for people (like me) who use RedBook on Windows, but I promise you'll forgive me when you
+	read about the other new features below. I discovered by chance that the Win32::Console library (which was used to
+	get colors working on Windows) seems not to handle international characters properly and also seems to be
+	conflicting in some way with the Readline library I decided to include (see below). I don't know whether this is a
+	problem of the actual library or just of the gem used to pack it.</p>
 <h3>rbconfig.yml</h3>
-<p>The <code>config.yml</code> file has been renamed to <code>rbconfig.yml</code>. Additionally, if you place a file with this name in your $<span class="caps">HOME</span> directory it will override the one in your RedBook folder (This was done in preparation for the RedBook RubyGem).</p>
+<p>The <code>config.yml</code> file has been renamed to <code>rbconfig.yml</code>. Additionally, if you place a file
+	with this name in your $<span class="caps">HOME</span> directory it will override the one in your RedBook folder
+	(This was done in preparation for the RedBook RubyGem).</p>
 <h3>New operations</h3>
 <p>The following new operations are available:</p>
 <ul>
-	<li><a href="http://redbook.h3rald.com/#%3Arelog">:relog</a> &#8212; Re-logs a previously-logged message (keeping the same tags and updating the timestamp)</li>
+	<li><a href="http://redbook.h3rald.com/#%3Arelog">:relog</a> &#8212; Re-logs a previously-logged message (keeping
+		the same tags and updating the timestamp)</li>
 	<li><a href="http://redbook.h3rald.com/#%3Aclear">:clear</a> &#8212; Clears the screen.</li>
-	<li><a href="http://redbook.h3rald.com/#%3Aruby">:ruby</a> &#8212; Evaluates arbitrary Ruby code outputting the result (use with care&#8230;)</li>
+	<li><a href="http://redbook.h3rald.com/#%3Aruby">:ruby</a> &#8212; Evaluates arbitrary Ruby code outputting the
+		result (use with care&#8230;)</li>
 </ul>
 <h3>Auto-completion</h3>
-<p>Some Mac users originally complained that the backspace key wasn&#8217;t working in RedBook (and it didn&#8217;t in Linux either). Fortunately the solution to this was easy enough: include the <span class="caps">GNU</span> <a href="http://tiswww.case.edu/php/chet/readline/rltop.html">Readline</a> library. <br />
-Readline is now being used in RedBook to:</p>
+<p>Some Mac users originally complained that the backspace key wasn't working in RedBook (and it didn't in Linux
+	either). Fortunately the solution to this was easy enough: include the <span class="caps">GNU</span> <a
+		href="http://tiswww.case.edu/php/chet/readline/rltop.html">Readline</a> library. <br />
+	Readline is now being used in RedBook to:</p>
 <ul>
 	<li>Provide basic (Emacs-style) bindings</li>
 	<li><strong>Auto-completion</strong> for keywords <em>and tags</em></li>
-	<li>Allow the user to automatically customize key bindings via an <a href="http://redbook.h3rald.com/#.inputrc">.inputrc</a> file placed in their $<span class="caps">HOME</span> directory (on Windows you&#8217;ll have to define a <span><span class="caps">HOME</span></span> environment variable pointing to a directory of your choice). An example .inputrc file is distributed with RedBook with some specific key bindings.</li>
+	<li>Allow the user to automatically customize key bindings via an <a
+			href="http://redbook.h3rald.com/#.inputrc">.inputrc</a> file placed in their $<span class="caps">HOME</span>
+		directory (on Windows you'll have to define a <span><span class="caps">HOME</span></span> environment variable
+		pointing to a directory of your choice). An example .inputrc file is distributed with RedBook with some specific
+		key bindings.</li>
 </ul>
 <h3>Support for international characters</h3>
-<p>Finally, I decided to implement another feature which was originally planned for the 1.0 release: international characters support. This is possible using the Iconv Ruby extension (requires <a href="http://www.gnu.org/software/libiconv/"><span class="caps">GNU</span> libiconv</a>) which can convert strings between different character sets. The character sets needs to be configured via the <a href="http://redbook.h3rald.com/#rbconfig.yml">rbconfig.yml</a> file.</p>
+<p>Finally, I decided to implement another feature which was originally planned for the 1.0 release: international
+	characters support. This is possible using the Iconv Ruby extension (requires <a
+		href="http://www.gnu.org/software/libiconv/"><span class="caps">GNU</span> libiconv</a>) which can convert
+	strings between different character sets. The character sets needs to be configured via the <a
+		href="http://redbook.h3rald.com/#rbconfig.yml">rbconfig.yml</a> file.</p>
 <p>For more information, check out the <a href="http://redbook.h3rald.com/#ChangeLog">ChangeLog</a></p>
-<p style="text-align:center;"><strong><a href="http://www.assembla.com/spaces/files/bWE7NkzCqr3k25abIlDkbG">Download RedBook</a></strong></p>
-
+<p style="text-align:center;"><strong><a href="http://www.assembla.com/spaces/files/bWE7NkzCqr3k25abIlDkbG">Download
+			RedBook</a></strong></p>

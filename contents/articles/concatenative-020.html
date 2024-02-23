@@ -4,28 +4,47 @@ content-type: article
 timestamp: 1240126920
 tags: "ruby|concatenative"
 -----
-<p>Version 0.2.0. of the <a href="/concatenative">Concatenative</a> <span class="caps">DSL</span> has been <a href="http://rubyforge.org/frs/?group_id=8068&amp;release_id=33575">released</a>.</p>
+<p>Version 0.2.0. of the <a href="/concatenative">Concatenative</a> <span class="caps">DSL</span> has been <a
+		href="http://rubyforge.org/frs/?group_id=8068&amp;release_id=33575">released</a>.</p>
 <p>Here are some highlights from the changelog:</p>
 <ul>
 	<li>Implemented new combinators:
-	<ul>
-		<li>binrec</li>
-		<li>split</li>
-		<li>twodip</li>
-		<li>threedip</li>
-	</ul></li>
+		<ul>
+			<li>binrec</li>
+			<li>split</li>
+			<li>twodip</li>
+			<li>threedip</li>
+		</ul>
+	</li>
 	<li>Performance improvements:
-	<ul>
-		<li>Stack is never copied.</li>
-		<li>No symbol/string conversion when processing words.</li>
-	</ul></li>
+		<ul>
+			<li>Stack is never copied.</li>
+			<li>No symbol/string conversion when processing words.</li>
+		</ul>
+	</li>
 	<li>Pseudo-namespace support (e.g. :kernel/:while and :math/:factorial)</li>
 	<li>~ and &lt;= operators to unquote and define words, respectively.</li>
 	<li>No more uppercase words!</li>
 </ul>
-<p>Oddly enough, I realized that it is possible to defined methods named after reserved words like &#8220;while&#8221; or &#8220;if&#8221;, so now all the concatenative words (combinators) in <code>kernel.rb</code> are now defined <em>without</em> a leading undersore. Similarly, there&#8217;s no real need to use <span class="caps">UPPERCASE</span> symbols, so as a result, method lookup is significantly faster and will use less resources.</p>
-<p>Here&#8217;s how the lookup works. Say you have the following program:</p>
-<div class='ruby'><pre><code>[[1,2,3], [4.5.6], :concat]</code></pre></div><p>If <code>:concat</code> has been defined by the user (<code>:concat &lt;= [...]</code>), that definition will be used, otherwise the <code>Concatenative::Kernel</code> combinator <code>concat</code> will be called. If you want to use the corresponding Ruby method, all you have to do is specifying the arity explicitly using the <code>|</code> operator.</p>
-<p>To remove any ambiguity, it is now possible to specify the <em>namespace</em> of a word explicitly, e.g. :kernel/:concat or :ruby/concat. The <code>/</code> operator simply concatenates the two symbols together (<code>:"kernel/concat"</code>) and sets the namespace (<code>:kernel</code>) and name (<code>:concat</code>) of the new symbol. <code>:kernel</code> and <code>:ruby</code> are not meant to be used when defining new words, but you can use anything else you like, for example :math/:factorial or :local/:a, etc.</p>
-<p>As I pointed out in the <a href="/articles/concatenative-programming-in-ruby">first article</a> about concatenative, even with the new performance improvement a concatenative program still runs slower than a standard Ruby program, but at least now you won&#8217;t run out of stack space (the <em>Ruby</em> stack, in this case) too soon.</p>
-<p>If you have any issues to report, feature requests, etc., feel free to use <a href="http://github.com/h3rald/concatenative/issues">GitHub</a> to do so.</p>
+<p>Oddly enough, I realized that it is possible to defined methods named after reserved words like &#8220;while&#8221;
+	or &#8220;if&#8221;, so now all the concatenative words (combinators) in <code>kernel.rb</code> are now defined
+	<em>without</em> a leading undersore. Similarly, there's no real need to use <span class="caps">UPPERCASE</span>
+	symbols, so as a result, method lookup is significantly faster and will use less resources.</p>
+<p>Here's how the lookup works. Say you have the following program:</p>
+<div class='ruby'>
+	<pre><code>[[1,2,3], [4.5.6], :concat]</code></pre>
+</div>
+<p>If <code>:concat</code> has been defined by the user (<code>:concat &lt;= [...]</code>), that definition will be
+	used, otherwise the <code>Concatenative::Kernel</code> combinator <code>concat</code> will be called. If you want to
+	use the corresponding Ruby method, all you have to do is specifying the arity explicitly using the <code>|</code>
+	operator.</p>
+<p>To remove any ambiguity, it is now possible to specify the <em>namespace</em> of a word explicitly, e.g.
+	:kernel/:concat or :ruby/concat. The <code>/</code> operator simply concatenates the two symbols together
+	(<code>:"kernel/concat"</code>) and sets the namespace (<code>:kernel</code>) and name (<code>:concat</code>) of the
+	new symbol. <code>:kernel</code> and <code>:ruby</code> are not meant to be used when defining new words, but you
+	can use anything else you like, for example :math/:factorial or :local/:a, etc.</p>
+<p>As I pointed out in the <a href="/articles/concatenative-programming-in-ruby">first article</a> about concatenative,
+	even with the new performance improvement a concatenative program still runs slower than a standard Ruby program,
+	but at least now you won't run out of stack space (the <em>Ruby</em> stack, in this case) too soon.</p>
+<p>If you have any issues to report, feature requests, etc., feel free to use <a
+		href="http://github.com/h3rald/concatenative/issues">GitHub</a> to do so.</p>

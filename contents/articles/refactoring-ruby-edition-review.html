@@ -5,23 +5,23 @@ timestamp: 1264171236
 tags: "ruby|books|review"
 -----
 <p>Refactoring, like testing, is an activity that should be very familiar to all programmers, especially Rubyists.
-	Actually, programs written in Ruby don&#8217;t need as many refactorings as, say, Java programs. However Rubyists
+	Actually, programs written in Ruby don't need as many refactorings as, say, Java programs. However Rubyists
 	are traditionally more <span class="caps">TDD</span> oriented and they like writing clear and elegant code.</p>
 <p><a href="http://www.informit.com/store/product.aspx?isbn=0321603508">Refactoring: Ruby Edition</a> is actually a
 	rewrite of the more revolutionary &#8212; at the time &#8212; <a
 		href="http://www.informit.com/store/product.aspx?isbn=0201485672">Refactoring: Improving the Design of Existing
 		Code</a>, written by Martin Fowler &amp; others to teach Java programmers about refactoring. Jay Fields and
 	others decided to <em>port</em> this historical title to Ruby to fill a gap: there was no authoritative book about
-	refactoring for this language, so what&#8217;s better than translating the Bible on the subject?</p>
-<p>If you already own the Java book you shouldn&#8217;t buy this one. This is not my personal opinion (I never read the
-	original), it&#8217;s actually written in the Preface of the book itself. I really like honest authors, and luckily
-	this seems to have become a trend, lately: programmers don&#8217;t like reading bullshit after all. By the
-	authors&#8217; own admission, this book contains roughly the same material and the same examples of the original
+	refactoring for this language, so what's better than translating the Bible on the subject?</p>
+<p>If you already own the Java book you shouldn't buy this one. This is not my personal opinion (I never read the
+	original), it's actually written in the Preface of the book itself. I really like honest authors, and luckily
+	this seems to have become a trend, lately: programmers don't like reading bullshit after all. By the
+	authors' own admission, this book contains roughly the same material and the same examples of the original
 	Java book, plus some slightly more Ruby-specific content.</p>
 <h3>Getting started</h3>
 <p style="float:right;"><img src="/images/pictures/refactoring-ruby-ed.jpg" alt="" /></p>
 <p>The first chapter, <em>Refactoring, a first example</em>, is not a first chapter. Well, it is in a literal sense, but
-	it doesn&#8217;t look like one: no theory, no padding, you&#8217;re immediately thrown in the middle of the battle,
+	it doesn't look like one: no theory, no padding, you're immediately thrown in the middle of the battle,
 	dealing with a small program in desperate need of refactoring. It literally contains quite a lot of code: the same
 	program is rewritten over and over with changes in bold to teach you what refactoring means. The most intimidating
 	thing is reading names of refactoring techniques capitalized and used in a natural way, like if the reader was
@@ -29,29 +29,29 @@ tags: "ruby|books|review"
 		Array with Object</em>.</p>
 <p>What makes this chapter even more unusual is the clever usage of white space: <em>before</em> and <em>after</em> code
 	snippets are shown on separate page, which makes it much more immediate to see the changes in code (but it
-	won&#8217;t work very well if you bought the ebook instead of the hardback).</p>
+	won't work very well if you bought the ebook instead of the hardback).</p>
 <p>By contrast, the second chapter <em>Principles in Refactoring</em> is all about theory: it should have been the first
-	chapter, but it&#8217;s better this way. Here you&#8217;ll learn the basics: a bit of history, when to refactor and
+	chapter, but it's better this way. Here you'll learn the basics: a bit of history, when to refactor and
 	when not to, and so on. I bet it was taken almost verbatim from the Java book; see for example: <em>&#8220;[&#8230;]
 		If your building APIs for outsid consumption, as <strong>Sun</strong> does [&#8230;]&#8221;</em>.</p>
 <p>Chapter 3, <em>Bad Smells in Code</em>, is probably the most important and useful chapter in the entire book.
-	It&#8217;s somethig you should read over and over until you can spot a code smell right after coding.</p>
+	It's somethig you should read over and over until you can spot a code smell right after coding.</p>
 <blockquote>
 	<p>&#8220;You should use this chapter and the table on the inside back cover as a way to give you inspiration whn
-		you&#8217;re not sure what refactorings to do.&#8221;</p>
+		you're not sure what refactorings to do.&#8221;</p>
 </blockquote>
 <p>Precisely what you have to do. Except that there is no table on the inside back cover, so I guess <a
 		href="http://docs.google.com/viewer?url=http://www.industriallogic.com/papers/smellstorefactorings.pdf">this
 		one</a> will have to do. Pity.</p>
 <p>Chapter 4, <em>Building Tests</em>, is the usual, compulsory chapter about unit testing, i.e. the usual intro to
-	Test::Unit. As I said, it&#8217;s essential for the book to make sense, but you can safely skip it if you know how
+	Test::Unit. As I said, it's essential for the book to make sense, but you can safely skip it if you know how
 	to test already.</p>
 <p>Finally, chapter 5 (<em>Toward a Catalog of Refactoring</em>) is a 2.5 page intro to the bulk of the book, nothing
-	more than glue to ease the transition. I would have removed it completely, but that&#8217;s because I&#8217;m a
+	more than glue to ease the transition. I would have removed it completely, but that's because I'm a
 	merciless technical writer I guess.</p>
 <h3>Diving in</h3>
 <p>From chapter 6 onwards, specific refactoring techniques are described. Each chapter starts with a brief overview of
-	the following sections (which should have been a list, but I&#8217;m just being pedantic now), so you know what to
+	the following sections (which should have been a list, but I'm just being pedantic now), so you know what to
 	expect.</p>
 <p>Each technique described has a very meaningful and immediate name that reflects its purpose, like Extract Method or
 	Split Temporary Variable. A code example introduces the code smell and the proposed refactoring, followed by a
@@ -60,10 +60,10 @@ tags: "ruby|books|review"
 <p>Tipically, each refactoring has its own, self-contained code snippets. Depending on the complexity of the refactoring
 	technique examined, the authors may spend half to five or six pages just to show all code iterations to get to the
 	result. When things get too complicated, <span class="caps">UML</span> diagrams are used to make the technique
-	easier to understand, but only when it&#8217;s strictly necessary.</p>
+	easier to understand, but only when it's strictly necessary.</p>
 <p>Even if the original techniques were though for Java, the authors (in particlar Jay Fields, I guess) do a great job
-	making sure that the Ruby code doensn&#8217;t look like Java code in disguise: the result of the refactoring always
-	follows Ruby&#8217;s philosophy and idioms. I particularly liked the following:</p>
+	making sure that the Ruby code doensn't look like Java code in disguise: the result of the refactoring always
+	follows Ruby's philosophy and idioms. I particularly liked the following:</p>
 <ul>
 	<li>Replace Dynamic Receptor with Dynamic Method Definition (Chapter 6), a nice example of metaprogramming.</li>
 	<li>Decompose Conditional/Recompose Conditional (Chapter 9), very useful and very common</li>
@@ -71,18 +71,18 @@ tags: "ruby|books|review"
 		conditionals</li>
 	<li>Extract Module (Chapter 11), very Rubyesque way to tidy up busy classes</li>
 </ul>
-<p>This doesn&#8217;t mean that <em>every</em> refactoring described in the book is a programmer&#8217;s epiphany, some
+<p>This doesn't mean that <em>every</em> refactoring described in the book is a programmer's epiphany, some
 	of the techniques are indeed pretty obvious and some portion of code in need of refactoring indeed smell very, very
 	bad! E.g.:</p>
 <ul>
 	<li>Inline Class (Chapter 7): Who on Earth would ever create a class containing a single method returning a
 		telephone number?</li>
-	<li>Replace Magic Number with Symbolic Constant (Chapter 8): Why would you use integers for constants? Didn&#8217;t
+	<li>Replace Magic Number with Symbolic Constant (Chapter 8): Why would you use integers for constants? Didn't
 		Matz give us Symbols to avoid just that?</li>
 </ul>
 <h3>The big picture</h3>
 <p>By the end of chapter 11 you should be familiar with nearly all the best possible way to get rid of code smells.
-	That&#8217;s all good, but what happens if <em>the entire program</em> stinks? Chapter 12 (<em>Big
+	That's all good, but what happens if <em>the entire program</em> stinks? Chapter 12 (<em>Big
 		Refactorings</em>) claims to have some answers to some common pitfalls. The techniques defined in this chapter
 	are by no means sufficient to solve all problems caused by bad design, but they can help especially to rewrite
 	legacy code, or programs developed by Ruby newbies:</p>
@@ -93,7 +93,7 @@ tags: "ruby|books|review"
 	<li>Extract hierarchy</li>
 </ul>
 <p>They are basically all about reducing bloat and unnecessary complexity, and &#8212; to me, that is &#8212; they all
-	sounded pretty obvious. <em>Of course</em> I&#8217;m going to separate domain from presentation! Didn&#8217;t Rails
+	sounded pretty obvious. <em>Of course</em> I'm going to separate domain from presentation! Didn't Rails
 	teach us anything at all? I must say I was somehow disappointed by this chapter. I was going to bet there was
 	something slightly more advanced, maybe something about replacing traditional object instantiation with an internal
 	<span class="caps">DSL</span>? Nope, sorry.
@@ -102,12 +102,12 @@ tags: "ruby|books|review"
 	to refactor and how to do so, depending on the situation.</p>
 <h3>Conclusion</h3>
 <p>This and <a href="/articles/design-patterns-in-ruby-review/">Design Patterns in Ruby</a> are now my favorite Ruby
-	books. I believe they complete each other: Russ Olsen&#8217;s book is more about designing your programs properly
+	books. I believe they complete each other: Russ Olsen's book is more about designing your programs properly
 	from the start, while <em>Refactoring: Ruby Edition</em> can help to make things better at a lower level. <br />
-	Ruby developers don&#8217;t need to refactor as much as Java developers, mainly because of Ruby itself,
+	Ruby developers don't need to refactor as much as Java developers, mainly because of Ruby itself,
 	nevertheless, this is an excellent read for anyone who wants to get serious about programming in Ruby, and is
 	determined to do so by following the Ruby Way.</p>
-<p>I&#8217;ll definitely keep this book near me when I&#8217;m coding: I do believe it is much more helpful when you
+<p>I'll definitely keep this book near me when I'm coding: I do believe it is much more helpful when you
 	start using it as a reference, when you already read about all the refactoring techniques and want to put them in
-	practice. Also, I&#8217;ll probably re-read chapter 3 on a regular basis, to get accustomed to recognize code
+	practice. Also, I'll probably re-read chapter 3 on a regular basis, to get accustomed to recognize code
 	smells, and deal with them accordingly.</p>

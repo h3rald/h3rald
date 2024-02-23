@@ -7,78 +7,169 @@ timestamp: 1188988800
 tags: "ruby"
 -----
 <h3>Preamble</h3>
-<p>I discovered Ruby fairly recently, through the excellent Ruby on Rails framework<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>. Although I don&#8217;t consider myself a Ruby expert by any means, I read the PickAxe<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup>, I&#8217;ve coded a few utilities for my personal use in Ruby and I&#8217;m currently developing with Rails during my free time.</p>
-<p>Ruby is currently my programming language of choice; I started off with Turbo Pascal in high school, discovered C and C++ at university, did my thesis in Java and learned <span class="caps">PHP</span> from scratch because I wanted to learn how to make websites quickly and easily. I guess I feel compelled to code sometimes, more as a form of entertainment than anything else.  Rather dissatisfied with what I tried language-wise, I was determined to start learning either Python or Ruby. I chose the latter because I didn&#8217;t want incorrect indentation to break my code<sup class="footnote" id="fnr3"><a href="#fn3">3</a></sup>, and here I am, heaping praise upon it.</p>
-<p>There are plenty<sup class="footnote" id="fnr4"><a href="#fn4">4</a></sup> of introductions, tutorials, articles and essays of different sorts which aim to guide the novice and advise the guru on how to get the most out of Ruby. This article, however, is not one of them.</p>
-<p>It&#8217;s more of a modest, humble, and incomplete list of a few reasons which may (or may not) entice you to use Ruby or at least play with it a bit. A word of caution: if you are using another programming language for work or whatever, don&#8217;t complain to me if you don&#8217;t want to use it anymore &#8211; that&#8217;s exactly what happened to me, but luckily, it didn&#8217;t matter.  Ruby is a very beautiful and elegant language, but like all things of this sort, it may well poison your mind and corrupt your soul&#8230;</p>
+<p>I discovered Ruby fairly recently, through the excellent Ruby on Rails framework<sup class="footnote" id="fnr1"><a
+			href="#fn1">1</a></sup>. Although I don't consider myself a Ruby expert by any means, I read the PickAxe<sup
+		class="footnote" id="fnr2"><a href="#fn2">2</a></sup>, I've coded a few utilities for my personal use in Ruby
+	and I'm currently developing with Rails during my free time.</p>
+<p>Ruby is currently my programming language of choice; I started off with Turbo Pascal in high school, discovered C and
+	C++ at university, did my thesis in Java and learned <span class="caps">PHP</span> from scratch because I wanted to
+	learn how to make websites quickly and easily. I guess I feel compelled to code sometimes, more as a form of
+	entertainment than anything else. Rather dissatisfied with what I tried language-wise, I was determined to start
+	learning either Python or Ruby. I chose the latter because I didn't want incorrect indentation to break my code<sup
+		class="footnote" id="fnr3"><a href="#fn3">3</a></sup>, and here I am, heaping praise upon it.</p>
+<p>There are plenty<sup class="footnote" id="fnr4"><a href="#fn4">4</a></sup> of introductions, tutorials, articles and
+	essays of different sorts which aim to guide the novice and advise the guru on how to get the most out of Ruby. This
+	article, however, is not one of them.</p>
+<p>It's more of a modest, humble, and incomplete list of a few reasons which may (or may not) entice you to use Ruby or
+	at least play with it a bit. A word of caution: if you are using another programming language for work or whatever,
+	don't complain to me if you don't want to use it anymore &#8211; that's exactly what happened to me, but luckily, it
+	didn't matter. Ruby is a very beautiful and elegant language, but like all things of this sort, it may well poison
+	your mind and corrupt your soul&#8230;</p>
 <p>You have been warned.<br />
-h3. Why learn Ruby?</p>
+	h3. Why learn Ruby?</p>
 <h4>#1 &#8211; You get all the treats without the tricks</h4>
-<p>Ruby borrows from all the best programming languages out there, from smalltalk to Java, Perl to Python<sup class="footnote" id="fnr5"><a href="#fn5">5</a></sup>. Basically, here&#8217;s the features and functionalities Ruby gives you which you may have seen elsewhere:</p>
+<p>Ruby borrows from all the best programming languages out there, from smalltalk to Java, Perl to Python<sup
+		class="footnote" id="fnr5"><a href="#fn5">5</a></sup>. Basically, here's the features and functionalities Ruby
+	gives you which you may have seen elsewhere:</p>
 <ul>
-	<li><em>Exceptions:</em> Believe it or not, exceptions are one of the most important things to master when developing any kind of application. PHP4 programmers probably won&#8217;t know anything about them and they&#8217;ll tell you to just print stuff on the screen or use their &#8220;extremely advanced&#8221; class for error handling. Please, ignore them. Fortunately for all of us, Ruby comes with try/catch (or better, begin/rescue) blocks and a series of predefined, extensible Exceptions to handle errors properly.</li>
-	<li><em>Namespaces:</em> Ruby modules make excellent and easy-to-use namespaces, for the joy of Java and C++ enthusiasts.</li>
-	<li><em>Built-in Regular Expressions:</em> For all the Perl monkeys, you can put something between slashes and it will become a regular expression, ready to be matched with a =~ operator.</li>
+	<li><em>Exceptions:</em> Believe it or not, exceptions are one of the most important things to master when
+		developing any kind of application. PHP4 programmers probably won't know anything about them and they'll tell
+		you to just print stuff on the screen or use their &#8220;extremely advanced&#8221; class for error handling.
+		Please, ignore them. Fortunately for all of us, Ruby comes with try/catch (or better, begin/rescue) blocks and a
+		series of predefined, extensible Exceptions to handle errors properly.</li>
+	<li><em>Namespaces:</em> Ruby modules make excellent and easy-to-use namespaces, for the joy of Java and C++
+		enthusiasts.</li>
+	<li><em>Built-in Regular Expressions:</em> For all the Perl monkeys, you can put something between slashes and it
+		will become a regular expression, ready to be matched with a =~ operator.</li>
 	<li><em>Overloadable operators:</em> Ruby lets you define operators like +, -, etc., for any of your classes.</li>
-	<li><em>Packages:</em> Called &#8220;gems&#8221;, they really are solid and precious indeed&#8230;and they work! Packages support dependencies, and they can be either cross-platform or platform-dependent.</li>
-	<li><em>Interactive Shell:</em> the Interactive Ruby Shell can be used to test Ruby code instantly, similar to the Python console.</li>
-	<li><em>Unit Testing</em>: The <code>Test::Unit</code> module makes things so easy that you really don&#8217;t have any excuse not to test your code.</li>
+	<li><em>Packages:</em> Called &#8220;gems&#8221;, they really are solid and precious indeed&#8230;and they work!
+		Packages support dependencies, and they can be either cross-platform or platform-dependent.</li>
+	<li><em>Interactive Shell:</em> the Interactive Ruby Shell can be used to test Ruby code instantly, similar to the
+		Python console.</li>
+	<li><em>Unit Testing</em>: The <code>Test::Unit</code> module makes things so easy that you really don't have any
+		excuse not to test your code.</li>
 </ul>
-<h4>#2 &#8211; You&#8217;ll love the little things</h4>
-<p>Ruby is elegant. Why&#8217;s that? Because it doesn&#8217;t focus on making code <em>concise</em> so much as <em>readable and usable</em>. Here are some tips to help you out:</p>
+<h4>#2 &#8211; You'll love the little things</h4>
+<p>Ruby is elegant. Why's that? Because it doesn't focus on making code <em>concise</em> so much as <em>readable and
+		usable</em>. Here are some tips to help you out:</p>
 <ul>
-	<li>You can use both <em>if</em> and <em>unless</em> in condition statements. Of course you can just use <em>if</em> and negate the condition, but <em>unless</em> can be less error-prone at times. Furthermore, you can use both operators as conditional modifiers, after a statement rather than before: <em>order.new unless order.exists</em>.</li>
-	<li>You can use question marks and exclamation marks at the end of your methods. Although no convention is enforced, ? is added if the method should return true or false, while ! is used to clarify that the method does something forcefully, like destroying a database record, chopping off the last character of a string, etc.</li>
-	<li>You can use the <em>alias</em> directives to create an alias for a method already defined. In this way you can have an <em>exist</em> and an <em>exists</em> method at no additional cost or repetition.</li>
-	<li>You can use the <em>attr_reader</em>, <em>attr_writer</em> or <em>attr_accessor</em> directives to automatically generate getter and setter methods for specified class members.</li>
-	<li>Some naming conventions are enforced for your own sanity: constants, classes and modules are capitalized, methods and members must start with a lowercase letter; global variables are prepended by a $, instance variables by <code>@</code> and class variables by <code>@@</code>; etc.</li>
-	<li>Parentheses are optional in method calls.  You can therefore write <em>File.open(&#8220;/home/h3rald/test.txt&#8221;)</em> or simply <em>File.open &#8220;/home/h3rald/test.txt&#8221;</em>, which is particularly handy with methods that don&#8217;t take parameters.</li>
+	<li>You can use both <em>if</em> and <em>unless</em> in condition statements. Of course you can just use <em>if</em>
+		and negate the condition, but <em>unless</em> can be less error-prone at times. Furthermore, you can use both
+		operators as conditional modifiers, after a statement rather than before: <em>order.new unless
+			order.exists</em>.</li>
+	<li>You can use question marks and exclamation marks at the end of your methods. Although no convention is enforced,
+		? is added if the method should return true or false, while ! is used to clarify that the method does something
+		forcefully, like destroying a database record, chopping off the last character of a string, etc.</li>
+	<li>You can use the <em>alias</em> directives to create an alias for a method already defined. In this way you can
+		have an <em>exist</em> and an <em>exists</em> method at no additional cost or repetition.</li>
+	<li>You can use the <em>attr_reader</em>, <em>attr_writer</em> or <em>attr_accessor</em> directives to automatically
+		generate getter and setter methods for specified class members.</li>
+	<li>Some naming conventions are enforced for your own sanity: constants, classes and modules are capitalized,
+		methods and members must start with a lowercase letter; global variables are prepended by a $, instance
+		variables by <code>@</code> and class variables by <code>@@</code>; etc.</li>
+	<li>Parentheses are optional in method calls. You can therefore write
+		<em>File.open(&#8220;/home/h3rald/test.txt&#8221;)</em> or simply <em>File.open
+			&#8220;/home/h3rald/test.txt&#8221;</em>, which is particularly handy with methods that don't take
+		parameters.
+	</li>
 </ul>
-<h4>#3 &#8211; You won&#8217;t ever use a semicolon again</h4>
-<p>You want to add another instruction? Just go on the next line. Hit <return> and you&#8217;re done. In Ruby, like in Python, newlines matter and you don&#8217;t have to remember to end your instructions with a semicolon. Unfortunately this means that you won&#8217;t be able to write your whole program in a single line of code, like the C++ folks&#8230; that&#8217;s too bad, isn&#8217;t it?</p>
-<p><strong><span class="caps">UPDATE</span>:</strong> Indeed you <span class="caps">CAN</span> use semicolons as line delimiters in Ruby as well, the point, however, is that you don&#8217;t have to.</p>
+<h4>#3 &#8211; You won't ever use a semicolon again</h4>
+<p>You want to add another instruction? Just go on the next line. Hit <return> and you're done. In Ruby, like in Python,
+		newlines matter and you don't have to remember to end your instructions with a semicolon. Unfortunately this
+		means that you won't be able to write your whole program in a single line of code, like the C++ folks&#8230;
+		that's too bad, isn't it?</p>
+<p><strong><span class="caps">UPDATE</span>:</strong> Indeed you <span class="caps">CAN</span> use semicolons as line
+	delimiters in Ruby as well, the point, however, is that you don't have to.</p>
 <h4>#4 &#8211; Everything is an object, as it should be</h4>
 <p>When I studied Java they taught me that everything is an object.</p>
 <p><em>- &#8220;So 14 and 374346.678 are objects then?&#8221;</em><br />
-<em>- &#8220;No, silly, they are numbers!&#8221;</em></p>
-<p>In Ruby, numbers, strings, Boolean values <em>et al</em> are objects. Really. This means you&#8217;ll write things like:</p>
-<div class='ruby'><pre><code>"YOU SHOULDN'T ALWAYS USE CAPITALS".downcase #=&gt; outputs "you shouldn't always use capitals"
--12.abs #=&gt; outputs 12</code></pre></div><p>instead of something like:</p>
-<div class='ruby'><pre><code># PHP Code
+	<em>- &#8220;No, silly, they are numbers!&#8221;</em>
+</p>
+<p>In Ruby, numbers, strings, Boolean values <em>et al</em> are objects. Really. This means you'll write things like:
+</p>
+<div class='ruby'>
+	<pre><code class="ruby">"YOU SHOULDN'T ALWAYS USE CAPITALS".downcase #=&gt; outputs "you shouldn't always use capitals"
+-12.abs #=&gt; outputs 12</code></pre>
+</div>
+<p>instead of something like:</p>
+<div class='php'>
+	<pre><code class="php"># PHP Code
 
 strtolower("YOU SHOULDN'T ALWAYS USE CAPITALS");
-abs(-12);</code></pre></div><p>You save time, you save brackets, and it just makes more sense.</p>
+abs(-12);</code></pre>
+</div>
+<p>You save time, you save brackets, and it just makes more sense.</p>
 <h4>#5 &#8211; Everything has a value</h4>
-<p>Or &#8220;you&#8217;ll hardly ever use return to return values&#8221;. In a nutshell, all Ruby instructions return a value, even variable assignments, so you don&#8217;t really need to use the &#8220;return&#8221; keyword at the end of a method; the value of the last assignment or <em>any</em> other expression will always be returned.</p>
+<p>Or &#8220;you'll hardly ever use return to return values&#8221;. In a nutshell, all Ruby instructions return a value,
+	even variable assignments, so you don't really need to use the &#8220;return&#8221; keyword at the end of a method;
+	the value of the last assignment or <em>any</em> other expression will always be returned.</p>
 <h4>#6 &#8211; You can alter your environment in any way you like</h4>
-<p>The first time I saw this, it really freaked me out. Imagine a typical programming situation: you start using a system class or a class written by someone else and you notice that you&#8217;d like to have an additional method. At this point you have a few ways to handle this in ordinary programming languages:<br />
-s</p>
+<p>The first time I saw this, it really freaked me out. Imagine a typical programming situation: you start using a
+	system class or a class written by someone else and you notice that you'd like to have an additional method. At this
+	point you have a few ways to handle this in ordinary programming languages:<br />
+	s</p>
 <ul>
-	<li>You modify the developer&#8217;s source code, if you have access to it. This is normally not a good idea, and you shouldn&#8217;t do it.</li>
-	<li>You derive a new class from the original one, and you implement the new method there. This is a good idea, but it could be overkill for just one method, and you may have to update some of your other code accordingly.</li>
-	<li>You give up, and you just create the method outside the class, somewhere else. This can be done, but it is not very elegant and goes against Object Oriented Programming.</li>
+	<li>You modify the developer's source code, if you have access to it. This is normally not a good idea, and you
+		shouldn't do it.</li>
+	<li>You derive a new class from the original one, and you implement the new method there. This is a good idea, but
+		it could be overkill for just one method, and you may have to update some of your other code accordingly.</li>
+	<li>You give up, and you just create the method outside the class, somewhere else. This can be done, but it is not
+		very elegant and goes against Object Oriented Programming.</li>
 </ul>
-<p>In Ruby, you can simply add the method to the original class, without having to hack the original source code, and even for system classes! You want to have a method to automatically convert a measurement from meters to feet? You can simply extend the Numeric class as follows:</p>
-<div class='ruby'><pre><code>class Numeric
+<p>In Ruby, you can simply add the method to the original class, without having to hack the original source code, and
+	even for system classes! You want to have a method to automatically convert a measurement from meters to feet? You
+	can simply extend the Numeric class as follows:</p>
+<div class='ruby'>
+	<pre><code class="ruby">class Numeric
   def feet
 	self*3.2808399
   end
-end</code></pre></div><p>From now on, all your numbers will have a <em>feet</em> method, which can be used just like any other method that was originally defined for the class:</p>
-<div class='ruby'><pre><code>5.feet #=&gt; Returns 16.4041995</code></pre></div><p>Basically, Ruby classes are never closed and can be modified at any time from anywhere. Use with care, of course.</p>
-<h4>#7 You won&#8217;t get unicorns from birds and horses, but you&#8217;ll still get donkeys if you want</h4>
-<p>I distinctly remember my C++ professor at university using animals to illustrate key object-oriented concepts like classes and inheritance. Weird things came in when she tried to explain multiple inheritance to inherit a class Pegasus from a class Bird and a class Horse. It had methods like &#8220;fly&#8221; and &#8220;neigh&#8221;&#8230; crazy stuff, anyhow, Ruby does not offer multiple inheritance. <br />
-This seems to be the trend, after all, and of course it&#8217;s up to tastes. I don&#8217;t quite fancy multiple inheritances, as they may lead to unpredictable things. Nevertheless, it is possible to create &#8220;mix-ins&#8221; using Ruby modules, so that members and methods defined in a module will be added to a particular class if the module is included in it.</p>
-<h4>#8 You don&#8217;t really need <span class="caps">XML</span></h4>
-<p><span class="caps">XML</span> is a nice, general-purpose markup language which can be processed by every programming language and used everywhere. Unfortunately, it can also be quite verbose to write, very difficult to parse, and let&#8217;s be honest, it&#8217;s not really readable at first glance in many cases, unlike the following code snippet:</p>
-<div class='yaml'><pre><code>regexp: !ruby/regexp /a-zA-Z/
+end</code></pre>
+</div>
+<p>From now on, all your numbers will have a <em>feet</em> method, which can be used just like any other method that was
+	originally defined for the class:</p>
+<div class='ruby'>
+	<pre><code class="ruby">5.feet #=&gt; Returns 16.4041995</code></pre>
+</div>
+<p>Basically, Ruby classes are never closed and can be modified at any time from anywhere. Use with care, of course.</p>
+<h4>#7 You won't get unicorns from birds and horses, but you'll still get donkeys if you want</h4>
+<p>I distinctly remember my C++ professor at university using animals to illustrate key object-oriented concepts like
+	classes and inheritance. Weird things came in when she tried to explain multiple inheritance to inherit a class
+	Pegasus from a class Bird and a class Horse. It had methods like &#8220;fly&#8221; and &#8220;neigh&#8221;&#8230;
+	crazy stuff, anyhow, Ruby does not offer multiple inheritance. <br />
+	This seems to be the trend, after all, and of course it's up to tastes. I don't quite fancy multiple inheritances,
+	as they may lead to unpredictable things. Nevertheless, it is possible to create &#8220;mix-ins&#8221; using Ruby
+	modules, so that members and methods defined in a module will be added to a particular class if the module is
+	included in it.</p>
+<h4>#8 You don't really need <span class="caps">XML</span></h4>
+<p><span class="caps">XML</span> is a nice, general-purpose markup language which can be processed by every programming
+	language and used everywhere. Unfortunately, it can also be quite verbose to write, very difficult to parse, and
+	let's be honest, it's not really readable at first glance in many cases, unlike the following code snippet:</p>
+<div class='yaml'>
+	<pre><code class="yaml">regexp: !ruby/regexp /a-zA-Z/
 number: 4.7
-string: a string</code></pre></div><p>This is definitely easier and more readable than <span class="caps">XML</span>, isn&#8217;t it? Welcome to <span class="caps">YAML</span>, Ruby&#8217;s favorite markup (but not really<sup class="footnote" id="fnr6"><a href="#fn6">6</a></sup>) language, which can be used to represent any Ruby object in a simple, clear and yet complete way. <br />
-Ruby <em>can</em> parse <span class="caps">XML</span>, but YAML&#8217;s simplicity convinced a lot of developers to use it as an alternative to <span class="caps">XML</span> for configuration files, for example (Rails does this).<br />
-The code snipped presented before was obtained by executing the following line of Ruby code:</p>
-<div class='ruby'><pre><code>{"string" =&gt; "a string", "number" =&gt; 4.7, "regexp" =&gt; /a-zA-Z/}.to_yaml</code></pre></div><p>The <em>to_yaml</em> method is defined for the Object class, which is the father of all of the other classes, and thus it is available in all Ruby objects. This means that you can convert anything into <span class="caps">YAML</span> <em>and</em> re-convert anything back into Ruby objects, with total transparency for the developer. So much for parsing, huh?</p>
+string: a string</code></pre>
+</div>
+<p>This is definitely easier and more readable than <span class="caps">XML</span>, isn't it? Welcome to <span
+		class="caps">YAML</span>, Ruby's favorite markup (but not really<sup class="footnote" id="fnr6"><a
+			href="#fn6">6</a></sup>) language, which can be used to represent any Ruby object in a simple, clear and yet
+	complete way. <br />
+	Ruby <em>can</em> parse <span class="caps">XML</span>, but YAML's simplicity convinced a lot of developers to use it
+	as an alternative to <span class="caps">XML</span> for configuration files, for example (Rails does this).<br />
+	The code snipped presented before was obtained by executing the following line of Ruby code:</p>
+<div class='ruby'>
+	<pre><code class="ruby">{"string" =&gt; "a string", "number" =&gt; 4.7, "regexp" =&gt; /a-zA-Z/}.to_yaml</code></pre>
+</div>
+<p>The <em>to_yaml</em> method is defined for the Object class, which is the father of all of the other classes, and
+	thus it is available in all Ruby objects. This means that you can convert anything into <span
+		class="caps">YAML</span> <em>and</em> re-convert anything back into Ruby objects, with total transparency for
+	the developer. So much for parsing, huh?</p>
 <h4>#9 Lambda is much more than a Greek letter</h4>
-<p>Ruby borrows some magic from Lisp and Perl with Proc objects and blocks. Procs are _&quot;blocks of code that have been bound to a set of local variables. Once bound, the code may be called in different contexts and still access those variables.&quot; _<sup class="footnote" id="fnr7"><a href="#fn7">7</a></sup> Consider the following:</p>
-<div class='ruby'><pre><code>def gen_times(factor)
+<p>Ruby borrows some magic from Lisp and Perl with Proc objects and blocks. Procs are _&quot;blocks of code that have
+	been bound to a set of local variables. Once bound, the code may be called in different contexts and still access
+	those variables.&quot; _<sup class="footnote" id="fnr7"><a href="#fn7">7</a></sup> Consider the following:</p>
+<div class='ruby'>
+	<pre><code class="ruby">def gen_times(factor)
 	 return Proc.new {|n| n*factor }
    end
 
@@ -87,21 +178,52 @@ The code snipped presented before was obtained by executing the following line o
 
    times3.call(12)               #=&gt; 36
    times5.call(5)                #=&gt; 25
-   times3.call(times5.call(4))   #=&gt; 60</code></pre></div><p>I could have used the <em>lambda</em> method instead of <em>Proc.new</em> and gotten the same result. This should ring a bell for people who know Perl and Python (or Lisp)<sup class="footnote" id="fnr8"><a href="#fn8">8</a></sup>.  You can do the same thing in <span class="caps">PHP</span> as well, but most people don&#8217;t really use the function.<sup class="footnote" id="fnr9"><a href="#fn9">9</a></sup></p>
-<p>Additionally, Ruby makes extensive use of blocks, sort of &#8220;unborn Procs&#8221;<sup class="footnote" id="fnr10"><a href="#fn10">10</a></sup>, for example, to iterate the contents of an object and execute some code, like the <em>each</em> method available for the Array class:</p>
-<div class='ruby'><pre><code>[1, 2, 4, 6, 8].each {|c| puts c*2} #=&gt; outputs each element multiplied by 2 in a new line.</code></pre></div><p>Should the code in the block exceed one line, you&#8217;re advised (but not required) to include the block within <em>do &#8230; end</em> instead of using braces. Ruby folks don&#8217;t like braces much, really.</p>
+   times3.call(times5.call(4))   #=&gt; 60</code></pre>
+</div>
+<p>I could have used the <em>lambda</em> method instead of <em>Proc.new</em> and gotten the same result. This should
+	ring a bell for people who know Perl and Python (or Lisp)<sup class="footnote" id="fnr8"><a href="#fn8">8</a></sup>.
+	You can do the same thing in <span class="caps">PHP</span> as well, but most people don't really use the
+	function.<sup class="footnote" id="fnr9"><a href="#fn9">9</a></sup></p>
+<p>Additionally, Ruby makes extensive use of blocks, sort of &#8220;unborn Procs&#8221;<sup class="footnote"
+		id="fnr10"><a href="#fn10">10</a></sup>, for example, to iterate the contents of an object and execute some
+	code, like the <em>each</em> method available for the Array class:</p>
+<div class='ruby'>
+	<pre><code class="ruby">[1, 2, 4, 6, 8].each {|c| puts c*2} #=&gt; outputs each element multiplied by 2 in a new line.</code></pre>
+</div>
+<p>Should the code in the block exceed one line, you're advised (but not required) to include the block within <em>do
+		&#8230; end</em> instead of using braces. Ruby folks don't like braces much, really.</p>
 <h4>#10 &#8211; You can go on Rails</h4>
-<p>Last but not least, you can always use Ruby on Rails for developing web applications. Deployment may not be as easy as it is with <span class="caps">PHP</span>, but Rails was built in Ruby because Ruby has features no other language can offer.</p>
+<p>Last but not least, you can always use Ruby on Rails for developing web applications. Deployment may not be as easy
+	as it is with <span class="caps">PHP</span>, but Rails was built in Ruby because Ruby has features no other language
+	can offer.</p>
 <h3>Conclusion</h3>
-<p>Time&#8217;s up. You&#8217;ve probably made up your mind about Ruby already, and you are either playing with it already, or you&#8217;re totally ignoring it.  However, the next time you&#8217;re frustrated because your code looks ugly and you think you could have done the same thing with half the code you got, don&#8217;t blame me!</p>
+<p>Time's up. You've probably made up your mind about Ruby already, and you are either playing with it already, or
+	you're totally ignoring it. However, the next time you're frustrated because your code looks ugly and you think you
+	could have done the same thing with half the code you got, don't blame me!</p>
 <h3>Notes</h3>
-<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> <a href="http://www.rubyonrails.org">Ruby on Rails</a>, <span class="caps">MVC</span> Web Development Framework.</p>
-<p class="footnote" id="fn2"><a href="#fnr2"><sup>2</sup></a> <a href="http://pragprog.com/book/ruby/programming-ruby/" title="2nd Ed.">Programming Ruby</a>, by Dave Thomas &amp; others, Pragmatic Programmers, 2004</p>
-<p class="footnote" id="fn3"><a href="#fnr3"><sup>3</sup></a> Not entirely correct, but sort of. For more information on Python&#8217;s indentation rules and myths, read <a href="http://www.secnetix.de/~olli/Python/block_indentation.hawk">Python: Myths about Indentation</a>.</p>
-<p class="footnote" id="fn4"><a href="#fnr4"><sup>4</sup></a> For a list of Ruby tutorials, refer to the <a href="http://www.ruby-lang.org/en/documentation/">Documentation</a> section of the Official Ruby Website.</p>
-<p class="footnote" id="fn5"><a href="#fnr5"><sup>5</sup></a> For more information on Ruby, and in particular on the similarities and differences with other languages, refer to <a href="http://www.ruby-lang.org/en/documentation/ruby-from-other-languages/">Ruby from Other Languages</a>.</p>
-<p class="footnote" id="fn6"><a href="#fnr6"><sup>6</sup></a> <span class="caps">YAML</span> is Not a Markup Language.</p>
-<p class="footnote" id="fn7"><a href="#fnr7"><sup>7</sup></a> Definition and example taken from the official Ruby documentation for class <a href="http://www.ruby-doc.org/core/classes/Proc.html">Proc</a>.</p>
-<p class="footnote" id="fn8"><a href="#fnr8"><sup>8</sup></a> For some example on lambda functions in Python, see <a href="http://www.secnetix.de/~olli/Python/lambda_functions.hawk">Python: Lambda Functions</a>.</p>
-<p class="footnote" id="fn9"><a href="#fnr9"><sup>9</sup></a> For examples of &#8220;lambda functions&#8221; in <span class="caps">PHP</span> using create_function(), see <a href="http://www.webmasterworld.com/forum88/7414.htm">this</a>.</p>
-<p class="footnote" id="fn10"><a href="#fnr10"><sup>10</sup></a> For more detailed information on Ruby&#8217;s Procs, blocks etc. refer to <a href="http://eli.thegreenplace.net/2006/04/18/understanding-ruby-blocks-procs-and-methods">Understanding Ruby blocks, Procs and methods</a>.</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> <a href="http://www.rubyonrails.org">Ruby on Rails</a>,
+	<span class="caps">MVC</span> Web Development Framework.
+</p>
+<p class="footnote" id="fn2"><a href="#fnr2"><sup>2</sup></a> <a href="http://pragprog.com/book/ruby/programming-ruby/"
+		title="2nd Ed.">Programming Ruby</a>, by Dave Thomas &amp; others, Pragmatic Programmers, 2004</p>
+<p class="footnote" id="fn3"><a href="#fnr3"><sup>3</sup></a> Not entirely correct, but sort of. For more information on
+	Python's indentation rules and myths, read <a
+		href="http://www.secnetix.de/~olli/Python/block_indentation.hawk">Python: Myths about Indentation</a>.</p>
+<p class="footnote" id="fn4"><a href="#fnr4"><sup>4</sup></a> For a list of Ruby tutorials, refer to the <a
+		href="http://www.ruby-lang.org/en/documentation/">Documentation</a> section of the Official Ruby Website.</p>
+<p class="footnote" id="fn5"><a href="#fnr5"><sup>5</sup></a> For more information on Ruby, and in particular on the
+	similarities and differences with other languages, refer to <a
+		href="http://www.ruby-lang.org/en/documentation/ruby-from-other-languages/">Ruby from Other Languages</a>.</p>
+<p class="footnote" id="fn6"><a href="#fnr6"><sup>6</sup></a> <span class="caps">YAML</span> is Not a Markup Language.
+</p>
+<p class="footnote" id="fn7"><a href="#fnr7"><sup>7</sup></a> Definition and example taken from the official Ruby
+	documentation for class <a href="http://www.ruby-doc.org/core/classes/Proc.html">Proc</a>.</p>
+<p class="footnote" id="fn8"><a href="#fnr8"><sup>8</sup></a> For some example on lambda functions in Python, see <a
+		href="http://www.secnetix.de/~olli/Python/lambda_functions.hawk">Python: Lambda Functions</a>.</p>
+<p class="footnote" id="fn9"><a href="#fnr9"><sup>9</sup></a> For examples of &#8220;lambda functions&#8221; in <span
+		class="caps">PHP</span> using create_function(), see <a
+		href="http://www.webmasterworld.com/forum88/7414.htm">this</a>.</p>
+<p class="footnote" id="fn10"><a href="#fnr10"><sup>10</sup></a> For more detailed information on Ruby's Procs, blocks
+	etc. refer to <a
+		href="http://eli.thegreenplace.net/2006/04/18/understanding-ruby-blocks-procs-and-methods">Understanding Ruby
+		blocks, Procs and methods</a>.</p>
