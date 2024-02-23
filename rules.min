@@ -1,9 +1,6 @@
 'hastysite import
 
-{} :TAGS
-{} :TAG-COLUMNS
 {} :ARCHIVES
-() :ARCHIVE-COLUMNS
 () :ARTICLES
 {} :HOME
 () :PROJECTS
@@ -12,53 +9,62 @@
 17 :projects-count
 0 :grimoire-count
 
-; Utility operator to format a timestamp into a date
 (
-  integer "dddd, d MMMM yyyy" tformat
-) ^to-date
+  symbol to-date
+  (int :timestamp ==> str :result)
+  (
+    timestamp integer "dddd, d MMMM yyyy" tformat @result
+  )
+) ::
+;; Utility operator to format a timestamp into a date
 
-; Create articles page
+
 (
-  {}
-  "articles/index"    %id
-  "articles.html"     %path
-  ".html"             %ext
-  "Articles"          %title
-  "page"              %content-type
-  ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
-  ARCHIVE-COLUMNS   %archive-columns
-  projects-count %projects-count
-  articles-count %articles-count
-  grimoire-count %grimoire-count
-  ; TODO: why processing twice??
-  dup "_archives" swap mustache %contents
-  dup "page" swap mustache :page
-  "articles" page process-icons
-  %contents
-  output-fwrite
-) ^create-articles-page
+  symbol create-articles-page
+  (==>)
+  (
+    {}
+    "articles/index"    %id
+    "articles.html"     %path
+    ".html"             %ext
+    "Articles"          %title
+    "page"              %content-type
+    ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
+    projects-count %projects-count
+    articles-count %articles-count
+    grimoire-count %grimoire-count
+    ; TODO: why processing twice??
+    dup "_archives" swap mustache %contents
+    dup "page" swap mustache :page
+    "articles" page process-icons
+    %contents
+    output-fwrite
+  )
+) ::
+;; Create articles page
 
-; Create the Projects page
 (
-  {}
-  "projects/index"                                    %id
-  "projects.html"                                     %path
-  ".html"                                             %ext
-  "Projects"                                          %title
-  "page"                                              %content-type
-  PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
-  PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects
-  projects-count %projects-count
-  articles-count %articles-count
-  grimoire-count %grimoire-count
-  dup "projects" swap mustache :page
-  "projects" page process-icons
-  %contents
-  output-fwrite
-) ^create-projects-page
-
-
-0 :count ;....
+  symbol create-projects-page
+  (==>)
+  (
+    {}
+    "projects/index"                                    %id
+    "projects.html"                                     %path
+    ".html"                                             %ext
+    "Projects"                                          %title
+    "page"                                              %content-type
+    PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
+    PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects
+    projects-count %projects-count
+    articles-count %articles-count
+    grimoire-count %grimoire-count
+    dup "projects" swap mustache :page
+    "projects" page process-icons
+    %contents
+    output-fwrite
+  )
+) ::
+;; Create the Projects page
 
 ; Group articles by month
 (
@@ -259,8 +265,6 @@
 
 true :enable-content-processing
 
-
-
 (opts 'no-contents dhas?)
   (false @enable-content-processing)
 when 
@@ -278,14 +282,12 @@ when
       projects-count %projects-count
       articles-count %articles-count
       grimoire-count %grimoire-count
-      ;"." print!
       process-timestamp 
       process-content 
       @content 
       (id "index" !=) (content output-fwrite) when
     ) when
   ) foreach
-  "" puts!
 
   ; Create aggregator pages
   create-projects-page
