@@ -1,21 +1,32 @@
 -----
-title: "Glyph &ndash; Bookmarks and Headers"
+title: "Glyph - Bookmarks and Headers"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/extending/params_attrs.html">← Parameters and Attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/placeholders.html">Using Placeholders →</a></nav>
-  <p>The <a href="http://rubydoc.info/gems/glyph/Macro"><code>Glyph::Macro</code></a> class also includes a few methods to check and store bookmarks and headers. Consider for example the following source code for the <a href="/glyph/book/macros/macros_inline.html#m_anchor"><code>anchor</code></a> macro:</p>
+<nav class="navigation"><a href="/glyph/book/extending/params_attrs.html">← Parameters and Attributes</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/placeholders.html">Using Placeholders
+    →</a></nav>
+<p>The <a href="http://rubydoc.info/gems/glyph/Macro"><code>Glyph::Macro</code></a> class also includes a few methods to
+  check and store bookmarks and headers. Consider for example the following source code for the <a
+    href="/glyph/book/macros/macros_inline.html#m_anchor"><code>anchor</code></a> macro:</p>
 
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:anchor</span> <span class="keyword">do</span> 
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:anchor</span> <span class="keyword">do</span> 
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  min_parameters <span class="integer">1</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  max_parameters <span class="integer">2</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  bookmark <span class="symbol">:id</span> =&gt; param(<span class="integer">0</span>), <span class="symbol">:title</span> =&gt; param(<span class="integer">1</span>), <span class="symbol">:file</span> =&gt; <span class="instance-variable">@source_file</span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  <span class="instance-variable">@data</span>[<span class="symbol">:id</span>] = param <span class="integer">0</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span class="instance-variable">@data</span>[<span class="symbol">:title</span>] = param <span class="integer">1</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  render
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="keyword">end</span></pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="keyword">end</span></pre>
+  </div>
 </div>
- 
 
-  <p>The <code>bookmark?</code> method can be used to check the existance of a particular ID within the whole document, while the <code>bookmark</code> method is used to store bookmark IDs and titles. In a similar way, you can use <code>header?</code> and <code>header</code> methods to check the existance of headers within the documents or store new ones.</p>
-<nav class="navigation"><a href="/glyph/book/extending/params_attrs.html">← Parameters and Attributes</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/placeholders.html">Using Placeholders →</a></nav>
+
+<p>The <code>bookmark?</code> method can be used to check the existance of a particular ID within the whole document,
+  while the <code>bookmark</code> method is used to store bookmark IDs and titles. In a similar way, you can use
+  <code>header?</code> and <code>header</code> methods to check the existance of headers within the documents or store
+  new ones.</p>
+<nav class="navigation"><a href="/glyph/book/extending/params_attrs.html">← Parameters and Attributes</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/placeholders.html">Using Placeholders
+    →</a></nav>

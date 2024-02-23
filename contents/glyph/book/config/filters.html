@@ -1,23 +1,26 @@
 -----
-title: "Glyph &ndash; <code>filters.*</code>"
+title: "Glyph - <code>filters.*</code>"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/config/document.html">← <code>document.*</code></a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/options.html"><code>options.*</code> →</a></nav>
+<nav class="navigation"><a href="/glyph/book/config/document.html">← <code>document.*</code></a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/options.html"><code>options.*</code>
+		→</a></nav>
 These settings are used to configure some special options related to output filters and highlighters.
 
 <table>
-			<tr>
-				<th>Name</th>
-				<th>Description</th>
-				<th>Default</th>
-			</tr>
-			<tr>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Default</th>
+	</tr>
+	<tr>
 		<td>
-<code>filters.coderay.*</code> <a id="s_filters_coderay_"></a>
-</td>
+			<code>filters.coderay.*</code> <a id="s_filters_coderay_"></a>
+		</td>
 		<td>
-<p>Some <a href="http://coderay.rubychan.de/">Coderay</a>-specific <a href="http://coderay.rubychan.de/doc/classes/CodeRay/Encoders/HTML.html">options</a>.</p>
-</td>
+			<p>Some <a href="http://coderay.rubychan.de/">Coderay</a>-specific <a
+					href="http://coderay.rubychan.de/doc/classes/CodeRay/Encoders/HTML.html">options</a>.</p>
+		</td>
 		<td>
 			<code>
 nil
@@ -26,11 +29,11 @@ nil
 	</tr>
 	<tr>
 		<td>
-<code>filters.highlighter</code> <a id="s_filters_highlighter"></a>
-</td>
+			<code>filters.highlighter</code> <a id="s_filters_highlighter"></a>
+		</td>
 		<td>
-<p>The current highlighter to use. It can be set to <code>coderay</code> or <code>ultraviolet</code></p>
-</td>
+			<p>The current highlighter to use. It can be set to <code>coderay</code> or <code>ultraviolet</code></p>
+		</td>
 		<td>
 			<code>
 "coderay"
@@ -39,18 +42,20 @@ nil
 	</tr>
 	<tr>
 		<td>
-<code>filters.markdown.converter</code> <a id="s_filters_markdown_converter"></a>
-</td>
+			<code>filters.markdown.converter</code> <a id="s_filters_markdown_converter"></a>
+		</td>
 		<td>
-<p>The name of the markdown converter to use with the <a href="/glyph/book/macros/macros_filters.html#m_markdown"><code>markdown</code></a> macro. It can be set to one of the following values:</p>
-<ul>
-	<li>BlueCloth</li>
-	<li>RDiscount</li>
-	<li>Maruku</li>
-	<li>Kramdown</li>
-</ul>
-<p>If not set, Glyph tests for the presence of each gem in the same order, until one is found.</p>
-</td>
+			<p>The name of the markdown converter to use with the <a
+					href="/glyph/book/macros/macros_filters.html#m_markdown"><code>markdown</code></a> macro. It can be
+				set to one of the following values:</p>
+			<ul>
+				<li>BlueCloth</li>
+				<li>RDiscount</li>
+				<li>Maruku</li>
+				<li>Kramdown</li>
+			</ul>
+			<p>If not set, Glyph tests for the presence of each gem in the same order, until one is found.</p>
+		</td>
 		<td>
 			<code>
 "bluecloth"
@@ -59,11 +64,14 @@ nil
 	</tr>
 	<tr>
 		<td>
-<code>filters.redcloth.restrictions</code> <a id="s_filters_redcloth_restrictions"></a>
-</td>
+			<code>filters.redcloth.restrictions</code> <a id="s_filters_redcloth_restrictions"></a>
+		</td>
 		<td>
-<p>An <code>Array</code> containing restrictions applied to RedCloth, used by the <a href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro (see <a href="http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html">RedCloth Documentation</a> for more information).</p>
-</td>
+			<p>An <code>Array</code> containing restrictions applied to RedCloth, used by the <a
+					href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro (see <a
+					href="http://redcloth.rubyforge.org/classes/RedCloth/TextileDoc.html">RedCloth Documentation</a> for
+				more information).</p>
+		</td>
 		<td>
 			<code>
 []
@@ -72,11 +80,12 @@ nil
 	</tr>
 	<tr>
 		<td>
-<code>filters.ultraviolet.line_numbers</code> <a id="s_filters_ultraviolet_line_numbers"></a>
-</td>
+			<code>filters.ultraviolet.line_numbers</code> <a id="s_filters_ultraviolet_line_numbers"></a>
+		</td>
 		<td>
-<p>Whether the <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> highlighter should display line numbers or not.</p>
-</td>
+			<p>Whether the <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> highlighter should display line
+				numbers or not.</p>
+		</td>
 		<td>
 			<code>
 true
@@ -85,16 +94,18 @@ true
 	</tr>
 	<tr>
 		<td>
-<code>filters.ultraviolet.theme</code> <a id="s_filters_ultraviolet_theme"></a>
-</td>
+			<code>filters.ultraviolet.theme</code> <a id="s_filters_ultraviolet_theme"></a>
+		</td>
 		<td>
-<p>The theme used by the <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> highlighter.</p>
-</td>
+			<p>The theme used by the <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a> highlighter.</p>
+		</td>
 		<td>
 			<code>
 "lazy"
 			</code>
 		</td>
 	</tr>
-		</table>
-<nav class="navigation"><a href="/glyph/book/config/document.html">← <code>document.*</code></a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/options.html"><code>options.*</code> →</a></nav>
+</table>
+<nav class="navigation"><a href="/glyph/book/config/document.html">← <code>document.*</code></a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/config/options.html"><code>options.*</code>
+		→</a></nav>

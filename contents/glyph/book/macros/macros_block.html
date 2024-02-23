@@ -1,320 +1,391 @@
 -----
-title: "Glyph &ndash; Block Macros"
+title: "Glyph - Block Macros"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/macros/macros_core.html">← Core Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_inline.html">Inline Macros →</a></nav>
-	
+<nav class="navigation"><a href="/glyph/book/macros/macros_core.html">← Core Macros</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_inline.html">Inline Macros →</a>
+</nav>
+
+<section class="section">
+	<header>
+		<h1 id="m_box" class="toc"><code>box</code></h1>
+	</header>
+	<p>Creates a titled box (<code>&lt;div&gt;</code> tag).</p>
+
+
+
 	<section class="section">
-<header><h1 id="m_box" class="toc"><code>box</code></h1></header>
-<p>Creates a titled box (<code>&lt;div&gt;</code> tag).</p>
-
-
-
-		<section class="section">
-<header><h1 id="h_217" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>box[Why boxes?|
+		<header>
+			<h1 id="h_217" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>box[Why boxes?|
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  Boxes can be used to make a section of text stand out from the rest of the document.
-<span class="line-numbers"><a href="#n3" name="n3">3</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n3" name="n3">3</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_218" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_218" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The box title.</td>
-		</tr>
-	
-			
-		<tr>
-			<td>1</td>
-			<td>The box text.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The box title.</td>
+			</tr>
+
+
+			<tr>
+				<td>1</td>
+				<td>The box text.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_codeblock" class="toc"><code>codeblock</code></h1>
+	</header>
+	<p>Used to render a block of code within <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+
+
+
 	<section class="section">
-<header><h1 id="m_codeblock" class="toc"><code>codeblock</code></h1></header>
-<p>Used to render a block of code within <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
-
-
-
-		<section class="section">
-<header><h1 id="h_220" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>code[
+		<header>
+			<h1 id="h_220" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>code[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  def hello
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    puts &quot;Hello World&quot;
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  end
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_221" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_221" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The code to be formatted.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The code to be formatted.</td>
+			</tr>
 		</table>
 
+	</section>
+
+
+	<section class="section">
+		<header>
+			<h1 id="h_222" class="notoc">Remarks</h1>
+		</header>
+		<p>For code highlighting, see the <a
+				href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro.</p>
+
+	</section>
+
 </section>
-	
+
+
 
 <section class="section">
-<header><h1 id="h_222" class="notoc">Remarks</h1></header>
-<p>For code highlighting, see the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro.</p>
+	<header>
+		<h1 id="m_figure" class="toc"><code>figure</code></h1>
+	</header>
+	<p>Includes an image in the document, with an optional caption (see <a
+			href="/glyph/book/text_editing/images.html#img_fig">Images and Figures</a>).</p>
 
-</section>
 
-</section>
-	
 
-	
 	<section class="section">
-<header><h1 id="m_figure" class="toc"><code>figure</code></h1></header>
-<p>Includes an image in the document, with an optional caption (see <a href="/glyph/book/text_editing/images.html#img_fig">Images and Figures</a>).</p>
-
-
-
-		<section class="section">
-<header><h1 id="h_224" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>figure[
+		<header>
+			<h1 id="h_224" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>figure[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  graph.png|Monthly Pageviews
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @width[90%]
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_225" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_225" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The name of the image file (relative to the <code>images/</code> folder).</td>
-		</tr>
-	
-			
-		<tr>
-			<td>1</td>
-			<td>The image caption <em>(optional)</em>.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The name of the image file (relative to the <code>images/</code> folder).</td>
+			</tr>
+
+
+			<tr>
+				<td>1</td>
+				<td>The image caption <em>(optional)</em>.</td>
+			</tr>
 		</table>
 
-</section>
-	
+	</section>
 
-		<section class="section">
-<header><h1 id="h_226" class="notoc">Attributes</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_226" class="notoc">Attributes</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Attribute</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>*</td>
-			<td>Any attribute supported by the <a href="http://www.w3schools.com/tags/tag_IMG.asp">img tag</a>.</td>
-		</tr>
+			<tr>
+				<td>*</td>
+				<td>Any attribute supported by the <a href="http://www.w3schools.com/tags/tag_IMG.asp">img tag</a>.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_image" class="toc"><code>image</code></h1>
+	</header>
+	<p>Includes an image in the document</p>
+
+
+
 	<section class="section">
-<header><h1 id="m_image" class="toc"><code>image</code></h1></header>
-<p>Includes an image in the document</p>
-
-
-
-		<section class="section">
-<header><h1 id="h_228" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>img[
+		<header>
+			<h1 id="h_228" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>img[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  holidays/landscape.jpg
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @class[photo]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  @style[border: 1px solid black;]
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_229" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_229" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The name of the image file (relative to the <code>images/</code> folder).</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The name of the image file (relative to the <code>images/</code> folder).</td>
+			</tr>
 		</table>
 
-</section>
-	
+	</section>
 
-		<section class="section">
-<header><h1 id="h_230" class="notoc">Attributes</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_230" class="notoc">Attributes</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Attribute</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>*</td>
-			<td>Any attribute supported by the <a href="http://www.w3schools.com/tags/tag_IMG.asp">img tag</a>.</td>
-		</tr>
+			<tr>
+				<td>*</td>
+				<td>Any attribute supported by the <a href="http://www.w3schools.com/tags/tag_IMG.asp">img tag</a>.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_navigation" class="toc"><code>navigation</code></h1>
+	</header>
+	<p>Displays links to the document&#8217;s <span class="caps">TOC</span> and the previous/next topic (used only in <a
+			href="/glyph/book/extending/layouts.html#layouts">layouts</a>).</p>
+
+
+
+
+
 	<section class="section">
-<header><h1 id="m_navigation" class="toc"><code>navigation</code></h1></header>
-<p>Displays links to the document&#8217;s <span class="caps">TOC</span> and the previous/next topic (used only in <a href="/glyph/book/extending/layouts.html#layouts">layouts</a>).</p>
-
-
-
-
-
-		<section class="section">
-<header><h1 id="h_232" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+		<header>
+			<h1 id="h_232" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The ID of the current topic.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The ID of the current topic.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_note" class="toc"><code>note</code></h1>
+	</header>
+	<p>Creates a note <code>div</code> containing the value.</p>
+	<strong>Aliases:</strong> <code>important, caution, tip</code>
+	<p><strong>Example:</strong> <code>note[This is a note.]</code></p>
+
+
+
 	<section class="section">
-<header><h1 id="m_note" class="toc"><code>note</code></h1></header>
-<p>Creates a note <code>div</code> containing the value.</p>
-<strong>Aliases:</strong> <code>important, caution, tip</code>
-<p><strong>Example:</strong> <code>note[This is a note.]</code></p>
-
-
-
-		<section class="section">
-<header><h1 id="h_234" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+		<header>
+			<h1 id="h_234" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The text of the note.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The text of the note.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_pubdate" class="toc"><code>pubdate</code></h1>
+	</header>
+	<p>Evaluates to a date string (in the format: <em>current_month</em> <em>current_year</em>; i.e. <em>%B</em>
+		<em>%Y</em>), within a <code>&lt;div&gt;</code> tag. If a parameter is supplied, its value is used instead of
+		the current date.</p>
+
+	<p><strong>Example:</strong> <code>pubdate[]</code></p>
+
+
+
 	<section class="section">
-<header><h1 id="m_pubdate" class="toc"><code>pubdate</code></h1></header>
-<p>Evaluates to a date string (in the format: <em>current_month</em> <em>current_year</em>; i.e. <em>%B</em> <em>%Y</em>), within a <code>&lt;div&gt;</code> tag. If a parameter is supplied, its value is used instead of the current date.</p>
-
-<p><strong>Example:</strong> <code>pubdate[]</code></p>
-
-
-
-		<section class="section">
-<header><h1 id="h_236" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+		<header>
+			<h1 id="h_236" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>An alternative content for the _pubdate_ @div@.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>An alternative content for the _pubdate_ @div@.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
-	<section class="section">
-<header><h1 id="m_revision" class="toc"><code>revision</code></h1></header>
-<p>Renders the revision of the document (based on the <a href="/glyph/book/config/document.html#s_document_revision"><code>document.revision</code></a> setting) within a <code>&lt;div&gt;</code> tag.</p>
 
-<p><strong>Example:</strong> <code>revision[]</code></p>
 
-</section>
-	
+<section class="section">
+	<header>
+		<h1 id="m_revision" class="toc"><code>revision</code></h1>
+	</header>
+	<p>Renders the revision of the document (based on the <a
+			href="/glyph/book/config/document.html#s_document_revision"><code>document.revision</code></a> setting)
+		within a <code>&lt;div&gt;</code> tag.</p>
 
-	
-	<section class="section">
-<header><h1 id="m_subtitle" class="toc"><code>subtitle</code></h1></header>
-<p>Renders the subtitle of the document (based on the <a href="/glyph/book/config/document.html#s_document_subtitle"><code>document.subtitle</code></a> setting) within a <code>&lt;h2&gt;</code> tag.</p>
-
-<p><strong>Example:</strong> <code>subtitle[]</code></p>
+	<p><strong>Example:</strong> <code>revision[]</code></p>
 
 </section>
-	
 
-	
-	<section class="section">
-<header><h1 id="m_title" class="toc"><code>title</code></h1></header>
-<p>Renders the title of the document (based on the <a href="/glyph/book/config/document.html#s_document_title"><code>document.title</code></a> setting) within a <code>&lt;h1&gt;</code> tag.</p>
 
-<p><strong>Example:</strong> <code>title[]</code></p>
+
+<section class="section">
+	<header>
+		<h1 id="m_subtitle" class="toc"><code>subtitle</code></h1>
+	</header>
+	<p>Renders the subtitle of the document (based on the <a
+			href="/glyph/book/config/document.html#s_document_subtitle"><code>document.subtitle</code></a> setting)
+		within a <code>&lt;h2&gt;</code> tag.</p>
+
+	<p><strong>Example:</strong> <code>subtitle[]</code></p>
 
 </section>
-	
-<nav class="navigation"><a href="/glyph/book/macros/macros_core.html">← Core Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_inline.html">Inline Macros →</a></nav>
+
+
+
+<section class="section">
+	<header>
+		<h1 id="m_title" class="toc"><code>title</code></h1>
+	</header>
+	<p>Renders the title of the document (based on the <a
+			href="/glyph/book/config/document.html#s_document_title"><code>document.title</code></a> setting) within a
+		<code>&lt;h1&gt;</code> tag.</p>
+
+	<p><strong>Example:</strong> <code>title[]</code></p>
+
+</section>
+
+<nav class="navigation"><a href="/glyph/book/macros/macros_core.html">← Core Macros</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_inline.html">Inline Macros →</a>
+</nav>

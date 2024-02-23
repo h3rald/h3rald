@@ -1,27 +1,43 @@
 -----
-title: "Glyph &ndash; Parameters and Attributes"
+title: "Glyph - Parameters and Attributes"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">← Defining Custom Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks and Headers →</a></nav>
-	<p>Perhaps the most common things to do in a macro definition is accessing parameters and attributes. When doing so, it is important to consider whether we want to retrieve the <em>raw value</em> of and attribute or parameter or its <em>expanded value</em>. The difference between the two will become clearer in the following sections and also in the <a href="/glyph/book/extending/interpreting.html#interpreting">Interpreting Glyph Code</a> section.</p>
-	<section class="section">
-<header><h1 id="expanded_values" class="toc">Accessing Expanded Values</h1></header>
-<p>Normally, you just want to get the value of an attribute or parameter and use it in the macro. This means, in other words, its <em>expanded</em> value, i.e. the value resulting from the expansion of the macros (if any) within the attribute or parameter.</p>
-		<p>To access expanded values, use the following methods:</p>
-<ul>
-	<li><code>parameter</code> (or <code>param</code>): Returns the expanded value of the parameter specified by number. Other parameters are not expanded.</li>
-	<li><code>value</code>: Returns the expanded value of the first parameter (i.e. like <code>parameter(0)</code>).</li>
-	<li><code>attribute</code> (or <code>attr</code>): Returns the expanded value of the attribute specified by name. Other attributes are not expanded.</li>
-	<li><code>parameters</code> (or <code>params</code>):  Returns an array of expanded parameters.</li>
-	<li><code>attributes</code> (or <code>attrs</code>):  Returns a hash of expanded attributes.</li>
-</ul>
+<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">← Defining Custom Macros</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks
+		and Headers →</a></nav>
+<p>Perhaps the most common things to do in a macro definition is accessing parameters and attributes. When doing so, it
+	is important to consider whether we want to retrieve the <em>raw value</em> of and attribute or parameter or its
+	<em>expanded value</em>. The difference between the two will become clearer in the following sections and also in
+	the <a href="/glyph/book/extending/interpreting.html#interpreting">Interpreting Glyph Code</a> section.</p>
+<section class="section">
+	<header>
+		<h1 id="expanded_values" class="toc">Accessing Expanded Values</h1>
+	</header>
+	<p>Normally, you just want to get the value of an attribute or parameter and use it in the macro. This means, in
+		other words, its <em>expanded</em> value, i.e. the value resulting from the expansion of the macros (if any)
+		within the attribute or parameter.</p>
+	<p>To access expanded values, use the following methods:</p>
+	<ul>
+		<li><code>parameter</code> (or <code>param</code>): Returns the expanded value of the parameter specified by
+			number. Other parameters are not expanded.</li>
+		<li><code>value</code>: Returns the expanded value of the first parameter (i.e. like <code>parameter(0)</code>).
+		</li>
+		<li><code>attribute</code> (or <code>attr</code>): Returns the expanded value of the attribute specified by
+			name. Other attributes are not expanded.</li>
+		<li><code>parameters</code> (or <code>params</code>): Returns an array of expanded parameters.</li>
+		<li><code>attributes</code> (or <code>attrs</code>): Returns a hash of expanded attributes.</li>
+	</ul>
 
 </section>
-	<section class="section">
-<header><h1 id="h_88" class="toc">Accessing Raw Values</h1></header>
-<p>While accessing expanded values is simple and immediate, in some cases it may not produce the desired results. Consider the following macro definition:</p>
-		<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>macro <span class="symbol">:nest_section</span> <span class="keyword">do</span>
+<section class="section">
+	<header>
+		<h1 id="h_88" class="toc">Accessing Raw Values</h1>
+	</header>
+	<p>While accessing expanded values is simple and immediate, in some cases it may not produce the desired results.
+		Consider the following macro definition:</p>
+	<div class="CodeRay">
+		<div class="code">
+			<pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>macro <span class="symbol">:nest_section</span> <span class="keyword">do</span>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  interpret <span class="string"><span class="delimiter">%{</span><span class="content">section[</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span><span class="string"><span class="content">    @title[A]</span></span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span><span class="string"><span class="content">    section[</span></span>
@@ -29,22 +45,26 @@ content-type: page
 <span class="line-numbers"> <a href="#n6" name="n6">6</a></span><span class="string"><span class="content">      </span><span class="inline"><span class="inline-delimiter">#{</span>value<span class="inline-delimiter">}</span></span><span class="content"></span></span>
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span><span class="string"><span class="content">    ]</span></span>
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span><span class="string"><span class="content">  ]</span><span class="delimiter">}</span></span>
-<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span class="keyword">end</span></pre></div>
-</div>
+<span class="line-numbers"> <a href="#n9" name="n9">9</a></span><span class="keyword">end</span></pre>
+		</div>
+	</div>
 
-		<p>And suppose to use it as follows:</p>
-		<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>nest_section[
+	<p>And suppose to use it as follows:</p>
+	<div class="CodeRay">
+		<div class="code">
+			<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>nest_section[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  section[
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    <span class="instance-variable">@title</span>[<span class="constant">Inner</span> <span class="constant">Section</span>]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>    ...
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  ]
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]</pre>
+		</div>
+	</div>
 
-		<p>It produces the following HTML code:</p>
-		<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+	<p>It produces the following HTML code:</p>
+	<div class="CodeRay">
+		<div class="code">
+			<pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">h_2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>A<span class="tag">&lt;/h2&gt;</span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span class="tag">&lt;h3</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">h_3</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>B<span class="tag">&lt;/h3&gt;</span>
@@ -53,22 +73,33 @@ content-type: page
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>...
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span class="tag">&lt;/div&gt;</span>
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  <span class="tag">&lt;/div&gt;</span>
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span class="tag">&lt;/div&gt;</span></pre></div>
-</div>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span><span class="tag">&lt;/div&gt;</span></pre>
+		</div>
+	</div>
 
-		<p>Everything is fine <em>except</em> for the header level: the heading "Inner Section" is of level 2, but it should be level 4!</p>
-		<p>This happens because the inner section is evaluated <em>before</em> the <code>nest_section</code> macro: after all, we ask for it ourselves when we call the <code>value</code> method inside the macro definition. When the value is expanded, there are no outer sections <em>yet</em>.</p>
-		<p>To avoid this unwanted behavior, we can use the <code>raw_value</code> method instead, that returns the first parameter converted back to a Glyph code string.</p>
-		<aside class="tip">
-<span class="note-title">Tip</span>To be on the safe side, always use <code>raw_*</code> methods when interpreting.
+	<p>Everything is fine <em>except</em> for the header level: the heading "Inner Section" is of level 2, but it should
+		be level 4!</p>
+	<p>This happens because the inner section is evaluated <em>before</em> the <code>nest_section</code> macro: after
+		all, we ask for it ourselves when we call the <code>value</code> method inside the macro definition. When the
+		value is expanded, there are no outer sections <em>yet</em>.</p>
+	<p>To avoid this unwanted behavior, we can use the <code>raw_value</code> method instead, that returns the first
+		parameter converted back to a Glyph code string.</p>
+	<aside class="tip">
+		<span class="note-title">Tip</span>To be on the safe side, always use <code>raw_*</code> methods when
+		interpreting.
 
-</aside>
-		<p>To access raw values, use the following methods:</p>
-<ul>
-	<li><code>raw_parameter</code> (or <code>raw_param</code>): Returns the raw parameter value of the parameter specified by number.</li>
-	<li><code>raw_value</code>: Returns the first raw parameter value (i.e. like <code>raw_parameter(0)</code>).</li>
-	<li><code>raw_attribute</code> (or <code>raw_attr</code>): Returns the attribute value of the attribute specified by name.</li>
-</ul>
+	</aside>
+	<p>To access raw values, use the following methods:</p>
+	<ul>
+		<li><code>raw_parameter</code> (or <code>raw_param</code>): Returns the raw parameter value of the parameter
+			specified by number.</li>
+		<li><code>raw_value</code>: Returns the first raw parameter value (i.e. like <code>raw_parameter(0)</code>).
+		</li>
+		<li><code>raw_attribute</code> (or <code>raw_attr</code>): Returns the attribute value of the attribute
+			specified by name.</li>
+	</ul>
 
 </section>
-<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">← Defining Custom Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks and Headers →</a></nav>
+<nav class="navigation"><a href="/glyph/book/extending/macro_def.html">← Defining Custom Macros</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/bookmarks_headers.html">Bookmarks
+		and Headers →</a></nav>

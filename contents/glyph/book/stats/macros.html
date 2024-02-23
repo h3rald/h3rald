@@ -1,14 +1,20 @@
 -----
-title: "Glyph &ndash; Macro Statistics"
+title: "Glyph - Macro Statistics"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/stats/stats.html">← Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics →</a></nav>
+<nav class="navigation"><a href="/glyph/book/stats/stats.html">← Using the stats command</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics →</a>
+</nav>
 
-  <section class="section">
-<header><h1 id="h_62" class="toc">Displaying stats about all macros</h1></header>
-<p>To display statistics about all macros, execute <code>glyph stats --macros</code>. Glyph displays something like this:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macros
+<section class="section">
+  <header>
+    <h1 id="h_62" class="toc">Displaying stats about all macros</h1>
+  </header>
+  <p>To display statistics about all macros, execute <code>glyph stats --macros</code>. Glyph displays something like
+    this:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macros
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Macro Instances: 2497
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Total Macro Definitions: 65
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>-- Total Macro Aliases: 57
@@ -40,26 +46,36 @@ content-type: page
 <span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span>     release       revision      rewrite:      ruby          section       
 <span class="line-numbers"><a href="#n31" name="n31">31</a></span>     snippet       snippet:      stats_for     style         subtitle      
 <span class="line-numbers"><a href="#n32" name="n32">32</a></span>     textile       title         toc           todo          values        
-<span class="line-numbers"><a href="#n33" name="n33">33</a></span>     |xml|</pre></div>
-</div>
-
-    <section class="section">
-<header><h1 id="h_63" class="toc">Remarks</h1></header>
-<ul>
-	<li>Only macro <em>definitions</em> (not their <em>aliases</em>) are displayed, both default and user-defined.</li>
-	<li>The <code>|xml|</code> macro is a special macro used if the <a href="/glyph/book/config/options.html#s_options_xml_fallback"><code>options.xml_fallback</code></a> setting is enabled.</li>
-	<li>There&#8217;s no distinction between macros defined by the user and macros defined by Glyph itself.</li>
-</ul>
-
-</section>
-
-</section>
+<span class="line-numbers"><a href="#n33" name="n33">33</a></span>     |xml|</pre>
+    </div>
+  </div>
 
   <section class="section">
-<header><h1 id="h_64" class="toc">Displaying stats about a single macro</h1></header>
-<p>To display statistics about a single macro (e.g. <code>note</code>), execute <code>glyph stats --macro=note</code>. Glyph displays something like this:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macro 'note' 
+    <header>
+      <h1 id="h_63" class="toc">Remarks</h1>
+    </header>
+    <ul>
+      <li>Only macro <em>definitions</em> (not their <em>aliases</em>) are displayed, both default and user-defined.
+      </li>
+      <li>The <code>|xml|</code> macro is a special macro used if the <a
+          href="/glyph/book/config/options.html#s_options_xml_fallback"><code>options.xml_fallback</code></a> setting is
+        enabled.</li>
+      <li>There&#8217;s no distinction between macros defined by the user and macros defined by Glyph itself.</li>
+    </ul>
+
+  </section>
+
+</section>
+
+<section class="section">
+  <header>
+    <h1 id="h_64" class="toc">Displaying stats about a single macro</h1>
+  </header>
+  <p>To display statistics about a single macro (e.g. <code>note</code>), execute <code>glyph stats --macro=note</code>.
+    Glyph displays something like this:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>===== Macro 'note' 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>-- Total Instances: 18
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>-- Occurrences:
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>   - text/compiling/compiling.glyph (2)
@@ -74,18 +90,27 @@ content-type: page
 <span class="line-numbers"><a href="#n13" name="n13">13</a></span>   - text/text_editing/links.glyph (1)
 <span class="line-numbers"><a href="#n14" name="n14">14</a></span>   - text/text_editing/raw_html.glyph (1)
 <span class="line-numbers"><a href="#n15" name="n15">15</a></span>   - text/text_editing/section_aliases.glyph (1)
-<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - text/text_editing/xml_fallback.glyph (2)</pre></div>
-</div>
+<span class="line-numbers"><a href="#n16" name="n16">16</a></span>   - text/text_editing/xml_fallback.glyph (2)</pre>
+    </div>
+  </div>
 
-    <section class="section">
-<header><h1 id="h_65" class="toc">Remarks</h1></header>
-<ul>
-	<li>All the instances of the specified macro definition <em>and all its aliases</em> are collected, regardless whether a definition or an alias is specified.</li>
-	<li>If you use custom macros, make sure they call the <a href="http://rubydoc.info/gems/glyph/Glyph/Macro:update_source">Macro#update_source</a> appropriately method if necessary.</li>
-	<li>If macros are used within <a href="/glyph/book/extending/interpreting.html#rewriting">rewritten</a> macros, they&#8217;ll be also listed in each file where the rewritten macro is used.</li>
-</ul>
+  <section class="section">
+    <header>
+      <h1 id="h_65" class="toc">Remarks</h1>
+    </header>
+    <ul>
+      <li>All the instances of the specified macro definition <em>and all its aliases</em> are collected, regardless
+        whether a definition or an alias is specified.</li>
+      <li>If you use custom macros, make sure they call the <a
+          href="http://rubydoc.info/gems/glyph/Glyph/Macro:update_source">Macro#update_source</a> appropriately method
+        if necessary.</li>
+      <li>If macros are used within <a href="/glyph/book/extending/interpreting.html#rewriting">rewritten</a> macros,
+        they&#8217;ll be also listed in each file where the rewritten macro is used.</li>
+    </ul>
+
+  </section>
 
 </section>
-
-</section>
-<nav class="navigation"><a href="/glyph/book/stats/stats.html">← Using the stats command</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics →</a></nav>
+<nav class="navigation"><a href="/glyph/book/stats/stats.html">← Using the stats command</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/snippets.html">Snippet Statistics →</a>
+</nav>

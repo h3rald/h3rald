@@ -1,99 +1,120 @@
 -----
-title: "Glyph &ndash; Using Glyph programmatically"
+title: "Glyph - Using Glyph programmatically"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/compiling/lite_mode.html">← Compiling single Glyph files</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/stats.html">Using the stats command →</a></nav>
-  <p>Besides using Glyph from the command line, you can also use it straight from your code. Glyph&#8217;s public <a href="http://rubydoc.info/gems/glyph"><span class="caps">API</span></a> is simple and can be used to:</p>
+<nav class="navigation"><a href="/glyph/book/compiling/lite_mode.html">← Compiling single Glyph files</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/stats.html">Using the stats command →</a>
+</nav>
+<p>Besides using Glyph from the command line, you can also use it straight from your code. Glyph&#8217;s public <a
+    href="http://rubydoc.info/gems/glyph"><span class="caps">API</span></a> is simple and can be used to:</p>
 <ul>
-	<li>Retrieve and update configuration settings (using <code>Glyph[]</code> and <code>Glyph[]=</code>)</li>
-	<li>Filter text to <span class="caps">HTML</span> (using <code>Glyph#filter</code>)</li>
-	<li>Compile Glyph source files into <span class="caps">HTML</span> or <span class="caps">PDF</span> files (using <code>Glyph#compile</code>)</li>
+  <li>Retrieve and update configuration settings (using <code>Glyph[]</code> and <code>Glyph[]=</code>)</li>
+  <li>Filter text to <span class="caps">HTML</span> (using <code>Glyph#filter</code>)</li>
+  <li>Compile Glyph source files into <span class="caps">HTML</span> or <span class="caps">PDF</span> files (using
+    <code>Glyph#compile</code>)</li>
 </ul>
-<p>That&#8217;s pretty much it. Of course, both the <code>filter</code> and <code>compile</code> method cause Glyph to run in <a href="/glyph/book/compiling/lite_mode.html#lite_mode"><em>lite</em> mode</a>, so the same <a href="/glyph/book/compiling/lite_mode.html#lite_limitations">limitations</a> apply.</p>
-  <aside class="tip">
-<span class="note-title">Tip</span><p>For an example on how to use Glyph programmatically (specifically in conjunction with the <a href="http://nanoc.stoneship.org/">nanoc</a> static site generator), see <a href="http://github.com/h3rald/h3rald">h3rald.com source code</a>, in particular:</p>
-<ul>
-	<li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph_filter.rb">lib/glyph_filter.rb</a> &#8212; using the <code>Glyph#filter</code> method.</li>
-	<li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph_context.rb">lib/glyph_context.rb</a> &#8212; using the <code>Glyph#compile</code> method to generate <span class="caps">PDF</span> files.</li>
-</ul>
+<p>That&#8217;s pretty much it. Of course, both the <code>filter</code> and <code>compile</code> method cause Glyph to
+  run in <a href="/glyph/book/compiling/lite_mode.html#lite_mode"><em>lite</em> mode</a>, so the same <a
+    href="/glyph/book/compiling/lite_mode.html#lite_limitations">limitations</a> apply.</p>
+<aside class="tip">
+  <span class="note-title">Tip</span>
+  <p>For an example on how to use Glyph programmatically (specifically in conjunction with the <a
+      href="http://nanoc.stoneship.org/">nanoc</a> static site generator), see <a
+      href="http://github.com/h3rald/h3rald">h3rald.com source code</a>, in particular:</p>
+  <ul>
+    <li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph_filter.rb">lib/glyph_filter.rb</a> &#8212; using
+      the <code>Glyph#filter</code> method.</li>
+    <li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph_context.rb">lib/glyph_context.rb</a> &#8212;
+      using the <code>Glyph#compile</code> method to generate <span class="caps">PDF</span> files.</li>
+  </ul>
 
 </aside>
-  <section class="section">
-<header><h1 id="modes" class="toc">Modes</h1></header>
-<p>It is possible to specify some flags (or "modes") to make Glyph behave slightly different than normal, as shown in the following table (by default, none of these is used).</p>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Writer Method</th>
-        <th>Reader Method</th>
-        <th>Description</th>
-      </tr>
-      <tr>
-        <td>Test Mode</td>
-        <td>
-<code>Glyph.test_mode=</code>
-</td>
-        <td>
-<code>Glyph.test?</code>
-</td>
-        <td>Used internally by the <code>rake spec</code> task to run Glyph's specs.</td>
-      </tr>
-      <tr>
-        <td>Library Mode</td>
-        <td>
-<code>Glyph.library_mode=</code>
-</td>
-        <td>
-<code>Glyph.library?</code>
-</td>
-        <td>If enabled, the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command command will raise exceptions instead of printing errors on the screen. Enabled by the <code>Glyph.compile</code> command.</td>
-      </tr>
-      <tr>
-        <td>Debug Mode</td>
-        <td>
-<code>Glyph.debug_mode=</code>
-</td>
-        <td>
-<code>Glyph.debug?</code>
-</td>
-        <td>If enabled, additional diagnostic information (such as backtraces or macro values) will be displayed. Enabled by specifying the <a href="/glyph/book/ref_commands.html#debug_switch">debug switch</a> when running a Glyph command.</td>
-      </tr>
-      <tr>
-        <td>Lite Mode</td>
-        <td>
-<code>Glyph.lite_mode=</code>
-</td>
-        <td>
-<code>Glyph.lite?</code>
-</td>
-        <td>
-          <p>Used to compile <a href="/glyph/book/compiling/lite_mode.html#lite_mode">single files</a>. Enabled by:</p>
-<ul>
-	<li>The <code>Glyph.compile</code> and <code>Glyph.filter</code> methods.</li>
-	<li>The <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command, if at least one parameter is supplied.</li>
-</ul>
-        </td>
-      </tr>
-      <tr>
-        <td>Safe Mode</td>
-        <td>
-<code>Glyph.safe_mode=</code>
-</td>
-        <td>
-<code>Glyph.safe?</code>
-</td>
-        <td>
-          <p>If enabled, the following macros cannot be used and will return an error:</p>
-<ul>
-	<li><a href="/glyph/book/macros/macros_core.html#m_ruby"><code>ruby</code></a> macro</li>
-	<li><a href="/glyph/book/macros/macros_core.html#m_macro_"><code>macro:</code></a> macro</li>
-	<li><a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro</li>
-	<li><a href="/glyph/book/macros/macros_core.html#m_define_"><code>define:</code></a> macro</li>
-	<li><a href="/glyph/book/macros/macros_core.html#m_config_"><code>config:</code></a> macro</li>
-</ul>
-        </td>
-      </tr>
-    </table>
+<section class="section">
+  <header>
+    <h1 id="modes" class="toc">Modes</h1>
+  </header>
+  <p>It is possible to specify some flags (or "modes") to make Glyph behave slightly different than normal, as shown in
+    the following table (by default, none of these is used).</p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Writer Method</th>
+      <th>Reader Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Test Mode</td>
+      <td>
+        <code>Glyph.test_mode=</code>
+      </td>
+      <td>
+        <code>Glyph.test?</code>
+      </td>
+      <td>Used internally by the <code>rake spec</code> task to run Glyph's specs.</td>
+    </tr>
+    <tr>
+      <td>Library Mode</td>
+      <td>
+        <code>Glyph.library_mode=</code>
+      </td>
+      <td>
+        <code>Glyph.library?</code>
+      </td>
+      <td>If enabled, the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command command
+        will raise exceptions instead of printing errors on the screen. Enabled by the <code>Glyph.compile</code>
+        command.</td>
+    </tr>
+    <tr>
+      <td>Debug Mode</td>
+      <td>
+        <code>Glyph.debug_mode=</code>
+      </td>
+      <td>
+        <code>Glyph.debug?</code>
+      </td>
+      <td>If enabled, additional diagnostic information (such as backtraces or macro values) will be displayed. Enabled
+        by specifying the <a href="/glyph/book/ref_commands.html#debug_switch">debug switch</a> when running a Glyph
+        command.</td>
+    </tr>
+    <tr>
+      <td>Lite Mode</td>
+      <td>
+        <code>Glyph.lite_mode=</code>
+      </td>
+      <td>
+        <code>Glyph.lite?</code>
+      </td>
+      <td>
+        <p>Used to compile <a href="/glyph/book/compiling/lite_mode.html#lite_mode">single files</a>. Enabled by:</p>
+        <ul>
+          <li>The <code>Glyph.compile</code> and <code>Glyph.filter</code> methods.</li>
+          <li>The <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command, if at least one
+            parameter is supplied.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Safe Mode</td>
+      <td>
+        <code>Glyph.safe_mode=</code>
+      </td>
+      <td>
+        <code>Glyph.safe?</code>
+      </td>
+      <td>
+        <p>If enabled, the following macros cannot be used and will return an error:</p>
+        <ul>
+          <li><a href="/glyph/book/macros/macros_core.html#m_ruby"><code>ruby</code></a> macro</li>
+          <li><a href="/glyph/book/macros/macros_core.html#m_macro_"><code>macro:</code></a> macro</li>
+          <li><a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro</li>
+          <li><a href="/glyph/book/macros/macros_core.html#m_define_"><code>define:</code></a> macro</li>
+          <li><a href="/glyph/book/macros/macros_core.html#m_config_"><code>config:</code></a> macro</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 
 </section>
-<nav class="navigation"><a href="/glyph/book/compiling/lite_mode.html">← Compiling single Glyph files</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/stats.html">Using the stats command →</a></nav>
+<nav class="navigation"><a href="/glyph/book/compiling/lite_mode.html">← Compiling single Glyph files</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/stats/stats.html">Using the stats command →</a>
+</nav>

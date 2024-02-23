@@ -1,41 +1,56 @@
 -----
-title: "Glyph &ndash; Images and Figures"
+title: "Glyph - Images and Figures"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/text_editing/links.html">← Links and Bookmarks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/code.html">Source Code →</a></nav>
-	<p>Same as for <a href="/glyph/book/text_editing/links.html#links">links</a>, you can also include images and figures using Textile or Markdown. If you want additional features, you can use the <a href="/glyph/book/macros/macros_block.html#m_image"><code>image</code></a> macro and the <a href="/glyph/book/macros/macros_block.html#m_figure"><code>figure</code></a> macro, as shown in the following example:</p>
+<nav class="navigation"><a href="/glyph/book/text_editing/links.html">← Links and Bookmarks</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/code.html">Source Code →</a>
+</nav>
+<p>Same as for <a href="/glyph/book/text_editing/links.html#links">links</a>, you can also include images and figures
+	using Textile or Markdown. If you want additional features, you can use the <a
+		href="/glyph/book/macros/macros_block.html#m_image"><code>image</code></a> macro and the <a
+		href="/glyph/book/macros/macros_block.html#m_figure"><code>figure</code></a> macro, as shown in the following
+	example:</p>
 
-	<aside class="box">
-<div class="box-title">Example</div>
-<p>
-The following Glyph code:
-</p>
-		<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>image[glyph.svg
+<aside class="box">
+	<div class="box-title">Example</div>
+	<p>
+		The following Glyph code:
+	</p>
+	<div class="CodeRay">
+		<div class="code">
+			<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>image[glyph.svg
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @with[20%]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @height[20%]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>]
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>figure[example.png|An example figure.
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  @alt[Example Figure]
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]</pre>
+		</div>
+	</div>
 
-		<p>
-Is translated into the following HTML code:
-</p>
-		<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">images/glyph.svg</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">width</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20%</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20%</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+	<p>
+		Is translated into the following HTML code:
+	</p>
+	<div class="CodeRay">
+		<div class="code">
+			<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">images/glyph.svg</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">width</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20%</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">20%</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">figure</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">images/example.png</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">alt</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Example Figure</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">caption</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>An example figure.<span class="tag">&lt;/div&gt;</span>
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;/div&gt;</span></pre>
+		</div>
+	</div>
 
-		<p>Any attribute passed to the <a href="/glyph/book/macros/macros_block.html#m_image"><code>image</code></a> macro or the <a href="/glyph/book/macros/macros_block.html#m_figure"><code>figure</code></a> macro is automatically passed to the underlying <code>&lt;img&gt;</code> tag.</p>
+	<p>Any attribute passed to the <a href="/glyph/book/macros/macros_block.html#m_image"><code>image</code></a> macro
+		or the <a href="/glyph/book/macros/macros_block.html#m_figure"><code>figure</code></a> macro is automatically
+		passed to the underlying <code>&lt;img&gt;</code> tag.</p>
 
 </aside>
-	<aside class="note">
-<span class="note-title">Note</span>In future releases, figures will be numbered automatically and included in a <em>List of Figures</em> section.
+<aside class="note">
+	<span class="note-title">Note</span>In future releases, figures will be numbered automatically and included in a
+	<em>List of Figures</em> section.
 
 </aside>
-<nav class="navigation"><a href="/glyph/book/text_editing/links.html">← Links and Bookmarks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/code.html">Source Code →</a></nav>
+<nav class="navigation"><a href="/glyph/book/text_editing/links.html">← Links and Bookmarks</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/code.html">Source Code →</a>
+</nav>

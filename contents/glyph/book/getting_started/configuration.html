@@ -1,5 +1,5 @@
 -----
-title: "Glyph &ndash; Project Configuration"
+title: "Glyph - Project Configuration"
 content-type: page
 -----
 <nav class="navigation"><a href="/glyph/book/getting_started/structure.html">← Document Structure</a> | <a
@@ -11,7 +11,8 @@ content-type: page
 	<li>Your <em>Project Configuration</em> is stored in the <code>config.yml</code> file, included in each Glyph
 		Project.</li>
 	<li>Your <em>Global Configuration</em> is stored in a <code>.glyphrc</code> file in your <code>$HOME</code> (or
-		<code>%HOMEPATH%</code> on Windows) directory (not created by default).</li>
+		<code>%HOMEPATH%</code> on Windows) directory (not created by default).
+	</li>
 	<li>The <em>System Configuration</em> is stored in the source directory of Glyph itself.</li>
 </ol>
 <p>When compiling, Glyph loads all these configuration files and merges them according to the following rules:</p>
@@ -31,7 +32,8 @@ content-type: page
 <p><code>glyph config</code> <em>setting</em> <em>[value]</em></p>
 <p>If no <em>value</em> is specified, Glyph prints the value of the configuration setting, so typing
 	<code>glyph config document.author</code> right after creating a project (assuming you didn&#8217;t set this in the
-	Global Configuration) will print nothing, because this setting is blank by default.</p>
+	Global Configuration) will print nothing, because this setting is blank by default.
+</p>
 <p>To change the value of a configuration setting, specify a value right after the setting, like this:</p>
 <p><code>glyph config document.author "John Smith"</code></p>
 <aside class="tip">

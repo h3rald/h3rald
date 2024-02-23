@@ -1,64 +1,98 @@
 -----
-title: "Glyph &ndash; Sections and Headers"
+title: "Glyph - Sections and Headers"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">← Escaping and Quoting</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases →</a></nav>
+<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">← Escaping and Quoting</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases
+    →</a></nav>
 
-  <p>Glyph documents are normally organized as a hierarchical tree of nested chapters, appendixes, sections, etc. To define a section, use the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro (aliased by <code>§</code>), like so:</p>
+<p>Glyph documents are normally organized as a hierarchical tree of nested chapters, appendixes, sections, etc. To
+  define a section, use the <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro
+  (aliased by <code>§</code>), like so:</p>
 
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>section[
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>section[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[Section #1]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>Write the section contents here...
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  section[
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    @title[Section #2]
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>This section is nested into the previous one.
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  ] --[End of Section #2]
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>] --[End of Section #1]</pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>] --[End of Section #1]</pre>
+  </div>
 </div>
 
 
-  <p>This example defines two nested sections. If the <code>@title</code> attribute is specified like in this case, it will be converted to a proper <span class="caps">HTML</span> header and it will appear in the Table of Contents (see the <a href="/glyph/book/macros/macros_structure.html#m_toc"><code>toc</code></a> macro).</p>
-<p>Note an important difference from <span class="caps">HTML</span>: there is no need for an explicit level for the headers, as it will be determined at runtime when the document is compiled, based on how sections are nested. The previous code snippet (taken as it is), for example, will be transformed into the following <span class="caps">HTML</span> code:</p>
+<p>This example defines two nested sections. If the <code>@title</code> attribute is specified like in this case, it
+  will be converted to a proper <span class="caps">HTML</span> header and it will appear in the Table of Contents (see
+  the <a href="/glyph/book/macros/macros_structure.html#m_toc"><code>toc</code></a> macro).</p>
+<p>Note an important difference from <span class="caps">HTML</span>: there is no need for an explicit level for the
+  headers, as it will be determined at runtime when the document is compiled, based on how sections are nested. The
+  previous code snippet (taken as it is), for example, will be transformed into the following <span
+    class="caps">HTML</span> code:</p>
 
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span class="tag">&lt;h2&gt;</span>Section #1<span class="tag">&lt;/h2&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="tag">&lt;p&gt;</span>Write the section contents here...<span class="tag">&lt;/p&gt;</span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    <span class="tag">&lt;h3&gt;</span>Section #2<span class="tag">&lt;/h3&gt;</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>    <span class="tag">&lt;p&gt;</span>This section is nested in the previous one<span class="tag">&lt;/p&gt;</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span class="tag">&lt;/div&gt;</span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre>
+  </div>
 </div>
 
 
-  <p>By default, in Glyph the first header level is <em>2</em>, so the two headers are rendered as <code>h2</code> and <code>h3</code>, respectively (<code>--[...]</code> macros are <em>comments</em>, therefore they are not included in the final output).</p>
-  <section class="section">
-<header><h1 id="h_25" class="toc">Markup-aware sections</h1></header>
-<p>Although Glyph can be used on its own to produce valid <span class="caps">HTML</span> or <span class="caps">XML</span> code, you may often want to use Textile or Markdown to save some typing. Typically, you&#8217;ll end up writing a lot of code like this:</p>
-  
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>section[
+<p>By default, in Glyph the first header level is <em>2</em>, so the two headers are rendered as <code>h2</code> and
+  <code>h3</code>, respectively (<code>--[...]</code> macros are <em>comments</em>, therefore they are not included in
+  the final output).</p>
+<section class="section">
+  <header>
+    <h1 id="h_25" class="toc">Markup-aware sections</h1>
+  </header>
+  <p>Although Glyph can be used on its own to produce valid <span class="caps">HTML</span> or <span
+      class="caps">XML</span> code, you may often want to use Textile or Markdown to save some typing. Typically,
+    you&#8217;ll end up writing a lot of code like this:</p>
+
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>section[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[My Textile section]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  textile[
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>Textile markup can be used _here_.
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  ]
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span>]</pre>
+    </div>
+  </div>
 
-    <p>To save you even more typing, you can use the <a href="/glyph/book/macros/macros_filters.html#m_textile_section"><code>textile_section</code></a> macro (aliased by <code>txt_section</code> and <code>§txt</code>) and the <a href="/glyph/book/macros/macros_filters.html#m_markdown_section"><code>markdown_section</code></a> macro (aliased by <code>md_section</code> and <code>§md</code>). By doing so, the previous code snippet can be written like this:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>§txt[
+  <p>To save you even more typing, you can use the <a
+      href="/glyph/book/macros/macros_filters.html#m_textile_section"><code>textile_section</code></a> macro (aliased by
+    <code>txt_section</code> and <code>§txt</code>) and the <a
+      href="/glyph/book/macros/macros_filters.html#m_markdown_section"><code>markdown_section</code></a> macro (aliased
+    by <code>md_section</code> and <code>§md</code>). By doing so, the previous code snippet can be written like this:
+  </p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>§txt[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[My Textile section]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>Textile markup can be used _here_.
-<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n4" name="n4">4</a></span>]</pre>
+    </div>
+  </div>
 
-    <aside class="tip">
-<span class="note-title">Tip</span><p>On an Italian keyboard, you can type a <code>§</code> character by pressing <strong><span class="caps">SHIFT</span> + &ugrave;</strong>. Unfortunately, that&#8217;s about the only useful thing an Italian keyboard does. If you use Vim, you can map it to some key sequence like <code>''s</code>, like this: <code>map! ''s &lt;C-V&gt;u00A7</code>.</p>
+  <aside class="tip">
+    <span class="note-title">Tip</span>
+    <p>On an Italian keyboard, you can type a <code>§</code> character by pressing <strong><span
+          class="caps">SHIFT</span> + &ugrave;</strong>. Unfortunately, that&#8217;s about the only useful thing an
+      Italian keyboard does. If you use Vim, you can map it to some key sequence like <code>''s</code>, like this:
+      <code>map! ''s &lt;C-V&gt;u00A7</code>.</p>
 
-</aside>
+  </aside>
 
 </section>
-<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">← Escaping and Quoting</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases →</a></nav>
+<nav class="navigation"><a href="/glyph/book/text_editing/esc_quot.html">← Escaping and Quoting</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/section_aliases.html">Section Aliases
+    →</a></nav>

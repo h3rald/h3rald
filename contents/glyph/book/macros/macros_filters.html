@@ -1,243 +1,299 @@
 -----
-title: "Glyph &ndash; Filter Macros"
+title: "Glyph - Filter Macros"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/macros/macros_inline.html">← Inline Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_structure.html">Structure Macros →</a></nav>
+<nav class="navigation"><a href="/glyph/book/macros/macros_inline.html">← Inline Macros</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_structure.html">Structure Macros
+		→</a></nav>
 
-	
+
+<section class="section">
+	<header>
+		<h1 id="m_markdown" class="toc"><code>markdown</code></h1>
+	</header>
+	<p>Uses a Markdown converter (BlueCloth, RDiscount, Maruku or Kramdown) to transform the value into <span
+			class="caps">HTML</span> if the <a
+			href="/glyph/book/config/output.html#cfg_output"><code>output.*.filter_target</code></a> setting is set to
+		<code>html</code>.</p>
+	<p>If the <a
+			href="/glyph/book/config/options.html#s_options_filters_by_file_extension"><code>options.filters_by_file_extension</code></a>
+		setting is <code>true</code>, this macro is called automatically on <a
+			href="/glyph/book/macros/macros_core.html#m_include">included</a> files with a <code>.markdown</code> or a
+		<code>.md</code> extension.</p>
+	<strong>Aliases:</strong> <code>md</code>
+	<p><strong>Example:</strong> <code>markdown[This is *emphasized* text.]</code></p>
+
+
+
 	<section class="section">
-<header><h1 id="m_markdown" class="toc"><code>markdown</code></h1></header>
-<p>Uses a Markdown converter (BlueCloth, RDiscount, Maruku or Kramdown) to transform the value into <span class="caps">HTML</span> if the <a href="/glyph/book/config/output.html#cfg_output"><code>output.*.filter_target</code></a> setting is set to <code>html</code>.</p>
-<p>If the <a href="/glyph/book/config/options.html#s_options_filters_by_file_extension"><code>options.filters_by_file_extension</code></a> setting is <code>true</code>, this macro is called automatically on <a href="/glyph/book/macros/macros_core.html#m_include">included</a> files with a <code>.markdown</code> or a <code>.md</code> extension.</p>
-<strong>Aliases:</strong> <code>md</code>
-<p><strong>Example:</strong> <code>markdown[This is *emphasized* text.]</code></p>
-
-
-
-		<section class="section">
-<header><h1 id="h_252" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+		<header>
+			<h1 id="h_252" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The Markdown text to filter.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The Markdown text to filter.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
-	
+
+
+
+<section class="section">
+	<header>
+		<h1 id="m_markdown_section" class="toc"><code>markdown_section</code></h1>
+	</header>
+	<p>Creates a section (see <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a>
+		macro) whose content can be formatted with markdown markup.</p>
+	<strong>Aliases:</strong> <code>§md, md_section</code>
+
+
 	<section class="section">
-<header><h1 id="m_markdown_section" class="toc"><code>markdown_section</code></h1></header>
-<p>Creates a section (see <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro) whose content can be formatted with markdown markup.</p>
-<strong>Aliases:</strong> <code>§md, md_section</code>
-
-
-		<section class="section">
-<header><h1 id="h_254" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>markdown_section[
+		<header>
+			<h1 id="h_254" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>markdown_section[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[Test Section]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @id[test]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>Some *markdown* text.
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_255" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_255" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The text of the section</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The text of the section</td>
+			</tr>
 		</table>
 
-</section>
-	
+	</section>
 
-		<section class="section">
-<header><h1 id="h_256" class="notoc">Attributes</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_256" class="notoc">Attributes</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Attribute</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>title</td>
-			<td>The title of the section <em>(optional)</em></td>
-		</tr>
-	
-			
-		<tr>
-			<td>id</td>
-			<td>The ID of the section <em>(optional)</em></td>
-		</tr>
-	
-			
-		<tr>
-			<td>notoc</td>
-			<td>If not blank, the header will not appear in the Table of Contents. <em>(optional)</em></td>
-		</tr>
+			<tr>
+				<td>title</td>
+				<td>The title of the section <em>(optional)</em></td>
+			</tr>
+
+
+			<tr>
+				<td>id</td>
+				<td>The ID of the section <em>(optional)</em></td>
+			</tr>
+
+
+			<tr>
+				<td>notoc</td>
+				<td>If not blank, the header will not appear in the Table of Contents. <em>(optional)</em></td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_textile" class="toc"><code>textile</code></h1>
+	</header>
+	<p>Uses the RedCloth gem to transform the value into <span class="caps">HTML</span> or LaTeX, depending on the value
+		of the <a href="/glyph/book/config/output.html#cfg_output"><code>output.*.filter_target</code></a>.</p>
+	<p>If the <a
+			href="/glyph/book/config/options.html#s_options_filters_by_file_extension"><code>options.filters_by_file_extension</code></a>
+		setting is <code>true</code>, this macro is called automatically on <a
+			href="/glyph/book/macros/macros_core.html#m_include">included</a> files with a <code>.textile</code> or a
+		<code>.txt</code> extension.</p>
+	<strong>Aliases:</strong> <code>txt</code>
+	<p><strong>Example:</strong> <code>textile[This is a *strong emphasis*.]</code></p>
+
+
+
 	<section class="section">
-<header><h1 id="m_textile" class="toc"><code>textile</code></h1></header>
-<p>Uses the RedCloth gem to transform the value into <span class="caps">HTML</span> or LaTeX, depending on the value of the <a href="/glyph/book/config/output.html#cfg_output"><code>output.*.filter_target</code></a>.</p>
-<p>If the <a href="/glyph/book/config/options.html#s_options_filters_by_file_extension"><code>options.filters_by_file_extension</code></a> setting is <code>true</code>, this macro is called automatically on <a href="/glyph/book/macros/macros_core.html#m_include">included</a> files with a <code>.textile</code> or a <code>.txt</code> extension.</p>
-<strong>Aliases:</strong> <code>txt</code>
-<p><strong>Example:</strong> <code>textile[This is a *strong emphasis*.]</code></p>
-
-
-
-		<section class="section">
-<header><h1 id="h_258" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+		<header>
+			<h1 id="h_258" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The Textile text to filter.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The Textile text to filter.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
-	
+
+
+
+<section class="section">
+	<header>
+		<h1 id="m_textile_section" class="toc"><code>textile_section</code></h1>
+	</header>
+	<p>Creates a section (see <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a>
+		macro) whose content can be formatted with textile markup.</p>
+	<strong>Aliases:</strong> <code>§txt, txt_section</code>
+
+
 	<section class="section">
-<header><h1 id="m_textile_section" class="toc"><code>textile_section</code></h1></header>
-<p>Creates a section (see <a href="/glyph/book/macros/macros_structure.html#m_section"><code>section</code></a> macro) whose content can be formatted with textile markup.</p>
-<strong>Aliases:</strong> <code>§txt, txt_section</code>
-
-
-		<section class="section">
-<header><h1 id="h_260" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>textile_section[
+		<header>
+			<h1 id="h_260" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>textile_section[
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  @title[Test Section]
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  @id[test]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>Some *textile* text.
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_261" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_261" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>The text of the section</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>The text of the section</td>
+			</tr>
 		</table>
 
-</section>
-	
+	</section>
 
-		<section class="section">
-<header><h1 id="h_262" class="notoc">Attributes</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_262" class="notoc">Attributes</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Attribute</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>title</td>
-			<td>The title of the section <em>(optional)</em></td>
-		</tr>
-	
-			
-		<tr>
-			<td>id</td>
-			<td>The ID of the section <em>(optional)</em></td>
-		</tr>
-	
-			
-		<tr>
-			<td>notoc</td>
-			<td>If not blank, the header will not appear in the Table of Contents. <em>(optional)</em></td>
-		</tr>
+			<tr>
+				<td>title</td>
+				<td>The title of the section <em>(optional)</em></td>
+			</tr>
+
+
+			<tr>
+				<td>id</td>
+				<td>The ID of the section <em>(optional)</em></td>
+			</tr>
+
+
+			<tr>
+				<td>notoc</td>
+				<td>If not blank, the header will not appear in the Table of Contents. <em>(optional)</em></td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
 
-	
+
+
+<section class="section">
+	<header>
+		<h1 id="m_highlight" class="toc"><code>highlight</code></h1>
+	</header>
+	<p>Highlights a piece of source code according to the specified language. <span class="fmi">for more information on
+			<mark>code highligting</mark>, see <a href="/glyph/book/text_editing/code.html#source_code">Source
+				Code</a></span>.</p>
+
+
+
 	<section class="section">
-<header><h1 id="m_highlight" class="toc"><code>highlight</code></h1></header>
-<p>Highlights a piece of source code according to the specified language. <span class="fmi">for more information on <mark>code highligting</mark>, see <a href="/glyph/book/text_editing/code.html#source_code">Source Code</a></span>.</p>
-
-
-
-		<section class="section">
-<header><h1 id="h_264" class="notoc">Example</h1></header>
-<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>highlight[ruby|
+		<header>
+			<h1 id="h_264" class="notoc">Example</h1>
+		</header>
+		<div class="CodeRay">
+			<div class="code">
+				<pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>highlight[ruby|
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  def hello
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    puts &quot;Hello World&quot;
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  end
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span>]</pre>
+			</div>
+		</div>
 
-</section>
-	
+	</section>
 
 
-		<section class="section">
-<header><h1 id="h_265" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+
+	<section class="section">
+		<header>
+			<h1 id="h_265" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td>0</td>
-			<td>A programming language supported by the underlying highlighter.</td>
-		</tr>
-	
-			
-		<tr>
-			<td>1</td>
-			<td>The code to highlight.</td>
-		</tr>
+			<tr>
+				<td>0</td>
+				<td>A programming language supported by the underlying highlighter.</td>
+			</tr>
+
+
+			<tr>
+				<td>1</td>
+				<td>The code to highlight.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
-	
-<nav class="navigation"><a href="/glyph/book/macros/macros_inline.html">← Inline Macros</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_structure.html">Structure Macros →</a></nav>
+
+<nav class="navigation"><a href="/glyph/book/macros/macros_inline.html">← Inline Macros</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_structure.html">Structure Macros
+		→</a></nav>

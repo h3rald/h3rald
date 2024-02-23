@@ -1,20 +1,34 @@
 -----
-title: "Glyph &ndash; Introducing Glyph Macros"
+title: "Glyph - Introducing Glyph Macros"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/text_editing/glyph_files.html">← <code>.glyph</code> files</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/attribute_intro.html">Macro attributes →</a></nav>
+<nav class="navigation"><a href="/glyph/book/text_editing/glyph_files.html">← <code>.glyph</code> files</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/attribute_intro.html">Macro
+		attributes →</a></nav>
 
-	<p>The most important concept to grasp about Glyph is the concept of <em>macro</em>.</p>
-<p>A Glyph macro is, in a nutshell, an identifier of some kind that wraps a value or parameters within square brackets. More specifically:</p>
+<p>The most important concept to grasp about Glyph is the concept of <em>macro</em>.</p>
+<p>A Glyph macro is, in a nutshell, an identifier of some kind that wraps a value or parameters within square brackets.
+	More specifically:</p>
 <ul>
-	<li>The macro identifier can contain <em>any</em> character except for: <code>[</code>, <code>]</code>, <code>\</code>, <code>|</code>, <code>@</code> or spaces.</li>
-	<li>The delimiters can be either <code>[</code> and <code>]</code> or <code>[=</code> and <code>=]</code> (<span class="fmi">for more information on <mark>differences between delimiters</mark>, see <a href="/glyph/book/text_editing/esc_quot.html#esc_quot">Escaping and Quoting</a></span>).</li>
-	<li>The value can be anything, even other macros. If a macro supports more than one parameter, they must be separated with <code>|</code>. For example, the <a href="/glyph/book/macros/macros_inline.html#m_link"><code>link</code></a> macro can take an optional second parameter for the link text: <code>link[#link_id|This is the link text]</code>.</li>
-	<li>A macro can also have <em>attributes</em>, which look exactly like macros but their identifier starts with a <code>@</code>.</li>
+	<li>The macro identifier can contain <em>any</em> character except for: <code>[</code>, <code>]</code>,
+		<code>\</code>, <code>|</code>, <code>@</code> or spaces.</li>
+	<li>The delimiters can be either <code>[</code> and <code>]</code> or <code>[=</code> and <code>=]</code> (<span
+			class="fmi">for more information on <mark>differences between delimiters</mark>, see <a
+				href="/glyph/book/text_editing/esc_quot.html#esc_quot">Escaping and Quoting</a></span>).</li>
+	<li>The value can be anything, even other macros. If a macro supports more than one parameter, they must be
+		separated with <code>|</code>. For example, the <a
+			href="/glyph/book/macros/macros_inline.html#m_link"><code>link</code></a> macro can take an optional second
+		parameter for the link text: <code>link[#link_id|This is the link text]</code>.</li>
+	<li>A macro can also have <em>attributes</em>, which look exactly like macros but their identifier starts with a
+		<code>@</code>.</li>
 </ul>
-<p>A macro can often have one or more aliases. For example, <code>=&gt;</code> is an alias for the <a href="/glyph/book/macros/macros_inline.html#m_link"><code>link</code></a> macro, so the following macro calls are equivalent:</p>
+<p>A macro can often have one or more aliases. For example, <code>=&gt;</code> is an alias for the <a
+		href="/glyph/book/macros/macros_inline.html#m_link"><code>link</code></a> macro, so the following macro calls
+	are equivalent:</p>
 <ul>
 	<li><code>=&gt;[#test|Test Section]</code></li>
 	<li><code>link[#test|Test Section]</code></li>
 </ul>
-<nav class="navigation"><a href="/glyph/book/text_editing/glyph_files.html">← <code>.glyph</code> files</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/attribute_intro.html">Macro attributes →</a></nav>
+<nav class="navigation"><a href="/glyph/book/text_editing/glyph_files.html">← <code>.glyph</code> files</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/attribute_intro.html">Macro
+		attributes →</a></nav>

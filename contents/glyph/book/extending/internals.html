@@ -1,33 +1,55 @@
 -----
-title: "Glyph &ndash; A quick look at Glyph's internals"
+title: "Glyph - A quick look at Glyph's internals"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/stats/links.html">← Link Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros →</a></nav>
-  <p>If you plan on extending Glyph, knowing how it works inside helps. It is not mandatory by any means, but it definitely helps, especially when creating complex macros.</p>
-  <p>What happens behind the scenes when you call <code>glyph compile</code>? Glyph's code is parsed, analyzed and then translated into text, and here's how:</p>
-  <figure><img src="/glyph/book/images/glyph/document_generation.png" /><figcaption>A sequence diagram for document generation</figcaption></figure>
-  <p>From the diagram, it is possible to divide the document generation process into three phases:</p>
+<nav class="navigation"><a href="/glyph/book/stats/links.html">← Link Statistics</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros
+    →</a></nav>
+<p>If you plan on extending Glyph, knowing how it works inside helps. It is not mandatory by any means, but it
+  definitely helps, especially when creating complex macros.</p>
+<p>What happens behind the scenes when you call <code>glyph compile</code>? Glyph's code is parsed, analyzed and then
+  translated into text, and here's how:</p>
+<figure><img src="/glyph/book/images/glyph/document_generation.png" />
+  <figcaption>A sequence diagram for document generation</figcaption>
+</figure>
+<p>From the diagram, it is possible to divide the document generation process into three phases:</p>
 <ul>
-	<li>The <em>Parsing Phase</em> starts when a chunk of Glyph code is passed (by the <code>generate:document</code> Rake task, for example) to a <a href="http://rubydoc.info/gems/glyph/Glyph/Interpreter"><code>Glyph::Interpreter</code></a>. The interpreter initializes a <a href="http://rubydoc.info/gems/glyph/Glyph/Parser"><code>Glyph::Parser</code></a> that parses the code and returns an <em>Abstract Syntax Tree</em> (<span class="caps">AST</span>) of <a href="http://rubydoc.info/gems/glyph/Glyph/SyntaxNode"><code>Glyph::SyntaxNode</code></a> objects.</li>
-	<li>The <em>Analysis Phase</em> (Processing) starts when the interpreter method calls the <code>analyze</code> method, instantiating a new <a href="http://rubydoc.info/gems/glyph/Glyph/Document"><code>Glyph::Document</code></a>. The <code>Glyph::Document</code> object evaluates the <span class="caps">AST</span> expanding all macro nodesth (that&#8217;s when macros are executed) and generates string.</li>
-	<li>The <em>Finalization Phase</em> (Post-Processing) starts when the interpreter calls the <code>finalyze</code> method, causing the <code>Glyph::Document</code> object to perform a series of finalizations on the string obtained after analysis, i.e. it replaces escape sequences and placeholders.</li>
+  <li>The <em>Parsing Phase</em> starts when a chunk of Glyph code is passed (by the <code>generate:document</code> Rake
+    task, for example) to a <a
+      href="http://rubydoc.info/gems/glyph/Glyph/Interpreter"><code>Glyph::Interpreter</code></a>. The interpreter
+    initializes a <a href="http://rubydoc.info/gems/glyph/Glyph/Parser"><code>Glyph::Parser</code></a> that parses the
+    code and returns an <em>Abstract Syntax Tree</em> (<span class="caps">AST</span>) of <a
+      href="http://rubydoc.info/gems/glyph/Glyph/SyntaxNode"><code>Glyph::SyntaxNode</code></a> objects.</li>
+  <li>The <em>Analysis Phase</em> (Processing) starts when the interpreter method calls the <code>analyze</code> method,
+    instantiating a new <a href="http://rubydoc.info/gems/glyph/Glyph/Document"><code>Glyph::Document</code></a>. The
+    <code>Glyph::Document</code> object evaluates the <span class="caps">AST</span> expanding all macro nodesth
+    (that&#8217;s when macros are executed) and generates string.</li>
+  <li>The <em>Finalization Phase</em> (Post-Processing) starts when the interpreter calls the <code>finalyze</code>
+    method, causing the <code>Glyph::Document</code> object to perform a series of finalizations on the string obtained
+    after analysis, i.e. it replaces escape sequences and placeholders.</li>
 </ul>
-  <section class="section">
-<header><h1 id="h_83" class="toc">Example: A short note</h1></header>
-<p>As an example, consider the following Glyph code:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>fmi[something|#test]
+<section class="section">
+  <header>
+    <h1 id="h_83" class="toc">Example: A short note</h1>
+  </header>
+  <p>As an example, consider the following Glyph code:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>fmi[something|#test]
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>...
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>section[
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  @title[Test Section]
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>  @id[test]
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>...
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]</pre></div>
-</div>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span>]</pre>
+    </div>
+  </div>
 
-    <p>This simple snippet uses the <a href="/glyph/book/macros/macros_inline.html#m_fmi"><code>fmi</code></a> macro to link to a section later on in the document. When parsed, the produced AST is the following:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>{<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">--</span><span class="delimiter">&quot;</span></span>}
+  <p>This simple snippet uses the <a href="/glyph/book/macros/macros_inline.html#m_fmi"><code>fmi</code></a> macro to
+    link to a section later on in the document. When parsed, the produced AST is the following:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>{<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">--</span><span class="delimiter">&quot;</span></span>}
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  {<span class="symbol">:name</span>=&gt;<span class="symbol">:fmi</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol"><span class="symbol">:</span><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>}
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">something</span><span class="delimiter">&quot;</span></span>}
@@ -50,39 +72,52 @@ content-type: page
 <span class="line-numbers"><a href="#n21" name="n21">21</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol">:title</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
 <span class="line-numbers"><a href="#n22" name="n22">22</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">Test Section</span><span class="delimiter">&quot;</span></span>}
 <span class="line-numbers"><a href="#n23" name="n23">23</a></span>    {<span class="symbol">:name</span>=&gt;<span class="symbol">:id</span>, <span class="symbol">:escape</span>=&gt;<span class="predefined-constant">false</span>}
-<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>}</pre></div>
-</div>
+<span class="line-numbers"><a href="#n24" name="n24">24</a></span>      {<span class="symbol">:value</span>=&gt;<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>}</pre>
+    </div>
+  </div>
 
-    <p>This output is produced by calling the <code>inspect</code> method on the AST. Each <a href="http://rubydoc.info/gems/glyph/Glyph/SyntaxNode"><code>Glyph::SyntaxNode</code></a> object in the tree is basically an ordinary Glyph Hash with a parent and 0 or more chidren, so the code snippets above shows how the syntax nodes are nested.</p>
-    <p>The AST contains information about macro, parameter and attribute names, and escaping, and raw text values (the nodes without a <code>:name</code> key), but nothing more.</p>
-    <p>When the AST is analyzed, the resulting textual output is the following:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fmi</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>for more information on something, see ‡‡‡‡‡PLACEHOLDER ¤ 1‡‡‡‡‡
+  <p>This output is produced by calling the <code>inspect</code> method on the AST. Each <a
+      href="http://rubydoc.info/gems/glyph/Glyph/SyntaxNode"><code>Glyph::SyntaxNode</code></a> object in the tree is
+    basically an ordinary Glyph Hash with a parent and 0 or more chidren, so the code snippets above shows how the
+    syntax nodes are nested.</p>
+  <p>The AST contains information about macro, parameter and attribute names, and escaping, and raw text values (the
+    nodes without a <code>:name</code> key), but nothing more.</p>
+  <p>When the AST is analyzed, the resulting textual output is the following:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fmi</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>for more information on something, see ‡‡‡‡‡PLACEHOLDER ¤ 1‡‡‡‡‡
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span><span class="tag">&lt;/span&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>\/[...\/]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/h2&gt;</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>\/[...\/]
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
 
-    <p>This looks almost perfect, except that:</p>
-    <ul>
-      <li>There's a nasty placeholder instead of a link: this is due to the fact that when the link is processed, there is no <code>#text</code> anchor in the document, but there may be one afterwards (and there will be).</li>
-      <li>There are some escaped brackets.</li>
-    </ul>
-    <p>Finally, when the document is finalized, placeholders and escape sequences are removed and the final result is the following:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fmi</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>for more information on something, 
+  <p>This looks almost perfect, except that:</p>
+  <ul>
+    <li>There's a nasty placeholder instead of a link: this is due to the fact that when the link is processed, there is
+      no <code>#text</code> anchor in the document, but there may be one afterwards (and there will be).</li>
+    <li>There are some escaped brackets.</li>
+  </ul>
+  <p>Finally, when the document is finalized, placeholders and escape sequences are removed and the final result is the
+    following:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="tag">&lt;span</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fmi</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>for more information on something, 
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  see <span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">#test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/span&gt;</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>[...]
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">section</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="tag">&lt;h2</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Test Section<span class="tag">&lt;/h2&gt;</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>[...]
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="tag">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
 
 </section>
-<nav class="navigation"><a href="/glyph/book/stats/links.html">← Link Statistics</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros →</a></nav>
+<nav class="navigation"><a href="/glyph/book/stats/links.html">← Link Statistics</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/macro_def.html">Defining Custom Macros
+    →</a></nav>

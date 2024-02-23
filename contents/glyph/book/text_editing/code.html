@@ -1,24 +1,36 @@
 -----
-title: "Glyph &ndash; Source Code"
+title: "Glyph - Source Code"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/text_editing/images.html">← Images and Figures</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/raw_html.html">Textile or Markdown →</a></nav>
-  <p>If you&#8217;re a programmer, chances are that you&#8217;re going to include some source code in your articles and books. Glyph offers two ways to format code blocks effortlessly: the <a href="/glyph/book/macros/macros_block.html#m_codeblock"><code>codeblock</code></a> macro, which simply wraps text into <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags, or the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro. The last one requires either <a href="http://coderay.rubychan.de/">Coderay</a> or <a href="http://ultraviolet.rubyforge.org/">Ultraviolet</a>, but it provides syntax highlighting for the most common programming languages.</p>
+<nav class="navigation"><a href="/glyph/book/text_editing/images.html">← Images and Figures</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/raw_html.html">Textile or Markdown
+    →</a></nav>
+<p>If you&#8217;re a programmer, chances are that you&#8217;re going to include some source code in your articles and
+  books. Glyph offers two ways to format code blocks effortlessly: the <a
+    href="/glyph/book/macros/macros_block.html#m_codeblock"><code>codeblock</code></a> macro, which simply wraps text
+  into <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags, or the <a
+    href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro. The last one requires
+  either <a href="http://coderay.rubychan.de/">Coderay</a> or <a
+    href="http://ultraviolet.rubyforge.org/">Ultraviolet</a>, but it provides syntax highlighting for the most common
+  programming languages.</p>
 <p>Cosider the following piece of ruby code:</p>
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>def find_child(&amp;block)
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>def find_child(&amp;block)
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  children.each do |c|
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    c.descend do |node, level|
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>      return node if block.call(node)
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    end
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  end
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  nil
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span>end</pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span>end</pre>
+  </div>
 </div>
 
-  <p>It can be wrapped in a highlight macro, like so:</p>
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>highlight[=ruby|
+<p>It can be wrapped in a highlight macro, like so:</p>
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>highlight[=ruby|
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  def find_child(&amp;block)
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    children.each do |c|
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>      c.descend do |node, level|
@@ -27,28 +39,37 @@ content-type: page
 <span class="line-numbers"> <a href="#n7" name="n7">7</a></span>    end
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    nil
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>  end
-<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>=]</pre></div>
+<span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>=]</pre>
+  </div>
 </div>
 
-  <p>...to produce the following, using the coderay highlighter:</p>
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="keyword">def</span> <span class="function">find_child</span>(&amp;block)
+<p>...to produce the following, using the coderay highlighter:</p>
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span><span class="keyword">def</span> <span class="function">find_child</span>(&amp;block)
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  children.each <span class="keyword">do</span> |c|
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>    c.descend <span class="keyword">do</span> |node, level|
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>      <span class="keyword">return</span> node <span class="keyword">if</span> block.call(node)
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span>    <span class="keyword">end</span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span>  <span class="keyword">end</span>
 <span class="line-numbers"><a href="#n7" name="n7">7</a></span>  <span class="predefined-constant">nil</span>
-<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="keyword">end</span></pre></div>
+<span class="line-numbers"><a href="#n8" name="n8">8</a></span><span class="keyword">end</span></pre>
+  </div>
 </div>
 
-  <aside class="box">
-<div class="box-title">Some Remarks</div>
-<ul>
-	<li>Highlighters require some configuration. For more information on relevant configuration settings, see the <a href="/glyph/book/config/filters.html#cfg_filters">filters.*</a> configuration settings.</li>
-	<li>If you&#8217;re using the <a href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro together within the <a href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro, you must wrap the macro call within <code>&lt;notextile&gt;</code> tags.</li>
-	<li>You must always escape pipes (<code>|</code>) with the code or the highlight macro.</li>
-</ul>
+<aside class="box">
+  <div class="box-title">Some Remarks</div>
+  <ul>
+    <li>Highlighters require some configuration. For more information on relevant configuration settings, see the <a
+        href="/glyph/book/config/filters.html#cfg_filters">filters.*</a> configuration settings.</li>
+    <li>If you&#8217;re using the <a
+        href="/glyph/book/macros/macros_filters.html#m_highlight"><code>highlight</code></a> macro together within the
+      <a href="/glyph/book/macros/macros_filters.html#m_textile"><code>textile</code></a> macro, you must wrap the macro
+      call within <code>&lt;notextile&gt;</code> tags.</li>
+    <li>You must always escape pipes (<code>|</code>) with the code or the highlight macro.</li>
+  </ul>
 
 </aside>
-<nav class="navigation"><a href="/glyph/book/text_editing/images.html">← Images and Figures</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/raw_html.html">Textile or Markdown →</a></nav>
+<nav class="navigation"><a href="/glyph/book/text_editing/images.html">← Images and Figures</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/raw_html.html">Textile or Markdown
+    →</a></nav>

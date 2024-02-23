@@ -1,5 +1,5 @@
 -----
-title: "Glyph &ndash; Custom Output Formats"
+title: "Glyph - Custom Output Formats"
 content-type: page
 -----
 <nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a
@@ -7,12 +7,14 @@ content-type: page
 		Commands →</a></nav>
 <p>As shown in <a href="/glyph/book/extending/commands_tasks.html#cmd_tasks_arch">How Commands and Tasks work</a>, the
 	<a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command command calls specific tasks
-	defined in the <code>generate:</code> Rake namespace to generate output files in a particular format.</p>
+	defined in the <code>generate:</code> Rake namespace to generate output files in a particular format.
+</p>
 <p>More specifically, when a <code>--format</code> option is specified, the command looks for a task with the same name
 	within the <code>generate:</code> namespace. This makes adding new output formats to Glyph a fairly easy task,
 	without the need to specify custom commands or similar.</p>
 <p>The following sections explain how the <code>h3rald</code> output format was created to integrate this book into the
-	<a href="http://www.h3rald.com">H3RALD.com</a> website.</p>
+	<a href="http://www.h3rald.com">H3RALD.com</a> website.
+</p>
 <section class="section">
 	<header>
 		<h1 id="h_105" class="toc">Output Configuration</h1>

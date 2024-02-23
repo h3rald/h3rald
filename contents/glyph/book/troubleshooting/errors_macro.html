@@ -1,5 +1,5 @@
 -----
-title: "Glyph &ndash; Macro Errors"
+title: "Glyph - Macro Errors"
 content-type: page
 -----
 <nav class="navigation"><a href="/glyph/book/troubleshooting/errors_command.html">← Command Errors</a> | <a
@@ -16,7 +16,8 @@ content-type: page
 	<li><em>macro_source</em> is the file or snippet where the error occurred.</li>
 	<li><em>macro_path</em> is the full path to the macro that returned the error, within the document syntax tree, e.g.
 		<code>document/body/bodymatter/chapter/section/header/&amp;</code> if the error occurrent in a snippet within
-		the header of a section in the <code>bodymatter</code> part of the document.</li>
+		the header of a section in the <code>bodymatter</code> part of the document.
+	</li>
 	<li><em>macro_value</em> is the value of the macro (shown only if Glyph is running in <a
 			href="/glyph/book/ref_commands.html#debug_switch">debug mode</a>).</li>
 </ul>
@@ -171,14 +172,16 @@ content-type: page
 		<td>Stylesheet '<em>file_name</em>' not found</td>
 		<td>Returned by the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro if
 			the <code>.css</code> or <code>.sass</code> file supplied as parameter was not found in the
-			<code>styles/</code> directory.</td>
+			<code>styles/</code> directory.
+		</td>
 	</tr>
 
 
 	<tr>
 		<td>Haml is not installed. Please run: gem install haml</td>
 		<td>Returned by the <a href="/glyph/book/macros/macros_structure.html#m_style"><code>style</code></a> macro if a
-			<code>.sass</code> file was passed as parameter but the Haml gem is not installed.</td>
+			<code>.sass</code> file was passed as parameter but the Haml gem is not installed.
+		</td>
 	</tr>
 
 

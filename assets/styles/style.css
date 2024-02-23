@@ -369,16 +369,17 @@ time {
     margin-top: -30px;
 }
 
-.main-content {
-    margin-top: 20px;
+footer,
+.main-content,
+.sidebar {
     max-width: 1024px;
     margin: auto;
 }
 
-footer {
-    max-width: 1024px;
-    margin: auto;
+.main-content {
+    margin-top: 20px;
 }
+
 
 @media screen and (max-width: 385px) {
     .header-counter {
@@ -647,6 +648,12 @@ a[href^=http].icon-link::after {
     height: 16px;
     border: none;
     vertical-align: text-top;
+}
+
+/* Used only in Glyph Book */
+
+.line-numbers {
+    display: none;
 }
 
 /* iPad Fix */

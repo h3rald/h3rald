@@ -1,115 +1,151 @@
 -----
-title: "Glyph &ndash; Defining Custom Macros"
+title: "Glyph - Defining Custom Macros"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/extending/internals.html">← A quick look at Glyph's internals</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/params_attrs.html">Parameters and Attributes →</a></nav>
-  <p>Glyph was created wih extensibility in mind. You can freely extend Glyph Language by creating or overriding macros, to do whatever you like. Macro definitions are written in pure Ruby code and placed in <code>.rb</code> files within the <code>lib/macros/</code> folder of your project.</p>
+<nav class="navigation"><a href="/glyph/book/extending/internals.html">← A quick look at Glyph's internals</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/params_attrs.html">Parameters and
+    Attributes →</a></nav>
+<p>Glyph was created wih extensibility in mind. You can freely extend Glyph Language by creating or overriding macros,
+  to do whatever you like. Macro definitions are written in pure Ruby code and placed in <code>.rb</code> files within
+  the <code>lib/macros/</code> folder of your project.</p>
 <aside class="box">
-<div class="box-title">Alternative Ways to Define Macros</div>
-<p>You can also define macros:</p>
-<ul>
-	<li>inside your document, using the <a href="/glyph/book/macros/macros_core.html#m_macro_"><code>macro:</code></a> macro.</li>
-	<li>Using the <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro specifying the path to an <code>.rb</code> file containing macro definitions stored in the <code>lib/</code> directory (useful especially when <a href="/glyph/book/compiling/lite_mode.html#lite_mode">compiling single Glyph files</a>).</li>
-</ul>
+  <div class="box-title">Alternative Ways to Define Macros</div>
+  <p>You can also define macros:</p>
+  <ul>
+    <li>inside your document, using the <a href="/glyph/book/macros/macros_core.html#m_macro_"><code>macro:</code></a>
+      macro.</li>
+    <li>Using the <a href="/glyph/book/macros/macros_core.html#m_include"><code>include</code></a> macro specifying the
+      path to an <code>.rb</code> file containing macro definitions stored in the <code>lib/</code> directory (useful
+      especially when <a href="/glyph/book/compiling/lite_mode.html#lite_mode">compiling single Glyph files</a>).</li>
+  </ul>
 </aside>
 <p>This is the source code of a fairly simple macro used to format a note:</p>
-  <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:note</span> <span class="keyword">do</span>
+<div class="CodeRay">
+  <div class="code">
+    <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:note</span> <span class="keyword">do</span>
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span class="string"><span class="delimiter">%{</span><span class="content">&lt;div class=&quot;</span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@name</span><span class="inline-delimiter">}</span></span><span class="content">&quot;&gt;&lt;span class=&quot;note-title&quot;&gt;</span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@name</span>.to_s.capitalize<span class="inline-delimiter">}</span></span><span class="content">&lt;/span&gt;</span></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span><span class="string"><span class="content">    </span><span class="inline"><span class="inline-delimiter">#{</span><span class="instance-variable">@value</span><span class="inline-delimiter">}</span></span><span class="content"></span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="string"><span class="content"></span></span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="string"><span class="content">    &lt;/div&gt;</span><span class="delimiter">}</span></span>
-<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="keyword">end</span></pre></div>
+<span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="keyword">end</span></pre>
+  </div>
 </div>
 
-  <p>The <code>macro</code> method takes a single <code>Symbol</code> or <code>String</code> parameter, corresponding to the name of the macro. In this case, the entire block (or <em>body</em> of the macro) is a <code>String</code> corresponding to what we want the macro to evaluate to: a <code>&lt;div&gt;</code> tag containing a note.</p>
-<p>The body of the macro is evaluated in the context of the <a href="http://rubydoc.info/gems/glyph/Glyph/Macro"><code>Glyph::Macro</code></a> class, therefore its instance variables (like <code>@name</code> or <code>@value</code>) can be used directly.</p>
+<p>The <code>macro</code> method takes a single <code>Symbol</code> or <code>String</code> parameter, corresponding to
+  the name of the macro. In this case, the entire block (or <em>body</em> of the macro) is a <code>String</code>
+  corresponding to what we want the macro to evaluate to: a <code>&lt;div&gt;</code> tag containing a note.</p>
+<p>The body of the macro is evaluated in the context of the <a
+    href="http://rubydoc.info/gems/glyph/Glyph/Macro"><code>Glyph::Macro</code></a> class, therefore its instance
+  variables (like <code>@name</code> or <code>@value</code>) can be used directly.</p>
 <aside class="box">
-<div class="box-title">Why using <code>@name</code> instead of just &#8220;note&#8221;?</div>
-<p>For the <code>note</code> macro, it absolutely makes no difference. However, by using <code>@name</code> it is possible to re-use the same code for the <code>tip</code>, <code>important</code> and <code>caution</code> macros as well, which are in fact only aliases of the <code>note</code> macro.</p>
+  <div class="box-title">Why using <code>@name</code> instead of just &#8220;note&#8221;?</div>
+  <p>For the <code>note</code> macro, it absolutely makes no difference. However, by using <code>@name</code> it is
+    possible to re-use the same code for the <code>tip</code>, <code>important</code> and <code>caution</code> macros as
+    well, which are in fact only aliases of the <code>note</code> macro.</p>
 </aside>
 <p>The following table lists all the instance variables that can be used inside macros:</p>
-  <table>
-    <tr>
-      <th>Variable</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>
-<code>@node</code>
-</td>
-      <td>
-        <p>A <a href="http://rubydoc.info/gems/glyph/Glyph/MacroNode"><code>Glyph::MacroNode</code></a> containing information about the macro. Useful for accessing parent and child macros, and the current <a href="http://rubydoc.info/gems/glyph/Glyph/Document"><code>Glyph::Document</code></a>. Normally, instances of the <code>MacroNode</code> class contain the following keys:</p>
-<ul>
-	<li><code>:name</code>, the name of the macro.</li>
-	<li><code>:source</code>, a <code>String</code> identifying the source of the macro (a file, a snippet, etc.)</li>
-	<li><code>:value</code>, the value of the macro (populated after the document has been parsed and analyzed).</li>
-	<li><code>:escape</code>, whether the macro is a <a href="/glyph/book/text_editing/esc_quot.html#esc_quot">quoting macro</a> or not.</li>
-	<li><code>:document</code>, the instance of <code>Document</code> the macro is contained in (populated after the document has been parsed and analyzed).</li>
-</ul>
-<p>Note that the first two keys can also be accessed via instance variables.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-<code>@name</code>
-</td>
-      <td>The name of the macro.</td>
-    </tr>
-    <tr>
-      <td>
-<code>@source_name</code>
-</td>
-      <td>A <code>String</code> identifying the source of the macro (a file, a snippet, etc.).</td>
-    </tr>
-    <tr>
-      <td>
-<code>@source_topic</code>
-</td>
-      <td>A <code>String</code> identifying the source topic of the macro.</td>
-    </tr>
-    <tr>
-      <td>
-<code>@source_file</code>
-</td>
-      <td>A <code>String</code> identifying the source file of the macro.</td>
-    </tr>
-  </table>
-  <section class="section">
-<header><h1 id="h_85" class="toc">Representations</h1></header>
-<p>There&#8217;s a small problem with the code used to define the <code>note</code> macro in the previous section: what if I want to format notes using HTML5 instead of <span class="caps">HTML</span>, or another output format?</p>
-<p>Glyph supports different output formats, therefore macros must be format-independent! In fact, this is the actual source of the <code>note</code> macro:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:note</span> <span class="keyword">do</span>
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>
+      <code>@node</code>
+    </td>
+    <td>
+      <p>A <a href="http://rubydoc.info/gems/glyph/Glyph/MacroNode"><code>Glyph::MacroNode</code></a> containing
+        information about the macro. Useful for accessing parent and child macros, and the current <a
+          href="http://rubydoc.info/gems/glyph/Glyph/Document"><code>Glyph::Document</code></a>. Normally, instances of
+        the <code>MacroNode</code> class contain the following keys:</p>
+      <ul>
+        <li><code>:name</code>, the name of the macro.</li>
+        <li><code>:source</code>, a <code>String</code> identifying the source of the macro (a file, a snippet, etc.)
+        </li>
+        <li><code>:value</code>, the value of the macro (populated after the document has been parsed and analyzed).
+        </li>
+        <li><code>:escape</code>, whether the macro is a <a
+            href="/glyph/book/text_editing/esc_quot.html#esc_quot">quoting macro</a> or not.</li>
+        <li><code>:document</code>, the instance of <code>Document</code> the macro is contained in (populated after the
+          document has been parsed and analyzed).</li>
+      </ul>
+      <p>Note that the first two keys can also be accessed via instance variables.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>@name</code>
+    </td>
+    <td>The name of the macro.</td>
+  </tr>
+  <tr>
+    <td>
+      <code>@source_name</code>
+    </td>
+    <td>A <code>String</code> identifying the source of the macro (a file, a snippet, etc.).</td>
+  </tr>
+  <tr>
+    <td>
+      <code>@source_topic</code>
+    </td>
+    <td>A <code>String</code> identifying the source topic of the macro.</td>
+  </tr>
+  <tr>
+    <td>
+      <code>@source_file</code>
+    </td>
+    <td>A <code>String</code> identifying the source file of the macro.</td>
+  </tr>
+</table>
+<section class="section">
+  <header>
+    <h1 id="h_85" class="toc">Representations</h1>
+  </header>
+  <p>There&#8217;s a small problem with the code used to define the <code>note</code> macro in the previous section:
+    what if I want to format notes using HTML5 instead of <span class="caps">HTML</span>, or another output format?</p>
+  <p>Glyph supports different output formats, therefore macros must be format-independent! In fact, this is the actual
+    source of the <code>note</code> macro:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>macro <span class="symbol">:note</span> <span class="keyword">do</span>
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  <span class="instance-variable">@data</span>[<span class="symbol">:name</span>] = <span class="instance-variable">@name</span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="instance-variable">@data</span>[<span class="symbol">:text</span>] = value
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span>  render
-<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="keyword">end</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="keyword">end</span></pre>
+    </div>
+  </div>
 
-    <p>The <span class="caps">HTML</span> representation of the note macro is defined in the <code>macros/reps/html.rb</code> file as follows:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>rep <span class="symbol">:note</span> <span class="keyword">do</span> |data|
+  <p>The <span class="caps">HTML</span> representation of the note macro is defined in the
+    <code>macros/reps/html.rb</code> file as follows:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>rep <span class="symbol">:note</span> <span class="keyword">do</span> |data|
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  css_class = data[<span class="symbol">:name</span>].to_s.match(<span class="regexp"><span class="delimiter">/</span><span class="content">[a-z0-9_-]</span><span class="delimiter">/</span><span class="modifier">i</span></span>) ? data[<span class="symbol">:name</span>] : <span class="string"><span class="delimiter">&quot;</span><span class="content">note</span><span class="delimiter">&quot;</span></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="string"><span class="delimiter">%{</span><span class="content">&lt;div class=&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>css_class<span class="inline-delimiter">}</span></span><span class="content">&quot;&gt;</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="string"><span class="content">&lt;span class=&quot;note-title&quot;&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:name</span>].to_s.capitalize<span class="inline-delimiter">}</span></span><span class="content">&lt;/span&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:text</span>]<span class="inline-delimiter">}</span></span><span class="content"></span></span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="string"><span class="content"></span></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="string"><span class="content">&lt;/div&gt;</span><span class="delimiter">}</span></span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="keyword">end</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="keyword">end</span></pre>
+    </div>
+  </div>
 
-    <p>The HTML5 representation of the note macro, on the other hand, is defined in the <code>macros/reps/html5.rb</code> file as follows:</p>
-    <div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>rep <span class="symbol">:note</span> <span class="keyword">do</span> |data|
+  <p>The HTML5 representation of the note macro, on the other hand, is defined in the <code>macros/reps/html5.rb</code>
+    file as follows:</p>
+  <div class="CodeRay">
+    <div class="code">
+      <pre><span class="line-numbers"><a href="#n1" name="n1">1</a></span>rep <span class="symbol">:note</span> <span class="keyword">do</span> |data|
 <span class="line-numbers"><a href="#n2" name="n2">2</a></span>  css_class = data[<span class="symbol">:name</span>].to_s.match(<span class="regexp"><span class="delimiter">/</span><span class="content">[a-z0-9_-]</span><span class="delimiter">/</span><span class="modifier">i</span></span>) ? data[<span class="symbol">:name</span>] : <span class="string"><span class="delimiter">&quot;</span><span class="content">note</span><span class="delimiter">&quot;</span></span>
 <span class="line-numbers"><a href="#n3" name="n3">3</a></span>  <span class="string"><span class="delimiter">%{</span><span class="content">&lt;aside class=&quot;</span><span class="inline"><span class="inline-delimiter">#{</span>css_class<span class="inline-delimiter">}</span></span><span class="content">&quot;&gt;</span></span>
 <span class="line-numbers"><a href="#n4" name="n4">4</a></span><span class="string"><span class="content">&lt;span class=&quot;note-title&quot;&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:name</span>].to_s.capitalize<span class="inline-delimiter">}</span></span><span class="content">&lt;/span&gt;</span><span class="inline"><span class="inline-delimiter">#{</span>data[<span class="symbol">:text</span>]<span class="inline-delimiter">}</span></span><span class="content"></span></span>
 <span class="line-numbers"><a href="#n5" name="n5">5</a></span><span class="string"><span class="content"></span></span>
 <span class="line-numbers"><a href="#n6" name="n6">6</a></span><span class="string"><span class="content">&lt;/aside&gt;</span><span class="delimiter">}</span></span>
-<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="keyword">end</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n7" name="n7">7</a></span><span class="keyword">end</span></pre>
+    </div>
+  </div>
 
-Note the different tags used to render the note.
+  Note the different tags used to render the note.
 
 </section>
-<nav class="navigation"><a href="/glyph/book/extending/internals.html">← A quick look at Glyph's internals</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/params_attrs.html">Parameters and Attributes →</a></nav>
+<nav class="navigation"><a href="/glyph/book/extending/internals.html">← A quick look at Glyph's internals</a> | <a
+    href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/params_attrs.html">Parameters and
+    Attributes →</a></nav>
