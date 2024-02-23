@@ -24,7 +24,7 @@ So I decided to ditch Nanoc. There's nothing inherently wrong with it, and it is
 
 ### TL;DR
 
-I ended up creating [HastySite](https://hastysite.h3rald.com), a self-contained static site generator written in [Nim](https://nim-lang.org) that leverages on [HastyScribe](https://h3rald.com/hastyscribe) for markdown processing, on [Moustachu](https://github.com/fenekku/moustachu) for mustache templates, and on the [min](https://min-lang.org) programming language for pretty much everything else.
+I ended up creating [HastySite](https://hastysite.h3rald.com), a self-contained static site generator written in [Nim](https://nim-lang.org) that leverages on [HastyScribe](/hastyscribe) for markdown processing, on [Moustachu](https://github.com/fenekku/moustachu) for mustache templates, and on the [min](https://min-lang.org) programming language for pretty much everything else.
 
 
 ### Choosing a technology stack
@@ -57,7 +57,7 @@ This is the bare minimum. Then you may also want support for CSS preprocessors, 
 
 When it comes to picking a lightweight markup language, Markdown is a solid choice. It is readable and it comes in many flavors that provide just about anything you need to write an article or blog post. 
 
-A while back I created [HastyScribe](https://h3rald.com/hastyscribe), a fast Markdown processor based on [Discount](http://www.pell.portland.or.us/~orc/Code/discount/). It may not be the most standard flavor of Markdown, but it is one of the most feature-rich. Besides standard Markdown features and what is already supported by Discount, HastyScribe also provides support for:
+A while back I created [HastyScribe](/hastyscribe), a fast Markdown processor based on [Discount](http://www.pell.portland.or.us/~orc/Code/discount/). It may not be the most standard flavor of Markdown, but it is one of the most feature-rich. Besides standard Markdown features and what is already supported by Discount, HastyScribe also provides support for:
 
 - Content snippets
 - Transclusion of other Markdown files
@@ -94,7 +94,7 @@ Now, min is written in Nim (pun intended), and provides the bare minimum to qual
 
 After a few months of experimenting and tinkering with the above-mentioned technologies, I released [HastySite](https://hastysite.h3rald.com), a fully-functional static site generator built around the HastyScribe markdown processor.
 
-HastySite is a single, self-contained executable file available for all major platforms that allows you create a brand new static site or blog in a matter of _seconds_ -- if you choose to stick with the defaults and not customize anything, that is. Otherwise... you can go through the documentation on the site (also available as a standalone, printable [HTML file](https://www.h3rald.com/hastysite/HastySite_UserGuide.htm)), learn how everything works, and customize/extend whatever you want, from the CSS styles to use to the way you are copying files to the output folder (which can of course be something different than _output_).
+HastySite is a single, self-contained executable file available for all major platforms that allows you create a brand new static site or blog in a matter of _seconds_ -- if you choose to stick with the defaults and not customize anything, that is. Otherwise... you can go through the documentation on the site (also available as a standalone, printable [HTML file](/hastysite/HastySite_UserGuide.htm)), learn how everything works, and customize/extend whatever you want, from the CSS styles to use to the way you are copying files to the output folder (which can of course be something different than _output_).
 
 If you just want to play with it, just download the executable and run **hastysite init**. This is actually the only command provided by HastySite that _cannot_ be customized (where customized in this case means _rewritten from scratch_), simply because it creates the default web site structure.
 
@@ -102,7 +102,7 @@ This command will also dump some CSS files and fonts in your asset folder, just 
 
 So, to sum up, with HastySite you get:
 
-* Enhanced Markdown support for all your content, powered by [HastyScribe](https://h3rald.com/hastyscribe).
+* Enhanced Markdown support for all your content, powered by [HastyScribe](/hastyscribe).
 * Mustache templates support.
 * A bare-bones but fully-functional responsive site theme based on HastyScribe's stylesheet.
 * Default scripts to build and clean your site, as well as creating pages and blog posts.

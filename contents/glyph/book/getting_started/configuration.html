@@ -2,43 +2,65 @@
 title: "Glyph &ndash; Project Configuration"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/getting_started/structure.html">← Document Structure</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/glyph_files.html"><code>.glyph</code> files →</a></nav>
+<nav class="navigation"><a href="/glyph/book/getting_started/structure.html">← Document Structure</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a
+		href="/glyph/book/text_editing/glyph_files.html"><code>.glyph</code> files →</a></nav>
 
-	<p>Glyph stores configuration settings in the following <span class="caps">YAML</span> files:</p>
+<p>Glyph stores configuration settings in the following <span class="caps">YAML</span> files:</p>
 <ol>
-	<li>Your <em>Project Configuration</em> is stored in the <code>config.yml</code> file, included in each Glyph Project.</li>
-	<li>Your <em>Global Configuration</em> is stored in a <code>.glyphrc</code> file in your <code>$HOME</code> (or <code>%HOMEPATH%</code> on Windows) directory (not created by default).</li>
+	<li>Your <em>Project Configuration</em> is stored in the <code>config.yml</code> file, included in each Glyph
+		Project.</li>
+	<li>Your <em>Global Configuration</em> is stored in a <code>.glyphrc</code> file in your <code>$HOME</code> (or
+		<code>%HOMEPATH%</code> on Windows) directory (not created by default).</li>
 	<li>The <em>System Configuration</em> is stored in the source directory of Glyph itself.</li>
 </ol>
 <p>When compiling, Glyph loads all these configuration files and merges them according to the following rules:</p>
 <ul>
-	<li>A setting configured in the <em>Project Configuration</em> overrides the same setting in both Global and System configuration.</li>
-	<li>A setting configured in the <em>Global Configuration</em> overrides the same setting in the <em>System Configuration</em>.</li>
+	<li>A setting configured in the <em>Project Configuration</em> overrides the same setting in both Global and System
+		configuration.</li>
+	<li>A setting configured in the <em>Global Configuration</em> overrides the same setting in the <em>System
+			Configuration</em>.</li>
 </ul>
-<p>Typically, you should use the <em>Project Configuration</em> for all project-specific settings and the <em>Global Configuration</em> for settings affecting all your projects (for example, you may want to set the <a href="/glyph/book/config/document.html#s_document_author"><code>document.author</code></a> setting in the Global Configuration instead of setting it in the Project Configuration of all your Glyph projects). The <em>System Configuration</em> is best left untouched.</p>
-<p>Instead of editing your configuration settings directly, you can use the <a href="/glyph/book/ref_commands.html#c_config"><code>config</code></a> command, as follows:</p>
+<p>Typically, you should use the <em>Project Configuration</em> for all project-specific settings and the <em>Global
+		Configuration</em> for settings affecting all your projects (for example, you may want to set the <a
+		href="/glyph/book/config/document.html#s_document_author"><code>document.author</code></a> setting in the Global
+	Configuration instead of setting it in the Project Configuration of all your Glyph projects). The <em>System
+		Configuration</em> is best left untouched.</p>
+<p>Instead of editing your configuration settings directly, you can use the <a
+		href="/glyph/book/ref_commands.html#c_config"><code>config</code></a> command, as follows:</p>
 <p><code>glyph config</code> <em>setting</em> <em>[value]</em></p>
-<p>If no <em>value</em> is specified, Glyph prints the value of the configuration setting, so typing <code>glyph config document.author</code> right after creating a project (assuming you didn&#8217;t set this in the Global Configuration) will print nothing, because this setting is blank by default.</p>
+<p>If no <em>value</em> is specified, Glyph prints the value of the configuration setting, so typing
+	<code>glyph config document.author</code> right after creating a project (assuming you didn&#8217;t set this in the
+	Global Configuration) will print nothing, because this setting is blank by default.</p>
 <p>To change the value of a configuration setting, specify a value right after the setting, like this:</p>
 <p><code>glyph config document.author "John Smith"</code></p>
 <aside class="tip">
-<p><span class="note-title">Tip</span>It is also possible to change configuration settings inside your document, using the <a href="/glyph/book/macros/macros_core.html#m_config_"><code>config:</code></a> macro.</p>
+	<p><span class="note-title">Tip</span>It is also possible to change configuration settings inside your document,
+		using the <a href="/glyph/book/macros/macros_core.html#m_config_"><code>config:</code></a> macro.</p>
 </aside>
-<p>In this way, the document author will be set to <em>John Smith</em> for the current project. To save this setting globally, add a <code>-g</code> option, like this:</p>
+<p>In this way, the document author will be set to <em>John Smith</em> for the current project. To save this setting
+	globally, add a <code>-g</code> option, like this:</p>
 <p><code>glyph config -g document.author "John Smith"</code></p>
 <aside class="box">
-<div class="box-title">Regarding configuration values and data types&#8230;</div>
-<p>Glyph attempts to &#8220;guess&#8221; the data type of a configuration value by evaluation (<code>Kernel#instance_eval</code>) if the value:</p>
-<ul>
-	<li>is wrapped in quotes (<code>"</code> or <code>'</code>) &rarr; <code>String</code></li>
-	<li>starts with a colon (<code>:</code>) &rarr; <code>Symbol</code></li>
-	<li>is wrapped in square brackets (<code>[</code> and <code>]</code>) &rarr; <code>Array</code></li>
-	<li>is wrapped in curly brackets (<code>{</code> and <code>}</code>) &rarr; <code>Hash</code></li>
-	<li>is <em>true</em> or <em>false</em> &rarr; <code>Boolean</code></li>
-	<li>is <em>nil</em> &rarr; <code>NilClass</code></li>
-</ul>
-<p>Note that this guessing is far from being foolproof: If you type something like <em>{:test, 2}</em>, for example, you&#8217;ll get an error.</p>
+	<div class="box-title">Regarding configuration values and data types&#8230;</div>
+	<p>Glyph attempts to &#8220;guess&#8221; the data type of a configuration value by evaluation
+		(<code>Kernel#instance_eval</code>) if the value:</p>
+	<ul>
+		<li>is wrapped in quotes (<code>"</code> or <code>'</code>) &rarr; <code>String</code></li>
+		<li>starts with a colon (<code>:</code>) &rarr; <code>Symbol</code></li>
+		<li>is wrapped in square brackets (<code>[</code> and <code>]</code>) &rarr; <code>Array</code></li>
+		<li>is wrapped in curly brackets (<code>{</code> and <code>}</code>) &rarr; <code>Hash</code></li>
+		<li>is <em>true</em> or <em>false</em> &rarr; <code>Boolean</code></li>
+		<li>is <em>nil</em> &rarr; <code>NilClass</code></li>
+	</ul>
+	<p>Note that this guessing is far from being foolproof: If you type something like <em>{:test, 2}</em>, for example,
+		you&#8217;ll get an error.</p>
 </aside>
-<p>There are plenty of configuration settings that can be modified, but most of them are best if left alone (and in the System Configuration file).</p>
-<p>For a complete reference, see <a href="/glyph/book/document.html#cfg_ref">Configuration Reference</a>. For everyday use, you may just want to change the settings defined in the <a href="/glyph/book/config/document.html#cfg_document"><code>document.*</code></a> namespace.</p> 
-<nav class="navigation"><a href="/glyph/book/getting_started/structure.html">← Document Structure</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/text_editing/glyph_files.html"><code>.glyph</code> files →</a></nav>
+<p>There are plenty of configuration settings that can be modified, but most of them are best if left alone (and in the
+	System Configuration file).</p>
+<p>For a complete reference, see <a href="/glyph/book/config/document.html#cfg_ref">Configuration Reference</a>. For
+	everyday use, you may just want to change the settings defined in the <a
+		href="/glyph/book/config/document.html#cfg_document"><code>document.*</code></a> namespace.</p>
+<nav class="navigation"><a href="/glyph/book/getting_started/structure.html">← Document Structure</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a
+		href="/glyph/book/text_editing/glyph_files.html"><code>.glyph</code> files →</a></nav>

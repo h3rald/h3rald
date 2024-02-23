@@ -2,364 +2,430 @@
 title: "Glyph &ndash; Command Reference"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">← Macro Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros →</a></nav>
-<p>Glyph&#8217;s command-line interface has been built using the <a href="http://github.com/davetron5000/gli">gli</a> (Git-like interface) gem. Therefore, Glyph commands are all written like this:</p>
+<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">← Macro Errors</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros →</a>
+</nav>
+<p>Glyph&#8217;s command-line interface has been built using the <a href="http://github.com/davetron5000/gli">gli</a>
+	(Git-like interface) gem. Therefore, Glyph commands are all written like this:</p>
 <p><strong>glyph</strong> <em>global_options</em> <strong>command</strong> <em>options</em> <em>parameters</em></p>
 <p>Where:</p>
 <ul>
-	<li><em>global_options</em> and <em>options</em> are in the form: <code>-n</code> <em>value</em> or <code>--name=</code><em>value</em>, e.g. <code>-f pdf</code> or <code>--format=pdf</code></li>
+	<li><em>global_options</em> and <em>options</em> are in the form: <code>-n</code> <em>value</em> or
+		<code>--name=</code><em>value</em>, e.g. <code>-f pdf</code> or <code>--format=pdf</code>
+	</li>
 	<li><em>parameters</em> are separated by whitespaces, and can be wrapped in quotes.</li>
 </ul>
 <section class="section">
-<header><h1 id="h_115" class="toc">Global Options</h1></header>
+	<header>
+		<h1 id="h_115" class="toc">Global Options</h1>
+	</header>
+	<section class="section">
+		<header>
+			<h1 id="debug_switch" class="toc"><code>-d</code>, <code>--debug</code></h1>
+		</header>
+		<p>If specified, the command is executed in debug mode and additional diagnostic information is printed on the
+			screen.</p>
+
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="help_switch" class="toc"><code>-h</code>, <code>--help</code></h1>
+		</header>
+		<p>Displays help on the program.</p>
+
+	</section>
+
+</section>
 <section class="section">
-<header><h1 id="debug_switch" class="toc"><code>-d</code>, <code>--debug</code></h1></header>
-<p>If specified, the command is executed in debug mode and additional diagnostic information is printed on the screen.</p>
+	<header>
+		<h1 id="c_add" class="toc"><code>add</code></h1>
+	</header>
+	<p>Creates a new text file in the <code>text/</code> folder.</p>
+	<p><strong>Example:</strong> <code>glyph add introduction.textile</code></p>
 
-</section>
-  <section class="section">
-<header><h1 id="help_switch" class="toc"><code>-h</code>, <code>--help</code></h1></header>
-<p>Displays help on the program.</p>
-
-</section>
-
-</section>
-<section class="section">
-<header><h1 id="c_add" class="toc"><code>add</code></h1></header>
-<p>Creates a new text file in the <code>text/</code> folder.</p>
-  <p><strong>Example:</strong> <code>glyph add introduction.textile</code></p>
-  
-		<section class="section">
-<header><h1 id="h_119" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+	<section class="section">
+		<header>
+			<h1 id="h_119" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><em>file_name</em></td>
-			<td>The name (or relative path) of the new file to be created.</td>
-		</tr>
+			<tr>
+				<td><em>file_name</em></td>
+				<td>The name (or relative path) of the new file to be created.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_compile" class="toc"><code>compile</code></h1></header>
-<p>Compiles a Glyph document into an output file. If no options are specified, the <code>document.glyph</code> file is used as source to produce a standalone HTML file.</p>
-  <p><strong>Example:</strong> <code>glyph compile -f pdf</code></p>
-  
-		<section class="section">
-<header><h1 id="h_121" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+	<header>
+		<h1 id="c_compile" class="toc"><code>compile</code></h1>
+	</header>
+	<p>Compiles a Glyph document into an output file. If no options are specified, the <code>document.glyph</code> file
+		is used as source to produce a standalone HTML file.</p>
+	<p><strong>Example:</strong> <code>glyph compile -f pdf</code></p>
+
+	<section class="section">
+		<header>
+			<h1 id="h_121" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><em>source</em></td>
-			<td>The source glyph file to compile <em>(Optional)</em>.</td>
-		</tr>
-	
-  
-		<tr>
-			<td><em>destination</em></td>
-			<td>The destination file <em>(Optional)</em>.</td>
-		</tr>
+			<tr>
+				<td><em>source</em></td>
+				<td>The source glyph file to compile <em>(Optional)</em>.</td>
+			</tr>
+
+
+			<tr>
+				<td><em>destination</em></td>
+				<td>The destination file <em>(Optional)</em>.</td>
+			</tr>
 		</table>
 
-</section>
-	
-  
-		<section class="section">
-<header><h1 id="h_122" class="notoc">Options</h1></header>
-<table style="width:100%;">
+	</section>
+
+
+	<section class="section">
+		<header>
+			<h1 id="h_122" class="notoc">Options</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><code>-s</code> (<code>--source</code>)</td>
-			<td>
-The source file to compile. 
-      <strong>Default Value:</strong> <code>document.glyph</code>
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-f</code> (<code>--format</code>)</td>
-			<td>
-The format of the output file.
-      <strong>Default Value:</strong> <code>html</code>
-      *Possible Values:* @html, pdf@
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-a</code> (<code>--auto</code>)</td>
-			<td>
-If specified, enable <a href="/glyph/book/compiling/compiling.html#auto_regeneration">auto regeneration</a> (requires the <a href="http://rubygems.org/gems/directory_watcher">directory_watcher</a> gem to be installed).
-			</td>
-		</tr>
+			<tr>
+				<td><code>-s</code> (<code>--source</code>)</td>
+				<td>
+					The source file to compile.
+					<strong>Default Value:</strong> <code>document.glyph</code>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-f</code> (<code>--format</code>)</td>
+				<td>
+					The format of the output file.
+					<strong>Default Value:</strong> <code>html</code>
+					*Possible Values:* @html, pdf@
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-a</code> (<code>--auto</code>)</td>
+				<td>
+					If specified, enable <a href="/glyph/book/compiling/compiling.html#auto_regeneration">auto
+						regeneration</a> (requires the <a
+						href="http://rubygems.org/gems/directory_watcher">directory_watcher</a> gem to be installed).
+				</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_config" class="toc"><code>config</code></h1></header>
-Gets or sets a configuration setting in the project or global configuration file (<span class="fmi">for more information on <mark>configuration files</mark>, see <a href="/glyph/book/getting_started/configuration.html#cfg">Project Configuration</a></span>).
-  <section class="section">
-<header><h1 id="h_124" class="notoc">Examples</h1></header>
-<p>
-<code>glyph config document.filename</code>
-</p>
-    <p>
-<code>glyph config -g document.author "Fabio Cevasco"</code>
-</p>
+	<header>
+		<h1 id="c_config" class="toc"><code>config</code></h1>
+	</header>
+	Gets or sets a configuration setting in the project or global configuration file (<span class="fmi">for more
+		information on <mark>configuration files</mark>, see <a
+			href="/glyph/book/getting_started/configuration.html#cfg">Project Configuration</a></span>).
+	<section class="section">
+		<header>
+			<h1 id="h_124" class="notoc">Examples</h1>
+		</header>
+		<p>
+			<code>glyph config document.filename</code>
+		</p>
+		<p>
+			<code>glyph config -g document.author "Fabio Cevasco"</code>
+		</p>
 
-</section>
-  
-		<section class="section">
-<header><h1 id="h_125" class="notoc">Options</h1></header>
-<table style="width:100%;">
+	</section>
+
+	<section class="section">
+		<header>
+			<h1 id="h_125" class="notoc">Options</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><code>-g</code> (<code>--global</code>)</td>
-			<td>
-If specified, the global configuration file is processed instead of the project file.
-    <strong>Default Value:</strong> <code>false</code>
-			</td>
-		</tr>
+			<tr>
+				<td><code>-g</code> (<code>--global</code>)</td>
+				<td>
+					If specified, the global configuration file is processed instead of the project file.
+					<strong>Default Value:</strong> <code>false</code>
+				</td>
+			</tr>
 		</table>
 
-</section>
-	
-  
-		<section class="section">
-<header><h1 id="h_126" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+	</section>
+
+
+	<section class="section">
+		<header>
+			<h1 id="h_126" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><em>setting</em></td>
-			<td>The name of a valid <a href="/glyph/book/document.html#cfg_ref">configuration setting</a>.</td>
-		</tr>
-	
-    
-		<tr>
-			<td><em>value</em></td>
-			<td>The new value of the configuration setting.</td>
-		</tr>
+			<tr>
+				<td><em>setting</em></td>
+				<td>The name of a valid <a href="/glyph/book/config/document.html#cfg_ref">configuration setting</a>.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><em>value</em></td>
+				<td>The new value of the configuration setting.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_help" class="toc"><code>help</code></h1></header>
-Prints information about all Glyph commands or about one specific command.
-  <section class="section">
-<header><h1 id="h_128" class="notoc">Examples</h1></header>
-<p>
-<code>glyph help</code>
-</p>
-    <p>
-<code>glyph help compile</code>
-</p>
+	<header>
+		<h1 id="c_help" class="toc"><code>help</code></h1>
+	</header>
+	Prints information about all Glyph commands or about one specific command.
+	<section class="section">
+		<header>
+			<h1 id="h_128" class="notoc">Examples</h1>
+		</header>
+		<p>
+			<code>glyph help</code>
+		</p>
+		<p>
+			<code>glyph help compile</code>
+		</p>
 
-</section>
-  
-		<section class="section">
-<header><h1 id="h_129" class="notoc">Parameters</h1></header>
-<table style="width:100%;">
+	</section>
+
+	<section class="section">
+		<header>
+			<h1 id="h_129" class="notoc">Parameters</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Parameter</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><em>command</em></td>
-			<td>A valid Glyph command.</td>
-		</tr>
+			<tr>
+				<td><em>command</em></td>
+				<td>A valid Glyph command.</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_init" class="toc"><code>init</code></h1></header>
-Creates a new Glyph project in the current directory (if empty).
-  <p><strong>Example:</strong> <code>glyph init</code></p>
+	<header>
+		<h1 id="c_init" class="toc"><code>init</code></h1>
+	</header>
+	Creates a new Glyph project in the current directory (if empty).
+	<p><strong>Example:</strong> <code>glyph init</code></p>
 
 </section>
 <section class="section">
-<header><h1 id="c_outline" class="toc"><code>outline</code></h1></header>
-Display an outline of the current document.
-  
-		<section class="section">
-<header><h1 id="h_132" class="notoc">Options</h1></header>
-<table style="width:100%;">
+	<header>
+		<h1 id="c_outline" class="toc"><code>outline</code></h1>
+	</header>
+	Display an outline of the current document.
+
+	<section class="section">
+		<header>
+			<h1 id="h_132" class="notoc">Options</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><code>-l</code> (<code>--limit</code>)</td>
-			<td>
-Only display headers until the specified level.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-i</code> (<code>--ids</code>)</td>
-			<td>
-Display section IDs.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-f</code> (<code>--files</code>)</td>
-			<td>
-Display file names.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-t</code> (<code>--titles</code>)</td>
-			<td>
-Display section titles.
-			</td>
-		</tr>
+			<tr>
+				<td><code>-l</code> (<code>--limit</code>)</td>
+				<td>
+					Only display headers until the specified level.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-i</code> (<code>--ids</code>)</td>
+				<td>
+					Display section IDs.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-f</code> (<code>--files</code>)</td>
+				<td>
+					Display file names.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-t</code> (<code>--titles</code>)</td>
+				<td>
+					Display section titles.
+				</td>
+			</tr>
 		</table>
 
-</section>
-	
-  <section class="section">
-<header><h1 id="h_133" class="notoc">Examples</h1></header>
-<p>
-<code>glyph outline -it -l 1</code>
-</p>
-    <p>
-<code>glyph outline -l 2</code>
-</p>
-    <p>
-<code>glyph outline -f</code>
-</p>
+	</section>
 
-</section>
+	<section class="section">
+		<header>
+			<h1 id="h_133" class="notoc">Examples</h1>
+		</header>
+		<p>
+			<code>glyph outline -it -l 1</code>
+		</p>
+		<p>
+			<code>glyph outline -l 2</code>
+		</p>
+		<p>
+			<code>glyph outline -f</code>
+		</p>
+
+	</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_stats" class="toc"><code>stats</code></h1></header>
-<p>Displays project statistics (<span class="fmi">for more information on <mark>this command</mark>, see <a href="/glyph/book/document.html#stats">Document Statistics</a></span>).</p>
-  <section class="section">
-<header><h1 id="h_135" class="notoc">Examples</h1></header>
-<p>
-<code>glyph stats -m</code>
-</p>
-    <p>
-<code>glyph stats --link=h3rald.com</code>
-</p>
+	<header>
+		<h1 id="c_stats" class="toc"><code>stats</code></h1>
+	</header>
+	<p>Displays project statistics (<span class="fmi">for more information on <mark>this command</mark>, see <a
+				href="/glyph/book/config/document.html#stats">Document Statistics</a></span>).</p>
+	<section class="section">
+		<header>
+			<h1 id="h_135" class="notoc">Examples</h1>
+		</header>
+		<p>
+			<code>glyph stats -m</code>
+		</p>
+		<p>
+			<code>glyph stats --link=h3rald.com</code>
+		</p>
 
-</section>
-  
-		<section class="section">
-<header><h1 id="h_136" class="notoc">Options</h1></header>
-<table style="width:100%;">
+	</section>
+
+	<section class="section">
+		<header>
+			<h1 id="h_136" class="notoc">Options</h1>
+		</header>
+		<table style="width:100%;">
 			<tr>
 				<th style="width:30%">Option</th>
 				<th>Description</th>
 			</tr>
-<tr>
-			<td><code>-b</code> (<code>--bookmarks</code>)</td>
-			<td>
-If specified, general statistics about bookmarks are displayed (see <a href="/glyph/book/stats/bookmarks.html#stats_bookmarks">Bookmark Statistics</a>).
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>--bookmark</code></td>
-			<td>
-Display detailed statistics about the specified bookmark.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-f</code> (<code>--files</code>)</td>
-			<td>
-If specified, general statistics about project files are displayed.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-l</code> (<code>--links</code>)</td>
-			<td>
-If specified, general statistics about links are displayed (see <a href="/glyph/book/stats/links.html#stats_links">Link Statistics</a>).
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>--link</code></td>
-			<td>
-Display detailed statistics about all links whose target matches the specified regular expression.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-m</code> (<code>--macros</code>)</td>
-			<td>
-If specified, general statistics about macros are displayed (see <a href="/glyph/book/stats/macros.html#stats_macros">Macro Statistics</a>).
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>--macro</code></td>
-			<td>
-Display detailed statistics about the specified macro.
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>-s</code> (<code>--snippets</code>)</td>
-			<td>
-If specified, general statistics about snippets are displayed (see <a href="/glyph/book/stats/snippets.html#stats_snippets">Snippet Statistics</a>).
-			</td>
-		</tr>
-	
-    
-		<tr>
-			<td><code>--snippet</code></td>
-			<td>
-Display detailed statistics about the specified snippet.
-			</td>
-		</tr>
+			<tr>
+				<td><code>-b</code> (<code>--bookmarks</code>)</td>
+				<td>
+					If specified, general statistics about bookmarks are displayed (see <a
+						href="/glyph/book/stats/bookmarks.html#stats_bookmarks">Bookmark Statistics</a>).
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>--bookmark</code></td>
+				<td>
+					Display detailed statistics about the specified bookmark.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-f</code> (<code>--files</code>)</td>
+				<td>
+					If specified, general statistics about project files are displayed.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-l</code> (<code>--links</code>)</td>
+				<td>
+					If specified, general statistics about links are displayed (see <a
+						href="/glyph/book/stats/links.html#stats_links">Link Statistics</a>).
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>--link</code></td>
+				<td>
+					Display detailed statistics about all links whose target matches the specified regular expression.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-m</code> (<code>--macros</code>)</td>
+				<td>
+					If specified, general statistics about macros are displayed (see <a
+						href="/glyph/book/stats/macros.html#stats_macros">Macro Statistics</a>).
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>--macro</code></td>
+				<td>
+					Display detailed statistics about the specified macro.
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>-s</code> (<code>--snippets</code>)</td>
+				<td>
+					If specified, general statistics about snippets are displayed (see <a
+						href="/glyph/book/stats/snippets.html#stats_snippets">Snippet Statistics</a>).
+				</td>
+			</tr>
+
+
+			<tr>
+				<td><code>--snippet</code></td>
+				<td>
+					Display detailed statistics about the specified snippet.
+				</td>
+			</tr>
 		</table>
 
-</section>
+	</section>
 
 </section>
 <section class="section">
-<header><h1 id="c_todo" class="toc"><code>todo</code></h1></header>
-Prints all the todo items saved using the <a href="/glyph/book/macros/macros_inline.html#m_todo"><code>todo</code></a> macro.
-  <p><strong>Example:</strong> <code>glyph todo</code></p>
+	<header>
+		<h1 id="c_todo" class="toc"><code>todo</code></h1>
+	</header>
+	Prints all the todo items saved using the <a
+		href="/glyph/book/macros/macros_inline.html#m_todo"><code>todo</code></a> macro.
+	<p><strong>Example:</strong> <code>glyph todo</code></p>
 
 </section>
-<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">← Macro Errors</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros →</a></nav>
+<nav class="navigation"><a href="/glyph/book/troubleshooting/errors_macro.html">← Macro Errors</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/macros/macros_core.html">Core Macros →</a>
+</nav>

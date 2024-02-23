@@ -15,7 +15,7 @@ download: "https://github.com/h3rald/nifty/releases/download/"
 
 {{n -> *nifty*}} is a simple, self-contained program that can be used as a bare-bones, decentralized (pseudo) package manager and script runner. 
 
-It was born out of the necessity of building {{nim -> [Nim](https://nim-lang.org)}} programs with several dependencies like [min](https://h3rald.com/min) or [hastysite](https://h3rald.com/hastysite) on machines with low memory (i.e. a VPS running x86 Linux with 500MB of RAM). The main problem was that on such low-end machine it [may not even be possible](https://github.com/nim-lang/nimble/issues/278) to compile the [Nimble](https://github.com/nim-lang/nimble) package manager, because apparently it requires more RAM to compile than Nim itself.
+It was born out of the necessity of building {{nim -> [Nim](https://nim-lang.org)}} programs with several dependencies like [min](/min) or [hastysite](/hastysite) on machines with low memory (i.e. a VPS running x86 Linux with 500MB of RAM). The main problem was that on such low-end machine it [may not even be possible](https://github.com/nim-lang/nimble/issues/278) to compile the [Nimble](https://github.com/nim-lang/nimble) package manager, because apparently it requires more RAM to compile than Nim itself.
 
 Nimble offers a lot of features that *proper* package managers do, like dependency management, package creation and publishing, support for semantic versioning, etc. while {{n}} does not. Hence {{n}} is only a _pseudo-_package manager and script runner, but it could be useful in certain situations nonetheless. 
 

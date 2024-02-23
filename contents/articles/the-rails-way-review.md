@@ -60,7 +60,7 @@ Still, 100 pages about the Magic of Scaffolding & other tricks to astonish the c
 
 > "Before going on, I should mention that part of what makes Rails exceptional is that it is opinionated software, written by opinionated programmers. Likewise, this is an opinionated book, written by opinionated writers."
 
-This sentence in the _Introduction_ sounded very familiar. Almost an echo of Zed Shaw's own words in the _[Mongrel Digital Shortcut](http://www.h3rald.com/articles/mongrel-shortcut-review)_. After all this book is part of the _[Addison-Wesley Professional Ruby Series](http://www.informit.com/imprint/series_detail.aspx?ser=2124042)_, of which Obie is the Series Editor.
+This sentence in the _Introduction_ sounded very familiar. Almost an echo of Zed Shaw's own words in the _[Mongrel Digital Shortcut](/articles/mongrel-shortcut-review)_. After all this book is part of the _[Addison-Wesley Professional Ruby Series](http://www.informit.com/imprint/series_detail.aspx?ser=2124042)_, of which Obie is the Series Editor.
 Like the other books in the series, this book contains all the stylistic conventions and distinctive features which make them very enjoyable to read:
 
 * *Informal, almost personal style* &ndash; reading this book is almost like hearing Obie telling you what _he_ thinks about Rails, and sharing with you his own tips and tricks.

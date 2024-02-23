@@ -7,57 +7,149 @@ tags: "review|books|rails"
 pdf: true
 -----
 
-		<section class="section">
-<p>Obie did it, again. With the second edition of his former masterpiece, <em>The Rails Way</em>, he managed to outdo himself delivering a new, even more useful, Rails Bible. Wether you&#8217;re a Ruby on Rails professional like him or just an enthusiast, this book is pretty much everything you need to learn how to master the third release of DHH&#8217;s Ruby web framework.</p>
-<p><a href="http://tr3w.com/">The Rails 3 Way</a> is no ordinary second edition. If you already own <em>The Rails Way</em>, you&#8217;ll be pleasantly surprised that this is a different, more polished book. While something had to remain the same, there&#8217;s a lot of new content in its 708 pages, and even the old content has been rewritten or at least revised.</p>
-<p>It doesn&#8217;t matter whether you already know Rails 2.x or you&#8217;re jumping straight into the Rails 3 world, if you use Rails, you can&#8217;t miss this book.</p>
-<p>I started the <a href="http://www.h3rald.com/articles/the-rails-way-review/">review of the first edition</a> with a quote from my fiancée (now wife) on how pointless programming books are, especially those dealing with newish technologies: they tend to go out of date fairly quickly. While this still holds true, there&#8217;s not much you can do about it, except maybe purchasing a digital edition of the book instead. However, if you want to keep a good Rails reference book by your side, this has to be the one.</p>
-
-
-
-
 <section class="section">
-<header><h1 id="h_1" class="toc">What's New</h1></header>
-<figure style="float:left;"><img src="/img/pictures/books/rails3way/compare.jpg" /><figcaption>The Rails Way vs. The Rails 3 Way</figcaption></figure>
-<p>If you put <em>The Rails 3 Way</em> and the original <em>The Rails Way</em> one next to the other, you can see that the new book is considerably shorter: about 200 pages less. This doesn&#8217;t mean it contains less information, quite the opposite: the new book contains a lot more stuff with less <em>fluff</em>. Obie managed to reduce digressions to a bare minimum and focus on providing more informative content to the readers using less text. Think of it as a <em>fat-free</em> book.</p>
-<p>While no <em>What&#8217;s new in Rails 3</em> section is included in the book, Obie points out the new stuff when needed (but not always). An example is chapter 12, <em>Ajax on Rails</em>, in which changes introduced by Rails 3 clearly stand out, especially the section on Unobtrusive JavaScript (<span class="caps">UJS</span>).</p>
-<p>Although the book is divided into chapters, it can also be divided into parts (each dealing with a specific theme) simply by looking at the front edge. According to this theme-based partitioning, Active Record makes up for nearly <em>a quarter</em> of the book (173 pages), followed by <em>Active Support <span class="caps">API</span></em> appendix and the <em>All About Helpers</em> chapter.</p>
-<p>Another nice addition that can really make the difference when you&#8217;re in a hurry is the <em>Method Index</em>, which is separate from the main Index. It seems to account for all the methods in all (or at least the most important) classes in Rails. I didn&#8217;t check method by method, but it is pretty comprehensive nonetheless, based on some quick spot checking.</p>
+	<p>Obie did it, again. With the second edition of his former masterpiece, <em>The Rails Way</em>, he managed to
+		outdo himself delivering a new, even more useful, Rails Bible. Wether you&#8217;re a Ruby on Rails professional
+		like him or just an enthusiast, this book is pretty much everything you need to learn how to master the third
+		release of DHH&#8217;s Ruby web framework.</p>
+	<p><a href="http://tr3w.com/">The Rails 3 Way</a> is no ordinary second edition. If you already own <em>The Rails
+			Way</em>, you&#8217;ll be pleasantly surprised that this is a different, more polished book. While something
+		had to remain the same, there&#8217;s a lot of new content in its 708 pages, and even the old content has been
+		rewritten or at least revised.</p>
+	<p>It doesn&#8217;t matter whether you already know Rails 2.x or you&#8217;re jumping straight into the Rails 3
+		world, if you use Rails, you can&#8217;t miss this book.</p>
+	<p>I started the <a href="/articles/the-rails-way-review/">review of the first edition</a> with a quote from my
+		fiancée (now wife) on how pointless programming books are, especially those dealing with newish technologies:
+		they tend to go out of date fairly quickly. While this still holds true, there&#8217;s not much you can do about
+		it, except maybe purchasing a digital edition of the book instead. However, if you want to keep a good Rails
+		reference book by your side, this has to be the one.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_2" class="toc">Contents</h1></header>
-<figure style="float:right;"><img src="/img/pictures/books/rails3way/sections.jpg" /><figcaption>Active Record makes up for over 24% of the book</figcaption></figure>
-<p>The first thing you notice once you read the first few pages, is that this book is <em>even more opinioned</em> than its predecessor.</p>
-<blockquote>
-<p>Even though Rails 3 is less opinionated than early versions, in that it allows for easy reconfiguration of Rails assumptions, this book is more opinionated than ever.</p>
-</blockquote>
-	<p style="margin-left: 4em">&ndash; Obie Fernandez, <cite>Introduction to <em>The Rails Way</em></cite></p>
-<p>In other words, you won&#8217;t find an ERb view in the whole book (Haml rulez!) and if you don&#8217;t like RSpec&#8230; well, you&#8217;d better skip Chapter 18 altogether.</p>
-<p>The other big difference with traditional Ruby and Rails books is the amount of reference to third-party code, mainly rubygems. Rails comes with no authentication functionality? So what: <a href="https://github.com/binarylogic/authlogic">Authlogic</a> and <a href="https://github.com/plataformatec/devise">Devise</a> are great for the job, go check them out! Do you need to test your Active Mailer emails? <a href="https://github.com/bmabey/email-spec">email-spec</a> is all you need.</p>
-<p>I was actually surprised to find so much content not strictly related to Rails in this book: the first chapter starts off with <a href="http://gembundler.com/">Bundler</a> (now a Rails dependency, however), Chapter 2 (Routes) mentions <a href="http://rack.rubyforge.org/">Rack</a>, and so does Chapter 4 (Controllers). If you want a nice and to-the-point practical introduction to <a href="http://relishapp.com/rspec">RSpec</a>, the first part of Chapter 18 covers that.</p>
 
-	<figure style="float:left;"><img src="/img/pictures/books/rails3way/reference.jpg" /><figcaption>About 40% of the book is reference material</figcaption></figure>
-<p>Then there&#8217;s reference material. Plenty of it, a good 40% I daresay. The good thing is that (unlike the first edition) it won&#8217;t bore you to death: take Chapter 5 (Working with Active Record) for example, you&#8217;ll fly through find-related methods so swiftly you&#8217;ll regret when it&#8217;s over. Active Support? I didn&#8217;t read every line of Appendix B, but when I want to know something about inflection methods I will know exactly where to find them, and what to expect: the method signature, a few lines of text, and a short example at most.</p>
-<p>My only regret? Cheat sheets. Or better, the lack of them. More tables, please! Granted, the web is full of Rails cheat sheets, but a few of them at the end of the book or even in a separate foldable add-on like in the <a href="http://www.pragprog.com/titles/tpp/the-pragmatic-programmer">Pragmatic Programmer</a> can&#8217;t hurt.</p>
-<p>Finally, some words about the code examples. The code/text ratio is almost 1:1, but Obie&#8217;s choice of <em>not</em> turning this book into a huge tutorial by implementing a single example application was absolutely right: The code snippets used in throughout the book are concise and relevant to the text around them and won&#8217;t distrupt your reading. If you want to play with them, they&#8217;re even <a href="https://github.com/obie/tr3w_time_and_expenses">on GitHub</a> for you to clone and fork.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_3" class="toc">Organization and Writing Style</h1></header>
-<figure style="float:right;"><img src="/img/pictures/books/rails3way/flick.jpg" /><figcaption>Yes, it&#8217;s a long book. But you don&#8217;t<br/>have to read it from start to finish!</figcaption></figure>
-<p><em>The Rails 3 Way</em> is a book for Rails professionals. If you don&#8217;t know Ruby or if you never heard of Ruby on Rails, this book is <em>not</em> for you. It won&#8217;t teach you what <span class="caps">MVC</span> is, it won&#8217;t waste time on explaining <em>convention over configuration</em>, it won&#8217;t even describe the structure of a Rails app! If you&#8217;re newcomer to Rails&#8230; well, that&#8217;s what <a href="http://ruby.railstutorial.org/">The Rails Tutorial</a> is for.</p>
-<p>To be honest, I&#8217;m with Obie on this. If this book had been beginner-friendly, it would have been even longer than the previous edition, and probably more boring. Instead, by assuming that the reader has been already initiated to the world of Ruby and Rails, the author can dive into the framework straight away. Moreover, chapters are not ordered by difficulty: they don&#8217;t need to be, they need to be ordered in a way that makes sense for a Rails developer.</p>
-<p>Once again, this book includes personal sidebars used to voice the opinion of one of the co-authors or Rails gurus: there are plenty of &#8220;<em>Yehuda</em> says&#8221;, &#8220;<em>Xavier</em> says&#8221;, &#8220;<em>Durran</em> says&#8221;, and so on. Nothing new there, it&#8217;s just a nice way to provide the reader with authoritative opinions on some matters.</p>
-<p>As I progressed through the book, I started noticing how Obie anticipated my questions and doubts: I found this to be a remarkable feature of this book, and an excellent way to make the readers feel they are on the same page with the author. If something should not be done because it may cause you problems, the author won&#8217;t hold back. See page 214, &#8220;Extra Columns on <strong>has_and_belongs_to_many</strong> Join Tables&#8221;, for example: it&#8217;s a cool feature, but it can cause all sort of annoyances, and the bottom line is: use <strong>has_many :through</strong> instead, if you need extra columns on join tables.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_4" class="toc">Conclusion</h1></header>
-<p><em>The Rails 3 Way</em> remains the <em>de facto</em> reference book for Rails. I was quite pleased to see that Obie improved it so much, compared to the first edition. Sure, it cannot be recommended to absolute beginners, but it&#8217;s not a big problem: if you&#8217;re new to Rails, all you have to do is browse around and read a few basic tutorials first.</p>
-<p>What I really missed was a <em>What&#8217;s New</em> section, or something like that. The new stuff that was introduced in Ruby on Rails v3 is seamlessly blended with all the rest, which is great if you&#8217;re tackling the framework for the first time, but not so much when you already read tons of books on Rails 2.&#215;. I would have tagged content specific to Rails 3 in some way at least, for example with labels on the side of each page. Or maybe have a short introductory chapter covering the new features, and directions on where to find them in the book.</p>
-<p>Overall, <em>The Rails 3 Way</em> is a great book, and if you plan on using Rails 3 for your next web site, it deserves a special place on your desk.</p>
+	<section class="section">
+		<header>
+			<h1 id="h_1" class="toc">What's New</h1>
+		</header>
+		<figure style="float:left;"><img src="/img/pictures/books/rails3way/compare.jpg" />
+			<figcaption>The Rails Way vs. The Rails 3 Way</figcaption>
+		</figure>
+		<p>If you put <em>The Rails 3 Way</em> and the original <em>The Rails Way</em> one next to the other, you can
+			see that the new book is considerably shorter: about 200 pages less. This doesn&#8217;t mean it contains
+			less information, quite the opposite: the new book contains a lot more stuff with less <em>fluff</em>. Obie
+			managed to reduce digressions to a bare minimum and focus on providing more informative content to the
+			readers using less text. Think of it as a <em>fat-free</em> book.</p>
+		<p>While no <em>What&#8217;s new in Rails 3</em> section is included in the book, Obie points out the new stuff
+			when needed (but not always). An example is chapter 12, <em>Ajax on Rails</em>, in which changes introduced
+			by Rails 3 clearly stand out, especially the section on Unobtrusive JavaScript (<span
+				class="caps">UJS</span>).</p>
+		<p>Although the book is divided into chapters, it can also be divided into parts (each dealing with a specific
+			theme) simply by looking at the front edge. According to this theme-based partitioning, Active Record makes
+			up for nearly <em>a quarter</em> of the book (173 pages), followed by <em>Active Support <span
+					class="caps">API</span></em> appendix and the <em>All About Helpers</em> chapter.</p>
+		<p>Another nice addition that can really make the difference when you&#8217;re in a hurry is the <em>Method
+				Index</em>, which is separate from the main Index. It seems to account for all the methods in all (or at
+			least the most important) classes in Rails. I didn&#8217;t check method by method, but it is pretty
+			comprehensive nonetheless, based on some quick spot checking.</p>
 
-</section>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_2" class="toc">Contents</h1>
+		</header>
+		<figure style="float:right;"><img src="/img/pictures/books/rails3way/sections.jpg" />
+			<figcaption>Active Record makes up for over 24% of the book</figcaption>
+		</figure>
+		<p>The first thing you notice once you read the first few pages, is that this book is <em>even more
+				opinioned</em> than its predecessor.</p>
+		<blockquote>
+			<p>Even though Rails 3 is less opinionated than early versions, in that it allows for easy reconfiguration
+				of Rails assumptions, this book is more opinionated than ever.</p>
+		</blockquote>
+		<p style="margin-left: 4em">&ndash; Obie Fernandez, <cite>Introduction to <em>The Rails Way</em></cite></p>
+		<p>In other words, you won&#8217;t find an ERb view in the whole book (Haml rulez!) and if you don&#8217;t like
+			RSpec&#8230; well, you&#8217;d better skip Chapter 18 altogether.</p>
+		<p>The other big difference with traditional Ruby and Rails books is the amount of reference to third-party
+			code, mainly rubygems. Rails comes with no authentication functionality? So what: <a
+				href="https://github.com/binarylogic/authlogic">Authlogic</a> and <a
+				href="https://github.com/plataformatec/devise">Devise</a> are great for the job, go check them out! Do
+			you need to test your Active Mailer emails? <a href="https://github.com/bmabey/email-spec">email-spec</a> is
+			all you need.</p>
+		<p>I was actually surprised to find so much content not strictly related to Rails in this book: the first
+			chapter starts off with <a href="http://gembundler.com/">Bundler</a> (now a Rails dependency, however),
+			Chapter 2 (Routes) mentions <a href="http://rack.rubyforge.org/">Rack</a>, and so does Chapter 4
+			(Controllers). If you want a nice and to-the-point practical introduction to <a
+				href="http://relishapp.com/rspec">RSpec</a>, the first part of Chapter 18 covers that.</p>
+
+		<figure style="float:left;"><img src="/img/pictures/books/rails3way/reference.jpg" />
+			<figcaption>About 40% of the book is reference material</figcaption>
+		</figure>
+		<p>Then there&#8217;s reference material. Plenty of it, a good 40% I daresay. The good thing is that (unlike the
+			first edition) it won&#8217;t bore you to death: take Chapter 5 (Working with Active Record) for example,
+			you&#8217;ll fly through find-related methods so swiftly you&#8217;ll regret when it&#8217;s over. Active
+			Support? I didn&#8217;t read every line of Appendix B, but when I want to know something about inflection
+			methods I will know exactly where to find them, and what to expect: the method signature, a few lines of
+			text, and a short example at most.</p>
+		<p>My only regret? Cheat sheets. Or better, the lack of them. More tables, please! Granted, the web is full of
+			Rails cheat sheets, but a few of them at the end of the book or even in a separate foldable add-on like in
+			the <a href="http://www.pragprog.com/titles/tpp/the-pragmatic-programmer">Pragmatic Programmer</a>
+			can&#8217;t hurt.</p>
+		<p>Finally, some words about the code examples. The code/text ratio is almost 1:1, but Obie&#8217;s choice of
+			<em>not</em> turning this book into a huge tutorial by implementing a single example application was
+			absolutely right: The code snippets used in throughout the book are concise and relevant to the text around
+			them and won&#8217;t distrupt your reading. If you want to play with them, they&#8217;re even <a
+				href="https://github.com/obie/tr3w_time_and_expenses">on GitHub</a> for you to clone and fork.</p>
+
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_3" class="toc">Organization and Writing Style</h1>
+		</header>
+		<figure style="float:right;"><img src="/img/pictures/books/rails3way/flick.jpg" />
+			<figcaption>Yes, it&#8217;s a long book. But you don&#8217;t<br />have to read it from start to finish!
+			</figcaption>
+		</figure>
+		<p><em>The Rails 3 Way</em> is a book for Rails professionals. If you don&#8217;t know Ruby or if you never
+			heard of Ruby on Rails, this book is <em>not</em> for you. It won&#8217;t teach you what <span
+				class="caps">MVC</span> is, it won&#8217;t waste time on explaining <em>convention over
+				configuration</em>, it won&#8217;t even describe the structure of a Rails app! If you&#8217;re newcomer
+			to Rails&#8230; well, that&#8217;s what <a href="http://ruby.railstutorial.org/">The Rails Tutorial</a> is
+			for.</p>
+		<p>To be honest, I&#8217;m with Obie on this. If this book had been beginner-friendly, it would have been even
+			longer than the previous edition, and probably more boring. Instead, by assuming that the reader has been
+			already initiated to the world of Ruby and Rails, the author can dive into the framework straight away.
+			Moreover, chapters are not ordered by difficulty: they don&#8217;t need to be, they need to be ordered in a
+			way that makes sense for a Rails developer.</p>
+		<p>Once again, this book includes personal sidebars used to voice the opinion of one of the co-authors or Rails
+			gurus: there are plenty of &#8220;<em>Yehuda</em> says&#8221;, &#8220;<em>Xavier</em> says&#8221;,
+			&#8220;<em>Durran</em> says&#8221;, and so on. Nothing new there, it&#8217;s just a nice way to provide the
+			reader with authoritative opinions on some matters.</p>
+		<p>As I progressed through the book, I started noticing how Obie anticipated my questions and doubts: I found
+			this to be a remarkable feature of this book, and an excellent way to make the readers feel they are on the
+			same page with the author. If something should not be done because it may cause you problems, the author
+			won&#8217;t hold back. See page 214, &#8220;Extra Columns on <strong>has_and_belongs_to_many</strong> Join
+			Tables&#8221;, for example: it&#8217;s a cool feature, but it can cause all sort of annoyances, and the
+			bottom line is: use <strong>has_many :through</strong> instead, if you need extra columns on join tables.
+		</p>
+
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_4" class="toc">Conclusion</h1>
+		</header>
+		<p><em>The Rails 3 Way</em> remains the <em>de facto</em> reference book for Rails. I was quite pleased to see
+			that Obie improved it so much, compared to the first edition. Sure, it cannot be recommended to absolute
+			beginners, but it&#8217;s not a big problem: if you&#8217;re new to Rails, all you have to do is browse
+			around and read a few basic tutorials first.</p>
+		<p>What I really missed was a <em>What&#8217;s New</em> section, or something like that. The new stuff that was
+			introduced in Ruby on Rails v3 is seamlessly blended with all the rest, which is great if you&#8217;re
+			tackling the framework for the first time, but not so much when you already read tons of books on Rails
+			2.&#215;. I would have tagged content specific to Rails 3 in some way at least, for example with labels on
+			the side of each page. Or maybe have a short introductory chapter covering the new features, and directions
+			on where to find them in the book.</p>
+		<p>Overall, <em>The Rails 3 Way</em> is a great book, and if you plan on using Rails 3 for your next web site,
+			it deserves a special place on your desk.</p>
+
+	</section>
 
 </section>

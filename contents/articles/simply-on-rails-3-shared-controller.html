@@ -4,12 +4,20 @@ content-type: article
 timestamp: 1185076980
 tags: "rails"
 -----
-<p>Enough with concepts, ideas and diagrams: it&#8217;s time to start coding something. Everyone knows what&#8217;s the first step when creating a Rails applications, but anyhow, here it is:</p>
-<div class='ruby'><pre><code>rails italysimply</code></pre></div><p>Then I create a new development database, load it up with the schema I <a href="/blog/simply-on-rails-2-database-design">previously</a> prepared and modify the <code>config/database.yml</code> to be able to connect to it. Nothing new here.<br />
-I actually had to modify the schema a little bit:</p>
+<p>Enough with concepts, ideas and diagrams: it&#8217;s time to start coding something. Everyone knows what&#8217;s the
+	first step when creating a Rails applications, but anyhow, here it is:</p>
+<div class='ruby'>
+	<pre><code>rails italysimply</code></pre>
+</div>
+<p>Then I create a new development database, load it up with the schema I <a
+		href=/articles/simply-on-rails-2-database-design">previously</a> prepared and modify the
+	<code>config/database.yml</code> to be able to connect to it. Nothing new here.<br />
+	I actually had to modify the schema a little bit:</p>
 <ul>
-	<li>I changed all the names for the foreign keys to something more evocative than &#8220;has_many&#8221; or &#8220;has_one&#8221;</li>
-	<li>I added a <em>level</em> column to the <em>states</em>, <em>availabilities</em> and <em>conditions</em> table</li>
+	<li>I changed all the names for the foreign keys to something more evocative than &#8220;has_many&#8221; or
+		&#8220;has_one&#8221;</li>
+	<li>I added a <em>level</em> column to the <em>states</em>, <em>availabilities</em> and <em>conditions</em> table
+	</li>
 	<li>I removed the <em>description</em> column from the categories table</li>
 </ul>
 <p>Great, but&#8230; hang on: now some of the database tables look awfully similar with each other:</p>
@@ -23,15 +31,23 @@ I actually had to modify the schema a little bit:</p>
 	<li>availabilities</li>
 	<li>categories</li>
 </ul>
-<p>They all have a name column, some of them have a name column as well, they&#8217;ll hold only a relative small number of records which will hardly ever be deleted. In fact, I was tempted to use Enums for some of those things&#8230;<br />
-Anyhow, I&#8217;ll still have to add and modify data in those tables, so it looks like I kinda need to create 8 controllers, 8 models and about four views for each one of them. No way. Fair enough for the controllers and models, but I&#8217;m not going to create 32 views which all look exactly the same. Rails should be smarter than that!And it is, luckily. Derek Sivers &amp; C. came out with an interesting <a href="http://dereksivers.com/rails-shared-controller.html">Shared Controller</a> concept, which could be just what I&#8217;m looking for in this case. Actually I need something really simple in this case:</p>
+<p>They all have a name column, some of them have a name column as well, they&#8217;ll hold only a relative small number
+	of records which will hardly ever be deleted. In fact, I was tempted to use Enums for some of those
+	things&#8230;<br />
+	Anyhow, I&#8217;ll still have to add and modify data in those tables, so it looks like I kinda need to create 8
+	controllers, 8 models and about four views for each one of them. No way. Fair enough for the controllers and models,
+	but I&#8217;m not going to create 32 views which all look exactly the same. Rails should be smarter than that!And it
+	is, luckily. Derek Sivers &amp; C. came out with an interesting <a
+		href="http://dereksivers.com/rails-shared-controller.html">Shared Controller</a> concept, which could be just
+	what I&#8217;m looking for in this case. Actually I need something really simple in this case:</p>
 <ul>
 	<li>Put all the <span class="caps">CRUD</span> logic into one controller</li>
 	<li>Create only one set of views</li>
 </ul>
 <p>Here&#8217;s the controller:</p>
 <p><span style="color:red;"><strong>app/controllers/admin/lite_controller.rb</strong></span><br />
-<div class='ruby'><pre><br />
+<div class='ruby'>
+	<pre><br />
 <div class='ruby'><pre><code>class Admin::LiteController &amp;lt; ApplicationController</p>
 layout &#8216;admin&#8217;
 before_filter :prepare
@@ -80,22 +96,33 @@ else
 render(&#8216;lite/edit&#8217;)
 end
 end
-<p>end</code></pre></div></notextile></p>
+<p>end</code></pre>
+</div>
+</notextile>
+</p>
 <p>Then all I need to do is create eight controllers with just a few lines of code in each:</p>
 <p><span style="color:red;"><strong>app/controllers/admin/statuses_controller.rb</strong></span><br />
-<div class='ruby'><pre><code>class Admin::StatusesController &lt; Admin::LiteController
+<div class='ruby'>
+	<pre><code>class Admin::StatusesController &lt; Admin::LiteController
   def model
     Status
   end
-end</code></pre></div></p>
-<p>Basically, I just need to specify which model the specific controller takes care of, Ruby&#8217;s inheritance does the rest. The model name will be passed to the views like this:</p>
+end</code></pre>
+</div>
+</p>
+<p>Basically, I just need to specify which model the specific controller takes care of, Ruby&#8217;s inheritance does
+	the rest. The model name will be passed to the views like this:</p>
 <p><span style="color:red;"><strong>app/controllers/admin/lite_controller.rb</strong></span><br />
-<div class='ruby'><pre><code>def prepare
+<div class='ruby'>
+	<pre><code>def prepare
 	@item_name = model.to_s
-end</code></pre></div></p>
+end</code></pre>
+</div>
+</p>
 <p>And each method uses the <code>model</code> method to access the model, like this:</p>
 <p><span style="color:red;"><strong>app/controllers/admin/lite_controller.rb</strong></span><br />
-<div class='ruby'><pre><code>def create
+<div class='ruby'>
+	<pre><code>def create
 	@item = model.new(params[:"#{@item_name.downcase}"])
 	if @item.save
 		flash[:notice] = @item_name+' was successfully created.'
@@ -103,21 +130,32 @@ end</code></pre></div></p>
 	else
 		render('lite/new')
 	end
-end</code></pre></div></p>
+end</code></pre>
+</div>
+</p>
 <p>Note how the params are collected:</p>
-<div class='ruby'><pre><code>@item = model.new(params[:"#{@item_name.downcase}"])</code></pre></div><p><code>params[:"#{</code>item_name.downcase}&quot;]@ at runtime becomes <code>params[:status]</code> or <code>params[:role]</code> etc. etc., depending on which controller is called. Sweet.</p>
+<div class='ruby'>
+	<pre><code>@item = model.new(params[:"#{@item_name.downcase}"])</code></pre>
+</div>
+<p><code>params[:"#{</code>item_name.downcase}&quot;]@ at runtime becomes <code>params[:status]</code> or
+	<code>params[:role]</code> etc. etc., depending on which controller is called. Sweet.</p>
 <p>The views? Modified accordingly:</p>
 <p><span style="color:red;"><strong>app/views/lite/edit.rb</strong></span><br />
-<div class='ruby'><pre><code>&lt;h1&gt;Editing <br />
+<div class='ruby'>
+	<pre><code>&lt;h1&gt;Editing <br />
 <div class='ruby'><pre><code>&amp;lt;h1&amp;gt;Editing &lt;%= @item_name %&gt;&amp;lt;/h1&amp;gt;</p>
 <p>&lt;% form_tag :action =&gt; &#8216;update&#8217;, :id =&gt; @item do <span>&gt;<br />
   &lt;</span>= render :partial =&gt; &#8216;lite/form&#8217; <span>&gt;<br />
   &lt;</span>= submit_tag &#8216;Edit&#8217; <span>&gt;<br />
 &lt;</span> end %&gt;</p>
 <p>&lt;%= link_to &#8216;Show&#8217;, :action =&gt; &#8216;show&#8217;, :id =&gt; @item <span>&gt; |<br />
-&lt;</span>= link_to &#8216;Back&#8217;, :action =&gt; &#8216;list&#8217; %&gt;</code></pre></div></notextile></p>
+&lt;</span>= link_to &#8216;Back&#8217;, :action =&gt; &#8216;list&#8217; %&gt;</code></pre>
+</div>
+</notextile>
+</p>
 <p><span style="color:red;"><strong>app/views/lite/_form.rb</strong></span><br />
-<div class='ruby'><pre><code><%= error_messages_for 'item' %>
+<div class='ruby'>
+	<pre><code><%= error_messages_for 'item' %>
 &lt;!--[form:lite]--&gt;
 &lt;p&gt;&lt;label for="<%= @item_name.downcase %>_name"&gt;Name: &lt;/label&gt;
 <%= text_field @item_name.downcase, 'name',  {:value =&gt; @item.name} %>&lt;/p&gt;
@@ -125,4 +163,6 @@ end</code></pre></div></p>
   &lt;p&gt;&lt;label for="<%= @item_name.downcase %>_level"&gt;Level: &lt;/label&gt;
   <%= text_field @item_name.downcase, 'level',  {:value =&gt; @item.level} %>&lt;/p&gt;
 <% end %>
-&lt;!--[eoform:lite]--&gt;</code></pre></div></p>
+&lt;!--[eoform:lite]--&gt;</code></pre>
+</div>
+</p>

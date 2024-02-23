@@ -13,7 +13,7 @@ version: 1.0.0
 docs: /pls/Pls_UserGuide.htm
 -----
 
-_pls_ is a simple, general-purpose task runner that aims at making common tasks easier to manage and execute. It was inspired by some of the functionalities provided by the [nifty](https://h3rald.com/nifty) package manager, only without the package manager part.
+_pls_ is a simple, general-purpose task runner that aims at making common tasks easier to manage and execute. It was inspired by some of the functionalities provided by the [nifty](/nifty) package manager, only without the package manager part.
 
 ### Main Features
 

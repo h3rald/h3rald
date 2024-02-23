@@ -8,7 +8,7 @@ tags: "books|review|techcomm"
 
 I've been working in Technical Communications for nearly seven years now, first and foremost Technical Writer and more recently as Documentation Manager. In other words, my work revolves around manuals and online helps, authoring tools and guidelines, documentation standards and… you get the picture. 
 
-And yet, although I write articles and develop [documentation tools](/gliph/) in my free time as well, I rarely write about my job on this site. But when I was offered the opportunity to read and review [Best Practices for Technical Writers and Editors](http://www.informit.com/store/best-practices-for-technical-writers-and-editors-video-9780132929660), I just couldn't resist.
+And yet, although I write articles and develop [documentation tools](/glyph/) in my free time as well, I rarely write about my job on this site. But when I was offered the opportunity to read and review [Best Practices for Technical Writers and Editors](http://www.informit.com/store/best-practices-for-technical-writers-and-editors-video-9780132929660), I just couldn't resist.
 
 
 ### Contents

@@ -4,13 +4,37 @@ content-type: article
 timestamp: 1184405220
 tags: "rails|databases"
 -----
-<p>This week I attended a course for work on how to <em>Implement Databases with Microsoft <span class="caps">SQL</span> Server 2005</em>. An interesting course indeed, which made me realize how feature-rich Bill&#8217;s product is, compared to the Open Source alternatives like MySQL. It also made me realize how nice it is to implement database-related logic (read: Models) using a <em>proper</em> programming language rather than using triggers, stored procedures, functions and other goodies offered by Transact-<span class="caps">SQL</span>.</p>
-<p>It&#8217;s all a matter of taste and of necessities: using MS <span class="caps">SQL</span> Server for one of my website is simply not going to happen anytime soon, and I&#8217;m more than happy to have a database which can be used <em>just</em> as a database and a programming language (Ruby, in this case) which can do wonders, rather than a procedural-only surrogate.</p>
-<p>Anyhow, back to our weekly series. After creating a <a href="/blog/simply-on-rails-1-concepts-map">concept map</a>, it&#8217;s time of <em>get real</em> and try to figure out a database architecture. The tool of choice this week is obviously the widely popular <a href="http://fabforce.net/dbdesigner4/">DbDesigner 4</a>. It&#8217;s free, it&#8217;s easy to use, and the results are pretty enough. There:</p>
-<p><a href="/files/italysimply_database-architecture.png"><img src="/files/italysimply_database-architecture_thumb.png" alt="" /></a></p>
-<p>It&#8217;s amazing how a relatively simple concept map can lead to such a complex database architecture, isn&#8217;t it?<br />
-Well, it&#8217;s normal. One of the reasons of this is that I totally forgot about geographical information about the houses which will be featured on the site, or better, I thought about it as a <em>strings</em> typed in by the administrators, whereas it would be much better having dropdown boxes.</p>
-<p>Countries, regions, privinces, areas and cities will be added to the database only once, rather than having to type them in every time a house is added. Obvious, but this lead to five tables more and nine (!) relationships more.</p>
-<p>The other reason of why the number of tables is higher than the number of entities in the domain model is that I decided <em>not</em> to use the <span class="caps">ENUM</span> type. Firstly because <a href="http://wiki.rubyonrails.org/rails/pages/HowtoUseSetAndEnumColumns">it&#8217;s not handled very well by Rails</a><br />
- and also because there&#8217;s <a href="http://blog.arabx.com.au/?p=87">a number of reasons</a> why ENUMs should not be used.</p>
-<p>The only problem now is that whenever I load a house, I&#8217;ll have to get data from a lot of tables at once (and this means a lot of joins underneath the model layer) or &#8211; worse &#8211; a lot of queries in case I decide to load related data &#8220;on the fly&#8221;. It looks like I&#8217;ll have to do a bit of <a href="http://railsexpress.de/blog/articles/2005/11/06/the-case-for-piggy-backed-attributes">piggy-backing</a> here and there. <a href="http://railsexpress.de/blog/articles/2006/05/29/simpler-piggy-backing">Someone</a> already thought about a way of doing this in a more &#8220;Model-friendly&#8221; way. Perhaps I&#8217;ll give it a shot.</p>
+<p>This week I attended a course for work on how to <em>Implement Databases with Microsoft <span class="caps">SQL</span>
+        Server 2005</em>. An interesting course indeed, which made me realize how feature-rich Bill&#8217;s product is,
+    compared to the Open Source alternatives like MySQL. It also made me realize how nice it is to implement
+    database-related logic (read: Models) using a <em>proper</em> programming language rather than using triggers,
+    stored procedures, functions and other goodies offered by Transact-<span class="caps">SQL</span>.</p>
+<p>It&#8217;s all a matter of taste and of necessities: using MS <span class="caps">SQL</span> Server for one of my
+    website is simply not going to happen anytime soon, and I&#8217;m more than happy to have a database which can be
+    used <em>just</em> as a database and a programming language (Ruby, in this case) which can do wonders, rather than a
+    procedural-only surrogate.</p>
+<p>Anyhow, back to our weekly series. After creating a <a href=/articles/simply-on-rails-1-concepts-map">concept
+        map</a>, it&#8217;s time of <em>get real</em> and try to figure out a database architecture. The tool of choice
+    this week is obviously the widely popular <a href="http://fabforce.net/dbdesigner4/">DbDesigner 4</a>. It&#8217;s
+    free, it&#8217;s easy to use, and the results are pretty enough. There:</p>
+<p><a href="/files/italysimply_database-architecture.png"><img src="/files/italysimply_database-architecture_thumb.png"
+            alt="" /></a></p>
+<p>It&#8217;s amazing how a relatively simple concept map can lead to such a complex database architecture, isn&#8217;t
+    it?<br />
+    Well, it&#8217;s normal. One of the reasons of this is that I totally forgot about geographical information about
+    the houses which will be featured on the site, or better, I thought about it as a <em>strings</em> typed in by the
+    administrators, whereas it would be much better having dropdown boxes.</p>
+<p>Countries, regions, privinces, areas and cities will be added to the database only once, rather than having to type
+    them in every time a house is added. Obvious, but this lead to five tables more and nine (!) relationships more.</p>
+<p>The other reason of why the number of tables is higher than the number of entities in the domain model is that I
+    decided <em>not</em> to use the <span class="caps">ENUM</span> type. Firstly because <a
+        href="http://wiki.rubyonrails.org/rails/pages/HowtoUseSetAndEnumColumns">it&#8217;s not handled very well by
+        Rails</a><br />
+    and also because there&#8217;s <a href="http://blog.arabx.com.au/?p=87">a number of reasons</a> why ENUMs should not
+    be used.</p>
+<p>The only problem now is that whenever I load a house, I&#8217;ll have to get data from a lot of tables at once (and
+    this means a lot of joins underneath the model layer) or &#8211; worse &#8211; a lot of queries in case I decide to
+    load related data &#8220;on the fly&#8221;. It looks like I&#8217;ll have to do a bit of <a
+        href="http://railsexpress.de/blog/articles/2005/11/06/the-case-for-piggy-backed-attributes">piggy-backing</a>
+    here and there. <a href="http://railsexpress.de/blog/articles/2006/05/29/simpler-piggy-backing">Someone</a> already
+    thought about a way of doing this in a more &#8220;Model-friendly&#8221; way. Perhaps I&#8217;ll give it a shot.</p>

@@ -4,21 +4,35 @@ content-type: article
 timestamp: 1191024720
 tags: "ruby|productivity|software|tools|redbook"
 -----
-<p>I&#8217;m somehow pleased to announce the opening of a new section on this site. Nothing too big actually, it&#8217;s just a <a href="/code/">page</a> with a few (one for now) brief descriptions of open source programs and scripts I made and I&#8217;d like to share with my readers.</p>
-<p>Don&#8217;t expect fancy stuff: (luckily) I don&#8217;t code for a living, I code for pleasure and I code small things. Lately I&#8217;ve been trying to write a small Ruby program able to log my daily activities and also display them in a pleasant enough way, so I started using my lunch breaks at work more constructively and I came up with <a href="/code/">RedBook</a> an interactive command-line program written in Ruby.</p>
+<p>I&#8217;m somehow pleased to announce the opening of a new section on this site. Nothing too big actually, it&#8217;s
+	just a <a href="/projects/">page</a> with a few (one for now) brief descriptions of open source programs and scripts
+	I
+	made and I&#8217;d like to share with my readers.</p>
+<p>Don&#8217;t expect fancy stuff: (luckily) I don&#8217;t code for a living, I code for pleasure and I code small
+	things. Lately I&#8217;ve been trying to write a small Ruby program able to log my daily activities and also display
+	them in a pleasant enough way, so I started using my lunch breaks at work more constructively and I came up with <a
+		href="/projects/redbook">RedBook</a> an interactive command-line program written in Ruby.</p>
 <p>Main features:</p>
 <ul>
 	<li>Log timestamped and <em>tagged</em> messages to a single <span class="caps">YAML</span> file</li>
 	<li>Load and display messages containing a certain string, or certain tags or within a time frame.</li>
 	<li>Calculate the time elapsed between two or more tasks.</li>
-	<li>Export loaded messages to <span class="caps">YAML</span>, <span class="caps">TXT</span> or <span class="caps">CSV</span> format.</li>
+	<li>Export loaded messages to <span class="caps">YAML</span>, <span class="caps">TXT</span> or <span
+			class="caps">CSV</span> format.</li>
 </ul>
 <p>All done via command line via simple commands:</p>
 <p><strong>&#58;log</strong> This is a test message <strong>&#58;tags</strong> test</p>
 <p><strong>&#58;load</strong> <strong>&#58;last</strong> 30 <strong>&#58;from</strong> last week</p>
 <p><strong>&#58;timecalc</strong> 2 5</p>
 <p><strong>&#58;save</strong> test.txt</p>
-<p>Thanks to the wonderful <a href="http://chronic.rubyforge.org/">Chronic</a> library, you can specify your time frames using natural language expressions like &#8220;8 in the morning&#8221;, &#8220;this tuesday&#8221;, &#8220;last month&#8221; and so on&#8230;</p>
+<p>Thanks to the wonderful <a href="http://chronic.rubyforge.org/">Chronic</a> library, you can specify your time frames
+	using natural language expressions like &#8220;8 in the morning&#8221;, &#8220;this tuesday&#8221;, &#8220;last
+	month&#8221; and so on&#8230;</p>
 <p>Here&#8217;s a screenshot showing RedBook in action:</p>
 <p><img src="/files/redbook.png" alt="" /></p>
-<p>RedBook is of course free, open source software licensed under the terms of the <span class="caps">BSD</span> license. It can be installed on any machine able to run Ruby and there&#8217;s also an <span class="caps">EXE</span> version for the lazy windows folks who don&#8217;t want to install Ruby, packed with <a href="http://www.erikveenstra.nl/rubyscript2exe/index.html">RubyScript2Exe</a>. A more in-depth article explaining how RedBook works <del>will hopefully be completed soon</del> is available <a href="http://www.h3rald.com/articles/redbook">:here</a></p>
+<p>RedBook is of course free, open source software licensed under the terms of the <span class="caps">BSD</span>
+	license. It can be installed on any machine able to run Ruby and there&#8217;s also an <span class="caps">EXE</span>
+	version for the lazy windows folks who don&#8217;t want to install Ruby, packed with <a
+		href="http://www.erikveenstra.nl/rubyscript2exe/index.html">RubyScript2Exe</a>. A more in-depth article
+	explaining how RedBook works <del>will hopefully be completed soon</del> is available <a
+		href="/articles/redbook">:here</a></p>

@@ -2,15 +2,26 @@
 title: "Glyph &ndash; Custom Output Formats"
 content-type: page
 -----
-<nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom Commands →</a></nav>
-<p>As shown in <a href="/glyph/book/extending/commands_tasks.html#cmd_tasks_arch">How Commands and Tasks work</a>, the <a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command command calls specific tasks defined in the <code>generate:</code> Rake namespace to generate output files in a particular format.</p>
-<p>More specifically, when a <code>--format</code> option is specified, the command looks for a task with the same name within the <code>generate:</code> namespace. This makes adding new output formats to Glyph a fairly easy task, without the need to specify custom commands or similar.</p>
-<p>The following sections explain how the <code>h3rald</code> output format was created to integrate this book into the <a href="http://www.h3rald.com">H3RALD.com</a> website.</p>
+<nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom
+		Commands →</a></nav>
+<p>As shown in <a href="/glyph/book/extending/commands_tasks.html#cmd_tasks_arch">How Commands and Tasks work</a>, the
+	<a href="/glyph/book/ref_commands.html#c_compile"><code>compile</code></a> command command calls specific tasks
+	defined in the <code>generate:</code> Rake namespace to generate output files in a particular format.</p>
+<p>More specifically, when a <code>--format</code> option is specified, the command looks for a task with the same name
+	within the <code>generate:</code> namespace. This makes adding new output formats to Glyph a fairly easy task,
+	without the need to specify custom commands or similar.</p>
+<p>The following sections explain how the <code>h3rald</code> output format was created to integrate this book into the
+	<a href="http://www.h3rald.com">H3RALD.com</a> website.</p>
 <section class="section">
-<header><h1 id="h_105" class="toc">Output Configuration</h1></header>
-<p>The first step required to add a new output format to Glyph is extending Glyph&#8217;s configuration by adding the appropriate output hash, as follows:</p>
+	<header>
+		<h1 id="h_105" class="toc">Output Configuration</h1>
+	</header>
+	<p>The first step required to add a new output format to Glyph is extending Glyph&#8217;s configuration by adding
+		the appropriate output hash, as follows:</p>
 	<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="symbol">:output</span>: 
+		<div class="code">
+			<pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span><span class="symbol">:output</span>: 
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  <span class="symbol">:h3rald</span>: 
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>    <span class="symbol">:multifile</span>: <span class="error">true</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    <span class="symbol">:extension</span>: <span class="error">'.html'</span>
@@ -20,25 +31,31 @@ content-type: page
 <span class="line-numbers"> <a href="#n8" name="n8">8</a></span>    <span class="symbol">:layout_dirs</span>: [<span class="error">'web5']</span>
 <span class="line-numbers"> <a href="#n9" name="n9">9</a></span>    <span class="symbol">:layouts</span>: 
 <span class="line-numbers"><strong><a href="#n10" name="n10">10</a></strong></span>      <span class="symbol">:topic</span>: <span class="error">bookpage</span>
-<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span class="symbol">:index</span>: <span class="error">bookindex</span></pre></div>
-</div>
+<span class="line-numbers"><a href="#n11" name="n11">11</a></span>      <span class="symbol">:index</span>: <span class="error">bookindex</span></pre>
+		</div>
+	</div>
 
 	<p>In particular, the following keys are mandatory:</p>
-<ul>
-	<li>multifile</li>
-	<li>extension</li>
-	<li>filter_target</li>
-	<li>base</li>
-	<li>macro_dirs</li>
-	<li>layout_dirs</li>
-</ul>
+	<ul>
+		<li>multifile</li>
+		<li>extension</li>
+		<li>filter_target</li>
+		<li>base</li>
+		<li>macro_dirs</li>
+		<li>layout_dirs</li>
+	</ul>
 
 </section>
 <section class="section">
-<header><h1 id="h_106" class="toc">Creating a 'generate:h3rald' task</h1></header>
-<p>The next (and final) step involves creating a custom <code>h3rald</code> task within the <code>generate:</code> namespace. This task can be placed in any <code>.rake</code> file within the <code>lib/tasks</code> directory:</p>
+	<header>
+		<h1 id="h_106" class="toc">Creating a 'generate:h3rald' task</h1>
+	</header>
+	<p>The next (and final) step involves creating a custom <code>h3rald</code> task within the <code>generate:</code>
+		namespace. This task can be placed in any <code>.rake</code> file within the <code>lib/tasks</code> directory:
+	</p>
 	<div class="CodeRay">
-  <div class="code"><pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>namespace <span class="symbol">:generate</span> <span class="keyword">do</span>
+		<div class="code">
+			<pre><span class="line-numbers"> <a href="#n1" name="n1">1</a></span>namespace <span class="symbol">:generate</span> <span class="keyword">do</span>
 <span class="line-numbers"> <a href="#n2" name="n2">2</a></span>  desc <span class="string"><span class="delimiter">&quot;</span><span class="content">Create output for h3rald.com integration</span><span class="delimiter">&quot;</span></span>
 <span class="line-numbers"> <a href="#n3" name="n3">3</a></span>  task <span class="symbol">:h3rald</span> =&gt; [<span class="symbol">:web5</span>] <span class="keyword">do</span>
 <span class="line-numbers"> <a href="#n4" name="n4">4</a></span>    dir = <span class="constant">Glyph</span>::<span class="constant">PROJECT</span>/<span class="string"><span class="delimiter">'</span><span class="content">output/h3rald</span><span class="delimiter">'</span></span>
@@ -67,11 +84,16 @@ content-type: page
 <span class="line-numbers"><a href="#n27" name="n27">27</a></span><span class="string"><span class="content">      ]</span><span class="delimiter">}</span></span>
 <span class="line-numbers"><a href="#n28" name="n28">28</a></span>    file_write dir/<span class="string"><span class="delimiter">&quot;</span><span class="content">glyph.textile</span><span class="delimiter">&quot;</span></span>, project
 <span class="line-numbers"><a href="#n29" name="n29">29</a></span>  <span class="keyword">end</span>  
-<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span class="keyword">end</span></pre></div>
-</div>
+<span class="line-numbers"><strong><a href="#n30" name="n30">30</a></strong></span><span class="keyword">end</span></pre>
+		</div>
+	</div>
 
-	<p>In this case, this task does not actually renders files in a different format, it just moves the files generated by the @generate:web5@ task in different subdirectories.</p>
-	<p>Additionally, it also generates the <a href="http://www.h3rald.com/glyph/">Glyph project page</a> from the book's introduction (note the usage of a raw custom layout macro).</p>
+	<p>In this case, this task does not actually renders files in a different format, it just moves the files generated
+		by the @generate:web5@ task in different subdirectories.</p>
+	<p>Additionally, it also generates the <a href="/glyph/">Glyph project page</a> from the book's introduction (note
+		the usage of a raw custom layout macro).</p>
 
 </section>
-<nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom Commands →</a></nav>
+<nav class="navigation"><a href="/glyph/book/extending/task.html">← Defining Custom Tasks</a> | <a
+		href="/glyph/book/index.html">Contents</a> | <a href="/glyph/book/extending/command.html">Defining Custom
+		Commands →</a></nav>

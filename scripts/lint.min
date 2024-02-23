@@ -1,4 +1,4 @@
-"output" ls-r ("\.html?" match?) filter :html-files
+"output" ls-r ("\.html" match?) filter :html-files
 
 (
     symbol check-links
@@ -30,13 +30,13 @@
                     when
                 )
             when
-            (href "^https?:\/\/(?:www.)?h3rald.com" match?)
+            #|(href "^https?:\/\/(?:www.)?h3rald.com" match?)
                 (
                     (result href in? not)
                         (href result append @result)
                     when
                 )
-            when
+            when|#
         ) foreach
     )
 ) ::
