@@ -1,0 +1,106 @@
+"output" ls-r ("\.html?" match?) filter :html-files
+
+(
+    symbol check-links
+    (str :contents ==> quot :result)
+    (
+        () @result
+        contents "<a.+?href=\"(.+?)(?:#.+?)?\".*?>.+?</a>" search-all :hrefs
+        hrefs (
+            1 get :href
+            href :resolved-href
+            ; Check internal links
+            (href "^\/" match?)
+                (
+                    (href "\..+$" match? not)
+                        (
+                            (href "\/$" match?)
+                                ("$#$#" (href "index.html") =% @resolved-href)
+                                ("$#/$#" (href "index.html") =% @resolved-href)
+                            if
+                        )
+                    when
+                    "$#$#" ("output" resolved-href) =% @resolved-href
+                    (resolved-href file? not)
+                        (
+                            (result resolved-href in? not)
+                                (resolved-href result append @result)
+                            when
+                        )
+                    when
+                )
+            when
+            (href "^https?:\/\/(?:www.)?h3rald.com" match?)
+                (
+                    (result href in? not)
+                        (href result append @result)
+                    when
+                )
+            when
+        ) foreach
+    )
+) ::
+
+(
+    symbol check-images
+    (str :contents ==> quot :result)
+    (
+        () @result
+        contents "<img.+?src=\"(.+?)\".*?>" search-all :srcs
+        srcs (
+            1 get :src
+            src :resolved-src
+           ; Check internal images
+           (src "^\/" match?) 
+                (
+                    "$#$#" ("output" resolved-src) =% @resolved-src
+                    (resolved-src file? not)
+                        (
+                            (result resolved-src in? not)
+                                (resolved-src result append @result)
+                            when
+                        )
+                    when
+                )
+            when
+            (src "^https?:\/\/(?:www.)?h3rald.com" match?)
+                (
+                    (result src in? not)
+                        (src result append @result)
+                    when
+                )
+            when
+        ) foreach
+    )
+) ::
+
+; Check all output files for internal broken links and images
+html-files
+(
+    :file
+    file fread :contents
+    contents check-links :broken-links
+    contents check-images :broken-images
+    broken-links size :n-links
+    broken-images size :n-images
+    (((n-links 0 >)(n-images 0 >)) ||)
+        (
+            "=> $#" (file) =% puts!
+            (n-links 0 >)
+                ("   -> $# Invalid Links:" (n-links) =% puts!)
+            when
+            broken-links (
+                :target
+                "     - $#" (target) =% puts!
+            ) foreach
+            (n-images 0 >)
+                ("   -> $# Invalid Images:" (n-images) =% puts!)
+            when
+            broken-images (
+                :target
+                "     - $#" (target) =% puts!
+            ) foreach
+        )
+    when
+) foreach
+

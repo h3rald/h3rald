@@ -371,6 +371,13 @@ time {
 
 .main-content {
     margin-top: 20px;
+    max-width: 1024px;
+    margin: auto;
+}
+
+footer {
+    max-width: 1024px;
+    margin: auto;
 }
 
 @media screen and (max-width: 385px) {
