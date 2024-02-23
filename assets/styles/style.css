@@ -316,7 +316,7 @@ a {
 }
 
 a[href^=http]::after {
-    background-image: url("/images/entypo/external-link.svg");
+    background-image: url("/images/icons/external-link.svg");
     display: inline-block;
     background-repeat: no-repeat;
     content: "";
@@ -625,7 +625,7 @@ a[href^=http].icon-link {
 }
 
 a[href^=http].icon-link::after {
-  display: none;
+    display: none;
 }
 
 .icon-link img {

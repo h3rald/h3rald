@@ -159,7 +159,7 @@
       match 0 get :content
       match 1 get :icon
       match 2 get :explicit-title
-      "assets/images/entypo/$#.svg" (icon) =% :path
+      "assets/images/icons/$#.svg" (icon) =% :path
       (path file?)
         (
           path fread from-xml "svg" xquery :svgx
