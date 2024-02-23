@@ -4,38 +4,73 @@ content-type: article
 timestamp: 1200890820
 tags: "ruby|review|books"
 -----
-<p style="float:right;"><img src="/files/efficient_ruby_shortcut.jpeg" alt="" /></p>
-<p>The second shortcut from Addison-Wesley Professional series I&#8217;m going to review is called <a href="http://www.informit.com/store/product.aspx?isbn=0321540034">Writing Efficient Ruby Code</a>. A very promising title, especially considering that this book is only 50 pages long.</p>
-<p>As usual, this shortcut can be intended as a sort of programmer-friendly detailed cheatsheet: like the other ones in this series it sports a monitor-friendly landscape layout and does not go to deep into the details unless strictly necessary to understand a particular concept.</p>
+<p style="float:right;"><img src="/images/efficient_ruby_shortcut.jpeg" alt="" /></p>
+<p>The second shortcut from Addison-Wesley Professional series I&#8217;m going to review is called <a
+		href="http://www.informit.com/store/product.aspx?isbn=0321540034">Writing Efficient Ruby Code</a>. A very
+	promising title, especially considering that this book is only 50 pages long.</p>
+<p>As usual, this shortcut can be intended as a sort of programmer-friendly detailed cheatsheet: like the other ones in
+	this series it sports a monitor-friendly landscape layout and does not go to deep into the details unless strictly
+	necessary to understand a particular concept.</p>
 <h3>The Author</h3>
-<p><a href="http://railsexpress.de/blog/">Dr. Stefan Kaes</a>, the author, contributed a lot to improve Ruby on Rails&#8217; performance by refactoring portions of its core and try to &#8220;get maximum speed out of performance-critical sections of code&#8221;. This short but interesting shortcut groups together a lot of performance tweaks, tips and tricks but also some &#8220;anti-patterns&#8221; Kaes was able to identify through his career as programming teacher Ruby software consultant and key Rails contributor.</p>
+<p><a href="http://railsexpress.de/blog/">Dr. Stefan Kaes</a>, the author, contributed a lot to improve Ruby on
+	Rails&#8217; performance by refactoring portions of its core and try to &#8220;get maximum speed out of
+	performance-critical sections of code&#8221;. This short but interesting shortcut groups together a lot of
+	performance tweaks, tips and tricks but also some &#8220;anti-patterns&#8221; Kaes was able to identify through his
+	career as programming teacher Ruby software consultant and key Rails contributor.</p>
 <h3>The Contents</h3>
-<p>Like with the previously-covered <a href="/articles/mongrel-shortcut-review">Mongrel shortcut</a>, <em>Writing Efficient Ruby Code</em> always goes straight to the point when it comes to identify problems. The first one mentioned is of course that the <em>Ruby Interpreter is Slow</em>, most people are aware of that, due to their direct experience or because this argument is normally used by non-Rubyists to argue the language&#8217;s usability in commercial projects. What you may not know is why that is so, and that&#8217;s where the first part of this book comes into play.</p>
+<p>Like with the previously-covered <a href="/articles/mongrel-shortcut-review">Mongrel shortcut</a>, <em>Writing
+		Efficient Ruby Code</em> always goes straight to the point when it comes to identify problems. The first one
+	mentioned is of course that the <em>Ruby Interpreter is Slow</em>, most people are aware of that, due to their
+	direct experience or because this argument is normally used by non-Rubyists to argue the language&#8217;s usability
+	in commercial projects. What you may not know is why that is so, and that&#8217;s where the first part of this book
+	comes into play.</p>
 <blockquote>
-<p><em>&#8220;Ruby is a highly dynamic language: Almost all language entities are first-class citizens in that they can be created, changed, and destroyed at runtime. This comprises classes, modules, methods, constants, and class and instance variables. Only local variables are second-class citizens in Ruby: Whether a name refers to a local variable is determined at parse time.</em></p>
+	<p><em>&#8220;Ruby is a highly dynamic language: Almost all language entities are first-class citizens in that they
+			can be created, changed, and destroyed at runtime. This comprises classes, modules, methods, constants, and
+			class and instance variables. Only local variables are second-class citizens in Ruby: Whether a name refers
+			to a local variable is determined at parse time.</em></p>
 </blockquote>
-<p>This makes Ruby extremely flexible, but also more complex. Whever you use a name to refer to an object, Ruby has to search for the object it refers to, and this costs in terms of processing time.</p>
+<p>This makes Ruby extremely flexible, but also more complex. Whever you use a name to refer to an object, Ruby has to
+	search for the object it refers to, and this costs in terms of processing time.</p>
 <p>As a matter of fact, one of the most recurring tips in the book to improve code performance is the following:</p>
 <p style="text-align:center;"><strong>Method calls are expensive, use variables directly when possible.</strong></p>
-<p>Keep this in mind: <code>self.something</code> is <em>not</em> the same as <code>@something</code>. The end result is the same, but the first way costs more in terms of performance because Ruby has to look up the method name.<br />
-Similarly, <strong>local variables <em>should</em> be introduced as a way to &#8220;cache&#8221; the result of method calls</strong>. Often you may feel &#8220;guilty&#8221; to introduce a new variable and keep calling the same method over and over: this should definitely be avoided.</p>
+<p>Keep this in mind: <code>self.something</code> is <em>not</em> the same as <code>@something</code>. The end result is
+	the same, but the first way costs more in terms of performance because Ruby has to look up the method name.<br />
+	Similarly, <strong>local variables <em>should</em> be introduced as a way to &#8220;cache&#8221; the result of
+		method calls</strong>. Often you may feel &#8220;guilty&#8221; to introduce a new variable and keep calling the
+	same method over and over: this should definitely be avoided.</p>
 <p>Other useful tips include, for example:</p>
 <ul>
 	<li>Use syntax constructs (e.g. assignments) as expressinons. Use evaluation precedences.</li>
-	<li>Use interpolated strings <code>"... #{string_variable}"</code> (there&#8217;s also no performance difference if constant strings are used between <code>"</code> or <code>'</code>)</li>
-	<li>Use operators which update the data structure without copying it (when possible). Use <code>update</code> or <code>merge</code> to update hashes.</li>
-	<li>Iterating using <code>for a in  A</code> is slightly faster than performing the same iteration using <code>each</code>, (it is the opposite in Ruby 1.9 though)</li>
+	<li>Use interpolated strings <code>"... #{string_variable}"</code> (there&#8217;s also no performance difference if
+		constant strings are used between <code>"</code> or <code>'</code>)</li>
+	<li>Use operators which update the data structure without copying it (when possible). Use <code>update</code> or
+		<code>merge</code> to update hashes.</li>
+	<li>Iterating using <code>for a in  A</code> is slightly faster than performing the same iteration using
+		<code>each</code>, (it is the opposite in Ruby 1.9 though)</li>
 	<li>do not use <code>return</code> unless you have to</li>
 	<li>test in order of expected case frequency</li>
 	<li>Use parallel assignment (<code>a, b = 5, 6</code>) where applicable</li>
 	<li>If a module gets included in only one other class (or module), it’s preferable to open the class instead.</li>
 </ul>
-<p>I deliberately chose not to elaborate any further on the tips listed above because otherwise I&#8217;ll give a big chunk of the contents of the book itself. If you know Ruby enough, you may already know why such reccommendations make sense, but if you don&#8217;t, <em>Writing Efficient Ruby Code</em> can be a short but very interesting read.</p>
+<p>I deliberately chose not to elaborate any further on the tips listed above because otherwise I&#8217;ll give a big
+	chunk of the contents of the book itself. If you know Ruby enough, you may already know why such reccommendations
+	make sense, but if you don&#8217;t, <em>Writing Efficient Ruby Code</em> can be a short but very interesting read.
+</p>
 <h3>The Good</h3>
-<p>For each of the 30 &#8220;coding patterns&#8221; (and consequent anti-patterns) described in the book, the author does a great job explaining the reasons of doing something in a particular way, also through examples and benchmarks, where possible.</p>
-<p>Furthermore, this <em>shortcut</em> can really be useful to grasp a few difference between Ruby 1.8.5, 1.8.6 and 1.9 in terms of performance: not all the patters apply to all Ruby implementations, and when that&#8217;s the case it is clearly stated.</p>
+<p>For each of the 30 &#8220;coding patterns&#8221; (and consequent anti-patterns) described in the book, the author
+	does a great job explaining the reasons of doing something in a particular way, also through examples and
+	benchmarks, where possible.</p>
+<p>Furthermore, this <em>shortcut</em> can really be useful to grasp a few difference between Ruby 1.8.5, 1.8.6 and 1.9
+	in terms of performance: not all the patters apply to all Ruby implementations, and when that&#8217;s the case it is
+	clearly stated.</p>
 <h3>The Bad</h3>
-<p>My only complaint about the book is probably the lack of details and more &#8220;specialized&#8221; patterns. Everything (except for a few Rails-specific tips) normally apply to Ruby <em>as a whole</em>, without going deeply to analyze specific libraries or third-party gems. As a result, once you get the general idea, some of the patters may seem pretty obvious or a logic consequence of others.</p>
-<p>It is also true that this is meant to be a <em>shortcut</em>, not a comprehensive analysis on code optimization techniques which can be applied to specific cases: something like this would require much more than 50 pages!</p>
+<p>My only complaint about the book is probably the lack of details and more &#8220;specialized&#8221; patterns.
+	Everything (except for a few Rails-specific tips) normally apply to Ruby <em>as a whole</em>, without going deeply
+	to analyze specific libraries or third-party gems. As a result, once you get the general idea, some of the patters
+	may seem pretty obvious or a logic consequence of others.</p>
+<p>It is also true that this is meant to be a <em>shortcut</em>, not a comprehensive analysis on code optimization
+	techniques which can be applied to specific cases: something like this would require much more than 50 pages!</p>
 <h3>The Bottom Line</h3>
-<p>Read it, re-read a few bits of it to make sure you grasp the most important concepts, and keep its table of contents in front of you as a reminder when refactoring your code!</p>
+<p>Read it, re-read a few bits of it to make sure you grasp the most important concepts, and keep its table of contents
+	in front of you as a reminder when refactoring your code!</p>

@@ -18,7 +18,7 @@ tags: "cakephp|webdevelopment|databases"
     offered by either ADOdb or <span class="caps">PEAR</span>::DB are used. In my very, very, very modest opinion
     (I&#8217;m not an expert on this matter), this solution focus on achieving good database compatibility leaving the
     doors open for further tinkering, if needed.</p>
-<p style="float:left;"><img src="/img/pictures/postgres.png" alt="" /></p>
+<p style="float:left;"><img src="/images/pictures/postgres.png" alt="" /></p>
 <p>Having said this, yes, the possibilities are good that your favorite database is supported by CakePHP, more or less.
     Of course, as repeatedly pointed out by some CakePHP core developers, Cake dev team didn&#8217;t and is not going to
     test <em>every</em> database with Cake, using either of the two abstraction layers, but users are more than welcome
@@ -26,12 +26,13 @@ tags: "cakephp|webdevelopment|databases"
 <p>Let&#8217;s now have a look at what is <em>known to work</em> with Cake:</p>
 <p><strong>MySQL</strong> works fine, and is currently recommended as <em>preferred</em> database solution. What about
     <strong>MySQLi</strong>? Well, thanks to mappleJoe there&#8217;s a (PHP5 only!) <a
-        href="http://cakephp.org/pastes/show/770e73e77e4d7a3d32c2f3de3f175512">driver</a> ready to be used.</p>
+        href="http://cakephp.org/pastes/show/770e73e77e4d7a3d32c2f3de3f175512">driver</a> ready to be used.
+</p>
 *PostgreSQL*&#8217;s support is continuously improving. Something may work, something may not: the good news is that the
 folks who are using it are <a
     href="http://groups.google.com/group/cake-php/browse_thread/thread/85a29ab6ec6826a0/8eecea26ba53e1fd?q=postgres&amp;rnum=1#8eecea26ba53e1fd">sharing
     their thoughts</a> with the rest of us.
-<p style="float:right;"><img src="/img/pictures/sqlite.gif" alt="" /></p>
+<p style="float:right;"><img src="/images/pictures/sqlite.gif" alt="" /></p>
 <p><strong>SQLite</strong> is supported natively, or so it seems&#8230; what about the newest SQLite3? Yes, probably:
     there&#8217;s a quick <a href="http://www.thompsonlife.net/index.php?section=9">howto</a> on ThompsonLife.net to
     make it work through the dbo_pear driver.</p>
@@ -40,10 +41,12 @@ folks who are using it are <a
 <p><a href="http://www.filemaker.com/">FileMaker</a> is getting there: things aren&#8217;t that easy, but bdb is doing
     <a
         href="http://groups.google.com/group/cake-php/browse_thread/thread/572d8dd2ba4cbdf7/dca851c795247c0b?q=database&amp;rnum=2#dca851c795247c0b">all
-        his best</a> to make it work, good luck!</p>
+        his best</a> to make it work, good luck!
+</p>
 <p>Neil Fincham was also trying to develop a custom driver to support <a href="http://www.pervasive.com/">Pervasive</a>
     through a <a href="http://www.unixodbc.org/">unixODBC</a> driver. Best of luck!</p>
 <p>For other databases, check ADOdb&#8217;s <a href="http://phplens.com/adodb/supported.databases.html">list of
         supported databases</a> and use the <code>dbo-adodb</code> driver, or use <span class="caps">PEAR</span>::DB
     (for fbsql, ibase, informix, msql, mssql, mysql, mysqli, oci8, odbc, pgsql,sqlite and sybase) using the
-    <code>dbo-pear</code> driver.</p>
+    <code>dbo-pear</code> driver.
+</p>

@@ -66,10 +66,11 @@ tags: "website|ruby|programming|writing"
   mind spending some time extending the system, nanoc&#8217;s <a href="http://nanoc.stoneship.org/doc/3.0.0/">RDoc
     documentation</a> is very comprehensive compared to other Ruby projects.</p>
 <h4>Sites, Items and data sources</h4>
-<p style="float:right;"><img src="/img/pictures/nanoc-structure.png" alt="" /></p>
+<p style="float:right;"><img src="/images/pictures/nanoc-structure.png" alt="" /></p>
 <p>nanoc ships with a really neat command line tool that can do most of the work for you.
   <code>Nanoc3 create_site h3rald</code> will create a new web site in a folder called h3rald. The contents of this
-  folder are laid out according to a particular logic (<em>convention over configuration</em>, remember?) So:</p>
+  folder are laid out according to a particular logic (<em>convention over configuration</em>, remember?) So:
+</p>
 <ul>
   <li><strong>content</strong> &ndash; your articles, pages, stylesheets, images, &#8230;all the site content and
     assets.</li>
@@ -155,7 +156,8 @@ This was a crude and inefficient strategy, of course: whenever I changed the lay
 <p>This source code snippet shows quite a few features of nanoc&#8217;s layouts:</p>
 <ul>
   <li>You can access the metadata of the page which is being rendered using the <code>@item</code>, so
-    <code>@item[:title]</code> returns the page&#8217;s title, for example.</li>
+    <code>@item[:title]</code> returns the page&#8217;s title, for example.
+  </li>
   <li>Layouts can be nested, and behave like Rails&#8217;s partials. The <code>render</code> takes a string parameter
     (the name of the layout to render) and an optional hash parameter to pass variables to the layout.</li>
   <li>The <code>yield</code> method is used to include the content of a page.</li>
@@ -205,7 +207,8 @@ This was a crude and inefficient strategy, of course: whenever I changed the lay
   <li>You can use git and similar: your content is in plain old text files</li>
 </ul>
 <p>Rants are beside the point, suffice to say I recently convinced myself that switching from Typo to nanoc was a
-  <em>good thing</em>, so let&#8217;s see how it worked out.</p>
+  <em>good thing</em>, so let&#8217;s see how it worked out.
+</p>
 <h4>Posts, pages and comments</h4>
 <p>Out of Typo&#8217;s MySQL database, I just wanted to get the following data:</p>
 <ul>
@@ -251,7 +254,8 @@ This was a crude and inefficient strategy, of course: whenever I changed the lay
     href="http://github.com/h3rald/h3rald/tree/master/lib/utils.rb">utility file</a>. Nothing special really, just a few
   convenience methods wrapping queries or simply processing data. Note how all information, including tags and legacy
   comments, is saved in each page&#8217;s metadata. The <code>write_page</code> method simply creates a file in the
-  <code>/contents</code> folder.</p>
+  <code>/contents</code> folder.
+</p>
 <h4>Filters and highlighters</h4>
 <p>On my old site, I used mainly Textile and Markdown to write posts. However, some of my really old articles used
   BBCode, whose corresponding filter is not available in nanoc. No worries, I soon found out that creating a new nanoc
@@ -399,7 +403,7 @@ include Nanoc3::Helpers::Filtering</code></pre>
   issues (brushing up jQuery, <span class="caps">CSS</span>, graphics, etc.). Of course knowing the Ruby programming
   language helps, and if you&#8217;re not comfortable with hacking your way a little bit, then maybe it&#8217;s not for
   you.</p>
-<p style="float:left;"><img src="/img/pictures/nanoc-compile.png" alt="" /></p>
+<p style="float:left;"><img src="/images/pictures/nanoc-compile.png" alt="" /></p>
 <p>Personally, I&#8217;ve been waiting for something like nanoc for a long time: its simple and yet powerful
   architecture makes you able to do virtually anything with it. For the first time in a long time, I feel like I&#8217;m
   in complete control of my web site, I know every bits of it and if I want to change the way it works or looks I only

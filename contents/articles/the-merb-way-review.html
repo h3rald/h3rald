@@ -4,34 +4,88 @@ content-type: article
 timestamp: 1258452936
 tags: "ruby|books|review"
 -----
-<p>When I first picked up this book I was surprised by its length. Somehow, after reading <a href="/articles/the-rails-way-review">The Rails Way</a>, I got stuck in my mind that <a href="http://my.safaribooksonline.com/9780321601636">The Merb Way</a> had to be almost equally voluminous. Instead, this book is about 300 page long, roughly as long as the sum of the chapters devoted to <em>ActiveRecord</em> in Obie Fernandez&#8217;s acclaimed Rails bible.</p>
-<p>Apparently it only takes 300 pages to describe a web framework nowadays! I couldn&#8217;t help but feeling a bit skeptical at first. Even in the foreword, Obie Fernandez presents the book &ndash; and the whole <a href="http://www.merbivore.com">Merb</a> framework &ndash; with some initial skepticism: isn&#8217;t Ruby on Rails enough? Why do we need yet another Ruby web framework? And above all, seeing that Merb is going to eventually be <a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3">merged into Rails 3</a>, why on Earth do we need a book about Merb, <em>now</em>?</p>
+<p>When I first picked up this book I was surprised by its length. Somehow, after reading <a
+		href="/articles/the-rails-way-review">The Rails Way</a>, I got stuck in my mind that <a
+		href="http://my.safaribooksonline.com/9780321601636">The Merb Way</a> had to be almost equally voluminous.
+	Instead, this book is about 300 page long, roughly as long as the sum of the chapters devoted to
+	<em>ActiveRecord</em> in Obie Fernandez&#8217;s acclaimed Rails bible.</p>
+<p>Apparently it only takes 300 pages to describe a web framework nowadays! I couldn&#8217;t help but feeling a bit
+	skeptical at first. Even in the foreword, Obie Fernandez presents the book &ndash; and the whole <a
+		href="http://www.merbivore.com">Merb</a> framework &ndash; with some initial skepticism: isn&#8217;t Ruby on
+	Rails enough? Why do we need yet another Ruby web framework? And above all, seeing that Merb is going to eventually
+	be <a href="http://weblog.rubyonrails.org/2008/12/23/merb-gets-merged-into-rails-3">merged into Rails 3</a>, why on
+	Earth do we need a book about Merb, <em>now</em>?</p>
 <p>Needless to say, Foy Savas proved that both Merb and its book cannot be dismissed just like that.</p>
 <h3>Getting started</h3>
-<p style="float:right;"><img src="/img/pictures/therailsway.jpg" alt="" /></p>
-<p>The book starts with the original <a href="http://pastie.org/14416">Merb Pastie</a>, a single page of Ruby code able to sort out <span class="caps">HTTP</span> requests, dispatch them to the appropriate controllers and render a web page. This piece of code is enough to convey what Merb is: a new breed of web framework, almost as simple as it can get but very poweful and flexible at the same time.</p>
-<p>As you start diving in through the first chapter, you realize you&#8217;re reading about a <em>Hacker&#8217;s Web Framework</em>. That&#8217;s precisely what Merb is: a very versatile tool to get the job done, in the simplest way possible. Similarly, <em>The Merb Way</em> immediately feels like a <em>Hacker&#8217;s Handbook</em> rather than an ordinary guide on how to develop web applications. You won&#8217;t learn what <span class="caps">MVC</span> is by reading this book, and don&#8217;t expect to be taught what a <em>mixin</em> is; you are reading a book about a Ruby web framework that was born after the <em>Rails Revolution</em>, so it is safe (for the author) to assume that:</p>
+<p style="float:right;"><img src="/images/pictures/therailsway.jpg" alt="" /></p>
+<p>The book starts with the original <a href="http://pastie.org/14416">Merb Pastie</a>, a single page of Ruby code able
+	to sort out <span class="caps">HTTP</span> requests, dispatch them to the appropriate controllers and render a web
+	page. This piece of code is enough to convey what Merb is: a new breed of web framework, almost as simple as it can
+	get but very poweful and flexible at the same time.</p>
+<p>As you start diving in through the first chapter, you realize you&#8217;re reading about a <em>Hacker&#8217;s Web
+		Framework</em>. That&#8217;s precisely what Merb is: a very versatile tool to get the job done, in the simplest
+	way possible. Similarly, <em>The Merb Way</em> immediately feels like a <em>Hacker&#8217;s Handbook</em> rather than
+	an ordinary guide on how to develop web applications. You won&#8217;t learn what <span class="caps">MVC</span> is by
+	reading this book, and don&#8217;t expect to be taught what a <em>mixin</em> is; you are reading a book about a Ruby
+	web framework that was born after the <em>Rails Revolution</em>, so it is safe (for the author) to assume that:</p>
 <ul>
 	<li>You know the Ruby programming language</li>
 	<li>You know what Ruby on Rails is and you tried it out, at the very least</li>
 </ul>
-<p>The first few chapters are about the core functionalities provided by an an <span class="caps">MVC</span> framework: after a comprehensive first chapter about Merb&#8217;s fundamentals (from the layout of a Merb application to an overview of Merb internals) you are quite abruptly &#8220;introduced&#8221; to routing, controllers, views and models. These chapters do not aim to provide a comprehensive description of each component, they simply tell you: <em>here&#8217;s how Merb does this</em>.</p>
-<p>Out of the first five chapters, favorite is definitely the one about <em>Models</em>. Although Merb is <span class="caps">ORM</span>-agnostic, DataMapper is the <em>de facto standard</em> for Merb applications, and it fully embrace the framework&#8217;s design and extreme flexibility without being <em>in the way</em> of your code.<br />
-Foy does an excellent job in this chapter by strategically describing DataMapper&#8217;s code from the top to the very bottom, from the highest abstractions to raw <span class="caps">SQL</span> code, using a plethora of snippets taken from the actual Merb code.</p>
+<p>The first few chapters are about the core functionalities provided by an an <span class="caps">MVC</span> framework:
+	after a comprehensive first chapter about Merb&#8217;s fundamentals (from the layout of a Merb application to an
+	overview of Merb internals) you are quite abruptly &#8220;introduced&#8221; to routing, controllers, views and
+	models. These chapters do not aim to provide a comprehensive description of each component, they simply tell you:
+	<em>here&#8217;s how Merb does this</em>.</p>
+<p>Out of the first five chapters, favorite is definitely the one about <em>Models</em>. Although Merb is <span
+		class="caps">ORM</span>-agnostic, DataMapper is the <em>de facto standard</em> for Merb applications, and it
+	fully embrace the framework&#8217;s design and extreme flexibility without being <em>in the way</em> of your
+	code.<br />
+	Foy does an excellent job in this chapter by strategically describing DataMapper&#8217;s code from the top to the
+	very bottom, from the highest abstractions to raw <span class="caps">SQL</span> code, using a plethora of snippets
+	taken from the actual Merb code.</p>
 <h3>It&#8217;s about how Merb works, not how to work with Merb</h3>
-<p>After reading the <em>Models</em> chapter I decided to go back and re-examine the previous chapters. I didn&#8217;t notice until then, but the author sneakily <em>smuggled</em> a consistent amount of Merb source code into this book. This is rather unusual for books about web frameworks: they normally tell you how to use the framework, not how it was built! While this can be disappointing for people used to read Rails books, it came as a very pleasant surprise to me.</p>
-<p>About 40-50% of this entire book (and I&#8217;m not exaggerating) is Ruby source code. In a good way, it feels like a collection of strategically-positioned code snippets glued together with explanations of the most tricky bits and digressions on how the framework was <em>designed</em>. In other words, it probably contains just enough text to make sure that the average reader understands the code, but remember that the <em>average reader</em> of this book must know Ruby failry well.</p>
-<p>There is no pointless prose in this book, no explanations of obvious methods, no fancy words, no useless boasting on how cool the framework is: just an objective description of how Merb works and of the key design decisions behind it. If I may, the only thing that doesn&#8217;t feel quite right with this book is its title: <em>Merb Internals</em> would have been a better choice. Once you realize this, the book suddenly makes sense, and can even make you a better Ruby programmer.</p>
-<p><em>The Merb Way</em> does an excellent job in describing how to design a web framework, or any real-world Ruby application for that matter. It teaches you that modularity is the key to flexibility by showing how the Merb stack is organized. Sure, it doesn&#8217;t teach you how to create a blog in five minutes, but perhaps a thorough explanation of how anthentication is implemented (Chapter 9) will actually be useful in two months time, when you&#8217;ll have to create your own Merb plugin from scratch.</p>
+<p>After reading the <em>Models</em> chapter I decided to go back and re-examine the previous chapters. I didn&#8217;t
+	notice until then, but the author sneakily <em>smuggled</em> a consistent amount of Merb source code into this book.
+	This is rather unusual for books about web frameworks: they normally tell you how to use the framework, not how it
+	was built! While this can be disappointing for people used to read Rails books, it came as a very pleasant surprise
+	to me.</p>
+<p>About 40-50% of this entire book (and I&#8217;m not exaggerating) is Ruby source code. In a good way, it feels like a
+	collection of strategically-positioned code snippets glued together with explanations of the most tricky bits and
+	digressions on how the framework was <em>designed</em>. In other words, it probably contains just enough text to
+	make sure that the average reader understands the code, but remember that the <em>average reader</em> of this book
+	must know Ruby failry well.</p>
+<p>There is no pointless prose in this book, no explanations of obvious methods, no fancy words, no useless boasting on
+	how cool the framework is: just an objective description of how Merb works and of the key design decisions behind
+	it. If I may, the only thing that doesn&#8217;t feel quite right with this book is its title: <em>Merb
+		Internals</em> would have been a better choice. Once you realize this, the book suddenly makes sense, and can
+	even make you a better Ruby programmer.</p>
+<p><em>The Merb Way</em> does an excellent job in describing how to design a web framework, or any real-world Ruby
+	application for that matter. It teaches you that modularity is the key to flexibility by showing how the Merb stack
+	is organized. Sure, it doesn&#8217;t teach you how to create a blog in five minutes, but perhaps a thorough
+	explanation of how anthentication is implemented (Chapter 9) will actually be useful in two months time, when
+	you&#8217;ll have to create your own Merb plugin from scratch.</p>
 <h3>Some constructive criticism</h3>
-<p>The idea behind this book is clever but a bit dangerous. I flipped through the pages in front of my wife and asked her what was wrong with it. <em>&#8220;There&#8217;s too much code!&#8221;</em> she said, without hesitation. Precisely.</p>
-<p>It is damn good Ruby code, but sometimes you wish there was more text describing how to use it in practice. Or maybe some code examples on <em>using</em> the framework on a real-world application. Not a chance. Of all that holy code, there&#8217;s not much featuring something other than Merb itself. Basically the exact opposite of all the other books about Rails or other web frameworks!</p>
-<p>Even accepting the fact that you are not reading a book about developing web applications, there are two more things which could be improved:</p>
+<p>The idea behind this book is clever but a bit dangerous. I flipped through the pages in front of my wife and asked
+	her what was wrong with it. <em>&#8220;There&#8217;s too much code!&#8221;</em> she said, without hesitation.
+	Precisely.</p>
+<p>It is damn good Ruby code, but sometimes you wish there was more text describing how to use it in practice. Or maybe
+	some code examples on <em>using</em> the framework on a real-world application. Not a chance. Of all that holy code,
+	there&#8217;s not much featuring something other than Merb itself. Basically the exact opposite of all the other
+	books about Rails or other web frameworks!</p>
+<p>Even accepting the fact that you are not reading a book about developing web applications, there are two more things
+	which could be improved:</p>
 <ul>
-	<li>Merb&#8217;s design is very intriguing, and you grasp the essentials by reading this book, but a few diagrams here and there and more in-depth digressions on the subjects would have been nice.</li>
-	<li>Besides DataMapper, what I really wanted to read about were Slices and Parts &ndash; unfortunately the chapters about them are far too short and shallow. The reasoning behind this is that <em>their future may be uncertain</em> due to the Rails 3 merge. Pity.</li>
+	<li>Merb&#8217;s design is very intriguing, and you grasp the essentials by reading this book, but a few diagrams
+		here and there and more in-depth digressions on the subjects would have been nice.</li>
+	<li>Besides DataMapper, what I really wanted to read about were Slices and Parts &ndash; unfortunately the chapters
+		about them are far too short and shallow. The reasoning behind this is that <em>their future may be
+			uncertain</em> due to the Rails 3 merge. Pity.</li>
 </ul>
 <h3>Conclusion</h3>
-<p>The death of Merb has been greatly exaggerated. Too bad I <a href="/articles/take-back-your-site-with-nanoc/">gave up web frameworks altogether</a> for my site, because after reading this book I would have gone for Merb <em>today</em> rather than waiting to see the wonders of Rails 3 <em>tomorrow</em>. Even a book with this title could have been written in a very different way, I would still recommend it if you want to become a better Ruby programmer by learning from the best: Merb code really stands out, even compared to Rails, and Foy Savas does a great job presenting and describing it.</p>
-
-
+<p>The death of Merb has been greatly exaggerated. Too bad I <a href="/articles/take-back-your-site-with-nanoc/">gave up
+		web frameworks altogether</a> for my site, because after reading this book I would have gone for Merb
+	<em>today</em> rather than waiting to see the wonders of Rails 3 <em>tomorrow</em>. Even a book with this title
+	could have been written in a very different way, I would still recommend it if you want to become a better Ruby
+	programmer by learning from the best: Merb code really stands out, even compared to Rails, and Foy Savas does a
+	great job presenting and describing it.</p>

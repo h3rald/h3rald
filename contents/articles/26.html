@@ -15,7 +15,7 @@ tags: "cakephp|frameworks"
 	This cute little thing is located in the <code>cake/scripts/</code> folder and can be used &#8211; hear, hear
 	&#8211; from command line. You can run Ruby and Perl scripts, so yes, you can actually run <span
 		class="caps">PHP</span> from command line, although it&#8217;s not its primary purpose.</p>
-<p><img src="/img/pictures/bake.jpg" alt="" /></p>
+<p><img src="/images/pictures/bake.jpg" alt="" /></p>
 <p>Cool then, let&#8217;s open a *nix shell, Windows command prompt, etc. etc., go into the <code>cake/scripts/</code>
 	folder and run:</p>
 <p><code>php bake.php</code></p>
@@ -30,12 +30,14 @@ tags: "cakephp|frameworks"
 	A different approach, which may be good or bad according to your taste: personally I think we should also have
 	something faster to use, like a Rails generator, and I opened a <a
 		href="https://trac.cakephp.org/ticket/768">ticket</a> about it, but let&#8217;s see what bake.php can do, for
-	now.</p>
+	now.
+</p>
 <p>The answer is&#8230; nearly anything. It annoying enough to please, but if you follow its directions it can do a
 	prettu decent job in the end, it&#8217;s far from being sentient, but let&#8217;s say it&#8217;s smart enough for a
 	script. First of all if you try it out on a fresh Cake install it will notice that you haven&#8217;t configured your
 	database yet, so it will ask for a hostname, username, password, database name etc. etc. and generate your
-	<code>app/config/database.php</code> for you, not a bad start.</p>
+	<code>app/config/database.php</code> for you, not a bad start.
+</p>
 <p>Once that&#8217;s done &#8211; and it won&#8217;t go on unless you configure a (MySQL only?) database &#8211; you can
 	proceed with the rest. You can start creating either a controller, model or view; I tried a <code>Posts</code>
 	controller, for example. The script then asks quite a few questions:</p>

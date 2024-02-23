@@ -4,36 +4,69 @@ content-type: article
 timestamp: 1207885260
 tags: "ruby|review|books"
 -----
-<p>I finally got my hands on a shiny new copy of <em>Design Patterns in Ruby<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup></em>. The book itself is not brand new and it was already widely praised by many different people online, so I wanted to take a look for myself.</p>
-<p>To my surprise, the book is a hardcover edition, which makes it look more professional and more durable than the average programming book<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup>. It&#8217;s also smaller and shorter than the average programming book<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup> (340 pages), which makes it much easier to carry around and less intimidating to read. It&#8217;s also <em>not</em> meant to be a reference book, so it is actually pleasant an easy to read all in one go, as you&#8217;ll soon find out.</p>
-<p>What is it about? &mdash; well, design patters in the Ruby language of course. But it&#8217;s not the usual brainwash of programming theory you would expect by a typical book on patters, it has <em>plenty</em> of examples of real code. When I say <em>real code</em> I don&#8217;t mean the usual Dog/Cat/Horse/&lt;insert animal here&gt; classes or juke-box simulations which don&#8217;t work at all etc. etc., I mean actual snippets from well known Ruby applications, like RubyGems, FXRuby and, of course, Rails.<br />
-OK well, there&#8217;s an exception perhaps: Russ <em>did</em> include a few wild life simulations (ponds with frogs and similar), but it&#8217;s only for your own good, and for the sake of tradition.</p>
+<p>I finally got my hands on a shiny new copy of <em>Design Patterns in Ruby<sup class="footnote" id="fnr1"><a
+				href="#fn1">1</a></sup></em>. The book itself is not brand new and it was already widely praised by many
+	different people online, so I wanted to take a look for myself.</p>
+<p>To my surprise, the book is a hardcover edition, which makes it look more professional and more durable than the
+	average programming book<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup>. It&#8217;s also smaller and
+	shorter than the average programming book<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup> (340 pages),
+	which makes it much easier to carry around and less intimidating to read. It&#8217;s also <em>not</em> meant to be a
+	reference book, so it is actually pleasant an easy to read all in one go, as you&#8217;ll soon find out.</p>
+<p>What is it about? &mdash; well, design patters in the Ruby language of course. But it&#8217;s not the usual brainwash
+	of programming theory you would expect by a typical book on patters, it has <em>plenty</em> of examples of real
+	code. When I say <em>real code</em> I don&#8217;t mean the usual Dog/Cat/Horse/&lt;insert animal here&gt; classes or
+	juke-box simulations which don&#8217;t work at all etc. etc., I mean actual snippets from well known Ruby
+	applications, like RubyGems, FXRuby and, of course, Rails.<br />
+	OK well, there&#8217;s an exception perhaps: Russ <em>did</em> include a few wild life simulations (ponds with frogs
+	and similar), but it&#8217;s only for your own good, and for the sake of tradition.</p>
 <p>Anyhow, let&#8217;s start from the beginning&#8230;</p>
 <h3>Part I: Patters and Ruby</h3>
-<p>The first part of the book serves as a general introduction to the other two parts. If you know the basics of both design patterns and Ruby, you can safely skip this as you won&#8217;t find anything of overwhelming interest here.</p>
-<p>Personally I really liked <strong>Chapter 1</strong> though, &#8220;Building better Programs with Patterns&#8221;, in which Russ does a great job in summarizing the original GoF book<sup class="footnote" id="fnr3"><a href="#fn3">3</a></sup> into four points:</p>
-<p style="float:right;"><img src="/files/design_patterns_in_ruby.jpg" alt="" /></p>
+<p>The first part of the book serves as a general introduction to the other two parts. If you know the basics of both
+	design patterns and Ruby, you can safely skip this as you won&#8217;t find anything of overwhelming interest here.
+</p>
+<p>Personally I really liked <strong>Chapter 1</strong> though, &#8220;Building better Programs with Patterns&#8221;, in
+	which Russ does a great job in summarizing the original GoF book<sup class="footnote" id="fnr3"><a
+			href="#fn3">3</a></sup> into four points:</p>
+<p style="float:right;"><img src="/images/design_patterns_in_ruby.jpg" alt="" /></p>
 <ul>
 	<li><em>Separate our the things that change from those that stay the same.</em></li>
 	<li><em>Program to an interface, not an implementation.</em></li>
 	<li><em>Prefer composition over inheritance.</em></li>
 	<li><em>Delegate, delegate, delegate.</em></li>
 </ul>
-<p>Also, although it does not come from the Design Patterns book but from building real systems, the author adds the <span class="caps">YAGNI</span> (You Ain&#8217;t Gonna Need It) principle<sup class="footnote" id="fnr4"><a href="#fn4">4</a></sup> as a reminder to resist the temptation of implementing things which <em>may</em> be needed <em>later on</em>, even if they are not needed right now.<br />
-The chapter ends with an outline of the patterns which will be presented throughout the book: 14 out of the original 23 patterns by the Gand of Four will be discussed in Part II and 3 bonus &#8220;Ruby-only&#8221; patterns will be examined in Part <span class="caps">III</span>, as a special treat.</p>
-<p><strong>Chapter 2</strong> (<em>Getting started with Ruby</em>) feels perhaps a bit out of place. As others pointed out<sup class="footnote" id="fnr5"><a href="#fn5">5</a></sup>, why does a book on advanced Ruby programming techniques include a 35-page-long introduction on the Ruby language? The answer was given by Russ himself in an interview<sup class="footnote" id="fnr6"><a href="#fn6">6</a></sup>:</p>
+<p>Also, although it does not come from the Design Patterns book but from building real systems, the author adds the
+	<span class="caps">YAGNI</span> (You Ain&#8217;t Gonna Need It) principle<sup class="footnote" id="fnr4"><a
+			href="#fn4">4</a></sup> as a reminder to resist the temptation of implementing things which <em>may</em> be
+	needed <em>later on</em>, even if they are not needed right now.<br />
+	The chapter ends with an outline of the patterns which will be presented throughout the book: 14 out of the original
+	23 patterns by the Gand of Four will be discussed in Part II and 3 bonus &#8220;Ruby-only&#8221; patterns will be
+	examined in Part <span class="caps">III</span>, as a special treat.</p>
+<p><strong>Chapter 2</strong> (<em>Getting started with Ruby</em>) feels perhaps a bit out of place. As others pointed
+	out<sup class="footnote" id="fnr5"><a href="#fn5">5</a></sup>, why does a book on advanced Ruby programming
+	techniques include a 35-page-long introduction on the Ruby language? The answer was given by Russ himself in an
+	interview<sup class="footnote" id="fnr6"><a href="#fn6">6</a></sup>:</p>
 <blockquote>
-<p>&#8220;The reason that I included the introductory chapter about Ruby in there was to make the book accessible to folks with little or no Ruby background.<br />
-Now honestly, I don’t think that you could come to my book with no background in Ruby and walk away from it an expert Ruby programmer &mdash; it’s not really that kind of introductory book.<br />
-But I do think that someone with experience in other languages could read my book and come away knowing about Ruby, understanding what all the shouting is about.&#8221;</p>
+	<p>&#8220;The reason that I included the introductory chapter about Ruby in there was to make the book accessible to
+		folks with little or no Ruby background.<br />
+		Now honestly, I don’t think that you could come to my book with no background in Ruby and walk away from it an
+		expert Ruby programmer &mdash; it’s not really that kind of introductory book.<br />
+		But I do think that someone with experience in other languages could read my book and come away knowing about
+		Ruby, understanding what all the shouting is about.&#8221;</p>
 </blockquote>
-<p>I admit, I skipped this chapter during my first reading because I was eager to move on to the main part of the book, but I did read it afterwards (I had to write this review after all!). It&#8217;s quite a nice introduction aimed at the average .<span class="caps">NET</span>/Java developer: Russ provides a step-by-step presentation of the main features of the language while holding the reader by hand when something weird or scary comes about:</p>
+<p>I admit, I skipped this chapter during my first reading because I was eager to move on to the main part of the book,
+	but I did read it afterwards (I had to write this review after all!). It&#8217;s quite a nice introduction aimed at
+	the average .<span class="caps">NET</span>/Java developer: Russ provides a step-by-step presentation of the main
+	features of the language while holding the reader by hand when something weird or scary comes about:</p>
 <blockquote>
-<p>The slightly strange-looking syntax in this code is actually a tip-off something deep and important: In Ruby, everythng &mdash; and I mean <em>everything</em> &mdash; is an object.</p>
+	<p>The slightly strange-looking syntax in this code is actually a tip-off something deep and important: In Ruby,
+		everythng &mdash; and I mean <em>everything</em> &mdash; is an object.</p>
 </blockquote>
-<p>Of course Chapter 2 won&#8217;t turn you into a Ruby guru, but it definitely fulfills one of the author&#8217;s goals: bringing developers of other languages closer to Ruby, and give them a tiny taste of how Ruby can be <em>wickedly powerful</em>.</p>
+<p>Of course Chapter 2 won&#8217;t turn you into a Ruby guru, but it definitely fulfills one of the author&#8217;s
+	goals: bringing developers of other languages closer to Ruby, and give them a tiny taste of how Ruby can be
+	<em>wickedly powerful</em>.</p>
 <h3>Part II: Patterns in Ruby</h3>
-<p>Part II constitutes the bulk of the book, describing 14 GoF patterns in 220 pages. The patterns covered are the following:</p>
+<p>Part II constitutes the bulk of the book, describing 14 GoF patterns in 220 pages. The patterns covered are the
+	following:</p>
 <ul>
 	<li>Template Method</li>
 	<li>Strategy</li>
@@ -50,58 +83,143 @@ But I do think that someone with experience in other languages could read my boo
 	<li>Builder</li>
 	<li>Interpreter</li>
 </ul>
-<p>Why not covering all 23? Well, because to be honest, they are rarely used in Ruby. Furthermore, in some cases some of the ones examined in the book may feel a bit <em>unnatural</em> to the average Rubyist: how many times did you ever think about using an External Iterator when <code>each</code> is normally available as default internal iterator for any Array-like class?</p>
-<p>Each chapter in this part is devoted to a particular pattern and it is organized in more or less the same way, as outlined in the following sections.</p>
+<p>Why not covering all 23? Well, because to be honest, they are rarely used in Ruby. Furthermore, in some cases some of
+	the ones examined in the book may feel a bit <em>unnatural</em> to the average Rubyist: how many times did you ever
+	think about using an External Iterator when <code>each</code> is normally available as default internal iterator for
+	any Array-like class?</p>
+<p>Each chapter in this part is devoted to a particular pattern and it is organized in more or less the same way, as
+	outlined in the following sections.</p>
 <h4>Introduction and Personal Anecdotes</h4>
-<p>Most chapters start with a personal anecdote involving the author: it may be a memory related to his first job at the local grocery store (Chapter 8), or about the day he decided to buy his son a bike (Chapter 14):</p>
+<p>Most chapters start with a personal anecdote involving the author: it may be a memory related to his first job at the
+	local grocery store (Chapter 8), or about the day he decided to buy his son a bike (Chapter 14):</p>
 <blockquote>
-<p>&#8220;I remember the day we bought my son his first bike.&#8221; [&#8230;] I spent hours trying to pull together a minor junkiard of parts according to instructions that would have baffled the entire National Security Agency. As it turned out, picking the bike was the easy part: putting it together was the real challenge.</p>
+	<p>&#8220;I remember the day we bought my son his first bike.&#8221; [&#8230;] I spent hours trying to pull together
+		a minor junkiard of parts according to instructions that would have baffled the entire National Security Agency.
+		As it turned out, picking the bike was the easy part: putting it together was the real challenge.</p>
 </blockquote>
-<p>This was used to introduce the Builder pattern, and how to use it to configure objects which include different logical parts.<br />
-Personally I find this technique particularly useful to introduce a particular problem from a different, more mundane prospective instead of starting off with an abstract theorethical description of the pattern itself. <br />
-The anecdote is then followed by the description of the actual programming problem for which the specific pattern will be used.</p>
+<p>This was used to introduce the Builder pattern, and how to use it to configure objects which include different
+	logical parts.<br />
+	Personally I find this technique particularly useful to introduce a particular problem from a different, more
+	mundane prospective instead of starting off with an abstract theorethical description of the pattern itself. <br />
+	The anecdote is then followed by the description of the actual programming problem for which the specific pattern
+	will be used.</p>
 <h4>Description of the Pattern and Initial Implementation</h4>
-<p>An initial implementation of the pattern in Ruby will be provided more or less immediately after the introduction of each chapter, often accompanied by a simple <span class="caps">UML</span> diagram.<br />
-This implementation normally has quite a few conceptual flaws, which are then examined and corrected step-by-step the chapter to obtain a more &#8220;Ruby-friendly&#8221; solution.</p>
+<p>An initial implementation of the pattern in Ruby will be provided more or less immediately after the introduction of
+	each chapter, often accompanied by a simple <span class="caps">UML</span> diagram.<br />
+	This implementation normally has quite a few conceptual flaws, which are then examined and corrected step-by-step
+	the chapter to obtain a more &#8220;Ruby-friendly&#8221; solution.</p>
 <h4>A More Rubyfied Version of the Pattern</h4>
-<p>The final implementation of each pattern is often very different from the initial attempt, and it may contain quite a lot of Ruby-specific code. The author does an excellent job in suggesting pattern implementations which often use blocks, <code>Proc</code> objects or method redefinitions when needed, to make the code more succint and more readable at the same time, as all Ruby code should be.</p>
-<p>By doing so, even people who are still learning Ruby will understand how to use some very useful Ruby idioms which can be a bit difficult to grasp otherwise.</p>
+<p>The final implementation of each pattern is often very different from the initial attempt, and it may contain quite a
+	lot of Ruby-specific code. The author does an excellent job in suggesting pattern implementations which often use
+	blocks, <code>Proc</code> objects or method redefinitions when needed, to make the code more succint and more
+	readable at the same time, as all Ruby code should be.</p>
+<p>By doing so, even people who are still learning Ruby will understand how to use some very useful Ruby idioms which
+	can be a bit difficult to grasp otherwise.</p>
 <h4>Using and Abusing &lt;Pattern&gt;</h4>
-<p>Patterns are often overused and misused, and some people normally end up wondering if they should be used at all, after all. This section (present as a matter of fact in <em>every</em> chapter of part II an <span class="caps">III</span>) examines the pitfalls of the pattern and the most common mistakes developer make when applying it.<br />
-It is by far the most useful section of each chapter, and that&#8217;s what I&#8217;ll be reading and re-reading every time I&#8217;m thinking about using a particular pattern in my code. As a matter of fact, these sections make you realize that <em>every</em> pattern has its own inherent flaws and dangers, and that it is far from being a Silver Bullet. Even when you&#8217;re <em>supposed</em> to use a pattern to accomplish something, be aware that <em>something nasty</em> can happen unless you&#8217;re extra careful: this, perhaps, is the true Golden Rule conveyed throughout the whole book.</p>
+<p>Patterns are often overused and misused, and some people normally end up wondering if they should be used at all,
+	after all. This section (present as a matter of fact in <em>every</em> chapter of part II an <span
+		class="caps">III</span>) examines the pitfalls of the pattern and the most common mistakes developer make when
+	applying it.<br />
+	It is by far the most useful section of each chapter, and that&#8217;s what I&#8217;ll be reading and re-reading
+	every time I&#8217;m thinking about using a particular pattern in my code. As a matter of fact, these sections make
+	you realize that <em>every</em> pattern has its own inherent flaws and dangers, and that it is far from being a
+	Silver Bullet. Even when you&#8217;re <em>supposed</em> to use a pattern to accomplish something, be aware that
+	<em>something nasty</em> can happen unless you&#8217;re extra careful: this, perhaps, is the true Golden Rule
+	conveyed throughout the whole book.</p>
 <h4>&lt;Pattern&gt;s in the Wild</h4>
-<p>This is another very interesting section which is included in every chapter of part II and <span class="caps">III</span>. After describing what a pattern does, how it <em>can</em> be used and how it <em>should</em> be used, you&#8217;ll finally find some interesting examples taken from real world applications.<br />
-By &#8220;real world application&#8221; I mean something like ActiveRecord<sup class="footnote" id="fnr7"><a href="#fn7">7</a></sup> (Observer, Command, Adapter, &#8230;), DRb<sup class="footnote" id="fnr8"><a href="#fn8">8</a></sup> (Proxy) or FXRuby<sup class="footnote" id="fnr9"><a href="#fn9">9</a></sup> (Composite), for example, i.e. important programs and libraries which are used in production environments.<br />
-Personally, I was really glad to find such examples in this book: it definitely helps you feeling design patterns as something more practical and useful than pure software architecture theories.</p>
+<p>This is another very interesting section which is included in every chapter of part II and <span
+		class="caps">III</span>. After describing what a pattern does, how it <em>can</em> be used and how it
+	<em>should</em> be used, you&#8217;ll finally find some interesting examples taken from real world
+	applications.<br />
+	By &#8220;real world application&#8221; I mean something like ActiveRecord<sup class="footnote" id="fnr7"><a
+			href="#fn7">7</a></sup> (Observer, Command, Adapter, &#8230;), DRb<sup class="footnote" id="fnr8"><a
+			href="#fn8">8</a></sup> (Proxy) or FXRuby<sup class="footnote" id="fnr9"><a href="#fn9">9</a></sup>
+	(Composite), for example, i.e. important programs and libraries which are used in production environments.<br />
+	Personally, I was really glad to find such examples in this book: it definitely helps you feeling design patterns as
+	something more practical and useful than pure software architecture theories.</p>
 <h4>Wrapping it Up</h4>
-<p>&#8220;Wrapping it Up&#8221; is the title of the last section of each chapter of Part II and <span class="caps">III</span>. It&#8217;s basically a summary of the whole chapter and thus a useful way to recap the most important concepts. I found this section particularly useful when using the book as a design pattern reference, after reading it for the first time: this section provides a quick and essential overview of each pattern &#8212; and the most important DOs and DON&#8217;Ts, too.</p>
+<p>&#8220;Wrapping it Up&#8221; is the title of the last section of each chapter of Part II and <span
+		class="caps">III</span>. It&#8217;s basically a summary of the whole chapter and thus a useful way to recap the
+	most important concepts. I found this section particularly useful when using the book as a design pattern reference,
+	after reading it for the first time: this section provides a quick and essential overview of each pattern &#8212;
+	and the most important DOs and DON&#8217;Ts, too.</p>
 <h3>Part <span class="caps">III</span>: Patterns for Ruby</h3>
-<p>By the time you get to Part <span class="caps">III</span> you&#8217;ll definitely feel that Ruby can do <em>more_. Some of the Ruby implementation of certain patterns described in the book make extensive use of blocks and Proc objects, and the @method</em>missing@ method (although potentially dangerous unless extra care is taken) gives us a more immediate way to obtain delegation, for example when creating Proxies. <br />
-Also the fact that objects can be modified at runtime by adding and removing methods &#8220;as needed&#8221; seems quite an underused feature in traditional patterns, simply because those patterns were first conceived for languages which are very different from Ruby and are perhaps less <em>liberal</em> than Ruby when it comes to dynamic features<sup class="footnote" id="fnr10"><a href="#fn10">10</a></sup>.</p>
-<p>These particular Ruby features can be used (and abused, of course) to implement more Ruby-esque patterns, such as the ones included in this part of the book:</p>
+<p>By the time you get to Part <span class="caps">III</span> you&#8217;ll definitely feel that Ruby can do <em>more_.
+		Some of the Ruby implementation of certain patterns described in the book make extensive use of blocks and Proc
+		objects, and the @method</em>missing@ method (although potentially dangerous unless extra care is taken) gives
+	us a more immediate way to obtain delegation, for example when creating Proxies. <br />
+	Also the fact that objects can be modified at runtime by adding and removing methods &#8220;as needed&#8221; seems
+	quite an underused feature in traditional patterns, simply because those patterns were first conceived for languages
+	which are very different from Ruby and are perhaps less <em>liberal</em> than Ruby when it comes to dynamic
+	features<sup class="footnote" id="fnr10"><a href="#fn10">10</a></sup>.</p>
+<p>These particular Ruby features can be used (and abused, of course) to implement more Ruby-esque patterns, such as the
+	ones included in this part of the book:</p>
 <ul>
 	<li>Internal Domain-Specific Languages</li>
 	<li>Meta-Programming</li>
 	<li>Convention Over Configuration</li>
 </ul>
-<p>These are just examples, of course some may complain because the Active Record or <span class="caps">ORM</span> pattern are missing, but this is understandable as it may be considered too specific compared to the others. <br />
-Each pattern is examined in detail, and I particularly like way the <span class="caps">DSL</span> pattern was described: Chapter 16 explains how to develop a simple but effective Ruby <span class="caps">DSL</span> from scratch for creating file backups. This can be particularly useful for people who never tried creating DSLs before, but also for developers who tried, but want to improve their skills.</p>
-<p>Chapter 18 (Convention Over Configuration) is sufficiently clear and detailed, perhaps even too much if you already know how Rails was developed (and all the hype which follwed).</p>
-<p>On the other hand, I was a bit disappointed by Chapter 17 (Meta-Programming). Maybe it&#8217;s because I built up extremely high expectations about it while reading the rest of the book, but it just felt too short and not detailed enough for my liking. If I had to write such a chapter (which would have been actually very hard), I would have started from an excellent post by Ola Bini<sup class="footnote" id="fnr11"><a href="#fn11">11</a></sup> which introduces <em>eleven</em> meta-programming techniques, and built up content and examples from there. The only reason why &#8212; I think &#8212; Russ didn&#8217;t do it in his book was length/balance constraint: a <em>properly detailed</em> chapter about meta-programming in Ruby could easily take up over forty pages!</p>
+<p>These are just examples, of course some may complain because the Active Record or <span class="caps">ORM</span>
+	pattern are missing, but this is understandable as it may be considered too specific compared to the others. <br />
+	Each pattern is examined in detail, and I particularly like way the <span class="caps">DSL</span> pattern was
+	described: Chapter 16 explains how to develop a simple but effective Ruby <span class="caps">DSL</span> from scratch
+	for creating file backups. This can be particularly useful for people who never tried creating DSLs before, but also
+	for developers who tried, but want to improve their skills.</p>
+<p>Chapter 18 (Convention Over Configuration) is sufficiently clear and detailed, perhaps even too much if you already
+	know how Rails was developed (and all the hype which follwed).</p>
+<p>On the other hand, I was a bit disappointed by Chapter 17 (Meta-Programming). Maybe it&#8217;s because I built up
+	extremely high expectations about it while reading the rest of the book, but it just felt too short and not detailed
+	enough for my liking. If I had to write such a chapter (which would have been actually very hard), I would have
+	started from an excellent post by Ola Bini<sup class="footnote" id="fnr11"><a href="#fn11">11</a></sup> which
+	introduces <em>eleven</em> meta-programming techniques, and built up content and examples from there. The only
+	reason why &#8212; I think &#8212; Russ didn&#8217;t do it in his book was length/balance constraint: a <em>properly
+		detailed</em> chapter about meta-programming in Ruby could easily take up over forty pages!</p>
 <h3>The Verdict</h3>
-<p>As I said in the beginning: this is not meant to be a complete, in-depth, reference book on everything you may want to know about design patterns in Ruby. That&#8217;s why, as a matter of fact, you can actually read this book all the way through without getting utterly bored. Russ uses an informal, yet appropriate style to turn potentially complex, theorethical computer science principles into easy-to-understand, <em>useful</em> tools which can truly improve the way you code.</p>
-<p>The whole book flows very very nicely. I actually recommend reading this book in sequence, without skipping chapters, because each pattern is described in a way that is somehow linked to the following ones, so that you can understand and learn about the pros and cons of each one in a more natural and useful way.</p>
-<p>OK, I would have loved to see Part <span class="caps">III</span> as long as Part II, probably, but overall I&#8217;m very, very satisfied of what the book taught me. The only problem is that it also made me suddenly realize all the naive design mistakes I&#8217;ve been making when coding in Ruby, so I&#8217;ll now feel compelled to fix at least some of them&#8230;</p>
+<p>As I said in the beginning: this is not meant to be a complete, in-depth, reference book on everything you may want
+	to know about design patterns in Ruby. That&#8217;s why, as a matter of fact, you can actually read this book all
+	the way through without getting utterly bored. Russ uses an informal, yet appropriate style to turn potentially
+	complex, theorethical computer science principles into easy-to-understand, <em>useful</em> tools which can truly
+	improve the way you code.</p>
+<p>The whole book flows very very nicely. I actually recommend reading this book in sequence, without skipping chapters,
+	because each pattern is described in a way that is somehow linked to the following ones, so that you can understand
+	and learn about the pros and cons of each one in a more natural and useful way.</p>
+<p>OK, I would have loved to see Part <span class="caps">III</span> as long as Part II, probably, but overall I&#8217;m
+	very, very satisfied of what the book taught me. The only problem is that it also made me suddenly realize all the
+	naive design mistakes I&#8217;ve been making when coding in Ruby, so I&#8217;ll now feel compelled to fix at least
+	some of them&#8230;</p>
 <p>Definitely a worthwhile read, I just hope to see more books like this, or even a second edition of this one soon!</p>
 <h3>Notes</h3>
-<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> <a href="http://www.informit.com/store/product.aspx?isbn=0321490452">Design Patterns in Ruby</a> by Russ Olsen, Addison Wesley Professional, 2007.</p>
-<p class="footnote" id="fn2"><a href="#fnr2"><sup>2</sup></a> Think of <a href="http://www.pragprog.com/titles/ruby">Programming Ruby: The Pragmatic Programmer&#8217;s Guide, 2nd Ed.</a> by Dave Thomas with Chad Fowler and Andy Hunt, Pragmatic Programmers, 2004.</p>
-<p class="footnote" id="fn3"><a href="#fnr3"><sup>3</sup></a> <a href="http://www.informit.com/store/product.aspx?isbn=0201633612">Design Patterns: Elements of Reusable Object-Oriented Software</a>, by By Erich Gamma, Richard Helm, Ralph Johnson, John M. Vlissides (a.k.a. the <em>Gang of Four</em>), Addison Wesley Professional, 1994.</p>
-<p class="footnote" id="fn4"><a href="#fnr4"><sup>4</sup></a> For more information on the <span class="caps">YAGNI</span> principle, visit <a href="http://www.xprogramming.com/Practices/PracNotNeed.html">You&#8217;re <span class="caps">NOT</span> gonna need it</a>, Ronald E Jeffries.</p>
-<p class="footnote" id="fn5"><a href="#fnr5"><sup>5</sup></a> See <a href="http://on-ruby.blogspot.com/2007/12/design-patterns-in-ruby-review.html">Design Patterns in Ruby, a review</a>, <em>On Ruby</em>blog.</p>
-<p class="footnote" id="fn6"><a href="#fnr6"><sup>6</sup></a> See <a href="http://on-ruby.blogspot.com/2008/01/russ-olsen-interview.html">Russ Olsen Interview</a>, <em>On Ruby</em>blog.</p>
-<p class="footnote" id="fn7"><a href="#fnr7"><sup>7</sup></a> <a href="http://ar.rubyonrails.com/">ActiveRecord</a> is an implementation of the Object-Relational Mapping (<span class="caps">ORM</span>) pattern used by the Ruby on Rails framework.</p>
-<p class="footnote" id="fn8"><a href="#fnr8"><sup>8</sup></a> Distributed Ruby, see <a href="http://chadfowler.com/ruby/drb.html">Intro to DRb</a> by Chad Fowler.</p>
-<p class="footnote" id="fn9"><a href="#fnr9"><sup>9</sup></a> <a href="http://www.fxruby.org/">FXRuby</a>, a graphical toolkit written in Ruby.</p>
-<p class="footnote" id="fn10"><a href="#fnr10"><sup>10</sup></a> This can be a good or bad thing depending on the way you look at it, and what you want to use the language for. The fact that Ruby is dynamically typed makes it easier to do things which are totally impossible in C++ or Java, but it also introduces a whole new set of potential dangers.</p>
-<p class="footnote" id="fn11"><a href="#fnr11"><sup>11</sup></a> <a href="http://ola-bini.blogspot.com/2006/09/ruby-metaprogramming-techniques.html">Ruby Metaprogramming Techniques</a>, Ola Bini: Programming Language Synchronicity.</p>
+<p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> <a
+		href="http://www.informit.com/store/product.aspx?isbn=0321490452">Design Patterns in Ruby</a> by Russ Olsen,
+	Addison Wesley Professional, 2007.</p>
+<p class="footnote" id="fn2"><a href="#fnr2"><sup>2</sup></a> Think of <a
+		href="http://www.pragprog.com/titles/ruby">Programming Ruby: The Pragmatic Programmer&#8217;s Guide, 2nd Ed.</a>
+	by Dave Thomas with Chad Fowler and Andy Hunt, Pragmatic Programmers, 2004.</p>
+<p class="footnote" id="fn3"><a href="#fnr3"><sup>3</sup></a> <a
+		href="http://www.informit.com/store/product.aspx?isbn=0201633612">Design Patterns: Elements of Reusable
+		Object-Oriented Software</a>, by By Erich Gamma, Richard Helm, Ralph Johnson, John M. Vlissides (a.k.a. the
+	<em>Gang of Four</em>), Addison Wesley Professional, 1994.</p>
+<p class="footnote" id="fn4"><a href="#fnr4"><sup>4</sup></a> For more information on the <span
+		class="caps">YAGNI</span> principle, visit <a
+		href="http://www.xprogramming.com/Practices/PracNotNeed.html">You&#8217;re <span class="caps">NOT</span> gonna
+		need it</a>, Ronald E Jeffries.</p>
+<p class="footnote" id="fn5"><a href="#fnr5"><sup>5</sup></a> See <a
+		href="http://on-ruby.blogspot.com/2007/12/design-patterns-in-ruby-review.html">Design Patterns in Ruby, a
+		review</a>, <em>On Ruby</em>blog.</p>
+<p class="footnote" id="fn6"><a href="#fnr6"><sup>6</sup></a> See <a
+		href="http://on-ruby.blogspot.com/2008/01/russ-olsen-interview.html">Russ Olsen Interview</a>, <em>On
+		Ruby</em>blog.</p>
+<p class="footnote" id="fn7"><a href="#fnr7"><sup>7</sup></a> <a href="http://ar.rubyonrails.com/">ActiveRecord</a> is
+	an implementation of the Object-Relational Mapping (<span class="caps">ORM</span>) pattern used by the Ruby on Rails
+	framework.</p>
+<p class="footnote" id="fn8"><a href="#fnr8"><sup>8</sup></a> Distributed Ruby, see <a
+		href="http://chadfowler.com/ruby/drb.html">Intro to DRb</a> by Chad Fowler.</p>
+<p class="footnote" id="fn9"><a href="#fnr9"><sup>9</sup></a> <a href="http://www.fxruby.org/">FXRuby</a>, a graphical
+	toolkit written in Ruby.</p>
+<p class="footnote" id="fn10"><a href="#fnr10"><sup>10</sup></a> This can be a good or bad thing depending on the way
+	you look at it, and what you want to use the language for. The fact that Ruby is dynamically typed makes it easier
+	to do things which are totally impossible in C++ or Java, but it also introduces a whole new set of potential
+	dangers.</p>
+<p class="footnote" id="fn11"><a href="#fnr11"><sup>11</sup></a> <a
+		href="http://ola-bini.blogspot.com/2006/09/ruby-metaprogramming-techniques.html">Ruby Metaprogramming
+		Techniques</a>, Ola Bini: Programming Language Synchronicity.</p>

@@ -6,46 +6,80 @@ timestamp: 1285243465
 tags: "website|webdevelopment"
 -----
 
-		<section class="section">
-<p>Just <a href="/articles/take-back-your-site-with-nanoc">over a year ago</a> I released the 8th version of this web site. The biggest change then was abandoning the Rails-powered <a href="http://wiki.github.com/fdv/typo/">Typo</a> blogging platform in favor of <a href="http://nanoc.stoneship.org/">nanoc</a>, arguably the most versatile static site generator out there.</p>
-<p>A year later, I am still very happy with nanoc, hence there&#8217;s no need for another major release. Nonetheless, I decided to improve the site&#8217;s overall design and image, making it (hopefully) easier to use and more pleasant to the eye.</p>
-<p>I always had a problem finding the right theme for my web site. I always wanted to find something related to the word <em>herald</em>, so in the last release I went for a herandry-oriented theme. For this release, I decided to go for a newspaper-style layout: after all, the word <em>herald</em> is often used in newspaper titles, and I picked the name &#8220;h3rald&#8221; after the <a href="http://global.nytimes.com/?iht">International Herald Tribune</a>.</p>
-<p>Also, I was desperate to try out the new features offered by HTML5 and CSS3, and a newspaper layout seemed a good excuse to use columns.</p>
 <section class="section">
-<header><h1 id="h_1" class="toc">Browser Compatibility</h1></header>
-<p>Although I shouldn&#8217;t really say this, the site is meant to be viewed with a WebKit-based browser, really. It works in other (modern) browsers (read: no IE6), and it degrades more or less gracefully if a particular feature is not supported.</p>
-<p>That being said:</p>
-<ul>
-	<li>IE7 and IE8 just barely render it (Javascript is used to &#8220;patch&#8221; the <span class="caps">DOM</span> with the new HTML5 elements)</li>
-	<li>Firefox 3+ renders pretty much everything right.</li>
-	<li>Safari and Chrome render the site as it is actually meant to be rendered</li>
-</ul>
-<p>Nobody ever died from not being able to see CSS3 rounded corners anyhow. The most important thing about this site is its content, and I made sure that whatever browser you&#8217;re using you can still read it.</p>
+	<p>Just <a href="/articles/take-back-your-site-with-nanoc">over a year ago</a> I released the 8th version of this
+		web site. The biggest change then was abandoning the Rails-powered <a
+			href="http://wiki.github.com/fdv/typo/">Typo</a> blogging platform in favor of <a
+			href="http://nanoc.stoneship.org/">nanoc</a>, arguably the most versatile static site generator out there.
+	</p>
+	<p>A year later, I am still very happy with nanoc, hence there&#8217;s no need for another major release.
+		Nonetheless, I decided to improve the site&#8217;s overall design and image, making it (hopefully) easier to use
+		and more pleasant to the eye.</p>
+	<p>I always had a problem finding the right theme for my web site. I always wanted to find something related to the
+		word <em>herald</em>, so in the last release I went for a herandry-oriented theme. For this release, I decided
+		to go for a newspaper-style layout: after all, the word <em>herald</em> is often used in newspaper titles, and I
+		picked the name &#8220;h3rald&#8221; after the <a href="http://global.nytimes.com/?iht">International Herald
+			Tribune</a>.</p>
+	<p>Also, I was desperate to try out the new features offered by HTML5 and CSS3, and a newspaper layout seemed a good
+		excuse to use columns.</p>
+	<section class="section">
+		<header>
+			<h1 id="h_1" class="toc">Browser Compatibility</h1>
+		</header>
+		<p>Although I shouldn&#8217;t really say this, the site is meant to be viewed with a WebKit-based browser,
+			really. It works in other (modern) browsers (read: no IE6), and it degrades more or less gracefully if a
+			particular feature is not supported.</p>
+		<p>That being said:</p>
+		<ul>
+			<li>IE7 and IE8 just barely render it (Javascript is used to &#8220;patch&#8221; the <span
+					class="caps">DOM</span> with the new HTML5 elements)</li>
+			<li>Firefox 3+ renders pretty much everything right.</li>
+			<li>Safari and Chrome render the site as it is actually meant to be rendered</li>
+		</ul>
+		<p>Nobody ever died from not being able to see CSS3 rounded corners anyhow. The most important thing about this
+			site is its content, and I made sure that whatever browser you&#8217;re using you can still read it.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_2" class="toc">Columns and hyphenation</h1></header>
-<p>As I previously stated, I couldn&#8217;t wait to try out CSS3 columns so I kinda went crazy on the home page, but just there. Some may argue that they are not suitable for web use of course, but I think they contribute to give the site layout a unique feeling.</p>
-<p>The problem with having columns is of course text alignment: justified text looks good, but unless you hyphenate text properly it shows a lot of blank space. Luckily, I discovered <a href="http://code.google.com/p/hyphenator/">hyphenator.js</a>, which solved the problem nicely.</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_2" class="toc">Columns and hyphenation</h1>
+		</header>
+		<p>As I previously stated, I couldn&#8217;t wait to try out CSS3 columns so I kinda went crazy on the home page,
+			but just there. Some may argue that they are not suitable for web use of course, but I think they contribute
+			to give the site layout a unique feeling.</p>
+		<p>The problem with having columns is of course text alignment: justified text looks good, but unless you
+			hyphenate text properly it shows a lot of blank space. Luckily, I discovered <a
+				href="http://code.google.com/p/hyphenator/">hyphenator.js</a>, which solved the problem nicely.</p>
 
-</section>
-<section class="section">
-<header><h1 id="h_3" class="toc">CSS and layout improvements</h1></header>
-<p>I made a point out of improving the old stylesheet to make the site easier to read and generally prettier. Beauty is in the eye of the beholder, but still, I think the new stylesheet brings some improvements, especially concerning text (the <a href="http://scripts.sil.org/gentium">Gentium</a> font is used throughout the site) and syntax highlighting.</p>
-<p>Moreover, I worked on streamlining navigations across different sections of the site, in particular on article pages:</p>
-<p><img src="/img/pictures/h3rald_81_article.png" /></p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_3" class="toc">CSS and layout improvements</h1>
+		</header>
+		<p>I made a point out of improving the old stylesheet to make the site easier to read and generally prettier.
+			Beauty is in the eye of the beholder, but still, I think the new stylesheet brings some improvements,
+			especially concerning text (the <a href="http://scripts.sil.org/gentium">Gentium</a> font is used throughout
+			the site) and syntax highlighting.</p>
+		<p>Moreover, I worked on streamlining navigations across different sections of the site, in particular on
+			article pages:</p>
+		<p><img src="/images/pictures/h3rald_81_article.png" /></p>
 
-</section>
-<section class="section">
-<header><h1 id="h_4" class="toc">Under the hood</h1></header>
-<p>Besides appearence, the new site also features some improvements in its underlying business logic. In particular:</p>
-<ul>
-	<li>Better nanoc <a href="http://github.com/h3rald/h3rald/blob/master/Rules">Rules</a></li>
-	<li>Improved <a href="/glyph/">Glyph</a> integration, by extending nanoc <a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph_context.rb">RuleContext</a></li>
-	<li>Minor updates to the custom <a href="http://github.com/h3rald/h3rald/blob/master/tasks/site.rake">Rake tasks</a></li>
-	<li><a href="http://disqus.com/overview/">Disqus</a> comments</li>
-</ul>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_4" class="toc">Under the hood</h1>
+		</header>
+		<p>Besides appearence, the new site also features some improvements in its underlying business logic. In
+			particular:</p>
+		<ul>
+			<li>Better nanoc <a href="http://github.com/h3rald/h3rald/blob/master/Rules">Rules</a></li>
+			<li>Improved <a href="/glyph/">Glyph</a> integration, by extending nanoc <a
+					href="http://github.com/h3rald/h3rald/blob/master/lib/glyph_context.rb">RuleContext</a></li>
+			<li>Minor updates to the custom <a href="http://github.com/h3rald/h3rald/blob/master/tasks/site.rake">Rake
+					tasks</a></li>
+			<li><a href="http://disqus.com/overview/">Disqus</a> comments</li>
+		</ul>
 
-</section>
+	</section>
 
 </section>

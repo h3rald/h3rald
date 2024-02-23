@@ -6,71 +6,128 @@ timestamp: 1273417200
 tags: "glyph|ruby|opensource"
 -----
 
+<section class="section">
+	<p>I am very pleased to announce the second release of the <a href="/glyph/">Glyph Document Authoring Framework</a>.
+		For those who don&#8217;t know, Glyph is a pure-Ruby, extensible solution to author documents like books or
+		articles using a simple, fully-customizable markup language.</p>
+	<p>Since the <a href="/articles/introducing-glyph/">first release</a>, came out, last month, a lot happened. Plenty
+		of bugs were fixed and new features implemented, as shown by the <a
+			href="http://github.com/h3rald/glyph/blob/master/CHANGELOG.textile">changelog</a>. Here&#8217;s a brief
+		rundown of the most notable changes.</p>
+	<section class="section">
+		<header>
+			<h1 id="h_1" class="toc">What Glyph code looks like</h1>
+		</header>
+		<p>Earlier this week I <a href="http://blog.h3rald.com/making-a-custom-vim-syntax-file">blogged</a> about my new
+			<a href="http://github.com/h3rald/stash/blob/master/.vim/syntax/glyph.vim">Glyph vim syntax file</a>.
+			I&#8217;ve been using it for a while, and all I can say is that it really helps! Here&#8217;s what it looks
+			like:</p>
+		<p><img src="/images/pictures/glyph_syntax.png" /></p>
+		<p>I&#8217;m sorry for the Emacs and TextMate folks, but I only use Vim, so I only made a Vim syntax file.
+			Anyhow, Glyph grammar is very simple, so rolling out your own syntax file for your favorite editor
+			shouldn&#8217;t be too hard.</p>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_2" class="toc">Notable features</h1>
+		</header>
 		<section class="section">
-<p>I am very pleased to announce the second release of the <a href="/glyph/">Glyph Document Authoring Framework</a>. For those who don&#8217;t know, Glyph is a pure-Ruby, extensible solution to author documents like books or articles using a simple, fully-customizable markup language.</p>
-<p>Since the <a href="/articles/introducing-glyph/">first release</a>, came out, last month, a lot happened. Plenty of bugs were fixed and new features implemented, as shown by the <a href="http://github.com/h3rald/glyph/blob/master/CHANGELOG.textile">changelog</a>. Here&#8217;s a brief rundown of the most notable changes.</p>
-<section class="section">
-<header><h1 id="h_1" class="toc">What Glyph code looks like</h1></header>
-<p>Earlier this week I <a href="http://blog.h3rald.com/making-a-custom-vim-syntax-file">blogged</a> about my new <a href="http://github.com/h3rald/stash/blob/master/.vim/syntax/glyph.vim">Glyph vim syntax file</a>. I&#8217;ve been using it for a while, and all I can say is that it really helps! Here&#8217;s what it looks like:</p>
-<p><img src="/img/pictures/glyph_syntax.png" /></p>
-<p>I&#8217;m sorry for the Emacs and TextMate folks, but I only use Vim, so I only made a Vim syntax file. Anyhow, Glyph grammar is very simple, so rolling out your own syntax file for your favorite editor shouldn&#8217;t be too hard.</p>
-</section>
-<section class="section">
-<header><h1 id="h_2" class="toc">Notable features</h1></header>
-<section class="section">
-<header><h1 id="h_3" class="toc">Single-file compilation</h1></header>
-<p>Perhaps the most life-changing feature in this release is the possibility of compiling a single Glyph source file into an <span class="caps">HTML</span> or <span class="caps">PDF</span> file. This means you no longer need to create a full-blown project for writing a short article: just create a file anywhere and run <code>glyph compile filename.glyph</code>on it!</p>
-<p>The good thing is that with this new release you can also define snippets, configuration settings, and even macros right into your Glyph files, so you can do almost anything without having to create a project or fiddle with <span class="caps">YAML</span> files.</p>
-</section>
-<section class="section">
-<header><h1 id="h_4" class="toc">Programmatic usage</h1></header>
-<p>The second most notable feature is the possibility to use Glyph as a Ruby library, i.e. as you&#8217;d use a filter like RedCloth or MarkDown. Additionally, it is also possible to compile single files programmatically, so you can, for example, create <span class="caps">PDF</span> files for your articles from the same source file. Don&#8217;t believe me? Feel free to click the <em>Download <span class="caps">PDF</span></em> and <em>View Source</em> links on this very page to see for yourself&#8230;</p>
-<p>For those of you using the awesome <a href="http://nanoc.stoneship.org">nanoc</a> static site generator, here&#8217;s a few source files you may want to take a look at:</p>
-<ul>
-	<li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph-data.rb">lib/glyph-data.rb</a> &#8212; How to update configuration settings.</li>
-	<li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph-filter.rb">lib/glyph-data.rb</a> &#8212;  a simple Glyph filter.</li>
-	<li><a href="http://github.com/h3rald/h3rald/blob/master/Rules">Rules</a> &#8212; a rule using the <code>Glyph#compile</code> method to generate <span class="caps">PDF</span> files.</li>
-</ul>
-</section>
-<section class="section">
-<header><h1 id="h_5" class="toc">Auto-regeneration</h1></header>
-<p>Another very interesting feature is the possibility to auto-regenerate your output files automatically whenever a source file is changed. Just run <code>glyph compile --auto</code> and you&#8217;re away. I&#8217;d like to thank <a href="http://koraktor.github.com">Sebastian Staudt</a> for proposing, implementing, and testing this feature.</p>
-</section>
-<section class="section">
-<header><h1 id="h_6" class="toc">Conditional macros</h1></header>
-<p>Finally, although it may worry some, I added the possibility to evaluate conditional expressions directly in Glyph. The syntax is a bit verbose due to the extreme simplicity of Glyph parser, but it does the job:</p>
-<p><code>
+			<header>
+				<h1 id="h_3" class="toc">Single-file compilation</h1>
+			</header>
+			<p>Perhaps the most life-changing feature in this release is the possibility of compiling a single Glyph
+				source file into an <span class="caps">HTML</span> or <span class="caps">PDF</span> file. This means you
+				no longer need to create a full-blown project for writing a short article: just create a file anywhere
+				and run <code>glyph compile filename.glyph</code>on it!</p>
+			<p>The good thing is that with this new release you can also define snippets, configuration settings, and
+				even macros right into your Glyph files, so you can do almost anything without having to create a
+				project or fiddle with <span class="caps">YAML</span> files.</p>
+		</section>
+		<section class="section">
+			<header>
+				<h1 id="h_4" class="toc">Programmatic usage</h1>
+			</header>
+			<p>The second most notable feature is the possibility to use Glyph as a Ruby library, i.e. as you&#8217;d
+				use a filter like RedCloth or MarkDown. Additionally, it is also possible to compile single files
+				programmatically, so you can, for example, create <span class="caps">PDF</span> files for your articles
+				from the same source file. Don&#8217;t believe me? Feel free to click the <em>Download <span
+						class="caps">PDF</span></em> and <em>View Source</em> links on this very page to see for
+				yourself&#8230;</p>
+			<p>For those of you using the awesome <a href="http://nanoc.stoneship.org">nanoc</a> static site generator,
+				here&#8217;s a few source files you may want to take a look at:</p>
+			<ul>
+				<li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph-data.rb">lib/glyph-data.rb</a>
+					&#8212; How to update configuration settings.</li>
+				<li><a href="http://github.com/h3rald/h3rald/blob/master/lib/glyph-filter.rb">lib/glyph-data.rb</a>
+					&#8212; a simple Glyph filter.</li>
+				<li><a href="http://github.com/h3rald/h3rald/blob/master/Rules">Rules</a> &#8212; a rule using the
+					<code>Glyph#compile</code> method to generate <span class="caps">PDF</span> files.</li>
+			</ul>
+		</section>
+		<section class="section">
+			<header>
+				<h1 id="h_5" class="toc">Auto-regeneration</h1>
+			</header>
+			<p>Another very interesting feature is the possibility to auto-regenerate your output files automatically
+				whenever a source file is changed. Just run <code>glyph compile --auto</code> and you&#8217;re away.
+				I&#8217;d like to thank <a href="http://koraktor.github.com">Sebastian Staudt</a> for proposing,
+				implementing, and testing this feature.</p>
+		</section>
+		<section class="section">
+			<header>
+				<h1 id="h_6" class="toc">Conditional macros</h1>
+			</header>
+			<p>Finally, although it may worry some, I added the possibility to evaluate conditional expressions directly
+				in Glyph. The syntax is a bit verbose due to the extreme simplicity of Glyph parser, but it does the
+				job:</p>
+			<p><code>
 ?[and[
     eq[$[document.output]|pdf]|
     eq[$[tools.pdf_generator]|prince]
     ]|
   style[pagination.css]]
 </code></p>
-<p>The snippet above can be used to include the <code>pagination.css</code> stylesheet only when generating a <span class="caps">PDF</span> file with Prince <span class="caps">XML</span>.</p>
-</section>
-</section>
-<section class="section">
-<header><h1 id="h_7" class="toc">What&#8217;s next?</h1></header>
-<p>Release 0.3.0 is currently being planned, and so are its <a href="http://github.com/h3rald/glyph/issues">features</a>. For now, I&#8217;d like to thank the following individuals for contributing to Glyph:</p>
-<ul>
-	<li><a href="http://www.jabbslad.com">Jamie Atkinson</a> (Jabbslad), for spotting and fixing some bugs and providing feedback.</li>
-	<li><a href="http://koraktor.github.com">Sebastian Staudt</a> (koraktor), for spotting and fixing some bugs, proposing and implementing new features.</li>
-</ul>
-<p>In particular, Sebastian is working on <a href="http://wiki.github.com/h3rald/glyph/feature-bibliography-support">bibliogaphy support</a> for Glyph, looking forward to it!</p>
-<p>Although still in its infancy, Glyph is becoming more and more usable everyday. If you are interested, you can contribute in many different ways to the project, such as:</p>
-<ul>
-	<li>By participating to discussions on the <a href="http://groups.google.com/group/glyph-framework">user group</a> (it&#8217;s a bit quiet of there for now&#8230;)</li>
-	<li>By spreading the word on Twitter, on your blog, or wherever you like.</li>
-	<li>By installing it, using it, reporting bugs and proposing new features (it&#8217;s just a <code>gem install glyph</code> away!).</li>
-	<li>By actually contributing to its development (it&#8217;s <a href="http://wiki.github.com/h3rald/glyph/contribution-guidelines">easy</a>!).</li>
-</ul>
-<p>Additionally, if you don&#8217;t like coding:</p>
-<ul>
-	<li>feedback on the current documentation and on the <a href="http://github.com/h3rald/glyph/raw/master/book/output/pdf/glyph.pdf">Glyph book</a> is appreciated</li>
-	<li>if you are good with <span class="caps">CSS</span>, I&#8217;m looking for some nice new <span class="caps">CSS</span> styles to include in the standard Glyph distribution.</li>
-	<li>if you&#8217;re good with graphics, Glyph needs a good-looking logo&#8230;</li>
-</ul>
-<p>Any form of contribution will be credited in some way, e.g. by links and tweets.</p>
-</section>
+			<p>The snippet above can be used to include the <code>pagination.css</code> stylesheet only when generating
+				a <span class="caps">PDF</span> file with Prince <span class="caps">XML</span>.</p>
+		</section>
+	</section>
+	<section class="section">
+		<header>
+			<h1 id="h_7" class="toc">What&#8217;s next?</h1>
+		</header>
+		<p>Release 0.3.0 is currently being planned, and so are its <a
+				href="http://github.com/h3rald/glyph/issues">features</a>. For now, I&#8217;d like to thank the
+			following individuals for contributing to Glyph:</p>
+		<ul>
+			<li><a href="http://www.jabbslad.com">Jamie Atkinson</a> (Jabbslad), for spotting and fixing some bugs and
+				providing feedback.</li>
+			<li><a href="http://koraktor.github.com">Sebastian Staudt</a> (koraktor), for spotting and fixing some bugs,
+				proposing and implementing new features.</li>
+		</ul>
+		<p>In particular, Sebastian is working on <a
+				href="http://wiki.github.com/h3rald/glyph/feature-bibliography-support">bibliogaphy support</a> for
+			Glyph, looking forward to it!</p>
+		<p>Although still in its infancy, Glyph is becoming more and more usable everyday. If you are interested, you
+			can contribute in many different ways to the project, such as:</p>
+		<ul>
+			<li>By participating to discussions on the <a href="http://groups.google.com/group/glyph-framework">user
+					group</a> (it&#8217;s a bit quiet of there for now&#8230;)</li>
+			<li>By spreading the word on Twitter, on your blog, or wherever you like.</li>
+			<li>By installing it, using it, reporting bugs and proposing new features (it&#8217;s just a
+				<code>gem install glyph</code> away!).</li>
+			<li>By actually contributing to its development (it&#8217;s <a
+					href="http://wiki.github.com/h3rald/glyph/contribution-guidelines">easy</a>!).</li>
+		</ul>
+		<p>Additionally, if you don&#8217;t like coding:</p>
+		<ul>
+			<li>feedback on the current documentation and on the <a
+					href="http://github.com/h3rald/glyph/raw/master/book/output/pdf/glyph.pdf">Glyph book</a> is
+				appreciated</li>
+			<li>if you are good with <span class="caps">CSS</span>, I&#8217;m looking for some nice new <span
+					class="caps">CSS</span> styles to include in the standard Glyph distribution.</li>
+			<li>if you&#8217;re good with graphics, Glyph needs a good-looking logo&#8230;</li>
+		</ul>
+		<p>Any form of contribution will be credited in some way, e.g. by links and tweets.</p>
+	</section>
 
 </section>

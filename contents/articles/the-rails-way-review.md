@@ -15,7 +15,7 @@ That being said, _The Rails Way_ by [Obie Fernandez](http://obiefernandez.com/) 
 
 ### Contents
 
-<div style="float:right"><img src="/files/therailsway.jpeg" alt="cover" /></div>
+<div style="float:right"><img src="/images/therailsway.jpeg" alt="cover" /></div>
 
 Before proceeding any further, I'd like to point out that is probably one of the longest programming books I've ever come across. With its 910 pages, _The Rails Way_ definitely cannot fit in your pocket and you cannot take it around with you easily. It's a book made to sit on your desk constantly and remain there, ready to be accessed at the right time, when needed. 
 Unlike with other books I reviewed, this time I won't even attempt to go through every chapter and every section: it would not be meaningful for the review and it will probably bore you to death. For completeness' sake, however, here's a very trimmed-down table of contents listing _only_ the first level headings:
