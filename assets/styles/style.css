@@ -78,7 +78,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    :root {
+    .themed-content {
         --link-color: #b73333;
         --link-hover-color: #653131;
 
@@ -358,7 +358,6 @@ time {
     top: 28px;
     right: 0;
     left: 0;
-    padding: 0 8px;
     background-color: var(--primary-background);
     box-shadow: 0 16px 16px -16px #000;
     margin-top: -30px;
@@ -366,6 +365,12 @@ time {
 
 .main-content {
     margin-top: 20px;
+}
+
+@media screen and (max-width: 385px) {
+    .header-counter {
+        display: none;
+    }
 }
 
 /* End fixed header */

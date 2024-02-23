@@ -8,6 +8,9 @@
 {} :HOME
 () :PROJECTS
 
+"contents/articles" ls size :articles-count
+17 :projects-count
+0 :grimoire-count
 
 ; Utility operator to format a timestamp into a date
 (
@@ -24,6 +27,9 @@
   "page"              %content-type
   ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
   ARCHIVE-COLUMNS   %archive-columns
+  projects-count %projects-count
+  articles-count %articles-count
+  grimoire-count %grimoire-count
   ; TODO: why processing twice??
   dup "_archives" swap mustache %contents
   dup "page" swap mustache :page
@@ -42,6 +48,9 @@
   "page"                                              %content-type
   PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
   PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects
+  projects-count %projects-count
+  articles-count %articles-count
+  grimoire-count %grimoire-count
   dup "projects" swap mustache :page
   "projects" page process-icons
   %contents
@@ -224,6 +233,9 @@
   HOME
   latest %latest
   recents %recents
+  projects-count %projects-count
+  articles-count %articles-count
+  grimoire-count %grimoire-count
   ;tags %tags
   dup "home" swap mustache :page
   "home" page process-icons
@@ -247,6 +259,8 @@
 
 true :enable-content-processing
 
+
+
 (opts 'no-contents dhas?)
   (false @enable-content-processing)
 when 
@@ -261,6 +275,9 @@ when
       content /id :id
       (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
       content
+      projects-count %projects-count
+      articles-count %articles-count
+      grimoire-count %grimoire-count
       ;"." print!
       process-timestamp 
       process-content 
