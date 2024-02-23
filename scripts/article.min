@@ -13,11 +13,12 @@ false     :valid-id
   valid-regexp valid-file and
 ) ^validate
 
-
 (valid-id not) (
   "ID" ask @ident
   ident validate @valid-id
-  (valid-id not) ("ID must not be already used and it must contain only lowercase letters, numbers, or -" warn) when
+  (valid-id not) 
+    ("ID must not be already used and it must contain only lowercase letters, numbers, or -" warn) 
+  when
 ) while
 
 "Title" ask @title
@@ -31,13 +32,12 @@ content-type: article
 timestamp: $4
 -----
 
-<hr />
-" (ident title subtitle ts) => % :metadata
+" (ident title subtitle ts) =% :metadata
 
-metadata puts!
 ("Create article?" confirm) 
-(
-  (ident ".md") => "" join :fn 
-  (. "contents" "articles" fn) => "/" join :path
-  metadata path fwrite
-) when
+  (
+    (ident ".md") => "" join :fn 
+    (. "contents" "articles" fn) => "/" join :path
+    metadata path fwrite
+  ) 
+when

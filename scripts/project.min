@@ -25,7 +25,7 @@ false     :valid-id
 "Title"     ask @title
 "Subtitle"  ask @subtitle
 "Summary"   ask @summary
-"version"   ask @release
+"Version"   ask @release
 
 "-----
 id: $1
@@ -41,7 +41,6 @@ download: \"https://github.com/h3rald/$1/releases/download/\"
 -----
 " (ident title subtitle summary release) =% :metadata
 
-metadata puts!
 ("Create project?" confirm) 
 (
   (ident ".md") => "" join :fn 
