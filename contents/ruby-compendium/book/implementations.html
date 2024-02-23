@@ -1,83 +1,118 @@
 -----
-title: "Ruby Compendium &ndash; Versions and Implementations"
+title: "Ruby Compendium - Versions and Implementations"
 content-type: page
 -----
-<nav class="navigation"><a href="/ruby-compendium/book/ten-good-things.html">← 10 Good Things about Ruby</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/syntax.html">Syntax →</a></nav>
-<p>One thing that may appear unusual and even discouraging to newcomers is the different versions and implementations of the language. Ruby has two version branches:</p>
+<nav class="navigation"><a href="/ruby-compendium/book/ten-good-things.html">← 10 Good Things about Ruby</a> | <a
+		href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/syntax.html">Syntax →</a>
+</nav>
+<p>One thing that may appear unusual and even discouraging to newcomers is the different versions and implementations of
+	the language. Ruby has two version branches:</p>
 <ul>
-	<li><strong>1.8</strong> &ndash; The former stable version, which is still widely used in production and it is still updated.</li>
-	<li><strong>1.9</strong> &ndash; As of release 1.9.2, this is considered the current stable and recommended version of the language. Although most third-party libraries work with it, some old and now unmaintained libraries may not. The good news is that there are normally newer and better libraries available instead.</li>
+	<li><strong>1.8</strong> &ndash; The former stable version, which is still widely used in production and it is still
+		updated.</li>
+	<li><strong>1.9</strong> &ndash; As of release 1.9.2, this is considered the current stable and recommended version
+		of the language. Although most third-party libraries work with it, some old and now unmaintained libraries may
+		not. The good news is that there are normally newer and better libraries available instead.</li>
 </ul>
-<p>Different implementations of Ruby offer different degrees of support to one or the other version. Compared to 1.8, Ruby 1.9 has some additional syntax for certain expressions, improved character encoding support and a few new bundled libraries and features.</p>
-<p>If you&#8217;re new to Ruby and you have no particular restrictions or needs, you should start learning Ruby using version 1.9 (either <a href="#yarv">the official implementation</a>, <a href="#jruby">JRuby</a> or <a href="#macruby">MacRuby</a>)!</p>
+<p>Different implementations of Ruby offer different degrees of support to one or the other version. Compared to 1.8,
+	Ruby 1.9 has some additional syntax for certain expressions, improved character encoding support and a few new
+	bundled libraries and features.</p>
+<p>If you&#8217;re new to Ruby and you have no particular restrictions or needs, you should start learning Ruby using
+	version 1.9 (either <a href="#yarv">the official implementation</a>, <a href="#jruby">JRuby</a> or <a
+		href="#macruby">MacRuby</a>)!</p>
 <aside class="box">
-<div class="box-title">If you want to know more...</div>
-<p>There are many articles and presentations online outlining the changes in Ruby 1.9, for example:</p>
-<ul>
-	<li><a href="http://www.slideshare.net/komrade/piterrb-2-ruby-18-vs-ruby-19">Piter.rb #2 &#8211; Ruby 1.8 vs Ruby 1.9</a></li>
-	<li><a href="http://eigenclass.org/hiki/Changes+in+Ruby+1.9">Changes in Ruby 1.9</a></li>
-	<li><a href="http://slideshow.rubyforge.org/ruby19.html#1">Ruby 1.9: What to Expect</a></li>
-</ul>
+	<div class="box-title">If you want to know more...</div>
+	<p>There are many articles and presentations online outlining the changes in Ruby 1.9, for example:</p>
+	<ul>
+		<li><a href="http://www.slideshare.net/komrade/piterrb-2-ruby-18-vs-ruby-19">Piter.rb #2 &#8211; Ruby 1.8 vs
+				Ruby 1.9</a></li>
+		<li><a href="http://eigenclass.org/hiki/Changes+in+Ruby+1.9">Changes in Ruby 1.9</a></li>
+		<li><a href="http://slideshow.rubyforge.org/ruby19.html#1">Ruby 1.9: What to Expect</a></li>
+	</ul>
 
 </aside>
 <section class="section">
-<header><h1 id="h_6" class="notoc">Official Ruby 1.8 Implementation</h1></header>
-<p>The official Ruby 1.8 implementation was written in C by Yukihiru Matsumoto, the creator of Ruby.</p>
-<ul>
-	<li>Current Version: <strong>1.8.7-p352</strong></li>
-	<li>Download: <a href="http://www.ruby-lang.org/en/downloads/">Official Ruby Web Site</a></li>
-</ul>
+	<header>
+		<h1 id="h_6" class="notoc">Official Ruby 1.8 Implementation</h1>
+	</header>
+	<p>The official Ruby 1.8 implementation was written in C by Yukihiru Matsumoto, the creator of Ruby.</p>
+	<ul>
+		<li>Current Version: <strong>1.8.7-p352</strong></li>
+		<li>Download: <a href="http://www.ruby-lang.org/en/downloads/">Official Ruby Web Site</a></li>
+	</ul>
 
 </section>
 <section class="section">
-<header><h1 id="yarv" class="notoc">Official Ruby 1.9 Implementation</h1></header>
-<p>The official Ruby 1.9 implementation is based on a bytecode interpreter written Koichi Sasada.</p>
-<ul>
-	<li>Current Version: <strong>1.9.2-p200</strong></li>
-	<li>Preview Version: <strong>1.9.2-preview1</strong></li>
-	<li>Download: <a href="http://www.ruby-lang.org/en/downloads/">Official Ruby Web Site</a></li>
-</ul>
+	<header>
+		<h1 id="yarv" class="notoc">Official Ruby 1.9 Implementation</h1>
+	</header>
+	<p>The official Ruby 1.9 implementation is based on a bytecode interpreter written Koichi Sasada.</p>
+	<ul>
+		<li>Current Version: <strong>1.9.2-p200</strong></li>
+		<li>Preview Version: <strong>1.9.2-preview1</strong></li>
+		<li>Download: <a href="http://www.ruby-lang.org/en/downloads/">Official Ruby Web Site</a></li>
+	</ul>
 
 </section>
 <section class="section">
-<header><h1 id="jruby" class="notoc">JRuby</h1></header>
-<p>An implementation of the Ruby language running on the Java Virtual Machine, mature and usable in production. It offers real threading, performance improvements, and Java interoperability. Fully-compatible with both Ruby 1.8 and 1.9.</p>
-<ul>
-	<li>Current Version: <strong>1.6.3</strong></li>
-	<li>Download: <a href="http://jruby.org/">JRuby Web Site</a></li>
-</ul>
+	<header>
+		<h1 id="jruby" class="notoc">JRuby</h1>
+	</header>
+	<p>An implementation of the Ruby language running on the Java Virtual Machine, mature and usable in production. It
+		offers real threading, performance improvements, and Java interoperability. Fully-compatible with both Ruby 1.8
+		and 1.9.</p>
+	<ul>
+		<li>Current Version: <strong>1.6.3</strong></li>
+		<li>Download: <a href="http://jruby.org/">JRuby Web Site</a></li>
+	</ul>
 
 </section>
 <section class="section">
-<header><h1 id="h_9" class="notoc">Rubinius</h1></header>
-<p>A C++ and <a href="http://llvm.org/"><span class="caps">LLVM</span></a>-powered Ruby implementation. Although still not as mature as <span class="caps">YARV</span> or JRuby, it&#8217;s getting there. It currently aims at being compatible with Ruby 1.8.7, although support for Ruby 1.9 is planned.</p>
-<ul>
-	<li>Current Version: <strong>1.2.4</strong></li>
-	<li>Download: <a href="http://rubini.us/">Rubinius Web Site</a></li>
-</ul>
+	<header>
+		<h1 id="h_9" class="notoc">Rubinius</h1>
+	</header>
+	<p>A C++ and <a href="http://llvm.org/"><span class="caps">LLVM</span></a>-powered Ruby implementation. Although
+		still not as mature as <span class="caps">YARV</span> or JRuby, it&#8217;s getting there. It currently aims at
+		being compatible with Ruby 1.8.7, although support for Ruby 1.9 is planned.</p>
+	<ul>
+		<li>Current Version: <strong>1.2.4</strong></li>
+		<li>Download: <a href="http://rubini.us/">Rubinius Web Site</a></li>
+	</ul>
 
 </section>
 <section class="section">
-<header><h1 id="macruby" class="notoc">MacRuby</h1></header>
-<p>A Mac-only Ruby implementation compatible with Ruby 1.9, specifically tuned for Mac OS X operating systems.</p>
-<ul>
-	<li>Current Version: <strong>0.10</strong></li>
-	<li>Download: <a href="http://www.macruby.org/">MacRuby Web Site</a></li>
-</ul>
+	<header>
+		<h1 id="macruby" class="notoc">MacRuby</h1>
+	</header>
+	<p>A Mac-only Ruby implementation compatible with Ruby 1.9, specifically tuned for Mac OS X operating systems.</p>
+	<ul>
+		<li>Current Version: <strong>0.10</strong></li>
+		<li>Download: <a href="http://www.macruby.org/">MacRuby Web Site</a></li>
+	</ul>
 
 </section>
 <section class="section">
-<header><h1 id="h_11" class="notoc">IronRuby</h1></header>
-<p>A .<span class="caps">NET</span> implementation of the Ruby Programming Language, compatible with Ruby 1.8.6 (IronRuby 1.0) and 1.9 (IronRuby 1.1.1 onwards). Not as mature as the other implementations.</p>
-<ul>
-	<li>Current Version: <strong>1.1.3</strong></li>
-	<li>Download: <a href="http://www.ironruby.net/">IronRuby Web Site</a></li>
-</ul>
+	<header>
+		<h1 id="h_11" class="notoc">IronRuby</h1>
+	</header>
+	<p>A .<span class="caps">NET</span> implementation of the Ruby Programming Language, compatible with Ruby 1.8.6
+		(IronRuby 1.0) and 1.9 (IronRuby 1.1.1 onwards). Not as mature as the other implementations.</p>
+	<ul>
+		<li>Current Version: <strong>1.1.3</strong></li>
+		<li>Download: <a href="http://www.ironruby.net/">IronRuby Web Site</a></li>
+	</ul>
 
 </section>
 <aside class="box">
-<div class="box-title">Try'em All!</div>
-<p>Don&#8217;t know which Ruby to choose? You don&#8217;t have to! <a href="/ruby-compendium/book/rubyists.html#wayneeseguin"></a> created <a href="https://rvm.beginrescueend.com/">Ruby Version Manager</a> (<span class="caps">RVM</span>) to allow you to install, upgrade and manage several Ruby installation seamlessly on the same computer. If you&#8217;re on OS X or Linux, that is. If you&#8217;re on a Windows computer, <a href="https://github.com/vertiginous/pik">Pik</a> provides something similar.</p>
+	<div class="box-title">Try'em All!</div>
+	<p>Don&#8217;t know which Ruby to choose? You don&#8217;t have to! <a
+			href="/ruby-compendium/book/rubyists.html#wayneeseguin"></a> created <a
+			href="https://rvm.beginrescueend.com/">Ruby Version Manager</a> (<span class="caps">RVM</span>) to allow you
+		to install, upgrade and manage several Ruby installation seamlessly on the same computer. If you&#8217;re on OS
+		X or Linux, that is. If you&#8217;re on a Windows computer, <a href="https://github.com/vertiginous/pik">Pik</a>
+		provides something similar.</p>
 
 </aside>
-<nav class="navigation"><a href="/ruby-compendium/book/ten-good-things.html">← 10 Good Things about Ruby</a> | <a href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/syntax.html">Syntax →</a></nav>
+<nav class="navigation"><a href="/ruby-compendium/book/ten-good-things.html">← 10 Good Things about Ruby</a> | <a
+		href="/ruby-compendium/book/index.html">Contents</a> | <a href="/ruby-compendium/book/syntax.html">Syntax →</a>
+</nav>
