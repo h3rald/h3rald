@@ -4,10 +4,11 @@
 () :ARTICLES
 {} :HOME
 () :PROJECTS
+() :SPELLS
 
 "contents/articles" ls size :articles-count
 17 :projects-count
-0 :grimoire-count
+"contents/grimoire" ls size :grimoire-count
 
 (
   symbol to-date
@@ -65,6 +66,28 @@
   )
 ) ::
 ;; Create the Projects page
+
+(
+  symbol create-grimoire-page
+  (==>)
+  (
+    {}
+    "grimoire/index"                                    %id
+    "grimoire.html"                                     %path
+    ".html"                                             %ext
+    "GRIMOIRE"                                          %title
+    "page"                                              %content-type
+    SPELLS (/id swap /id <) sort                        %spells
+    projects-count %projects-count
+    articles-count %articles-count
+    grimoire-count %grimoire-count
+    dup "grimoire" swap mustache :page
+    "grimoire" page process-icons
+    %contents
+    output-fwrite
+  )
+) ::
+;; Create the Grimoire page
 
 (
   symbol process-timestamp
@@ -296,6 +319,7 @@ when
     (
       content /id :id
       (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
+      (content /content-type "spell" ==) (content SPELLS append @SPELLS) when
       content
       projects-count %projects-count
       articles-count %articles-count
@@ -309,6 +333,7 @@ when
 
   ; Create aggregator pages
   create-projects-page
+  create-grimoire-page
   create-articles-page
 
   ; Generate home page

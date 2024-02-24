@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> _head}}
+  <body>
+    {{> _theme_switcher}} 
+    <div class="main container-fluid themed-content">
+      <div class="row">
+        <div class="col-xs-12 sidebar">
+          {{> _header}}
+        </div>
+      </div>
+      <div class="row main-content">
+        <div class="col-xs-12">
+          <article class="{{content-type}} box content">
+          {{> _page_header}}
+          <p>This is the old grimoire of Herald. It contains <strong>{{grimoire-count}}</strong> powerful spells and enchantments to unlock the secret magic of Unix or the dark curses of Windows.</p>
+          <div id="body-text" class="hyphenate">
+            <ul>
+            {{#spells}}
+              <li><a href="{{id}}">{{title}}</a></li>
+            {{/spells}}
+            </ul>
+          </div>
+          </article>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {{> _footer}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
