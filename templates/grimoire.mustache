@@ -10,11 +10,16 @@
         </div>
       </div>
       <div class="row main-content">
-        <div class="col-xs-12">
           <article class="{{content-type}} box content">
           {{> _page_header}}
-          <p>This is the old grimoire of Herald. It contains <strong>{{grimoire-count}}</strong> powerful spells and enchantments to unlock the secret magic of Unix or the dark curses of Windows.</p>
           <div id="body-text" class="hyphenate">
+            <p>A <em>grimoire</em> is a book of spells. If you &mdash;like me in the '90s&mdash; ever played <a href="https://en.wikipedia.org/wiki/Magic:_The_Gathering">Magic: The Gathering</a>,
+          then you'll already know that.</p>
+          <p>However, in this case we are not talking about conjuring unicorns or moving objects using telekinesis, but rather unlocking the 
+          forbidden powers of the command line. The <strong>{{grimoire-count}}</strong> <em>spells</em> contained in these pages are powerful commands, scripts, and similar incantations
+          that help me every so often to complete a task in a fast, efficient way.</p>
+
+          <h3>List of Spells</h3>
             <ul>
             {{#spells}}
               <li><a href="/{{rawid}}">{{title}}</a></li>
@@ -22,7 +27,6 @@
             </ul>
           </div>
           </article>
-        </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
