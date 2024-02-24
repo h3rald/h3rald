@@ -1,6 +1,6 @@
 -----
 id: about 
-title: About
+title: ABOUT
 content-type: page
 -----
 

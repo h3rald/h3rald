@@ -28,7 +28,7 @@
     "articles/index"    %id
     "articles.html"     %path
     ".html"             %ext
-    "Articles"          %title
+    "ARTICLES"          %title
     "page"              %content-type
     ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
     projects-count %projects-count
@@ -52,7 +52,7 @@
     "projects/index"                                    %id
     "projects.html"                                     %path
     ".html"                                             %ext
-    "Projects"                                          %title
+    "PROJECTS"                                          %title
     "page"                                              %content-type
     PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
     PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects

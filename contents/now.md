@@ -1,6 +1,6 @@
 -----
 id: now 
-title: What I am doing now
+title: NOW 
 content-type: page
 -----
 

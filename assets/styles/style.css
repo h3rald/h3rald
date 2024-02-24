@@ -133,12 +133,12 @@ html {
 }
 
 body {
-    background-color: var(--primary-background);
     font-family: 'Calendas Plus', serif;
     font-feature-settings: "liga", "clig", "kern";
     hyphens: auto;
     font-weight: 300;
     margin: auto;
+    height: 100vh;
     letter-spacing: var(--letter-spacing);
     font-size: var(--base-font-size);
     line-height: var(--leading);
@@ -541,7 +541,7 @@ img {
  *****/
 
 body {
-    background: var(--primary-background);
+    background: #1e1e1e;
     color: var(--primary-text-color);
 }
 
