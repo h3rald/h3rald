@@ -127,14 +127,14 @@
     }
 }
 
-
 html {
     font-size: var(--html-font-size);
     line-height: var(--line-height);
 }
 
 body {
-    font-family: 'Noway', sans-serif;
+    background-color: var(--primary-background);
+    font-family: 'Calendas Plus', serif;
     font-feature-settings: "liga", "clig", "kern";
     hyphens: auto;
     font-weight: 300;
@@ -142,6 +142,23 @@ body {
     letter-spacing: var(--letter-spacing);
     font-size: var(--base-font-size);
     line-height: var(--leading);
+}
+
+.grimoire,
+.navlinks,
+.primary-subtitle,
+.secondary-subtitle,
+.panel-header,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+}
+
+.navlinks {
+    text-transform: uppercase;
 }
 
 h1,
@@ -282,7 +299,7 @@ em,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
-    font-family: 'Noway', sans-serif;
+    font-family: 'Calendas Plus', serif;
     font-style: italic;
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
@@ -292,7 +309,7 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Noway', sans-serif;
+    font-family: 'Calendas Plus', serif;
     font-style: normal;
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
