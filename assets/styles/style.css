@@ -234,6 +234,11 @@ code {
     font-family: 'JetBrains Mono', monospace;
 }
 
+.break-code {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
 small,
 sub,
 sup,
