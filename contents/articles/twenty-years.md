@@ -1,9 +1,9 @@
 -----
 id: twenty-years
-title: "My web site is 20 years old..."
-subtitle: "On March 28th 20004, H3RALD.com was born"
+title: "This web site is 20 years old"
+subtitle: "On March 28th 2004, H3RALD.com was born"
 content-type: article
-timestamp: 1709391035
+timestamp: 1711609200
 -----
 
 TBD
