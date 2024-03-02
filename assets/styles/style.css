@@ -573,6 +573,7 @@ h6,
 a,
 a:visited {
     color: var(--link-color);
+    word-break: break-word;
 }
 
 a:hover {
