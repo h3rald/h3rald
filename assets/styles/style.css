@@ -394,7 +394,7 @@ time {
 .celebration-badge {
     z-index: 1000;
     position: fixed;
-    line-height: 30px;
+    line-height: 26px;
     top: 8px;
     left: 8px;
     font-size: 0.8rem;
