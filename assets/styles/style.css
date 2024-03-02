@@ -382,7 +382,7 @@ time {
 
 .main-header {
     position: fixed;
-    top: 28px;
+    top: 24px;
     right: 0;
     left: 0;
     padding: 0.5rem 0;
@@ -390,6 +390,16 @@ time {
     box-shadow: 0 16px 16px -16px #000;
     margin-top: -40px;
 }
+
+.celebration-badge {
+    z-index: 1000;
+    position: fixed;
+    line-height: 30px;
+    top: 8px;
+    left: 8px;
+    font-size: 0.8rem;
+}
+
 
 .footer,
 .header,
@@ -417,7 +427,7 @@ footer {
 /* End fixed header */
 
 .main-header h1 {
-    margin: 0;
+    margin: 16px 0 0 0;
     height: 40px;
     text-align: center;
 }
