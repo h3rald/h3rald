@@ -18,7 +18,6 @@
     display: none;
 }
 
-
 :root {
 
     --html-font-size: 18px;
@@ -387,7 +386,8 @@ time {
     margin-top: -40px;
 }
 
-footer,
+.footer,
+.header,
 .main-content,
 .sidebar {
     max-width: 1024px;
@@ -412,7 +412,7 @@ footer {
 /* End fixed header */
 
 .main-header h1 {
-    margin: 0 0.5rem 0.5rem 0.5rem;
+    margin: 0;
     height: 40px;
     text-align: center;
 }
