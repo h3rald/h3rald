@@ -11,83 +11,83 @@ TBD
 
 List of articles to mention:
 
-- http://localhost:1337/articles/server-packages
+- /articles/server-packages
 
-- http://localhost:1337/articles/academic
+- /articles/academic
 
-- http://localhost:1337/articles/pre-review-of-ie7
-- http://localhost:1337/articles/from-firefox-to-deer-park
-- http://localhost:1337/articles/ie-lovers-guide-to-firefox
-- http://localhost:1337/articles/perfect-browser
-- http://localhost:1337/articles/firefox-lovers-guide-to-opera (later)
-- http://localhost:1337/articles/firefox3-revealed
+- /articles/pre-review-of-ie7
+- /articles/from-firefox-to-deer-park
+- /articles/ie-lovers-guide-to-firefox
+- /articles/perfect-browser
+- /articles/firefox-lovers-guide-to-opera (later)
+- /articles/firefox3-revealed
 
-- http://localhost:1337/articles/cakephp
-- http://localhost:1337/articles/cakephp-first-bite (sitepoint)
-- http://localhost:1337/articles/40 (book intro)
-- http://localhost:1337/articles/42 (book canceled)
-- http://localhost:1337/articles/43 (too many cooks)
-- http://localhost:1337/articles/too-many-cooks-take-2/
-- http://localhost:1337/articles/too-many-cooks-take-3
+- /articles/cakephp
+- /articles/cakephp-first-bite (sitepoint)
+- /articles/40 (book intro)
+- /articles/42 (book canceled)
+- /articles/43 (too many cooks)
+- /articles/too-many-cooks-take-2/
+- /articles/too-many-cooks-take-3
 
-- http://localhost:1337/articles/next-generation-dvds
-- http://localhost:1337/articles/18 (textiling)
+- /articles/next-generation-dvds
+- /articles/18 (textiling)
 
-- http://localhost:1337/articles/what-is-ajax
-- http://localhost:1337/articles/git-for-the-locals
-
-
-- http://localhost:1337/articles/magnolia
-- http://localhost:1337/articles/social-bookmarking-services
-- http://localhost:1337/articles/39 netvibes
-- http://localhost:1337/articles/34/ akelos framework
-- http://localhost:1337/articles/38 akelos details
-- http://localhost:1337/articles/komodo-edit-review
-- http://localhost:1337/articles/textlinkads_sidebar_v01
-- http://localhost:1337/articles/getting-started-with-lithium
-- http://localhost:1337/articles/journotwit-review
-- http://localhost:1337/articles/wunderlist
+- /articles/what-is-ajax
+- /articles/git-for-the-locals
 
 
-- http://localhost:1337/articles/20 (vittorio cevasco)
-- http://localhost:1337/articles/12 (job)
-- http://localhost:1337/articles/9 (riddle job)
-- http://localhost:1337/articles/36 (world cup)
-- http://localhost:1337/articles/incomplete-guide-to-london
-- http://localhost:1337/articles/11-07-2009
-
-- http://localhost:1337/articles/the-internet-philosopher
-
-- http://localhost:1337/articles/rails-inspired-php-frameworks/
-- http://localhost:1337/articles/25 (digg effect)
-
-
-- http://localhost:1337/articles/google-apps-for-your-domain
-- http://localhost:1337/articles/tweaking-windows-explorer
-- http://localhost:1337/articles/google-chrome
+- /articles/magnolia
+- /articles/social-bookmarking-services
+- /articles/39 netvibes
+- /articles/34/ akelos framework
+- /articles/38 akelos details
+- /articles/komodo-edit-review
+- /articles/textlinkads_sidebar_v01
+- /articles/getting-started-with-lithium
+- /articles/journotwit-review
+- /articles/wunderlist
 
 
+- /articles/20 (vittorio cevasco)
+- /articles/12 (job)
+- /articles/9 (riddle job)
+- /articles/36 (world cup)
+- /articles/incomplete-guide-to-london
+- /articles/11-07-2009
 
-- http://localhost:1337/articles/introducing-redbook
-- http://localhost:1337/articles/10-reasons-to-learn-ruby
+- /articles/the-internet-philosopher
+
+- /articles/rails-inspired-php-frameworks/
+- /articles/25 (digg effect)
+
+
+- /articles/google-apps-for-your-domain
+- /articles/tweaking-windows-explorer
+- /articles/google-chrome
 
 
 
-- http://localhost:1337/articles/hlrb-review
-- http://localhost:1337/articles/the-rails-way-review
-- http://localhost:1337/articles/the-rails3-way-review
-
-- http://localhost:1337/articles/10-reasons-why-i-didnt-update-my-blog
+- /articles/introducing-redbook
+- /articles/10-reasons-to-learn-ruby
 
 
 
-- http://localhost:1337/articles/10-programming-languages
-- http://localhost:1337/articles/randal-schwartz
-- http://localhost:1337/articles/10-more-programming-languages
+- /articles/hlrb-review
+- /articles/the-rails-way-review
+- /articles/the-rails3-way-review
+
+- /articles/10-reasons-why-i-didnt-update-my-blog
 
 
-- http://localhost:1337/articles/hastyscribe
-- http://localhost:1337/articles/hastysite
-- http://localhost:1337/articles/litestore
-- http://localhost:1337/articles/h3
+
+- /articles/10-programming-languages
+- /articles/randal-schwartz
+- /articles/10-more-programming-languages
+
+
+- /articles/hastyscribe
+- /articles/hastysite
+- /articles/litestore
+- /articles/h3
 
