@@ -6,15 +6,8 @@ content-type: article
 timestamp: 1711609200
 -----
 
-TBD
 
-
-List of articles to mention:
-
-- /articles/server-packages
-
-- /articles/academic
-
+Browsers
 - /articles/pre-review-of-ie7
 - /articles/from-firefox-to-deer-park
 - /articles/ie-lovers-guide-to-firefox
@@ -22,6 +15,7 @@ List of articles to mention:
 - /articles/firefox-lovers-guide-to-opera (later)
 - /articles/firefox3-revealed
 
+CakePHP
 - /articles/cakephp
 - /articles/cakephp-first-bite (sitepoint)
 - /articles/40 (book intro)
@@ -29,14 +23,21 @@ List of articles to mention:
 - /articles/43 (too many cooks)
 - /articles/too-many-cooks-take-2/
 - /articles/too-many-cooks-take-3
+- /articles/rails-inspired-php-frameworks/
+- /articles/25 (digg effect)
 
+Technology & random stuff
+- /articles/server-packages
 - /articles/next-generation-dvds
 - /articles/18 (textiling)
-
 - /articles/what-is-ajax
 - /articles/git-for-the-locals
+- /articles/google-apps-for-your-domain
+- /articles/tweaking-windows-explorer
+- /articles/google-chrome
+- /articles/the-internet-philosopher
 
-
+Reviews
 - /articles/magnolia
 - /articles/social-bookmarking-services
 - /articles/39 netvibes
@@ -48,7 +49,8 @@ List of articles to mention:
 - /articles/journotwit-review
 - /articles/wunderlist
 
-
+Personal
+- /articles/academic
 - /articles/20 (vittorio cevasco)
 - /articles/12 (job)
 - /articles/9 (riddle job)
@@ -56,36 +58,22 @@ List of articles to mention:
 - /articles/incomplete-guide-to-london
 - /articles/11-07-2009
 
-- /articles/the-internet-philosopher
 
-- /articles/rails-inspired-php-frameworks/
-- /articles/25 (digg effect)
-
-
-- /articles/google-apps-for-your-domain
-- /articles/tweaking-windows-explorer
-- /articles/google-chrome
-
-
-
+Ruby
 - /articles/introducing-redbook
 - /articles/10-reasons-to-learn-ruby
-
-
-
 - /articles/hlrb-review
 - /articles/the-rails-way-review
 - /articles/the-rails3-way-review
 
+
+Recent articles
 - /articles/10-reasons-why-i-didnt-update-my-blog
-
-
-
 - /articles/10-programming-languages
 - /articles/randal-schwartz
 - /articles/10-more-programming-languages
 
-
+Nim
 - /articles/hastyscribe
 - /articles/hastysite
 - /articles/litestore
