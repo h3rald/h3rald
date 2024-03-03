@@ -157,6 +157,10 @@ h5 {
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
+.page h2 {
+    text-align: center;
+}
+
 .navlinks {
     text-transform: uppercase;
 }
@@ -414,7 +418,7 @@ footer {
 }
 
 .main-content {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 
