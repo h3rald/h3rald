@@ -8,6 +8,7 @@ timestamp: 1711609200
 
 
 Browsers
+
 - /articles/pre-review-of-ie7
 - /articles/from-firefox-to-deer-park
 - /articles/ie-lovers-guide-to-firefox
@@ -16,6 +17,7 @@ Browsers
 - /articles/firefox3-revealed
 
 CakePHP
+
 - /articles/cakephp
 - /articles/cakephp-first-bite (sitepoint)
 - /articles/40 (book intro)
@@ -27,6 +29,7 @@ CakePHP
 - /articles/25 (digg effect)
 
 Technology & random stuff
+
 - /articles/server-packages
 - /articles/next-generation-dvds
 - /articles/18 (textiling)
@@ -38,6 +41,7 @@ Technology & random stuff
 - /articles/the-internet-philosopher
 
 Reviews
+
 - /articles/magnolia
 - /articles/social-bookmarking-services
 - /articles/39 netvibes
@@ -50,6 +54,7 @@ Reviews
 - /articles/wunderlist
 
 Personal
+
 - /articles/academic
 - /articles/20 (vittorio cevasco)
 - /articles/12 (job)
@@ -60,6 +65,7 @@ Personal
 
 
 Ruby
+
 - /articles/introducing-redbook
 - /articles/10-reasons-to-learn-ruby
 - /articles/hlrb-review
@@ -68,12 +74,14 @@ Ruby
 
 
 Recent articles
+
 - /articles/10-reasons-why-i-didnt-update-my-blog
 - /articles/10-programming-languages
 - /articles/randal-schwartz
 - /articles/10-more-programming-languages
 
 Nim
+
 - /articles/hastyscribe
 - /articles/hastysite
 - /articles/litestore
