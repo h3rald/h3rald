@@ -211,8 +211,8 @@ ol,
 pre,
 table,
 blockquote {
-    margin-top: calc(var(--leading) * 0);
-    margin-bottom: calc(var(--leading) * 1);
+    margin-top: calc(var(--leading) * 0.5);
+    margin-bottom: calc(var(--leading) * 0.5);
 }
 
 ul ul,
@@ -306,6 +306,7 @@ h6,
 
 i,
 em,
+blockquote,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
@@ -504,13 +505,13 @@ hr::before {
     margin: calc(var(--leading) * 1) 0;
 }
 
-.panel {
+.panel,
+blockquote {
     margin: 4px;
     background: var(--secondary-background);
     padding: 8px;
     border: 1px solid var(--secondary-background);
     border-radius: 4px;
-    height: 100%;
 }
 
 .panel-header {
