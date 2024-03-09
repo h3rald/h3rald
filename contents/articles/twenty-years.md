@@ -1,17 +1,31 @@
 -----
 id: twenty-years
 title: "This web site is 20 years old"
-subtitle: "On March 28th 2004, H3RALD.com was born"
+subtitle: "On March 28th, 2004, H3RALD.com was born"
 content-type: article
 timestamp: 1711609200
 -----
 
-Exactly twenty years ago today, on March 28th 2004, I decided to purchase my first Internet domain. 
+Exactly twenty years ago today, on March 28th, 2004, I decided to purchase my first Internet domain. 
 
 The .com bubble had already burst years earlier, and I remember wondering which domain name I should go for. After a few minutes I went for *h3rald.com*, the Internet handle I was using on a few web sites.
 
-The origin of the name H3RALD is nothing too glamorous really: when I moved my first steps on the Internet a few years earlier (my parents were kind of against computers and we had our first one in 1998, when I was in high school) I came across the *Hacker Manifesto*, which was signed *The Hobbit*. I remember dreaming about writing something as impactful as that someday, and signing it with an equally cool pseudonym. At the time, I used to purchase the International Herald Tribune from time to time from the local newsagent, mainly because it 
-was one of the few newspapers in English I could get here in Italy.
+The origin of the name H3RALD is nothing too glamorous really: when I moved my first steps on the Internet a few years earlier (my parents were kind of against computers and we had our first one in 1998, when I was in high school) I came across the *Hacker Manifesto*, which was signed *The Hobbit*. I remember dreaming about writing something as impactful as that someday, and signing it with an equally cool pseudonym. At the time, I used to purchase the International Herald Tribune every so often from the local newsagent, mainly because it 
+was one of the few foreign newspapers I could get here in Italy, and I wanted to practice my English.
+
+Obviously, a handle like *herald* was taken on most web sites, so I decided to add a sparkle of *1337 speak* to it, hence *h3rald*.
+
+### The early years
+
+One thing is buying a domain, another thing is actually using it for something useful. 
+
+For the first year or so, the purpose of *h3rald.com* was uncertain: I started off with a very simple HTML page with some interactive content mainly in the form of Java applets (news tickers and other pointless things like that) with a sprinkle of JavaScript. I barely knew how to program back then, and even though I was studying IT Engineering at the university here in Genoa, that [doesn't mean it was actually useful](/articles/academic), in practice.
+
+The first [few versions](/h3rald/) of this web site were various rather poor attempt at finding my nice. At one point I got as bold as trying to establish a web design studio (_H3RALD Labs_) with a very, _very_ basic web sites. I taught myself PHP, I started using early frameworks like Prado, and most importantly I kept learning new things. 
+
+I was doing all this on a 300MHz Pentium II machine that struggled to run Windows XP. When my parents first bought the thing back in '98 it felt much, much faster... I couldn't believe that after only a few years that thing was obsolete! But that didn't stop me from discovering Linux (mainly Slax and Debian) and configuring it in dual boot (my dad was also using the computer, and I couldn't really mess things up too much).
+
+At the time, I was also part of an online community called CyberArmy. The domain shifted a couple of times from [cyberarmy.com](https://www.cyberarmy.com) (still up, but basically dead) to cyberarmy.net (long story...), and no, it was not a cyber terrorism group, it was... well, just a bunch of people organized in groups (_brigades_) that aimed at learning more about the Internet and technology. A community of _hackers_ in the original meaning of the word.
 
 Browsers
 
@@ -61,7 +75,7 @@ Reviews
 
 Personal
 
-- /articles/academic
+- 
 - /articles/20 (vittorio cevasco)
 - /articles/12 (job)
 - /articles/9 (riddle job)
