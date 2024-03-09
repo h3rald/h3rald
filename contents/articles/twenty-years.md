@@ -32,6 +32,8 @@ Back then, I started writing articles about the things I was learning about, lik
 
 ### A look back at early 2000s technologies and services
 
+It is funny to look back and read those early 2000s articles now. Do you remember when [social bookmarking services](/articles/social-bookmarking-services) were a thing? Del.icio.us? Maybe. What about Spurl, Furl, Blinklist... ring a bell? No? It turns out I was very fond of [ma.gnolia](/articles/magnolia) when it came out. 
+
 ### The browser wars
 
 ### CakePHP
@@ -70,8 +72,8 @@ Technology & random stuff
 
 Reviews
 
-- /articles/magnolia
-- /articles/social-bookmarking-services
+- 
+- 
 - /articles/39 netvibes
 - /articles/34/ akelos framework
 - /articles/38 akelos details
