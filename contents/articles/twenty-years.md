@@ -10,8 +10,7 @@ Exactly twenty years ago today, on March 28th, 2004, I decided to purchase my fi
 
 The .com bubble had already burst years earlier, and I remember wondering which domain name I should go for. After a few minutes I went for *h3rald.com*, the Internet handle I was using on a few web sites.
 
-The origin of the name H3RALD is nothing too glamorous really: when I moved my first steps on the Internet a few years earlier (my parents were kind of against computers and we had our first one in 1998, when I was in high school) I came across the *Hacker Manifesto*, which was signed *The Hobbit*. I remember dreaming about writing something as impactful as that someday, and signing it with an equally cool pseudonym. At the time, I used to purchase the International Herald Tribune every so often from the local newsagent, mainly because it 
-was one of the few foreign newspapers I could get here in Italy, and I wanted to practice my English.
+The origin of the name H3RALD is nothing too glamorous really: when I moved my first steps on the Internet a few years earlier (my parents were kind of against computers and we had our first one in 1998, when I was in high school) I came across the *Hacker Manifesto*, which was signed *The Hobbit*. I remember dreaming about writing something as impactful as that someday, and signing it with an equally cool pseudonym. At the time, I used to purchase the International Herald Tribune every so often from the local newsagent, mainly because it was one of the few foreign newspapers I could get here in Italy, and I wanted to practice my English.
 
 Obviously, a handle like *herald* was taken on most web sites, so I decided to add a sparkle of *1337 speak* to it, hence *h3rald*.
 
@@ -25,7 +24,11 @@ The first [few versions](/h3rald/) of this web site were various rather poor att
 
 I was doing all this on a 300MHz Pentium II machine that struggled to run Windows XP. When my parents first bought the thing back in '98 it felt much, much faster... I couldn't believe that after only a few years that thing was obsolete! But that didn't stop me from discovering Linux (mainly Slax and Debian) and configuring it in dual boot (my dad was also using the computer, and I couldn't really mess things up too much).
 
-At the time, I was also part of an online community called CyberArmy. The domain shifted a couple of times from [cyberarmy.com](https://www.cyberarmy.com) (still up, but basically dead) to cyberarmy.net (long story...), and no, it was not a cyber terrorism group, it was... well, just a bunch of people organized in groups (_brigades_) that aimed at learning more about the Internet and technology. A community of _hackers_ in the original meaning of the word.
+At the time, I was also part of an online community called CyberArmy. The domain shifted a couple of times from [cyberarmy.com](https://www.cyberarmy.com) (still up, but basically dead) to cyberarmy.net (long story...) and vice-versa, and no, it was nothing related to cyber terrorism, it was... well, just a bunch of people organized in groups (_brigades_) that aimed at learning more about the Internet and technology; a community of _hackers_ in the original meaning of the word.
+
+In CyberArmy, people originally earned their rank by completing hacking challenges, and then by contributing to brigades. At one time, I became the C/O of the group that was curating the community online magazine, zZine.org (domain is dead now). zZine was the first outlet for my articles, some of which I have re-published here.
+
+Back then, I started writing articles about the things I was learning about, like [easy-to-install server packages](/articles/server-packages), or cutting-edge technologies like [BluRay vs HD-DVD](/articles/next-generation-dvds)
 
 Browsers
 
