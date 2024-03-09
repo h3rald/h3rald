@@ -28,7 +28,13 @@ At the time, I was also part of an online community called CyberArmy. The domain
 
 In CyberArmy, people originally earned their rank by completing hacking challenges, and then by contributing to brigades. At one time, I became the C/O of the group that was curating the community online magazine, zZine.org (domain is dead now). zZine was the first outlet for my articles, some of which I have re-published here.
 
-Back then, I started writing articles about the things I was learning about, like [easy-to-install server packages](/articles/server-packages), or cutting-edge technologies like [BluRay vs HD-DVD](/articles/next-generation-dvds)
+Back then, I started writing articles about the things I was learning about, like [easy-to-install server packages](/articles/server-packages), or cutting-edge technologies like [BluRay vs HD-DVD](/articles/next-generation-dvds). Lightweight markup languages like markdown didn't exist at the time, so all I wrote all those early articles using [BBCode](https://en.m.wikipedia.org/wiki/BBCode).
+
+### A look back at early 2000s technologies and services
+
+### The browser wars
+
+### CakePHP
 
 Browsers
 
@@ -38,6 +44,7 @@ Browsers
 - /articles/perfect-browser
 - /articles/firefox-lovers-guide-to-opera (later)
 - /articles/firefox3-revealed
+- /articles/google-chrome
 
 CakePHP
 
@@ -53,14 +60,12 @@ CakePHP
 
 Technology & random stuff
 
-- /articles/server-packages
-- /articles/next-generation-dvds
+
 - /articles/18 (textiling)
 - /articles/what-is-ajax
 - /articles/git-for-the-locals
 - /articles/google-apps-for-your-domain
 - /articles/tweaking-windows-explorer
-- /articles/google-chrome
 - /articles/the-internet-philosopher
 
 Reviews
