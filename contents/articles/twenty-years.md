@@ -63,17 +63,21 @@ Firefox was Heaven though. I mean really, it was, compared to the competition. B
 
 I even reviewed preliminary versions like the one that was codenamed [Deer Park](/articles/from-firefox-to-deer-park), i.e. version 1.1 of the popular Mozilla browser.
 
-Fast-forward three years later, and I found myself deeply involved in the Firefox 3 released. SitePoint published a very in-depth article of mine that was also realesed as a 30-page PDF ebook: [Firefox 3 revealed](/articles/firefox3-revealed) (you can now download [right here](/files/ff3-revealed) if you want).
+Fast-forward three years later, and I found myself deeply involved in the Firefox 3 released. SitePoint published a very in-depth article of mine that was also realesed as a 30-page PDF ebook: [Firefox 3 revealed](/articles/firefox3-revealed) (you can now download [right here](/files/ff3-revealed.pdf) if you want).
 
 To this day, although largely insignificant in the grand scheme of things, I consider that mini book a personal jewel of mine, and the closest thing I ever had to get a book published (more on that later).
 
-After the Firefox years, my attention slowly shifted to [Opera](/articles/thoughts-on-firefox3-and-opera95) (the real thing with its own browser engine, _Presto_, not the Chromium-based bad copy we have today) and I finally published [a Firefox lover guide to Opera](articles/firefox-lovers-guide-to-opera) to get more people to switch.
+After the Firefox years, my attention slowly shifted to [Opera](/articles/thoughts-on-firefox3-and-opera95) (the real thing with its own browser engine, _Presto_, not the Chromium-based bad copy we have today) and I finally published [a Firefox lover guide to Opera](/articles/firefox-lovers-guide-to-opera) to get more people to switch.
 
 But in the end Google did it. When the big G released Google Chrome in September 2008, it really _felt_ like things were over. Like with all the greatest product of our time (when Steve Jobs released the first iPhone I had the exact same feeling), a company took an old idea (a browser with tabs) and an "old" engine (WebKit) and turned into something new. A multi-process browser, something never done before.
 
 I [reported the birth of Chrome](articles/google-chrome) from my humble web site that day, still not quite sure if that was going to be just a phase, just another meteor of a product that was doomed to be forgotten. It was not.
 
 ### CakePHP
+
+But let's go back to 2006 a second &mdash; we may as well: most of my articles are from before 2010 anyway. In those years I self-taught myself PHP and Ruby on Rails was all the rage: imagine a web framework that let you create a blog in eight minutes, with powerful command line tools, scaffolding, and a truly awesome (and elegant) programming language to go with it!
+
+Too bad I had spent months learning PHP. 
 
 CakePHP
 
