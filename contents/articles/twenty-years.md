@@ -87,41 +87,33 @@ I was then approached by not one but two different publishers to write a book ab
 
 The book is still _currently not available_ right now on [Amazon Italy](https://www.amazon.it/Cakephp-Recipes-Fabio-Cevasco/dp/0321497732), [Amazon India](https://www.amazon.in/CakePHP-Recipes-Fabio-Cevasco/dp/0321497732), and [Amazon Japan](https://www.amazon.co.jp/CakePHP-Recipes-Fabio-Cevasco/dp/0321497732) but no point in waiting because (after 18 years) it will never be released. It has a cover, an ISBN number and all... but it never happened. 
 
-To this day, people who happen to Google my name eventually end up on one of those pages and then ask me about that book that I never wrote. Why? Because well, the CakePHP Foundation never hold up their part of the deal and never provided the code examples for the book. To this day, I would really like to go back in time and slap my cocky 23-year-old self real hard and shout _WRITE THOSE F**KING CODE EXAMPLES AND GET THIS DONE, YOU IDIOT!_.
+To this day, people who happen to Google my name eventually end up on one of those pages and then ask me about that book that I never wrote. Why? Because well, the CakePHP Foundation never hold up their part of the deal and never provided the code examples for the book. To this day, I would really like to go back in time and slap my cocky 23-year-old self real hard and shout _write those damn code examples yourself and get it done, you idiot!_
 
-Talk about regrets. Having your name associated with a failed book is probably the worst thing that can happen to a wannabe published author. What's worse, is that when the book was [canceled](/articles/42), a lot of drama followed (I wrote not [one](/articles/43), but [two](/articles/too-many-cooks-take-2) and even [three](/articles/too-many-cooks-take-3) posts about it)!).
+Talk about regrets. Having your name associated with a failed book is probably the worst thing that can happen to a wannabe published author. What's worse, is that when the book was [canceled](/articles/42), a lot of drama followed (I wrote not [one](/articles/43), but [two](/articles/too-many-cooks-take-2) and then even [three](/articles/too-many-cooks-take-3) posts about it)!).
 
-Rationalizing what went down nearly twenty years later, I just started my full time permanent job in the same company I am still working for now, and Larry and Garret... well, they had a framework to run and probably their own crap going on. No biggie. 
+If I try to rationalize what went down now, nearly twenty years later, I'd say that both parties had other crap going on: I had just started my first permanent job at an important company, and Larry and Garret just had a web framework to nurture, and one that was getting really popular really quickly.
 
-CakePHP
+One of the few good things that came out from that period was a [popular article](/articles/rails-inspired-php-frameworks) on my web site that got [featured on the Digg homepage](/articles/25). What is Digg, you ask? Well, let's see... Digg was something similar to Hacker News today, but probably worse. Ah, the fun times...
 
-- /articles/rails-inspired-php-frameworks/
-- /articles/25 (digg effect)
+Anyhow, that failed book really left a scar: I was truly pissed. So pissed that I decided it was time to move on and learn that cool programming language everyone was raving about...
 
-Technology & random stuff
+### Ruby
 
-- 
-- /articles/
-- /articles/google-apps-for-your-domain
-- /articles/tweaking-windows-explorer
-- /articles/the-internet-philosopher
+Now talk about a healthier ecosystem with less drama! Kidding... but yes, I did enjoy my time with the Ruby community. I also felt I was learning a *proper* programming language, not something that was frowned upon like PHP. 
 
-Reviews
+With Ruby, I moved my very first steps in the world of open source software, by releasing a few (probably very mediocre) software projects into the wild. You can still find them in the [projects](/projects) sections, by the way: I am talking about RedBook, Rawline, and Concatenative. 
 
-- 
-- 
--  netvibes
--  akelos framework
-- /articles/38 akelos details
-- 
-- /articles/textlinkads_sidebar_v01
-- 
-- 
-- 
+The Ruby ecosystem was full of living legends at the time. Names like the godlike DHH, creator of Rails, Zed Shaw the rockstar developer, Obie Fernandez, and of course _why the lucky stiff. Ruby made me discover the true joy of programming, of feeling like you are creating something useful that behaves exactly like you want it. 
+
+I miss those days, I think younger generations are not as lucky. There's too much pressure today, kids want to learn programming just to land a cool and hopefully high-paid job... back then it was all about the fun of creating and learning new things... or maybe I was just younger.
+
+- /articles/hlrb-review
+- /articles/the-rails-way-review
+- /articles/the-rails3-way-review
+
 
 Personal
 
-- 
 - /articles/20 (vittorio cevasco)
 - /articles/12 (job)
 - /articles/9 (riddle job)
@@ -130,13 +122,6 @@ Personal
 - /articles/11-07-2009
 
 
-Ruby
-
-- /articles/introducing-redbook
-- /articles/10-reasons-to-learn-ruby
-- /articles/hlrb-review
-- /articles/the-rails-way-review
-- /articles/the-rails3-way-review
 
 
 Recent articles
