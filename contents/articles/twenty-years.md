@@ -75,19 +75,26 @@ I [reported the birth of Chrome](articles/google-chrome) from my humble web site
 
 ### CakePHP
 
-But let's go back to 2006 a second &mdash; we may as well: most of my articles are from before 2010 anyway. In those years I self-taught myself PHP and Ruby on Rails was all the rage: imagine a web framework that let you create a blog in eight minutes, with powerful command line tools, scaffolding, and a truly awesome (and elegant) programming language to go with it!
+But let's go back to 2006 a second &mdash; we may as well: most of my articles are from before 2010 anyway. 
 
-Too bad I had spent months learning PHP. 
+In those years I just had taught myself PHP but Ruby on Rails was all the rage: imagine a web framework that let you create a blog in eight minutes, with powerful command line tools, scaffolding, and a truly awesome (and elegant) programming language to go with it!
+
+Too bad I had spent months learning PHP. But it turns out there was at least a PHP framework that wanted to be _on Rails_, and that was CakePHP. So I learnt more and more about it, played with it in a few personal projects, and even re-did my web site using it!
+
+In the blink of an eye, I became one of the most well-known CakePHP _bakers_ of the time. I started blogging about it, I wrote an extensive [review](/articles/cakephp) of it, I was contacted by a few PHP magazines to write articles about it, and of course I wrote one for [SitePoint](/articles/cakephp-first-bite), too.
+
+I was then approached by not one but two different publishers to write a book about it! Eventually, I [signed a book deal with Peachpit/New Riders/Pearson](/articles/40) for what would have become the first, official book about CakePHP. _Official_ because it was supposed to be co-authored with Larry E. Masters and Garret J. Woodworth, the creators of the framework, who were supposed to provide all the code snippets to go in the book.
+
+The book is still _currently not available_ right now on [Amazon Italy](https://www.amazon.it/Cakephp-Recipes-Fabio-Cevasco/dp/0321497732), [Amazon India](https://www.amazon.in/CakePHP-Recipes-Fabio-Cevasco/dp/0321497732), and [Amazon Japan](https://www.amazon.co.jp/CakePHP-Recipes-Fabio-Cevasco/dp/0321497732) but no point in waiting because (after 18 years) it will never be released. It has a cover, an ISBN number and all... but it never happened. 
+
+To this day, people who happen to Google my name eventually end up on one of those pages and then ask me about that book that I never wrote. Why? Because well, the CakePHP Foundation never hold up their part of the deal and never provided the code examples for the book. To this day, I would really like to go back in time and slap my cocky 23-year-old self real hard and shout _WRITE THOSE F**KING CODE EXAMPLES AND GET THIS DONE, YOU IDIOT!_.
+
+Talk about regrets. Having your name associated with a failed book is probably the worst thing that can happen to a wannabe published author. What's worse, is that when the book was [canceled](/articles/42), a lot of drama followed (I wrote not [one](/articles/43), but [two](/articles/too-many-cooks-take-2) and even [three](/articles/too-many-cooks-take-3) posts about it)!).
+
+Rationalizing what went down nearly twenty years later, I just started my full time permanent job in the same company I am still working for now, and Larry and Garret... well, they had a framework to run and probably their own crap going on. No biggie. 
 
 CakePHP
 
-- /articles/cakephp
-- /articles/cakephp-first-bite (sitepoint)
-- /articles/40 (book intro)
-- /articles/42 (book canceled)
-- /articles/43 (too many cooks)
-- /articles/too-many-cooks-take-2/
-- /articles/too-many-cooks-take-3
 - /articles/rails-inspired-php-frameworks/
 - /articles/25 (digg effect)
 
