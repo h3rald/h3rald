@@ -45,6 +45,7 @@ It is funny to look back and read those early 2000s articles now. Do you remembe
 I reviewed a few[Web 2.0](https://en.m.wikipedia.org/wiki/Web_2.0)-era services like [NetVibes](/articles/39) and [JournoTwit](/articles/journotwit-review), tools like [Komodo Edit](/articles/komodo-edit-review), web frameworks like [Akelos](/articles/34/) or [Lithium](/articles/getting-started-with-lithium). Even really cool things like [Wunderlist](/articles/wunderlist) got acquired and eventually killed off.
 
 But luckily some things were built to last:
+
 - [AJAX](/articles/what-is-ajax) may not be called that anymore (and we may have most definitely dropped the XML part), but it laid the foundation of modern JavaScript.
 - [Git](/articles/git-for-the-locals) is now the de-facto version control system.
 - [SQLite](/articles/quick-overview-of-sqlite) is very widely-used and respected.
@@ -107,24 +108,27 @@ The Ruby ecosystem was full of living legends at the time. Names like the godlik
 
 I miss those days, I think younger generations are not as lucky. There's too much pressure today, kids want to learn programming just to land a cool and hopefully high-paid job... back then it was all about the fun of creating and learning new things... or maybe I was just younger.
 
-- /articles/hlrb-review
-- /articles/the-rails-way-review
-- /articles/the-rails3-way-review
+While I was developing little Ruby programs, I was also reading a lot of Ruby programming books. I reviewed a lot of them (most of them by Pearson Education, which at the time was the leading publisher for programming books on Ruby) such as:
+
+- [The Humble Little Ruby Book](/articles/hlrb-review)
+- [The Rails Way](/articles/the-rails-way-review)
+- [The Rails 3 Way](/articles/the-rails3-way-review)
+
+And also a few books on software development and agile practices.
+
+### The Personal Stuff
+
+That's all very well but... I introduced H3RALD.com as my personal web site. And it, although I didn't really post a lot of really *personal* stuff: I always struggled to find my niche.
 
 
 Personal
 
 - /articles/20 (vittorio cevasco)
-- /articles/12 (job)
-- /articles/9 (riddle job)
-- /articles/36 (world cup)
 - /articles/incomplete-guide-to-london
 - /articles/11-07-2009
 
+### The end of blogging and the Nim era
 
-
-
-Recent articles
 
 - /articles/10-reasons-why-i-didnt-update-my-blog
 - /articles/10-programming-languages
@@ -138,3 +142,4 @@ Nim
 - /articles/litestore
 - /articles/h3
 
+### Going forward
