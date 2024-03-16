@@ -552,15 +552,15 @@ img {
     max-width: 100%;
 }
 
-@media screen and (max-width: 385px) {
-    *[style*="float"]:has(> img) {
+@media screen and (max-width: 500px) {
+    p[style*="float"]:has(img) {
       float: none !important;
       margin: 1rem auto;
       text-align: center;
     }
 }
 
-*[style*="float"]:has(> img) {
+p[style*="float"]:has(img) {
     margin: 1rem;
 }
 
