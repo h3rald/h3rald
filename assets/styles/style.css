@@ -701,21 +701,22 @@ a[href^=http].icon-link::after {
 
 .heading-anchor {
     position: relative;
-    top: -50px;
+    top: -70px;
     display: block;
     visibility: hidden;
 }
 
-.go2toc: {
+.go2top {
     font-size: 80%;
     vertical-align: super;
+}
 
 #toc {
     padding-left: 1rem;
 }
 
-#toc ul {
-  list-style-type: none;
+#toc li {
+    list-style-type: none;
 }
 
 /* Used only in Glyph Book */
