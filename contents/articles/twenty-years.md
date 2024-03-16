@@ -166,13 +166,13 @@ Talk about _selfdogfooding_, huh?
 
 To the two or three people that made it this far (or that skipped right to this section), here are some key takeaways after twenty years of running a personal web site.
 
+**When in doubt, just write**. Don't over-think it. Don't ask yourself if others already wrote something on the subject, don't ask yourself if writing about something is worthwhile. It is always worthwhile. I wrote reviews about programs and services that have been dead for years, and it was still worthwhile. I was worthwhile because it made me laugh about it ten or twenty years later, it was worthwhile because I learn something new while writing it, or just because it brought me joy.
+
 **A personal web site is mainly for you**, not others. You have it because it makes _you_ happy, because it's an excuse to try out new technology and learn new things, because _you_ need to write 10,000 words on a digital page just rambling about random stuff, because _you can_.
 
 **My web site is worth more than Facebook**. Because _I own it_. I don't own Facebook, or X, or Instagram, or TikTok, or Wikipedia. I own H3RALD.com, and that's where _my_ content goes. 
 Since I moved my first steps on the Internet, I have never understood why the majority of people deliberately choose to donate their content to walled gardens, it just doesn't make sense in my mind, and that's why I have never really been into social network. Sure, I may snoop (or ask my wife to) on friends and relatives through Facebook, put a like on LinkedIn when our head of product management posts something about our product, but if I have something to say, from _me_ it goes on my web site.
 
 **There is still hope for the World Wide Web**. While the Internet may be lost to apps, video streaming services, and corporations that want your content for free to make them rich, the WWW as sir Tim intended is alive and well. It's called [smol web](https://benhoyt.com/writings/the-small-web-is-beautiful/%5D) now, and it's where people who care about artisan computing and apps as a [home cooked meal](https://www.robinsloan.com/notes/home-cooked-app/), it's a few little towns in the Fediverse like [Merveilles](https://merveilles.town/) where some [truly smart](https://wiki.xxiivv.com/site/home.html) and [really creative](https://kokorobot.ca/site/home.html) folks hang out. 
-
-**When in doubt, just write**. Don't over-think it. Don't ask yourself if others already wrote something on the subject, don't ask yourself if writing about something is worthwhile. It is always worthwhile. I wrote reviews about programs and services that have been dead for years, and it was still worthwhile. I was worthwhile because it made me laugh about it ten or twenty years later, it was worthwhile because I learn something new while writing it, or just because it brought me joy.
 
 Woah, this was long. But I needed it... Here's to another twenty years of pointless, but liberating writing and programming. Happy birthday H3RALD.com!
