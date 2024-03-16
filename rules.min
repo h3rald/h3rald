@@ -30,7 +30,7 @@
     ".html"             %ext
     "ARTICLES"          %title
     "page"              %content-type
-    ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
+    ARCHIVES dvalues (/timestamp :a /timestamp :b a b >) sort %archives
     projects-count %projects-count
     articles-count %articles-count
     grimoire-count %grimoire-count
