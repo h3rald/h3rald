@@ -194,7 +194,7 @@
   (str :text ==> str :result)
   (
     () :headings
-    text "<h([1-6])[^>]*>([^<]+)</h[1-6]>" (
+    text "<h3[^>]*>([^<]+)</h3>" (
       :matches
       matches 1 get :level
       matches 2 get :title
