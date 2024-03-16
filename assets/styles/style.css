@@ -553,14 +553,14 @@ img {
 }
 
 @media screen and (max-width: 385px) {
-    *[style*="float"] img {
+    *[style*="float"]:has(> img) {
       float: none !important;
       margin: 1rem auto;
       text-align: center;
     }
 }
 
-*[style*="float"] img {
+*[style*="float"]:has(> img) {
     margin: 1rem;
 }
 
