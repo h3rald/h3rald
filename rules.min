@@ -214,7 +214,7 @@
           heading /title :text
           "<li><a href='#$1'>$2</a></li>" (id text) =%
         ) map "\n" join :links
-        "<ul id='#toc' class='panel'>$1</ul>" (links) =% :toc
+        "<ul id='toc' class='panel'>$1</ul>" (links) =% :toc
         "$1\n$2" (toc result) =% @result
       )
     when
