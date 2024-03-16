@@ -700,11 +700,11 @@ a[href^=http].icon-link::after {
 }
 
 .heading-anchor {
-    top: -50px;
+    top: -80px;
 }
 
 #toc {
-    padding-left: 1.5px;
+    padding-left: 1.5rem;
 }
 
 /* Used only in Glyph Book */

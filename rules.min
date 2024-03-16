@@ -204,7 +204,7 @@
         title %title
         id %id 
       headings append @headings
-      "<a class='heading-anchor' id='$2'></a><h$1>$3</h$1><a class='go2toc' href='#toc'>:chevron-up:</a>" (level id title) =%
+      "<a class='heading-anchor' id='$2'></a><h$1>$3</h$1><a class='go2toc' href='#toc'>⇈</a>" (level id title) =%
     ) replace-apply @result
     (headings size 3 >=)
       (
