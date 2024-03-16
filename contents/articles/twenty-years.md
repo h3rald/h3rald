@@ -47,6 +47,7 @@ I reviewed a few[Web 2.0](https://en.m.wikipedia.org/wiki/Web_2.0)-era services 
 But luckily some things were built to last:
 
 - [AJAX](/articles/what-is-ajax) may not be called that anymore (and we may have most definitely dropped the XML part), but it laid the foundation of modern JavaScript.
+- [REST](/articles/to-rest-or-not-to-rest) is alive and well.
 - [Git](/articles/git-for-the-locals) is now the de-facto version control system.
 - [SQLite](/articles/quick-overview-of-sqlite) is very widely-used and respected.
 
