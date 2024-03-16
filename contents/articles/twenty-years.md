@@ -118,28 +118,66 @@ And also a few books on software development and agile practices.
 
 ### The Personal Stuff
 
-That's all very well but... I introduced H3RALD.com as my personal web site. And it, although I didn't really post a lot of really *personal* stuff: I always struggled to find my niche.
+That's all very well but... I introduced H3RALD.com as my personal web site. And it is, although I have never really posted a lot of really *personal* stuff: I blogged about my life, but I tried to stick to themes like technology and programming. However, there were a few occasions that called for really personal blog posts.
 
+Probably one of the most emotional articles I have ever written is the one about my [grandfather](/articles/20). I wrote it the day after he passed away, in 2006, and I remember trying to put together my thoughts and try to remember all the stories he told me about his life. Blogging wasn't really a thing in the 1940s and 1950s, and he was never much into writing anyway, but he was an amazing storyteller. When I was a little boy, every time we started talking, he always ended up telling me about the war (he was a WWII pilot), about his plane... no matter what the topic was, it was _always_ related to some anecdote about that period in his life. 
+They say that old people live in the past, and it may be true, but the important thing is that when some old relative tells you a story, no matter how boring it sounds, you should always listen to them. You should record them, if you can, in fact!
 
-Personal
+I tried to capture a few of the stories he used to tell me in that article... but there were so many more! I wish I could remember them all. If I could go back in time, I would like to tell my 20-something year old self to start a blog together with my grandfather. It would have been an amazing experience.
 
-- /articles/20 (vittorio cevasco)
-- /articles/incomplete-guide-to-london
-- /articles/11-07-2009
+On a lighter note, another personal article that is not related to computing that I stumbled upon was my [incomplete guide to London](/articles/incomplete-guide-to-london). Kinda funny reading it now, but I am glad I wrote it.
+
+And of course I did write about [the most wonderful day of my life](/articles/11-07-2009), when I got married to my wife in 2009, and about our unforgettable Irish wedding.
 
 ### The end of blogging and the Nim era
 
+Among the most popular articles I wrote, I must definitely mention my roundup of [ten emerging programming languages](/articles/10-programming-languages) from 2008, and the [follow-up article](/articles/10-more-programming-languages) I decided to write exactly ten years after that, in 2018. And yes, I should probably write another one in four years time, although these days I only learning new programming languages for fun, not to make a career out of it.
 
-- /articles/10-reasons-why-i-didnt-update-my-blog
-- /articles/10-programming-languages
-- /articles/randal-schwartz
-- /articles/10-more-programming-languages
+Another really interesting episode of my life I am extremely glad I recorded on my blog is about my [pizza with Randal Schwartz](/articles/randal-schwartz). At the time I was an avid [FLOSS Weekly](https://twit.tv/shows/floss-weekly) listener and Randal was hosting that podcast. Podcasts are weird... I remember listening to FLOSS Weekly and [This week in Tech](https://twit.tv/shows/this-week-in-tech) every week when driving down to my in-laws, and after a while I felt like I knew these people, I knew what they were up to, and meeting Randal in person when he came to Genoa because of one of his Geek Cruises felt weird but not, at the same time. He probably forgot about that evening, but for me it was like meeting a celebrity, and I was over the moon.
 
-Nim
+Then... well, there's no other way to say it, I progressively stopped blogging and writing articles. I tried to rationalize it and even [wrote about it](/articles/10-reasons-why-i-didnt-update-my-blog), but the reasons boil down to realizing that:
 
-- /articles/hastyscribe
-- /articles/hastysite
-- /articles/litestore
-- /articles/h3
+- probably nobody really gives a crap about my blog
+- I was having a hard time finding something to write about that was not already on someone else's blog
+- there are entire companies that make money out of writing blogs, you can't compete with them
+- I didn't have time
+
+You may find counter-arguments for each of the above, but the fact remains that I haven't really spent much time writing in the last ten years. 
+
+I also remember realizing at the time that maybe I needed to create some cool pieces of software _so that I could write about it on my site_. And I did. I got progressively into command line applications and utilities (while progressively shifting to frontend development at work, that's kinda funny), and I got pissed off with Ruby for mainly two reasons:
+
+- You needed Ruby to run it, so your programs were only going to be used by people who had it installed on their machine
+- It was slow for certain things
+
+I obviously spent some time looking into different programming languages, and finally settled with [Nim](https://nim-lang.org), or Nimrod, as it was called originally. 
+
+One of the first things I did was creating a [documentation tool](/articles/hastyscribe) that I could use to write the technical docs for my software, the I decided that I needed a sort of [document store](/articles/litestore) with full text search because I wanted to implement a search functionality for H3RALD.com (afterwards, I decided not to bother). 
+
+What I really wanted to create though, was a new programming language, and that's how [min](/min) came to life. Then, I figured I had all the building blocks to create a new [static site generator](/articles/hastysite) that currently still powers this site...
+
+See a pattern there? I was scratching my own itches. And that's how great software gets made. That's just a statement by the way, I am not implying that _I_ am writing great software in an absolute sense, only that I am writing great (and useful!) software _for me_, and my specific use cases.
+
+I also wrote a [JavaScript micro framework](/articles/h3) which probably no one uses, but it made it really simple to create the (closed source for now) personal wiki engine that powers [nifty.tools](https://nifty.tools) (the backend is written in min) and [2c.fyi](https://2c.fyi) (the backend is powered by LiteStore). 
+
+Talk about _selfdogfooding_, huh?
 
 ### Going forward
+
+To the two or three people that made it this far (or that skipped right to this section), here are some key takeaways after twenty years of running a personal web site.
+
+**A personal web site is mainly for you**, not others. You have it because it makes _you_ happy, because it's an excuse to try out new technology and learn new things, because _you_ need to write 10,000 words on a digital page just rambling about random stuff, because _you can_.
+
+**When in doubt, just write**. Don't over-think it. Don't ask yourself if others already wrote something on the subject, don't ask yourself if writing about something is worthwhile. It is always worthwhile. I wrote reviews about programs and services that have been dead for years, and it was still worthwhile. I was worthwhile because it made me laugh about it ten or twenty years later, it was worthwhile because I learn something new while writing it, or just because it brought me joy.
+
+**My web site is worth more than Facebook**. Because _I own it_. I don't own Facebook, or X, or Instagram, or TikTok, or Wikipedia. I own H3RALD.com, and that's where _my_ content goes. 
+Since I moved my first steps on the Internet, I have never understood why the majority of people deliberately choose to donate their content to walled gardens, it just doesn't make sense in my mind, and that's why I have never really been into social network. Sure, I may snoop (or ask my wife to) on friends and relatives through Facebook, put a like on LinkedIn when our head of product management posts something about our product, but if I have something to say, from _me_ it goes on my web site.
+
+**There is still hope for the World Wide Web**. While the Internet may be lost to apps, video streaming services, and corporations that want your content for free to make them rich, the WWW as sir Tim intended is alive and well. It's called [smol web](https://benhoyt.com/writings/the-small-web-is-beautiful/%5D) now, and it's where people who care about artisan computing and apps as a [home cooked meal](https://www.robinsloan.com/notes/home-cooked-app/), it's a few little towns in the Fediverse like [Merveilles](https://merveilles.town/) where some [truly smart](https://wiki.xxiivv.com/site/home.html) and [really creative](https://kokorobot.ca/site/home.html) folks hang out. 
+
+We don't want to get rich, we want to enrich ourselves.
+
+We don't want fake followers, we want real friends.
+
+We don't want bloated proprietary apps, we want nimble open source programs.
+
+Here's to another twenty years of pointless, but liberating writing and programming. Happy birthday H3RALD.com!
