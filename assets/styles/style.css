@@ -423,12 +423,6 @@ footer {
 }
 
 
-@media screen and (max-width: 385px) {
-    .header-counter {
-        display: none;
-    }
-}
-
 /* End fixed header */
 
 .main-header h1 {
@@ -556,6 +550,18 @@ footer .h3rald {
 
 img {
     max-width: 100%;
+}
+
+@media screen and (max-width: 385px) {
+    img[style*="float"] {
+      float: none !important;
+      margin: 1rem auto;
+      text-align: center;
+    }
+}
+
+img[style*="float"] {
+    margin: 1rem;
 }
 
 pre code,
