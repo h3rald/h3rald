@@ -189,6 +189,23 @@
   )
 ) ::
 
+(
+  symbol prepend-toc
+  (str :text ==> str :result)
+  (
+    () :headings
+    text "<h([1-6])[^>]*>([^<]+)</h[1-6]>" (
+      :matches
+      matches 1 get :level
+      matches 2 get :title
+      title "[^a-zA-Z0-9_-]" "_" replace :id
+      "heading__$#" (id) =% @id
+      (id title) headings append @headings
+      "<h$1 id='$2'>$3</h$1>" (level id title) =%
+    ) replace-apply @result
+  )
+) ::
+
 ; Process :icon: markup
 (
   symbol process-icons
@@ -247,6 +264,7 @@
     tpl content mustache @page
     id page process-icons @page
     id page process-code @page
+    page prepend-toc @page
     content page %contents @content
     (
         ((id "^(glyph|ruby-compendium)(\/|\\\\)book" match?) ()) ;Do not add index.html due to the way book internal links work.
