@@ -554,9 +554,9 @@ img {
 
 @media screen and (max-width: 500px) {
     p[style*="float"]:has(img) {
-      float: none !important;
-      margin: 1rem auto;
-      text-align: center;
+        float: none !important;
+        margin: 1rem auto;
+        text-align: center;
     }
 }
 
@@ -697,6 +697,14 @@ a[href^=http].icon-link::after {
     height: 16px;
     border: none;
     vertical-align: text-top;
+}
+
+.heading-anchor {
+    top: -50px;
+}
+
+#toc {
+    padding-left: 1.5px;
 }
 
 /* Used only in Glyph Book */

@@ -200,9 +200,24 @@
       matches 2 get :title
       title "[^a-zA-Z0-9_-]" "_" replace :id
       "heading__$#" (id) =% @id
-      (id title) headings append @headings
-      "<h$1 id='$2'>$3</h$1>" (level id title) =%
+      {}
+        title %title
+        id %id 
+      headings append @headings
+      "<a class='heading-anchor' id='$2'></a><h$1>$3</h$1><a class='go2toc' href='#toc'>:chevron-up:</a>" (level id title) =%
     ) replace-apply @result
+    (headings size 3 >=)
+      (
+        headings (
+          :heading
+          heading /id :id
+          heading /title :text
+          "<li><a href='#$1'>$2</a></li>" (id text) =%
+        ) map "\n" join :links
+        "<ul id='#toc' class='panel'>$1</ul>" (links) =% :toc
+        "$1\n$2" (toc result) =% @result
+      )
+    when
   )
 ) ::
 
@@ -260,11 +275,10 @@
     "" :contents
     content input-fread @contents
     (content /ext ".md" ==) (contents content markdown @contents) when
-    content contents %contents @content
+    content contents prepend-toc %contents @content
     tpl content mustache @page
     id page process-icons @page
     id page process-code @page
-    page prepend-toc @page
     content page %contents @content
     (
         ((id "^(glyph|ruby-compendium)(\/|\\\\)book" match?) ()) ;Do not add index.html due to the way book internal links work.
