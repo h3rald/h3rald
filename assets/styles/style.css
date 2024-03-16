@@ -701,7 +701,7 @@ a[href^=http].icon-link::after {
 
 .heading-anchor {
     position: relative;
-    top: -50px;
+    top: -70px;
     display: block;
     visibility: hidden;
 }
@@ -712,7 +712,7 @@ a[href^=http].icon-link::after {
 }
 
 #toc {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 #toc li {
