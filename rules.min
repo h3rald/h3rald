@@ -36,8 +36,7 @@
     grimoire-count %grimoire-count
     ; sort articles within each archive
     (
-      :archive
-      archive /articles 
+      dup /articles 
         (/timestamp :a /timestamp :b
         a b >) sort %articles
     ) map
