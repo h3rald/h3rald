@@ -30,16 +30,17 @@
     ".html"             %ext
     "ARTICLES"          %title
     "page"              %content-type
-    ARCHIVES dvalues (/code :a /code :b a b >) sort %archives
-    projects-count %projects-count
-    articles-count %articles-count
-    grimoire-count %grimoire-count
+    ARCHIVES dvalues (/code :a /code :b a b >) sort 
     ; sort articles within each archive
     (
       dup /articles 
         (/timestamp :a /timestamp :b
         a b >) sort %articles
     ) map
+    %archives
+    projects-count %projects-count
+    articles-count %articles-count
+    grimoire-count %grimoire-count
     ; TODO: why processing twice??
     dup "_archives" swap mustache %contents
     dup "page" swap mustache :page
