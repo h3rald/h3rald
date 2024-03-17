@@ -722,8 +722,8 @@ a[href^=http].icon-link::after {
 }
 
 /* Avoid links on new line overwriting the previous line (links must be inline-block otherwise arrow icon may go on a new line*/
-li a, footer a, 
-:not(a[href^="http"]) {
+li a, footer a,  
+h2 a, h3 a, h4 a {
   display: inline;
 }
 
