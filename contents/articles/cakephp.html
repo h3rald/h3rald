@@ -36,13 +36,11 @@ tags: "cakephp|review|frameworks|webdevelopment"
     the .NET framework[3]. That inspired me to start searching the Internet for a 'PHP framework'. That led me to an
     interesting blog entry[4] where a solution was proposed - a solution to <em>bring order to chaos</em>:</p>
 
-<fieldset>
-    <blockquote>
-        <p>[...] The answer is simple: create our own class library, some kind of framework, the PHP framework. The
-            similar in many ways to that one which is already well known to Java or .NET programmers. We could set the
-            standards, structure and main guidelines. [...]</p>
-    </blockquote>
-</fieldset>
+<blockquote>
+    <p>[...] The answer is simple: create our own class library, some kind of framework, the PHP framework. The
+        similar in many ways to that one which is already well known to Java or .NET programmers. We could set the
+        standards, structure and main guidelines. [...]</p>
+</blockquote>
 
 <p>That blog post made me think about developing my own framework, until I noticed that there were many projects already
     in progress, and some in fact completed; the end result being a fully functional PHP framework. I read a lot about
@@ -66,12 +64,10 @@ tags: "cakephp|review|frameworks|webdevelopment"
     programming. My meanderings took me to Ruby on Rails[9], one of the most recent examples of technology hype on the
     Net. At the same time,to a certain extent, it is also a successful tool.</p>
 
-<fieldset>
-    <blockquote>
-        <p>"Rails is a full-stack, open-source web framework in Ruby for writing real-world applications with joy and
-            less code than most frameworks spend doing XML sit-ups."</p>
-    </blockquote>
-</fieldset>
+<blockquote>
+    <p>"Rails is a full-stack, open-source web framework in Ruby for writing real-world applications with joy and
+        less code than most frameworks spend doing XML sit-ups."</p>
+</blockquote>
 
 <p>That sounded like what I was looking for, and I started reading more about it in the vast and varied help
     sections[10] available both on and off of the official site. The Rails team did an outstanding job promoting and
@@ -127,10 +123,10 @@ tags: "cakephp|review|frameworks|webdevelopment"
     languages:</p>
 
 <ul>
-    <li>PHP</li>[12]<br />
-    <li>Python</li>[13]<br />
-    <li>Java </li>[14]<br />
-    <li>Perl </li>[15]<br />
+    <li>PHP</li>[12]
+    <li>Python</li>[13]
+    <li>Java </li>[14]
+    <li>Perl </li>[15]
 </ul>
 
 <p>I said <em>disease</em> because Rails developers think that Ruby on Rails was made in Ruby for a reason, namely that
@@ -146,13 +142,11 @@ tags: "cakephp|review|frameworks|webdevelopment"
     It also seemed to be a more original and actively developed project. In particular, I'd like to quote one of
     CakePHP's developers, from when he introduced the framework in a comment to a blog post[16]: </p>
 
-<fieldset>
-    <blockquote>
-        <p>"While it's difficult to copy Rails in PHP, it's quite possible to write an equivalent system. I like the
-            terseness of Ruby code, but I need the structure that Rails provides, how it makes me organize my code into
-            something sustainable. That's why I'm ripping off Rails in Cake."</p>
-    </blockquote>
-</fieldset>
+<blockquote>
+    <p>"While it's difficult to copy Rails in PHP, it's quite possible to write an equivalent system. I like the
+        terseness of Ruby code, but I need the structure that Rails provides, how it makes me organize my code into
+        something sustainable. That's why I'm ripping off Rails in Cake."</p>
+</blockquote>
 
 <p>Cake's developers (bakers?) are developing their own framework which uses many principles of Ruby on Rails, revisited
     and re-proposed in an extremely flexible and easy to use PHP tool, rather than simply trying to port Rails to PHP. I
@@ -163,14 +157,12 @@ tags: "cakephp|review|frameworks|webdevelopment"
 
 <p>Quoting from CakePHP's website:</p>
 
-<fieldset>
-    <blockquote>
-        <p>"Cake is a rapid development framework for PHP which uses commonly known design patterns like ActiveRecord,
-            Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework
-            that enables PHP users at all levels to rapidly develop robust web applications, without any loss to
-            flexibility." </p>
-    </blockquote>
-</fieldset>
+<blockquote>
+    <p>"Cake is a rapid development framework for PHP which uses commonly known design patterns like ActiveRecord,
+        Association Data Mapping, Front Controller and MVC. Our primary goal is to provide a structured framework
+        that enables PHP users at all levels to rapidly develop robust web applications, without any loss to
+        flexibility." </p>
+</blockquote>
 
 <p>That sounds like the Holy Grail for PHP developers, and I must admit I'm quite impressed myself after using it on
     various little projects, but is it really all true? What are Cake's features? Are there any limitations?</p>
@@ -243,32 +235,35 @@ tags: "cakephp|review|frameworks|webdevelopment"
 
 <ul>
     <li>
-        <h4>acl.ini.php:</h4> This file must be edited only if you plan to use Cake's default ACL
+        <strong>acl.ini.php:</strong> This file must be edited only if you plan to use Cake's default ACL
         (access control list)
         system for your application. It sets permissions for the application, so it should be used to list every group,
         user, and their respective rights. This can be useful for small sites with a few well known users, but for
         anything else, you should develop your own ACL or authentication system that relies on a database.
     </li>
     <li>
-        <h4>core.php:</h4> This file can be edited to change some default options, such as the level of the error
+        <strong>core.php:</strong> This file can be edited to change some default options, such as the level of the
+        error
         messages
         and notices that the application will output. This comes in very handy while developing an application.
     </li>
     <li>
-        <h4>database.php.default:</h4> This should be renamed to database.php and edited if you plan to use any
+        <strong>database.php.default:</strong> This should be renamed to database.php and edited if you plan to use any
         databases
         with Cake. The settings are fairly straightforward, and include the type of database used
         (mysql,
         postrgres, sqlite, or any other supported by the AdoDB library[18]), username, password and database name.
     </li>
     <li>
-        <h4>paths.php:</h4> Unless you are very particular, you should leave this file alone. It tells Cake where to
+        <strong>paths.php:</strong> Unless you are very particular, you should leave this file alone. It tells Cake
+        where to
         look for
         CSS files, images, controllers, etc. If you are planning to adopt Cake's directory structure - which is the
         most logical option - you can ignore this.
     </li>
     <li>
-        <h4>routes.php:</h4> Following Rails' example, CakePHP features a "routing system" for user-friendly URLs. By
+        <strong>routes.php:</strong> Following Rails' example, CakePHP features a "routing system" for user-friendly
+        URLs. By
         default, your URLs will look like this:
         <em>http://sitename/controller-name/action-name/eventual/action/parameters</em>, which is a really nice way to
         organize a site, but you may want to change something if you have particular requirements.
@@ -298,12 +293,10 @@ tags: "cakephp|review|frameworks|webdevelopment"
 
 <p>Recently <em>Components</em> have been added to CakePHP, and quoting from the corresponding
     wiki page[20]:</p>
-<fieldset>
-    <blockquote><br />"Components are the preferred way to provide additional functionality to your controller.
-        To make a component available you would add var $component = array('myComponent') inside of your
-        controller's definition, add your file to the /app/controllers/components, name your class MyComponent,
-        and create your methods."<br /></blockquote>
-</fieldset>
+<blockquote>"Components are the preferred way to provide additional functionality to your controller.
+    To make a component available you would add var $component = array('myComponent') inside of your
+    controller's definition, add your file to the /app/controllers/components, name your class MyComponent,
+    and create your methods."</blockquote>
 
 <h4>Models</h4>
 <p>A model is an
@@ -358,15 +351,13 @@ class Post extends AppModel
     $content_for_layout respectively.</p>
 <p>Similarly to what was said about components, <em>helpers</em> can
     be used to extend views functionalities[20]:</p>
-<fieldset>
-    <blockquote>
-        <p>"Helpers are all about the view. You know about the helpers in Cake, but you need a little
-            bit more. You want to have your own methods to display formatted info. To achieve this, you need to add
-            var $helpers = array('myHelper').</p>
-        <p>Now, throw your myhelper.php file into the
-            /app/views/helpers/, create the class MyHelper, and $myHelper is available in the view."</p>
-    </blockquote>
-</fieldset>
+<blockquote>
+    <p>"Helpers are all about the view. You know about the helpers in Cake, but you need a little
+        bit more. You want to have your own methods to display formatted info. To achieve this, you need to add
+        var $helpers = array('myHelper').</p>
+    <p>Now, throw your myhelper.php file into the
+        /app/views/helpers/, create the class MyHelper, and $myHelper is available in the view."</p>
+</blockquote>
 <p>Cake comes with some very useful default helpers to create links and HTML tags, import
     JavaScript, create forms, and use AJAX code easily. Unlike most other frameworks, Cake neither has nor uses a
     third party template engine (like Smarty[21]) for views, but helpers can be used to achieve similar results more
@@ -412,65 +403,65 @@ class Post extends AppModel
     and its framework, you may have some questions, or be curious about some aspect of the project. PHPNut and gwoo,
     two of CakePHP's creators and lead developers, offered to answer some questions exclusively for zZine readers.
     This interview took place on Oct. 26th, 2005, in #dev-cakephp on irc.freenode.org.</p>
-<em><strong>h3rald</strong>:</em>
-<p> Thanks to both of you for allowing me to
+<p> <em><strong>h3rald</strong>:</em>
+    Thanks to both of you for allowing me to
     interview you about your project, CakePHP. Where did the name come from, anyway?</p>
-<em>PHPnut:</em> The
-original project was started by Michal Tatarynowicz aka Pies (hence the name), and when I saw his release, last
-March, I decided to contact him. I told him that the company I own supports projects like Cake, and also that I
-was in the process of developing something along the same lines. </p>
-<em><strong>h3raLd</strong>:</em>
-<p> Is Cake released under the GPL? How many
+<p> <em>PHPnut:</em> The
+    original project was started by Michal Tatarynowicz aka Pies (hence the name), and when I saw his release, last
+    March, I decided to contact him. I told him that the company I own supports projects like Cake, and also that I
+    was in the process of developing something along the same lines. </p>
+<p> <em><strong>h3raLd</strong>:</em>
+    Is Cake released under the GPL? How many
     developers are helping out?</p>
-<em>gwoo:</em> Cake is released under the MIT license, and the
-development team is composed of me and PHPnut, plus four other contributors. Then there's the Documentation
-Team, currently 3-5 people. Documentation has to follow the releases, so it usually lags behind a bit: we made
-so many modifications in the recent release that the Doc Team has a lot to catch up on, but it's getting
-there.</p>
-<em>PHPnut:</em> With this release you will see that the docs are going to be much better. The
-code is very stable now, and hopefully very little changes on that.</p>
-<em><strong>h3raLd</strong>:</em>
-<p> Some people, at first glance, may think that Cake
+<p> <em>gwoo:</em> Cake is released under the MIT license, and the
+    development team is composed of me and PHPnut, plus four other contributors. Then there's the Documentation
+    Team, currently 3-5 people. Documentation has to follow the releases, so it usually lags behind a bit: we made
+    so many modifications in the recent release that the Doc Team has a lot to catch up on, but it's getting
+    there.</p>
+<p> <em>PHPnut:</em> With this release you will see that the docs are going to be much better. The
+    code is very stable now, and hopefully very little changes on that.</p>
+<p> <em><strong>h3raLd</strong>:</em>
+    Some people, at first glance, may think that Cake
     is a PHP port of Ruby on Rails. How true is that? What are the differences and similarities between these two
     frameworks?</p>
-<em>PHPnut:</em> Cake started as a port, but has evolved into something more: we
-discussed using the concepts that RoR offered and including them in a framework for users of PHP. I have used
-PHP for a number of years, and I am comfortable with it; this is where my passion is, and I think people who use
-Cake have those same passions as we developers do.</p>
-<em><strong>h3raLd</strong>:</em>
-<p> I read once that Rails was developed in Ruby
+<p> <em>PHPnut:</em> Cake started as a port, but has evolved into something more: we
+    discussed using the concepts that RoR offered and including them in a framework for users of PHP. I have used
+    PHP for a number of years, and I am comfortable with it; this is where my passion is, and I think people who use
+    Cake have those same passions as we developers do.</p>
+<p> <em><strong>h3raLd</strong>:</em>
+    I read once that Rails was developed in Ruby
     because only Ruby can offer certain functionalities and features...</p>
-<em>gwoo:</em> I would disagree,
-and I think that is proven in what we have done: sure RoR has a built in server and some other nice things, but
-PHP is everywhere.</p>
-<em><strong>h3raLd</strong>:</em>
-<p> Some developers, especially Perl programmers, tend to consider PHP an "inferior" language sometimes. What do you
+<p> <em>gwoo:</em> I would disagree,
+    and I think that is proven in what we have done: sure RoR has a built in server and some other nice things, but
+    PHP is everywhere.</p>
+<p> <em><strong>h3raLd</strong>:</em>
+    Some developers, especially Perl programmers, tend to consider PHP an "inferior" language sometimes. What do you
     think of
     that?</p>
-<em>PHPnut:</em> My name says what I think about them all.</p>
-<em>gwoo:</em> PHP is a
-web programming language; that's what it was designed for, and that's what it does best: It all boils down to
-what you are comfortable with.</p>
-<em><strong>h3raLd</strong>:</em>
-<p> Did
+<p> <em>PHPnut:</em> My name says what I think about them all.</p>
+<p> <em>gwoo:</em> PHP is a
+    web programming language; that's what it was designed for, and that's what it does best: It all boils down to
+    what you are comfortable with.</p>
+<p> <em><strong>h3raLd</strong>:</em>
+    Did
     you try any other PHP frameworks, MVC-based (Mojavi, for example), or event-driven, like Prado? What do you
     think about them? In what ways can Cake be better or worse?</p>
-<em>gwoo:</em> They are all so complex,
-in my opinion, and I tried nearly all of them. Cake breaks apart the MVC and handle the CRUD in a logical way,
-and Cake syntax is super easy to learn.</p>
-<em><strong>h3raLd</strong>:</em>
-<p> Ruby
+<p> <em>gwoo:</em> They are all so complex,
+    in my opinion, and I tried nearly all of them. Cake breaks apart the MVC and handle the CRUD in a logical way,
+    and Cake syntax is super easy to learn.</p>
+<p> <em><strong>h3raLd</strong>:</em>
+    Ruby
     on Rails has been ported to various
     languages, including Java and Python. There are three PHP frameworks inspired by the famous Ruby project:
     Biscuit, PHP on Tracks and CakePHP. What do you think of that? Any chance of a merge? Did you have a look at
     them?</p>
-<em>gwoo:</em> You forgot Symfony[27], a PHP5-only port: I tried it but it seems much harder to
-learn than Cake.</p>
-<em>PHPnut:</em> I could be wrong, but I think these other projects are behind us in
-ease of use, in what the framework is capable of doing, and in features, not to mention community
-support.</p>
-<em>gwoo:</em> I tried all of the PHP ports of Ruby on Rails and none of them has the
-features, the community,or a lexicon as good as Cake's.</p>
+<p> <em>gwoo:</em> You forgot Symfony[27], a PHP5-only port: I tried it but it seems much harder to
+    learn than Cake.</p>
+<p> <em>PHPnut:</em> I could be wrong, but I think these other projects are behind us in
+    ease of use, in what the framework is capable of doing, and in features, not to mention community
+    support.</p>
+<p> <em>gwoo:</em> I tried all of the PHP ports of Ruby on Rails and none of them has the
+    features, the community,or a lexicon as good as Cake's.</p>
 
 
 <p><strong>h3raLd</strong>:</em> Why don't you consider CakePHP a port? In what way is it evolving from Rails?</p>
@@ -518,48 +509,49 @@ features, the community,or a lexicon as good as Cake's.</p>
 
 
 
-<h3>...Or Just Eat</h3> <small><em> by Marc Abramowitz</em></small><br /><br />
+<h3>...Or Just Eat</h3> <small><em> by Marc Abramowitz</em></small>
 <p>If you don't feel ready to contribute and you'd like to try out the framework first, it can be downloaded directly
     from the CakePHP site[25] as either a <em>release</em> or a <em>nightly</em> build: the zip file is less than 300KB.
 </p>
 <p>I wanted to include a <em>success story</em> written by Marc Abramowitz, an experienced PHP programmer who decided to
     adopt CakePHP as a framework to use in a production environment: he persuaded his colleagues to use it and they all
     seem happy with it. He writes:</p>
-<em>For the past few years, I've done quite a bit of work in PHP, working on production code that runs on a very high
+<blockquote>For the past few years, I've done quite a bit of work in PHP, working on production code that runs on a very
+    high
     traffic web site. PHP has served us well, as it is easy to write and read, quite efficient, and easy to integrate
-    with existing C++ code as the site grew.</em><br /><br />
+    with existing C++ code as the site grew.</blockquote>
 <p>Lately, there has been a lot of buzz in the web development community about Ruby on Rails. Like many others, I took
     some interest in Ruby on Rails because I was intrigued by the apparent power and elegance of Ruby and because I
     wondered if a Model/View/Controller (MVC) framework like Rails would help enforce a more consistent code structure
     that would make the code easier to understand and maintain. Additionally, I wondered if an MVC framework would
-    enable very rapid prototyping.</p><br /><br />
+    enable very rapid prototyping.</p>
 <p>Some people are very wary of frameworks that impose structure, as they like to have the freedom to do things however
     they want. However, there is a tradeoff between structure and flexibility. If you're working on a small team or a
     relatively small project, then you may not find structure to be very helpful; you may even find that it gets in your
-    way.</p><br /><br />
+    way.</p>
 <p>However, as teams and projects get larger, structure becomes more and more valuable, as it enforces consistent
     patterns of how to do things and rather than being something that limits, it in fact liberates, because it abstracts
     away the small details and allows us to therefore concentrate on the larger problem. Think of the lines that are
     painted on our roadways - although they add structure, we don't find them to be limiting. On the contrary, they help
     us to drive without worrying about crashing into each other at every moment - they free us from being concerned with
-    small details so that we can concentrate on getting where we're going.</p><br /><br />
+    small details so that we can concentrate on getting where we're going.</p>
 <p>Rapid prototyping appeals to me, because I find it helps me to better present my ideas for new apps and features. A
     mockup can only go so far - there is no substitute for a working prototype. When clients get their hands on a
     functional prototype, they get a better idea of what is possible and it forces them to clarify their requirements
     for the product. This results in a better dialogue between the developer and the client, which leads to better
-    upfront decisions, more stable requirements, less stress, and a better product.</p><br /><br />
+    upfront decisions, more stable requirements, less stress, and a better product.</p>
 <p>So, Rails appealed to me not only because of the potentially valuable structure that it could add, but also because
     it could enable rapid prototyping. However, I knew that there was no chance of Rails being used for production code
     in my organization, because we run some very high traffic web sites that require the utmost in efficiency. We are
-    also by and large a PHP shop.</p><br /><br />
+    also by and large a PHP shop.</p>
 <p>However, when my manager approached me and asked me to develop a database-backed internal tool, I thought of Rails
     again. I then considered the fact that I would probably someday have to hand this app off to someone else, and that
     someone would probably know PHP but not Ruby. Heck, even I had several years of experience with PHP (including
     writing some PHP extensions) but I had only done a little bit of reading about Ruby, and I also had no practical
-    experience with it.</p><br /><br />
+    experience with it.</p>
 <p>Furthermore, with PHP I had access to a large number of PHP extensions that wrapped various internal libraries. So
     PHP was the natural choice. Ideally, I wanted to use PHP with a Rails-like MVC framework that would facilitate rapid
-    development, and this is what led me to CakePHP.</p><br /><br />
+    development, and this is what led me to CakePHP.</p>
 <p>I began by downloading CakePHP 0.9.2 and following the sample tutorial that walks you through creating a simple blog
     application (note that at the time of this writing, the current version of Cake is now 0.10.0.1076, so some of the
     details of using Cake have changed). I was pleased to find that the process was quite similar to the process for
@@ -670,8 +662,7 @@ features, the community,or a lexicon as good as Cake's.</p>
     all of my PHP web development problems. CakePHP can really help PHP developers a lot if properly used and
     understood. Still not convinced? Just try it out then, will you?[17]</p>
 
-<h3>Notes and Related
-    Resources</h3>
+<h3>Credits</h3>
 
 <p>Special thanks to:</p>
 <ul>
@@ -681,7 +672,7 @@ features, the community,or a lexicon as good as Cake's.</p>
         '...let's eat' section.</li>
 </ul>
 
-<p>Notes:</p>
+<h3>Notes</h3>
 <ul>
     <li>
         [1] PHP functions reference, <a
