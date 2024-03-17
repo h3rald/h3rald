@@ -598,6 +598,7 @@ h6,
 
 a,
 a:visited {
+    display: inline-block;
     color: var(--link-color);
     word-break: break-word;
 }
@@ -717,6 +718,7 @@ a[href^=http].icon-link::after {
 
 #toc li {
     list-style-type: none;
+    margin: 1.2rem 0;
 }
 
 /* Used only in Glyph Book */
