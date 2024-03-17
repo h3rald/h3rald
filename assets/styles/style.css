@@ -717,8 +717,8 @@ a[href^=http].icon-link::after {
 }
 
 #toc li {
-    list-style-type: \203A;
-    text-indent: 1rem;
+    list-style-type: "\203A";
+    margin-right: 1rem;
 }
 
 /* Used only in Glyph Book */
