@@ -713,12 +713,12 @@ a[href^=http].icon-link::after {
 }
 
 #toc {
-    padding-left: 1rem;
+    padding: 1rem;
 }
 
 #toc li {
-    list-style-type: none;
-    margin: 1.2rem 0;
+    list-style-type: \203A;
+    text-indent: 1rem;
 }
 
 /* Used only in Glyph Book */
