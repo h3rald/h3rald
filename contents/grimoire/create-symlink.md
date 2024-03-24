@@ -10,5 +10,5 @@ The existing file you want to link to comes first, and the new file that links t
 Oh, and don't forget `-s`.
 
 ```bash
-ln -s <source_file> <myfile>
+ln -s <source_file> <link>
 ```
