@@ -1,4 +1,4 @@
-"output" ls-r ("\.html" match?) filter :html-files
+"output" ls-r ("\\.html" match?) filter :html-files
 
 (
     symbol check-links
@@ -10,11 +10,11 @@
             1 get :href
             href :resolved-href
             ; Check internal links
-            (href "^\/" match?)
+            (href "^/" match?)
                 (
-                    (href "\..+$" match? not)
+                    (href "\\..+$" match? not)
                         (
-                            (href "\/$" match?)
+                            (href "/$" match?)
                                 ("$#$#" (href "index.html") =% @resolved-href)
                                 ("$#/$#" (href "index.html") =% @resolved-href)
                             if
@@ -51,7 +51,7 @@
             1 get :src
             src :resolved-src
            ; Check internal images
-           (src "^\/" match?) 
+           (src "^/" match?) 
                 (
                     "$#$#" ("output" resolved-src) =% @resolved-src
                     (resolved-src file? not)
@@ -63,7 +63,7 @@
                     when
                 )
             when
-            (src "^https?:\/\/(?:www.)?h3rald.com" match?)
+            (src "^https?://(?:www.)?h3rald.com" match?)
                 (
                     (result src in? not)
                         (src result append @result)

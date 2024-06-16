@@ -7,8 +7,8 @@ false     :valid-id
 (
   (str) expect first :ident
   ident "^[a-z0-9-]+$" match? :valid-regexp
-  (. "contents" "grimoire") => "/" join ls :filelist
-  filelist (filename "(.+)\..+$" search 1 get) map ident in? not :valid-file
+  (pwd "contents" "grimoire") => "/" join ls :filelist
+  filelist (filename "(.+)\\..+$" search 1 get) map ident in? not :valid-file
   valid-regexp valid-file and
 ) ^validate
 
@@ -23,19 +23,12 @@ false     :valid-id
 "Title" ask @title
 "Subtitle" ask @subtitle
 
-"-----
-id: $1
-title: \"$2\"
-subtitle: \"$3\"
-content-type: spell 
------
-
-" (ident title subtitle) =% :metadata
+"-----\nid: $1\ntitle: \"$2\"\nsubtitle: \"$3\"\ncontent-type: spell \n-----\n\n" (ident title subtitle) =% :metadata
 
 ("Cast spell?" confirm) 
   (
     (ident ".md") => "" join :fn 
-    (. "contents" "grimoire" fn) => "/" join :path
+    (pwd "contents" "grimoire" fn) => "/" join :path
     metadata path fwrite
   ) 
 when
