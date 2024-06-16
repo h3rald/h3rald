@@ -25,27 +25,27 @@
   (==>)
   (
     {}
-    "articles/index"    %id
-    "articles.html"     %path
-    ".html"             %ext
-    "ARTICLES"          %title
-    "page"              %content-type
-    ARCHIVES dvalues (/code :a /code :b a b >) sort 
-    ; sort articles within each archive
+    "articles/index"    "id" dset
+    "articles.html"     "path" dset
+    ".html"             "ext" dset
+    "ARTICLES"          "title" dset
+    "page"              "content-type" dset
+    ARCHIVES dvalues ("code" dget :a "code" dget :b a b >) sort 
+    ;; sort articles within each archive
     (
-      dup /articles 
-        (/timestamp :a /timestamp :b
-        a b >) sort %articles
+      dup "articles" dget 
+        ("timestamp" dget :a "timestamp" dget :b
+        a b >) sort "articles" dset
     ) map
-    %archives
-    projects-count %projects-count
-    articles-count %articles-count
-    grimoire-count %grimoire-count
-    ; TODO: why processing twice??
-    dup "_archives" swap mustache %contents
+    "archives" dset
+    projects-count "projects-count" dset
+    articles-count "articles-count" dset
+    grimoire-count "grimoire-count" dset
+    ;; TODO: why processing twice??
+    dup "_archives" swap mustache "contents" dset
     dup "page" swap mustache :page
     "articles" page process-icons
-    %contents
+    "contents" dset
     output-fwrite
   )
 ) ::
@@ -56,19 +56,19 @@
   (==>)
   (
     {}
-    "projects/index"                                    %id
-    "projects.html"                                     %path
-    ".html"                                             %ext
-    "PROJECTS"                                          %title
-    "page"                                              %content-type
-    PROJECTS ('active dhas?) filter (/id swap /id <) sort     %active-projects
-    PROJECTS ('active dhas? not) filter (/id swap /id <) sort %inactive-projects
-    projects-count %projects-count
-    articles-count %articles-count
-    grimoire-count %grimoire-count
+    "projects/index"                                    "id" dset
+    "projects.html"                                     "path" dset
+    ".html"                                             "ext" dset
+    "PROJECTS"                                          "title" dset
+    "page"                                              "content-type" dset
+    PROJECTS ('active dhas?) filter ("id" dget swap "id" dget <) sort     "active-projects" dset
+    PROJECTS ('active dhas? not) filter ("id" dget swap "id" dget <) sort "inactive-projects" dset
+    projects-count "projects-count" dset
+    articles-count "articles-count" dset
+    grimoire-count "grimoire-count" dset
     dup "projects" swap mustache :page
     "projects" page process-icons
-    %contents
+    "contents" dset
     output-fwrite
   )
 ) ::
@@ -79,18 +79,18 @@
   (==>)
   (
     {}
-    "grimoire/index"                                    %id
-    "grimoire.html"                                     %path
-    ".html"                                             %ext
-    "GRIMOIRE"                                          %title
-    "page"                                              %content-type
-    SPELLS (/id swap /id <) sort                        %spells
-    projects-count %projects-count
-    articles-count %articles-count
-    grimoire-count %grimoire-count
+    "grimoire/index"                                    "id" dset
+    "grimoire.html"                                     "path" dset
+    ".html"                                             "ext" dset
+    "GRIMOIRE"                                          "title" dset
+    "page"                                              "content-type" dset
+    SPELLS ("id" dget swap "id" dget <) sort                        "spells" dset
+    projects-count "projects-count" dset
+    articles-count "articles-count" dset
+    grimoire-count "grimoire-count" dset
     dup "grimoire" swap mustache :page
     "grimoire" page process-icons
-    %contents
+    "contents" dset
     output-fwrite
   )
 ) ::
@@ -102,32 +102,32 @@
   (
     (content 'timestamp dhas?)
     (
-      content /timestamp :ts
+      content "timestamp" dget :ts
       ts to-date :date 
       ts integer "yyyyMM" tformat :code
       ts integer "MMMM yyyy" tformat :month
       ts integer "MMMM-yyyy" tformat lowercase :id
-      ; Add to articles
-      content date %date @content
+      ;; Add to articles
+      content date "date" dset @content
       content ARTICLES append @ARTICLES
       (ARCHIVES code dhas?)
       (
-        ; Add article to existing archive
+        ;; Add article to existing archive
         content ("id" "title" "timestamp" "date") dpick :article
         ARCHIVES code dget :archivedata
-        archivedata /articles :articles
+        archivedata "articles" dget :articles
         article articles append @articles
-        archivedata articles %articles :archivedata
+        archivedata articles "articles" dset :archivedata
         ARCHIVES archivedata code dset @ARCHIVES
       )
       (
-        ; Create new monthly archive
+        ;; Create new monthly archive
         content ("id" "title" "timestamp" "date") dpick :article
         {}
-        month         %month
-        code          %code
-        article quote %articles
-        id            %id
+        month         "month" dset
+        code          "code" dset
+        article quote "articles" dset
+        id            "id" dset
         :archive
         ARCHIVES archive code dset @ARCHIVES
       ) if
@@ -141,23 +141,23 @@
   symbol copy-pdf-article-asset
   (dict :asset ==>)
   (
-    asset /id :id
-    id "^pdf\/(.+)$" search 1 get :name
-    asset "output/articles/$1/$1" (name) => % %id @asset
+    asset "id" dget :id
+    id "^pdf/(.+)$" search 1 get :name
+    asset "output/articles/$1/$1" (name) => % "id" dset @asset
     asset output-cp
   )
 ) ::
-; Copy PDF files saved in asset folder
-; to the corresponding article output folder.
+;; Copy PDF files saved in asset folder
+;; to the corresponding article output folder.
 
-; Syntax highlighting
+;; Syntax highlighting
 (
   symbol process-code
   (str :text ==> str :result)
   (
     "temp/highlight" :tmpfile
     "chroma $# $#--html --html-only --html-prevent-surrounding-pre" :cmd
-    text "<pre>\s*<code[^>]*?(?:class=\"([a-z0-1]+)\")?>([\s\S]+?)</code></pre>" (
+    text "<pre>\\s*<code[^>]*?(?:class=\"([a-z0-1]+)\")?>([\\s\\S]+?)</code></pre>" (
       :match
       match 2 get :code
       match 1 get :lang
@@ -165,7 +165,7 @@
       (lang "" !=) 
         ("--lexer $# " (lang) =% @lexer)
       when
-      ; Unescape HTML entities
+      ;; Unescape HTML entities
       code "(&gt;|&lt;|&quot;|&amp;)" (
         :match
         match 1 get :ntt
@@ -183,7 +183,7 @@
         when
       ) replace-apply @code
       code tmpfile fwrite
-      cmd (tmpfile lexer) =% run /output :out
+      cmd (tmpfile lexer) =% run "output" dget :out
       "<pre class=\"chroma\"><code>$#</code></pre>" (out) =%
     ) replace-apply @result
   )
@@ -200,8 +200,8 @@
       title "[^a-zA-Z0-9_-]" "_" replace :id
       "heading__$#" (id) =% @id
       {}
-        title %title
-        id %id 
+        title "title" dset
+        id "id" dset 
       headings append @headings
       "<a class='heading-anchor' id='$1'></a><h3>$2 <a class='go2top' href='#top' title='Go to the top'>⇈</a></h3>" (id title) =%
     ) replace-apply @result
@@ -209,8 +209,8 @@
       (
         headings (
           :heading
-          heading /id :id
-          heading /title :text
+          heading "id" dget :id
+          heading "title" dget :text
           "<li><a href='#$1'>$2</a></li>" (id text) =%
         ) map "\n" join :links
         "<ul id='toc' class='panel'>$1</ul>" (links) =% :toc
@@ -220,14 +220,14 @@
   )
 ) ::
 
-; Process :icon: markup
+;; Process :icon: markup
 (
   symbol process-icons
   (str :id str :text ==> str :result)
   ( 
-    ; whitelist of common false positives for icon markup
+    ;; whitelist of common false positives for icon markup
     ("borrow", "http", "cakephp") :whitelist
-    text ":([a-z]+[a-z0-9-]+)(?:\|([a-zA-Z0-9 ]+))?:" (
+    text ":([a-z]+[a-z0-9-]+)(?:\\|([a-zA-Z0-9 ]+))?:" (
       :match
       match 0 get :content
       match 1 get :icon
@@ -240,12 +240,12 @@
           (explicit-title "" !=)
             (explicit-title @title)
           when
-          ; Add title tag
+          ;; Add title tag
           "<title>$#</title>" (title) =% from-xml :svg-title
-          svgx dup /children svg-title swap prepend %children @svgx
-          ; Add role="img"
-          svgx /attributes :svg-attrs
-          svgx svg-attrs "img" %role %attributes @svgx
+          svgx dup "children" dget svg-title swap prepend "children" dset @svgx
+          ;; Add role="img"
+          svgx "attributes" dget :svg-attrs
+          svgx svg-attrs "img" "role" dset "attributes" dset @svgx
           svgx to-xml :svg
           "<span class=\"icon\">$#</span>" (svg) =% @content
         )
@@ -264,8 +264,8 @@
   symbol process-content
   (dict :content ==> dict :result)
   (
-    content /id :id
-    content /content-type :ct
+    content "id" dget :id
+    content "content-type" dget :ct
     "page" :tpl
     (ct "article" ==) ("article" @tpl) when
     (ct "project" ==) ("project" @tpl) when
@@ -273,20 +273,20 @@
     "" :page
     "" :contents
     content input-fread @contents
-    (content /ext ".md" ==) (contents content markdown @contents) when
-    content contents prepend-toc %contents @content
+    (content "ext" dget ".md" ==) (contents content markdown @contents) when
+    content contents prepend-toc "contents" dset @content
     tpl content mustache @page
     id page process-icons @page
     id page process-code @page
-    content page %contents @content
+    content page "contents" dset @content
     (
-        ((id "^(glyph|ruby-compendium)(\/|\\\\)book" match?) ()) ;Do not add index.html due to the way book internal links work.
+        ((id "^(glyph|ruby-compendium)(/|\\\\)book" match?) ()) ;;Do not add index.html due to the way book internal links work.
         ((id "index" !=)(
           content 
-            "$1/index" (id) =% %id 
-            ".html" %ext 
-            ; ID must be preserved for links on home page.
-            id %rawid
+            "$1/index" (id) =% "id" dset 
+            ".html" "ext" dset 
+            ;; ID must be preserved for links on home page.
+            id "rawid" dset
           @content
         ))
     ) case
@@ -301,24 +301,24 @@
   symbol generate-home
   (==>)
   (
-    ; Sort articles by timestamp
-    ARTICLES (/timestamp swap /timestamp >) sort @ARTICLES
+    ;; Sort articles by timestamp
+    ARTICLES ("timestamp" dget swap "timestamp" dget >) sort @ARTICLES
     ARTICLES first        :latest
     ARTICLES 1 5 slice    :recents
-    ; Process summary
+    ;; Process summary
     latest input-fread "(?ms)(.+)?<hr" search 1 get latest markdown :summary
-    latest summary %summary @latest
-    latest dup /timestamp to-date %date @latest
+    latest summary "summary" dset @latest
+    latest dup "timestamp" dget to-date "date" dset @latest
     HOME
-    latest %latest
-    recents %recents
-    projects-count %projects-count
-    articles-count %articles-count
-    grimoire-count %grimoire-count
-    ;tags %tags
+    latest "latest" dset
+    recents "recents" dset
+    projects-count "projects-count" dset
+    articles-count "articles-count" dset
+    grimoire-count "grimoire-count" dset
+    ;;tags %tags
     dup "home" swap mustache :page
     "home" page process-icons
-    %contents
+    "contents" dset
     output-fwrite
   )
 ) ::
@@ -333,7 +333,7 @@
     meta (
       (input-fread @contents meta)
       (:temp contents @contents temp)
-      (contents %contents)
+      (contents "contents" dset)
     ) tap
     output-fwrite
   )
@@ -350,18 +350,18 @@ when
 
 (enable-content-processing)
 (
-  ; Process all contents
+  ;; Process all contents
   contents (
     :content
     (((content 'draft dhas? not) (content 'content-type dhas?)) &&)
     (
-      content /id :id
-      (content /content-type "project" ==) (content PROJECTS append @PROJECTS) when
-      (content /content-type "spell" ==) (content SPELLS append @SPELLS) when
+      content "id" dget :id
+      (content "content-type" dget "project" ==) (content PROJECTS append @PROJECTS) when
+      (content "content-type" dget "spell" ==) (content SPELLS append @SPELLS) when
       content
-      projects-count %projects-count
-      articles-count %articles-count
-      grimoire-count %grimoire-count
+      projects-count "projects-count" dset
+      articles-count "articles-count" dset
+      grimoire-count "grimoire-count" dset
       process-timestamp 
       process-content 
       @content 
@@ -369,22 +369,22 @@ when
     ) when
   ) foreach
 
-  ; Create aggregator pages
+  ;; Create aggregator pages
   create-projects-page
   create-grimoire-page
   create-articles-page
 
-  ; Generate home page
+  ;; Generate home page
   generate-home
 )
 when
 
-; Process all assets.
+;; Process all assets.
 assets (
   dup
   (
-    ((/id "^pdf\/" match?) (copy-pdf-article-asset))
-    ((/ext ".css" match?) (process-css-asset))
+    (("id" dget "^pdf/" match?) (copy-pdf-article-asset))
+    (("ext" dget ".css" match?) (process-css-asset))
     ((true) (output-cp))
   ) case
 ) foreach

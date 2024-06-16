@@ -8,8 +8,8 @@ false     :valid-id
 (
   (str) expect first :ident
   ident "^[a-z0-9-]+$" match? :valid-regexp
-  (. "contents" "articles") => "/" join ls :filelist
-  filelist (filename "(.+)\..+$" search 1 get) map ident in? not :valid-file
+  (pwd "contents" "articles") => "/" join ls :filelist
+  filelist (filename "(.+)\\..+$" search 1 get) map ident in? not :valid-file
   valid-regexp valid-file and
 ) ^validate
 
@@ -24,20 +24,12 @@ false     :valid-id
 "Title" ask @title
 "Subtitle" ask @subtitle
 
-"-----
-id: $1
-title: \"$2\"
-subtitle: \"$3\"
-content-type: article
-timestamp: $4
------
-
-" (ident title subtitle ts) =% :metadata
+"-----\nid: $1\ntitle: \"$2\"\nsubtitle: \"$3\"\ncontent-type: article\ntimestamp: $4\n-----\n\n" (ident title subtitle ts) =% :metadata
 
 ("Create article?" confirm) 
   (
     (ident ".md") => "" join :fn 
-    (. "contents" "articles" fn) => "/" join :path
+    (pwd "contents" "articles" fn) => "/" join :path
     metadata path fwrite
   ) 
 when
