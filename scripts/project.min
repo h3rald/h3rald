@@ -10,28 +10,28 @@ false     :valid-id
 (
   (str) expect first :ident
   ident "^[a-z0-9-]+$" match? :valid-regexp
-  (pwd "contents") => "/" join ls :filelist
-  filelist (filename "(.+)\\..+$" search 1 get) map ident in? not :valid-file
+  (sys.pwd "contents") => "/" join sys.ls :filelist
+  filelist (fs.filename "(.+)\\..+$" search 1 get) map ident in? not :valid-file
   valid-regexp valid-file and
 ) ^validate
 
 
 (valid-id not) (
-  "ID" ask @ident
+  "ID" io.ask @ident
   ident validate @valid-id
-  (valid-id not) ("ID must not be already used and it must contain only lowercase letters, numbers, or -" warn!) when
+  (valid-id not) ("ID must not be already used and it must contain only lowercase letters, numbers, or -" io.warn!) when
 ) while
 
-"Title"     ask @title
-"Subtitle"  ask @subtitle
-"Summary"   ask @summary
-"Version"   ask @release
+"Title"     io.ask @title
+"Subtitle"  io.ask @subtitle
+"Summary"   io.ask @summary
+"Version"   io.ask @release
 
 "-----\nid: $1\ngithub: $1\nhome: /$1/\ntitle: \"$2\"\nsubtitle: \"$3\"\nsummary: \"$4\"\ncontent-type: project\nactive: true\nversion: $5\ndownload: \"https://github.com/h3rald/$1/releases/download/\"\n-----\n" (ident title subtitle summary release) =% :metadata
 
-("Create project?" confirm) 
+("Create project?" io.confirm) 
 (
   (ident ".md") => "" join :fn 
-  (pwd "contents" fn) => "/" join :path
-  metadata path fwrite
+  (sys.pwd "contents" fn) => "/" join :path
+  metadata path fs.write
 ) when

@@ -7,28 +7,28 @@ false     :valid-id
 (
   (str) expect first :ident
   ident "^[a-z0-9-]+$" match? :valid-regexp
-  (pwd "contents" "grimoire") => "/" join ls :filelist
-  filelist (filename "(.+)\\..+$" search 1 get) map ident in? not :valid-file
+  (sys.pwd "contents" "grimoire") => "/" join sys.ls :filelist
+  filelist (fs.filename "(.+)\\..+$" search 1 get) map ident in? not :valid-file
   valid-regexp valid-file and
 ) ^validate
 
 (valid-id not) (
-  "ID" ask @ident
+  "ID" io.ask @ident
   ident validate @valid-id
   (valid-id not) 
-    ("ID must not be already used and it must contain only lowercase letters, numbers, or -" warn) 
+    ("ID must not be already used and it must contain only lowercase letters, numbers, or -" io.warn) 
   when
 ) while
 
-"Title" ask @title
-"Subtitle" ask @subtitle
+"Title" io.ask @title
+"Subtitle" io.ask @subtitle
 
 "-----\nid: $1\ntitle: \"$2\"\nsubtitle: \"$3\"\ncontent-type: spell \n-----\n\n" (ident title subtitle) =% :metadata
 
-("Cast spell?" confirm) 
+("Cast spell?" io.confirm) 
   (
     (ident ".md") => "" join :fn 
-    (pwd "contents" "grimoire" fn) => "/" join :path
-    metadata path fwrite
+    (sys.pwd "contents" "grimoire" fn) => "/" join :path
+    metadata path fs.write
   ) 
 when

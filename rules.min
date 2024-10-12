@@ -6,15 +6,15 @@
 () :PROJECTS
 () :SPELLS
 
-"contents/articles" ls size :articles-count
+"contents/articles" sys.ls size :articles-count
 17 :projects-count
-"contents/grimoire" ls size :grimoire-count
+"contents/grimoire" sys.ls size :grimoire-count
 
 (
   symbol to-date
   (int :timestamp ==> str :result)
   (
-    timestamp integer "dddd, d MMMM yyyy" tformat @result
+    time.stamp integer "dddd, d MMMM yyyy" time.format @result
   )
 ) ::
 ;; Utility operator to format a timestamp into a date
@@ -25,27 +25,27 @@
   (==>)
   (
     {}
-    "articles/index"    "id" dset
-    "articles.html"     "path" dset
-    ".html"             "ext" dset
-    "ARTICLES"          "title" dset
-    "page"              "content-type" dset
-    ARCHIVES dvalues ("code" dget :a "code" dget :b a b >) sort 
+    "articles/index"    "id" dict.set
+    "articles.html"     "path" dict.set
+    ".html"             "ext" dict.set
+    "ARTICLES"          "title" dict.set
+    "page"              "content-type" dict.set
+    ARCHIVES dict.values ("code" dict.get :a "code" dict.get :b a b >) sort 
     ;; sort articles within each archive
     (
-      dup "articles" dget 
-        ("timestamp" dget :a "timestamp" dget :b
-        a b >) sort "articles" dset
+      stack.dup "articles" dict.get 
+        ("timestamp" dict.get :a "timestamp" dict.get :b
+        a b >) sort "articles" dict.set
     ) map
-    "archives" dset
-    projects-count "projects-count" dset
-    articles-count "articles-count" dset
-    grimoire-count "grimoire-count" dset
+    "archives" dict.set
+    projects-count "projects-count" dict.set
+    articles-count "articles-count" dict.set
+    grimoire-count "grimoire-count" dict.set
     ;; TODO: why processing twice??
-    dup "_archives" swap mustache "contents" dset
-    dup "page" swap mustache :page
+    stack.dup "_archives" stack.swap mustache "contents" dict.set
+    stack.dup "page" stack.swap mustache :page
     "articles" page process-icons
-    "contents" dset
+    "contents" dict.set
     output-fwrite
   )
 ) ::
@@ -56,19 +56,19 @@
   (==>)
   (
     {}
-    "projects/index"                                    "id" dset
-    "projects.html"                                     "path" dset
-    ".html"                                             "ext" dset
-    "PROJECTS"                                          "title" dset
-    "page"                                              "content-type" dset
-    PROJECTS ('active dhas?) filter ("id" dget swap "id" dget <) sort     "active-projects" dset
-    PROJECTS ('active dhas? not) filter ("id" dget swap "id" dget <) sort "inactive-projects" dset
-    projects-count "projects-count" dset
-    articles-count "articles-count" dset
-    grimoire-count "grimoire-count" dset
-    dup "projects" swap mustache :page
+    "projects/index"                                    "id" dict.set
+    "projects.html"                                     "path" dict.set
+    ".html"                                             "ext" dict.set
+    "PROJECTS"                                          "title" dict.set
+    "page"                                              "content-type" dict.set
+    PROJECTS ('active dict.has?) filter ("id" dict.get stack.swap "id" dict.get <) sort     "active-projects" dict.set
+    PROJECTS ('active dict.has? not) filter ("id" dict.get stack.swap "id" dict.get <) sort "inactive-projects" dict.set
+    projects-count "projects-count" dict.set
+    articles-count "articles-count" dict.set
+    grimoire-count "grimoire-count" dict.set
+    stack.dup "projects" stack.swap mustache :page
     "projects" page process-icons
-    "contents" dset
+    "contents" dict.set
     output-fwrite
   )
 ) ::
@@ -79,18 +79,18 @@
   (==>)
   (
     {}
-    "grimoire/index"                                    "id" dset
-    "grimoire.html"                                     "path" dset
-    ".html"                                             "ext" dset
-    "GRIMOIRE"                                          "title" dset
-    "page"                                              "content-type" dset
-    SPELLS ("id" dget swap "id" dget <) sort                        "spells" dset
-    projects-count "projects-count" dset
-    articles-count "articles-count" dset
-    grimoire-count "grimoire-count" dset
-    dup "grimoire" swap mustache :page
+    "grimoire/index"                                    "id" dict.set
+    "grimoire.html"                                     "path" dict.set
+    ".html"                                             "ext" dict.set
+    "GRIMOIRE"                                          "title" dict.set
+    "page"                                              "content-type" dict.set
+    SPELLS ("id" dict.get stack.swap "id" dict.get <) sort                        "spells" dict.set
+    projects-count "projects-count" dict.set
+    articles-count "articles-count" dict.set
+    grimoire-count "grimoire-count" dict.set
+    stack.dup "grimoire" stack.swap mustache :page
     "grimoire" page process-icons
-    "contents" dset
+    "contents" dict.set
     output-fwrite
   )
 ) ::
@@ -100,36 +100,36 @@
   symbol process-timestamp
   (dict :content ==> dict :result)
   (
-    (content 'timestamp dhas?)
+    (content 'timestamp dict.has?)
     (
-      content "timestamp" dget :ts
+      content "timestamp" dict.get :ts
       ts to-date :date 
-      ts integer "yyyyMM" tformat :code
-      ts integer "MMMM yyyy" tformat :month
-      ts integer "MMMM-yyyy" tformat lowercase :id
+      ts integer "yyyyMM" time.format :code
+      ts integer "MMMM yyyy" time.format :month
+      ts integer "MMMM-yyyy" time.format lowercase :id
       ;; Add to articles
-      content date "date" dset @content
+      content date "date" dict.set @content
       content ARTICLES append @ARTICLES
-      (ARCHIVES code dhas?)
+      (ARCHIVES code dict.has?)
       (
         ;; Add article to existing archive
-        content ("id" "title" "timestamp" "date") dpick :article
-        ARCHIVES code dget :archivedata
-        archivedata "articles" dget :articles
+        content ("id" "title" "timestamp" "date") dict.pick :article
+        ARCHIVES code dict.get :archivedata
+        archivedata "articles" dict.get :articles
         article articles append @articles
-        archivedata articles "articles" dset :archivedata
-        ARCHIVES archivedata code dset @ARCHIVES
+        archivedata articles "articles" dict.set :archivedata
+        ARCHIVES archivedata code dict.set @ARCHIVES
       )
       (
         ;; Create new monthly archive
-        content ("id" "title" "timestamp" "date") dpick :article
+        content ("id" "title" "timestamp" "date") dict.pick :article
         {}
-        month         "month" dset
-        code          "code" dset
-        article quote "articles" dset
-        id            "id" dset
+        month         "month" dict.set
+        code          "code" dict.set
+        article quote "articles" dict.set
+        id            "id" dict.set
         :archive
-        ARCHIVES archive code dset @ARCHIVES
+        ARCHIVES archive code dict.set @ARCHIVES
       ) if
     ) when
     content @result
@@ -141,9 +141,9 @@
   symbol copy-pdf-article-asset
   (dict :asset ==>)
   (
-    asset "id" dget :id
+    asset "id" dict.get :id
     id "^pdf/(.+)$" search 1 get :name
-    asset "output/articles/$1/$1" (name) => % "id" dset @asset
+    asset "output/articles/$1/$1" (name) => % "id" dict.set @asset
     asset output-cp
   )
 ) ::
@@ -182,8 +182,8 @@
           ("&")
         when
       ) replace-apply @code
-      code tmpfile fwrite
-      cmd (tmpfile lexer) =% run "output" dget :out
+      code tmpfile fs.write
+      cmd (tmpfile lexer) =% sys.run "output" dict.get :out
       "<pre class=\"chroma\"><code>$#</code></pre>" (out) =%
     ) replace-apply @result
   )
@@ -200,8 +200,8 @@
       title "[^a-zA-Z0-9_-]" "_" replace :id
       "heading__$#" (id) =% @id
       {}
-        title "title" dset
-        id "id" dset 
+        title "title" dict.set
+        id "id" dict.set 
       headings append @headings
       "<a class='heading-anchor' id='$1'></a><h3>$2 <a class='go2top' href='#top' title='Go to the top'>⇈</a></h3>" (id title) =%
     ) replace-apply @result
@@ -209,8 +209,8 @@
       (
         headings (
           :heading
-          heading "id" dget :id
-          heading "title" dget :text
+          heading "id" dict.get :id
+          heading "title" dict.get :text
           "<li><a href='#$1'>$2</a></li>" (id text) =%
         ) map "\n" join :links
         "<ul id='toc' class='panel'>$1</ul>" (links) =% :toc
@@ -233,25 +233,25 @@
       match 1 get :icon
       match 2 get :explicit-title
       "assets/images/icons/$#.svg" (icon) =% :path
-      (path file?)
+      (path fs.file?)
         (
-          path fread from-xml "svg" xquery :svgx
+          path fs.read xml.from-xml "svg" xml.query :svgx
           icon :title
           (explicit-title "" !=)
             (explicit-title @title)
           when
           ;; Add title tag
-          "<title>$#</title>" (title) =% from-xml :svg-title
-          svgx dup "children" dget svg-title swap prepend "children" dset @svgx
+          "<title>$#</title>" (title) =% xml.from-xml :svg-title
+          svgx stack.dup "children" dict.get svg-title stack.swap prepend "children" dict.set @svgx
           ;; Add role="img"
-          svgx "attributes" dget :svg-attrs
-          svgx svg-attrs "img" "role" dset "attributes" dset @svgx
-          svgx to-xml :svg
+          svgx "attributes" dict.get :svg-attrs
+          svgx svg-attrs "img" "role" dict.set "attributes" dict.set @svgx
+          svgx xml.to-xml :svg
           "<span class=\"icon\">$#</span>" (svg) =% @content
         )
         (
           (whitelist icon in? not)
-            ("$# - Icon not found: $#" (id icon) =% warn)
+            ("$# - Icon not found: $#" (id icon) =% io.warn)
           when
         )
       if
@@ -264,8 +264,8 @@
   symbol process-content
   (dict :content ==> dict :result)
   (
-    content "id" dget :id
-    content "content-type" dget :ct
+    content "id" dict.get :id
+    content "content-type" dict.get :ct
     "page" :tpl
     (ct "article" ==) ("article" @tpl) when
     (ct "project" ==) ("project" @tpl) when
@@ -273,20 +273,20 @@
     "" :page
     "" :contents
     content input-fread @contents
-    (content "ext" dget ".md" ==) (contents content markdown @contents) when
-    content contents prepend-toc "contents" dset @content
+    (content "ext" dict.get ".md" ==) (contents content markdown @contents) when
+    content contents prepend-toc "contents" dict.set @content
     tpl content mustache @page
     id page process-icons @page
     id page process-code @page
-    content page "contents" dset @content
+    content page "contents" dict.set @content
     (
         ((id "^(glyph|ruby-compendium)(/|\\\\)book" match?) ()) ;;Do not add index.html due to the way book internal links work.
         ((id "index" !=)(
           content 
-            "$1/index" (id) =% "id" dset 
-            ".html" "ext" dset 
+            "$1/index" (id) =% "id" dict.set 
+            ".html" "ext" dict.set 
             ;; ID must be preserved for links on home page.
-            id "rawid" dset
+            id "rawid" dict.set
           @content
         ))
     ) case
@@ -302,23 +302,23 @@
   (==>)
   (
     ;; Sort articles by timestamp
-    ARTICLES ("timestamp" dget swap "timestamp" dget >) sort @ARTICLES
+    ARTICLES ("timestamp" dict.get stack.swap "timestamp" dict.get >) sort @ARTICLES
     ARTICLES first        :latest
     ARTICLES 1 5 slice    :recents
     ;; Process summary
     latest input-fread "(?ms)(.+)?<hr" search 1 get latest markdown :summary
-    latest summary "summary" dset @latest
-    latest dup "timestamp" dget to-date "date" dset @latest
+    latest summary "summary" dict.set @latest
+    latest stack.dup "timestamp" dict.get to-date "date" dict.set @latest
     HOME
-    latest "latest" dset
-    recents "recents" dset
-    projects-count "projects-count" dset
-    articles-count "articles-count" dset
-    grimoire-count "grimoire-count" dset
+    latest "latest" dict.set
+    recents "recents" dict.set
+    projects-count "projects-count" dict.set
+    articles-count "articles-count" dict.set
+    grimoire-count "grimoire-count" dict.set
     ;;tags %tags
-    dup "home" swap mustache :page
+    stack.dup "home" stack.swap mustache :page
     "home" page process-icons
-    "contents" dset
+    "contents" dict.set
     output-fwrite
   )
 ) ::
@@ -333,7 +333,7 @@
     meta (
       (input-fread @contents meta)
       (:temp contents @contents temp)
-      (contents "contents" dset)
+      (contents "contents" dict.set)
     ) tap
     output-fwrite
   )
@@ -344,7 +344,7 @@
 
 true :enable-content-processing
 
-(opts 'no-contents dhas?)
+(opts 'no-contents dict.has?)
   (false @enable-content-processing)
 when 
 
@@ -353,15 +353,15 @@ when
   ;; Process all contents
   contents (
     :content
-    (((content 'draft dhas? not) (content 'content-type dhas?)) &&)
+    (((content 'draft dict.has? not) (content 'content-type dict.has?)) &&)
     (
-      content "id" dget :id
-      (content "content-type" dget "project" ==) (content PROJECTS append @PROJECTS) when
-      (content "content-type" dget "spell" ==) (content SPELLS append @SPELLS) when
+      content "id" dict.get :id
+      (content "content-type" dict.get "project" ==) (content PROJECTS append @PROJECTS) when
+      (content "content-type" dict.get "spell" ==) (content SPELLS append @SPELLS) when
       content
-      projects-count "projects-count" dset
-      articles-count "articles-count" dset
-      grimoire-count "grimoire-count" dset
+      projects-count "projects-count" dict.set
+      articles-count "articles-count" dict.set
+      grimoire-count "grimoire-count" dict.set
       process-timestamp 
       process-content 
       @content 
@@ -381,10 +381,10 @@ when
 
 ;; Process all assets.
 assets (
-  dup
+  stack.dup
   (
-    (("id" dget "^pdf/" match?) (copy-pdf-article-asset))
-    (("ext" dget ".css" match?) (process-css-asset))
+    (("id" dict.get "^pdf/" match?) (copy-pdf-article-asset))
+    (("ext" dict.get ".css" match?) (process-css-asset))
     ((true) (output-cp))
   ) case
 ) foreach

@@ -1,4 +1,4 @@
-"output" ls-r ("\\.html" match?) filter :html-files
+"output" sys.ls-r ("\\.html" match?) filter :html-files
 
 (
     symbol check-links
@@ -21,7 +21,7 @@
                         )
                     when
                     "$#$#" ("output" resolved-href) =% @resolved-href
-                    (resolved-href file? not)
+                    (resolved-href fs.file? not)
                         (
                             (result resolved-href in? not)
                                 (resolved-href result append @result)
@@ -54,7 +54,7 @@
            (src "^/" match?) 
                 (
                     "$#$#" ("output" resolved-src) =% @resolved-src
-                    (resolved-src file? not)
+                    (resolved-src fs.file? not)
                         (
                             (result resolved-src in? not)
                                 (resolved-src result append @result)
@@ -78,7 +78,7 @@
 html-files
 (
     :file
-    file fread :contents
+    file fs.read :contents
     contents check-links :broken-links
     contents check-images :broken-images
     broken-links size :n-links
