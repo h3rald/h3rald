@@ -14,7 +14,7 @@
   symbol to-date
   (int :timestamp ==> str :result)
   (
-    time.stamp integer "dddd, d MMMM yyyy" time.format @result
+    timestamp integer "dddd, d MMMM yyyy" time.format @result
   )
 ) ::
 ;; Utility operator to format a timestamp into a date
