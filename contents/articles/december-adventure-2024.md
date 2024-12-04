@@ -46,8 +46,62 @@ All satisfied with my newfound C wizardly skills, I kept iterating over the code
 
 ### Day 1
 
-Today I made some improvements to reporting parsing errors (I had line and column counters already there, why on Earth shouldn't I use them for parsing errors?), and then focused on getting the [playground](https://hex.2c.fyi/play) to work. I read about WASM and Emscripten, and managed to actually compile with minor modifications but... it turns out that if you want to have something other than browser prompts to handle standard import, is a (nearly) impossible task.
+Today I made some improvements to reporting parsing errors (I had line and column counters already there, why on Earth shouldn't I use them for parsing errors?), and then focused on getting the [playground](https://hex.2c.fyi/play) to work. I read about WASM and Emscripten, and managed to actually compile with minor modifications but... it turns out that if you want to have something other than browser prompts to handle standard import, is a ([nearly](https://github.com/emscripten-core/emscripten/issues/10545)) impossible task.
+
 
 ### Day 2
 
+I finally got STDIN to work properly, and you are now able to input into the hex REPL via a standard textbox that blends in with the rest of the pseudo-terminal I quickly hacked together.
+
+Here's a picture for posterity, in case the design changes:
+
+![hex playground](/assets/images/dec-adv-2024/hex-playground.png)
+
+How I did it, you ask? I basically had to implement an alternative `fgets` implementation using one of the (ugh!) Emscripten macros to actually call JavaScript code, and it works beautifully!
+
+```c
+#ifdef EMSCRIPTEN
+#include <emscripten.h>
+
+EM_ASYNC_JS(char *, em_fgets, (const char *buf, size_t bufsize), {
+    return await new Promise(function(resolve, reject) {
+               if (Module.pending_lines.length > 0)
+               {
+                   resolve(Module.pending_lines.shift());
+               }
+               else
+               {
+                   Module.pending_fgets.push(resolve);
+               }
+           })
+        .then(function(s) {
+            // convert JS string to WASM string
+            let l = s.length + 1;
+            if (l >= bufsize)
+            {
+                // truncate
+                l = bufsize - 1;
+            }
+            Module.stringToUTF8(s.slice(0, l), buf, l);
+            return buf;
+        });
+});
+```
+
+Erhm. Alright. It feels kinda ugly to have JS code in your C file but if that's what it takes... this is the simplest option I found by far. Kudos to [Tomasz Wisniewski](https://twdev.blog/2024/02/wasm_cpp_06/).
+
+Excited with this breakthrough (which happened at around 6am while still in bed, for the record), I tried to raise the stakes. Let's see if I can get an [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html) for hex...
+
+```bash
+cosmocc -Wall -Wextra -g hex.c -o hex
+```
+
+BOOOM! It worked. I mean, of course it did, hex is not exactly complexity incarnate, but still, good going. One thing I needed to change was adding some extra instruction to flush stdout more often (some implementation of libc differ on this... like [musl libc](https://www.musl-libc.org) and [cosmopolitan libc](https://justine.lol/cosmopolitan/), some background [here](https://www.reddit.com/r/C_Programming/comments/lbjhx4/when_to_fflush_stdout/)), but that was it.
+
 ### Day 3
+
+Today I created a semi-decent [about page](https://hex.2c.fyi/about) for hex, improved the static site generator to include different html `<title>` tags for each page, and started refactoring the Makefile a little bit. Not sure I am getting the task dependencies to work correctly, i.e. when compiling to WASM etc. though.
+
+### Day 4
+
+I actually wrote this page. Up to here, to be precise, to catch up. And made the conscious decision to actually say that this is a #DecemberAdvanture thing. So that's quite a lot, and so very meta of me.
