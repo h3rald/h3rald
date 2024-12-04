@@ -55,7 +55,7 @@ I finally got STDIN to work properly, and you are now able to input into the hex
 
 Here's a picture for posterity, in case the design changes:
 
-![hex playground](/assets/images/dec-adv-2024/hex-playground.png)
+![hex playground](/images/dec-adv-2024/hex-playground.png)
 
 How I did it, you ask? I basically had to implement an alternative `fgets` implementation using one of the (ugh!) Emscripten macros to actually call JavaScript code, and it works beautifully!
 
