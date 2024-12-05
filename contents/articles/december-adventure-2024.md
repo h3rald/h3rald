@@ -44,12 +44,12 @@ One thing I realized was that by conversing with that... thing, and asking the r
 
 All satisfied with my newfound C wizardly skills, I kept iterating over the code till it got in semi-decent shape. I believe by the end of November most of the symbols I implemented worked properly, segmentation faults that plagued the thing are (mostly) gone, there are a bunch of tests as well and a couple of scripts written in hex, too. One for [running the tests](https://github.com/h3rald/hex/blob/master/test.hex) and one for [generating the web site](https://github.com/h3rald/hex/blob/master/web.hex). Oh, and I almost learnt something about [Makefiles](https://github.com/h3rald/hex/blob/master/Makefile), too!
 
-### Day 1
+### Day #1
 
 Today I made some improvements to reporting parsing errors (I had line and column counters already there, why on Earth shouldn't I use them for parsing errors?), and then focused on getting the [playground](https://hex.2c.fyi/play) to work. I read about WASM and Emscripten, and managed to actually compile with minor modifications but... it turns out that if you want to have something other than browser prompts to handle standard import, is a ([nearly](https://github.com/emscripten-core/emscripten/issues/10545)) impossible task.
 
 
-### Day 2
+### Day #2
 
 I finally got STDIN to work properly, and you are now able to input into the hex REPL via a standard textbox that blends in with the rest of the pseudo-terminal I quickly hacked together.
 
@@ -98,10 +98,62 @@ cosmocc -Wall -Wextra -g hex.c -o hex
 
 BOOOM! It worked. I mean, of course it did, hex is not exactly complexity incarnate, but still, good going. One thing I needed to change was adding some extra instruction to flush stdout more often (some implementation of libc differ on this... like [musl libc](https://www.musl-libc.org) and [cosmopolitan libc](https://justine.lol/cosmopolitan/), some background [here](https://www.reddit.com/r/C_Programming/comments/lbjhx4/when_to_fflush_stdout/)), but that was it.
 
-### Day 3
+### Day #3
 
 Today I created a semi-decent [about page](https://hex.2c.fyi/about) for hex, improved the static site generator to include different html `<title>` tags for each page, and started refactoring the Makefile a little bit. Not sure I am getting the task dependencies to work correctly, i.e. when compiling to WASM etc. though.
 
-### Day 4
+### Day #4
 
-I actually wrote this page. Up to here, to be precise, to catch up. And made the conscious decision to actually say that this is a #DecemberAdvanture thing. So that's quite a lot, and so very meta of me.
+I actually wrote this page. Up to here, to be precise, to catch up. And made the conscious decision to actually say that this is a #DecemberAdventure thing. So that's quite a lot, and so very meta of me.
+
+### Day #5
+
+Implemented the [Github workflow](https://github.com/h3rald/hex/blob/master/.github/workflows/release.yml) to be able to prebuild hex binaries for:
+
+* Windows (x86_64)
+* Linux (x86_64)
+* MacOS (ARM64)
+* [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html)
+* [WebAssembly](https://webassembly.org)
+
+I also created the [/get](https://hex.2c.fyi/get/) page for the hex web site, which called for improving a little bit the bare-bones [static site generator](https://github.com/h3rald/hex/blob/master/web.hex) script that I wrote in hex itself. Essentially, I added a general way to replace tags like `{{release}}` or `{{title}}` with some values. 
+
+First, a helper symbol that expects a strings on the stack, and wraps it in double curly brackets:
+
+```
+; Generate tag placeholder
+(
+    "{{" swap "}}" cat cat
+) "tag" store
+```
+
+Then, another symbol to do all the replacements;
+```
+; Replace tag
+(
+    "pt_repl" store
+    "pt_tag" store
+    "pt_content" store
+    (pt_content pt_tag tag i index 0x0 >)
+        (pt_content pt_tag tag i pt_repl replace "pt_content" store)
+    while 
+    pt_content
+) "process-tag" store
+```
+
+...this is then used in the main loop to process contents:
+
+```
+; Read the template page
+ t_page read
+; Replace tags
+"content" content process-tag i
+"title" id_content process-tag i
+"release" meta_release process-tag i
+"year" meta_year process-tag i
+"new_content" store
+```
+
+Not bad, even though it feels a bit verbose. I am actually considering using `.` instead of `i` to dequote quotations and maybe even `:` instead of `store`, although it may become less readable. At present, non-alphanumeric symbols are only used for well-known mathematical operators like `>` or `+`.
+
+Oh, and I also fixed a buffer overflow issue in the `read` symbol.
