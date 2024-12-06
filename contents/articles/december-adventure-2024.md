@@ -157,3 +157,26 @@ Then, another symbol to do all the replacements;
 Not bad, even though it feels a bit verbose. I am actually considering using `.` instead of `i` to dequote quotations and maybe even `:` instead of `store`, although it may become less readable. At present, non-alphanumeric symbols are only used for well-known mathematical operators like `>` or `+`.
 
 Oh, and I also fixed a buffer overflow issue in the `read` symbol.
+
+### Day #6
+
+I decided to give it a try, and changed a few commonly-used symbols to use a single non-alphanumeric character:
+
+* `store` &rarr; `:`
+* `free` &rarr; `#`
+* `i` &rarr; `.`
+* `eval` &rarr; `!`
+* `q` &rarr;  `'`
+
+So yesterday's code snippet becomes this:
+
+```
+t_page read
+"content" content process-tag .
+"title" id_content process-tag .
+"release" meta_release process-tag .
+"year" meta_year process-tag .
+"new_content" :
+```
+
+Out of all, I am particularly fond of `.`, `'`, and `:`. The last two come straight from [min](http://min-lang.org), while the dot I shamelessly "borrowed" from [Lobo](https://gts.quiltro.org/@lobo)'s [kojote](https://git.quiltro.org/lobo/kojote) (thanks!).
