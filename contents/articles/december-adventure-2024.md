@@ -116,7 +116,7 @@ Implemented the [Github workflow](https://github.com/h3rald/hex/blob/master/.git
 * [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html)
 * [WebAssembly](https://webassembly.org)
 
-I also created the [/get](https://hex.2c.fyi/get/) page for the hex web site, which called for improving a little bit the bare-bones [static site generator](https://github.com/h3rald/hex/blob/master/web.hex) script that I wrote in hex itself. Essentially, I added a general way to replace tags like `{{release}}` or `{{title}}` with some values. 
+I also created the [/get](https://hex.2c.fyi/get/) page for the hex web site, which called for improving a little bit the bare-bones [static site generator](https://github.com/h3rald/hex/blob/master/web.hex) script that I wrote in hex itself. Essentially, I added a general way to replace tags like `\{\{release\}\}` or `\{\{title\}\}` with some values. 
 
 First, a helper symbol that expects a strings on the stack, and wraps it in double curly brackets:
 
