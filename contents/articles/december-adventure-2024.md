@@ -110,9 +110,10 @@ I actually wrote this page. Up to here, to be precise, to catch up. And made the
 
 Implemented the [Github workflow](https://github.com/h3rald/hex/blob/master/.github/workflows/release.yml) to be able to prebuild hex binaries for:
 
-* Windows (x86_64)
 * Linux (x86_64)
 * MacOS (ARM64)
+* MacOS (x86_64)
+* Windows (x86_64)
 * [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html)
 * [WebAssembly](https://webassembly.org)
 
@@ -180,3 +181,50 @@ t_page read
 ```
 
 Out of all, I am particularly fond of `.`, `'`, and `:`. The last two come straight from [min](http://min-lang.org), while the dot I shamelessly "borrowed" from [Lobo](https://gts.quiltro.org/@lobo)'s [kojote](https://git.quiltro.org/lobo/kojote) (thanks!).
+
+### Day #7
+
+Today I bashed my head against the wall trying to get hex to work *properly* when compiled to WASM and run via NodeJS.
+
+The thing is, basically, because of NodeJS's asynchronous nature, people have been doing all sort of things trying to get something like `fgets` to work. In the end I ended up re-using the `em_fgets` function I wrote on Day #2, and then have some NodeJS glue code to actually capture the input via [readline](https://nodejs.org/api/readline.html)'s on event, like this:
+
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+Module.pending_fgets = [];
+Module.pending_lines = [];
+
+rl.on('line', (line) => {
+    Module.pending_lines.push(line);
+    if (Module.pending_fgets.length > 0 && Module.pending_lines.length > 0) {
+        const resolver = Module.pending_fgets.shift();
+        resolver(Module.pending_lines.shift());
+    }
+});
+```
+
+So... well that worked.  Still, I was wondering why I couldn't see my nice `> ` character in my REPL's prompt... Well, it turns out that [it is basically impossible](https://github.com/emscripten-core/emscripten/issues/20622) to get stdout flushing to work in Emscripten. Also calling `process.stdout.write` on print doesn't work either so... Meh, there's a quick fix, can't be bothered anymore, for now:
+
+```c
+if defined(BROWSER)
+static void prompt()
+{
+    // no prompt needed on browser
+}
+#elif !defined(BROWSER) && defined(__EMSCRIPTEN__)
+static void prompt()
+{
+    printf(">\n");
+}
+#else
+static void prompt()
+{
+    printf("> ");
+    fflush(stdout);
+}
+#endif
+```
