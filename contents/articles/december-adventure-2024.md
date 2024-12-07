@@ -228,3 +228,5 @@ static void prompt()
 }
 #endif
 ```
+
+Anyhow, for now I am going to mark the WASM build as *experimental*, and be done with it. In other news, I also added support for all platforms and for αcτµαlly pδrταblε εxεcµταblε in the [CI workflow](https://github.com/h3rald/hex/blob/master/.github/workflows/ci.yml) that builds hex and runs the tests.
