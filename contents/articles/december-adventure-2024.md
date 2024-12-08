@@ -230,3 +230,17 @@ static void prompt()
 ```
 
 Anyhow, for now I am going to mark the WASM build as *experimental*, and be done with it. In other news, I also added support for all platforms and for αcτµαlly pδrταblε εxεcµταblε in the [CI workflow](https://github.com/h3rald/hex/blob/master/.github/workflows/ci.yml) that builds hex and runs the tests.
+
+### Day #8
+
+Today I decided to enhance the comparison operators to support quotations as well. Not the most useful feature in the world, but for completeness' sake, we should also lexicographic comparison of quotations, also because `==` and `!=` already supported quotations anyway.
+
+Another thing I added was support for splitting a string by character by specifying a blank string as separator:
+
+```
+"hello" "" split ; => ("h" "e" "l" "l" "o")
+```
+
+This feature is standard in most programming languages and could be quote useful to work on strings.
+
+Last but not least, I also did some tidying in the repo and organized things neatly in sub-folders.
