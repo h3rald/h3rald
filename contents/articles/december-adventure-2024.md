@@ -244,3 +244,15 @@ Another thing I added was support for splitting a string by character by specify
 This feature is standard in most programming languages and could be quote useful to work on strings.
 
 Last but not least, I also did some tidying in the repo and organized things neatly in sub-folders.
+
+### Day #9
+
+Today I added more tests and got past 100 (yay!). Checking for error conditions, mostly. I ended up changing the behavior of some of the symbols, like instead of having errors thrown in case of mismatching types, like in the following test:
+
+```
+(("0x2" (0x2) !=) (error) try "Symbol '!=' requires two integers, two strings, or two quotations" ==)
+```
+
+I am now just returning `0x0` (false) and be done with it. 
+
+The other thing I did was updating the `web.hex` script to... generate the changelog based on files stored in a release folder. I am also generating a [CHAGELOG.md](https://github.com/h3rald/hex/blob/master/CHANGELOG.md) file so that GitHub is happy and can preview it, even though it is, in fact, an HTML file...
