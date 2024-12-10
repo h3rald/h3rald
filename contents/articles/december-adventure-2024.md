@@ -256,3 +256,20 @@ Today I added more tests and got past 100 (yay!). Checking for error conditions,
 I am now just returning `0x0` (false) and be done with it. 
 
 The other thing I did was updating the `web.hex` script to... generate the changelog based on files stored in a release folder. I am also generating a [CHAGELOG.md](https://github.com/h3rald/hex/blob/master/CHANGELOG.md) file so that GitHub is happy and can preview it, even though it is, in fact, an HTML file...
+
+### Day #10
+
+And so... Colors! Time for some proper syntax highlighting for hex! I feel like I am kinda cheating a little bit, because having already implemented Vim and VSCode syntax highlighting for [min](https://min-lang.org), doing the same for hex was a piece of cake.
+
+Here's how hex syntax highlighting looks in Vim:
+
+![Vim hex highlighting](/images/dec-adv-2024/hex-vim.png)
+
+...and that's how it looks in Visual Studio Code:
+
+![VSCode hex highlighting](/images/dec-adv-2024/hex-vscode.png)
+
+Beyond that, I also quickly added support for:
+
+* Scheme-style block comments delimited by `#|` and `#|` (like in min)
+* Support for handling hashbang if present on the first line
