@@ -273,3 +273,10 @@ Beyond that, I also quickly added support for:
 
 * Scheme-style block comments delimited by `#|` and `#|` (like in min)
 * Support for handling hashbang if present on the first line
+
+### Day #11
+
+The [spec](https://hex.2c.fyi/spec) is up! No, not quite: I just managed to add an outline and the signature of every native symbol. I also updated the [web.hex](https://github.com/h3rald/hex/blob/master/scripts/web.hex) script (the mini static site generator for the hex site) to handle placeholders like `{{sym-puts}}` and substitute them with links to the corresponding [definition](https://hex.2c.fyi/spec#puts-symbol) in the spec.
+
+I also added more tests and fixed a problem with parsing escaped characters like backslashes and quotes in strings. Hopefully...
+
