@@ -280,3 +280,8 @@ The [spec](https://hex.2c.fyi/spec) is up! No, not quite: I just managed to add 
 
 I also added more tests and fixed a problem with parsing escaped characters like backslashes and quotes in strings. Hopefully...
 
+### Day #12
+
+Today I decided to remove the `slice` and `insert` symbols (which are fairly complex and can be re-implemented with other symbols, if needed) and substituted them with `ord` and `chr`, to return the ASCII code or the character represented by an ASCII code respectively. I believe this functionality is totally missing from the language, and could potentially be used to implement advanced string matching (only of ASCII characters though, I'd like to keep things _very_ simple!).
+
+I also started writing the [spec](https://hex.2c.fyi/spec)! All the 64 native symbols are now documented (could do with some examples but it's better than nothing), and I also completed the syntax section.
