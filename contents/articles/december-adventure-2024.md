@@ -285,3 +285,74 @@ I also added more tests and fixed a problem with parsing escaped characters like
 Today I decided to remove the `slice` and `insert` symbols (which are fairly complex and can be re-implemented with other symbols, if needed) and substituted them with `ord` and `chr`, to return the ASCII code or the character represented by an ASCII code respectively. I believe this functionality is totally missing from the language, and could potentially be used to implement advanced string matching (only of ASCII characters though, I'd like to keep things _very_ simple!).
 
 I also started writing the [spec](https://hex.2c.fyi/spec)! All the 64 native symbols are now documented (could do with some examples but it's better than nothing), and I also completed the syntax section.
+
+### Day #13
+
+The official hex [specification](https://hex.2c.fyi/spec) is complete. Or better, at least the first draft of it is anyway. I also spent some time tweaking the CSS of the hex web site a little bit to make it more readable.
+
+The other thing I decided to implement for fun was... a poor man's syntax highlighting markup for hex syntax. Now, hex of course doesn't have things like regular expressions, and creating a parser for the hex language in itself would be overkill maybe (although perhaps it could be done) so... well, I decided to go for a really crude (but working) method based on replacing unusual sequences of characters like `$"`, or `$$`. 
+
+Here's the code for it, that is part of the [web.hex](https://github.com/h3rald/hex/blob/master/scripts/web.hex) script (the irony is that the following code will _not_ be highlighted on this site :P).
+
+```
+; Delimiters and replacements for syntax highlighting
+(
+    "$;" 
+    "$#|" 
+    "|#$" 
+    "$\"" 
+    "$0x" 
+    "$:" 
+    "$$"
+) "highlight-delimiters" :
+
+(
+    "<span class=\"hex-comment\">;" 
+    "<span class=\"hex-comment\">#|" 
+    "|#</span>" 
+    "<span class=\"hex-string\">\""
+    "<span class=\"hex-integer\">0x"
+    "<span class=\"hex-symbol\">"
+    "</span>"
+) "highlight-replacements" :
+
+; Highlight syntax in text
+(
+    "t-text" :
+    0x0 "t-count" :
+    (t-count highlight-delimiters len <)
+        (
+            t-text highlight-delimiters t-count get "t-delimiter" :
+            t-text highlight-replacements t-count get "t-replacement" :
+            ; Find delimiter in text and replace it with the corresponding replacement
+            (t-text t-delimiter index 0x0 >=)
+                (
+                    t-text t-delimiter t-replacement replace "t-text" :
+                ) 
+            while
+            t-count 0x1 + "t-count" :
+        )
+    while
+    ; Push highlighted text on the stack
+    t-text
+    ; Free temporary symbols
+    "t-text" #
+    "t-count" #
+    "t-delimiter" #
+    "t-replacement" #
+) "highlight" :
+```
+
+Right... so the idea is to wrap _any_ hex token except for parenthesis with some `$` signs, which will be replaced with the corresponding html `<span>` tags. So a simple example like the following:
+
+```
+(0x1 0x2 0x3) (dup dup * *) map
+```
+
+...would have to be written as:
+
+```
+($0x1$$ $0x2$$ $0x3$$) ($:dup$$ $:dup$$ $:*$$ $:*$$) $:map$$
+```
+
+Yikes. Crude. I did say that, didn't I? But it does save some keystrokes at least!
