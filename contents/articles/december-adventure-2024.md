@@ -356,3 +356,9 @@ Right... so the idea is to wrap _any_ hex token except for parenthesis with some
 ```
 
 Yikes. Crude. I did say that, didn't I? But it does save some keystrokes at least!
+
+### Day #14
+
+It's out! I decided that it is finally time to release hex v0.1.0! You can go get it from the [/get](https://hex.2c.fyi/get) page. 
+
+Oh of course I also managed to finish the whole site today, and published an [introductory tutorial](https://hex.2c.fyi/learn) on the language, which should hopefully help more folks get closer to the concatenative programming paradigm.
