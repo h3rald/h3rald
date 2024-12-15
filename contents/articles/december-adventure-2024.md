@@ -362,3 +362,11 @@ Yikes. Crude. I did say that, didn't I? But it does save some keystrokes at leas
 It's out! I decided that it is finally time to release hex v0.1.0! You can go get it from the [/get](https://hex.2c.fyi/get) page. 
 
 Oh of course I also managed to finish the whole site today, and published an [introductory tutorial](https://hex.2c.fyi/learn) on the language, which should hopefully help more folks get closer to the concatenative programming paradigm.
+
+### Day #15
+
+Today I spent more time with my family and took it easy a little bit. I did manage to add a [project page](/hex) for _hex_ here on this side, and thought a little bit about the next steps:
+
+- I will obviously write a proper blog post about thus new project of mine, and explain the reasoning behind it a little bit better.
+- I am thinking about reorganizing the source code into multiple .c files and generate an "amalgamation" file for compilation.
+- I wouldn't mind implementing a simple virtual machine and a bytecode format for hex. I always wanted to do it, and this could be my chance as this project is simple enough.
