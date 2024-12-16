@@ -370,3 +370,51 @@ Today I spent more time with my family and took it easy a little bit. I did mana
 - I will obviously write a proper blog post about thus new project of mine, and explain the reasoning behind it a little bit better.
 - I am thinking about reorganizing the source code into multiple .c files and generate an "amalgamation" file for compilation.
 - I wouldn't mind implementing a simple virtual machine and a bytecode format for hex. I always wanted to do it, and this could be my chance as this project is simple enough.
+
+
+### Day #16
+
+I decided that I don't want to mamage a single .c file anymore, so it is finally time to split it. But! I still really like the idea that someone may find itt easier to embed if it's a single file (I know I do for things like SQLite!), so I created my own simple amalgamation script in Bash to concatenate all the files and preserve the original filenames and line numbers. For simplicity's sake I am using a single header file though (no need for more modular builds right now). Here goes:
+
+```bash
+#!/bin/bash
+
+# Files to combine
+header_file="src/hex.h"
+source_files=(
+    "src/stack.c" 
+    "src/registry.c" 
+    "src/error.c" 
+    "src/help.c" 
+    "src/stacktrace.c" 
+    "src/parser.c" 
+    "src/interpreter.c" 
+    "src/helpers.c" 
+    "src/symbols.c" 
+    "src/main.c"
+)
+output_file="src/hex.c"
+
+# Start with a clean output file
+echo "/* *** hex amalgamation *** */" > "$output_file"
+
+# Add the header file with a #line directive
+echo "/* File: $header_file */" >> "$output_file"
+echo "#line 1 \"$header_file\"" >> "$output_file"
+cat "$header_file" >> "$output_file"
+echo "" >> "$output_file"
+
+# Add each source file with #line directives
+for file in "${source_files[@]}"; do
+    echo "/* File: $file */" >> "$output_file"
+    echo "#line 1 \"$file\"" >> "$output_file"
+    cat "$file" >> "$output_file"
+    echo "" >> "$output_file"
+done
+
+echo "Amalgamation file created: $output_file"
+```
+
+This didn't take long... then I started working on a simple virtual machine, decided the opcodes and the bytecode format, and started the implementation. I didn't quite complete the generation part yet, but hopefully will be done soonish.
+
+
