@@ -417,4 +417,92 @@ echo "Amalgamation file created: $output_file"
 
 This didn't take long... then I started working on a simple virtual machine, decided the opcodes and the bytecode format, and started the implementation. I didn't quite complete the generation part yet, but hopefully will be done soonish.
 
+### Day #17
 
+Perhaps I managed to implement a simple bytecode compiler for _hex_. It took a while, mostly due to my inexperience with C and pointers in particular, but I should have got the basics down.
+
+Consider this example program that prints the numbers that can be divided by two:
+
+```
+(0x1 0x2 0x3 0x4)
+    (
+        "_n" :
+        (_n 0x2 % 0x0 ==)
+          (_n dec " is divisible by two." cat puts)
+        when
+    )
+each
+```
+
+It is actually pretty comprehensive as far as syntax goes: you have integers, strings, quotations (even nested), native and user symbols.
+
+The corresponding bytecode I am able to generate is this:
+
+![hbx example](/images/dec-adv-2024/hbx-example.png)
+
+Let's break it down:
+
+```bash
+01          # Start header
+68 65 78 01 # h e x 1
+02          # End header
+03          # PUSH quotation
+00 00 00 04 # with four items
+01          # PUSH integer
+00 00 00 04 # of four bytes
+01 00 00 00 # value: 1
+01          # PUSH integer
+00 00 00 04 # of four bytes
+02 00 00 00 # value: 2
+01          # PUSH integer
+00 00 00 04 # of four bytes
+03 00 00 00 # value: 3
+01          # PUSH integer
+00 00 00 04 # of four bytes
+04 00 00 00 # value: 4
+03          # PUSH quotation
+00 00 00 05 # with five items
+02          # PUSH string 
+00 00 00 02 # of two bytes
+5f 6e       # value: "_n"
+10          # Symbol :
+03          # PUSH quotation
+00 00 00 05 # of five elements
+00          # LOOKUP user symbol
+00 00 00 02 # of two bytes
+5f 6e       # value: _n 
+01          # PUSH integer
+00 00 00 04 # of four bytes
+02 00 00 00 # value: 2
+23          # Symbol %
+01          # PUSH integer
+00 00 00 04 # of four bytes
+00 00 00 00 # value: 0
+2a          # Symbol % 
+03          # PUSH quotation
+00 00 00 05 # of five elements
+00          # LOOKUP user symbol
+00 00 00 02 # of two bytes
+5f 6e       # value: _n
+36          # Symbol dec 
+02          # PUSH string 
+00 00 00 15 # of 21 bytes
+20 69 73 20 # value: " is
+64 69 76 69 # divi
+73 69 62 6c # sibl
+65 20 62 79 # e by
+20 74 77 6f #  two
+2e          # ."
+3b          # Symbol cat
+45          # Symbol puts
+13          # Symbol when
+42          # Symbol each
+```
+
+Phew... that's the whole lot. Again, this is my very first attempt at something like this. It doesn't look too bad: I am able to encode all types of tokens, and manage nested quotations, but there's still room for improvements:
+
+- Every time I need to declare a size, I am taking up the full four bytes of an uint32_t number. In most cases one would be enough... I should implement variable-length encoding of some sort, but can live with it for now.
+- Similarly, integers take up four bytes always, and the MSB is the first of the four, which is a bit counter-intuitive maybe?
+- I am essentially encoding user symbols as strings. In similar cases, I noticed that folks tend to add a "symbol table" after the header for lookups.
+
+Despite these little things, it feels promising. Of course the next step is going to be the interpreter... more fun to come!
