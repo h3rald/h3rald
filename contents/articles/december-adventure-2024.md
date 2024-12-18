@@ -512,10 +512,15 @@ Despite these little things, it feels promising. Of course the next step is goin
 I managed to refine the bytecode generation algorithm a little bit *and* implement an interpreter that seems to work as expected!
 
 So, for now:
+
 - I implemented variable-length code using the [LEB128](https://en.wikipedia.org/wiki/LEB128) algorithm for sizes, and this makes storing sizes and integers more compact.
 - Because this algorithm uses little-endian, I have decided to store all integers as little-endians.
 
 The resulting bytecode for yesterday's example is now more compact:
+
+![hbx example](/images/dec-adv-2024/hbx-example.png)
+
+And here's the breakdown:
 
 ```ruby
 # Header
