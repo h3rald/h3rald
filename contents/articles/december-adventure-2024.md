@@ -506,3 +506,7 @@ Phew... that's the whole lot. Again, this is my very first attempt at something 
 - I am essentially encoding user symbols as strings. In similar cases, I noticed that folks tend to add a "symbol table" after the header for lookups.
 
 Despite these little things, it feels promising. Of course the next step is going to be the interpreter... more fun to come!
+
+### Day #18
+
+I managed to refine the bytecode generation algorithm a little bit *and* implement an interpreter that seems to work as expected!
