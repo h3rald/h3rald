@@ -518,7 +518,7 @@ So, for now:
 
 The resulting bytecode for yesterday's example is now more compact:
 
-![hbx example](/images/dec-adv-2024/hbx-example.png)
+![hbx example](/images/dec-adv-2024/hbx-example-2.png)
 
 And here's the breakdown:
 
