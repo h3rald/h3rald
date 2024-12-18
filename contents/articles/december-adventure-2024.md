@@ -442,7 +442,7 @@ The corresponding bytecode I am able to generate is this:
 
 Let's break it down:
 
-```bash
+```ruby
 01          # Start header
 68 65 78 01 # h e x 1
 02          # End header
@@ -502,11 +502,59 @@ Let's break it down:
 Phew... that's the whole lot. Again, this is my very first attempt at something like this. It doesn't look too bad: I am able to encode all types of tokens, and manage nested quotations, but there's still room for improvements:
 
 - Every time I need to declare a size, I am taking up the full four bytes of an uint32_t number. In most cases one would be enough... I should implement variable-length encoding of some sort, but can live with it for now.
-- Similarly, integers take up four bytes always, and the MSB is the first of the four, which is a bit counter-intuitive maybe?
-- I am essentially encoding user symbols as strings. In similar cases, I noticed that folks tend to add a "symbol table" after the header for lookups.
+- Similarly, integers take up four bytes always, and the MSB is the first of the four (making it little-endian), which is a bit counter-intuitive maybe? Or perhaps it's fine.
+- I am essentially encoding user symbols as strings. In similar cases, I noticed that folks tend to add a _symbol table_ after the header for lookups.
 
 Despite these little things, it feels promising. Of course the next step is going to be the interpreter... more fun to come!
 
 ### Day #18
 
 I managed to refine the bytecode generation algorithm a little bit *and* implement an interpreter that seems to work as expected!
+
+So, for now:
+- I implemented variable-length code using the [LEB128](https://en.wikipedia.org/wiki/LEB128) algorithm for sizes, and this makes storing sizes and integers more compact.
+- Because this algorithm uses little-endian, I have decided to store all integers as little-endians.
+
+The resulting bytecode for yesterday's example is now more compact:
+
+```ruby
+# Header
+01 68 65 78 01 02 
+# Quotation of four items
+03 04 
+   # 0x1
+   01 01 01 
+   # 0x2
+   01 01 02 
+   # 0x3
+   01 01 03 
+   # 0x4
+   01 01 04 
+# Quotation of five items
+03 05 
+   # "_n"
+   02 02 5f 6e 
+   10 # :
+   # Quotation of five items
+   03 05
+      # _n
+      00 02 5f 6e 
+      # 0x2
+      01 01 02 
+      23 # %
+      # 0x0
+      01 01 00 
+      2a # ==
+   # Quotation of five items
+   03 05 
+      # _n
+      00 02 5f 6e 
+      36 # dec
+      # " is divisible by two."
+      02 15 20 69 73 20 64 69 76 69 73 69 62 6c 65 20 62 79 20 74 77 6f 2e 
+      3b # cat
+      45 # puts
+   13 # when
+42 #each
+```
+Not bad! Now I think I'll try to implement a symbol table next.
