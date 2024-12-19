@@ -666,4 +666,4 @@ And here's the breakdown:
 
 The funny thing is that now the resulting bytecode is actually _two bytes longer_, but that's because I am only using one symbol twice, and it's only made up of two letters. _Normally_, there would be savings as far as bytecode size goes!
 
-That was satisfying. I was so happy about all this byte-wrangling that I also implemented a seamless way to support reading and writing binary files using the existing `read`, `write`, and `append` symbols.
+That was satisfying. I was so happy about all this byte-wrangling that I also implemented a seamless way to support reading and writing binary files using the existing `read`, `write`, and `append` symbols. Oh, and I extended the `!` symbol to also evaluate an array of integers representing hex bytecode!
