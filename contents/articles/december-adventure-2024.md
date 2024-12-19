@@ -374,7 +374,7 @@ Today I spent more time with my family and took it easy a little bit. I did mana
 
 ### Day #16
 
-I decided that I don't want to mamage a single .c file anymore, so it is finally time to split it. But! I still really like the idea that someone may find itt easier to embed if it's a single file (I know I do for things like SQLite!), so I created my own simple amalgamation script in Bash to concatenate all the files and preserve the original filenames and line numbers. For simplicity's sake I am using a single header file though (no need for more modular builds right now). Here goes:
+I decided that I don't want to manage a single .c file anymore, so it is finally time to split it. But! I still really like the idea that someone may find itt easier to embed if it's a single file (I know I do for things like SQLite!), so I created my own simple amalgamation script in Bash to concatenate all the files and preserve the original filenames and line numbers. For simplicity's sake I am using a single header file though (no need for more modular builds right now). Here goes:
 
 ```bash
 #!/bin/bash
@@ -665,3 +665,5 @@ And here's the breakdown:
 ```
 
 The funny thing is that now the resulting bytecode is actually _two bytes longer_, but that's because I am only using one symbol twice, and it's only made up of two letters. _Normally_, there would be savings as far as bytecode size goes!
+
+That was satisfying. I was so happy about all this byte-wrangling that I also implemented a seamless way to support reading and writing binary files using the existing `read`, `write`, and `append` symbols.
