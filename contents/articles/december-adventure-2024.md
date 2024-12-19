@@ -563,3 +563,105 @@ And here's the breakdown:
 42 #each
 ```
 Not bad! Now I think I'll try to implement a symbol table next.
+
+### Day #19
+
+And the symbol table is in! Now I think this can be documented as the first version of the hex bytecode. Essentially, I now introduced a way to map user-defined symbols to indexes in a "table" that gets saved right after the header and before the actual program.
+
+The size of the table is encoded in the header itself, in two (little endian) bytes (allowing for a maximum of 65535 user-defined symbols, which is more than enough for anyone). Therefore, the length of the hbx (**h**ex **b**ytecode **e**xecutable) file needs to be eight bytes instead of six, which is nice, in a way:
+
+
+```ruby
+01 # Header start byte 
+68 # h 
+65 # e
+78 # x
+01 # version
+00 # symbol table size byte #1
+00 # symbol table size byte #2
+02 # Header end byte 
+```
+
+Then, the values of the symbols are stored as sequences of one byte for the size, and then the specified number of bytes for the identifiers. Simple enough!
+
+The lookup operation was using the following sequence before: 
+
+```ruby
+00 # User symbol lookup opcode
+02 # Size of the identifier
+02 # _
+5f # n
+```
+
+Now, it becomes the following:
+
+
+```ruby
+00 # User symbol lookup opcode
+00 # First byte of the index
+00 # Second byte of the index
+```
+
+Basically, all symbol lookups are going to _always_ take up three bytes now, which would shave some bytes if you use (and reuse) many user-defined symbols.
+
+Therefore, taking the simple program we've been using for the last three days:
+
+```
+(0x1 0x2 0x3 0x4)
+    (
+        "_n" :
+        (_n 0x2 % 0x0 ==)
+          (_n dec " is divisible by two." cat puts)
+        when
+    )
+each
+```
+
+...this compiles to the following:
+
+![hbx example](/images/dec-adv-2024/hbx-example-3.png)
+
+And here's the breakdown:
+
+```ruby
+# Header
+01 68 65 78 01 01 00 02 
+# Symbol Table
+02 5f 6e # _n
+# Quotation of four items
+03 04 
+   # 0x1
+   01 01 01 
+   # 0x2
+   01 01 02 
+   # 0x3
+   01 01 03 
+   # 0x4
+   01 01 04 
+# Quotation of five items
+03 05 
+   00 00 00 # Lookup symbol #0 (_n)
+   10 # :
+   # Quotation of five items
+   03 05
+      00 00 00 # Lookup symbol #0 (_n) 
+      # 0x2
+      01 01 02 
+      23 # %
+      # 0x0
+      01 01 00 
+      2a # ==
+   # Quotation of five items
+   03 05 
+      # _n
+      00 02 5f 6e 
+      36 # dec
+      # " is divisible by two."
+      02 15 20 69 73 20 64 69 76 69 73 69 62 6c 65 20 62 79 20 74 77 6f 2e 
+      3b # cat
+      45 # puts
+   13 # when
+42 #each
+```
+
+The funny thing is that now the resulting bytecode is actually _two bytes longer_, but that's because I am only using one symbol twice, and it's only made up of two letters. _Normally_, there would be savings as far as bytecode size goes!
