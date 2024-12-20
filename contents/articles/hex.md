@@ -70,6 +70,14 @@ Here's a list of things that I consider _mandatory_:
 - xml
 - json
 
-I hope that _lexical scoping_ in the _nice to have_ made you chuckle. I know it would be bad, but _technically_ you wouldn't really need lexical scoping.
+I hope that _lexical scoping_ in the _nice to have_ made you chuckle. I know it would be bad, but _technically_ you wouldn't really need lexical scoping, really, especially in case of a concatenative programming language where you don't necessarily need variables, global symbols would probably be OK.
+
+I decided to put this into practice when creating hex. And that's why, hex:
+
+- supports only integers, strings, and lists (quotations). It doesn't have floats or dictionaries, even.
+- it comes with 64 native symbol for basic stuff, and lets you define your own (global) symbols, to store data and also define the equivalent of functions.
+- _everything_ and I mean, literally everything from flow control to error handling, and I/O is done by applying symbols on the stack.
+
+
 
 
