@@ -667,3 +667,14 @@ And here's the breakdown:
 The funny thing is that now the resulting bytecode is actually _two bytes longer_, but that's because I am only using one symbol twice, and it's only made up of two letters. _Normally_, there would be savings as far as bytecode size goes!
 
 That was satisfying. I was so happy about all this byte-wrangling that I also implemented a seamless way to support reading and writing binary files using the existing `read`, `write`, and `append` symbols. Oh, and I extended the `!` symbol to also evaluate an array of integers representing hex bytecode!
+
+### Day #20
+
+Today is chore day! I decided to go over *all* the error messages and debug messages and reformatted them making sure that are all consistent, and provide adequate context. I also squashed a few nasty bugs:
+
+* Incorrect bytecode generation for negative integers... Values like 0xffffffff (-1) were incorrectly stored in 1 byte (0xff).
+* Incorrect stack trace generation &mdash; now all symbols pushed on the stack get pushed on the stack trace as well.
+* Incorrect handling of comments inside quotations (they were incorrectly counted as quotation elements).
+* Warn the user that .hex source files must only contain ASCII characters to be converted to bytecode (not gonna bother handling encodings right now).
+
+I also added information about the Hex Bytecode eXecutable format (HBX) to the [specification](https://hex.2c.fyi/spec/#hbx).
