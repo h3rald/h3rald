@@ -678,3 +678,5 @@ Today is chore day! I decided to go over *all* the error messages and debug mess
 * Warn the user that .hex source files must only contain ASCII characters to be converted to bytecode (not gonna bother handling encodings right now).
 
 I also added information about the Hex Bytecode eXecutable format (HBX) to the [specification](https://hex.2c.fyi/spec/#hbx).
+
+At this point I thought it was actually a good time to [release v0.2.0](https://hex.2c.fyi/changelog/#v0.1.0)! 
