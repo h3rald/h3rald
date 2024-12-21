@@ -20,7 +20,7 @@ The syntax also evolved quite a bit to support complex data types, it has sigils
 
 And it is written in Nim. Because I forgot how to program in C after uni. Sometimes I wish I had invested the same amount of time in re-learning C rather than having picked a new, non-mainstream language to build my ecosystem with. But it's fine, everything helps shaping up the future, I suppose.
 
-### Why _hex_?
+### Why hex?
 
 I always wanted to create a programming language that:
 
