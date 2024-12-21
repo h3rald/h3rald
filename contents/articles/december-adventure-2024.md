@@ -684,3 +684,5 @@ At this point I thought it was actually a good time to [release v0.2.0](https://
 ### Day #21
 
 Finally I got around to writing a [proper article](/articles/hex) about hex. How it came about, why I bothered... things like that!
+
+Next I will start thinking about... a standard library for hex, and also maybe improve the playground to support entering longer programs.
