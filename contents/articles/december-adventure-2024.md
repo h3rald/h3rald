@@ -680,3 +680,7 @@ Today is chore day! I decided to go over *all* the error messages and debug mess
 I also added information about the Hex Bytecode eXecutable format (HBX) to the [specification](https://hex.2c.fyi/spec/#hbx).
 
 At this point I thought it was actually a good time to [release v0.2.0](https://hex.2c.fyi/changelog/#v0.1.0)! 
+
+### Day #21
+
+Finally I got around to writing a [proper article](/articles/hex) about hex. How it came about, why I bothered... things like that!
