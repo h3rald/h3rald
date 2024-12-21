@@ -2,9 +2,8 @@
 id: hex
 title: "Introducing hex"
 subtitle: "A tiny, minimalist, slightly-esoteric, concatenative programming language"
-draft: true
 content-type: article
-timestamp: 1734263361
+timestamp: 1734791834
 -----
 
 I have a page on my personal wiki system (which is written in [min](/min) with a [h3](/h3) frontend, and *still* closed-source, unfortunately) titled _Use cases for a new programming language_. The first line I wrote is the following:
@@ -78,7 +77,7 @@ I decided to put this into practice when designing hex. And that's why, hex:
 - comes with 64 native symbol for basic stuff, and lets you define your own (global) symbols, to store data and also define the equivalent of functions.
 - uses symbols applied on the stack for _everything_ and I mean, literally everything from flow control to error handling and I/O.
 
-And that's it. It doesn't implement _any_ of the nice-to-haves. I am also planning of keeping the number of native symbols fixed as well, and maybe implement a sort of standard library in hex itself.
+And that's it. It doesn't implement _any_ of the nice-to-haves (ok, maybe serialization/deserialization, but that comes for free in homoiconic languages). I am also planning of keeping the number of native symbols fixed to 64, and maybe implement a sort of standard library in hex itself.
 
 ### Artificial Inception
 
@@ -86,7 +85,7 @@ But but but... last time I checked, I didn't know how to program in C anymore, r
 
 Or, maybe...
 
-I cheated a little bit. Everyone is always talking about AI, how it is changing the world, how it can do X and how there won't be a need for Y anymore. There is definitely an element of hype in all that, but undeniably Large Language Models have been quite a breakthrough. Now, it's not that ChatGPT is really intelligent or 100% reliable, but I hadn't been using it for a few weeks and I was surprised to notice the improvements.
+OK, I cheated a little bit. Everyone is always talking about AI, how it is changing the world, how it can do X and how there won't be a need for Y anymore. There is definitely an element of hype in all that, but undeniably Large Language Models have been quite a breakthrough. Now, it's not that ChatGPT is really intelligent or 100% reliable, but I hadn't been using it for a few weeks and I was surprised to notice the improvements.
 
 I started off innocently, expecting just some pointers and some pseudocode:
 
@@ -98,7 +97,7 @@ It blurted out a Python implementation (no matter what, ChatGPT will *always* go
 
 > Provide a C implementation 
 
-And it did... I didn't try the code, but continued asking it to add support for strings and kept asking. I was surprised that it could _keep the context_ for as long as it could. Then it started hallucinating more frequently, but at the end of the day, I was left with a good enough implementation of a basic interpreted concatenative programming language. Which _actually compiled_ and worked, for the most part!
+And it did... I didn't try the code, but continued asking it to add support for strings. And kept asking for more extensions. I was surprised that it could _keep the context_ for as long as it did. Then it started hallucinating more frequently, but at the end of the day, I was left with a good enough implementation of a basic interpreted concatenative programming language. Which _actually compiled_ and worked, for the most part!
 
 &rarr; [hex's artificial inception (ChatGPT chat)](https://chatgpt.com/share/6765d6b6-d2bc-8013-b91b-297f4d1c3b14)
 
@@ -106,34 +105,36 @@ I kept tinkering with it for a while, and then decided to create a new [repo](ht
 
 After a few days, I found myself reading a lot of C code. Timidly, I started writing more and more myself... when I didn't remember something (memory allocation, pointer arithmetic), I decided to ask ChatGPT for explanations, summaries, cheat sheets... I was re-learning C!
 
-Now, earlier I said that _I cheated a little bit_. Using AI to write code still feels a little bit like cheating, sure, but it is important to remember that _it is nothing more than a tool_.
+Now, earlier I said that _I cheated a little bit_. Using AI to write code still feels a little bit like cheating, sure, but it is important to remember that, after all, _it is nothing more than a tool_.
 
-There are plenty of issues with it, a lot of ethical ones as well, but at the end of the day, AI is here to stay, and we'd better get the most out of it. 
+There are plenty of issues with it, a lot of ethical ones as well, but at the end of the day, AI is here to stay, and we may as well get the most out of it. 
 
 I think getting my little project bootstrapped with AI was an interesting experience, and it was very useful for two things, mainly:
 
-- Take care of the boring, mechanical parts of the project
-- Act as a personal tutor for learning more about C
+- Taking care of the boring, mechanical parts of the project
+- Acting as a personal tutor for learning more about C programming 
 
-Again, not an infallible tutor, but still better than nothing. And faster than skimming through a book or Stack Overflow for an answer for a question.
+Again, not an infallible tutor, but still better than figuring stuff on my own or with just the Internet. And definitely faster and more efficient than skimming through a programming book or endless Stack Overflow questions.
 
-Using AI for programming is not cheating, no more than using Stack Overflow is. 
+Using AI for programming is not cheating, no more than using Stack Overflow or... Visual Studio Code is. 
 
-At any rate, overall positive experience. The best thing I got out of it was a better knowledge of the C programming language: I am now more confident and I can actually program in C a bit, and understand it. Better than I did in a long time, anyway.
+Anyhow, overall positive experience. The best thing I got out of it was a better knowledge of the C programming language: I am now more confident and I can actually program in C a bit, and understand it. Better than I did in a long time, anyway.
 
 ### #DecemberAdventure 
 
-It took me about 15 days of sporadic ChatGPT interactions alternated with also sporadic (and short) coding sessions to get the basics of the language implemented. At the beginning of December, I then decided to take part in [#DecemberAdventure](/https://eli.li/december-adventure) and work on hex of course! You can read more about it [here](/articles/dec-adv-2024).
+It took me about 15 days of sporadic ChatGPT interactions alternated with even more sporadic (and short) personal coding sessions to get the basics of the language implemented. At the beginning of December, I then decided to take part in [#DecemberAdventure](/https://eli.li/december-adventure) and work on hex of course! You can read more about it [here](/articles/dec-adv-2024).
 
-The funny thing is that most of the design (and implementation) of the language was kinda there already, and still I managed to create more of an ecosystem around it.
+The funny thing is that most of the design (and implementation) of the language was kinda there already, but I managed to create more of an ecosystem around it.
+
+One thing I actually enjoy about creating new open source projects is that it is never only about the code: I love writing support material for my creations, creating web sites, things like that.
 
 Today, hex:
 
-- Has its own web site at <https://hex.2c.fyi>, with its own browser-based [playground](https://hex.2c.fyi/play), a [tutorial](https://hex.2c.fyi/learn), and even a [specification](https://hex.2c.fyi/spec).
-- It runs on different platforms, and can be compiled to WebAssembly to an  [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html)
-- Has a virtual machine, comprised of a simple but fully-functional bytecode compiler and interpreter
+- has its own web site at <https://hex.2c.fyi>, with its own browser-based [playground](https://hex.2c.fyi/play), a [tutorial](https://hex.2c.fyi/learn), and even a [specification](https://hex.2c.fyi/spec).
+- runs on different platforms, and can be compiled to WebAssembly to an  [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html)
+- has a virtual machine, comprised of a simple but fully-functional bytecode compiler and interpreter
 
-The thing is... I have never achieved a lot of these things with min. But with hex I started (and remained) small, and that was the key.
+The thing is... I have manage to achieve this levels of ecosystem completeness with min, never mind doing it in a really short time. But with hex I started (and remained) small, and that was the key.
 
 ### Minimalism, distilled
 
@@ -162,14 +163,12 @@ Sure, it is a bit verbose, but if i tell you that:
 - Integers are prefixed with 0x
 - Everything else is a symbol, and unlike other things, when they are not inside a quotation they disappear from the stack and manipulate it in some way
 
-You basically already know the language syntax and how it works. 
+...you basically already know the language syntax and how it works. 
 
-You basically have literals that get pushed on the stack, or symbols that manipulate it, just that.
+You have literals that get pushed on the stack, or symbols that manipulate it, and that's pretty much it.
 
-You may want to know that the `:` symbol is used to define other symbols and that the `#` destroys them, and that the `cat` symbol pops two strings from the stack and pushes back a concatenation of the two... sure, you can learn all of hex [64 native symbols](https://hex.2c.fyi/spec#native-symbols), but as I mentioned earlier, there are no statements or expressions or special forms: everything is either a literal that gets pushed on the stack, or a symbol that manipulates it.
+You may want to know that the `:` symbol is used to define other symbols and that the `#` symbol destroys them, and that the `cat` symbol pops two strings from the stack and pushes back a concatenation of the two... sure, you can learn all of hex [64 native symbols](https://hex.2c.fyi/spec#native-symbols), but as I mentioned earlier, there are no statements, or expressions, or special forms: everything is either a literal that gets pushed on the stack, or a symbol that manipulates it.
 
-Well, there you have it. Yet another programming language that you'll never use.
-
-Everyone is creating programming language these days, and now with AI even people that normally wouldn't will be able to, imagine that.
+Well, there you have it. Yet another programming language that you'll never use. Everyone is creating programming language these days, and now with AI even people that normally wouldn't will be able to, imagine that.
 
 Still, this has been, and it will continue to be, a very rewarding experience. And maybe, just maybe, this new little thing called hex can teach someone something new (concatenative programming) or even be used to write some very cryptic shell script.
