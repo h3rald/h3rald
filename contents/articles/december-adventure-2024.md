@@ -686,3 +686,9 @@ At this point I thought it was actually a good time to [release v0.2.0](https://
 Finally I got around to writing a [proper article](/articles/hex) about hex. How it came about, why I bothered... things like that!
 
 Next I will start thinking about... a standard library for hex, and also maybe improve the playground to support entering longer programs.
+
+### Day #22
+
+I improved the [playground](https://hex.2c.fyi/play) a little bit. I added a button to "upload a file" by copying and pasting it into a textarea and evaluating it. I ended up increasing the STDIN buffer to 16kb and implement a way to strip hashbang, comments, and newlines before sending it through the REPL... kinda hacky, but it seems to work. 
+
+I have also been thinking about creating a new `::` symbol to create operators (to avoid using `.` on all user symbols all the time) and also some possible modules for a hypothetical standard library.
