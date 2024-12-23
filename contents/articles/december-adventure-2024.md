@@ -692,3 +692,21 @@ Next I will start thinking about... a standard library for hex, and also maybe i
 I improved the [playground](https://hex.2c.fyi/play) a little bit. I added a button to "upload a file" by copying and pasting it into a textarea and evaluating it. I ended up increasing the STDIN buffer to 16kb and implement a way to strip hashbang, comments, and newlines before sending it through the REPL... kinda hacky, but it seems to work. 
 
 I have also been thinking about creating a new `::` symbol to create operators (to avoid using `.` on all user symbols all the time) and also some possible modules for a hypothetical standard library.
+
+### Day #23
+
+I started working on a [next](https://github.com/h3rald/hex/tree/next) branch because I am introducing some breaking changes. Because I am determined to keep the number of symbols fixed to 64, every time I add something new, I have to remove something else. The choice typically falls upon those symbols that can be implemented in hex more easily using other symbols, so right now, in the next release I am going to remove the following:
+
+- filter
+- clear
+- each
+
+And add the following:
+
+- `::` &mdash; Define a new _operator_, i.e. a symbol meant to modify the stack. This will be defined as an ordinary quotation, but that will be immediately dequoted when pushed on the stack, achieving an effect similar to native symbols.
+- `symbols` &mdash; returns a quotation containing strings corresponding to all known symbols. Useful for introspection, memory management, etc.
+- `throw` &mdash; Throw an error. 
+
+All of these symbols require some internal wizardry that cannot be implemented in hex itself, so, they should be native symbols.
+
+At the same time, I also started working on a (currently untested) [utils.hex](https://github.com/h3rald/hex/blob/next/lib/utils.hex) defining a few utility symbols. The idea is to create a little _standard library_ in hex itself.
