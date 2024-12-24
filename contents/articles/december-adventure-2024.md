@@ -710,3 +710,9 @@ And add the following:
 All of these symbols require some internal wizardry that cannot be implemented in hex itself, so, they should be native symbols.
 
 At the same time, I also started working on a (currently untested) [utils.hex](https://github.com/h3rald/hex/blob/next/lib/utils.hex) defining a few utility symbols. The idea is to create a little _standard library_ in hex itself.
+
+### Day #24
+
+Getting ready for the v0.3.0 release! I updated the [spec](https://hex.2c.fyi/spec) to mention the new symbols and remove the old ones, I changed the example used for documenting the bytecode (a symbol to calculate the _factorial_ of an integer), and also used the same one for the [tutorial](https://hex.2c.fyi/learn). The main driver for this change was to introduce the concept of operators and also to use an example that can be run on the [playground](https://hex.2c.fyi/play), so that you can follow the tutorial without downloading anything.
+
+All the tests are running fine and I also updated the web script to leverage operators (and use while instead of each). The idea is to have a Christmas release tomorrow, obviously.
