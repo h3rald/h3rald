@@ -716,3 +716,7 @@ At the same time, I also started working on a (currently untested) [utils.hex](h
 Getting ready for the v0.3.0 release! I updated the [spec](https://hex.2c.fyi/spec) to mention the new symbols and remove the old ones, I changed the example used for documenting the bytecode (a symbol to calculate the _factorial_ of an integer), and also used the same one for the [tutorial](https://hex.2c.fyi/learn). The main driver for this change was to introduce the concept of operators and also to use an example that can be run on the [playground](https://hex.2c.fyi/play), so that you can follow the tutorial without downloading anything.
 
 All the tests are running fine and I also updated the web script to leverage operators (and use while instead of each). The idea is to have a Christmas release tomorrow, obviously.
+
+### Day #25
+
+[hex v0.3.0 is out](https://hex.2c.fyi/changelog/#v0.3.0), Merry Christmas!
