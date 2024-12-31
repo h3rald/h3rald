@@ -720,3 +720,14 @@ All the tests are running fine and I also updated the web script to leverage ope
 ### Day #25
 
 [hex v0.3.0 is out](https://hex.2c.fyi/changelog/#v0.3.0), Merry Christmas!
+
+### Day #26 &rarr; #31
+
+I had to stop my #DecemberAdventure rather abruptly as I got the flu, but I have continued working on hex on and off. Currently looking into:
+
+- Refactoring to move storage to heap memory as much as possible
+- Implementing a more efficient memory management strategy
+- Reimplementing the registry as a hash table
+- Ensure items are deep copied as needed
+
+Overall, this has been a really positive experience! I really enjoyed working on hex a little bit every day, and build an ecosystem around it.
