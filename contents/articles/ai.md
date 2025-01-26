@@ -1,10 +1,10 @@
 -----
 id: ai
 draft: true
-title: "AI Article - TBD"
-subtitle: "..."
+title: "A Tale of Hype and Boredom"
+subtitle: "Reflection on AI, sparkles, and washing machines"
 content-type: article
-timestamp: 1733287393
+timestamp: 1737926162
 -----
 
 
@@ -14,6 +14,7 @@ Notes:
 - apple and ms didn't get it right 
 - junior engineer wants ai
 - ai for doc results example
+- Sparkles emoji
 - artisan engineers
 
 [What I've learned about writing AI apps so far](https://seldo.com/posts/what-ive-learned-about-writing-ai-apps-so-far)
@@ -38,6 +39,10 @@ Notes:
 [](https://smolweb.org)
 
 ![washing machine AI](/images/ai/washing-machine-ai.gif)
+
+Create an image representing Artificial Intelligence conquering the world and the internet. Overemphasize the technology side of it and draw your inspiration from popular science fiction.
+
+![ai](/images/ai/ai-world-domination.webp)
 
 ## Fuzzyness
 
