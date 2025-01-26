@@ -23,6 +23,22 @@ Notes:
 
 [](https://www.zdnet.com/home-and-office/work-life/the-microsoft-365-copilot-launch-was-a-total-disaster/)
 
+[](https://arstechnica.com/ai/2025/01/openai-launches-operator-an-ai-agent-that-can-operate-your-computer/) 
+
+[](https://www.dair-institute.org/blog/letter-statement-March2023/)
+
+[](https://www.techpolicy.press/challenging-the-myths-of-generative-ai/)
+
+[](https://notbyai.fyi)
+
+[](https://github.com/ai-robots-txt/ai.robots.txt)
+
+[](https://maggieappleton.com/ai-dark-forest)
+
+[](https://smolweb.org)
+
+![washing machine AI](/images/ai/washing-machine-ai.gif)
+
 ## Fuzzyness
 
 ## A reliability problem 
