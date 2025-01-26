@@ -18,9 +18,9 @@ Because I have worked as a tech writer, developer, and architect in the past, pe
 
 ### H3RALD ecosystem
 
-I've recently collected what I call the _H3RALD Ecosystem_ on [code.h3rald.com](https://code.h3rald.com). It is a collection of my own tools, mainly for my personal use, that may also be useful to others. Every project is open source, and every project is either a standalone, self-contained command line tool or something equally minimal. You can obtain the source code of each of these tools via [code.h3rald.com](https://code.h3rald.com), [Sourcehut](https://sr.ht/~h3rald/ecosystem/sources), or [GitHub](https://github.com/h3rald) (even though I am thinking of progressively [giving up GitHub](https://sfconservancy.org/GiveUpGitHub/)).
+I've recently collected what I call the _H3RALD Ecosystem_ on [code.h3rald.com](https://code.h3rald.com). It is a collection of my own tools, mainly for my personal use, that may also be useful to others. Every project is open source, and every project is either a standalone, self-contained command line tool or something equally minimal. You can obtain the source code of each of these tools via [code.h3rald.com](https://code.h3rald.com) or [GitHub](https://github.com/h3rald).
 
-In particular, I am more frequently tinkering with [min](/min), [mn](/mn), [LiteStore](/litestore), [HastyScribe](/hastyscribe) and [HastySite](/hastysite). Projects like [pls](/pls) and [nimhttpd](/nimhttpd) are fairly _complete_, so changes are going to be more sporadic, but I am using them literally every day as well.
+In particular, I am more frequently tinkering with [min](/min), [hex](/hex), [LiteStore](/litestore), [HastyScribe](/hastyscribe) and [HastySite](/hastysite). Projects like [pls](/pls) and [nimhttpd](/nimhttpd) are fairly _complete_, so changes are going to be more sporadic, but I am using them literally every day as well.
 
 ### Permacomputing, frugal computing,  Solarpunk, artisan engineering...
 
@@ -31,7 +31,8 @@ I have always felt a bit uneasy at the apparent _necessity_ of our day-to-day li
 Right now, I am focusing on:
 
 * Making my web sites (this one in particular) smaller and less bloated, because [the small web is beautiful](https://benhoyt.com/writings/the-small-web-is-beautiful/])
-* Learning about [Uxn](https://wiki.xxiivv.com/site/uxn.html), the [Varvara](https://wiki.xxiivv.com/site/varvara.html) computer system, and the [Uxntal](https://wiki.xxiivv.com/site/uxntal.html) assembly language, with the aim to contribute to this ecosystem and leverage it to create my own _sustainable_ applications.
+* Tinkering with my own ecosystem of tools, and evaluating the possibility of open sourcing more of them.
+* Try learning about [Uxn](https://wiki.xxiivv.com/site/uxn.html), the [Varvara](https://wiki.xxiivv.com/site/varvara.html) computer system, and the [Uxntal](https://wiki.xxiivv.com/site/uxntal.html) assembly language, with the aim to contribute to this ecosystem and leverage it to create my own _sustainable_ applications.
 * Learning more and more from the members of the Merveilles community
 
 ### Semper exploro
