@@ -341,6 +341,11 @@ a {
     display: inline;
 }
 
+a[href^=http] {
+    text-decoration-style: dotted;
+}
+
+/*
 a[href^=http]::after {
     background-image: url("/images/icons/external-link.svg");
     display: inline-block;
@@ -350,6 +355,7 @@ a[href^=http]::after {
     width: 12px;
     height: 12px;
 }
+*/
 
 .content {
     padding: 0 calc(var(--leading) * 0.5);
