@@ -99,7 +99,7 @@ Notes:
 
 [](https://smolweb.org)
 
-
+[](https://stratechery.com/2025/deepseek-faq/)
 
 
 
