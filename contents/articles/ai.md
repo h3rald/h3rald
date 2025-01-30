@@ -101,7 +101,11 @@ Notes:
 
 [](https://stratechery.com/2025/deepseek-faq/)
 
+[](https://newsletter.languagemodels.co/p/the-illustrated-deepseek-r1)
 
+[](https://www.bbc.com/news/articles/c5yv5976z9po)
+
+[](https://nmn.gl/blog/ai-illiterate-programmers)
 
 ## Fuzzyness
 
