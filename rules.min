@@ -5,13 +5,13 @@
 {} :HOME
 () :PROJECTS
 () :SPELLS
-() :DAYS ;; CHECK
+{} :DAYS
 
 ;"contents/articles" sys.ls size :articles-count
 "contents/articles" 0 :articles-count
 17 :projects-count
 "contents/grimoire" sys.ls size :grimoire-count
-"contents/days" sys.ls size 2 / :days-count
+"contents/days" sys.ls size 2 / :days-count ;TODO approximation
 
 (
   symbol to-date
@@ -373,11 +373,13 @@
   symbol process-days-asset
   (dict :meta ==>)
   (
-    ("id" dict.get "\.txt$" match?)
-      (output-cp)
+    meta.id "\..+$" "" replace :date
+    ;TODO
+    (meta.id "\.txt$" match?)
       (
-        ; TODO
+        
       )
+      (output-cp)
     if
   )
 ) ::
