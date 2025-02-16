@@ -374,13 +374,24 @@
   (dict :meta ==>)
   (
     meta.id "\..+$" "" replace :date
-    ;TODO
+    {
+      date :date
+    }  :day 
+    (DAYS date dict.has)
+      (DAYS date dict.get @day)
+    when
     (meta.id "\.txt$" match?)
       (
-        
+        meta input-fread :day.text
       )
-      (output-cp)
+      (
+        (meta.ext "\.(png|jpe?g|webp|gif)" match?)
+          (meta.id :day.image)
+        when
+        meta output-cp
+      )
     if
+    DAYS day date dict.set
   )
 ) ::
 ;; Process days assets
