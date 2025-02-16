@@ -5,11 +5,13 @@
 {} :HOME
 () :PROJECTS
 () :SPELLS
+() :DAYS ;; CHECK
 
 ;"contents/articles" sys.ls size :articles-count
 "contents/articles" 0 :articles-count
 17 :projects-count
 "contents/grimoire" sys.ls size :grimoire-count
+"contents/days" sys.ls size 2 / :days-count
 
 (
   symbol to-date
@@ -42,6 +44,7 @@
     projects-count "projects-count" dict.set
     articles-count "articles-count" dict.set
     grimoire-count "grimoire-count" dict.set
+    days-count "days-count" dict.set
     ;; TODO: why processing twice??
     stack.dup "_archives" stack.swap mustache "contents" dict.set
     stack.dup "page" stack.swap mustache :page
@@ -67,6 +70,7 @@
     projects-count "projects-count" dict.set
     articles-count "articles-count" dict.set
     grimoire-count "grimoire-count" dict.set
+    days-count "days-count" dict.set
     stack.dup "projects" stack.swap mustache :page
     "projects" page process-icons
     "contents" dict.set
@@ -89,6 +93,7 @@
     projects-count "projects-count" dict.set
     articles-count "articles-count" dict.set
     grimoire-count "grimoire-count" dict.set
+    days-count "days-count" dict.set
     stack.dup "grimoire" stack.swap mustache :page
     "grimoire" page process-icons
     "contents" dict.set
@@ -96,6 +101,29 @@
   )
 ) ::
 ;; Create the Grimoire page
+
+(
+  symbol create-days-page
+  (==>)
+  (
+    {}
+    "days/index"                                                "id" dict.set
+    "days.html"                                                 "path" dict.set
+    ".html"                                                     "ext" dict.set
+    "DAYS"                                                      "title" dict.set
+    "page"                                                      "content-type" dict.set
+    DAYS-TEXTS ("id" dict.get stack.swap "id" dict.get <) sort  "days" dict.set
+    projects-count "projects-count" dict.set
+    articles-count "articles-count" dict.set
+    grimoire-count "grimoire-count" dict.set
+    days-count "days-count" dict.set
+    stack.dup "days" stack.swap mustache :page
+    "days" page process-icons
+    "contents" dict.set
+    output-fwrite
+  )
+) ::
+;; Process /days
 
 (
   symbol process-timestamp
@@ -341,6 +369,20 @@
 ) ::
 ;; Process CSS assets
 
+(
+  symbol process-days-asset
+  (dict :meta ==>)
+  (
+    ("id" dict.get "\.txt$" match?)
+      (output-cp)
+      (
+        ; TODO
+      )
+    if
+  )
+) ::
+;; Process days assets
+
 ;;;;; MAIN ;;;;;
 
 true :enable-content-processing
@@ -348,6 +390,17 @@ true :enable-content-processing
 (opts 'no-contents dict.has?)
   (false @enable-content-processing)
 when 
+
+;; Process all assets.
+assets (
+  stack.dup
+  (
+    (("id" dict.get "^pdf/" match?) (copy-pdf-article-asset))
+    (("ext" dict.get ".css" match?) (process-css-asset))
+    (("id") dict.get "^days/" match? (process-days-asset))
+    ((true) (output-cp))
+  ) case
+) foreach
 
 (enable-content-processing)
 (
@@ -357,6 +410,7 @@ when
     (((content 'draft dict.has? not) (content 'content-type dict.has?)) &&)
     (
       content "id" dict.get :id
+      id puts
       (content "content-type" dict.get "project" ==) (content PROJECTS append @PROJECTS) when
       (content "content-type" dict.get "spell" ==) (content SPELLS append @SPELLS) when
       (content "content-type" dict.get "article" ==) (articles-count 1 + @articles-count) when
@@ -364,6 +418,7 @@ when
       projects-count "projects-count" dict.set
       articles-count "articles-count" dict.set
       grimoire-count "grimoire-count" dict.set
+      days-count "days-count" dict.set
       process-timestamp 
       process-content 
       @content 
@@ -375,18 +430,9 @@ when
   create-projects-page
   create-grimoire-page
   create-articles-page
+  create-days-page
 
   ;; Generate home page
   generate-home
 )
 when
-
-;; Process all assets.
-assets (
-  stack.dup
-  (
-    (("id" dict.get "^pdf/" match?) (copy-pdf-article-asset))
-    (("ext" dict.get ".css" match?) (process-css-asset))
-    ((true) (output-cp))
-  ) case
-) foreach
