@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> _head}}
+  <body id="top">
+    {{> _theme_switcher}} 
+    <div class="main container-fluid themed-content">
+      <div class="row header">
+        <div class="col-xs-12 sidebar">
+          {{> _header}}
+        </div>
+      </div>
+      <div class="row main-content">
+          <article class="{{content-type}} box content">
+          {{> _page_header}}
+          <div id="body-text" class="hyphenate">
+            <p>This page is a daily media stream.</p>
+            <p>It contains <em>at most</em> one picture or video per day.</p>
+            {{#days}}
+              <h3 id="{{date}}">{{date}}</h3>
+              {{#image}}
+              <figure>
+                <img src="{{image}}" alt="{{date}}" loading="lazy" />
+              {{#text}}
+              <figcaption>
+                {{text}}
+              </figcaption>
+              {{/text}}
+              </figure>
+              {{/image}}
+            {{/days}}
+          </div>
+          </article>
+      </div>
+      <div class="row footer">
+        <div class="col-xs-12">
+          {{> _footer}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

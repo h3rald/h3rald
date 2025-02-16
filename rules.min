@@ -8,10 +8,10 @@
 {} :DAYS
 
 ;"contents/articles" sys.ls size :articles-count
-"contents/articles" 0 :articles-count
+0 :articles-count
 17 :projects-count
 "contents/grimoire" sys.ls size :grimoire-count
-"contents/days" sys.ls size 2 / :days-count ;TODO approximation
+0 :days-count
 
 (
   symbol to-date
@@ -106,13 +106,16 @@
   symbol create-days-page
   (==>)
   (
+    () :days
     {}
     "days/index"                                                "id" dict.set
     "days.html"                                                 "path" dict.set
     ".html"                                                     "ext" dict.set
     "DAYS"                                                      "title" dict.set
     "page"                                                      "content-type" dict.set
-    DAYS-TEXTS ("id" dict.get stack.swap "id" dict.get <) sort  "days" dict.set
+    DAYS dict.keys (<) sort 
+    (DAYS swap dict.get) map
+    "days" dict.set
     projects-count "projects-count" dict.set
     articles-count "articles-count" dict.set
     grimoire-count "grimoire-count" dict.set
@@ -123,7 +126,7 @@
     output-fwrite
   )
 ) ::
-;; Process /days
+;; Create the Days page
 
 (
   symbol process-timestamp
@@ -391,6 +394,7 @@
         meta output-cp
       )
     if
+    DAYS dict.keys size @days-count
     DAYS day date dict.set
   )
 ) ::
