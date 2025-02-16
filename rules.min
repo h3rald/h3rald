@@ -6,7 +6,8 @@
 () :PROJECTS
 () :SPELLS
 
-"contents/articles" sys.ls size :articles-count
+;"contents/articles" sys.ls size :articles-count
+"contents/articles" 0 :articles-count
 17 :projects-count
 "contents/grimoire" sys.ls size :grimoire-count
 
@@ -358,6 +359,7 @@ when
       content "id" dict.get :id
       (content "content-type" dict.get "project" ==) (content PROJECTS append @PROJECTS) when
       (content "content-type" dict.get "spell" ==) (content SPELLS append @SPELLS) when
+      (content "content-type" dict.get "article" ==) (articles-count 1 + @articles-count) when
       content
       projects-count "projects-count" dict.set
       articles-count "articles-count" dict.set
