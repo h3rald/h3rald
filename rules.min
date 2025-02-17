@@ -114,7 +114,7 @@
     "DAYS"                                                      "title" dict.set
     "page"                                                      "content-type" dict.set
     DAYS dict.keys (<) sort 
-    (DAYS swap dict.get) map
+    (DAYS stack.swap dict.get) map
     "days" dict.set
     projects-count "projects-count" dict.set
     articles-count "articles-count" dict.set
@@ -174,7 +174,7 @@
   (dict :asset ==>)
   (
     asset "id" dict.get :id
-    id "^pdf/(.+)$" search 1 get :name
+    id "^pdf[/\\\](.+)$" search 1 get :name
     asset "output/articles/$1/$1" (name) => % "id" dict.set @asset
     asset output-cp
   )
@@ -376,26 +376,29 @@
   symbol process-days-asset
   (dict :meta ==>)
   (
-    meta.id "\..+$" "" replace :date
-    {
-      date :date
-    }  :day 
-    (DAYS date dict.has)
+    meta.id "\..+$" "" replace "^days[/\\\]" "" replace :date
+    {}
+      date "date" dict.set
+      date "-" "." replace "title" dict.set
+    :day
+    (DAYS date dict.has?)
       (DAYS date dict.get @day)
     when
-    (meta.id "\.txt$" match?)
+    (meta.ext ".txt" ==)
       (
-        meta input-fread :day.text
+        day meta input-fread "text" dict.set @day
       )
       (
-        (meta.ext "\.(png|jpe?g|webp|gif)" match?)
-          (meta.id :day.image)
+        (meta.ext "\.(png|jpe?g|webp|gif)$" match?)
+          (
+            day "/" meta.id "[/\\\]" split "/" join meta.ext suffix suffix "image" dict.set @day
+          )
         when
         meta output-cp
       )
     if
     DAYS dict.keys size @days-count
-    DAYS day date dict.set
+    DAYS day date dict.set @DAYS
   )
 ) ::
 ;; Process days assets
@@ -412,9 +415,9 @@ when
 assets (
   stack.dup
   (
-    (("id" dict.get "^pdf/" match?) (copy-pdf-article-asset))
+    (("id" dict.get "^pdf[/\\\]" match?) (copy-pdf-article-asset))
     (("ext" dict.get ".css" match?) (process-css-asset))
-    (("id") dict.get "^days/" match? (process-days-asset))
+    (("id" dict.get "^days[/\\\]" match?) (process-days-asset))
     ((true) (output-cp))
   ) case
 ) foreach
@@ -427,7 +430,6 @@ assets (
     (((content 'draft dict.has? not) (content 'content-type dict.has?)) &&)
     (
       content "id" dict.get :id
-      id puts
       (content "content-type" dict.get "project" ==) (content PROJECTS append @PROJECTS) when
       (content "content-type" dict.get "spell" ==) (content SPELLS append @SPELLS) when
       (content "content-type" dict.get "article" ==) (articles-count 1 + @articles-count) when

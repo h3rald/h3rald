@@ -9,14 +9,16 @@
           {{> _header}}
         </div>
       </div>
-      <div class="row main-content">
+      <div class="row main-content days">
           <article class="{{content-type}} box content">
           {{> _page_header}}
           <div id="body-text" class="hyphenate">
-            <p>This page is a daily media stream.</p>
-            <p>It contains <em>at most</em> one picture or video per day.</p>
+            <p>This page is my daily photo stream, inspired by 
+            <a href="https://rabbits.srht.site/days/" target="_blank">Hundred Rabbits's /days page</a> 
+            and <a href="https://img.corvid.cafe" target="_blank">img.corvid.cafe</a>.</p>
+            <p>It contains <em>at most</em> one image per day.</p>
             {{#days}}
-              <h3 id="{{date}}">{{date}}</h3>
+              <h3 id="{{date}}"><time datetime="{{date}}">{{title}}</time></h3>
               {{#image}}
               <figure>
                 <img src="{{image}}" alt="{{date}}" loading="lazy" />
