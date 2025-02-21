@@ -100,6 +100,8 @@ Don't know truth
 Guesswork
 "Brandolini's Law: The amount of energy needed to refute bullshit is an order of magnitude bigger than that needed to produce it."
 Mimicking language of specific domains
+Talk to computers in a natural way
+Translate natural language to...
 
 [](https://www.tomsguide.com/ai/apple-intelligence/apple-faces-criticism-after-shockingly-bad-apple-intelligence-headline-errors)
 
