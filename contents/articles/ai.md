@@ -67,11 +67,24 @@ Turning on my washing machine
 </figcaption>
 </figure>
 
-So you turn it on, it says "Hello", followed by _Optimizing with AI_, and then
+So you turn it on, it says "Hello", followed by _Optimizing with AI_, and then... it comes up with a program to run that, based on God knows what, is meant to be what I *should* be running at the time (side note: this washing machine can obviously be connected to the internet... and if it rains at your location it can kindly remind you that you may not be able to dry your clothes). Anyhow, every single time, the suggested program is not what I want. Every time I just turn the knob to the right once, and select "Cloudy Day". Funny thing is that underneath it says _most-frequently used cycle_. So it keeps track of how often I use a program, then WHY, pray tell, you have to make me wait a second and a bit to show a pointless message about AI followed by a program that (statistically) I am not going to run?
+
+Marketing, probably. There seems to be an urge to advertise the fact that something is _powered by AI_ and that something else is _enhanced with AI_. Because (for now), it sells, and marketers, executives and alike are trying to capitalize this for extra profit. Sometimes even when there's no AI involved at all, or when AI's contribution is nothing but marginal.
+
+Junior engineers are the worst. A while back I was asked by a manager to suggest some ideas for a local mini-hackathon. I always have a list for this sort of things and I gave him a few ideas.
+
+_Thanks Fabio, but... I was thinking, what about anything related to AI? Because you know, everyone wants to do something with AI these days_
+
+What the actually f***. I mean _seriously_. I really struggled the urge to quote [one of the most insightful rants](https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/).
+
+The one thing that is more annoying than AI, is people desperately trying to shoving it down your throat.
+
+
+
+-------
 
 Notes:
-- washing machine 
-- comparison with commander Data
+
 - apple and ms didn't get it right 
 - junior engineer wants ai
 - ai for doc results example
@@ -79,7 +92,14 @@ Notes:
 - artisan engineers
 
 
-
+[](https://thebullshitmachines.com)
+Informative, lessons
+Predictive text, autocomplete
+Can't reason
+Don't know truth
+Guesswork
+"Brandolini's Law: The amount of energy needed to refute bullshit is an order of magnitude bigger than that needed to produce it."
+Mimicking language of specific domains
 
 [](https://www.tomsguide.com/ai/apple-intelligence/apple-faces-criticism-after-shockingly-bad-apple-intelligence-headline-errors)
 
