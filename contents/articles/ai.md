@@ -73,11 +73,11 @@ Marketing, probably. There seems to be an urge to advertise the fact that someth
 
 Junior engineers are the worst. A while back I was asked by a manager to suggest some ideas for a local mini-hackathon. I always have a list for this sort of things and I gave him a few ideas.
 
-_Thanks Fabio, but... I was thinking, what about anything related to AI? Because you know, everyone wants to do something with AI these days_
+_Thanks but... I was thinking, what about anything related to AI? Because you know, everyone wants to do something with AI these days_
 
-What the actually f***. I mean _seriously_. I really struggled the urge to quote [one of the most insightful rants](https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/).
+What the actually f***. I mean _seriously_. I really struggled the urge to quote [one of the most insightful rants](https://ludic.mataroa.blog/blog/i-will-fucking-piledrive-you-if-you-mention-ai-again/) on AI I have ever read.
 
-The one thing that is more annoying than AI, is people desperately trying to shoving it down your throat.
+The one thing that is more annoying than AI, is people desperately trying to shove it down your throat.
 
 
 
@@ -90,6 +90,7 @@ Notes:
 - ai for doc results example
 - Sparkles emoji
 - artisan engineers
+- my law: Effectivity of AI is directly proportional to the intelligence of its user
 
 
 [](https://thebullshitmachines.com)
@@ -98,10 +99,28 @@ Predictive text, autocomplete
 Can't reason
 Don't know truth
 Guesswork
+
 "Brandolini's Law: The amount of energy needed to refute bullshit is an order of magnitude bigger than that needed to produce it."
+
 Mimicking language of specific domains
 Talk to computers in a natural way
 Translate natural language to...
+Cannot be debugged, unpredictable
+Anthropoglossic machine
+Unable to explain why they did/say something 
+Deepfakes, scams, voice+video
+Verify AI response, ask for pointers, sources, low-stake decisions
+Bad at info retrieval, good as starting point, no sourcing 
+Plagiarism unless used for proofreading 
+Mediocre prose, no opportunity to think
+Kills the art of reading 
+
+"LLMs can help skilled coders work faster and more effectively. But it's critical that the people using them (1) begin with good foundation in programming, (2) understand how an LLM can help them, and (3) have practice programming with LLM assistance."
+
+Tempting shortcuts, kill creativity
+
+
+
 
 [](https://www.tomsguide.com/ai/apple-intelligence/apple-faces-criticism-after-shockingly-bad-apple-intelligence-headline-errors)
 

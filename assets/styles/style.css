@@ -133,7 +133,7 @@ html {
 }
 
 body {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', serif;
     font-feature-settings: "liga", "clig", "kern";
     hyphens: auto;
     font-weight: 300;
@@ -344,18 +344,6 @@ a {
 a[href^=http] {
     text-decoration-style: dotted;
 }
-
-/*
-a[href^=http]::after {
-    background-image: url("/images/icons/external-link.svg");
-    display: inline-block;
-    background-repeat: no-repeat;
-    content: "";
-    background-size: 12px 12px;
-    width: 12px;
-    height: 12px;
-}
-*/
 
 .content {
     padding: 0 calc(var(--leading) * 0.5);
