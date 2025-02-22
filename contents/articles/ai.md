@@ -118,7 +118,9 @@ Kills the art of reading
 "LLMs can help skilled coders work faster and more effectively. But it's critical that the people using them (1) begin with good foundation in programming, (2) understand how an LLM can help them, and (3) have practice programming with LLM assistance."
 
 Tempting shortcuts, kill creativity
-
+A way to get rid of bullshit work
+FOMO
+AI training on AI data
 
 
 
