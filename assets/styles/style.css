@@ -133,7 +133,7 @@ html {
 }
 
 body {
-    font-family: 'Noway', serif;
+    font-family: 'Noway', sans-serif;
     font-feature-settings: "liga", "clig", "kern";
     hyphens: auto;
     font-weight: 300;
@@ -154,6 +154,7 @@ h2,
 h3,
 h4,
 h5 {
+    font-family: 'Calendas Plus', serif;
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
@@ -310,7 +311,7 @@ blockquote,
 .primary-subtitle,
 .secondary-subtitle,
 .panel-header {
-    font-family: 'Calendas Plus', serif;
+    font-family: 'Noway', sans-serif;
     font-style: italic;
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
