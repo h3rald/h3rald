@@ -121,6 +121,22 @@ Tempting shortcuts, kill creativity
 A way to get rid of bullshit work
 FOMO
 AI training on AI data
+Generate artifacts (or simulacra)
+
+-- Vatican note
+ratio and intellectus:
+"intuitive grasp of the truth"
+"analytical process that leads to judgment"
+
+"A proper understanding of human intelligence, therefore, cannot be reduced to the mere acquisition of facts or the ability to perform specific tasks."
+
+Body and soul - AI is missing "body" to experience sensory inputs firsthand 
+
+"shaped by a myriad of lived experiences in the flesh."
+
+"AI cannot currently replicate moral discernment or the ability to establish authentic relationships"
+
+"the very use of the word ‘intelligence’” in connection with AI “can prove misleading”[69] and risks overlooking what is most precious in the human person" Pope Francis
 
 
 
