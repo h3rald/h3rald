@@ -148,6 +148,10 @@ Should be used to contribute to human development and the common good
 
 "The need to keep up with the pace of technology can erode workers’ sense of agency and stifle the innovative abilities they are expected to bring to their work."
 
+"Assist, not replace, human judgment"
+
+Overall, Church warns against human/machine interaction 
+
 
 
 [](https://www.tomsguide.com/ai/apple-intelligence/apple-faces-criticism-after-shockingly-bad-apple-intelligence-headline-errors)
