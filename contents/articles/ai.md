@@ -1,7 +1,7 @@
 -----
 id: ai
 draft: true
-title: "A Tale of Hype and Boredom"
+title: "A Tale of Hype and Fallacy"
 subtitle: "Reflection on AI, sparkles, and washing machines"
 content-type: article
 timestamp: 1737926162
@@ -137,6 +137,20 @@ Body and soul - AI is missing "body" to experience sensory inputs firsthand
 "AI cannot currently replicate moral discernment or the ability to establish authentic relationships"
 
 "the very use of the word ‘intelligence’” in connection with AI “can prove misleading”[69] and risks overlooking what is most precious in the human person" Pope Francis
+
+Accountability: difficult to understand why wrong 
+
+"those using AI should be careful not to become overly dependent on it for their decision-making, a trend that increases contemporary society’s already high reliance on technology."
+
+Should be used to contribute to human development and the common good
+
+"Generative AI can produce text, speech, images, and other advanced outputs that are usually associated with human beings. Yet, it must be understood for what it is: a tool, not a person."
+
+"The need to keep up with the pace of technology can erode workers’ sense of agency and stifle the innovative abilities they are expected to bring to their work."
+
+"Assist, not replace, human judgment"
+
+Overall, Church warns against human/machine interaction 
 
 
 
