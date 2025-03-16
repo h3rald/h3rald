@@ -79,6 +79,23 @@ What the actually f***. I mean _seriously_. I really struggled the urge to quote
 
 The one thing that is more annoying than AI, is people desperately trying to shove it down your throat.
 
+### Generative AI is not a product
+
+As a technical product manager myself, I have to frequently deal with AI-generated hype, at all levels: executives want you to put AI in your products, and so do engineers it seems. Everytime anybody comes to me with a proposal to use AI to do something, I ask myself the following questions:
+
+* Does AI provide any real _value_ to the user?
+* Is AI actually making things _faster_ or _easier_ for the user?
+* Can I replace the AI integration with something that is _faster_ or _easier_ for the user?
+* Is AI solving just one specific aspect of the problem or can it be used to solve the problem _holistically_?
+
+Unless the answer to at least one of those question is a resounding _yes_, then you have a problem.
+
+You really cannot sell generative AI by itself: you need a problem to solve, and you need to solve it in a way that actually makes things easier or faster for the user. AI _can_ be a productivity boost, but it cannot replace the product itself.
+
+Let's go through a couple of examples.
+
+--> AI augmented documentation searches
+--> Generate code for customizations
 
 
 -------
