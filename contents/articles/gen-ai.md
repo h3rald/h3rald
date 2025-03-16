@@ -92,10 +92,33 @@ Unless the answer to at least one of those question is a resounding _yes_, then 
 
 You really cannot sell generative AI by itself: you need a problem to solve, and you need to solve it in a way that actually makes things easier or faster for the user. AI _can_ be a productivity boost, but it cannot replace the product itself.
 
-Let's go through a couple of examples.
+Let's go through a couple of examples. 
 
---> AI augmented documentation searches
---> Generate code for customizations
+As part of a mini hackathon, one of the engineers desperately wanted to showcase how they managed to integrate AI into documentation search. I was expecting the usual _here's a summary of the results in a blurb_ kind of thing, but it wasn't even that. Here goes:
+
+Engineer: _"So, I am integrating AI into our search command. See, from the command line I am doing a search on our documentation,I fetch the first three results, and then I send them to AI and..."_
+
+Me: _"...And with AI you are determining the most relevant of those results, i.e. what the user actually needs?"_
+
+Engineer: _"No, see, AI then gives me back the same results, in the same order, but see... it shows a better title, and it provides three lines of mini-summary..."_
+
+Me: _"So you are saying that AI is actully _changing the page title_ and providing a sort of preview of the content. But... would the user really want that, or would the user just be happy with seeing the _same_ page title and the search-highlighting provided natively by the existing fulltext search?"_ 
+
+Next...
+
+Another example was a pseudo Copilot thing that was able to process a prompt asking to add an icon indicator to a specific object type. As always, I was given the usual demo, and the results were pretty good.
+
+Me: _"OK, can I then use this copilot thingie to implement other customizations? Like for example [...]"_
+
+Engineer: _[Starts talking on how they trained this with x amount of specific data to produce accurate results for that specific use case...]_
+
+Me: _"How is this different from having a command line or a UI wizard populating a pre-done template then?"_
+
+Engineer: _"Well, see, the user can just ask the Copilot to..."_
+
+No. Asking our users to type in a prompt instead of pushing buttons in a UI to do the same thing is not _cool_. It's a _colossal waste of time_. If someone comes to you and says that AI can make your users more productive so that they don't need to know how to use your user interface anymore... you have a much bigger problem: perhaps, your user interface _just sucks_ and you simply have to fix that.
+
+But no. Some people just want the sparkles ✨. Add a ✨ in your interface, show a Copilot-like panel, and your product will sell. No. That may have been true months ago, but users are getting smarter. Some users (like me) are getting so used to different AIs to hallucinate so bad, that they systematically avoid pressing ✨ buttons. 
 
 
 -------
@@ -103,8 +126,7 @@ Let's go through a couple of examples.
 Notes:
 
 - apple and ms didn't get it right 
-- junior engineer wants ai
-- ai for doc results example
+
 - Sparkles emoji
 - artisan engineers
 - my law: Effectivity of AI is directly proportional to the intelligence of its user
