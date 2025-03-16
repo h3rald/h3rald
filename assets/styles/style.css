@@ -503,6 +503,12 @@ blockquote {
     border-radius: 4px;
 }
 
+
+blockquote p:first-child,
+blockquote p:last-child {
+    margin: 0;
+}
+
 .panel-header {
     text-align: right;
 }
@@ -716,6 +722,36 @@ a[href^=http].icon-link::after {
     margin-right: 1rem;
 }
 
+/* Figures */
+
+figure {
+    display: table;
+    background: var(--secondary-);
+    margin: auto 0;
+}
+
+figure img,
+figure figcaption {
+    display: table-row;
+    vertical-align: bottom;
+}
+
+figure img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+figcaption {
+    display: block;
+    background-color: var(--secondary-background);
+    border-radius: 4px;
+    border: 1px solid var(--secondary-background);
+    padding: 0 4px;
+    line-height: 1.2rem;
+    padding: 0.5rem;
+}
+
+
 /* Days */
 
 .days h3 {
@@ -742,24 +778,15 @@ a[href^=http].icon-link::after {
     margin: 0;
     font-size: 0.9rem;
     background: var(--secondary-background);
-    padding: 0 0.5rem;
-    margin-top: -0.6rem;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 }
 
 .days img {
+    border-radius: 0;
     border: none;
 }
 
-/* Avoid links on new line overwriting the previous line (links must be inline-block otherwise arrow icon may go on a new line*/
-li a,
-footer a,
-h2 a,
-h3 a,
-h4 a {
-    display: inline;
-}
 
 /* Used only in Glyph Book */
 

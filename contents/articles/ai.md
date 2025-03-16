@@ -2,7 +2,7 @@
 id: ai
 draft: true
 title: "A Tale of Hype and Fallacy"
-subtitle: "Reflection on AI, sparkles, and washing machines"
+subtitle: "Reflections on Generative AI, sparkles, and... washing machines"
 content-type: article
 timestamp: 1737926162
 -----
@@ -11,7 +11,7 @@ I don't write very often these days. But if and when I do though, it should be a
 
 That's why I have decided that I should really write about Artificial Intelligence. Not the _real thing_ (AGI) that we will probably have twenty years from now, just the dumb-but-sometimes-useful surrogate that is _generative_ AI, that we have today, in 2025.
 
-## Not your average positronic brain
+### Not your average positronic brain
 
 Back in 1987 (nearly FORTY years ago, GOD I am old!), when Star Trek: The Next Generation premiered, they introduced the character of Lt. Cmdr. Data, a sentient android, portrayed by the legendary Brent Spiner. That character was probably thought originally as a sort of replacement for Mr. Spock from TOS, being primarily driven by logic, but with a _twist_: even though it couldn't understand basic jokes, or even speak using word contractions, Data longed to become human, above all else. 
 And his positronic brain, in all its sophistication, was not able to feel emotions (he eventually got an upgrade, but that's another story). Not only that, he was struggling to even _simulate_ them, and was incapable of lying.
@@ -21,7 +21,7 @@ Today's LLMs are nothing like Data. Our poor man's AI is a powerful set of algor
 <figure>
 	<img src="/images/ai/ai-world-domination.webp" alt="An AI-generated image of AI taking over the world" />
 	<figcaption>Create an image representing Artificial Intelligence conquering the world and the internet. Overemphasize the technology side of it and draw your inspiration from popular science fiction.</figcaption>
-<figure>
+</figure>
 
 What about quality, you ask? Ehhh we are working on it. What about reliability, can it actually... Pffft, nevermind. 
 
@@ -35,7 +35,7 @@ TRUST
 
 No really, just don't. Tell your children, your grandmothers, all your loved ones that Chat-thingie or whatever crap it's called should not be trusted more than a used car salesman, _at best_ (it's a figure of speech, I actually met a few pretty decent used-car salesmen actually).
 
-## It is actually pretty good (at certain things)
+### It is actually pretty good (at certain things)
 
 Assuming you are not dumb enough to trust them with your life, your job, or anything important, LLMs are undeniably one of the greatest inventions of the decade. Despite that it changed forever our imaginary when it comes to AI and killed 90% of science fiction literature with it, these things are pretty damn impressive, for certain things.
 
@@ -56,7 +56,7 @@ The above quote should be turned into mobile and desktop wallpapers, printed on 
 
 Perhaps it can be a bit of an oversimplification, but again, it doesn't say that they are "only" good at that, right? I think it's a good and safe rule of thumb, for when you are in doubt.
 
-## Tutti mi vogliono, tutti mi cercano
+### Tutti mi vogliono, tutti mi cercano
 
 Everyone wants AI. It's like a must have or you are not cool enough. Months ago we changed our washing machine, and we got the best one we have ever had. Honest. Forgive the sexism, but you could call it _husband-proof_: you turn it on, you turn the knob to your desired program, and press play. Simple enough:
 
