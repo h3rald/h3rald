@@ -1,5 +1,5 @@
 -----
-id: ai
+id: gen-ai
 draft: true
 title: "A Tale of Hype and Fallacy"
 subtitle: "Reflections on Generative AI, sparkles, and... washing machines"
