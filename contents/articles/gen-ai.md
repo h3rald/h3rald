@@ -224,3 +224,7 @@ Overall, Church warns against human/machine interaction
 ## A reliability problem 
 
 ## Not a product 
+
+## Agents
+
+[](https://cendyne.dev/posts/2025-03-19-vibe-coding-vs-reality.html)
