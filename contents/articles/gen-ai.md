@@ -219,6 +219,8 @@ Overall, Church warns against human/machine interaction
 
 [](https://nmn.gl/blog/ai-illiterate-programmers)
 
+[](https://www.platformer.news/openai-chatgpt-mental-health-well-being/)
+
 ## Fuzzyness
 
 ## A reliability problem 
