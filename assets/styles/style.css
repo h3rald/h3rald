@@ -599,7 +599,6 @@ h6,
 
 a,
 a:visited {
-    display: inline-block;
     color: var(--link-color);
     word-break: break-word;
 }
