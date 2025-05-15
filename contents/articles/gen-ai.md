@@ -120,6 +120,91 @@ No. Asking our users to type in a prompt instead of pushing buttons in a UI to d
 
 But no. Some people just want the sparkles ✨. Add a ✨ in your interface, show a Copilot-like panel, and your product will sell. No. That may have been true months ago, but users are getting smarter. Some users (like me) are getting so used to different AIs to hallucinate so bad, that they systematically avoid pressing ✨ buttons. 
 
+### De rerum _novissmarum_
+
+On May 8th, the (Catholic) world rejoiced at the announcement by protodeacon Dominique Mamberti that we had a new Pope:
+
+> Annuntio vobis gaudium magnum:
+> HABEMUS PAPAM
+> Eminentissimum ac reverendissimum Dominum Robertum Franciscum
+> Sanctae Romane Ecclesiae Cardinalem Prevost
+> qui sibi nomen imposuit **Leo XIV**
+
+The fact that the College of Cardinals elected the first US-born Pope in history was surely big news. But the even _bigger_ news was the name Cardinal Prevost chose for himself as a Pope: _Leo XIV_. Catholics are well aware that the name of a Pope is loaded with deep meaning, and it often gives the world a clear indication of the Pope's views on certain things. If that wasn't clear enough, Pope Leo XIV spellt it out to the _College of Cardinals_ just two days after his election:
+
+> There are different reasons for this, but mainly because Pope Leo XIII in his historic Encyclical Rerum Novarum addressed the social question in the context of the first great industrial revolution. 
+> In our own day, the Church offers to everyone the treasury of her social teaching in response to another industrial revolution and to **developments in the field of artificial intelligence** that pose new challenges for the defence of human dignity, justice and labour.
+
+-- [Pope Leo XIV names AI one of the reasons for his papal name, The Verge](https://www.theverge.com/news/664719/pope-leo-xiv-artificial-intelligence-concerns)
+
+That is big news. It's not that the Catholic Church is going to excommunicate people for using ChatGPT because it's the eevil or something, but it is going to probably spend a significant amount of time helping people how to deal with AI. I find the fact that it is being compared to the industrial revolution as incredibly fitting. I am willing to bet that our new Pope will be writing an encyclical about the role of generative AI in our sociaty, like his namesake did at the time of the industrial revolution.
+
+While we wait, there's actually a very interesting (and very, VERY long) essay written by... the Dicastery for the Doctrine of the Faith and the Dicastery for Culture and Education that already provides a rather in-depth analysis of artificial intelligence and its present and future impact on society: [Note on the Relationship Between Artificial Intelligence and Human Intelligence](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20250128_antiqua-et-nova_en.html).
+
+Overall, this is an excellent read on the subject, whether you are Catholic or not. It does a good job of acknowledging the power that AI can have on society, and in improving our lives, but it does an even better job in pinpointing the inherent problems associated to it.
+
+The key point is that AI _"should be used to contribute to human development and the common good"_, and that should _"assist, not replace, human judgment"_. 
+
+It then goes on to discussing the choice of the word _intelligence_ for this technology. Quoting Saint Thomas Aquinas, who defined intelligence as the union of reason and intellect, where _"the term intellect is inferred from the inward grasp of the truth, while the name reason is taken from the inquisitive and discursive process"_.
+
+It then quickly introduces the concept of _human_ intelligence, and that _"a proper understanding of human intelligence, therefore, cannot be reduced to the mere acquisition of facts or the ability to perform specific tasks"_. And finally points out the inherent limitation of current generative AI: _"even as AI processes and simulates certain expressions of intelligence, it remains fundamentally confined to a logical-mathematical framework, which imposes inherent limitations. Human intelligence, in contrast, develops organically throughout the person’s physical and psychological growth, shaped by a myriad of lived experiences in the flesh."_
+
+
+--> continue from here
+
+
+Body and soul - AI is missing "body" to experience sensory inputs firsthand 
+
+
+"AI cannot currently replicate moral discernment or the ability to establish authentic relationships"
+
+"the very use of the word ‘intelligence’” in connection with AI “can prove misleading” and risks overlooking what is most precious in the human person" Pope Francis
+
+Accountability: difficult to understand why wrong 
+
+"those using AI should be careful not to become overly dependent on it for their decision-making, a trend that increases contemporary society’s already high reliance on technology."
+
+"Generative AI can produce text, speech, images, and other advanced outputs that are usually associated with human beings. Yet, it must be understood for what it is: a tool, not a person."
+
+"The need to keep up with the pace of technology can erode workers’ sense of agency and stifle the innovative abilities they are expected to bring to their work."
+
+Overall, Church warns against human/machine interaction 
+
+Education:
+- AI also presents a serious risk of generating manipulated content and false information, which can easily mislead people due to its resemblance to the truth.
+- We cannot allow algorithms to limit or condition respect for human dignity, or to exclude compassion, mercy, forgiveness, and above all, the hope that people are able to change
+
+Impact on environment:
+AI can support sustainable agriculture, optimize energy usage, and provide early warning systems for public health emergencies. These advancements have the potential to strengthen resilience against climate-related challenges and promote more sustainable development.
+Considering the heavy toll these technologies take on the environment, it is vital to develop sustainable solutions that reduce their impact on our common home
+
+Warfare:
+Like any tool, AI is an extension of human power, and while its future capabilities are unpredictable, humanity’s past actions provide clear warnings. The atrocities committed throughout history are enough to raise deep concerns about the potential abuses of AI.
+
+Conclusions:
+with an increase in human power comes a broadening of responsibility on the part of individuals and communities.
+[Paul VI in 1965 - Pastoral Constitution on the Church in the Modern World](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html)
+
+AI should be used only as a tool to complement human intelligence rather than replace its richness
+
+One must go beyond the mere accumulation of data and strive to achieve true wisdom.
+
+In a world marked by AI, we need the grace of the Holy Spirit, who “enables us to look at things with God’s eyes, to see connections, situations, events and to uncover their real meaning.”
+
+---
+
+### Bulls*it machines
+
+### Vibe coding
+
+## Fuzzyness
+
+## A reliability problem 
+
+## Agents
+
+[](https://cendyne.dev/posts/2025-03-19-vibe-coding-vs-reality.html)
+
 
 -------
 
@@ -162,35 +247,6 @@ FOMO
 AI training on AI data
 Generate artifacts (or simulacra)
 
--- Vatican note
-ratio and intellectus:
-"intuitive grasp of the truth"
-"analytical process that leads to judgment"
-
-"A proper understanding of human intelligence, therefore, cannot be reduced to the mere acquisition of facts or the ability to perform specific tasks."
-
-Body and soul - AI is missing "body" to experience sensory inputs firsthand 
-
-"shaped by a myriad of lived experiences in the flesh."
-
-"AI cannot currently replicate moral discernment or the ability to establish authentic relationships"
-
-"the very use of the word ‘intelligence’” in connection with AI “can prove misleading”[69] and risks overlooking what is most precious in the human person" Pope Francis
-
-Accountability: difficult to understand why wrong 
-
-"those using AI should be careful not to become overly dependent on it for their decision-making, a trend that increases contemporary society’s already high reliance on technology."
-
-Should be used to contribute to human development and the common good
-
-"Generative AI can produce text, speech, images, and other advanced outputs that are usually associated with human beings. Yet, it must be understood for what it is: a tool, not a person."
-
-"The need to keep up with the pace of technology can erode workers’ sense of agency and stifle the innovative abilities they are expected to bring to their work."
-
-"Assist, not replace, human judgment"
-
-Overall, Church warns against human/machine interaction 
-
 
 
 [](https://www.tomsguide.com/ai/apple-intelligence/apple-faces-criticism-after-shockingly-bad-apple-intelligence-headline-errors)
@@ -221,12 +277,4 @@ Overall, Church warns against human/machine interaction
 
 [](https://www.platformer.news/openai-chatgpt-mental-health-well-being/)
 
-## Fuzzyness
 
-## A reliability problem 
-
-## Not a product 
-
-## Agents
-
-[](https://cendyne.dev/posts/2025-03-19-vibe-coding-vs-reality.html)
