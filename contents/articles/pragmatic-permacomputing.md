@@ -29,17 +29,37 @@ There are definitely more down-to-Earth motivations to embrace permacomputing th
 - **Lack of financial resources** &mdash; Imagine not being able to afford a new laptop or smartphone. Can you make do with older hardware
 - **Lack of free time** &mdash; You are studying at high school or uni, and building software using the latest stuff. You don't mind using hundreds of NPM packages and keeping them up-to-date every week. Fast forward a few years, you have a family and kids. Your priority changes, but you still want to run your own web site and apps even if you don't have 2 hours of spare time per day, or per week, even. 
 - **Save money on VPS or self-host on RPis etc.** &mdash; A VPS is a fairly cheap way to run your own server. For four bucks per month, [DigitalOcean gives you a droplet](https://www.digitalocean.com/pricing/droplets) with Linux on it, and you can install whatever you want on it and run it 24/7. As long as 512MB of RAM is enough for you. You want more? You pay more. You can get 4GB of RAM for $24/month for example, are you OK to pay that amount? Even then, your laptop has what, 16GB of RAM these days? Forget running bloated software there. Same thing if you plan to self-host on your Raspberry Pi: you are going to have to deal with more resource-constrained hardware... but that's a _good thing_, because it forces you to re-evaluate your software stack and often go for less-bloated alternatives.
-- **Service shuutting down (or increasing prices)** &mdash; After enjoying _free_ Google Apps for your Domains for... ten years, Google suddenly started charging for it. A special, discounted price at first, but after a year it started increasing it more and more. After running all my family infrastructure there, it was time to either pay like another 25-35$/month, or move. I did the latter, and iCloud is just fine as a mail provider, especially considering I was already paying for it (but a much smaller amount). Will it be OK for the next 10 years? I hope so, but for now, the cost (in time and effort) of self-hosting my emails outweighs the actual cost for a proprietary solution.
+- **Service shuutting down (or increasing prices)** &mdash; Only potentially related to permacomputing, but surely one of the biggest reason to go the [self-hosting](https://github.com/awesome-selfhosted/awesome-selfhosted) route. Are you OK using a "free" service that may shut down or go premium with minimal warning? Can you host it yourself? Can you implement a program that does the same thing?
 
 Your mileage may vary, but chances are that you already experienced at least one of the scenarios above.
 
-### Recycle and salvage
+### Recycle and salvage old hardware
 
 One of the first steps to reduce the amounts of e-waste that gets generated every year is realizing that _you may not need_ the latest and gratest laptop, or the latest iPhone. You don't need to change smartphone every year, especially because &mdash; let's face it &mdash; upgrading your phone is no way near as exciting as it was in the 2010s. You get what, a better camera? More GBs? Even higher processing power? Sure. But do you _really_ need it? Maybe not. 
 
+I am currently using a three-year old iPhone 14 Pro. I used to change my iPhone every two years, and give the previous one to a family member. We have quite a few iPhones in the family all the way to iPhone 6, and, guess what, they all still work perfectly. Hell, my 2nd generation iPod touch from 2009 still works perfectly! Sure, the battery may not last as long after a few years, but for the most part, Apple device are still very well-made and durable. 
+
+You should never throw away one of those devices, you should put it to use in one way or the other! 
+
+Anyhow, back to my three-year old iPhone. This thing has a six-core CPU, an Apple A16 GPU, and 6GB of RAM. Those specs are _stupidly_ high. Think back at the average VPS that you can get for 5$/month, or think about your first computer... I got mine back in '98, and it had only 64MB of RAM. A few years later, I expanded it to 128MB and I was able to run &mdash; albeit sluggishly &mdash; Windows XP on it.
+
+Fast forward 20 years, and you can still run Windows XP [in your browser](https://lrusso.github.io/VirtualXP/VirtualXP.htm)!
+
+While few purists may not like it, the fact that these days there are a lot of very powerful proprietary devices at risk of being thrown out is a reality, and something we should do something about. While there are few, there should be more projects aimed at leveraging the high-end specs of these devices and give them a second life. 
+
+Also, I wish big companies like Apple and Google could commit in keeping patching their old operating systems, or at least they could open source them and let volunteers do it.
 
 
-### Portability: Target multiple architectures 
+### Portability: Target multiple architectures
+
+When it comes to portability, I think that pretty much nothing beats [virtual machines](https://wiki.xxiivv.com/site/virtual_machines.html) and emulators. That's why it is still possible to run old SNES games like the original Super Mario Bros. on much newer hardware than originally intended.
+
+Alternatively, some popular games like GTA San Andreas have been successfully _ported_ to many architectures and systems (yes, I have been re-playing it on my iPhone just recently).
+
+If you rely on a piece of software, or if you decide to make your own, you should make sure it runs on as many operating systems and as many architectures as possible. 
+
+Implementing your software as an [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html) is probably today's best example of portability of a single executable file being able to run (as-is and _without_ being recompiled!) on Linux, MacOS, Windows, FreeBSD, OpenBSD, and NetBSD for both the ARM64 and AMD64 architectures.
+
 
 ### Understandability
 
