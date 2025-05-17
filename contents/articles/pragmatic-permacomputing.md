@@ -50,7 +50,7 @@ While few purists may not like it, the fact that these days there are a lot of v
 Also, I wish big companies like Apple and Google could commit in keeping patching their old operating systems, or at least they could open source them and let volunteers do it.
 
 
-### Portability: Target multiple architectures
+### Portability: Target multiple platforms and architectures
 
 When it comes to portability, I think that pretty much nothing beats [virtual machines](https://wiki.xxiivv.com/site/virtual_machines.html) and emulators. That's why it is still possible to run old SNES games like the original Super Mario Bros. on much newer hardware than originally intended.
 
@@ -59,6 +59,20 @@ Alternatively, some popular games like GTA San Andreas have been successfully _p
 If you rely on a piece of software, or if you decide to make your own, you should make sure it runs on as many operating systems and as many architectures as possible. 
 
 Implementing your software as an [αcτµαlly pδrταblε εxεcµταblε](https://justine.lol/ape.html) is probably today's best example of portability of a single executable file being able to run (as-is and _without_ being recompiled!) on Linux, MacOS, Windows, FreeBSD, OpenBSD, and NetBSD for both the ARM64 and AMD64 architectures.
+
+Justine Tunney explains why this it's important for her.
+
+> One of the reasons why I love working with a lot of these old technologies, is that I want any software work I'm involved in to stand the test of time with minimal toil. Similar to how the Super Mario Bros ROM has managed to survive all these years without needing a GitHub issue tracker.
+
+Speaking of ROMs, [Uxn](https://wiki.xxiivv.com/site/uxn.html) is another example of portability and permacomputing at its finest. The virtual machine is devised to be simple to implement, so that it can be ported to many platforms relatively effortlessly (if you are into that sort of thing). Uxn is remarkable for other reasons as well, as we'll see later on in this article, but especially because it is based on the principle that if you can implement the virtual machine in any way you want, you will be able to run pre-compiled ROMs forever.
+
+Of course, Justine and Devine are one-of-a-kind programming gurus, but the good news is that a lot of today's programming languages can built executables that run on different platforms without code changes. Rust, Go, and of course C (with some caveats) to name a few.
+
+In my case, I picked [Nim](https://nim-lang.org) to implement most of my very own [personal ecosystem](https://code.h3rald.com). Maybe not the most popular choice (read on for more on _popularity_), but it is easy to use and does the job, at the end of the day.
+
+
+
+
 
 
 ### Understandability
