@@ -115,13 +115,37 @@ I can live with all that, but I am also the sole maintainer.
 
 I put understandability and open source in the same section because they go hand-in-hand 90% of the time. The assumption here is if you don't have access to the source of a program, chances are that you will not be able to fully understand how it works. 
 
-There are probably other reasons for open sourcing your software, but as far as permacomputing goes, understandability is the most important. If a piece of software has to withstand the passage of time, it has to be understood by others. Again, there are extremes: a basic Uxn implementation is 100 lines of C and [fits on a napkin](https://wiki.xxiivv.com/etc/uxnmin.c.txt). The idea here is that it should be easy to understand and re-implement in other programming languages and systems.
+There are probably other reasons for open sourcing your software, but as far as permacomputing goes, understandability is the most important. If a piece of software has to withstand the passage of time, it has to be understood by others. Again, there are extremes: a basic Uxn implementation is 100 lines of C and [fits on a napkin](https://wiki.xxiivv.com/etc/uxnmin.c.txt); the idea here is that it should be easy to understand and re-implement in other programming languages and systems.
 
+Of course, being able to read the source code is not enough: I have been a technical writer in the past, and I have always included plenty of documentation for all my open source software. A well-documented open source program can be studied by someone else ten, twenty years after it was release. It can be understood, so that it can be ported to another operating system or architecture, or corrected to address a specific bug, or extended to implement a missing feature.
 
+### Availability of alternatives
+
+This goes hand-in-hand with interoperability and portability, and it is one of the criteria for [choosing a programming language](https://permacomputing.net/programming_languages/) suitable for permacomputing. 
+
+While you may want to choose something that is not too complex and can be easily re-implemented from scratch, it is often hard to find or excessively niche. Looking at something that has many alternative implementations available is often more viable and practical.
+
+Talking about high-level programming languages, one that I think it is often overlooked and frowned (in permacomputing circles at least) is... JavaScript!
+
+As I pointed out before, NodeJS can be a good high-level programming language and ecosystem, even on its own, without any NPM package. Too big? No problem, there are implementations of JavaScript that [run on microcontrollers](https://www.espruino.com), that are very small, amazingly complete and very portable like [QuickJS](https://bellard.org/quickjs/quickjs.html), that can be really easily embedded like [Duktape](https://duktape.org) (I embedded it in my very own [LiteStore](/litestore/) data store, works wonderfully).
+
+The problem here is that each implementation may have its own little quirks and proprietary APIs, but all of them are at least partially compliant with some version of the [ECMAScript](https://it.wikipedia.org/wiki/ECMAScript) standard. 
+
+The availability of alternatives (or lack thereof) made me second-guess my choice of picking Nim as the programming language of choice for my ecosystem and sort-of (soft) [bedrock platform](https://permacomputing.net/bedrock_platform/)... again, it is all about tradeoffs.
 
 ### Run on limited memory/cpu
 
-### local first (avoid AI, cloud, internet, container)
+Speaking of Nim, the top reason why I went for it (besides being an easy-to-learn high-level language), was that it can generate small, cross-platform executables that are fast and can be fairly memory/CPU efficient. 
+
+It compiles down to fairly optimized C code, so that is definitely a good thing.
+
+You can go for Rust if you wish, or whatever you want, but please, make sure that you write programs that run on a limited amount of memory and processing power. For me, a key requirement was that my web services, data stores etc. had to run comfortably on my VPS. [LiteStore](/litestore/) fits the bill perfectly, and it powers a few of my own artisan apps that I use every day (some of which still closed-source), and so does my hand-made API server written in [min](https://min-lang.org) that I am using for [nifty.tools](https://nifty.tools) and other instances of the same personal wiki engine I made.
+
+I get really pissed off at really bloated and complex software. Especially for things like your own blog or wiki, or a money tracking app, or a personal journal app... they really don't have to be. Keep things simple, and fast, and make sure they need as little resources as possible.
+
+### Local first
+
+ (avoid AI, cloud, containers, container)
 
 ### build for resilience 
 
