@@ -184,3 +184,5 @@ If we want permacomputing to succeed, if we want to reduce e-waste, we have to r
 ### Conclusion
 
 
+[stuck on running ancient versions of Windows](https://www.bbc.com/future/article/20250516-the-people-stuck-using-ancient-windows-computers)
+
