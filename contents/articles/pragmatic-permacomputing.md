@@ -21,7 +21,7 @@ Scary stuff. A bit over the top, if you ask me, and these two remarkable project
 
 I do think, however, that permacomputing can be a very practical philosophy for developing or choosing software and hardware. You can definitely be pragmatic about it, and do something good for yourself and the planet in the process.
 
-### Realistic motivations
+### Have realistic motivations
 
 There are definitely more down-to-Earth motivations to embrace permacomputing than imminent civilization collapse. Here are a few:
 
@@ -49,8 +49,7 @@ While few purists may not like it, the fact that these days there are a lot of v
 
 Also, I wish big companies like Apple and Google could commit in keeping patching their old operating systems, or at least they could open source them and let volunteers do it.
 
-
-### Portability: Target multiple platforms and architectures
+### Be portable and target multiple platforms and architectures
 
 When it comes to portability, I think that pretty much nothing beats [virtual machines](https://wiki.xxiivv.com/site/virtual_machines.html) and emulators. That's why it is still possible to run old SNES games like the original Super Mario Bros. on much newer hardware than originally intended.
 
@@ -70,7 +69,7 @@ Of course, Justine and Devine are one-of-a-kind programming gurus, but the good 
 
 In my case, I picked [Nim](https://nim-lang.org) to implement most of my very own [personal ecosystem](https://code.h3rald.com) that can run on MacOS, Windows and Linux. Maybe not the most popular choice (read on for more on _popularity_), but it is easy to use and does the job.
 
-### Reduce dependencies on 3rd party code (within reason)
+### Reduce dependencies on third-party party code 
 
 When it comes to managing dependencies in software and the current state of things, no one describes it better than [XKCD #2347](https://xkcd.com/2347/).
 
@@ -84,7 +83,7 @@ I am running a bunch of web services in NodeJS, _but_ I am not relying on third-
 
 And if you decide to rely on a closed ecosystem like Windows or iOS, that may also be fine: there are programs that can still run on Windows after 20 years, and the same can (nearly) be said for some iOS apps. Other considerations apply, in this case, like interoperability of file formats, but it is important not to dismiss proprietary systems just because they are proprietary: the reality is that a lot of e-waste today is constituted by devices running on proprietary systems. Sure, you could blank a Windows laptop and install Linux on it, if you are so inclined and you are comfortable with it, but if you are not, it's fine too.
 
-### Interoperability
+### Ensure you are leveraging interoperable technologies and formats
 
 For years I have been dreaming about using some sort of Microsoft Excel alternative. There is gotta be something out there that does the job, maybe using CSV files or similar... and there is, probably.
 
@@ -111,7 +110,7 @@ Looking at my specific case, I am relying on a specific flavor of markdown ([Dis
 
 I can live with all that, but I am also the sole maintainer.
 
-### Understandability and open source
+### Make your code open source and understandable
 
 I put understandability and open source in the same section because they go hand-in-hand 90% of the time. The assumption here is if you don't have access to the source of a program, chances are that you will not be able to fully understand how it works. 
 
@@ -119,7 +118,7 @@ There are probably other reasons for open sourcing your software, but as far as 
 
 Of course, being able to read the source code is not enough: I have been a technical writer in the past, and I have always included plenty of documentation for all my open source software. A well-documented open source program can be studied by someone else ten, twenty years after it was release. It can be understood, so that it can be ported to another operating system or architecture, or corrected to address a specific bug, or extended to implement a missing feature.
 
-### Availability of alternatives
+### Rely on somehing that has alternative implementations
 
 This goes hand-in-hand with interoperability and portability, and it is one of the criteria for [choosing a programming language](https://permacomputing.net/programming_languages/) suitable for permacomputing. 
 
@@ -133,7 +132,7 @@ The problem here is that each implementation may have its own little quirks and 
 
 The availability of alternatives (or lack thereof) made me second-guess my choice of picking Nim as the programming language of choice for my ecosystem and sort-of (soft) [bedrock platform](https://permacomputing.net/bedrock_platform/)... again, it is all about tradeoffs.
 
-### Run on limited memory/cpu
+### Run on limited resources
 
 Speaking of Nim, the top reason why I went for it (besides being an easy-to-learn high-level language), was that it can generate small, cross-platform executables that are fast and can be fairly memory/CPU efficient. 
 
@@ -143,12 +142,45 @@ You can go for Rust if you wish, or whatever you want, but please, make sure tha
 
 I get really pissed off at really bloated and complex software. Especially for things like your own blog or wiki, or a money tracking app, or a personal journal app... they really don't have to be. Keep things simple, and fast, and make sure they need as little resources as possible.
 
-### Local first
+### Favor simpler architectures and avoid infrastructural dependencies
 
- (avoid AI, cloud, containers, container)
+Again, this does not apply for _everything_, but to state the obvious, simpler software is easier to manage and maintain. When I build something, I at least try to avoid relying on the following (in this order):
 
-### build for resilience 
+- Cloud
+- Containers
+- Internet
 
-### Popularity
+I'll probably have to add _AI_ or _agents_ to the very top of that list soon, but for now (it won't be true in months, I am sure) software is not relying too much on these things _to work_, even though they are increasingly being used to _implement_ software or to provide add-on functionality.
+
+I am probably thinking of simpler every day tools and apps here, but for me there is no valid reason that anything you are using every day should rely on cloud technologies and containerization to work. I remember someone was kind enough to provide a [Dockerfile](https://github.com/h3rald/litestore/blob/master/Dockerfile) for LiteStore a few years ago... to make it easier to setup and run, you know...
+
+_Hang on a minute_. I had just released an open source document store server that compiles to a single, statically-linked executable that can run on all major operating system, with sensible defaults and almost no configuration... why on Earth would I want it to be containerized? For scaling reasons? I built it primarily to use it as primary storage for my own artisan apps... it's a small and simple thing, it really doesn't need to be complicated!
+
+Being able to _not_ rely on the Internet is harder, but [local-first software](https://localfirstweb.dev) is actually a thing. Because I tend to create web UIs when I need a graphical user interface for my tools, deploying them on the Internet with simple cookie-based authentication is very convenient: I can implement my app once, deploy it on my VPS, and access it from any device, without worrying about synchronizing data and things like that.
+
+That is probably fine. I am acknowledging a hard dependency on the Internet being accessible, which may not be OK in some scenarios (while on a plane or similar), but I have two mitigations:
+
+- If, for some weird reason, I will not be able to access the Internet for longer periods of time, I can still run the same tools locally, on a server running on localhost.
+- For my personal wiki app, I added *full* offline support with [service workers](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Offline_Service_workers). I was reluctant of doing so because things can change, and I am sure there will be simpler and better ways to implement offline support in web apps in the future, but that was a tradeoff I was willing to make.
+
+### Choose popular, well-known software, systems, and formats 
+
+This is gonna be a controversial one... If you go through the [projects](https://permacomputing.net/projects/) page of the permacomputing wiki, you will find a lot of names of _minimalist_ software that the average Joe never heard about. None of them is mainstream, or _popular_, if you will: there may be works of enlightened computer gurus, reclusive hermits, or brilliant artist/technologists living on boats... Works of art that could become popular, but maybe in an alternate reality.
+
+The world we live in relies on bloated software running on popular, mainstream systems like Windows, or MacOS. That is "fine" I guess, for most. Until it isn't. In opened a drawer the other day and I found my old [Nokia 6600](https://en.wikipedia.org/wiki/Nokia_6600) running Symbian OS 7, I found my old [Palm Treo](https://en.wikipedia.org/wiki/Palm_Treo) running Windows Mobile 6.1, and the [Blackberry Curve 9300](https://en.wikipedia.org/wiki/BlackBerry_Curve) running the Blabkberry OS I picked up a couple of years ago at a flea marked for 15€. They all turn on. The battery is not that bad. They could potentially work and even (unsafely and very slowly) browse the web with [Opera Mini](http://m.opera.com/?act=opts&rnd=2799480596&vid=0x10cb75bb14cbb1d8&ua=MOT-i415).
+
+All those once-popular platforms and operating systems are now forgotten. And because those systems are proprietary and closed-source, no one bothers or even can keep them alive.
+
+Choosing a _popular_ platform is literally like betting on a race horse. The only difference is that the race may last five, ten, maybe fifteen years? Will I be writing about my old iPhone 14 Pro fifteen years from now, of how awesome it felt until "the downfall of iOS"?
+
+I wish we could do something about this. For one, things would be much easier if systems were more open. Maybe Android is better that way? Not sure. But I wish some clever folk could figure something out to at least put the _hardware_ of these expensive bricks to good use. And that's hard, I get it, but we should invest in figuring it out.
+
+Take [Uxn](https://100r.co/site/uxn.html) for example. It can run on anything, literally. However, the [Uxn emulator for iOS](https://github.com/paiv/uxn-ios) doesn't seem to be complete or maintained. And because of the very nature of the platform, it is neither on the App Store, nor on the recently-legalized (in Europe) [AltStore](https://altstore.io), making it harded to install on their device for the average user.
+
+And this is not an attack to the person that created it... but I just wish this project (and others similar to this) could get more love.
+
+If we want permacomputing to succeed, if we want to reduce e-waste, we have to realize that &mdash; unfortunately &mdash; cannot pick the hardware our programs can run on. Maybe not even the operating system.
+
+### Conclusion
 
 
