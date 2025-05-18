@@ -68,26 +68,63 @@ Speaking of ROMs, [Uxn](https://wiki.xxiivv.com/site/uxn.html) is another exampl
 
 Of course, Justine and Devine are one-of-a-kind programming gurus, but the good news is that a lot of today's programming languages can built executables that run on different platforms without code changes. Rust, Go, and of course C (with some caveats) to name a few.
 
-In my case, I picked [Nim](https://nim-lang.org) to implement most of my very own [personal ecosystem](https://code.h3rald.com). Maybe not the most popular choice (read on for more on _popularity_), but it is easy to use and does the job, at the end of the day.
+In my case, I picked [Nim](https://nim-lang.org) to implement most of my very own [personal ecosystem](https://code.h3rald.com) that can run on MacOS, Windows and Linux. Maybe not the most popular choice (read on for more on _popularity_), but it is easy to use and does the job.
+
+### Reduce dependencies on 3rd party code (within reason)
+
+When it comes to managing dependencies in software and the current state of things, no one describes it better than [XKCD #2347](https://xkcd.com/2347/).
+
+Certain ecosystems (NodeJS and modern JavaScript, I am looking at you!) encourage the proliferation of dependencies. The more dependencies on third-party code your program relies on, the higher the chance that something will change, and break things.
+
+This is the reason why I decided to implement [my own static site generator](/hastysite/) instead of using one of the millions existing ones out there. It was a pragmatic decision mind: changes in my life reduced the amount of time I had to tinker with code and stay on top of an ever-changing ecosystem (and I was using Nanoc and Ruby, nothing too crazy, even).
+
+My recommendation here is not to go too crazy in reinventing the wheel: you _probably_ don't need to reimplement an operating system from scratch, and you _probably_ don't need to implement your own programming language or blacklist NodeJS forever because of NPM. But you should definitely evaluate your options.
+
+I am running a bunch of web services in NodeJS, _but_ I am not relying on third-party dependencies, for example. NodeJS has been fairly considerate in its relatively short lifespan to not break things too often, even between major versions. They offer LTS releases, so all I have to do is keep the system patched automatically, and upgrade every couple of years. For me, right now, that is manageable.
+
+And if you decide to rely on a closed ecosystem like Windows or iOS, that may also be fine: there are programs that can still run on Windows after 20 years, and the same can (nearly) be said for some iOS apps. Other considerations apply, in this case, like interoperability of file formats, but it is important not to dismiss proprietary systems just because they are proprietary: the reality is that a lot of e-waste today is constituted by devices running on proprietary systems. Sure, you could blank a Windows laptop and install Linux on it, if you are so inclined and you are comfortable with it, but if you are not, it's fine too.
+
+### Interoperability
+
+For years I have been dreaming about using some sort of Microsoft Excel alternative. There is gotta be something out there that does the job, maybe using CSV files or similar... and there is, probably.
+
+Devine recently made [Nebu](https://wiki.xxiivv.com/site/nebu) for Uxn, and I think that's a remarkable feat of engineering. Would I tell my father to use it? Probably not. Could I use it at work? Maybe, but as sad as it is, people would start wondering why suddenly I am using CSV files instead of XLSX so... let's just say that would be impractical.
+
+The important thing here is that in a lot of cases it's _fine_ to choose certain applications, proprietary or not, as long as you have a way out, a way to export your data to a common data format that can then be imported something else. 
+
+We could debate on the inherent evil of the XLS or XLSX format, how horrible and inconsiderate it is on certain aspects, but at the end of the day:
+
+- It can be converted to CSV and then you are "free" again
+- It can be imported and managed by many competitors of Excel
+- We have been using it for decades, it's still there. You can probably open an .xls file created twenty years ago
+- It is _reasonable_ to expect that it will still work for the next twenty years
+
+Sure, Microsoft switched from XLS to XLSX, but hey, we survived. 
+
+All this applies to text editors, spreadsheet editors, or whatever software uses a specific file format to save its state: there are thousands of Markdown editors out there, for any platform. It really doesn't matter which one you pick, as long as it uses markdown as a format. Does your favorite editor become unmaintained? No problem, you can pick another.
+
+Looking at my specific case, I am relying on a specific flavor of markdown ([Discount](https://www.pell.portland.or.us/~orc/Code/discount/)) with some custom extensions for macros and snippets for my own [HastyScribe](/hastyscribe/) and [HastySite](/hastysite/) projects. That's probably a red flag: if you want to use HastyScribe as a markdown processor (few other than me do), you have to live with the fact that:
+
+- It does not use _standard_ Markdown
+- It relies on 3rd party dependency
+- It is written in Nim
+
+I can live with all that, but I am also the sole maintainer.
+
+### Understandability and open source
+
+I put understandability and open source in the same section because they go hand-in-hand 90% of the time. The assumption here is if you don't have access to the source of a program, chances are that you will not be able to fully understand how it works. 
+
+There are probably other reasons for open sourcing your software, but as far as permacomputing goes, understandability is the most important. If a piece of software has to withstand the passage of time, it has to be understood by others. Again, there are extremes: a basic Uxn implementation is 100 lines of C and [fits on a napkin](https://wiki.xxiivv.com/etc/uxnmin.c.txt). The idea here is that it should be easy to understand and re-implement in other programming languages and systems.
 
 
-
-
-
-
-### Understandability
-
-### limit reliance on 3rd parties (within reason)
 
 ### Run on limited memory/cpu
 
-### local first (avoid AI, cloud, internet, containers)
-
-### open source and knowledge 
-
-### interoperability (import/export)
+### local first (avoid AI, cloud, internet, container)
 
 ### build for resilience 
 
+### Popularity
 
 
