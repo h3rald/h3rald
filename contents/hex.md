@@ -9,7 +9,7 @@ summary: "hex aims to be a little programming language that is simple to learn a
 content-type: project
 active: true
 ci: true
-version: 0.5.0
+version: 0.6.0
 download: "https://github.com/h3rald/hex/releases/download/"
 -----
 
