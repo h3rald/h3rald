@@ -1,0 +1,1 @@
+Example of microcomputer driven by an 8-but 6502 microprocessor. From "Elettronica digitale e dispositivi logici", 1987.
