@@ -1,5 +1,5 @@
 -----
-title: "RawLine 0.3.0 released â now with Readline emulation"
+title: "RawLine 0.3.0 released - now with Readline emulation"
 content-type: article
 timestamp: 1235890020
 tags: "ruby|opensource|rawline"
@@ -16,7 +16,8 @@ tags: "ruby|opensource|rawline"
 	bricks were already there, I just had to put them together in the right place.</p>
 <p>The <code>RawLine</code> module (you can spell it &#8220;Rawline&#8221; as well, if you wish) now behaves like
 	<code>Readline</code>. This means that you can now use RawLine like this (taken from
-	examples/readline_emulation.rb):</p>
+	examples/readline_emulation.rb):
+</p>
 <div class='ruby'>
 	<pre><code>include Rawline
 
@@ -34,7 +35,8 @@ end</code></pre>
 </div>
 <p>Basically you get a <code>readline</code> method, a <code>HISTORY</code> constant like the one exposed by Readline
 	(Rawline's is a RawLine::HistoryBuffer object though &mdash; much more manageable), and a
-	<code>FILENAME_COMPLETION_PROC</code> constant, which provides basic filename completion. Here it is:</p>
+	<code>FILENAME_COMPLETION_PROC</code> constant, which provides basic filename completion. Here it is:
+</p>
 <div class='ruby'>
 	<pre><code>def filename_completion_proc
 			lambda do |word|
@@ -81,7 +83,8 @@ end</code></pre>
 	Now you can imagine why it took me a few minutes to write the <code>filename_completion_proc</code> method (and why
 	it will take you even less time to write your own similar method if you wanna do something different): you can
 	access not only the last word being typed but also the current <em>and previous</em> lines (through
-	<code>Rawline.editor.history</code> or just <code>Rawline::HISTORY</code>)!</p>
+	<code>Rawline.editor.history</code> or just <code>Rawline::HISTORY</code>)!
+</p>
 <p>It must be said, as usual, that Rawline is <em>not</em> a complete replacement for the Readline library yet (and it
 	will probably never be, as Readline is huge!), but it's a good cross-platform, more Ruby-esque alternative to what's
 	currently available by the Readline wrapper for Ruby.</p>
