@@ -386,12 +386,14 @@
     when
     (meta.ext ".txt" ==)
       (
-        day meta input-fread "text" dict.set @day
+        ;day meta input-fread "text" dict.set @day
+        meta input-fread :day.text
       )
       (
         (meta.ext "\.(png|jpe?g|webp|gif)$" match?)
           (
-            day "/" meta.id "[/\\\]" split "/" join meta.ext suffix suffix "image" dict.set @day
+            ;day "/" meta.id "[/\\\]" split "/" join meta.ext suffix suffix "image" dict.set @day
+            "/" meta.id "[/\\\]" split "/" join meta.ext suffix suffix :day.image
           )
         when
         meta output-cp
@@ -429,10 +431,10 @@ assets (
     :content
     (((content 'draft dict.has? not) (content 'content-type dict.has?)) &&)
     (
-      content "id" dict.get :id
-      (content "content-type" dict.get "project" ==) (content PROJECTS append @PROJECTS) when
-      (content "content-type" dict.get "spell" ==) (content SPELLS append @SPELLS) when
-      (content "content-type" dict.get "article" ==) (articles-count 1 + @articles-count) when
+      content.id :id
+      (content.content-type "project" ==) (content PROJECTS append @PROJECTS) when
+      (content.content-type "spell" ==) (content SPELLS append @SPELLS) when
+      (content.content-type "article" ==) (articles-count 1 + @articles-count) when
       content
       projects-count "projects-count" dict.set
       articles-count "articles-count" dict.set
