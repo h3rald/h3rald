@@ -9,7 +9,6 @@ summary: "A functional, concatenative programming language with a minimalist syn
 content-type: project
 active: true
 ci: true
-download: "https://github.com/h3rald/min/releases/download/"
 version: 0.47.1
 docs: /min/Min_DeveloperGuide.htm
 -----
@@ -39,10 +38,3 @@ Note that:
 * Symbols can be used to perform operations on the whole stack.
 
 Unlike more traditional programming languages, in a concatenative programming language there is no inherent need of variables or named parameters, as symbols acts as stack operators that consume elements that are placed in order on top of a stack.
-
-
-### Downloads
-
-* [macOS (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_macosx_x64.zip)
-* [Linux (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_x64.zip)
-* [Windows (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_windows_x64.zip)
