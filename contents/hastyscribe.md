@@ -8,8 +8,7 @@ ci: true
 home: /hastyscribe/
 docs: /hastyscribe/HastyScribe_UserGuide.htm
 summary: "A self-contained Markdown compiler that can generate self-contained HTML files, useful for writing essays, reports, meeting notes, etc."
-version: "2.0.0"
-download: "https://github.com/h3rald/hastyscribe/releases/download/"
+version: "2.1.1"
 -----
 {{download => https://github.com/h3rald/hastyscribe/releases/download/}}
 
@@ -23,12 +22,6 @@ HastyScribe is:
 * able to generate **self-contained, responsive HTML5 documents** that can be viewed with any major modern broswer, and look great on any device.
 
 For more information and a sample of HastyScribe's power, you can download and read the [HastyScribe User Guide](/hastyscribe/HastyScribe_UserGuide.htm) &ndash; generated with HastyScribe of course.
-
-### Downloads
-
-* [macOS (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_macosx_x64.zip)
-* [Linux (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_linux_x64.zip)
-* [Windows (x64)]({{$download}}v{{$version}}/{{$github}}_v{{$version}}_windows_x64.zip)
 
 ### Resources
 
