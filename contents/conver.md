@@ -6,7 +6,7 @@ subtitle: "A versioning system for stable software"
 summary: "An alternative approach to versioning software that aims to achieve eventual stability and completeness."
 content-type: project
 active: true
-version: 1.2.G
+version: 1.2.Y
 -----
 
 ### Summary
@@ -33,29 +33,30 @@ There are at least two or three versioning systems that emphasize the importance
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
-### Example of Convergent Sequences
+### Recommended Convergent Sequence
 
-|Name      |Sigil|Formula       |→   |Rate |First 5 terms                    |
-|----------|-----|--------------|----|-----|---------------------------------|
-|**Euler** |e    |digits of e   |e   |0.125|2.7, 2.71, 2.718, 2.7182, 2.71828|
-|**Pi**    |π    |digits of π   |π   |0.128|3.1, 3.14, 3.141, 3.1415, 3.14159|
-|**Root**  |R    |digits of √2  |√2  |0.131|1.4, 1.41, 1.414, 1.4142, 1.41421|
-|**Ln2**   |N    |digits of ln 2|ln 2|0.238|0.6, 0.69, 0.693, 0.6931, 0.69314|
-|**Phi**   |φ    |digits of φ   |φ   |0.306|1.6, 1.61, 1.618, 1.6180, 1.61803|
-|**Apéry** |A    |digits of ζ(3)|ζ(3)|0.358|1.2, 1.20, 1.202, 1.2020, 1.20205|
-|**Golden**|G    |F(n)/F(n+1)   |1/φ |0.379|1/1, 1/2, 2/3, 3/5, 5/8          |
-|**Zeno**  |Z    |1−1/2ⁿ        |1   |0.500|1/2, 3/4, 7/8, 15/16, 31/32      |
-|**Dim**   |D    |1/n²          |0   |0.758|1/1, 1/4, 1/9, 1/16, 1/25        |
-|**Square**|Q    |n²/(n²+1)     |1   |0.772|1/2, 4/5, 9/10, 16/17, 25/26     |
-|**Third** |T    |(3n−1)/(3n)   |1   |0.863|2/3, 5/6, 8/9, 11/12, 14/15      |
-|**Odd**   |O    |(2n−1)/(2n)   |1   |0.863|1/2, 3/4, 5/6, 7/8, 9/10         |
-|**Fade**  |F    |1/n           |0   |0.863|1/1, 1/2, 1/3, 1/4, 1/5          |
-|**Half**  |H    |n/(2n+1)      |1/2 |0.877|1/3, 2/5, 3/7, 4/9, 5/11         |
-|**Wallis**|W    |2n/(2n+1)     |1   |0.877|2/3, 4/5, 6/7, 8/9, 10/11        |
-|**Step**  |S    |n/(n+1)       |1   |0.887|1/2, 2/3, 3/4, 4/5, 5/6          |
-|**Leap**  |L    |n/(n+2)       |1   |0.902|1/3, 1/2, 3/5, 2/3, 5/7          |
 
-### Notation
+Formula: 1−1/2ⁿ
+First five values: 1/2, 3/4, 7/8, 15/16, 31/32
+
+
+### Notations
+
+#### Compact
+
+Example: 4B
+
+##### Fraction
+
+Example: 15/16
+
+##### Binary Fraction
+
+Example: 0.1111
+
+##### Decimal
+
+Example: 0.9375
 
 ### About
 
