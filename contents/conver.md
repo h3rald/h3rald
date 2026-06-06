@@ -6,7 +6,7 @@ subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aims to achieve eventual stability, maturity, and completeness."
 content-type: project
 active: true
-version: 0x100D
+version: 100-D
 -----
 
 ### Summary
@@ -66,6 +66,7 @@ Such value MAY be formatted using any of the following notations:
 - "v", followed by three hexadecimal digits, followed by "-", followed by one hexadecimal digit.
 
 For example, the following notations are equivalent:
+
 - 13BF
 - 0x13BF
 - $13BF
