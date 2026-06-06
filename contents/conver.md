@@ -1,7 +1,7 @@
 -----
 id: conver
 home: /conver/
-title: "Convergent Versioning 0x100D"
+title: "Convergent Versioning $100D"
 subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aims to achieve eventual stability, maturity, and completeness."
 content-type: project
@@ -63,7 +63,7 @@ Convergent Versions MUST be expressed using a single, two-byte value written in 
 
 Such value MAY be formatted using any of the following notations:
 
-- four hexadecimal digits OPTIONALLY prepended by`0x` or `$`.
+- four hexadecimal digits OPTIONALLY prepended by `0x` or `$`.
 - "v", followed by three hexadecimal digits, followed by "-", followed by one hexadecimal digit.
 
 For example, the following notations are equivalent:
