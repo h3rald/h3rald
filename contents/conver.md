@@ -1,7 +1,7 @@
 -----
 id: conver
 home: /conver/
-title: "Convergent Versioning $100D"
+title: "Convergent Versioning v100-D"
 subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aims to achieve eventual stability, maturity, and completeness."
 content-type: project
