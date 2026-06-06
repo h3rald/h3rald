@@ -62,6 +62,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 Convergent Versions MUST be expressed using a single, two-byte value written in hexadecimal notation. 
 
 Such value MAY be formatted using any of the following notations:
+
 - four hexadecimal digits OPTIONALLY prepended by`0x` or `$`.
 - "v", followed by three hexadecimal digits, followed by "-", followed by one hexadecimal digit.
 
@@ -73,6 +74,7 @@ For example, the following notations are equivalent:
 - v13B-F
 
 Logically, each version number SHALL be intended as comprised of:
+
 - a dependability score (first three digits)
 - version metadata (last digit)
 
@@ -87,6 +89,7 @@ While increasing the dependability score of a project is essentially an arbitrar
 #### Version Metadata
 
 The last hexadecimal digit of a version number (henceforth called "metadata nibble") SHALL encode metadata characterizing the release based on three distinct traits:
+
 - Magnitude
 - Breakage
 - Experimentation
@@ -94,6 +97,7 @@ The last hexadecimal digit of a version number (henceforth called "metadata nibb
 ##### Magnitude
 
 Magnitude identifies the amount of changes compared to the total size of the project. Each value of the metadata nibble expresses a possible order of magnitude among the following:
+
 - S (0-3) &mdash; Up to 5% of the code was changed. 
 - M (4-7) &mdash; Up to 25% of the code was changed.
 - L (8-B) &mdash; Up to 50% of the code was changed.
@@ -102,12 +106,14 @@ Magnitude identifies the amount of changes compared to the total size of the pro
 #### Breakage
 
 Breakage identifies whether the version breaks compatibility with previous versions or not. Alternate pairs of the metadata nibble express this:
+
 - Non-Breaking (0-1, 4-5, 8-9, C-D)
 - Breaking (2-3, 6-7, A-B, E-F)
 
 #### Experimentation
 
 Experimentation identifies whether the release introduces experimental APIs or not. 
+
 - Odd values of the metadata nibble mean that the release includes some experimental content.
 - Even values of the metadata nibble mean that the release includes only stable content.
 
@@ -143,13 +149,15 @@ The following sections describe the characteristics and restrictions of each sta
 #### Prototype (000-3FF)
 
 Projects in this stage are typically highly unstable, immature, and/or incomplete. As a result, releases within this stage:
+
 - MAY be of any magnitude 
 - MAY include breaking changes
 - MAY include experimental content
 
 #### Operational (400-7FF)
 
-Projects in this stage are typically usable in production, although they MAY still improve substantially in terms of completeness, maturity, and stability. As a result, releases within this stage MAY:
+Projects in this stage are typically usable in production, although they MAY still improve substantially in terms of completeness, maturity, and stability. As a result, releases within this stage:
+
 - MAY be or magnitude S, M, or L, but not X
 - MAY include breaking changes
 - MAY include experimental content
@@ -157,6 +165,7 @@ Projects in this stage are typically usable in production, although they MAY sti
 #### Established (800-BFF)
 
 Projects in this stage are typically regarded as sufficiently complete, mature and/or stable, although they may still improve to achieve a higher degree of completeness, maturity, and/or stability. As a result, releases within this stage:
+
 - MAY be of magnitude S or M, but not L or X.
 - MUST NOT include breaking changes.
 - MAY include experimental content.
@@ -164,6 +173,7 @@ Projects in this stage are typically regarded as sufficiently complete, mature a
 #### Bedrock (C00-FFF)
 
 Projects in this stage are typically regarded as complete, mature, and/or stable. As a result, releases within this stage:
+
 - MAY be of magnitude S but not M, L, or X.
 - MUST NOT include breaking changes.
 - MUST NOT include experimental content.
