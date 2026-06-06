@@ -9,7 +9,7 @@ summary: "A functional, concatenative programming language with a minimalist syn
 content-type: project
 active: true
 ci: true
-version: 0.47.1
+version: 0.48.0
 docs: /min/Min_DeveloperGuide.htm
 -----
 
