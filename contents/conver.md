@@ -6,20 +6,20 @@ subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aim to achieve eventual stability, maturity, and completeness."
 content-type: project
 active: true
-version: 300-5
+version: 380-F
 -----
 
-The current version of this document is **v300-5**.
+The current version of this document is **v380-F**.
 
 ### Summary
 
 Given a project that aims to achieve the highest level of feature-completeness, maturity, and stability (collectively identified as _dependability_), its releases should be expressed using a single integer number of two bytes expressed in hexadecimal notation, conveying:
 - its dependability score, expressed as a value between 0x000 and 0xFFF (first three digits).
-- metadata expressing the magnitude of the changes delivered, and if the release includes breaking changes and/or experimental content, encoded in the last digit.
+- metadata expressing the size of the changes delivered, and if the release breaks compatibility and/or includes new enhancements, encoded in the last digit.
 
-Based on its dependability score, a project should be immediately classifiable as belonging to one of the following stages: _prototype_, _operational_, _established_, and _bedrock_. Each stage is meant to progressively restrict the type of changes introduced in each release. 
+Based on its dependability score, a project should be immediately classifiable as belonging to one of the following stages: _prototype_, _operational_, _consolidated_, and _bedrock_. Each stage is meant to progressively restrict the type of changes introduced in each release. 
 
-As an example, the version number `0x9B04` immediately conveys that the project is in its _established_ state (very dependable) and the version introduced changes to up to 25% of its content, with no breaking changes and no experimental content. Because of its stage, following releases will never include breaking changes or affect more than 25% of its content, but may include experimental content.
+As an example, the version number `0x9B04` immediately conveys that the project is in its _consolidated_ state (very dependable) and the version introduced changes to up to 25% of its content, with no breaking changes and no new enhancements. Because of its stage, following releases will never include breaking changes or affect more than 25% of its content, but may include new enhancements.
 
 ### Motivation
 
@@ -82,27 +82,6 @@ Logically, each version number SHALL be intended as comprised of:
 - a dependability score (first three digits)
 - version metadata (last digit)
 
-#### Alternative Decimal Format
-
-In cases when a the canonical format is deemed inconvenient or too cryptic for end users, an alternative decimal format MAY be used. 
-In this case, a ConVer release MUST be formatted as follows:
-
-"v" followed by the conversion of the dependability score into exactly four decimal digits, followed by "-", followed by metadata expressed via three-letters.
-
-- The first letter of the metadata identifies the magnitude, and MUST be one of: S, M, L, or X.
-- The second letter MUST be either B (breaking) or N (non-breaking).
-- The third letter MUST be either E (experimental) or S (stable).
-
-For example, **v13B-F** MAY be represented as **v0315-XBE**.
-
-#### Alternative SemVer-like Format
-
-In situations where a SemVer like version is expected, such as in formats used by package managers and similar, a ConVer release MAY be approximated to the corresponding SemVer value by using each digit of the dependability score (converted to the corresponding decimal value) as major, minor, and patch values, respectively.
-
-For example, **v13B-F** MAY be represented as **v1.3.11**.
-
-Note that in this conversion the metadata is lost.
-
 #### Dependability Score
 
 The first three digits of a version SHALL identify its _dependability score_, or, in other words, how feature-complete, mature and stable a project is on a scale from 0x000 to 0xFFF. The initial dependability score is set by the maintainer of the project based on their best evaluation of is _dependability stage_ (see the dedicated section, further on), from _prototype_ to _bedrock_. 
@@ -115,59 +94,59 @@ While increasing the dependability score of a project is essentially an arbitrar
 
 The last hexadecimal digit of a version number (henceforth called "metadata nibble") SHALL encode metadata characterizing the release based on three distinct traits:
 
-- Magnitude
-- Breakage
-- Experimentation
+- Size
+- Compatibility
+- Purpose
 
-##### Magnitude
+##### Size
 
-Magnitude identifies the amount of changes compared to the total size of the project. Each value of the metadata nibble expresses a possible order of magnitude among the following:
+Size identifies the amount of changes compared to the total size of the project. Each value of the metadata nibble expresses a possible size among the following:
 
 - S (0-3) &mdash; Up to 5% of the project content was changed. 
 - M (4-7) &mdash; Up to 25% of the project content was changed.
 - L (8-B) &mdash; Up to 50% of the project content was changed.
 - X (C-F) &mdash; Up to 100% of the project content was changed.
 
-#### Breakage
+#### Compatibility
 
-Breakage identifies whether the version breaks compatibility with previous versions or not. Alternate pairs of the metadata nibble express this:
+Compatibility identifies whether the version breaks compatibility with previous versions or not. Alternate pairs of the metadata nibble express this:
 
-- Non-Breaking (0-1, 4-5, 8-9, C-D)
+- Preserving (0-1, 4-5, 8-9, C-D)
 - Breaking (2-3, 6-7, A-B, E-F)
 
-#### Experimentation
+#### Purpose
 
-Experimentation identifies whether the release introduces experimental APIs or not. 
+Purpose identifies whether the release introduces new features/enhancements or focuses purely on maintenance and bug fixing.
 
-- Odd values of the metadata nibble mean that the release includes some experimental content.
-- Even values of the metadata nibble mean that the release includes only stable content.
+- Odd values of the metadata nibble mean that the release includes some new feature or enhancement.
+- Even values of the metadata nibble mean that the release focuses only maintenance work, performance, reliability improvements, and bug fixing.
 
 #### Summary
 
-| Value | Magnitude | Breakage | Experimentation |
+| Value | Size | Compatibility | Purpose |
 |:--|:--|:--|:--|
-| F | X | Y | Y |
-| E | X | Y | N |
-| D | X | N | Y |
-| C | X | N | N |
-| B | L | Y | Y |
-| A | L | Y | N |
-| 9 | L | N | Y |
-| 8 | L | N | N |
-| 7 | M | Y | Y |
-| 6 | M | Y | N |
-| 5 | M | N | Y |
-| 4 | M | N | N |
-| 3 | S | Y | Y |
-| 2 | S | Y | N |
-| 1 | S | N | Y |
-| 0 | S | N | N |
+| F | X | Breaking | Enhancement |
+| E | X | Breaking | Maintenance |
+| D | X | Preserving | Enhancement |
+| C | X | Preserving | Maintenance |
+| B | L | Breaking | Enhancement |
+| A | L | Breaking | Maintenance |
+| 9 | L | Preserving | Enhancement |
+| 8 | L | Preserving | Maintenance |
+| 7 | M | Breaking | Enhancement |
+| 6 | M | Breaking | Maintenance |
+| 5 | M | Preserving | Enhancement |
+| 4 | M | Preserving | Maintenance |
+| 3 | S | Breaking | Enhancement |
+| 2 | S | Breaking | Maintenance |
+| 1 | S | Preserving | Enhancement |
+| 0 | S | Preserving | Maintenance |
 
 #### Dependability Stages
 
 Projects that follow Convergent Versioning SHALL aim to achieve the highest level of dependability in terms of completeness, maturity, and stability. This is achieved by partitioning the available versioning units into four _dependability stages_.
 
-Depending on the stage a project is currently in, certain metadata values SHALL be explicitly forbidden. For example, any release that is part of the _established_ stage MUST NOT include breaking changes. 
+Depending on the stage a project is currently in, certain metadata values SHALL be explicitly forbidden. For example, any release that is part of the _consolidated_ stage MUST NOT include breaking changes. 
 
 The following sections describe the characteristics and restrictions of each stage more in detail.
 
@@ -175,50 +154,64 @@ The following sections describe the characteristics and restrictions of each sta
 
 Projects in this stage are typically highly unstable, immature, and/or incomplete. As a result, releases within this stage:
 
-- MAY be of any magnitude 
-- MAY include breaking changes
-- MAY include experimental content
+- MAY be of any size.
+- MAY include breaking changes.
+- MAY include new enhancements.
 
 ##### Operational (401-800)
 
 Projects in this stage are typically usable in production, although they MAY still improve substantially in terms of completeness, maturity, and stability. As a result, releases within this stage:
 
-- MAY be or magnitude S, M, or L, but not X
-- MAY include breaking changes
-- MAY include experimental content
+- MAY be or size S, M, or L, but not X.
+- MAY include breaking changes.
+- MAY include new enhancements.
 
-##### Established (801-C00)
+##### Consolidated (801-C00)
 
-Projects in this stage are typically regarded as sufficiently complete, mature and/or stable, although they may still improve to achieve a higher degree of completeness, maturity, and/or stability. As a result, releases within this stage:
+Projects in this stage are typically regarded as reasonably complete, mature and/or stable, although they may still improve to achieve a higher degree of dependability. As a result, releases within this stage:
 
-- MAY be of magnitude S or M, but not L or X.
+- MAY be of size S or M, but not L or X.
 - MUST NOT include breaking changes.
-- MAY include experimental content.
+- MAY include new enhancements.
 
 ##### Bedrock (C01-1000)
 
 Projects in this stage are typically regarded as complete, mature, and/or stable. As a result, releases within this stage:
 
-- MAY be of magnitude S but not M, L, or X.
+- MAY be of size S but not M, L, or X.
 - MUST NOT include breaking changes.
-- MUST NOT include experimental content.
+- MUST NOT include new enhancements.
 
 Note that a score of 1000 MAY NOT be represented by Convergent Versioning, as it MAY NOT be reached.
 
-### Changelog
+### Dependency Management
 
-#### v300-5 (2026-06-07)
+Assuming that two projects "A" and "B" both follow Convergent Versioning, if "B" depends on "A", then:
 
-- Added Changelog section.
-- Adjusted dependability stages to be inclusive (400, 800, C00, 1000).
-- Clarified that a dependability score of 1000 cannot be represented or reached.
-- Introduced alternative representations.
-- Improve wording throughout the document to clarify that _ConVer_ can be used as an abbreviation for Convergent Versioning.
-- Moved Dependability Stages under Specification.
+- The dependability score of "A" MUST be higher than the one of "B".
+- "B" MUST be compatible exactly with a specific version of "A", unless "A" is in _consolidated_ or _bedrock_ stage, in which case "B" MAY be compatible with any version of "A" with a score of 801 or higher (and therefore at least in _consolidated_ stage).
 
-#### v100-D (2026-06-07)
+### Alternative Decimal Format
 
-Initial release.
+In cases when a the canonical format is deemed inconvenient or too cryptic for end users, an alternative decimal format MAY be used. 
+In this case, a ConVer release MUST be formatted as follows:
+
+"v" followed by the conversion of the dependability score into exactly four decimal digits, followed by "-", followed by metadata expressed via three-letters.
+
+- The first letter of the metadata identifies the size, and MUST be one of: S, M, L, or X.
+- The second letter identifies the compatibility, and MUST be either B (breaking) or P (preserving).
+- The third letter identifies the purpose, and MUST be either E (enhancement) or M (maintenance).
+
+For example, **v13B-F** MAY be represented as **v0315-XBE**.
+
+### Converting a ConVer release to SemVer
+
+In situations where a SemVer like version is expected, such as in formats used by package managers and similar, a ConVer release MAY be converted into the corresponding SemVer-compliant release provides that the entire history project releases is known. 
+
+To determine the exact SemVer version number of a ConVer project, do the following:
+- Count the number of _breaking_ releases; that SHALL be your major version number, unless the project is in _prototype_ stage, in which case the major version SHALL be set to 0.
+- Count the number of _enhancement_ releases after the last _breaking_ release (if any, or all if none); that SHALL be your minor version.
+- Count the number of _maintenance_ releases after the last _enhancement_ release (if any, or all if none); that SHALL be your patch version.
 
 ### About
 
@@ -226,4 +219,4 @@ This specification for Convergent Versioning (ConVer) was originally authored by
 
 ### License
 
-[Creative Commons &mdash; CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+[Creative Commons &mdash; CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
