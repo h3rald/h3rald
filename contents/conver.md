@@ -184,14 +184,14 @@ Projects in this stage are typically regarded as complete, mature, and/or stable
 
 Note that a score of 1000 MAY NOT be represented by Convergent Versioning, as it MAY NOT be reached.
 
-### Dependency Management
+#### Dependency Management
 
 Assuming that two projects "A" and "B" both follow Convergent Versioning, if "B" depends on "A", then:
 
 - The dependability score of "A" MUST be higher than the one of "B".
 - "B" MUST be compatible exactly with a specific version of "A", unless "A" is in _consolidated_ or _bedrock_ stage, in which case "B" MAY be compatible with any version of "A" with a score of 801 or higher (and therefore at least in _consolidated_ stage).
 
-### Alternative Decimal Format
+#### Alternative Decimal Format
 
 In cases when a the canonical format is deemed inconvenient or too cryptic for end users, an alternative decimal format MAY be used. 
 In this case, a ConVer release MUST be formatted as follows:
@@ -204,7 +204,7 @@ In this case, a ConVer release MUST be formatted as follows:
 
 For example, **v13B-F** MAY be represented as **v0315-XBE**.
 
-### Converting a ConVer release to SemVer
+#### Converting a ConVer release to SemVer
 
 In situations where a SemVer like version is expected, such as in formats used by package managers and similar, a ConVer release MAY be converted into the corresponding SemVer-compliant release provides that the entire history project releases is known. 
 
