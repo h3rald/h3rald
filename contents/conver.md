@@ -163,7 +163,7 @@ Experimentation identifies whether the release introduces experimental APIs or n
 | 1 | S | N | Y |
 | 0 | S | N | N |
 
-### Dependability Stages
+#### Dependability Stages
 
 Projects that follow Convergent Versioning SHALL aim to achieve the highest level of dependability in terms of completeness, maturity, and stability. This is achieved by partitioning the available versioning units into four _dependability stages_.
 
@@ -171,7 +171,7 @@ Depending on the stage a project is currently in, certain metadata values SHALL 
 
 The following sections describe the characteristics and restrictions of each stage more in detail.
 
-#### Prototype (000-400)
+##### Prototype (000-400)
 
 Projects in this stage are typically highly unstable, immature, and/or incomplete. As a result, releases within this stage:
 
@@ -179,7 +179,7 @@ Projects in this stage are typically highly unstable, immature, and/or incomplet
 - MAY include breaking changes
 - MAY include experimental content
 
-#### Operational (401-800)
+##### Operational (401-800)
 
 Projects in this stage are typically usable in production, although they MAY still improve substantially in terms of completeness, maturity, and stability. As a result, releases within this stage:
 
@@ -187,7 +187,7 @@ Projects in this stage are typically usable in production, although they MAY sti
 - MAY include breaking changes
 - MAY include experimental content
 
-#### Established (801-C00)
+##### Established (801-C00)
 
 Projects in this stage are typically regarded as sufficiently complete, mature and/or stable, although they may still improve to achieve a higher degree of completeness, maturity, and/or stability. As a result, releases within this stage:
 
@@ -195,7 +195,7 @@ Projects in this stage are typically regarded as sufficiently complete, mature a
 - MUST NOT include breaking changes.
 - MAY include experimental content.
 
-#### Bedrock (C01-1000)
+##### Bedrock (C01-1000)
 
 Projects in this stage are typically regarded as complete, mature, and/or stable. As a result, releases within this stage:
 
@@ -214,6 +214,7 @@ Note that a score of 1000 MAY NOT be represented by Convergent Versioning, as it
 - Clarified that a dependability score of 1000 cannot be represented or reached.
 - Introduced alternative representations.
 - Improve wording throughout the document to clarify that _ConVer_ can be used as an abbreviation for Convergent Versioning.
+- Moved Dependability Stages under Specification.
 
 #### v100-D (2026-06-07)
 
