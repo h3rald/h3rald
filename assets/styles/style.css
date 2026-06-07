@@ -155,7 +155,7 @@ h3,
 h4,
 h5 {
     font-family: 'Calendas Plus', serif;
-    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
+    font-feature-settings: "liga", "clig", "dlig", "frac", "kern";
 }
 
 .page h2 {
