@@ -209,6 +209,7 @@ For example, **v13B-F** MAY be represented as **v0315-XBE**.
 In situations where a SemVer like version is expected, such as in formats used by package managers and similar, a ConVer release MAY be converted into the corresponding SemVer-compliant release provides that the entire history project releases is known. 
 
 To determine the exact SemVer version number of a ConVer project, do the following:
+
 - Count the number of _breaking_ releases; that SHALL be your major version number, unless the project is in _prototype_ stage, in which case the major version SHALL be set to 0.
 - Count the number of _enhancement_ releases after the last _breaking_ release (if any, or all if none); that SHALL be your minor version.
 - Count the number of _maintenance_ releases after the last _enhancement_ release (if any, or all if none); that SHALL be your patch version.
