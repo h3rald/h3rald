@@ -12,6 +12,29 @@
       <div class="row main-content">
           <article class="{{content-type}} box content">
           {{> _page_header}}
+          {{#sourcehut}}
+          <div class="card project-card">
+            <div class="card-footer">
+              <a href="https://git.sr.ht/~h3rald/{{sourcehut}}" class="action">
+                source
+              </a>
+              {{#site}}
+              <a href="{{site}}" class="action">
+                site
+              </a>
+              {{/site}}
+              {{#docs}}
+              <a href="{{docs}}" class="action">
+                docs
+              </a>
+              {{/docs}}
+            </div>
+            <p class="badges">
+            <img src="https://img.shields.io/badge/release-{{version}}-{{release-color}}" style="vertical-align: middle;"/>
+            <img src="https://img.shields.io/badge/license-{{license}}-brightgreen" style="vertical-align: middle;"/>
+            </p>
+          </div>
+          {{/sourcehut}}
           {{#github}}
           <div class="card project-card">
             <div class="card-footer">
@@ -35,10 +58,6 @@
             <p class="badges">
             <img src="https://img.shields.io/github/release/h3rald/{{github}}/all.svg" style="vertical-align: middle;"/>
             <img src="https://img.shields.io/github/license/h3rald/{{github}}.svg" style="vertical-align: middle;"/>
-            <img src="https://img.shields.io/github/last-commit/h3rald/{{github}}.svg" style="vertical-align: middle;"/>
-            {{#ci}}
-            <img src="https://img.shields.io/github/actions/workflow/status/h3rald/{{github}}/ci.yml" style="vertical-align: middle;"/>
-            {{/ci}}
             </p>
           </div>
           {{/github}}

@@ -6,7 +6,10 @@ subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aim to achieve eventual stability, maturity, and completeness."
 content-type: project
 active: true
-version: 380-F
+version: 380F
+release-color: orange
+license: CC--BY--4.0
+sourcehut: conver
 -----
 
 The current version of this document is **v380-F**.
