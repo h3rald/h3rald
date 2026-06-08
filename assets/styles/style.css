@@ -145,9 +145,10 @@ body {
 }
 
 .grimoire,
-.navlinks,
+.navlinks
 {
     font-family: 'Calendas Plus', serif;
+    font-style: normal;
     font-feature-settings: "liga", "clig", "dlig", "frac", "kern";
 }
 
