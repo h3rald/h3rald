@@ -310,16 +310,6 @@ blockquote,
     font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: 'Calendas Plus', serif;
-    font-style: normal;
-    font-feature-settings: "liga", "clig", "dlig", "onum", "frac", "kern";
-}
-
 .body-text h1,
 .body-text h2,
 .body-text h3,
