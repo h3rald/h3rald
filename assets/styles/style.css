@@ -146,14 +146,7 @@ body {
 
 .grimoire,
 .navlinks,
-.primary-subtitle,
-.secondary-subtitle,
-.panel-header,
-h1,
-h2,
-h3,
-h4,
-h5 {
+{
     font-family: 'Calendas Plus', serif;
     font-feature-settings: "liga", "clig", "dlig", "frac", "kern";
 }
