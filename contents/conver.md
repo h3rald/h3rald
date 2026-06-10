@@ -6,23 +6,30 @@ subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aim to achieve eventual stability, maturity, and completeness."
 content-type: project
 active: true
-version: 380F
-release-color: orange
+version: 4107
+release-color: yellow
 license: CC--BY--4.0
 sourcehut: conver
 -----
 
-The current version of this document is **v380-F**.
+The current version of this document is **v410-7**.
 
 ### Summary
 
-Given a project that aims to achieve the highest level of feature-completeness, maturity, and stability (collectively identified as _dependability_), its releases should be expressed using a single integer number of two bytes expressed in hexadecimal notation, conveying:
+Given a project that aims to achieve the highest level of feature-completeness, maturity, and stability (collectively identified as _dependability_), its releases should be expressed using a single integer number of two bytes in hexadecimal notation, conveying:
 - its dependability score, expressed as a value between 0x000 and 0xFFF (first three digits).
-- metadata expressing the size of the changes delivered, and if the release breaks compatibility and/or includes new enhancements, encoded in the last digit.
+- metadata expressing the size of the changes delivered, if the release breaks compatibility, and/or includes new enhancements (last digit).
 
-Based on its dependability score, a project should be immediately classifiable as belonging to one of the following stages: _prototype_, _operational_, _consolidated_, and _bedrock_. Each stage is meant to progressively restrict the type of changes introduced in each release. 
+Based on its dependability score, a project should be immediately classifiable as belonging to one of the following stages: 
 
-As an example, the version number `0x9B04` immediately conveys that the project is in its _consolidated_ state (very dependable) and the version introduced changes to up to 25% of its content, with no breaking changes and no new enhancements. Because of its stage, following releases will never include breaking changes or affect more than 25% of its content, but may include new enhancements.
+- _prototype_
+- _operational_
+- _consolidated_
+- _bedrock_
+
+Each stage is meant to progressively restrict the type of changes introduced in subsequent releases. 
+
+As an example, the version number `0x9B04` immediately conveys that the project is in its _consolidated_ state (very dependable) and the version introduced changes to up to 25% of its content, with no breaking changes and no new enhancements. Because of its stage, subsequent releases will never include breaking changes or affect more than 25% of its content, but may include new enhancements.
 
 ### Motivation
 
@@ -30,11 +37,13 @@ Traditional software versioning systems like [SemVer](https://semver.org) typica
 
 While this typically helps &mdash; if properly enforced &mdash; to solve very practical problems related to a project,  like how to manage dependencies and how to classify the type of changes delivered, it doesn't necessarily convey the level of completeness, maturity, or stability of such project. If a version is 2.3.7, is the project going to remain _stable_ from a version to the next? Or are there going to be major versions released that will introduce breaking changes?
 
+Also, semantic versioning formalizes the concept of _branching_ versions, so even if version 2.0.0 is released, there could be fixes released for prior major and minor versions, like 1.4.7 or 1.6.12. While this is useful for certain categories of projects, it starts to lose meaning (and unnecessarily complicated things) once a project reaches a certain stage of completeness.
+
 While semantic versioning and traditional versioning systems are very useful to understand at a glance the entity of a change from a version to the next, they do not provide any indication on whether a project is going to keep changing or essentially try to remain the same.
 
 ### Prior Art
 
-There are at least two or three versioning systems that emphasize the importance of converging to a _stable state_ in which a project can be considered _complete_. Of course, such convergence would never actually happen in practice, but it may be approximated sufficiently enough so that a project could be considered _highly dependable_, or even a [bedrock platform](https://permacomputing.net/bedrock_platform/).
+There are at least a couple versioning systems/conventions that emphasize the importance of converging to a _stable state_ in which a project can be considered _complete_. Of course, such convergence would never actually happen in practice, but it may be approximated sufficiently enough so that a project could be considered _highly dependable_, or even a [bedrock platform](https://permacomputing.net/bedrock_platform/).
 
 #### KelVer
 
@@ -44,9 +53,9 @@ Kelvin Versioning, or _KelVer_ is a versioning system designed to converge to ze
 
 &mdash; from <cite><a href="https://moronlab.blogspot.com/2010/01/urbit-functional-programming-from.html?m=1" target="_blank">Urbit: functional programming from scratch</a></cite>
 
-While KelVer does emphasize the importance of projects striving for ultimate completeness, maturity, and stability, it does it in a non-standardized way: there is no way to know whether project A at 50K is more mature/complete than project B at 20K, because the values (and in particular the starting value) are chosen arbitrarily by the author of each project. There are no objective guarantees of stability of any sort.
+While KelVer does emphasize the importance of projects striving for ultimate completeness, maturity, and stability, it does it in a non-standardized way: there is no way to know whether project A at 50K is more mature/complete than project B at 20K, because the values (and in particular the starting value) are chosen arbitrarily by the author of each project. There are no objective guarantees of stability of any sort linked to those values.
 
-Also, a decreasing version number could potentially be problematic in some situations.
+Also, a decreasing version number could potentially be problematic in some situations, and also counter-intuitive.
 
 #### πVer and eVer 
 
@@ -66,7 +75,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 
 #### Canonical Format
 
-ConVer releases SHOULD be expressed using a single, two-byte value written in hexadecimal notation. Alternative representations MAY be used as described later on in this document, although the Canonical Format is RECOMMENDED.
+ConVer releases SHOULD be expressed using a single, two-byte value written in hexadecimal notation. An alternative, more user-friendly representation MAY also be used as described later on in this document, although the Canonical Format is RECOMMENDED.
 
 Such value MAY be formatted using one of the following notations:
 
@@ -75,10 +84,10 @@ Such value MAY be formatted using one of the following notations:
 
 For example, the following notations are equivalent:
 
-- 13BF
-- 0x13BF
-- $13BF
-- v13B-F
+- 13BF &mdash; RECOMMENDED for authoritative storage and package managers.
+- 0x13BF &mdash; RECOMMENDED for programmatic usage in programming languages that support this notation to represent hexadecimal numbers.
+- $13BF &mdash; RECOMMENDED for programmatic usage in programming languages that support this notation to represent hexadecimal numbers.
+- v13B-F &mdash; RECOMMENDED for improved readability in labels, titles, and changelogs.
 
 Logically, each version number SHALL be intended as comprised of:
 
@@ -87,15 +96,17 @@ Logically, each version number SHALL be intended as comprised of:
 
 #### Dependability Score
 
-The first three digits of a version SHALL identify its _dependability score_, or, in other words, how feature-complete, mature and stable a project is on a scale from 0x000 to 0xFFF. The initial dependability score is set by the maintainer of the project based on their best evaluation of is _dependability stage_ (see the dedicated section, further on), from _prototype_ to _bedrock_. 
+The first three digits of a version SHALL identify its _dependability score_, or, in other words, how feature-complete, mature and stable a project is on a scale from 0x000 to 0xFFF. The initial dependability score is set by the maintainer of the project based on their best evaluation of is _dependability stage_ (see the dedicated section, further on), from _prototype_ to _bedrock_, as described later on in this document.
 
 After the initial score, subsequent versions MUST increase the score based on how closer the project is getting to its ultimate level of dependability, in terms of completeness, maturity, and stability. Subsequent versions MAY therefore skip numbers if the newer versions brings the project closer to its final state. 
+
+Note that there MAY NOT be two releases with an identical dependability score.
 
 While increasing the dependability score of a project is essentially an arbitrary process, it forces maintainers to constantly keep track of their progress and how closer they are to entering the next dependability stage, and the corresponding restrictions.
 
 #### Version Metadata
 
-The last hexadecimal digit of a version number (henceforth called "metadata nibble") SHALL encode metadata characterizing the release based on three distinct traits:
+The last hexadecimal digit of a version number (henceforth called "metadata nibble") SHALL encode metadata characterizing the release based on three distinct dimensions:
 
 - Size
 - Compatibility
@@ -149,7 +160,7 @@ Purpose identifies whether the release introduces new features/enhancements or f
 
 Projects that follow Convergent Versioning SHALL aim to achieve the highest level of dependability in terms of completeness, maturity, and stability. This is achieved by partitioning the available versioning units into four _dependability stages_.
 
-Depending on the stage a project is currently in, certain metadata values SHALL be explicitly forbidden. For example, any release that is part of the _consolidated_ stage MUST NOT include breaking changes. 
+Depending on the stage a project is currently in, certain metadata values SHALL be explicitly forbidden. For example, releases of a project that reached _consolidated_ stage MUST NOT include breaking changes. 
 
 The following sections describe the characteristics and restrictions of each stage more in detail.
 
@@ -189,10 +200,7 @@ Note that a score of 1000 MAY NOT be represented by Convergent Versioning, as it
 
 #### Dependency Management
 
-Assuming that two projects "A" and "B" both follow Convergent Versioning, if "B" depends on "A", then:
-
-- The dependability score of "A" MUST be higher than the one of "B".
-- "B" MUST be compatible exactly with a specific version of "A", unless "A" is in _consolidated_ or _bedrock_ stage, in which case "B" MAY be compatible with any version of "A" with a score of 801 or higher (and therefore at least in _consolidated_ stage).
+Assuming that two projects "A" and "B" both follow Convergent Versioning, if "B" depends on "A", then "B" MUST be compatible exactly with a specific version of "A", unless "A" is in _consolidated_ or _bedrock_ stage, in which case "B" MAY be compatible with any version of "A" with a score of 801 or higher (and therefore at least in _consolidated_ stage).
 
 #### Alternative Decimal Format
 
