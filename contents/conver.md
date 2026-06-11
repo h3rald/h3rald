@@ -6,19 +6,20 @@ subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aim to achieve eventual stability, maturity, and completeness."
 content-type: project
 active: true
-version: 4107
+version: 450B
 release-color: yellow
 license: CC--BY--4.0
 sourcehut: conver
+changelog: true
 -----
 
-The current version of this document is **v410-7**.
+The current version of this document is **v450-B**.
 
 ### Summary
 
 Given a project that aims to achieve the highest level of feature-completeness, maturity, and stability (collectively identified as _dependability_), its releases should be expressed using a single integer number of two bytes in hexadecimal notation, conveying:
 - its dependability score, expressed as a value between 0x000 and 0xFFF (first three digits).
-- metadata expressing the size of the changes delivered, if the release breaks compatibility, and/or includes new enhancements (last digit).
+- metadata expressing the expected upgrade impact, if the release breaks compatibility, and/or includes new enhancements (last digit).
 
 Based on its dependability score, a project should be immediately classifiable as belonging to one of the following stages: 
 
@@ -29,7 +30,7 @@ Based on its dependability score, a project should be immediately classifiable a
 
 Each stage is meant to progressively restrict the type of changes introduced in subsequent releases. 
 
-As an example, the version number `0x9B04` immediately conveys that the project is in its _consolidated_ state (very dependable) and the version introduced changes to up to 25% of its content, with no breaking changes and no new enhancements. Because of its stage, subsequent releases will never include breaking changes or affect more than 25% of its content, but may include new enhancements.
+As an example, the version number `0x9B04` immediately conveys that the project is in its _consolidated_ state (very dependable) and the version is expected to have medium upgrade impact, with no breaking changes and no new enhancements. Because of its stage, subsequent releases will never include breaking changes or have more than medium-level upgrade impact, but may include new enhancements.
 
 ### Motivation
 
@@ -108,18 +109,20 @@ While increasing the dependability score of a project is essentially an arbitrar
 
 The last hexadecimal digit of a version number (henceforth called "metadata nibble") SHALL encode metadata characterizing the release based on three distinct dimensions:
 
-- Size
+- Impact
 - Compatibility
 - Purpose
 
-##### Size
+##### Impact
 
-Size identifies the amount of changes compared to the total size of the project. Each value of the metadata nibble expresses a possible size among the following:
+Impact identifies the expected upgrade impact of the new release. Each value of the metadata nibble expresses a possible impact level among the following:
 
-- S (0-3) &mdash; Up to 5% of the project content was changed. 
-- M (4-7) &mdash; Up to 25% of the project content was changed.
-- L (8-B) &mdash; Up to 50% of the project content was changed.
-- X (C-F) &mdash; Up to 100% of the project content was changed.
+- L (0-3) &mdash; Low impact.
+- M (4-7) &mdash; Medium impact.
+- H (8-B) &mdash; High impact.
+- C (C-F) &mdash; Critical impact.
+
+Note that the level of impact does not necessarily imply a breaking change, it may also mean that if there were no breaking changes, a release may have a low to critical impact in order to fully take advantage of a new enhancement introduced or a new correction, such as a performance improvement.
 
 #### Compatibility
 
@@ -137,24 +140,24 @@ Purpose identifies whether the release introduces new features/enhancements or f
 
 #### Summary
 
-| Value | Size | Compatibility | Purpose |
+| Value | Impact | Compatibility | Purpose |
 |:--|:--|:--|:--|
-| F | X | Breaking | Enhancement |
-| E | X | Breaking | Maintenance |
-| D | X | Preserving | Enhancement |
-| C | X | Preserving | Maintenance |
-| B | L | Breaking | Enhancement |
-| A | L | Breaking | Maintenance |
-| 9 | L | Preserving | Enhancement |
-| 8 | L | Preserving | Maintenance |
+| F | C | Breaking | Enhancement |
+| E | C | Breaking | Maintenance |
+| D | C | Preserving | Enhancement |
+| C | C | Preserving | Maintenance |
+| B | H | Breaking | Enhancement |
+| A | H | Breaking | Maintenance |
+| 9 | H | Preserving | Enhancement |
+| 8 | H | Preserving | Maintenance |
 | 7 | M | Breaking | Enhancement |
 | 6 | M | Breaking | Maintenance |
 | 5 | M | Preserving | Enhancement |
 | 4 | M | Preserving | Maintenance |
-| 3 | S | Breaking | Enhancement |
-| 2 | S | Breaking | Maintenance |
-| 1 | S | Preserving | Enhancement |
-| 0 | S | Preserving | Maintenance |
+| 3 | L | Breaking | Enhancement |
+| 2 | L | Breaking | Maintenance |
+| 1 | L | Preserving | Enhancement |
+| 0 | L | Preserving | Maintenance |
 
 #### Dependability Stages
 
@@ -168,7 +171,7 @@ The following sections describe the characteristics and restrictions of each sta
 
 Projects in this stage are typically highly unstable, immature, and/or incomplete. As a result, releases within this stage:
 
-- MAY be of any size.
+- MAY have any impact.
 - MAY include breaking changes.
 - MAY include new enhancements.
 
@@ -176,7 +179,7 @@ Projects in this stage are typically highly unstable, immature, and/or incomplet
 
 Projects in this stage are typically usable in production, although they MAY still improve substantially in terms of completeness, maturity, and stability. As a result, releases within this stage:
 
-- MAY be or size S, M, or L, but not X.
+- MAY have a L, M, H impact, but not C.
 - MAY include breaking changes.
 - MAY include new enhancements.
 
@@ -184,7 +187,7 @@ Projects in this stage are typically usable in production, although they MAY sti
 
 Projects in this stage are typically regarded as reasonably complete, mature and/or stable, although they may still improve to achieve a higher degree of dependability. As a result, releases within this stage:
 
-- MAY be of size S or M, but not L or X.
+- MAY have a L or M impact, but not H or C.
 - MUST NOT include breaking changes.
 - MAY include new enhancements.
 
@@ -192,7 +195,7 @@ Projects in this stage are typically regarded as reasonably complete, mature and
 
 Projects in this stage are typically regarded as complete, mature, and/or stable. As a result, releases within this stage:
 
-- MAY be of size S but not M, L, or X.
+- MAY only have a S impact, not M, L, or C.
 - MUST NOT include breaking changes.
 - MUST NOT include new enhancements.
 
@@ -200,7 +203,7 @@ Note that a score of 1000 MAY NOT be represented by Convergent Versioning, as it
 
 #### Dependency Management
 
-Assuming that two projects "A" and "B" both follow Convergent Versioning, if "B" depends on "A", then "B" MUST be compatible exactly with a specific version of "A", unless "A" is in _consolidated_ or _bedrock_ stage, in which case "B" MAY be compatible with any version of "A" with a score of 801 or higher (and therefore at least in _consolidated_ stage).
+Assuming that two projects "A" and "B" both follow Convergent Versioning, if "B" depends on "A", then "B" MUST be compatible exactly with one or more specific versions of "A", unless "A" is in _consolidated_ or _bedrock_ stage, in which case "B" MAY be compatible with a specific version of "A" and all subsequent versions of it, since the project cannot break compatibility once it enters _consolidated_ stage.
 
 #### Alternative Decimal Format
 
@@ -209,21 +212,81 @@ In this case, a ConVer release MUST be formatted as follows:
 
 "v" followed by the conversion of the dependability score into exactly four decimal digits, followed by "-", followed by metadata expressed via three-letters.
 
-- The first letter of the metadata identifies the size, and MUST be one of: S, M, L, or X.
+- The first letter of the metadata identifies the impact, and MUST be one of: L, M, H, or C.
 - The second letter identifies the compatibility, and MUST be either B (breaking) or P (preserving).
 - The third letter identifies the purpose, and MUST be either E (enhancement) or M (maintenance).
 
-For example, **v13B-F** MAY be represented as **v0315-XBE**.
+For example, **v13B-F** MAY be represented as **v0315-CBE**.
 
-#### Converting a ConVer release to SemVer
+### FAQs
 
-In situations where a SemVer like version is expected, such as in formats used by package managers and similar, a ConVer release MAY be converted into the corresponding SemVer-compliant release provides that the entire history project releases is known. 
+This section lists some frequently-asked questions concerning Convergent Versioning.
+
+#### Why ConVer?
+
+Convergent Versioning is designed specifically for those projects (both software and non-software) that aim to reach eventual completeness, stability, and maturity. It doesn't pressure you to reach version "1.0", or release often &mdash; it is a system aimed at _finishing_ what you start, and be happy with that. Some famous projects that could be a good fit for ConVer are:
+
+- [SQLite](https://sqlite.org)
+- [Zig](https://ziglang.org)
+- [Vim Classic](https://vim-classic.org)
+- [Uxn/Varvara](https://100r.co/site/uxn.html)
+- ...the [Semantic Versioning](/https://semver.org) specification ;)
+
+Therefore things that are stable, mature, feature complete and not likely to change too frequently in the future.
+
+#### Why _not_ ConVer?
+
+If your project is meant to keep evolving and adapting to the latest and greatest technologies, then Convergent Versioning doesn't make sense. Such projects may never be truly complete by design.
+
+Examples include:
+
+- All major modern browsers like Chrome, Firefox, Edge, etc.
+- Most commercial/enterprise software
+- the Linux kernel
+- NodeJS
+
+These types of software are meant to continuously evolve. It doesn't mean that they are not stable or mature, just that they will never be _complete_.
+
+#### What's the best way to explain ConVer to my users?
+
+You should add a VERSIONING or VERSIONING.md file at the root of your project explaining briefly what ConVer is and link to this page for more information, if necessary. Something similar to the following:
+
+> This project uses the Convergent Versioning system. 
+>
+> The version number is a 2-byte hexadecimal integer from 0x0000 to 0xFFFF, with the first three digits indicating the project _dependability score_ and the last digit encoding the version impact, compatibility, and purpose. 
+>
+> A version number compliant with Semantic Versioning can be derived from the project history, and will still be used if required by package managers or similar software.
+> 
+> For more information, see the [Convergent Versioning specification](https://h3rald.com/conver).
+
+#### Can my first release be in the 0000 - 000F range?
+
+Yes, it can. This is best explained using the words of [and null](https://www.sheeeeeeeep.art/about.html):
+
+> If you immediately version a project before any line of code is made, then you have true 0x0000. The world is unchanged, there is nothing written yet, it's merely a design you haven't broken ground on. 
+>
+> If you start versioning after a week-long bender of coding, then perhaps 0x000F is a more appropriate start. Could be used to signal how explosive the proof-of-concept stage was. 
+>
+> Did you carefully plan it out (0x0000) or was this a fever dream idea you forced into existance (0x000F)?
+
+#### How do you manage backports and fixes to previously-released versions?
+
+You do not. There is no concept of version branching, and that's by design. While this may sound strange to those used to depend on a specific version of a project _and all subsequent minor or patch versions_, it would start to make more and more sense as a projects stabilizes and becomes more and more feature complete.
+
+If you remove branching, dependency management becomes more straightforward, and in ConVer:
+
+- if you depend on a project that is in _prototype_ or _operational_ state, you must specify the exact versions you are aware that are known to work.
+- If you depend on a project in _consolidated_ or _bedrock_ stage, you can specify a single version and _any version after that_ since projects in those stage cannot break compatibility.
+
+#### Can I convert a ConVer release number to SemVer?
+
+In situations where a SemVer like version is expected, such as in formats used by package managers and similar, a ConVer release can be converted into the corresponding SemVer-compliant release provides that the entire history project releases is known. 
 
 To determine the exact SemVer version number of a ConVer project, do the following:
 
-- Count the number of _breaking_ releases; that SHALL be your major version number, unless the project is in _prototype_ stage, in which case the major version SHALL be set to 0.
+- Count the number of _breaking_ releases; that SHALL be your major version number, unless the project is in _prototype_ stage, in which case the major version should be set to 0.
 - Count the number of _enhancement_ releases after the last _breaking_ release (if any, or all if none); that SHALL be your minor version.
-- Count the number of _maintenance_ releases after the last _enhancement_ release (if any, or all if none); that SHALL be your patch version.
+- Count the number of _maintenance_ releases after the last _enhancement_ release (if any, or all if none); that should be your patch version.
 
 ### About
 
