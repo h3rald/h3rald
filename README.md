@@ -1,3 +1,5 @@
+**Important** This project was moved to [sourcehut](https://git.sr.ht/~h3rald/h3rald) on 2026-06-12.
+
 ## H3RALD Web Site
 
 H3RALD.com was created in 2004 by Fabio Cevasco, a technical writer, programmer and IT enthusiast. It features over a hundred [articles](/articles/) covering a wide range of topics, from programming to writing, productivity and even traveling.
