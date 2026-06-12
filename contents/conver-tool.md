@@ -6,7 +6,8 @@ subtitle: "A command line tool to manage ConVer projects."
 summary: "A simple command line tool that can be used to manage Convergent Versioning for your projects."
 content-type: project
 active: true
-version: 100D
+version: 100-D
+version-badge: 100--D   
 release-color: orange
 license: MIT
 sourcehut: conver-tool

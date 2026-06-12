@@ -6,7 +6,8 @@ subtitle: "A versioning system for dependable projects."
 summary: "An alternative approach to versioning projects that aim to achieve eventual stability, maturity, and completeness."
 content-type: project
 active: true
-version: 450B
+version: 450-B
+version-badge: 450--B
 release-color: yellow
 license: CC--BY--4.0
 sourcehut: conver
